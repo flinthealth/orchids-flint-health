@@ -1,0 +1,60 @@
+
+> maven-clinic-clone@0.1.0 dev
+> next dev --port 3000
+
+   ▲ Next.js 15.5.8
+   - Local:        http://localhost:3000
+   - Network:      http://172.20.0.13:3000
+
+ ✓ Starting...
+ ✓ Ready in 1280ms
+ ○ Compiling / ...
+ ✓ Compiled / in 2.9s (616 modules)
+ GET /?_cb=1776107094326 200 in 3420ms
+ ✓ Compiled in 423ms (616 modules)
+ GET /?_cb=1776107094326 200 in 115ms
+ GET /?_cb=1776107198306 200 in 226ms
+ ✓ Compiled in 332ms (616 modules)
+ GET /?_cb=1776107198306 200 in 120ms
+ ✓ Compiled in 204ms (616 modules)
+ GET /?_cb=1776107198306 200 in 101ms
+ GET /?_cb=1776107360409 200 in 194ms
+ ✓ Compiled in 290ms (616 modules)
+ GET /?_cb=1776107360409 200 in 111ms
+ GET /?_cb=1776107437978 200 in 194ms
+ ✓ Compiled in 469ms (616 modules)
+ GET /?_cb=1776107437978 200 in 108ms
+ GET /?_cb=1776107623384 200 in 179ms
+ ✓ Compiled in 571ms (616 modules)
+ GET /?_cb=1776107623384 200 in 122ms
+ GET /?_cb=1776107801187 200 in 197ms
+ ✓ Compiled in 375ms (616 modules)
+ GET /?_cb=1776107801187 200 in 112ms
+ GET /?_cb=1776109231427 200 in 179ms
+ GET /?_cb=1776109404000 200 in 158ms
+ ✓ Compiled in 625ms (616 modules)
+ GET /?_cb=1776109404000 200 in 113ms
+ GET /?_cb=1776109914615 200 in 194ms
+ ✓ Compiled in 343ms (616 modules)
+ GET /?_cb=1776109914615 200 in 89ms
+ GET /?_cb=1776110110624 200 in 198ms
+ GET /?_cb=1776112518432 200 in 164ms
+ ✓ Compiled in 126ms (262 modules)
+ ✓ Compiled in 112ms (262 modules)
+ ✓ Compiled in 168ms (262 modules)
+ ✓ Compiled in 74ms (262 modules)
+ ✓ Compiled in 157ms (262 modules)
+ ✓ Compiled in 87ms (262 modules)
+ ✓ Compiled in 59ms (262 modules)
+ ✓ Compiled in 57ms (262 modules)
+ ✓ Compiled in 57ms (262 modules)
+ ✓ Compiled in 68ms (262 modules)
+ ✓ Compiled in 100ms (262 modules)
+ ✓ Compiled in 62ms (262 modules)
+ ✓ Compiled in 61ms (262 modules)
+ ✓ Compiled in 189ms (262 modules)
+ ✓ Compiled in 115ms (262 modules)
+ ✓ Compiled in 158ms (262 modules)
+ ✓ Compiled in 98ms (262 modules)
+ ✓ Compiled in 73ms (262 modules)
+ ✓ Compiled in 71ms (262 modules)

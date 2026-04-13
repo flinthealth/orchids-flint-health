@@ -1,0 +1,29 @@
+{
+  "name": "maven-clinic-clone",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --port 3000",
+    "build": "next build",
+    "preview": "next build && next start --port 3000",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
+    "fluent-ffmpeg": "^2.1.3",
+    "lucide-react": "^0.469.0",
+    "next": "15.5.8",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "typescript": "^5",
+    "tailwindcss": "^4",
+    "tw-animate-css": "^1.2.5",
+    "@tailwindcss/postcss": "^4"
+  }
+}

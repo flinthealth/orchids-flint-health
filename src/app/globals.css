@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=EB+Garamond:ital,wght@1,400;1,500&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-background: #ffffff;
+  --color-foreground: #1a1a1a;
+
+  --color-card: #ffffff;
+  --color-card-foreground: #1a1a1a;
+
+  --color-popover: #ffffff;
+  --color-popover-foreground: #1a1a1a;
+
+  --color-primary: #fac12c;
+  --color-primary-foreground: #1a1a1a;
+
+  --color-secondary: #31393c;
+  --color-secondary-foreground: #ffffff;
+
+  --color-muted: #f0ede9;
+  --color-muted-foreground: #6b6560;
+
+  --color-accent: #fac12c;
+  --color-accent-foreground: #1a1a1a;
+
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #fafafa;
+
+  --color-border: #31393c1a;
+  --color-input: #f0ede9;
+  --color-ring: #fac12c;
+
+  --color-brand-green: #fac12c;
+  --color-deep-green: #31393c;
+  --color-warm-cream: #f7f3ef;
+  --color-button-hover: #e0a81e;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "EB Garamond", ui-serif, Georgia, serif;
+  --font-display: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --radius-lg: 24px;
+  --radius-md: 12px;
+  --radius-sm: 6px;
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+}
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-border);
+  }
+
+  :root {
+    --background: #ffffff;
+    --foreground: #1a1a1a;
+    --card: #ffffff;
+    --card-foreground: #1a1a1a;
+    --popover: #ffffff;
+    --popover-foreground: #1a1a1a;
+    --primary: #fac12c;
+    --primary-foreground: #1a1a1a;
+    --secondary: #31393c;
+    --secondary-foreground: #ffffff;
+    --muted: #f0ede9;
+    --muted-foreground: #6b6560;
+    --accent: #fac12c;
+    --accent-foreground: #1a1a1a;
+    --destructive: #ef4444;
+    --destructive-foreground: #fafafa;
+    --border: #31393c1a;
+    --input: #f0ede9;
+    --ring: #fac12c;
+    --radius: 1.5rem;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  h1 { font-size: 3.5rem; font-weight: 300; }
+  h2 { font-size: 2.5rem; }
+  h3 { font-size: 1.75rem; }
+
+  em, .italic-emphasis {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    max-width: 1280px;
+  }
+
+  @media (min-width: 1400px) {
+    .container {
+      padding-right: 4rem;
+      padding-left: 4rem;
+    }
+  }
+}
+
+/* Specialties card continuous upward scroll */
+@keyframes scroll-up-specialties {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+.specialties-scroll {
+  animation: scroll-up-specialties 8s linear infinite;
+}
+.specialties-scroll:hover {
+  animation-play-state: paused;
+}
+
+/* Benefits marquee — 2 copies, translate3d for GPU, -50% = exactly 1 copy */
+@keyframes marquee-left {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-50%, 0, 0); }
+}
+@keyframes marquee-right {
+  from { transform: translate3d(-50%, 0, 0); }
+  to   { transform: translate3d(0, 0, 0); }
+}
+.marquee-left      { animation: marquee-left  22s linear infinite; }
+.marquee-right     { animation: marquee-right 28s linear infinite; }
+.marquee-left-slow { animation: marquee-left  34s linear infinite; }
+
+/* DNA Wave scroll */
+@keyframes dna-scroll-left {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.dna-scroll-anim {
+  display: flex;
+  white-space: nowrap;
+  animation: dna-scroll-left 22s linear infinite;
+}
+
+/* Waveform bar pulse animations */
+@keyframes bar-pulse {
+  0%, 100% { transform: scaleY(1); }
+  50%       { transform: scaleY(0.5); }
+}
+.bar-wave { transform-box: fill-box; transform-origin: center; }
+.bar-wave-0 { animation: bar-pulse 1.8s ease-in-out infinite; }
+.bar-wave-1 { animation: bar-pulse 2.2s ease-in-out 0.3s infinite; }
+.bar-wave-2 { animation: bar-pulse 1.6s ease-in-out 0.6s infinite; }
+.bar-wave-3 { animation: bar-pulse 2.0s ease-in-out 0.9s infinite; }
+.bar-wave-4 { animation: bar-pulse 1.9s ease-in-out 0.15s infinite; }
+.bar-wave-5 { animation: bar-pulse 2.4s ease-in-out 0.45s infinite; }
+
+@keyframes heroEnter {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-hero-enter { animation: heroEnter 0.7s ease-out 0.08s both; }
+.animate-hero-title { animation: heroEnter 0.7s ease-out 0.15s both; }
+.animate-hero-sub1  { animation: heroEnter 0.7s ease-out 0.25s both; }
+.animate-hero-sub2  { animation: heroEnter 0.7s ease-out 0.35s both; }
+.animate-hero-cta   { animation: heroEnter 0.7s ease-out 0.45s both; }
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .bg-deep-green {
+    background-color: var(--color-deep-green);
+  }
+
+  .text-brand-green {
+    color: var(--color-brand-green);
+  }
+
+  .btn-primary {
+    background-color: var(--color-brand-green);
+    color: var(--color-deep-green);
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background-color 0.2s;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-button-hover);
+  }
+
+  .btn-ghost {
+    border: 1px solid var(--color-brand-green);
+    color: var(--color-brand-green);
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.2s;
+  }
+
+  .btn-ghost:hover {
+    background-color: var(--color-brand-green);
+    color: var(--color-deep-green);
+  }
+
+  .italic-emphasis {
+    font-family: var(--font-serif);
+    font-style: italic;
+  }
+}
+
+@keyframes roi-pulse {
+  0%   { transform: scale(1);    opacity: 0.4; }
+  100% { transform: scale(1.58); opacity: 0; }
+}
