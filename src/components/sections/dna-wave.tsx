@@ -198,10 +198,10 @@ export function OurBeliefSection() {
             We achieve this through:
           </p>
           {[
-            { adj: 'Empathic',  noun: 'Listening',             bg: '#6290c9', text: '#ffffff' },
-            { adj: 'Narrative', noun: 'Storytelling',           bg: '#6290c9', text: '#ffffff' },
-            { adj: 'Quality',   noun: 'Learning Experiences',   bg: '#6290c9', text: '#ffffff' },
-            { adj: 'Authentic', noun: 'Connection',              bg: '#6290c9', text: '#ffffff' },
+            { adj: 'Empathic',  noun: 'Listening',             bg: '#c8621e', text: '#ffffff' },
+            { adj: 'Narrative', noun: 'Storytelling',           bg: '#c8621e', text: '#ffffff' },
+            { adj: 'Quality',   noun: 'Learning Experiences',   bg: '#c8621e', text: '#ffffff' },
+            { adj: 'Authentic', noun: 'Connection',              bg: '#c8621e', text: '#ffffff' },
           ].map(({ adj, noun, bg, text }) => (
             <div
               key={noun}

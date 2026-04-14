@@ -718,9 +718,9 @@ export default function PodcastExplainer() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/stats-greater-recall.webp" alt="" className="absolute inset-0 w-full h-full object-cover object-center opacity-20" />
               <div className="relative z-10">
-                <p className="text-[#ffffff] text-[60px] font-light leading-none tracking-[-0.03em] mb-1">4.7×</p>
+                <p className="text-[#ffffff] text-[60px] font-light leading-none tracking-[-0.03em] mb-1">6–7×</p>
                 <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-1">Greater Recall</p>
-                <p className="text-[#ffffff]/60 text-[14px] leading-[1.6]">Information anchored in a story sticks. Stakeholders remember key data at nearly 5× the rate of standard digital media.</p>
+                <p className="text-[#ffffff]/60 text-[14px] leading-[1.6]">Information woven into a narrative is recalled six to seven times more than information studied through repetition alone — meaning your message doesn't just land, it sticks.</p>
               </div>
             </div>
 
@@ -742,9 +742,9 @@ export default function PodcastExplainer() {
               />
               <div className="absolute inset-0" style={{ backgroundColor: 'rgba(49,57,60,0.72)' }} />
               <div className="relative z-10 p-7 flex flex-col h-full">
-                <p className="text-[#ffffff] text-[60px] font-light leading-none tracking-[-0.03em] mb-1">77%+</p>
-                <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-1">On-the-Go Opportunity</p>
-                <p className="text-[#ffffff]/60 text-[14px] leading-[1.65] mb-4">Capture on-the-go listeners who aren't tied to their desk but are open, receptive, and ready for your message.</p>
+                <p className="text-[#ffffff] text-[60px] font-light leading-none tracking-[-0.03em] mb-1">71%</p>
+                <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-1">The Multitasking Advantage</p>
+                <p className="text-[#ffffff]/60 text-[14px] leading-[1.65] mb-4">Listeners choose audio specifically because it fits into their lives — in the car, between patients, during a commute. Your message reaches them when they're open and receptive, not tied to a screen.</p>
                 <div className="flex flex-col gap-2 mt-auto">
                   {[
                     { emoji: '🍳', label: 'Cooking' },

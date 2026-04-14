@@ -7,7 +7,7 @@ const CASE_STUDIES = [
     title: "In This Body",
     image: "/podcast-in-this-body.webp",
     client: "Reasons Eating Disorder Center",
-    tag: "Alhambra Hospital",
+    tag: "Reasons Eating Disorder Center",
     stats: [
       { value: "12",     label: "episodes" },
       { value: "45 min", label: "avg. listen time" },
