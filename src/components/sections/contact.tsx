@@ -63,20 +63,21 @@ export default function ContactSection() {
                 <p className="text-[#ffffff]/55 text-[15px] leading-[1.65] max-w-[280px]">We'll be in touch within one business day.</p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="flex flex-col gap-4" suppressHydrationWarning>
+              <form onSubmit={handleSubmit} className="flex flex-col gap-4" suppressHydrationWarning autoComplete="off">
                 {[
                   { name: 'name',    label: 'Your name',         type: 'text',  required: true },
                   { name: 'email',   label: 'Work email',        type: 'email', required: true },
                   { name: 'org',     label: 'Organization',      type: 'text',  required: false },
                 ].map(({ name, label, type, required }) => (
                   <div key={name} className="flex flex-col gap-1.5" suppressHydrationWarning>
-                    <label className="text-[#ffffff]/60 text-[12px] font-medium tracking-[0.05em] uppercase">{label}</label>
+                    <label className="text-[#ffffff]/60 text-[12px] font-medium tracking-[0.05em] uppercase" suppressHydrationWarning>{label}</label>
                     <input
                       type={type}
                       name={name}
                       value={form[name as keyof typeof form]}
                       onChange={handleChange}
                       required={required}
+                      autoComplete="off"
                       suppressHydrationWarning
                       className="bg-white/8 border border-white/15 rounded-xl px-4 py-3 text-[#ffffff] text-[15px] placeholder-white/25 focus:outline-none focus:border-[#fac12c]/60 transition-colors"
                       style={{ backgroundColor: 'rgba(255,255,255,0.06)' }}

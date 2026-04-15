@@ -25,18 +25,20 @@ const STEPS = [
           <p style={{ color: body }} className="text-[15px] leading-[1.75]">
             You&apos;ll come away with a clear creative brief that outlines your OKR&apos;s.
           </p>
-          <ul className="flex flex-col gap-2.5">
-            {[
-              "Define the outcome you need",
-              "Know your people — patients, providers, or internal stakeholders — and how they consume content",
-              "How we'll measure success",
-            ].map((item, i) => (
-              <li key={i} className="flex items-start gap-3 text-[14px] leading-[1.6]" style={{ color: body }}>
-                <span className="mt-[7px] w-[5px] h-[5px] rounded-full flex-shrink-0" style={{ backgroundColor: bullet }} />
-                {item}
-              </li>
-            ))}
-          </ul>
+          <div className="rounded-xl px-4 py-4" style={{ background: "rgba(255,222,95,0.15)" }}>
+            <ul className="flex flex-col gap-2.5">
+              {[
+                "Define the outcome you need",
+                "Know your people — patients, providers, or internal stakeholders — and how they consume content",
+                "How we'll measure success",
+              ].map((item, i) => (
+                <li key={i} className="flex items-start gap-3 text-[14px] leading-[1.6]" style={{ color: body }}>
+                  <span className="mt-[7px] w-[5px] h-[5px] rounded-full flex-shrink-0" style={{ backgroundColor: bullet }} />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       );
     },
@@ -70,7 +72,7 @@ const STEPS = [
               { format: "Narrative",      desc: "for layered, immersive stories" },
               { format: "Panel",          desc: "for inclusive, multi-voice dialogue" },
             ].map((f, i) => (
-              <div key={i} className="rounded-xl px-4 py-3" style={{ background: "rgba(250,193,44,0.12)" }}>
+              <div key={i} className="rounded-xl px-4 py-3" style={{ background: "rgba(250,193,44,0.18)" }}>
                 <span className="text-[13px] font-semibold" style={{ color: hdTxt }}>{f.format}</span>
                 <span className="text-[13px]" style={{ color: subTxt }}> {f.desc}</span>
               </div>
@@ -125,9 +127,9 @@ const STEPS = [
               { label: "Audio-only",  desc: "Optimized for gated portals, internal comms, and on-demand listening." },
               { label: "Video-first", desc: "Visual storytelling assets that extend the impact and reach of every episode." },
             ].map((item, i) => (
-              <div key={i} className="rounded-xl px-4 py-3.5" style={{ background: "rgba(98,144,201,0.15)" }}>
-                <p className="text-[13px] font-semibold mb-0.5" style={{ color: hdTxt }}>{item.label}</p>
-                <p className="text-[13px]" style={{ color: subTxt }}>{item.desc}</p>
+              <div key={i} className="rounded-xl px-4 py-3.5" style={{ background: "rgba(107,75,62,0.35)" }}>
+                <p className="text-[13px] font-semibold mb-0.5" style={{ color: '#c9896a' }}>{item.label}</p>
+                <p className="text-[13px]" style={{ color: 'rgba(255,255,255,0.55)' }}>{item.desc}</p>
               </div>
             ))}
           </div>
