@@ -7,7 +7,7 @@ const CASE_STUDIES = [
     title: "In This Body",
     image: "/podcast-in-this-body.webp",
     client: "Reasons Eating Disorder Center",
-    tag: "Reasons Eating Disorder Center",
+    tag: "Residential Eating Disorder Treatment",
     stats: [
       { value: "12",     label: "episodes" },
       { value: "45 min", label: "avg. listen time" },

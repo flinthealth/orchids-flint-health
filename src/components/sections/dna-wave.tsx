@@ -177,9 +177,89 @@ export function DNAPulseOnly() {
   );
 }
 
+// ─── Sound wave bar data for OurBeliefSection ────────────────────────────────
+const BELIEF_BAR_W  = 10;
+const BELIEF_BAR_GAP = 18;
+
+// Heights create a natural audio-waveform silhouette
+const BELIEF_BAR_HEIGHTS = [
+  22, 55, 38, 80, 48, 100, 34, 72, 60, 110,
+  44, 85, 26, 95, 52, 78,  40, 68, 50, 105,
+  30, 88, 42, 92, 36, 62,  56, 82, 32, 98,
+  46, 70, 28, 75, 54, 90,  44, 65, 48, 84,
+  38, 72, 26, 96, 50, 60,  42, 78, 34, 88,
+  22, 55, 38, 80, 48, 100, 34, 72, 60, 110,
+];
+
+// Three Flint palette colors cycling across bars
+const BELIEF_BAR_COLORS = ['#e09a18', '#ffde5f', '#fac12c'];
+
+function BeliefSoundWave() {
+  const waveRef = useRef<HTMLDivElement>(null);
+  const [containerW, setContainerW] = useState(1400);
+
+  useEffect(() => {
+    const el = waveRef.current;
+    if (!el) return;
+    const ro = new ResizeObserver(([entry]) => setContainerW(entry.contentRect.width));
+    ro.observe(el);
+    setContainerW(el.getBoundingClientRect().width);
+    return () => ro.disconnect();
+  }, []);
+
+  const numBars = Math.ceil(containerW / BELIEF_BAR_GAP) + 2;
+  const totalW  = numBars * BELIEF_BAR_GAP + BELIEF_BAR_W;
+  const svgH    = 130; // visible height of the wave strip
+  const cy      = svgH / 2;
+
+  return (
+    <div ref={waveRef} className="w-full overflow-hidden pointer-events-none" style={{ height: svgH }} aria-hidden="true">
+      <style>{`
+        @keyframes beliefWave {
+          0%   { transform: scaleY(0.15); }
+          25%  { transform: scaleY(1);    }
+          50%  { transform: scaleY(0.22); }
+          75%  { transform: scaleY(0.78); }
+          100% { transform: scaleY(0.15); }
+        }
+      `}</style>
+      <svg
+        width={totalW}
+        height={svgH}
+        viewBox={`0 0 ${totalW} ${svgH}`}
+        style={{ display: 'block' }}
+      >
+        {Array.from({ length: numBars }, (_, i) => {
+          const h     = BELIEF_BAR_HEIGHTS[i % BELIEF_BAR_HEIGHTS.length];
+          const color = BELIEF_BAR_COLORS[i % BELIEF_BAR_COLORS.length];
+          const delay = -(i * 0.10);
+          return (
+            <rect
+              key={i}
+              x={i * BELIEF_BAR_GAP}
+              y={cy - h / 2}
+              width={BELIEF_BAR_W}
+              height={h}
+              rx={BELIEF_BAR_W / 2}
+              fill={color}
+              stroke="#31393c"
+              strokeWidth={1}
+              style={{
+                transformBox: 'fill-box',
+                transformOrigin: 'center',
+                animation: `beliefWave 3.8s ease-in-out ${delay}s infinite`,
+              }}
+            />
+          );
+        })}
+      </svg>
+    </div>
+  );
+}
+
 export function OurBeliefSection() {
   return (
-    <section className="bg-[#f7f3ef] pt-[88px] md:pt-[120px] pb-[80px]">
+    <section className="bg-[#f7f3ef] pt-[88px] md:pt-[120px] pb-[80px] overflow-hidden">
 
       {/* Headline + body */}
       <div className="container mx-auto px-8 text-center mb-10">
@@ -191,29 +271,40 @@ export function OurBeliefSection() {
         </p>
       </div>
 
-      {/* Pills */}
-      <div className="container mx-auto px-8">
-        <div className="flex flex-col items-center gap-2.5 w-full md:max-w-[520px] mx-auto">
-          <p className="text-[#6b6560] text-[17px] md:text-[18px] leading-[1.7] w-full mb-1">
-            We achieve this through:
-          </p>
-          {[
-            { adj: 'Empathic',  noun: 'Listening',             bg: '#c8621e', text: '#ffffff' },
-            { adj: 'Narrative', noun: 'Storytelling',           bg: '#c8621e', text: '#ffffff' },
-            { adj: 'Quality',   noun: 'Learning Experiences',   bg: '#c8621e', text: '#ffffff' },
-            { adj: 'Authentic', noun: 'Connection',              bg: '#c8621e', text: '#ffffff' },
-          ].map(({ adj, noun, bg, text }) => (
-            <div
-              key={noun}
-              className="w-full rounded-xl px-7 py-3.5 text-[22px] md:text-[34px] font-light leading-[1.15] tracking-[-0.02em]"
-              style={{ backgroundColor: bg, color: text }}
-            >
-              {adj} <span className="font-serif italic">{noun}</span>
-            </div>
-          ))}
+      {/* Sound wave + pills stacked with wave behind */}
+      <div className="relative w-full">
+
+        {/* Sound wave — absolute, vertically centered over pill block */}
+        <div
+          className="absolute left-0 right-0 pointer-events-none"
+          style={{ zIndex: 0, top: '50%', transform: 'translateY(-50%)' }}
+        >
+          <BeliefSoundWave />
+        </div>
+
+        {/* Pills block — sits above wave; solid bg masks bars in the center column */}
+        <div className="container mx-auto px-8 relative" style={{ zIndex: 1 }}>
+          <div className="flex flex-col items-center gap-2.5 w-full md:max-w-[520px] mx-auto" style={{ backgroundColor: '#f7f3ef', paddingTop: '4px', paddingBottom: '4px' }}>
+            <p className="text-[#6b6560] text-[17px] md:text-[18px] leading-[1.7] w-full mb-1">
+              We achieve this through:
+            </p>
+            {[
+              { adj: 'Empathic',  noun: 'Listening'            },
+              { adj: 'Narrative', noun: 'Storytelling'          },
+              { adj: 'Quality',   noun: 'Learning Experiences'  },
+              { adj: 'Authentic', noun: 'Connection'            },
+            ].map(({ adj, noun }) => (
+              <div
+                key={noun}
+                className="w-full rounded-xl px-7 py-3.5 text-[22px] md:text-[34px] font-light leading-[1.15] tracking-[-0.02em]"
+                style={{ backgroundColor: '#e8e2dc', color: '#1a1a1a', position: 'relative', zIndex: 1, border: '1.5px solid #b8b0a8' }}
+              >
+                {adj} <span className="font-serif italic">{noun}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-
 
     </section>
   );
