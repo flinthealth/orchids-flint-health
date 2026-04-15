@@ -258,7 +258,7 @@ const CarePlatformSection = () => {
           aria-hidden="true"
           style={{ height: '72px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px', marginBottom: '32px' }}
         >
-          {/* left: shortest, darkest amber | middle: tallest, brightest yellow | right: medium, mid yellow */}
+          {/* left: shortest, darkest amber | middle: tallest, brightest yellow | right: medium, mid amber */}
           {[
             { h: 28, bg: '#e09a18', w: 14, delay: '0s' },
             { h: 56, bg: '#ffde5f', w: 14, delay: '0.35s' },

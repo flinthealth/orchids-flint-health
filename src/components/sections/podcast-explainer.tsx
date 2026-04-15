@@ -49,8 +49,8 @@ function CompletionRing() {
           width="100%" height="100%"
           style={{ transform: 'rotate(-90deg)', display: 'block' }}
         >
-          <circle cx={VB_CX} cy={VB_CX} r={VB_R} fill="none" stroke="rgba(108,77,62,0.2)" strokeWidth={VB_STROKE} />
-          <circle cx={VB_CX} cy={VB_CX} r={VB_R} fill="none" stroke="#6c4d3e" strokeWidth={VB_STROKE}
+          <circle cx={VB_CX} cy={VB_CX} r={VB_R} fill="none" stroke="rgba(49,57,60,0.15)" strokeWidth={VB_STROKE} />
+          <circle cx={VB_CX} cy={VB_CX} r={VB_R} fill="none" stroke="#31393c" strokeWidth={VB_STROKE}
             strokeLinecap="round" strokeDasharray={VB_C} strokeDashoffset={offset} />
         </svg>
         <div className="absolute inset-0 flex flex-col items-center justify-center">
@@ -416,7 +416,7 @@ function AnimatedTimeline() {
                   <div className="flex-1 pt-0.5">
                     <span
                       className="inline-block text-[11px] font-semibold tracking-[0.06em] px-3 py-1 rounded-full whitespace-nowrap mb-1.5 border border-[#31393c]"
-                      style={{ backgroundColor: '#fac12c', color: '#31393c' }}
+                      style={{ backgroundColor: '#e09a18', color: '#31393c' }}
                     >
                       {year}
                     </span>
@@ -622,14 +622,14 @@ export default function PodcastExplainer() {
             {/* B — 4.7x Greater Recall */}
             <div
               className="rounded-3xl overflow-hidden relative flex flex-col justify-end p-7"
-              style={{ gridColumn: '5 / 13', gridRow: '1 / 5', backgroundColor: '#6290c9' }}
+              style={{ gridColumn: '5 / 13', gridRow: '1 / 5', backgroundColor: '#ffde5f' }}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/stats-greater-recall.webp" alt="" className="absolute inset-0 w-full h-full object-cover object-center opacity-20" />
+              <img src="/stats-greater-recall.webp" alt="" className="absolute inset-0 w-full h-full object-cover object-center opacity-10" />
               <div className="relative z-10">
-                <p className="text-[#ffffff] text-[80px] font-light leading-none tracking-[-0.04em] mb-1">6–7×</p>
-                <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-1">Greater Recall<a href="https://link.springer.com/article/10.3758/BF03332778" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">4</a></p>
-                <p className="text-[#ffffff]/55 text-[14px] leading-[1.6] max-w-[380px]">Information woven into a narrative is recalled six to seven times more than information studied through repetition alone — meaning your message doesn't just land, it sticks.</p>
+                <p className="text-[#31393c] text-[80px] font-light leading-none tracking-[-0.04em] mb-1">6–7×</p>
+                <p className="text-[#31393c] text-[17px] font-medium leading-snug mb-1">Greater Recall<a href="https://link.springer.com/article/10.3758/BF03332778" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">4</a></p>
+                <p className="text-[#31393c]/60 text-[14px] leading-[1.6] max-w-[380px]">Information woven into a narrative is recalled six to seven times more than information studied through repetition alone — meaning your message doesn't just land, it sticks.</p>
               </div>
             </div>
 
@@ -686,19 +686,16 @@ export default function PodcastExplainer() {
               <p className="text-[#ffffff]/65 text-[14px] leading-[1.6] relative z-10">Build genuine connection. Podcasts carry triple the authority of standard influencer or social-led outreach.</p>
             </div>
 
-            {/* G — Full-width closer */}
+            {/* G — Full-width closer (no card, plain text) */}
             <div
-              className="rounded-3xl p-8 flex items-center gap-8 relative overflow-hidden"
-              style={{ gridColumn: '1 / 13', gridRow: '13 / 16', backgroundColor: '#31393c' }}
+              className="flex items-center py-8"
+              style={{ gridColumn: '1 / 13', gridRow: '13 / 16' }}
             >
-              <div className="relative z-10 flex-1">
-                <p className="text-[#ffffff]/40 text-[11px] font-semibold tracking-[0.2em] uppercase mb-2">The bottom line</p>
-                <p className="text-[#ffffff] text-[22px] md:text-[26px] font-light leading-[1.3]">
+              <div>
+                <p className="text-[#1a1a1a]/40 text-[11px] font-semibold tracking-[0.2em] uppercase mb-2">The bottom line</p>
+                <p className="text-[#1a1a1a] text-[22px] md:text-[26px] font-light leading-[1.3]">
                   Whether reaching a patient audience of thousands or aligning a clinical team of fifty — no other experience delivers this level of <span className="font-serif italic">trust, attention, and recall.</span>
                 </p>
-              </div>
-              <div className="absolute right-0 top-0 bottom-0 w-1 flex flex-col">
-                <div className="flex-1 bg-[#f7f3ef]" />
               </div>
             </div>
 
@@ -714,13 +711,13 @@ export default function PodcastExplainer() {
             </div>
 
             {/* Mobile B — 4.7× Greater Recall */}
-            <div className="rounded-3xl overflow-hidden relative p-7 flex flex-col justify-end min-h-[220px]" style={{ backgroundColor: '#6290c9' }}>
+            <div className="rounded-3xl overflow-hidden relative p-7 flex flex-col justify-end min-h-[220px]" style={{ backgroundColor: '#ffde5f' }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/stats-greater-recall.webp" alt="" className="absolute inset-0 w-full h-full object-cover object-center opacity-20" />
+              <img src="/stats-greater-recall.webp" alt="" className="absolute inset-0 w-full h-full object-cover object-center opacity-10" />
               <div className="relative z-10">
-                <p className="text-[#ffffff] text-[60px] font-light leading-none tracking-[-0.03em] mb-1">6–7×</p>
-                <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-1">Greater Recall</p>
-                <p className="text-[#ffffff]/60 text-[14px] leading-[1.6]">Information woven into a narrative is recalled six to seven times more than information studied through repetition alone — meaning your message doesn't just land, it sticks.</p>
+                <p className="text-[#31393c] text-[60px] font-light leading-none tracking-[-0.03em] mb-1">6–7×</p>
+                <p className="text-[#31393c] text-[17px] font-medium leading-snug mb-1">Greater Recall</p>
+                <p className="text-[#31393c]/60 text-[14px] leading-[1.6]">Information woven into a narrative is recalled six to seven times more than information studied through repetition alone — meaning your message doesn't just land, it sticks.</p>
               </div>
             </div>
 
@@ -778,10 +775,10 @@ export default function PodcastExplainer() {
               <p className="text-[#ffffff]/65 text-[14px] leading-[1.6] relative z-10">Build genuine connection. Podcasts carry triple the authority of standard influencer or social-led outreach.</p>
             </div>
 
-            {/* Mobile G — Bottom bar */}
-            <div className="rounded-3xl p-8 relative overflow-hidden" style={{ backgroundColor: '#31393c', minHeight: 180 }}>
-              <p className="text-[#ffffff]/40 text-[11px] font-semibold tracking-[0.2em] uppercase mb-4">The bottom line</p>
-              <p className="text-[#ffffff] text-[26px] font-light leading-[1.3]">
+            {/* Mobile G — Bottom text (no card) */}
+            <div className="py-6">
+              <p className="text-[#1a1a1a]/40 text-[11px] font-semibold tracking-[0.2em] uppercase mb-4">The bottom line</p>
+              <p className="text-[#1a1a1a] text-[26px] font-light leading-[1.3]">
                 No other medium delivers this level of <span className="font-serif italic">trust, attention, and recall.</span>
               </p>
             </div>
