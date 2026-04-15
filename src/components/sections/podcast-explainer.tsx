@@ -628,7 +628,7 @@ export default function PodcastExplainer() {
             >
               <div className="relative z-10">
                 <p className="text-[#ffffff] text-[80px] font-light leading-none tracking-[-0.04em] mb-1">6–7×</p>
-                <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-1">Greater Recall<a href="https://link.springer.com/article/10.3758/BF03332778" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">4</a></p>
+                <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-1">Greater Recall<a href="https://link.springer.com/article/10.3758/BF03332778" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">1</a></p>
                 <p className="text-[#ffffff]/60 text-[14px] leading-[1.6] max-w-[380px]">Information woven into a narrative is recalled six to seven times more than information studied through repetition alone — meaning your message doesn't just land, it sticks.</p>
               </div>
             </div>
@@ -640,7 +640,7 @@ export default function PodcastExplainer() {
             >
               <CompletionRing />
               <div className="mt-5">
-                <p className="text-[#31393c] text-[17px] font-medium leading-snug mb-1">Completion Rate<a href="https://signalhillinsights.com/measuring-the-success-of-branded-podcasts-choosing-the-right-yardsticks/" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">5</a></p>
+                <p className="text-[#31393c] text-[17px] font-medium leading-snug mb-1">Completion Rate<a href="https://signalhillinsights.com/measuring-the-success-of-branded-podcasts-choosing-the-right-yardsticks/" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">2</a></p>
                 <p className="text-[#31393c]/60 text-[14px] leading-[1.6]">While other long-form media struggles to hold attention, our leading formats ensure your vital messages are heard, absorbed, and complete.</p>
               </div>
             </div>
@@ -660,7 +660,7 @@ export default function PodcastExplainer() {
               {/* Content */}
               <div className="relative z-10 p-6 flex flex-col h-full">
                 <p className="text-[#ffffff] text-[80px] font-light leading-none tracking-[-0.03em] mb-1">71%</p>
-                <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-3">The Multitasking Advantage<a href="https://www.cohostpodcasting.com/resources/podcasting-unwrapped-2025" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">7</a></p>
+                <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-3">The Multitasking Advantage<a href="https://www.cohostpodcasting.com/resources/podcasting-unwrapped-2025" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">4</a></p>
                 <p className="text-[#ffffff]/60 text-[14px] leading-[1.65]">Listeners choose audio specifically because it fits into their lives — in the car, between patients, during a commute. Your message reaches them when they're open and receptive, not tied to a screen.</p>
               </div>
             </div>
@@ -671,7 +671,7 @@ export default function PodcastExplainer() {
               style={{ gridColumn: '1 / 5', gridRow: '9 / 13', backgroundColor: '#6290c9' }}
             >
               <p className="text-[#ffffff] text-[80px] font-light leading-none tracking-[-0.04em] mb-2">61%</p>
-              <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-1">Trust Lift<a href="https://signalhillinsights.com/measuring-the-success-of-branded-podcasts-choosing-the-right-yardsticks/" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">5</a></p>
+              <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-1">Trust Lift<a href="https://signalhillinsights.com/measuring-the-success-of-branded-podcasts-choosing-the-right-yardsticks/" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">2</a></p>
               <p className="text-[#ffffff]/65 text-[14px] leading-[1.6]">Podcasts improve brand perception and patient confidence by humanizing the organization behind the science.</p>
             </div>
 
@@ -682,7 +682,7 @@ export default function PodcastExplainer() {
             >
               <ConcentricRings />
               <p className="text-[#ffffff] text-[80px] font-light leading-none tracking-[-0.03em] mb-1 relative z-10">3×</p>
-              <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-1 relative z-10">More Influence<a href="https://cumuluspodcastnetwork.com/cumulus-media-podcast-download-fall-2025/" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">6</a></p>
+              <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-1 relative z-10">More Influence<a href="https://cumuluspodcastnetwork.com/cumulus-media-podcast-download-fall-2025/" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">3</a></p>
               <p className="text-[#ffffff]/65 text-[14px] leading-[1.6] relative z-10">Build genuine connection. Podcasts carry triple the authority of standard influencer or social-led outreach.</p>
             </div>
 
