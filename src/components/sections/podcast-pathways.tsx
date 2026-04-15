@@ -22,7 +22,7 @@ export default function PodcastPathways() {
   });
 
   return (
-    <section ref={sectionRef} className="bg-white w-full pt-[56px] md:pt-12 pb-0">
+    <section ref={sectionRef} className="bg-white w-full pt-[28px] md:pt-12 pb-0">
 
       {/* ── Header ── */}
       <div className="text-center mb-14 px-4 md:px-8">

@@ -198,7 +198,7 @@ export default function ContentPrism() {
     <section
       ref={sectionRef}
       id="process"
-      className="relative px-4 md:px-8 pt-[80px] pb-[90px] bg-white"
+      className="relative px-4 md:px-8 pt-[40px] md:pt-[80px] pb-[90px] bg-white"
     >
       {/* ── Header ── */}
       <div className="text-center max-w-[680px] mx-auto mb-10">

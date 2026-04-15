@@ -312,7 +312,7 @@ export function OurBeliefSection() {
             ].map(({ adj, noun }) => (
               <div
                 key={noun}
-                className="w-full rounded-xl px-5 md:px-7 py-3.5 text-[18px] md:text-[34px] font-light leading-[1.15] tracking-[-0.02em] whitespace-nowrap"
+                className="w-full rounded-xl px-5 md:px-7 py-3.5 text-[23px] md:text-[34px] font-light leading-[1.15] tracking-[-0.02em] whitespace-nowrap"
                 style={{ backgroundColor: '#e8e2dc', color: '#1a1a1a', position: 'relative', zIndex: 1 }}
               >
                 {adj} <span className="font-serif italic">{noun}</span>

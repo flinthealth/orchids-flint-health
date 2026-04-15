@@ -24,8 +24,8 @@ const CASE_STUDIES = [
     tag: "Residential Eating Disorder Treatment",
     stats: [
       { value: "12",     label: "episodes" },
-      { value: "139K+",  label: "downloads in 5 months" },
       { value: "45 min", label: "avg. listen time" },
+      { value: "139K+",  label: "downloads in 5 months", fullWidth: true },
     ],
     description:
       "An interview-based series created with Reasons Eating Disorder Center to challenge assumptions around eating disorders and expand representation in care through diverse lived experience perspectives.\n\nHosted by a member of the admissions and marketing team, the series demonstrated how internal voices can be developed into trusted, engaging hosts.",
@@ -73,7 +73,7 @@ function StatCell({
   ].filter(Boolean).join(' ');
 
   return (
-    <div className={classes}>
+    <div className={`${classes}${isFullWidth ? ' md:items-start items-center text-center md:text-left' : ''}`}>
       <div className="flex items-center gap-1">
         <span className="text-[#31393c] text-[22px] font-light leading-none tracking-[-0.02em]">{s.value}</span>
         {s.up && (
@@ -88,11 +88,16 @@ function StatCell({
 }
 
 function StatsBar({ stats }: { stats: Stat[] }) {
-  const count   = stats.length;
-  const mdCols  = count === 3 ? 'md:grid-cols-3' : count === 4 ? 'md:grid-cols-4' : 'md:grid-cols-3';
-  let mobileCol = 0;
+  const count        = stats.length;
+  const hasFullWidth = stats.some(s => s.fullWidth);
+  const mdCols       = count === 3 ? 'md:grid-cols-3' : count === 4 ? 'md:grid-cols-4' : 'md:grid-cols-3';
+  let mobileCol      = 0;
   return (
-    <div className={`grid grid-cols-2 ${mdCols}`}>
+    <div className={`grid grid-cols-2 ${mdCols} relative`}>
+      {/* Full-height vertical center divider on mobile when a fullWidth row exists */}
+      {hasFullWidth && (
+        <div className="md:hidden absolute left-1/2 top-0 bottom-0 w-px -translate-x-px" style={{ backgroundColor: 'rgba(26,26,26,0.15)' }} />
+      )}
       {stats.map((s, arrayIdx) => {
         const result = (
           <StatCell
