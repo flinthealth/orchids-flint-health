@@ -177,10 +177,11 @@ export default function PodcastShowcase() {
     if (!el) return;
     const obs = new IntersectionObserver(
       ([entry]) => { if (entry.isIntersecting) setVisible(true); },
-      { threshold: 0.1 }
+      { threshold: 0.05, rootMargin: '0px 0px -5% 0px' }
     );
     obs.observe(el);
-    return () => obs.disconnect();
+    const fallback = setTimeout(() => setVisible(true), 1200);
+    return () => { obs.disconnect(); clearTimeout(fallback); };
   }, []);
 
   const fade = (delay: number): React.CSSProperties => ({

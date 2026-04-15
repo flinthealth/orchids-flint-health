@@ -180,15 +180,17 @@ export function DNAPulseOnly() {
 // ─── Sound wave bar data for OurBeliefSection ────────────────────────────────
 const BELIEF_BAR_W  = 10;
 const BELIEF_BAR_GAP = 18;
+const BELIEF_BAR_W_DESK  = 13;
+const BELIEF_BAR_GAP_DESK = 24;
 
-// Heights create a natural audio-waveform silhouette
+// Heights create a natural audio-waveform silhouette (scaled up ~30%)
 const BELIEF_BAR_HEIGHTS = [
-  22, 55, 38, 80, 48, 100, 34, 72, 60, 110,
-  44, 85, 26, 95, 52, 78,  40, 68, 50, 105,
-  30, 88, 42, 92, 36, 62,  56, 82, 32, 98,
-  46, 70, 28, 75, 54, 90,  44, 65, 48, 84,
-  38, 72, 26, 96, 50, 60,  42, 78, 34, 88,
-  22, 55, 38, 80, 48, 100, 34, 72, 60, 110,
+  28, 72, 50, 104, 62, 130, 44, 94, 78, 143,
+  57, 111, 34, 124, 68, 101, 52, 88, 65, 137,
+  39, 114, 55, 120, 47, 81,  73, 107, 42, 127,
+  60, 91,  36, 98,  70, 117, 57, 85,  62, 109,
+  49, 94,  34, 125, 65, 78,  55, 101, 44, 114,
+  28, 72,  50, 104, 62, 130, 44, 94,  78, 143,
 ];
 
 // Three Flint palette colors cycling across bars
@@ -207,20 +209,24 @@ function BeliefSoundWave() {
     return () => ro.disconnect();
   }, []);
 
-  const numBars = Math.ceil(containerW / BELIEF_BAR_GAP) + 2;
-  const totalW  = numBars * BELIEF_BAR_GAP + BELIEF_BAR_W;
-  const svgH    = 130; // visible height of the wave strip
+  const isDesktop = containerW >= 768;
+  const barW   = isDesktop ? BELIEF_BAR_W_DESK  : BELIEF_BAR_W;
+  const barGap = isDesktop ? BELIEF_BAR_GAP_DESK : BELIEF_BAR_GAP;
+  const numBars = Math.ceil(containerW / barGap) + 2;
+  const totalW  = numBars * barGap + barW;
+  const svgH    = 160;
   const cy      = svgH / 2;
 
   return (
     <div ref={waveRef} className="w-full overflow-hidden pointer-events-none" style={{ height: svgH }} aria-hidden="true">
       <style>{`
         @keyframes beliefWave {
-          0%   { transform: scaleY(0.15); }
-          25%  { transform: scaleY(1);    }
-          50%  { transform: scaleY(0.22); }
-          75%  { transform: scaleY(0.78); }
-          100% { transform: scaleY(0.15); }
+          0%   { transform: scaleY(0.12); }
+          20%  { transform: scaleY(0.85); }
+          40%  { transform: scaleY(0.18); }
+          60%  { transform: scaleY(1);    }
+          80%  { transform: scaleY(0.30); }
+          100% { transform: scaleY(0.12); }
         }
       `}</style>
       <svg
@@ -232,22 +238,22 @@ function BeliefSoundWave() {
         {Array.from({ length: numBars }, (_, i) => {
           const h     = BELIEF_BAR_HEIGHTS[i % BELIEF_BAR_HEIGHTS.length];
           const color = BELIEF_BAR_COLORS[i % BELIEF_BAR_COLORS.length];
-          const delay = -(i * 0.10);
+          const delay = -(i * 0.18);
           return (
             <rect
               key={i}
-              x={i * BELIEF_BAR_GAP}
+              x={i * barGap}
               y={cy - h / 2}
-              width={BELIEF_BAR_W}
+              width={barW}
               height={h}
-              rx={BELIEF_BAR_W / 2}
+              rx={barW / 2}
               fill={color}
               stroke="#31393c"
               strokeWidth={1}
               style={{
                 transformBox: 'fill-box',
                 transformOrigin: 'center',
-                animation: `beliefWave 3.8s ease-in-out ${delay}s infinite`,
+                animation: `beliefWave 6.5s ease-in-out ${delay}s infinite`,
               }}
             />
           );
@@ -284,7 +290,7 @@ export function OurBeliefSection() {
 
         {/* Pills block — sits above wave; solid bg masks bars in the center column */}
         <div className="container mx-auto px-8 relative" style={{ zIndex: 1 }}>
-          <div className="flex flex-col items-center gap-2.5 w-full md:max-w-[520px] mx-auto" style={{ backgroundColor: '#f7f3ef', paddingTop: '4px', paddingBottom: '4px' }}>
+          <div className="flex flex-col items-center gap-2.5 w-[72%] md:w-full md:max-w-[520px] mx-auto" style={{ backgroundColor: '#f7f3ef', paddingTop: '4px', paddingBottom: '4px' }}>
             <p className="text-[#6b6560] text-[17px] md:text-[18px] leading-[1.7] w-full mb-1">
               We achieve this through:
             </p>
@@ -317,6 +323,13 @@ export default function DNAWaveSection() {
       {/* Founder section */}
       <div>
 
+        {/* Headline — above the photo/bio row */}
+        <div className="px-8 md:px-14 lg:px-20 pt-2 pb-8 md:pb-10 text-center">
+          <h2 className="text-[#1a1a1a] text-[28px] md:text-[40px] font-light leading-[1.2] tracking-[-0.02em] max-w-[640px] mx-auto">
+            Built on a career of making complex ideas <span className="font-serif italic">clear and compelling.</span>
+          </h2>
+        </div>
+
         {/* Row 1: Photo + Bio text */}
         <div className="flex flex-col md:flex-row items-stretch bg-white overflow-hidden rounded-[24px]">
 
@@ -336,7 +349,7 @@ export default function DNAWaveSection() {
             <div className="flex flex-col max-w-[560px]">
 
               {/* Label */}
-              <div className="mb-3 flex flex-col gap-1">
+              <div className="mb-5 flex flex-col gap-1">
                 <span className="text-[#6b6560] text-[10px] font-semibold tracking-[0.25em] uppercase">Founder</span>
                 <div className="flex items-center gap-2">
                   <span className="text-[#1a1a1a] text-[18px] font-light tracking-[-0.01em] font-serif italic">Jessica Flint</span>
@@ -353,11 +366,6 @@ export default function DNAWaveSection() {
                   </a>
                 </div>
               </div>
-
-              {/* Headline */}
-              <h2 className="text-[#1a1a1a] text-[28px] md:text-[34px] font-light leading-[1.2] tracking-[-0.02em] mb-6">
-                Built on a career of making complex ideas <span className="font-serif italic">clear and compelling.</span>
-              </h2>
 
               {/* Story paragraphs */}
               <p className="text-[#6b6560] text-[17px] md:text-[18px] leading-[1.7] mb-4">

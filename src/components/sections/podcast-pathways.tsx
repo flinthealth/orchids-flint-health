@@ -75,22 +75,22 @@ export default function PodcastPathways() {
         <div className="md:hidden h-px w-full" style={{ backgroundColor: 'rgba(49,57,60,0.1)' }} />
 
         {/* Public — right half */}
-        <div className="flex-1 px-8 md:px-16 py-12 flex flex-col" style={{ backgroundColor: '#eaf0f8' }}>
+        <div className="flex-1 px-8 md:px-16 py-12 flex flex-col" style={{ backgroundColor: '#31393c' }}>
           <span
             className="inline-block self-start text-[11px] font-semibold tracking-[0.2em] uppercase px-4 py-1.5 rounded-full mb-6"
-            style={{ backgroundColor: '#6290c9', color: '#ffffff' }}
+            style={{ backgroundColor: 'rgba(255,255,255,0.15)', color: '#ffffff' }}
           >
             Public
           </span>
-          <h3 className="text-[#1a1a1a] text-[28px] md:text-[34px] font-light leading-[1.15] tracking-[-0.02em] mb-4">
+          <h3 className="text-[#ffffff] text-[28px] md:text-[34px] font-light leading-[1.15] tracking-[-0.02em] mb-4">
             For your <span className="tracking-wide">AUDIENCE</span>
           </h3>
-          <p className="text-[#6b6560] text-[15px] leading-[1.7] mb-8 max-w-[400px]">
+          <p className="text-[#ffffff]/70 text-[15px] leading-[1.7] mb-8 max-w-[400px]">
             Build trust with patients, providers, and caregivers through narrative media that educates, empowers, and drives meaningful action.
           </p>
           <div className="flex flex-wrap gap-2 mt-auto">
             {['Audio', 'Video', 'Audio + Video'].map(f => (
-              <span key={f} className="text-[12px] font-semibold tracking-[0.05em] px-3 py-1.5 rounded-full" style={{ backgroundColor: 'rgba(98,144,201,0.15)', color: '#6290c9' }}>{f}</span>
+              <span key={f} className="text-[12px] font-semibold tracking-[0.05em] px-3 py-1.5 rounded-full" style={{ backgroundColor: 'rgba(255,255,255,0.12)', color: '#ffffff' }}>{f}</span>
             ))}
           </div>
         </div>
