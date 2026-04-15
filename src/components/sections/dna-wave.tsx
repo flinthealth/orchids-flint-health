@@ -212,60 +212,70 @@ function BeliefSoundWave() {
   const isDesktop = containerW >= 768;
   const barW   = isDesktop ? BELIEF_BAR_W_DESK  : BELIEF_BAR_W;
   const barGap = isDesktop ? BELIEF_BAR_GAP_DESK : BELIEF_BAR_GAP;
-  const numBars = Math.ceil(containerW / barGap) + 2;
-  const totalW  = numBars * barGap + barW;
-  const svgH    = 160;
-  const cy      = svgH / 2;
+
+  // Double the bars so we can loop seamlessly — one full tile = tileW
+  const barsPerTile = Math.ceil(containerW / barGap) + 4;
+  const tileW       = barsPerTile * barGap;
+  const numBars     = barsPerTile * 2; // two tiles side by side
+  const totalW      = numBars * barGap + barW;
+  const svgH        = 220;
+  const cy          = svgH / 2;
 
   return (
     <div ref={waveRef} className="w-full overflow-hidden pointer-events-none" style={{ height: svgH }} aria-hidden="true">
       <style>{`
         @keyframes beliefWave {
-          0%   { transform: scaleY(0.12); }
-          20%  { transform: scaleY(0.85); }
-          40%  { transform: scaleY(0.18); }
-          60%  { transform: scaleY(1);    }
-          80%  { transform: scaleY(0.30); }
-          100% { transform: scaleY(0.12); }
+          0%   { transform: scaleY(0.2);  }
+          25%  { transform: scaleY(1.25); }
+          50%  { transform: scaleY(0.28); }
+          75%  { transform: scaleY(1.1);  }
+          100% { transform: scaleY(0.2);  }
+        }
+        @keyframes beliefScroll {
+          0%   { transform: translateX(-${tileW}px); }
+          100% { transform: translateX(0px); }
         }
       `}</style>
-      <svg
-        width={totalW}
-        height={svgH}
-        viewBox={`0 0 ${totalW} ${svgH}`}
-        style={{ display: 'block' }}
-      >
-        {Array.from({ length: numBars }, (_, i) => {
-          const h     = BELIEF_BAR_HEIGHTS[i % BELIEF_BAR_HEIGHTS.length];
-          const color = BELIEF_BAR_COLORS[i % BELIEF_BAR_COLORS.length];
-          const delay = -(i * 0.18);
-          return (
-            <rect
-              key={i}
-              x={i * barGap}
-              y={cy - h / 2}
-              width={barW}
-              height={h}
-              rx={barW / 2}
-              fill={color}
-              stroke="#31393c"
-              strokeWidth={1}
-              style={{
-                transformBox: 'fill-box',
-                transformOrigin: 'center',
-                animation: `beliefWave 6.5s ease-in-out ${delay}s infinite`,
-              }}
-            />
-          );
-        })}
-      </svg>
+      {/* Scrolling wrapper — moves right by one tile width then loops */}
+      <div style={{ animation: 'beliefScroll 50s linear infinite', willChange: 'transform' }}>
+        <svg
+          width={totalW}
+          height={svgH}
+          viewBox={`0 0 ${totalW} ${svgH}`}
+          style={{ display: 'block' }}
+        >
+          {Array.from({ length: numBars }, (_, i) => {
+            const h     = BELIEF_BAR_HEIGHTS[i % BELIEF_BAR_HEIGHTS.length];
+            const color = BELIEF_BAR_COLORS[i % BELIEF_BAR_COLORS.length];
+            const delay = -(i * 0.18);
+            return (
+              <rect
+                key={i}
+                x={i * barGap}
+                y={cy - h / 2}
+                width={barW}
+                height={h}
+                rx={barW / 2}
+                fill={color}
+                stroke="#31393c"
+                strokeWidth={1}
+                style={{
+                  transformBox: 'fill-box',
+                  transformOrigin: 'center',
+                  animation: `beliefWave 7s ease-in-out ${delay}s infinite`,
+                }}
+              />
+            );
+          })}
+        </svg>
+      </div>
     </div>
   );
 }
 
 export function OurBeliefSection() {
   return (
-    <section className="bg-[#f7f3ef] pt-[88px] md:pt-[120px] pb-[80px] overflow-hidden">
+    <section className="bg-white pt-[88px] md:pt-[120px] pb-[32px] overflow-hidden">
 
       {/* Headline + body */}
       <div className="container mx-auto px-8 text-center mb-10">
@@ -290,7 +300,7 @@ export function OurBeliefSection() {
 
         {/* Pills block — sits above wave; solid bg masks bars in the center column */}
         <div className="container mx-auto px-8 relative" style={{ zIndex: 1 }}>
-          <div className="flex flex-col items-center gap-2.5 w-[72%] md:w-full md:max-w-[520px] mx-auto" style={{ backgroundColor: '#f7f3ef', paddingTop: '4px', paddingBottom: '4px' }}>
+          <div className="flex flex-col items-center gap-2.5 w-[72%] md:w-full md:max-w-[520px] mx-auto" style={{ backgroundColor: '#ffffff', paddingTop: '4px', paddingBottom: '4px' }}>
             <p className="text-[#6b6560] text-[17px] md:text-[18px] leading-[1.7] w-full mb-1">
               We achieve this through:
             </p>
@@ -318,7 +328,7 @@ export function OurBeliefSection() {
 
 export default function DNAWaveSection() {
   return (
-    <section id="about" className="bg-white pt-[88px] md:pt-[80px] pb-[80px]">
+    <section id="about" className="bg-white pt-[32px] md:pt-[40px] pb-[80px]">
 
       {/* Founder section */}
       <div>
@@ -369,13 +379,13 @@ export default function DNAWaveSection() {
 
               {/* Story paragraphs */}
               <p className="text-[#6b6560] text-[17px] md:text-[18px] leading-[1.7] mb-4">
-                I began my career in graduate school, teaching science to non-scientists — learning that the gap between knowing something and truly understanding it is almost always a communication problem, not an intelligence problem.
+                I began my career in graduate school, teaching science to non-scientists. I learned early that the gap between knowing something and truly understanding it is almost always a communication problem, not an intelligence problem.
               </p>
               <p className="text-[#6b6560] text-[17px] md:text-[18px] leading-[1.7] mb-4">
-                That insight led me to build a digital health platform that reached 500K downloads and 30M+ platform sessions. The community that grew around it was fueled by podcasts — and proved that narrative media could change how people engage with even the hardest health topics. Flint exists to bring that to healthcare organizations.
+                That insight led me to build a digital health platform that reached 500K downloads and 30M+ platform sessions. The community that grew around it was fueled by podcasts, proving that narrative media could change how people engage with even the hardest health topics. Flint exists to bring that to healthcare organizations.
               </p>
               <p className="text-[#6b6560] text-[17px] md:text-[18px] leading-[1.7] mb-4">
-                Today I lead every client engagement directly — partnering with your team&apos;s clinical expertise and a trusted network of producers and editors to bring each series to life.
+                Today I lead every client engagement directly, partnering with your team&apos;s clinical expertise and a trusted network of producers and editors to bring each series to life.
               </p>
               <p className="text-[#1a1a1a] text-[17px] md:text-[18px] font-medium leading-[1.7]">
                 This approach has delivered measurable impact at scale.
@@ -393,10 +403,10 @@ export default function DNAWaveSection() {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
-                { category: 'Scale',      value: '30M+', label: 'app + website sessions',               accent: '#6290c9', textOnAccent: '#ffffff' },
-                { category: 'Reach',      value: '3M+',  label: 'podcast downloads',                    accent: '#6290c9', textOnAccent: '#ffffff' },
-                { category: 'Adoption',   value: '420+', label: 'providers onboarded to a treatment network', accent: '#6290c9', textOnAccent: '#ffffff' },
-                { category: 'Conversion', value: '257%', label: 'lift in treatment inquiries',           accent: '#6290c9', textOnAccent: '#ffffff' },
+                { category: 'Scale',      value: '30M+', label: 'app + website sessions',               accent: '#e09a18', textOnAccent: '#1a1a1a' },
+                { category: 'Reach',      value: '3M+',  label: 'podcast downloads',                    accent: '#ffde5f', textOnAccent: '#1a1a1a' },
+                { category: 'Adoption',   value: '420+', label: 'providers onboarded to a treatment network', accent: '#fac12c', textOnAccent: '#1a1a1a' },
+                { category: 'Conversion', value: '257%', label: 'lift in treatment inquiries',           accent: '#e09a18', textOnAccent: '#1a1a1a' },
               ].map(({ category, value, label, accent, textOnAccent }) => (
                 <div key={category} className="flex flex-col gap-4 px-6 py-6" style={{ backgroundColor: 'rgba(255,255,255,0.06)' }}>
                   <span

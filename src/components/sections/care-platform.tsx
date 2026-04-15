@@ -173,10 +173,11 @@ const CarePlatformSection = () => {
     if (!el) return;
     const obs = new IntersectionObserver(
       ([entry]) => { if (entry.isIntersecting) setTilesVisible(true); },
-      { threshold: 0.2 }
+      { threshold: 0.05, rootMargin: '0px 0px -5% 0px' }
     );
     obs.observe(el);
-    return () => obs.disconnect();
+    const fallback = setTimeout(() => setTilesVisible(true), 1200);
+    return () => { obs.disconnect(); clearTimeout(fallback); };
   }, []);
 
   useEffect(() => {
@@ -247,21 +248,20 @@ const CarePlatformSection = () => {
 
         {/* Audio pulse bars — animated Flint logo */}
         <style>{`
-          @keyframes flintBreathe {
-            0%, 100% { transform: scaleY(1); }
-            50%       { transform: scaleY(1.2); }
+          @keyframes flintWave {
+            0%   { transform: scaleY(1);    }
+            50%  { transform: scaleY(1.18); }
+            100% { transform: scaleY(1);    }
           }
         `}</style>
-        {/* Fixed 72px container — scaleY animation stays on its own plane, no layout shift */}
         <div
           aria-hidden="true"
           style={{ height: '72px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px', marginBottom: '32px' }}
         >
-          {/* left: shortest, darkest amber | middle: tallest, brightest yellow | right: medium, mid amber */}
           {[
-            { h: 28, bg: '#e09a18', w: 14, delay: '0s' },
-            { h: 56, bg: '#ffde5f', w: 14, delay: '0.35s' },
-            { h: 40, bg: '#fac12c', w: 14, delay: '0.7s' },
+            { h: 28, bg: '#e09a18', w: 14, delay: '0s'    },
+            { h: 56, bg: '#ffde5f', w: 14, delay: '-1s'   },
+            { h: 40, bg: '#fac12c', w: 14, delay: '-2s'   },
           ].map((bar, i) => (
             <div
               key={i}
@@ -272,7 +272,7 @@ const CarePlatformSection = () => {
                 backgroundColor: bar.bg,
                 border: '2.5px solid #31393c',
                 transformOrigin: 'center',
-                animation: `flintBreathe 4.2s ease-in-out infinite ${bar.delay}`,
+                animation: `flintWave 3s cubic-bezier(0.45, 0, 0.55, 1) infinite ${bar.delay}`,
               }}
             />
           ))}
@@ -430,7 +430,7 @@ const CarePlatformSection = () => {
           </div>
 
           {/* CTA */}
-          <div className="flex justify-center py-12 px-6">
+          <div className="flex justify-center pt-12 pb-20 px-6">
             <a
               href="#contact"
               className="bg-[#ff7f29] hover:bg-[#e66e1e] text-[#ffffff] px-8 py-3.5 rounded-md font-semibold text-[16px] transition-colors"

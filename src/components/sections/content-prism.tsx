@@ -10,7 +10,8 @@ const STEPS = [
   {
     number: "01",
     title: "Prepare",
-    bg: "#f7f3ef",
+    summary: "We begin by understanding what job your podcast needs to do — and what success looks like for your organization.",
+    bg: "#ffffff",
     textDark: true,
     content: (dark: boolean) => {
       const body   = dark ? "rgba(49,57,60,0.72)" : "rgba(255,255,255,0.82)";
@@ -42,6 +43,7 @@ const STEPS = [
   {
     number: "02",
     title: "Plan",
+    summary: "Set your strategy. Lock in your format. Align your content with your goals and your people.",
     bg: "#ffde5f",
     textDark: true,
     content: (dark: boolean) => {
@@ -50,9 +52,6 @@ const STEPS = [
       const subTxt = dark ? "rgba(49,57,60,0.6)"  : "rgba(255,255,255,0.65)";
       return (
         <div className="flex flex-col gap-5">
-          <p style={{ color: body }} className="text-[15px] leading-[1.75] font-medium">
-            Set your strategy. Lock in your format. Align your content with your goals and your people.
-          </p>
           <p style={{ color: body }} className="text-[15px] leading-[1.75]">
             Great podcasts are never winged. We guide your team through a strategy lab to build a show that puts your people first — whether that&apos;s patients navigating a diagnosis, providers staying current on clinical evidence, or internal teams driving alignment.
           </p>
@@ -85,17 +84,13 @@ const STEPS = [
   {
     number: "03",
     title: "Produce",
-    bg: "#6b4b3e",
-    textDark: false,
+    summary: "Record. Edit. Design. Score. Our award-winning creative team takes care of every detail.",
+    bg: "#fac12c",
+    textDark: true,
     content: (dark: boolean) => {
-      const body   = dark ? "rgba(49,57,60,0.72)" : "rgba(255,255,255,0.82)";
-      const hdTxt  = dark ? "#31393c"             : "#ffffff";
-      const subTxt = dark ? "rgba(49,57,60,0.6)"  : "rgba(255,255,255,0.65)";
+      const body = dark ? "rgba(49,57,60,0.72)" : "rgba(255,255,255,0.82)";
       return (
         <div className="flex flex-col gap-5">
-          <p style={{ color: body }} className="text-[15px] leading-[1.75] font-medium">
-            Record. Edit. Design. Score.
-          </p>
           <p style={{ color: body }} className="text-[15px] leading-[1.75]">
             From remote interviews to full in-studio production, our award-winning creative team takes care of every detail. We combine technical excellence with editorial oversight to make sure each episode sounds as sharp as the strategy behind it.
           </p>
@@ -109,7 +104,8 @@ const STEPS = [
   {
     number: "04",
     title: "Package & Distribute",
-    bg: "#31393c",
+    summary: "Deliver to your people. Maximize reach. Track performance.",
+    bg: "#a0522d",
     textDark: false,
     content: (dark: boolean) => {
       const body   = dark ? "rgba(49,57,60,0.72)" : "rgba(255,255,255,0.82)";
@@ -117,9 +113,6 @@ const STEPS = [
       const subTxt = dark ? "rgba(49,57,60,0.6)"  : "rgba(255,255,255,0.65)";
       return (
         <div className="flex flex-col gap-5">
-          <p style={{ color: body }} className="text-[15px] leading-[1.75] font-medium">
-            Deliver to your people. Maximize reach. Track performance.
-          </p>
           <p style={{ color: body }} className="text-[15px] leading-[1.75]">
             Your podcast is more than a content asset — it&apos;s a branded experience designed to reach the right people at the right moment. We develop distribution strategies tailored to how your patients, providers, and stakeholders actually consume content.
           </p>
@@ -144,6 +137,7 @@ const STEPS = [
   {
     number: "05",
     title: "Measure & Optimize",
+    summary: "Track performance. Iterate. Compound results over time.",
     bg: "#6290c9",
     textDark: false,
     content: (dark: boolean) => {
@@ -152,9 +146,6 @@ const STEPS = [
       const subTxt = dark ? "rgba(49,57,60,0.6)"  : "rgba(255,255,255,0.65)";
       return (
         <div className="flex flex-col gap-5">
-          <p style={{ color: body }} className="text-[15px] leading-[1.75] font-medium">
-            Track performance. Iterate. Compound results.
-          </p>
           <p style={{ color: body }} className="text-[15px] leading-[1.75]">
             You&apos;ll receive custom reporting tied directly to your OKR&apos;s — from completion rates and engagement depth to brand sentiment and inquiry lift. We review performance together and continuously refine the strategy.
           </p>
@@ -181,96 +172,146 @@ const STEPS = [
 
 export default function ContentPrism() {
   const sectionRef = useRef<HTMLElement>(null);
-  const [visible, setVisible] = useState(false);
+  const [visible,  setVisible]  = useState(false);
+  const [openIdx,  setOpenIdx]  = useState<number | null>(null);
 
   useEffect(() => {
     const el = sectionRef.current;
     if (!el) return;
     const obs = new IntersectionObserver(
       ([entry]) => { if (entry.isIntersecting) setVisible(true); },
-      { threshold: 0.1 }
+      { threshold: 0.05 }
     );
     obs.observe(el);
-    return () => obs.disconnect();
+    const fallback = setTimeout(() => setVisible(true), 1000);
+    return () => { obs.disconnect(); clearTimeout(fallback); };
   }, []);
 
   return (
     <section
       ref={sectionRef}
       id="process"
-      className="bg-[#31393c] relative px-4 md:px-8 pt-[100px] pb-[90px] overflow-hidden"
+      className="relative px-4 md:px-8 pt-[80px] pb-[90px]" style={{ backgroundColor: '#f8f3f0' }}
     >
       {/* ── Header ── */}
-      <div className="text-center max-w-[680px] mx-auto mb-14">
-
-        <h2
-          className="text-[#ffffff] text-[40px] md:text-[54px] font-light leading-[1.1] tracking-[-0.02em] mb-5"
+      <div className="text-center max-w-[680px] mx-auto mb-10">
+        <p
+          className="text-[#6b6560] text-[15px] font-semibold tracking-[0.1em] uppercase block mb-5"
           style={{
-            opacity: visible ? 1 : 0,
-            transform: visible ? "translateY(0)" : "translateY(16px)",
-            transition: "opacity 0.6s ease 0.1s, transform 0.6s ease 0.1s",
+            opacity:    visible ? 1 : 0,
+            transition: "opacity 0.6s ease 0.1s",
           }}
         >
-          Create an <span className="font-serif italic">Impactful Series</span><br />with us
+          Our Process
+        </p>
+        <h2
+          className="text-[#31393c] text-[40px] md:text-[54px] font-light leading-[1.1] tracking-[-0.02em] mb-5"
+          style={{
+            opacity:    visible ? 1 : 0,
+            transform:  visible ? "translateY(0)" : "translateY(16px)",
+            transition: "opacity 0.6s ease 0.15s, transform 0.6s ease 0.15s",
+          }}
+        >
+          A proven system,<br /><span className="font-serif italic">start to finish</span>
         </h2>
         <p
-          className="text-[#ffffff]/70 text-[17px] md:text-[19px] leading-[1.65] max-w-[560px] mx-auto"
+          className="text-[#31393c]/70 text-[17px] md:text-[19px] leading-[1.65] max-w-[560px] mx-auto"
           style={{
-            opacity: visible ? 1 : 0,
-            transform: visible ? "translateY(0)" : "translateY(16px)",
-            transition: "opacity 0.6s ease 0.2s, transform 0.6s ease 0.2s",
+            opacity:    visible ? 1 : 0,
+            transform:  visible ? "translateY(0)" : "translateY(16px)",
+            transition: "opacity 0.6s ease 0.25s, transform 0.6s ease 0.25s",
           }}
         >
-          A repeatable system built for healthcare organizations. From clinical alignment to patient education and everything in between.
+          From clinical alignment to patient education and everything in between.
         </p>
       </div>
 
-      {/* ── Static stacked cards ── */}
-      <div className="max-w-[900px] mx-auto flex flex-col gap-3">
+      {/* ── Accordion cards ── */}
+      <div
+        className="max-w-[900px] mx-auto"
+        style={{
+          borderRadius: '16px',
+          opacity:    visible ? 1 : 0,
+          transform:  visible ? "translateY(0)" : "translateY(20px)",
+          transition: "opacity 0.6s ease 0.3s, transform 0.6s ease 0.3s",
+        }}
+      >
         {STEPS.map((step, i) => {
-          const isDark       = true;
-          const headingColor = "#31393c";
-          const numColor     = "#a0522d";
+          const isOpen      = openIdx === i;
+          const isDark      = step.textDark;
+          const headingColor = isDark ? '#31393c'              : '#ffffff';
+          const numColor     = isDark ? 'rgba(49,57,60,0.25)'  : 'rgba(255,255,255,0.25)';
+          const summaryColor = isDark ? 'rgba(49,57,60,0.6)'   : 'rgba(255,255,255,0.65)';
+          const chevronColor = isDark ? 'rgba(49,57,60,0.45)'  : 'rgba(255,255,255,0.5)';
+          const dividerColor = isDark ? 'rgba(49,57,60,0.1)'   : 'rgba(255,255,255,0.1)';
 
           return (
             <div
               key={i}
-              className="overflow-hidden rounded-3xl"
               style={{
-                backgroundColor: '#ede0d4',
-                boxShadow: '0 4px 0 rgba(160,82,45,0.35)',
+                backgroundColor: step.bg,
+                borderBottom: i < STEPS.length - 1 ? `1px solid ${dividerColor}` : 'none',
+                borderRadius: i === 0 ? '16px 16px 0 0' : i === STEPS.length - 1 ? '0 0 16px 16px' : '0',
               }}
             >
-              {/* Header row */}
-              <div className="flex items-center px-8 py-7 gap-6 min-h-[110px]">
-                <div className="flex items-center gap-6 flex-1 min-w-0">
-                  <span
-                    className="font-light leading-none select-none flex-shrink-0"
-                    style={{
-                      fontSize: 'clamp(72px, 8vw, 108px)',
-                      color: numColor,
-                      letterSpacing: '-0.04em',
-                      lineHeight: 1,
-                    }}
-                  >
-                    {step.number}
-                  </span>
+              {/* Clickable header row */}
+              <button
+                onClick={() => setOpenIdx(isOpen ? null : i)}
+                className="w-full text-left flex items-center gap-5 md:gap-8 px-6 md:px-10 py-6 md:py-7"
+                style={{ cursor: 'pointer' }}
+              >
+                {/* Number */}
+                <span
+                  className="font-light leading-none select-none flex-shrink-0 hidden md:block"
+                  style={{ fontSize: 'clamp(48px, 5vw, 72px)', color: numColor, letterSpacing: '-0.04em' }}
+                >
+                  {step.number}
+                </span>
+                <span
+                  className="font-light leading-none select-none flex-shrink-0 md:hidden"
+                  style={{ fontSize: '36px', color: numColor, letterSpacing: '-0.04em' }}
+                >
+                  {step.number}
+                </span>
+
+                {/* Title + summary */}
+                <div className="flex-1 min-w-0">
                   <h3
-                    className="text-[22px] md:text-[30px] font-light tracking-[-0.01em] leading-[1.15]"
+                    className="text-[18px] md:text-[24px] font-light tracking-[-0.01em] leading-[1.2] mb-1"
                     style={{ color: headingColor }}
                   >
                     {step.title}
                   </h3>
+                  <p className="text-[13px] md:text-[14px] leading-[1.55]" style={{ color: summaryColor }}>
+                    {step.summary}
+                  </p>
                 </div>
-              </div>
 
-              {/* Body — always visible */}
+                {/* Chevron */}
+                <svg
+                  width="20" height="20" viewBox="0 0 20 20" fill="none"
+                  className="flex-shrink-0 transition-transform duration-300"
+                  style={{ transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)', color: chevronColor }}
+                >
+                  <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+
+              {/* Expandable body */}
               <div
-                className="px-8 pb-10"
-                style={{ paddingLeft: 'calc(clamp(72px, 8vw, 108px) + 56px)' }}
+                style={{
+                  maxHeight:  isOpen ? '600px' : '0px',
+                  overflow:   'hidden',
+                  transition: 'max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1)',
+                }}
               >
-                <div className="max-w-[520px]">
-                  {step.content(isDark)}
+                <div
+                  className="px-6 md:px-10 pb-8"
+                  style={{ paddingLeft: 'calc(clamp(48px, 5vw, 72px) + 52px)' }}
+                >
+                  <div className="max-w-[520px]">
+                    {step.content(isDark)}
+                  </div>
                 </div>
               </div>
             </div>

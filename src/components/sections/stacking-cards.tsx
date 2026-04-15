@@ -79,7 +79,7 @@ const cards = [
 ] as const;
 
 const BG         = '#f7f3ef';
-const EDGE_COLOR = '#b0b8bb';
+const EDGE_COLOR = '#6b6560';
 const TEXT       = '#31393c';
 const MUTED      = '#6b6560';
 const ITEM_BG    = 'rgba(19,29,43,0.07)';

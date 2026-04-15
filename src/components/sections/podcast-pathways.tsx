@@ -22,7 +22,7 @@ export default function PodcastPathways() {
   });
 
   return (
-    <section ref={sectionRef} className="bg-white w-full pt-[88px] md:pt-20 pb-20">
+    <section ref={sectionRef} className="bg-white w-full pt-[56px] md:pt-12 pb-0">
 
       {/* ── Header ── */}
       <div className="text-center mb-14 px-4 md:px-8">
@@ -30,13 +30,13 @@ export default function PodcastPathways() {
           className="text-[#6b6560] text-[15px] font-semibold tracking-[0.1em] uppercase block mb-5"
           style={fade(0)}
         >
-          Build Your Show
+          Reach Your People
         </span>
         <h2
           className="text-[#1a1a1a] text-[40px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-4"
           style={fade(0.1)}
         >
-          Start with your <span className="font-serif italic">audience</span>
+          Create an <span className="font-serif italic">Impactful Series</span> with us
         </h2>
         <p
           className="text-[#6b6560] text-[16px] leading-[1.65] max-w-[460px] mx-auto"
@@ -47,7 +47,7 @@ export default function PodcastPathways() {
       </div>
 
       {/* ── Full-bleed split ── */}
-      <div className="flex flex-col md:flex-row mb-14" style={fade(0.2)}>
+      <div className="flex flex-col md:flex-row" style={fade(0.2)}>
 
         {/* Internal — left half */}
         <div className="flex-1 px-8 md:px-16 py-12 flex flex-col" style={{ backgroundColor: '#f5ede6' }}>
@@ -97,14 +97,31 @@ export default function PodcastPathways() {
 
       </div>
 
-      {/* ── CTA ── */}
-      <div className="flex justify-center px-4 md:px-8" style={fade(0.3)}>
-        <a
-          href="#contact"
-          className="inline-flex items-center justify-center bg-[#ff7f29] hover:bg-[#e66e1e] text-[#ffffff] font-semibold text-[15px] px-10 py-4 rounded-[6px] transition-colors duration-200"
+      {/* ── Curved brace connector (} rotated 90°) ── */}
+      <div className="w-full bg-white overflow-hidden" aria-hidden="true" style={fade(0.25)}>
+        <svg
+          viewBox="0 0 1000 100"
+          preserveAspectRatio="none"
+          className="w-full"
+          style={{ height: '100px', display: 'block' }}
         >
-          Request a Proposal
-        </a>
+          {/* Left arm: curves from center of Internal half down to center point */}
+          <path
+            d="M 250,0 C 250,70 500,30 500,100"
+            stroke="#b0a89e"
+            strokeWidth="3"
+            fill="none"
+            strokeLinecap="round"
+          />
+          {/* Right arm: curves from center of Public half down to center point */}
+          <path
+            d="M 750,0 C 750,70 500,30 500,100"
+            stroke="#b0a89e"
+            strokeWidth="3"
+            fill="none"
+            strokeLinecap="round"
+          />
+        </svg>
       </div>
 
     </section>

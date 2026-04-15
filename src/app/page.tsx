@@ -36,9 +36,9 @@ export default function Home() {
         <PodcastShowcase />
         <OurBeliefSection />
         <DNAWaveSection />
-        <MemberStories />
         {/* <AudienceSolutions /> */}
         <PodcastPathways />
+        <ContentPrism />
         {/* <FeaturesGrid /> */}
         <ContactSection />
 

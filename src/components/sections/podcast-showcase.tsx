@@ -4,19 +4,6 @@ import React, { useEffect, useRef, useState } from "react";
 
 const CASE_STUDIES = [
   {
-    title: "In This Body",
-    image: "/podcast-in-this-body.webp",
-    client: "Reasons Eating Disorder Center",
-    tag: "Residential Eating Disorder Treatment",
-    stats: [
-      { value: "12",     label: "episodes" },
-      { value: "45 min", label: "avg. listen time" },
-      { value: "139K+",  label: "downloads in 5 months", fullWidth: true },
-    ],
-    description:
-      "An interview-based series created with Reasons Eating Disorder Center to challenge assumptions around eating disorders and expand representation in care through diverse lived experience perspectives.\n\nHosted by a member of the admissions and marketing team, the series demonstrated how internal voices can be developed into trusted, engaging hosts.",
-  },
-  {
     title: "Equipped to Recover",
     image: "/podcast-equipped-to-recover.webp",
     client: "Equip Health",
@@ -30,6 +17,19 @@ const CASE_STUDIES = [
     description:
       "An interview-based series developed with Equip that combined recovery stories and clinical insight to help patients and families recognize symptoms, feel less alone, and take action.\n\nHosted by Equip's co-founders, the series positioned leadership and clinical staff as trusted voices in recovery.",
   },
+  {
+    title: "In This Body",
+    image: "/podcast-in-this-body.webp",
+    client: "Reasons Eating Disorder Center",
+    tag: "Residential Eating Disorder Treatment",
+    stats: [
+      { value: "12",     label: "episodes" },
+      { value: "139K+",  label: "downloads in 5 months" },
+      { value: "45 min", label: "avg. listen time" },
+    ],
+    description:
+      "An interview-based series created with Reasons Eating Disorder Center to challenge assumptions around eating disorders and expand representation in care through diverse lived experience perspectives.\n\nHosted by a member of the admissions and marketing team, the series demonstrated how internal voices can be developed into trusted, engaging hosts.",
+  },
 ];
 
 const NETWORK = {
@@ -39,8 +39,8 @@ const NETWORK = {
   tag: "Advocacy Podcast Network",
   stats: [
     { value: "145",        label: "episodes produced" },
-    { value: "4",          label: "show formats" },
     { value: "500K+",      label: "annual downloads" },
+    { value: "4",          label: "show formats" },
     { value: "+600%",      label: "download growth YoY", up: true },
   ],
   description:
@@ -117,7 +117,7 @@ function PodcastCard({
   description: string; stats: Stat[]; fadeStyle: React.CSSProperties;
 }) {
   return (
-    <div className="bg-white rounded-3xl overflow-hidden flex flex-col" style={fadeStyle}>
+    <div className="bg-white overflow-hidden flex flex-col" style={fadeStyle}>
 
       {/* ── Mobile: stacked layout ── */}
       <div className="md:hidden flex flex-col">
@@ -221,6 +221,50 @@ export default function PodcastShowcase() {
           <PodcastCard key={pod.title} {...pod} fadeStyle={fade(0.3 + i * 0.12)} />
         ))}
         <PodcastCard {...NETWORK} fadeStyle={fade(0.55)} />
+
+        {/* ── Branding Services divider ── */}
+        <div className="flex items-center gap-4 pt-4" style={fade(0.65)}>
+          <div className="flex-1 h-px" style={{ backgroundColor: 'rgba(255,255,255,0.12)' }} />
+          <span className="text-[#ffffff]/50 text-[11px] font-semibold tracking-[0.22em] uppercase flex-shrink-0">
+            Branding & Marketing Services
+          </span>
+          <div className="flex-1 h-px" style={{ backgroundColor: 'rgba(255,255,255,0.12)' }} />
+        </div>
+
+        {/* ── Very Health testimonial ── */}
+        <div
+          className="bg-white overflow-hidden"
+          style={fade(0.72)}
+        >
+          <div className="flex flex-col md:flex-row items-stretch">
+            {/* Image */}
+            <div className="w-full md:w-[280px] flex-shrink-0 bg-white flex items-start justify-center overflow-hidden">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/testimonial-erin-knopf.jpg"
+                alt="Dr. Erin Knopf"
+                className="w-full object-contain p-4 md:pt-10 md:px-8 md:pb-0"
+              />
+            </div>
+            {/* Quote */}
+            <div className="flex-1 p-8 md:p-12 flex flex-col justify-center">
+              <blockquote className="text-[16px] md:text-[18px] leading-[1.65] text-[#31393c] font-light mb-6">
+                &ldquo;Thank you for the refresh in our brand and marketing strategy! You absolutely brought our voice and vision to the next phase and I want to commend your incredible talent at identifying the tone, message, and personality. Thank you for all of your efforts, patience and direction you provided us.&rdquo;
+              </blockquote>
+              <div className="flex flex-col gap-3">
+                <p className="font-semibold text-[#31393c]">Dr. Erin Knopf</p>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/testimonial-very-logo.png"
+                  alt="VERY Health"
+                  className="object-contain object-left"
+                  style={{ width: 110, height: 36 }}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   );

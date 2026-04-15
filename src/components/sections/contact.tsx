@@ -22,7 +22,7 @@ export default function ContactSection() {
 
           {/* Left — copy */}
           <div>
-            <span className="inline-block bg-[#ffffff] text-[#31393c] text-[11px] font-semibold tracking-[0.2em] uppercase px-4 py-1.5 rounded-full mb-6">
+            <span className="inline-block text-[11px] font-semibold tracking-[0.2em] uppercase px-4 py-1.5 rounded-full mb-6" style={{ backgroundColor: '#ffde5f', color: '#1a1a1a' }}>
               Contact
             </span>
             <h2 className="text-[#ffffff] text-[38px] md:text-[48px] font-light leading-[1.1] tracking-[-0.02em] mb-6">
