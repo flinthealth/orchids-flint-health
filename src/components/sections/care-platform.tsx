@@ -245,6 +245,40 @@ const CarePlatformSection = () => {
 
       {/* ── Header — on warm background ── */}
       <div className="text-center max-w-[800px] mx-auto pt-[88px] md:pt-[90px] pb-14 px-8">
+
+        {/* Audio pulse bars — animated Flint logo */}
+        <style>{`
+          @keyframes flintBreathe {
+            0%, 100% { transform: scaleY(1); }
+            50%       { transform: scaleY(1.2); }
+          }
+        `}</style>
+        {/* Fixed 72px container — scaleY animation stays on its own plane, no layout shift */}
+        <div
+          aria-hidden="true"
+          style={{ height: '72px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px', marginBottom: '32px' }}
+        >
+          {/* left: shortest, darkest amber | middle: tallest, brightest yellow | right: medium, mid yellow */}
+          {[
+            { h: 28, bg: '#e09a18', w: 14, delay: '0s' },
+            { h: 56, bg: '#ffde5f', w: 14, delay: '0.35s' },
+            { h: 40, bg: '#fac12c', w: 14, delay: '0.7s' },
+          ].map((bar, i) => (
+            <div
+              key={i}
+              style={{
+                width: `${bar.w}px`,
+                height: `${bar.h}px`,
+                borderRadius: '999px',
+                backgroundColor: bar.bg,
+                border: '2.5px solid #31393c',
+                transformOrigin: 'center',
+                animation: `flintBreathe 4.2s ease-in-out infinite ${bar.delay}`,
+              }}
+            />
+          ))}
+        </div>
+
         <h2 className="text-[#1a1a1a] text-[40px] md:text-[56px] leading-[1.1] mb-8 font-sans font-light">
           <span className="md:hidden">Share vital information<br />that ignites<br /></span>
           <span className="hidden md:inline">Share vital information<br />that ignites </span>
@@ -255,6 +289,7 @@ const CarePlatformSection = () => {
             {ROTATING_WORDS[wordIndex]}.
           </em>
         </h2>
+
         <p className="text-[#6b6560] text-[16px] md:text-[17px] leading-[1.55] max-w-[560px] mx-auto">
           Flint translates clinical science and real human experience into premium podcasts your audience actually finishes.
         </p>

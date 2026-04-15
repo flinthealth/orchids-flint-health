@@ -17,28 +17,15 @@ const FILTERS = [
 type FilterKey = typeof FILTERS[number]['key'];
 
 const CARD_ICONS: Record<number, string> = {
-  0: '/icon-patient-journey.png',
-  1: '/icon-provider-education-v3.png',
-  2: '/icon-patient-education.png',
-  3: '/icon-team-v4.png',
+  0: '/icon-provider-education-v4.png',
+  1: '/icon-patient-education-v2.png',
+  2: '/icon-patient-journey-v2.png',
+  3: '/icon-team-v5.png',
 };
 
 const cards = [
   {
     id: 0,
-    filters: ['patient', 'clinical'] as FilterKey[],
-    title: 'Patient Immersions & Journey Maps',
-    headline: "Don't just report on the patient experience, bring it to life.",
-    body: "We transform static research and white papers into immersive narrative audio series that your R&D, Medical Affairs, and clinical teams actually finish. When your people truly hear the patient story — not just skim a summary — it changes how they think, decide, and build.",
-    applications: [
-      'Authentic patient voice recordings',
-      'Deep-dive qualitative interview series',
-      'Pain point mapping through lived experience',
-      'Care gap identification and opportunity analysis',
-    ],
-  },
-  {
-    id: 1,
     filters: ['clinical', 'authority', 'operational'] as FilterKey[],
     title: 'HCP Training & Clinical Education',
     headline: 'Your protocols are only as powerful as the providers who adopt them.',
@@ -51,7 +38,7 @@ const cards = [
     ],
   },
   {
-    id: 2,
+    id: 1,
     filters: ['patient', 'clinical', 'authority'] as FilterKey[],
     title: 'Patient Education & Engagement',
     headline: 'When patients truly understand, everything changes.',
@@ -61,6 +48,19 @@ const cards = [
       'Post-diagnosis support and shared decision-making guides',
       'Caregiver education and empowerment content',
       'Disease awareness and destigmatization series',
+    ],
+  },
+  {
+    id: 2,
+    filters: ['patient', 'clinical'] as FilterKey[],
+    title: 'Patient Immersions & Journey Maps',
+    headline: "Don't just report on the patient experience, bring it to life.",
+    body: "We transform static research and white papers into immersive narrative audio series that your R&D, Medical Affairs, and clinical teams actually finish. When your people truly hear the patient story — not just skim a summary — it changes how they think, decide, and build.",
+    applications: [
+      'Authentic patient voice recordings',
+      'Deep-dive qualitative interview series',
+      'Pain point mapping through lived experience',
+      'Care gap identification and opportunity analysis',
     ],
   },
   {

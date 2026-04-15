@@ -29,16 +29,16 @@ export default function Home() {
         <HeroSection />
         {/* <ProblemSection /> */}
         <CarePlatformSection />
-        <WhoWeBringTogether />
         {/* <ROIAttentionSection /> */}
-        <OurBeliefSection />
         <PodcastExplainer />
+        <WhoWeBringTogether />
         <StackingCards />
         <PodcastShowcase />
-        {/* <AudienceSolutions /> */}
-        <PodcastPathways />
+        <OurBeliefSection />
         <DNAWaveSection />
         <MemberStories />
+        {/* <AudienceSolutions /> */}
+        <PodcastPathways />
         {/* <FeaturesGrid /> */}
         <ContactSection />
 

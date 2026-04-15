@@ -63,12 +63,12 @@ function StatCell({
     isFullWidth ? 'col-span-2 md:col-span-1' : '',
     // mobile left border — right column only
     !isFullWidth && mobileCol % 2 !== 0
-      ? 'border-l border-[#31393c]/15'
+      ? 'border-l border-[#1a1a1a]/15'
       : '',
     // mobile top border — second row
-    mobileBottomRow ? 'border-t border-[#31393c]/15' : '',
+    mobileBottomRow ? 'border-t border-[#1a1a1a]/15' : '',
     // desktop: left border on every stat except first; remove top border
-    arrayIdx > 0 ? 'md:border-l md:border-[#31393c]/15' : '',
+    arrayIdx > 0 ? 'md:border-l md:border-[#1a1a1a]/15' : '',
     'md:border-t-0',
   ].filter(Boolean).join(' ');
 
@@ -193,31 +193,29 @@ export default function PodcastShowcase() {
     <section
       id="our-work"
       ref={sectionRef}
-      className="bg-[#f7f3ef] pt-[88px] md:pt-[80px] pb-[100px] px-4 md:px-8 overflow-hidden"
+      className="bg-[#31393c] pt-[88px] md:pt-[80px] pb-[100px] px-4 md:px-8 overflow-hidden"
     >
       {/* Header */}
       <div className="text-center max-w-[620px] mx-auto mb-16">
         <div className="mb-5">
-          <span className="text-[#6b6560] text-[15px] font-semibold tracking-[0.1em] uppercase">
+          <span className="text-[#ffffff]/60 text-[15px] font-semibold tracking-[0.1em] uppercase">
             In Practice
           </span>
         </div>
         <h2
-          className="text-[#31393c] text-[40px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-5"
+          className="text-[#ffffff] text-[40px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-5"
           style={fade(0)}
         >
           Real results for <span className="font-serif italic">real healthcare brands</span>
         </h2>
-        <p className="text-[#6b6560] text-[15px] md:text-[16px] leading-[1.65]" style={fade(0.2)}>
+        <p className="text-[#ffffff]/70 text-[15px] md:text-[16px] leading-[1.65]" style={fade(0.2)}>
           Proof that when the right message meets the right audience, something measurable happens.
         </p>
       </div>
 
       {/* Cards */}
       <div className="flex flex-col gap-10 max-w-[1060px] mx-auto">
-        <p className="text-[#31393c]/45 text-[13px] tracking-[0.05em] text-center mb-2" style={fade(0.25)}>
-          A sample of our work across behavioral health, virtual care, and patient advocacy.
-        </p>
+
         {CASE_STUDIES.map((pod, i) => (
           <PodcastCard key={pod.title} {...pod} fadeStyle={fade(0.3 + i * 0.12)} />
         ))}
