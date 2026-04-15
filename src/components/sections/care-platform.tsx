@@ -231,13 +231,12 @@ const CarePlatformSection = () => {
   ];
 
   const COLS = 8;
-  // Desktop/tablet: vertical stacked list, each label spans all 8 columns
-  const LABEL_CELLS: { label: string; gridCol: string; gridRow: number; order: number }[] = [
-    { label: 'engagement', gridCol: `1/${COLS + 1}`, gridRow: 1, order: 0 },
-    { label: 'adherence',  gridCol: `1/${COLS + 1}`, gridRow: 2, order: 1 },
-    { label: 'retention',  gridCol: `1/${COLS + 1}`, gridRow: 3, order: 2 },
-    { label: 'referrals',  gridCol: `1/${COLS + 1}`, gridRow: 4, order: 3 },
-    { label: 'advocacy',   gridCol: `1/${COLS + 1}`, gridRow: 5, order: 4 },
+  const LABEL_CELLS: { label: string; gridCol: string; gridRow: number; order: number; pillBg: string; pillText: string }[] = [
+    { label: 'engagement', gridCol: `1/${COLS + 1}`, gridRow: 1, order: 0, pillBg: '#f2f265', pillText: '#1a1a1a' },
+    { label: 'adherence',  gridCol: `1/${COLS + 1}`, gridRow: 2, order: 1, pillBg: '#ffde5f', pillText: '#1a1a1a' },
+    { label: 'retention',  gridCol: `1/${COLS + 1}`, gridRow: 3, order: 2, pillBg: '#fac12c', pillText: '#1a1a1a' },
+    { label: 'referrals',  gridCol: `1/${COLS + 1}`, gridRow: 4, order: 3, pillBg: '#31393c', pillText: '#ffffff' },
+    { label: 'advocacy',   gridCol: `1/${COLS + 1}`, gridRow: 5, order: 4, pillBg: '#6290c9', pillText: '#ffffff' },
   ];
 
   return (
@@ -356,11 +355,11 @@ const CarePlatformSection = () => {
             const MOB_COLS = 4;
             const MOB_ROWS = 5;
             const MOB_LABELS: { label: string; gridRow: number; order: number }[] = [
-              { label: 'engagement', gridRow: 1, order: 0 },
-              { label: 'adherence',  gridRow: 2, order: 1 },
-              { label: 'retention',  gridRow: 3, order: 2 },
-              { label: 'referrals',  gridRow: 4, order: 3 },
-              { label: 'advocacy',   gridRow: 5, order: 4 },
+              { label: 'engagement', gridRow: 1, order: 0, pillBg: '#f2f265', pillText: '#1a1a1a' },
+              { label: 'adherence',  gridRow: 2, order: 1, pillBg: '#ffde5f', pillText: '#1a1a1a' },
+              { label: 'retention',  gridRow: 3, order: 2, pillBg: '#fac12c', pillText: '#1a1a1a' },
+              { label: 'referrals',  gridRow: 4, order: 3, pillBg: '#31393c', pillText: '#ffffff' },
+              { label: 'advocacy',   gridRow: 5, order: 4, pillBg: '#6290c9', pillText: '#ffffff' },
             ];
             return (
               // Outer div controls visibility — no inline display so md:hidden works correctly

@@ -4,40 +4,42 @@ import React, { useState, useRef, useEffect } from 'react';
 // ─── Animated completion ring for 80% card ────────────────────────────────────
 const VB = 200; // viewBox coordinate space
 const VB_CX = VB / 2;
-const VB_R = 66;
-const VB_STROKE = 11;
+const VB_R = 56;
+const VB_STROKE = 10;
 const VB_C = 2 * Math.PI * VB_R;
 
 function CompletionRing() {
   const ref = useRef<HTMLDivElement>(null);
-  const [animate, setAnimate] = useState(false);
   const [pct, setPct] = useState(0);
   const rafRef = useRef<number | null>(null);
+  const firedRef = useRef(false);
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+
+    const run = () => {
+      if (firedRef.current) return;
+      firedRef.current = true;
+      const start = performance.now();
+      const duration = 1400;
+      const tick = (now: number) => {
+        const t = Math.min(1, (now - start) / duration);
+        const eased = 1 - Math.pow(1 - t, 3);
+        setPct(Math.round(eased * 80));
+        if (t < 1) rafRef.current = requestAnimationFrame(tick);
+      };
+      rafRef.current = requestAnimationFrame(tick);
+    };
+
     const obs = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setAnimate(true); obs.disconnect(); } },
-      { threshold: 0.3 }
+      ([entry]) => { if (entry.isIntersecting) { run(); obs.disconnect(); } },
+      { threshold: 0.05, rootMargin: '0px 0px -10% 0px' }
     );
     obs.observe(el);
-    return () => obs.disconnect();
+    const timer = setTimeout(run, 800);
+    return () => { obs.disconnect(); clearTimeout(timer); if (rafRef.current) cancelAnimationFrame(rafRef.current); };
   }, []);
-
-  useEffect(() => {
-    if (!animate) return;
-    const start = performance.now();
-    const duration = 1400;
-    const tick = (now: number) => {
-      const t = Math.min(1, (now - start) / duration);
-      const eased = 1 - Math.pow(1 - t, 3);
-      setPct(Math.round(eased * 80));
-      if (t < 1) rafRef.current = requestAnimationFrame(tick);
-    };
-    rafRef.current = requestAnimationFrame(tick);
-    return () => { if (rafRef.current) cancelAnimationFrame(rafRef.current); };
-  }, [animate]);
 
   const offset = VB_C - (pct / 100) * VB_C;
 
@@ -54,7 +56,7 @@ function CompletionRing() {
             strokeLinecap="round" strokeDasharray={VB_C} strokeDashoffset={offset} />
         </svg>
         <div className="absolute inset-0 flex flex-col items-center justify-center">
-          <span className="text-[#31393c] font-light leading-none tracking-[-0.03em]" style={{ fontSize: 'clamp(32px, 10cqw, 58px)' }}>{pct}%</span>
+          <span className="text-[#31393c] font-light leading-none tracking-[-0.03em]" style={{ fontSize: 'clamp(36px, 12cqw, 66px)' }}>{pct}%</span>
           <span className="text-[#31393c]/50 font-semibold tracking-[0.1em] uppercase mt-1" style={{ fontSize: 'clamp(8px, 2cqw, 11px)' }}>complete</span>
         </div>
       </div>
@@ -622,14 +624,12 @@ export default function PodcastExplainer() {
             {/* B — 4.7x Greater Recall */}
             <div
               className="rounded-3xl overflow-hidden relative flex flex-col justify-end p-7"
-              style={{ gridColumn: '5 / 13', gridRow: '1 / 5', backgroundColor: '#ffde5f' }}
+              style={{ gridColumn: '5 / 13', gridRow: '1 / 5', backgroundColor: '#4a5558' }}
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/stats-greater-recall.webp" alt="" className="absolute inset-0 w-full h-full object-cover object-center opacity-10" />
               <div className="relative z-10">
-                <p className="text-[#31393c] text-[80px] font-light leading-none tracking-[-0.04em] mb-1">6–7×</p>
-                <p className="text-[#31393c] text-[17px] font-medium leading-snug mb-1">Greater Recall<a href="https://link.springer.com/article/10.3758/BF03332778" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">4</a></p>
-                <p className="text-[#31393c]/60 text-[14px] leading-[1.6] max-w-[380px]">Information woven into a narrative is recalled six to seven times more than information studied through repetition alone — meaning your message doesn't just land, it sticks.</p>
+                <p className="text-[#ffffff] text-[80px] font-light leading-none tracking-[-0.04em] mb-1">6–7×</p>
+                <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-1">Greater Recall<a href="https://link.springer.com/article/10.3758/BF03332778" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">4</a></p>
+                <p className="text-[#ffffff]/60 text-[14px] leading-[1.6] max-w-[380px]">Information woven into a narrative is recalled six to seven times more than information studied through repetition alone — meaning your message doesn't just land, it sticks.</p>
               </div>
             </div>
 
@@ -711,13 +711,11 @@ export default function PodcastExplainer() {
             </div>
 
             {/* Mobile B — 4.7× Greater Recall */}
-            <div className="rounded-3xl overflow-hidden relative p-7 flex flex-col justify-end min-h-[220px]" style={{ backgroundColor: '#ffde5f' }}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/stats-greater-recall.webp" alt="" className="absolute inset-0 w-full h-full object-cover object-center opacity-10" />
+            <div className="rounded-3xl overflow-hidden relative p-7 flex flex-col justify-end min-h-[220px]" style={{ backgroundColor: '#4a5558' }}>
               <div className="relative z-10">
-                <p className="text-[#31393c] text-[60px] font-light leading-none tracking-[-0.03em] mb-1">6–7×</p>
-                <p className="text-[#31393c] text-[17px] font-medium leading-snug mb-1">Greater Recall</p>
-                <p className="text-[#31393c]/60 text-[14px] leading-[1.6]">Information woven into a narrative is recalled six to seven times more than information studied through repetition alone — meaning your message doesn't just land, it sticks.</p>
+                <p className="text-[#ffffff] text-[60px] font-light leading-none tracking-[-0.03em] mb-1">6–7×</p>
+                <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-1">Greater Recall</p>
+                <p className="text-[#ffffff]/60 text-[14px] leading-[1.6]">Information woven into a narrative is recalled six to seven times more than information studied through repetition alone — meaning your message doesn't just land, it sticks.</p>
               </div>
             </div>
 
