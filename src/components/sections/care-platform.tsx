@@ -355,11 +355,11 @@ const CarePlatformSection = () => {
             const MOB_COLS = 4;
             const MOB_ROWS = 5;
             const MOB_LABELS: { label: string; gridRow: number; order: number }[] = [
-              { label: 'engagement', gridRow: 1, order: 0, pillBg: '#f2f265', pillText: '#1a1a1a' },
-              { label: 'adherence',  gridRow: 2, order: 1, pillBg: '#ffde5f', pillText: '#1a1a1a' },
-              { label: 'retention',  gridRow: 3, order: 2, pillBg: '#fac12c', pillText: '#1a1a1a' },
-              { label: 'referrals',  gridRow: 4, order: 3, pillBg: '#31393c', pillText: '#ffffff' },
-              { label: 'advocacy',   gridRow: 5, order: 4, pillBg: '#6290c9', pillText: '#ffffff' },
+              { label: 'engagement', gridRow: 1, order: 0 },
+              { label: 'adherence',  gridRow: 2, order: 1 },
+              { label: 'retention',  gridRow: 3, order: 2 },
+              { label: 'referrals',  gridRow: 4, order: 3 },
+              { label: 'advocacy',   gridRow: 5, order: 4 },
             ];
             return (
               // Outer div controls visibility — no inline display so md:hidden works correctly
