@@ -300,7 +300,7 @@ export function OurBeliefSection() {
 
         {/* Pills block — sits above wave; solid bg masks bars in the center column */}
         <div className="container mx-auto px-8 relative" style={{ zIndex: 1 }}>
-          <div className="flex flex-col items-center gap-2.5 w-[72%] md:w-full md:max-w-[520px] mx-auto" style={{ backgroundColor: '#ffffff', paddingTop: '4px', paddingBottom: '4px' }}>
+          <div className="flex flex-col items-center gap-2.5 w-[88%] md:w-full md:max-w-[520px] mx-auto" style={{ backgroundColor: '#ffffff', paddingTop: '4px', paddingBottom: '4px' }}>
             <p className="text-[#6b6560] text-[17px] md:text-[18px] leading-[1.7] w-full mb-1">
               We achieve this through:
             </p>
@@ -312,8 +312,8 @@ export function OurBeliefSection() {
             ].map(({ adj, noun }) => (
               <div
                 key={noun}
-                className="w-full rounded-xl px-7 py-3.5 text-[22px] md:text-[34px] font-light leading-[1.15] tracking-[-0.02em]"
-                style={{ backgroundColor: '#e8e2dc', color: '#1a1a1a', position: 'relative', zIndex: 1, border: '1.5px solid #b8b0a8' }}
+                className="w-full rounded-xl px-5 md:px-7 py-3.5 text-[18px] md:text-[34px] font-light leading-[1.15] tracking-[-0.02em] whitespace-nowrap"
+                style={{ backgroundColor: '#e8e2dc', color: '#1a1a1a', position: 'relative', zIndex: 1 }}
               >
                 {adj} <span className="font-serif italic">{noun}</span>
               </div>

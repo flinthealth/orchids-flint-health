@@ -11,11 +11,12 @@ const STEPS = [
     number: "01",
     title: "Prepare",
     summary: "We begin by understanding what job your podcast needs to do — and what success looks like for your organization.",
-    bg: "#ffffff",
-    textDark: true,
-    content: (dark: boolean) => {
-      const body   = dark ? "rgba(49,57,60,0.72)" : "rgba(255,255,255,0.82)";
-      const bullet = dark ? "rgba(49,57,60,0.5)"  : "rgba(255,255,255,0.6)";
+    bg: "#31393c",
+    textDark: false,
+    numColor: "rgba(255,255,255,0.18)",
+    content: (_dark: boolean) => {
+      const body   = "rgba(255,255,255,0.75)";
+      const bullet = "#ffde5f";
       return (
         <div className="flex flex-col gap-5">
           <p style={{ color: body }} className="text-[15px] leading-[1.75]">
@@ -44,12 +45,13 @@ const STEPS = [
     number: "02",
     title: "Plan",
     summary: "Set your strategy. Lock in your format. Align your content with your goals and your people.",
-    bg: "#ffde5f",
-    textDark: true,
-    content: (dark: boolean) => {
-      const body   = dark ? "rgba(49,57,60,0.72)" : "rgba(255,255,255,0.82)";
-      const hdTxt  = dark ? "#31393c"             : "#ffffff";
-      const subTxt = dark ? "rgba(49,57,60,0.6)"  : "rgba(255,255,255,0.65)";
+    bg: "#31393c",
+    textDark: false,
+    numColor: "rgba(255,255,255,0.18)",
+    content: (_dark: boolean) => {
+      const body   = "rgba(255,255,255,0.75)";
+      const hdTxt  = "#fac12c";
+      const subTxt = "rgba(255,255,255,0.55)";
       return (
         <div className="flex flex-col gap-5">
           <p style={{ color: body }} className="text-[15px] leading-[1.75]">
@@ -68,7 +70,7 @@ const STEPS = [
               { format: "Narrative",      desc: "for layered, immersive stories" },
               { format: "Panel",          desc: "for inclusive, multi-voice dialogue" },
             ].map((f, i) => (
-              <div key={i} className="rounded-xl px-4 py-3" style={chip(dark)}>
+              <div key={i} className="rounded-xl px-4 py-3" style={{ background: "rgba(250,193,44,0.12)" }}>
                 <span className="text-[13px] font-semibold" style={{ color: hdTxt }}>{f.format}</span>
                 <span className="text-[13px]" style={{ color: subTxt }}> {f.desc}</span>
               </div>
@@ -85,10 +87,11 @@ const STEPS = [
     number: "03",
     title: "Produce",
     summary: "Record. Edit. Design. Score. Our award-winning creative team takes care of every detail.",
-    bg: "#fac12c",
-    textDark: true,
-    content: (dark: boolean) => {
-      const body = dark ? "rgba(49,57,60,0.72)" : "rgba(255,255,255,0.82)";
+    bg: "#31393c",
+    textDark: false,
+    numColor: "rgba(255,255,255,0.18)",
+    content: (_dark: boolean) => {
+      const body = "rgba(255,255,255,0.75)";
       return (
         <div className="flex flex-col gap-5">
           <p style={{ color: body }} className="text-[15px] leading-[1.75]">
@@ -105,12 +108,13 @@ const STEPS = [
     number: "04",
     title: "Package & Distribute",
     summary: "Deliver to your people. Maximize reach. Track performance.",
-    bg: "#a0522d",
+    bg: "#31393c",
     textDark: false,
-    content: (dark: boolean) => {
-      const body   = dark ? "rgba(49,57,60,0.72)" : "rgba(255,255,255,0.82)";
-      const hdTxt  = dark ? "#31393c"             : "#ffffff";
-      const subTxt = dark ? "rgba(49,57,60,0.6)"  : "rgba(255,255,255,0.65)";
+    numColor: "rgba(255,255,255,0.18)",
+    content: (_dark: boolean) => {
+      const body   = "rgba(255,255,255,0.75)";
+      const hdTxt  = "#6290c9";
+      const subTxt = "rgba(255,255,255,0.55)";
       return (
         <div className="flex flex-col gap-5">
           <p style={{ color: body }} className="text-[15px] leading-[1.75]">
@@ -121,7 +125,7 @@ const STEPS = [
               { label: "Audio-only",  desc: "Optimized for gated portals, internal comms, and on-demand listening." },
               { label: "Video-first", desc: "Visual storytelling assets that extend the impact and reach of every episode." },
             ].map((item, i) => (
-              <div key={i} className="rounded-xl px-4 py-3.5" style={chip(dark)}>
+              <div key={i} className="rounded-xl px-4 py-3.5" style={{ background: "rgba(98,144,201,0.15)" }}>
                 <p className="text-[13px] font-semibold mb-0.5" style={{ color: hdTxt }}>{item.label}</p>
                 <p className="text-[13px]" style={{ color: subTxt }}>{item.desc}</p>
               </div>
@@ -138,12 +142,13 @@ const STEPS = [
     number: "05",
     title: "Measure & Optimize",
     summary: "Track performance. Iterate. Compound results over time.",
-    bg: "#6290c9",
+    bg: "#31393c",
     textDark: false,
-    content: (dark: boolean) => {
-      const body   = dark ? "rgba(49,57,60,0.72)" : "rgba(255,255,255,0.82)";
-      const hdTxt  = dark ? "#31393c"             : "#ffffff";
-      const subTxt = dark ? "rgba(49,57,60,0.6)"  : "rgba(255,255,255,0.65)";
+    numColor: "rgba(255,255,255,0.18)",
+    content: (_dark: boolean) => {
+      const body   = "rgba(255,255,255,0.75)";
+      const hdTxt  = "#6290c9";
+      const subTxt = "rgba(255,255,255,0.55)";
       return (
         <div className="flex flex-col gap-5">
           <p style={{ color: body }} className="text-[15px] leading-[1.75]">
@@ -155,7 +160,7 @@ const STEPS = [
               { label: "Business impact",      desc: "Lead attribution, inquiry lift, brand sentiment, and retention signals among your people." },
               { label: "Content optimization", desc: "Topic performance, guest resonance, format testing, and distribution tuning." },
             ].map((item, i) => (
-              <div key={i} className="rounded-xl px-4 py-3.5" style={chip(dark)}>
+              <div key={i} className="rounded-xl px-4 py-3.5" style={{ background: "rgba(98,144,201,0.15)" }}>
                 <p className="text-[13px] font-semibold mb-0.5" style={{ color: hdTxt }}>{item.label}</p>
                 <p className="text-[13px]" style={{ color: subTxt }}>{item.desc}</p>
               </div>
@@ -191,7 +196,7 @@ export default function ContentPrism() {
     <section
       ref={sectionRef}
       id="process"
-      className="relative px-4 md:px-8 pt-[80px] pb-[90px]" style={{ backgroundColor: '#f8f3f0' }}
+      className="relative px-4 md:px-8 pt-[80px] pb-[90px] bg-white"
     >
       {/* ── Header ── */}
       <div className="text-center max-w-[680px] mx-auto mb-10">
@@ -204,6 +209,14 @@ export default function ContentPrism() {
         >
           Our Process
         </p>
+        <div
+          className="flex justify-center gap-2 mb-6"
+          style={{ opacity: visible ? 1 : 0, transition: "opacity 0.6s ease 0.12s" }}
+        >
+          {['Audio', 'Video', 'Audio + Video'].map(f => (
+            <span key={f} className="text-[12px] font-semibold tracking-[0.05em] px-3 py-1.5 rounded-full" style={{ backgroundColor: 'rgba(49,57,60,0.08)', color: '#31393c' }}>{f}</span>
+          ))}
+        </div>
         <h2
           className="text-[#31393c] text-[40px] md:text-[54px] font-light leading-[1.1] tracking-[-0.02em] mb-5"
           style={{
@@ -237,13 +250,13 @@ export default function ContentPrism() {
         }}
       >
         {STEPS.map((step, i) => {
-          const isOpen      = openIdx === i;
-          const isDark      = step.textDark;
-          const headingColor = isDark ? '#31393c'              : '#ffffff';
-          const numColor     = isDark ? 'rgba(49,57,60,0.25)'  : 'rgba(255,255,255,0.25)';
-          const summaryColor = isDark ? 'rgba(49,57,60,0.6)'   : 'rgba(255,255,255,0.65)';
-          const chevronColor = isDark ? 'rgba(49,57,60,0.45)'  : 'rgba(255,255,255,0.5)';
-          const dividerColor = isDark ? 'rgba(49,57,60,0.1)'   : 'rgba(255,255,255,0.1)';
+          const isOpen       = openIdx === i;
+          const isDark       = step.textDark;
+          const headingColor = isDark ? '#31393c'             : '#ffffff';
+          const numColor     = step.numColor;
+          const summaryColor = isDark ? 'rgba(49,57,60,0.6)'  : 'rgba(255,255,255,0.65)';
+          const chevronColor = isDark ? 'rgba(49,57,60,0.45)' : 'rgba(255,255,255,0.5)';
+          const dividerColor = isDark ? 'rgba(49,57,60,0.1)'  : 'rgba(255,255,255,0.1)';
 
           return (
             <div
@@ -306,8 +319,7 @@ export default function ContentPrism() {
                 }}
               >
                 <div
-                  className="px-6 md:px-10 pb-8"
-                  style={{ paddingLeft: 'calc(clamp(48px, 5vw, 72px) + 52px)' }}
+                  className="px-6 md:px-10 pb-8 md:pl-[152px]"
                 >
                   <div className="max-w-[520px]">
                     {step.content(isDark)}
