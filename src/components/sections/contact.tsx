@@ -1,10 +1,12 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function ContactSection() {
   const [form, setForm] = useState({ name: '', email: '', org: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => { setMounted(true); }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
@@ -62,8 +64,8 @@ export default function ContactSection() {
                 <p className="text-[#ffffff] text-[22px] font-light">Message received.</p>
                 <p className="text-[#ffffff]/55 text-[15px] leading-[1.65] max-w-[280px]">We'll be in touch within one business day.</p>
               </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="flex flex-col gap-4" suppressHydrationWarning autoComplete="off">
+            ) : !mounted ? null : (
+              <form onSubmit={handleSubmit} className="flex flex-col gap-4" autoComplete="off">
                 {[
                   { name: 'name',    label: 'Your name',         type: 'text',  required: true },
                   { name: 'email',   label: 'Work email',        type: 'email', required: true },

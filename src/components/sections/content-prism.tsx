@@ -10,7 +10,7 @@ const STEPS = [
   {
     number: "01",
     title: "Prepare",
-    summary: "We begin by understanding what job your podcast needs to do — and what success looks like for your organization.",
+    summary: "We start by getting clear on what success actually looks like for you.",
     bg: "#31393c",
     textDark: false,
     numColor: "rgba(255,255,255,0.18)",
@@ -20,17 +20,15 @@ const STEPS = [
       return (
         <div className="flex flex-col gap-5">
           <p style={{ color: body }} className="text-[15px] leading-[1.75]">
-            We begin by understanding what job your podcast needs to do. Are you aiming to build trust with patients? Align your clinical team? Position your organization as a thought leader in your therapeutic area?
-          </p>
-          <p style={{ color: body }} className="text-[15px] leading-[1.75]">
-            You&apos;ll come away with a clear creative brief that outlines your OKR&apos;s.
+            Every great series begins with a single question: what does this need to accomplish? We work with you to define the outcomes that matter — for your patients, your providers, or your teams — and build a creative brief that keeps every decision anchored to your goals.
           </p>
           <div className="rounded-xl px-4 py-4" style={{ background: "rgba(255,222,95,0.15)" }}>
+            <p className="text-[12px] font-semibold tracking-[0.1em] uppercase mb-3" style={{ color: bullet }}>Together we&apos;ll:</p>
             <ul className="flex flex-col gap-2.5">
               {[
                 "Define the outcome you need",
-                "Know your people — patients, providers, or internal stakeholders — and how they consume content",
-                "How we'll measure success",
+                "Understand your audience and how they consume content",
+                "Establish how we'll measure success",
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-3 text-[14px] leading-[1.6]" style={{ color: body }}>
                   <span className="mt-[7px] w-[5px] h-[5px] rounded-full flex-shrink-0" style={{ backgroundColor: bullet }} />
@@ -46,7 +44,7 @@ const STEPS = [
   {
     number: "02",
     title: "Plan",
-    summary: "Set your strategy. Lock in your format. Align your content with your goals and your people.",
+    summary: "Strategy first. Format second. Never the other way around.",
     bg: "#31393c",
     textDark: false,
     numColor: "rgba(255,255,255,0.18)",
@@ -57,13 +55,10 @@ const STEPS = [
       return (
         <div className="flex flex-col gap-5">
           <p style={{ color: body }} className="text-[15px] leading-[1.75]">
-            Great podcasts are never winged. We guide your team through a strategy lab to build a show that puts your people first — whether that&apos;s patients navigating a diagnosis, providers staying current on clinical evidence, or internal teams driving alignment.
-          </p>
-          <p style={{ color: body }} className="text-[15px] leading-[1.75]">
-            Together, we&apos;ll define the story structure, hosting style, guest criteria, and distribution approach — all tailored to your strategic goals.
+            We guide your team through a focused strategy session to build a show around your people, not just your message. Story structure, hosting style, guest criteria, distribution approach — all shaped by who you&apos;re trying to reach and what you need them to do.
           </p>
           <p style={{ color: body }} className="text-[14px] leading-[1.6]">
-            This is also where we shape the storytelling format:
+            This is also where we choose the storytelling format:
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
             {[
@@ -78,9 +73,6 @@ const STEPS = [
               </div>
             ))}
           </div>
-          <p style={{ color: body }} className="text-[14px] leading-[1.6]">
-            Each choice reflects the solution&apos;s end purpose, as well as your people&apos;s preferred listening style.
-          </p>
         </div>
       );
     },
@@ -88,7 +80,7 @@ const STEPS = [
   {
     number: "03",
     title: "Produce",
-    summary: "Record. Edit. Design. Score. Our award-winning creative team takes care of every detail.",
+    summary: "Record. Edit. Design. Score. Every detail handled.",
     bg: "#31393c",
     textDark: false,
     numColor: "rgba(255,255,255,0.18)",
@@ -97,10 +89,7 @@ const STEPS = [
       return (
         <div className="flex flex-col gap-5">
           <p style={{ color: body }} className="text-[15px] leading-[1.75]">
-            From remote interviews to full in-studio production, our award-winning creative team takes care of every detail. We combine technical excellence with editorial oversight to make sure each episode sounds as sharp as the strategy behind it.
-          </p>
-          <p style={{ color: body }} className="text-[14px] leading-[1.6]">
-            Every show is engineered to support your OKR&apos;s — whether that&apos;s engagement, awareness, loyalty, or brand lift.
+            From remote interviews to full studio production, we manage the entire creative process — combining editorial rigor with technical precision to make sure every episode sounds as sharp as the strategy behind it.
           </p>
         </div>
       );
@@ -109,18 +98,18 @@ const STEPS = [
   {
     number: "04",
     title: "Package & Distribute",
-    summary: "Deliver to your people. Maximize reach. Track performance.",
+    summary: "Deliver to your people. Maximize reach.",
     bg: "#31393c",
     textDark: false,
     numColor: "rgba(255,255,255,0.18)",
     content: (_dark: boolean) => {
       const body   = "rgba(255,255,255,0.75)";
-      const hdTxt  = "#6290c9";
+      const hdTxt  = "#c9896a";
       const subTxt = "rgba(255,255,255,0.55)";
       return (
         <div className="flex flex-col gap-5">
           <p style={{ color: body }} className="text-[15px] leading-[1.75]">
-            Your podcast is more than a content asset — it&apos;s a branded experience designed to reach the right people at the right moment. We develop distribution strategies tailored to how your patients, providers, and stakeholders actually consume content.
+            Your podcast is a branded experience, not just a content file. We build distribution strategies around how your audience actually consumes content — then deliver it in the format that reaches them best.
           </p>
           <div className="flex flex-col gap-2">
             {[
@@ -133,9 +122,6 @@ const STEPS = [
               </div>
             ))}
           </div>
-          <p style={{ color: body }} className="text-[14px] leading-[1.6]">
-            You&apos;ll receive custom reporting that tracks the KPIs tied to your OKR&apos;s — from engagement and completion rates to loyalty signals and lead generation.
-          </p>
         </div>
       );
     },
@@ -143,18 +129,18 @@ const STEPS = [
   {
     number: "05",
     title: "Measure & Optimize",
-    summary: "Track performance. Iterate. Compound results over time.",
+    summary: "Track. Iterate. Compound.",
     bg: "#31393c",
     textDark: false,
     numColor: "rgba(255,255,255,0.18)",
     content: (_dark: boolean) => {
       const body   = "rgba(255,255,255,0.75)";
-      const hdTxt  = "#6290c9";
+      const hdTxt  = "#e0a81e";
       const subTxt = "rgba(255,255,255,0.55)";
       return (
         <div className="flex flex-col gap-5">
           <p style={{ color: body }} className="text-[15px] leading-[1.75]">
-            You&apos;ll receive custom reporting tied directly to your OKR&apos;s — from completion rates and engagement depth to brand sentiment and inquiry lift. We review performance together and continuously refine the strategy.
+            You&apos;ll receive reporting tied to the outcomes that matter — from completion rates and engagement depth to brand sentiment and inquiry lift. We review performance together and refine continuously. The goal isn&apos;t a successful launch. It&apos;s a series that grows in value and authority over time.
           </p>
           <div className="flex flex-col gap-2">
             {[
@@ -162,15 +148,12 @@ const STEPS = [
               { label: "Business impact",      desc: "Lead attribution, inquiry lift, brand sentiment, and retention signals among your people." },
               { label: "Content optimization", desc: "Topic performance, guest resonance, format testing, and distribution tuning." },
             ].map((item, i) => (
-              <div key={i} className="rounded-xl px-4 py-3.5" style={{ background: "rgba(98,144,201,0.15)" }}>
+              <div key={i} className="rounded-xl px-4 py-3.5" style={{ background: "rgba(224,168,30,0.15)" }}>
                 <p className="text-[13px] font-semibold mb-0.5" style={{ color: hdTxt }}>{item.label}</p>
                 <p className="text-[13px]" style={{ color: subTxt }}>{item.desc}</p>
               </div>
             ))}
           </div>
-          <p style={{ color: body }} className="text-[14px] leading-[1.6]">
-            The goal is a show that doesn&apos;t just perform at launch — it compounds in value and authority over time.
-          </p>
         </div>
       );
     },
@@ -281,14 +264,14 @@ export default function ContentPrism() {
               >
                 {/* Number */}
                 <span
-                  className="font-light leading-none select-none flex-shrink-0 hidden md:block"
-                  style={{ fontSize: 'clamp(48px, 5vw, 72px)', color: numColor, letterSpacing: '-0.04em' }}
+                  className="font-light leading-none select-none flex-shrink-0 hidden md:block text-center"
+                  style={{ fontSize: 'clamp(48px, 5vw, 72px)', color: numColor, letterSpacing: '-0.04em', width: 'clamp(48px, 5vw, 72px)', fontVariantNumeric: 'tabular-nums' }}
                 >
                   {step.number}
                 </span>
                 <span
-                  className="font-light leading-none select-none flex-shrink-0 md:hidden"
-                  style={{ fontSize: '36px', color: numColor, letterSpacing: '-0.04em' }}
+                  className="font-light leading-none select-none flex-shrink-0 md:hidden text-center"
+                  style={{ fontSize: '36px', color: numColor, letterSpacing: '-0.04em', width: '36px', fontVariantNumeric: 'tabular-nums' }}
                 >
                   {step.number}
                 </span>
@@ -325,7 +308,11 @@ export default function ContentPrism() {
                 }}
               >
                 <div
-                  className="px-6 md:px-10 pb-8 md:pl-[152px]"
+                  className="pb-8"
+                  style={{
+                    paddingLeft:  'clamp(24px, calc(2.5rem + clamp(48px, 5vw, 72px) + 2rem), calc(2.5rem + 72px + 2rem))',
+                    paddingRight: 'clamp(24px, 2.5rem, 2.5rem)',
+                  }}
                 >
                   <div className="max-w-[520px]">
                     {step.content(isDark)}
