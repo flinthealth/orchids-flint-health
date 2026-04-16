@@ -290,7 +290,7 @@ const CarePlatformSection = () => {
         </h2>
 
         <p className="text-[#6b6560] text-[16px] md:text-[17px] leading-[1.55] max-w-[560px] mx-auto">
-          Flint translates clinical science and real human experience into premium podcasts your audience actually finishes.
+          Translate clinical insights and real human experience into premium podcasts your audience actually finishes.
         </p>
       </div>
 

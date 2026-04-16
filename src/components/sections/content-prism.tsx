@@ -215,8 +215,12 @@ export default function ContentPrism() {
           className="flex justify-center gap-2 mb-6"
           style={{ opacity: visible ? 1 : 0, transition: "opacity 0.6s ease 0.12s" }}
         >
-          {['Audio', 'Video', 'Audio + Video'].map(f => (
-            <span key={f} className="text-[12px] font-semibold tracking-[0.05em] px-3 py-1.5 rounded-full" style={{ backgroundColor: 'rgba(49,57,60,0.08)', color: '#31393c' }}>{f}</span>
+          {[
+            { label: 'Audio',         bg: '#ffde5f', color: '#1a1a1a' },
+            { label: 'Video',         bg: '#fac12c', color: '#1a1a1a' },
+            { label: 'Audio + Video', bg: '#e09a18', color: '#1a1a1a' },
+          ].map(({ label, bg, color }) => (
+            <span key={label} className="text-[12px] font-semibold tracking-[0.05em] px-3 py-1.5 rounded-full" style={{ backgroundColor: bg, color }}>{label}</span>
           ))}
         </div>
         <h2

@@ -164,7 +164,7 @@ function PodcastCard({
 
       {/* Stats — full card width on both breakpoints, stone gray bg */}
       <div className="mt-auto">
-        <div style={{ backgroundColor: '#e8e2dc' }} className="px-8 md:px-10 py-6 md:py-7">
+        <div style={{ backgroundColor: '#f7f3ef' }} className="px-8 md:px-10 py-6 md:py-7">
           <StatsBar stats={stats} />
         </div>
       </div>
@@ -212,7 +212,7 @@ export default function PodcastShowcase() {
           className="text-[#ffffff] text-[40px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-5"
           style={fade(0)}
         >
-          Real results for <span className="font-serif italic">real healthcare brands</span>
+          Real results for<span className="hidden md:inline"><br /></span><span className="md:hidden"> </span><span className="font-serif italic">healthcare brands</span>
         </h2>
         <p className="text-[#ffffff]/70 text-[15px] md:text-[16px] leading-[1.65]" style={fade(0.2)}>
           Proof that when the right message meets the right audience, something measurable happens.
