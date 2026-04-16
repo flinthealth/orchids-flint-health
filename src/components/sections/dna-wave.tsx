@@ -313,7 +313,7 @@ export function OurBeliefSection() {
               <div
                 key={noun}
                 className="w-full rounded-xl px-5 md:px-7 py-3.5 text-[23px] md:text-[34px] font-light leading-[1.15] tracking-[-0.02em] whitespace-nowrap"
-                style={{ backgroundColor: '#f7f3ef', color: '#1a1a1a', position: 'relative', zIndex: 1 }}
+                style={{ backgroundColor: '#f7f3ef', color: '#1a1a1a', position: 'relative', zIndex: 1, border: '1.5px solid #e0dbd5' }}
               >
                 {adj} <span className="font-serif italic">{noun}</span>
               </div>
