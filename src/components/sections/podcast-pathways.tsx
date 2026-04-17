@@ -22,7 +22,7 @@ export default function PodcastPathways() {
   });
 
   return (
-    <section ref={sectionRef} className="bg-white w-full pt-[28px] md:pt-12 pb-0">
+    <section ref={sectionRef} className="bg-[#f7f3ef] w-full pt-[28px] md:pt-12 pb-0">
 
       {/* ── Header ── */}
       <div className="text-center mb-14 px-4 md:px-8">
@@ -144,7 +144,7 @@ export default function PodcastPathways() {
       </div>
 
       {/* ── Curved brace connector (} rotated 90°) ── */}
-      <div className="w-full bg-white overflow-hidden" aria-hidden="true" style={fade(0.25)}>
+      <div className="w-full bg-[#f7f3ef] overflow-hidden" aria-hidden="true" style={fade(0.25)}>
         <svg
           viewBox="0 0 1000 100"
           preserveAspectRatio="none"

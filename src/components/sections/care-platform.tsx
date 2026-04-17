@@ -326,6 +326,18 @@ const CarePlatformSection = () => {
           ].join(', '),
         }} />
 
+        {/* Grain overlay — data URI noise tile at overlay blend */}
+        <div
+          className="absolute inset-0 z-[1] pointer-events-none"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23g)'/%3E%3C/svg%3E")`,
+            backgroundRepeat: 'repeat',
+            backgroundSize: '400px 400px',
+            opacity: 0.28,
+            mixBlendMode: 'overlay',
+          }}
+        />
+
         {/* Flashlight — full section height, upper-right → down-left */}
         <div className="hidden md:block absolute inset-0 z-[1] pointer-events-none overflow-hidden">
           <div style={{

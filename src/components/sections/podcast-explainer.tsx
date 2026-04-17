@@ -574,7 +574,7 @@ const CARD_SCROLL_GAP = 400;
 export default function PodcastExplainer() {
 
   return (
-    <section id="solutions" className="bg-[#ffffff]">
+    <section id="solutions" className="bg-[#f7f3ef]">
       <div className="container mx-auto px-8 pt-[80px] pb-[60px]">
 
         {/* ── Pill + headline ────────────────────────────────────────────── */}
@@ -624,7 +624,7 @@ export default function PodcastExplainer() {
             {/* B — 4.7x Greater Recall */}
             <div
               className="rounded-3xl overflow-hidden relative flex flex-col justify-end p-7"
-              style={{ gridColumn: '5 / 13', gridRow: '1 / 5', backgroundColor: '#4a5558' }}
+              style={{ gridColumn: '5 / 13', gridRow: '1 / 5', backgroundColor: '#31393c' }}
             >
               <div className="relative z-10">
                 <p className="text-[#ffffff] text-[80px] font-light leading-none tracking-[-0.04em] mb-1">6–7×</p>
@@ -636,7 +636,7 @@ export default function PodcastExplainer() {
             {/* C — 80% Completion Rate */}
             <div
               className="rounded-3xl p-5 flex flex-col"
-              style={{ gridColumn: '5 / 9', gridRow: '5 / 9', backgroundColor: '#f7f3ef', containerType: 'inline-size' }}
+              style={{ gridColumn: '5 / 9', gridRow: '5 / 9', backgroundColor: '#e8e3de', containerType: 'inline-size' }}
             >
               <CompletionRing />
               <div className="mt-5">
@@ -656,12 +656,11 @@ export default function PodcastExplainer() {
                 poster="/stats-on-the-go.webp"
                 className="absolute inset-0 w-full h-full object-cover object-center"
               />
-              <div className="absolute inset-0" style={{ backgroundColor: 'rgba(49,57,60,0.72)' }} />
+              <div className="absolute inset-0" style={{ backgroundColor: 'rgba(49,57,60,0.55)' }} />
               {/* Content */}
               <div className="relative z-10 p-6 flex flex-col h-full">
                 <p className="text-[#ffffff] text-[80px] font-light leading-none tracking-[-0.03em] mb-1">71%</p>
-                <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-3">The Multitasking Advantage<a href="https://www.cohostpodcasting.com/resources/podcasting-unwrapped-2025" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">4</a></p>
-                <p className="text-[#ffffff]/60 text-[14px] leading-[1.65]">Listeners choose audio specifically because it fits into their lives — in the car, between patients, during a commute. Your message reaches them when they're open and receptive, not tied to a screen.</p>
+                <p className="text-[#ffffff] text-[17px] font-medium leading-snug">The Multitasking Advantage<a href="https://www.cohostpodcasting.com/resources/podcasting-unwrapped-2025" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">4</a></p>
               </div>
             </div>
 
@@ -711,7 +710,7 @@ export default function PodcastExplainer() {
             </div>
 
             {/* Mobile B — 4.7× Greater Recall */}
-            <div className="rounded-3xl overflow-hidden relative p-7 flex flex-col justify-end min-h-[220px]" style={{ backgroundColor: '#4a5558' }}>
+            <div className="rounded-3xl overflow-hidden relative p-7 flex flex-col justify-end min-h-[220px]" style={{ backgroundColor: '#31393c' }}>
               <div className="relative z-10">
                 <p className="text-[#ffffff] text-[60px] font-light leading-none tracking-[-0.03em] mb-1">6–7×</p>
                 <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-1">Greater Recall</p>
@@ -720,7 +719,7 @@ export default function PodcastExplainer() {
             </div>
 
             {/* Mobile C — 80% Completion Rate */}
-            <div className="rounded-3xl pt-6 px-7 pb-7 flex flex-col items-center min-h-[280px]" style={{ backgroundColor: '#f7f3ef' }}>
+            <div className="rounded-3xl pt-6 px-7 pb-7 flex flex-col items-center min-h-[280px]" style={{ backgroundColor: '#e8e3de' }}>
               <div className="w-[300px] h-[300px] flex-shrink-0">
                 <CompletionRing />
               </div>
@@ -735,11 +734,10 @@ export default function PodcastExplainer() {
                 poster="/stats-on-the-go.webp"
                 className="absolute inset-0 w-full h-full object-cover object-center"
               />
-              <div className="absolute inset-0" style={{ backgroundColor: 'rgba(49,57,60,0.72)' }} />
+              <div className="absolute inset-0" style={{ backgroundColor: 'rgba(49,57,60,0.55)' }} />
               <div className="relative z-10 p-7 flex flex-col h-full">
                 <p className="text-[#ffffff] text-[60px] font-light leading-none tracking-[-0.03em] mb-1">71%</p>
-                <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-1">The Multitasking Advantage</p>
-                <p className="text-[#ffffff]/60 text-[14px] leading-[1.65] mb-4">Listeners choose audio specifically because it fits into their lives — in the car, between patients, during a commute. Your message reaches them when they're open and receptive, not tied to a screen.</p>
+                <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-4">The Multitasking Advantage</p>
                 <div className="flex flex-col gap-2 mt-auto">
                   {[
                     { emoji: '🍳', label: 'Cooking' },

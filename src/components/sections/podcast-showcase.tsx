@@ -227,14 +227,6 @@ export default function PodcastShowcase() {
         ))}
         <PodcastCard {...NETWORK} fadeStyle={fade(0.55)} />
 
-        {/* ── Branding Services divider ── */}
-        <div className="flex items-center gap-4 pt-4" style={fade(0.65)}>
-          <div className="flex-1 h-px" style={{ backgroundColor: 'rgba(255,255,255,0.12)' }} />
-          <span className="text-[#ffffff]/50 text-[11px] font-semibold tracking-[0.22em] uppercase flex-shrink-0">
-            Branding & Marketing Services
-          </span>
-          <div className="flex-1 h-px" style={{ backgroundColor: 'rgba(255,255,255,0.12)' }} />
-        </div>
 
         {/* ── Very Health testimonial ── */}
         <div
