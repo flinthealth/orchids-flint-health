@@ -356,7 +356,7 @@ const CarePlatformSection = () => {
           <div className="text-center pt-12 pb-6 px-6">
             <span
               className="text-[#ffffff] text-[13px] font-semibold uppercase tracking-[0.22em] px-5 py-2 rounded-full"
-              style={{ backgroundColor: 'rgba(0,0,0,0.35)' }}
+              style={{ backgroundColor: 'rgba(114,169,247,0.69)' }}
             >
               The results that follow
             </span>

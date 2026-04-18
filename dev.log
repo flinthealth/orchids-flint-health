@@ -4,28 +4,20 @@
 
    ▲ Next.js 15.5.8
    - Local:        http://localhost:3000
-   - Network:      http://172.20.0.56:3000
+   - Network:      http://172.20.0.12:3000
    - Environments: .env.local
 
  ✓ Starting...
- ✓ Ready in 1215ms
+ ✓ Ready in 1198ms
  ○ Compiling / ...
- ✓ Compiled / in 2.8s (616 modules)
- GET /?_cb=1776546917224 200 in 3371ms
- GET / 200 in 168ms
- GET /?_cb=1776546983461 200 in 157ms
- ✓ Compiled in 368ms (616 modules)
- GET /?_cb=1776546983461 200 in 74ms
- GET /?_cb=1776547050683 200 in 241ms
- ✓ Compiled in 166ms (262 modules)
- GET /?_cb=1776547050683 200 in 36ms
- GET /?_cb=1776547411613 200 in 145ms
- ✓ Compiled in 286ms (616 modules)
- GET /?_cb=1776547411613 200 in 84ms
- GET /?_cb=1776547679161 200 in 219ms
- ✓ Compiled in 344ms (616 modules)
- GET /?_cb=1776547679161 200 in 84ms
- GET /?_cb=1776547941546 200 in 193ms
- ✓ Compiled in 284ms (616 modules)
- GET /?_cb=1776547941546 200 in 116ms
- GET /?_cb=1776548051218 200 in 225ms
+ ✓ Compiled / in 2.7s (616 modules)
+ GET /?_cb=1776555122378 200 in 3307ms
+ ✓ Compiled in 349ms (616 modules)
+ GET /?_cb=1776555122378 200 in 82ms
+ GET /?_cb=1776555247947 200 in 240ms
+ ✓ Compiled in 203ms (616 modules)
+ GET /?_cb=1776555247947 200 in 77ms
+ GET /?_cb=1776555299182 200 in 220ms
+ ✓ Compiled in 342ms (616 modules)
+ GET /?_cb=1776555299182 200 in 104ms
+ GET /?_cb=1776555396503 200 in 195ms
