@@ -309,13 +309,14 @@ export function OurBeliefSection() {
               { adj: 'Narrative', noun: 'Storytelling'          },
               { adj: 'Quality',   noun: 'Learning Experiences'  },
               { adj: 'Authentic', noun: 'Connection'            },
-            ].map(({ adj, noun }) => (
+            ].map(({ adj, noun }, i) => (
               <div
                 key={noun}
-                className="w-full rounded-xl px-5 md:px-7 py-3.5 text-[23px] md:text-[34px] font-light leading-[1.15] tracking-[-0.02em] whitespace-nowrap"
+                className="w-full rounded-xl px-5 md:px-7 py-3.5 text-[23px] md:text-[34px] font-light leading-[1.15] tracking-[-0.02em] whitespace-nowrap overflow-hidden"
                 style={{ backgroundColor: '#31393c', color: '#ffffff', position: 'relative', zIndex: 1 }}
               >
-                {adj} <span className="font-serif italic">{noun}</span>
+                <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='gp${i}'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23gp${i})'/%3E%3C/svg%3E")`, backgroundSize: '400px 400px', opacity: 0.25, mixBlendMode: 'overlay' }} />
+                <span className="relative z-10">{adj} <span className="font-serif italic">{noun}</span></span>
               </div>
             ))}
           </div>
@@ -395,37 +396,6 @@ export default function DNAWaveSection() {
           </div>
         </div>
 
-        {/* Row 2: Proven Impact */}
-        <div>
-          <div className="px-8 md:px-14 lg:px-20 pt-10 pb-14" style={{ backgroundColor: '#31393c' }}>
-            <p className="text-white/40 text-[11px] font-semibold tracking-[0.2em] uppercase mb-8">
-              Proven impact
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                { category: 'Scale',      value: '30M+', label: 'app + website sessions',               accent: '#e09a18', textOnAccent: '#1a1a1a' },
-                { category: 'Reach',      value: '3M+',  label: 'podcast downloads',                    accent: '#ffde5f', textOnAccent: '#1a1a1a' },
-                { category: 'Adoption',   value: '420+', label: 'providers onboarded to a treatment network', accent: '#fac12c', textOnAccent: '#1a1a1a' },
-                { category: 'Conversion', value: '257%', label: 'lift in treatment inquiries',           accent: '#e09a18', textOnAccent: '#1a1a1a' },
-              ].map(({ category, value, label, accent, textOnAccent }) => (
-                <div key={category} className="flex flex-col gap-4 px-6 py-6" style={{ backgroundColor: 'rgba(255,255,255,0.06)' }}>
-                  <span
-                    className="self-start text-[10px] font-semibold tracking-[0.18em] uppercase px-3 py-1 rounded-full"
-                    style={{ backgroundColor: accent, color: textOnAccent }}
-                  >
-                    {category}
-                  </span>
-                  <div className="flex flex-col gap-1">
-                    <span className="text-white font-light leading-none tracking-[-0.03em]" style={{ fontSize: 'clamp(48px, 5vw, 64px)' }}>
-                      {value}
-                    </span>
-                    <span className="text-white/50 text-[13px] leading-snug">{label}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
 
       </div>
 

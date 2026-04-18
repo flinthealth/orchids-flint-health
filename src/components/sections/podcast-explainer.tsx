@@ -626,6 +626,7 @@ export default function PodcastExplainer() {
               className="rounded-3xl overflow-hidden relative flex flex-col justify-end p-7"
               style={{ gridColumn: '5 / 13', gridRow: '1 / 5', backgroundColor: '#31393c' }}
             >
+              <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='g1'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23g1)'/%3E%3C/svg%3E")`, backgroundSize: '400px 400px', opacity: 0.28, mixBlendMode: 'overlay' }} />
               <div className="relative z-10">
                 <p className="text-[#ffffff] text-[80px] font-light leading-none tracking-[-0.04em] mb-1">6–7×</p>
                 <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-1">Greater Recall<a href="https://link.springer.com/article/10.3758/BF03332778" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">1</a></p>
@@ -660,15 +661,16 @@ export default function PodcastExplainer() {
               {/* Content */}
               <div className="relative z-10 p-6 flex flex-col h-full">
                 <p className="text-[#ffffff] text-[80px] font-light leading-none tracking-[-0.03em] mb-1">71%</p>
-                <p className="text-[#ffffff] text-[17px] font-medium leading-snug">The Multitasking Advantage<a href="https://www.cohostpodcasting.com/resources/podcasting-unwrapped-2025" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">4</a></p>
+                <p className="text-[#ffffff] text-[17px] font-medium leading-snug">Of podcast listeners tune in during their daily routine<a href="https://www.cohostpodcasting.com/resources/podcasting-unwrapped-2025" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">4</a></p>
               </div>
             </div>
 
             {/* E — 61% Trust Lift */}
             <div
-              className="rounded-3xl p-6 flex flex-col"
+              className="rounded-3xl p-6 flex flex-col relative overflow-hidden"
               style={{ gridColumn: '1 / 5', gridRow: '9 / 13', backgroundColor: '#6290c9' }}
             >
+              <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='g2'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23g2)'/%3E%3C/svg%3E")`, backgroundSize: '400px 400px', opacity: 0.28, mixBlendMode: 'overlay' }} />
               <p className="text-[#ffffff] text-[80px] font-light leading-none tracking-[-0.04em] mb-2">61%</p>
               <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-1">Trust Lift<a href="https://signalhillinsights.com/measuring-the-success-of-branded-podcasts-choosing-the-right-yardsticks/" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">2</a></p>
               <p className="text-[#ffffff]/65 text-[14px] leading-[1.6]">Podcasts improve brand perception and patient confidence by humanizing the organization behind the science.</p>
@@ -679,6 +681,7 @@ export default function PodcastExplainer() {
               className="rounded-3xl p-6 flex flex-col relative overflow-hidden"
               style={{ gridColumn: '5 / 9', gridRow: '9 / 13', backgroundColor: '#a0522d' }}
             >
+              <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='g3'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23g3)'/%3E%3C/svg%3E")`, backgroundSize: '400px 400px', opacity: 0.28, mixBlendMode: 'overlay' }} />
               <ConcentricRings />
               <p className="text-[#ffffff] text-[80px] font-light leading-none tracking-[-0.03em] mb-1 relative z-10">3×</p>
               <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-1 relative z-10">More Influence<a href="https://cumuluspodcastnetwork.com/cumulus-media-podcast-download-fall-2025/" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">3</a></p>
@@ -687,12 +690,12 @@ export default function PodcastExplainer() {
 
             {/* G — Full-width closer (no card, plain text) */}
             <div
-              className="flex items-center py-8"
+              className="flex items-center justify-center py-8 text-center"
               style={{ gridColumn: '1 / 13', gridRow: '13 / 16' }}
             >
               <div>
                 <p className="text-[#1a1a1a]/40 text-[11px] font-semibold tracking-[0.2em] uppercase mb-2">The bottom line</p>
-                <p className="text-[#1a1a1a] text-[22px] md:text-[26px] font-light leading-[1.3]">
+                <p className="text-[#1a1a1a] text-[22px] md:text-[26px] font-light leading-[1.3] max-w-[820px]">
                   Whether reaching a patient audience of thousands or aligning a clinical team of fifty — no other experience delivers this level of <span className="font-serif italic">trust, attention, and recall.</span>
                 </p>
               </div>
@@ -711,6 +714,7 @@ export default function PodcastExplainer() {
 
             {/* Mobile B — 4.7× Greater Recall */}
             <div className="rounded-3xl overflow-hidden relative p-7 flex flex-col justify-end min-h-[220px]" style={{ backgroundColor: '#31393c' }}>
+              <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='g4'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23g4)'/%3E%3C/svg%3E")`, backgroundSize: '400px 400px', opacity: 0.28, mixBlendMode: 'overlay' }} />
               <div className="relative z-10">
                 <p className="text-[#ffffff] text-[60px] font-light leading-none tracking-[-0.03em] mb-1">6–7×</p>
                 <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-1">Greater Recall</p>
@@ -737,7 +741,7 @@ export default function PodcastExplainer() {
               <div className="absolute inset-0" style={{ backgroundColor: 'rgba(49,57,60,0.55)' }} />
               <div className="relative z-10 p-7 flex flex-col h-full">
                 <p className="text-[#ffffff] text-[60px] font-light leading-none tracking-[-0.03em] mb-1">71%</p>
-                <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-4">The Multitasking Advantage</p>
+                <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-4">Of podcast listeners tune in during their daily routine<a href="https://www.cohostpodcasting.com/resources/podcasting-unwrapped-2025" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">4</a></p>
                 <div className="flex flex-col gap-2 mt-auto">
                   {[
                     { emoji: '🍳', label: 'Cooking' },
@@ -757,7 +761,8 @@ export default function PodcastExplainer() {
             </div>
 
             {/* Mobile E — 61% Trust Lift */}
-            <div className="rounded-3xl p-7 flex flex-col min-h-[200px]" style={{ backgroundColor: '#6290c9' }}>
+            <div className="rounded-3xl p-7 flex flex-col min-h-[200px] relative overflow-hidden" style={{ backgroundColor: '#6290c9' }}>
+              <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='g5'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23g5)'/%3E%3C/svg%3E")`, backgroundSize: '400px 400px', opacity: 0.28, mixBlendMode: 'overlay' }} />
               <p className="text-[#ffffff] text-[60px] font-light leading-none tracking-[-0.04em] mb-2">61%</p>
               <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-1">Trust Lift</p>
               <p className="text-[#ffffff]/65 text-[14px] leading-[1.6]">Podcasts improve brand perception and patient confidence by humanizing the organization behind the science.</p>
@@ -765,6 +770,7 @@ export default function PodcastExplainer() {
 
             {/* Mobile F — 3× More Influence */}
             <div className="rounded-3xl p-7 flex flex-col relative overflow-hidden min-h-[200px]" style={{ backgroundColor: '#a0522d' }}>
+              <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='g6'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23g6)'/%3E%3C/svg%3E")`, backgroundSize: '400px 400px', opacity: 0.28, mixBlendMode: 'overlay' }} />
               <ConcentricRings />
               <p className="text-[#ffffff] text-[60px] font-light leading-none tracking-[-0.03em] mb-1 relative z-10">3×</p>
               <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-1 relative z-10">More Influence</p>
@@ -772,7 +778,7 @@ export default function PodcastExplainer() {
             </div>
 
             {/* Mobile G — Bottom text (no card) */}
-            <div className="py-6">
+            <div className="py-6 text-center">
               <p className="text-[#1a1a1a]/40 text-[11px] font-semibold tracking-[0.2em] uppercase mb-4">The bottom line</p>
               <p className="text-[#1a1a1a] text-[26px] font-light leading-[1.3]">
                 No other medium delivers this level of <span className="font-serif italic">trust, attention, and recall.</span>
