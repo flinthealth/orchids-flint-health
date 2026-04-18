@@ -313,9 +313,8 @@ export function OurBeliefSection() {
               <div
                 key={noun}
                 className="w-full rounded-xl px-5 md:px-7 py-3.5 text-[23px] md:text-[34px] font-light leading-[1.15] tracking-[-0.02em] whitespace-nowrap overflow-hidden"
-                style={{ backgroundColor: '#31393c', color: '#ffffff', position: 'relative', zIndex: 1 }}
+                style={{ backgroundColor: 'rgba(19,29,43,0.07)', color: '#31393c', border: '1.5px solid rgba(19,29,43,0.18)', position: 'relative', zIndex: 1 }}
               >
-                <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='gp${i}'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23gp${i})'/%3E%3C/svg%3E")`, backgroundSize: '400px 400px', opacity: 0.25, mixBlendMode: 'overlay' }} />
                 <span className="relative z-10">{adj} <span className="font-serif italic">{noun}</span></span>
               </div>
             ))}
