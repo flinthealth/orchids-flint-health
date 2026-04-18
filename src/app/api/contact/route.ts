@@ -15,7 +15,7 @@ export async function POST(req: Request) {
       from: 'Flint Contact Form <onboarding@resend.dev>',
       to: process.env.CONTACT_TO_EMAIL!,
       subject: `New message from ${name}`,
-      reply_to: email,
+      replyTo: email,
       html: `
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
