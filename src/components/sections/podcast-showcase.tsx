@@ -202,8 +202,6 @@ export default function PodcastShowcase() {
       className="relative pt-[88px] md:pt-[80px] pb-[100px] px-4 md:px-8 overflow-hidden"
       style={{ backgroundColor: '#31393c' }}
     >
-      {/* Gradient background */}
-      <div className="absolute inset-0 z-0" style={{ background: 'linear-gradient(to bottom, #31393c 0%, #6b4b3e 55%, #a0522d 100%)' }} />
       {/* Noise overlay */}
       <div className="absolute inset-0 z-[1] pointer-events-none" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='gsh'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23gsh)'/%3E%3C/svg%3E")`, backgroundSize: '400px 400px', opacity: 0.28, mixBlendMode: 'overlay' }} />
       {/* Content sits above overlays */}

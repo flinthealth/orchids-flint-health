@@ -5,6 +5,8 @@ import React, { useState, useEffect } from 'react';
 export default function ContactSection() {
   const [form, setForm] = useState({ name: '', email: '', org: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
   const [mounted, setMounted] = useState(false);
   useEffect(() => { setMounted(true); }, []);
 
@@ -12,9 +14,23 @@ export default function ContactSection() {
     setForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError('');
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error();
+      setSubmitted(true);
+    } catch {
+      setError('Something went wrong. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -98,11 +114,23 @@ export default function ContactSection() {
                     style={{ backgroundColor: 'rgba(255,255,255,0.06)' }}
                   />
                 </div>
+                {error && (
+                  <p className="text-red-400 text-[13px]">{error}</p>
+                )}
                 <button
                   type="submit"
-                  className="mt-2 bg-[#ff7f29] hover:bg-[#e66e1e] text-[#ffffff] font-semibold text-[15px] px-8 py-4 rounded-xl transition-colors"
+                  disabled={loading}
+                  className="mt-2 bg-[#ff7f29] hover:bg-[#e66e1e] disabled:opacity-60 disabled:cursor-not-allowed text-[#ffffff] font-semibold text-[15px] px-8 py-4 rounded-xl transition-colors flex items-center justify-center gap-2"
                 >
-                  Send message
+                  {loading ? (
+                    <>
+                      <svg className="animate-spin w-4 h-4" viewBox="0 0 24 24" fill="none">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"/>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"/>
+                      </svg>
+                      Sending…
+                    </>
+                  ) : 'Send message'}
                 </button>
               </form>
             )}
