@@ -221,7 +221,7 @@ function BeliefSoundWave() {
   const tileW       = barsPerTile * barGap;
   const numBars     = barsPerTile * 2; // two tiles side by side
   const totalW      = numBars * barGap + barW;
-  const svgH        = 300;
+  const svgH        = 260;
   const cy          = svgH / 2;
 
   return (
@@ -283,13 +283,18 @@ export function OurBeliefSection() {
     <section className="bg-[#f7f3ef] pt-[88px] md:pt-[120px] pb-[32px] overflow-hidden">
 
       {/* Headline + body */}
-      <div className="container mx-auto px-8 text-center mb-10">
+      <div className="container mx-auto px-8 text-center mb-4">
         <h2 className="text-[#1a1a1a] text-[40px] md:text-[52px] font-light leading-[1.15] tracking-[-0.02em] max-w-[680px] mx-auto mb-6">
           We believe information alone doesn't <span className="font-serif italic">move people</span>
         </h2>
-        <p className="text-[#6b6560] text-[17px] md:text-[18px] leading-[1.7] max-w-[560px] mx-auto mb-4">
+        <p className="text-[#6b6560] text-[17px] md:text-[18px] leading-[1.7] max-w-[560px] mx-auto">
           When science meets the right narrative, one that connects emotionally and lands cognitively, complex becomes clear, distant becomes personal, and information drives action.
         </p>
+      </div>
+
+      {/* Sound wave — after paragraph, before pills */}
+      <div className="w-full my-1">
+        <BeliefSoundWave />
       </div>
 
       {/* Pills block */}
@@ -319,10 +324,6 @@ export function OurBeliefSection() {
         </div>
       </div>
 
-      {/* Sound wave — below Authentic Connection, above bio section */}
-      <div className="w-full mt-10">
-        <BeliefSoundWave />
-      </div>
 
     </section>
   );

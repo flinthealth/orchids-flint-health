@@ -679,7 +679,7 @@ export default function PodcastExplainer() {
             {/* F — 3× More Influence */}
             <div
               className="rounded-3xl p-6 flex flex-col relative overflow-hidden"
-              style={{ gridColumn: '5 / 9', gridRow: '9 / 13', backgroundColor: '#e09a18' }}
+              style={{ gridColumn: '5 / 9', gridRow: '9 / 13', background: 'linear-gradient(to bottom, #31393c 0%, #6b4b3e 55%, #a0522d 100%)' }}
             >
               <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='g3'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23g3)'/%3E%3C/svg%3E")`, backgroundSize: '400px 400px', opacity: 0.28, mixBlendMode: 'overlay' }} />
               <ConcentricRings />
@@ -769,7 +769,7 @@ export default function PodcastExplainer() {
             </div>
 
             {/* Mobile F — 3× More Influence */}
-            <div className="rounded-3xl p-7 flex flex-col relative overflow-hidden min-h-[200px]" style={{ backgroundColor: '#e09a18' }}>
+            <div className="rounded-3xl p-7 flex flex-col relative overflow-hidden min-h-[200px]" style={{ background: 'linear-gradient(to bottom, #31393c 0%, #6b4b3e 55%, #a0522d 100%)' }}>
               <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='g6'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23g6)'/%3E%3C/svg%3E")`, backgroundSize: '400px 400px', opacity: 0.28, mixBlendMode: 'overlay' }} />
               <ConcentricRings />
               <p className="text-[#ffffff] text-[60px] font-light leading-none tracking-[-0.03em] mb-1 relative z-10">3×</p>
