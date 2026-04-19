@@ -359,7 +359,7 @@ export function OurBeliefSection() {
                 {adj}{' '}
                 <span
                   className="font-serif italic px-5 py-1.5 rounded-lg"
-                  style={{ backgroundColor: 'rgba(255,255,255,0.2)', color: '#ffffff' }}
+                  style={{ backgroundColor: 'rgba(114,169,247,0.69)', color: '#ffffff' }}
                 >{noun}</span>
               </div>
               {i === arr.length - 1 && (

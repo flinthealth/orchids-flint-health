@@ -340,3 +340,10 @@ Check the render method of `OurBeliefSection`. See https://react.dev/link/warnin
  ✓ Compiled in 288ms (617 modules)
  GET /?_cb=1776570552369 200 in 67ms
  GET /?_cb=1776570637336 200 in 159ms
+ ✓ Compiled in 264ms (617 modules)
+ GET /?_cb=1776610628892 200 in 207ms
+ ✓ Compiled in 267ms (617 modules)
+ GET /?_cb=1776610628892 200 in 70ms
+ ✓ Compiled in 153ms (617 modules)
+ GET /?_cb=1776610628892 200 in 67ms
+ GET /?_cb=1776610797712 200 in 144ms

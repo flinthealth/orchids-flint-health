@@ -46,18 +46,18 @@ export default function PodcastPathways() {
         </p>
       </div>
 
-      {/* ── Full-bleed split ── */}
-      <div className="flex flex-col md:flex-row" style={fade(0.2)}>
+      {/* ── Mobile: full-bleed split ── */}
+      <div className="flex flex-col md:hidden" style={fade(0.2)}>
 
-        {/* Internal — left half */}
-        <div className="flex-1 px-8 md:px-16 py-12 flex flex-col" style={{ backgroundColor: 'rgba(19,29,43,0.07)' }}>
+        {/* Internal — mobile */}
+        <div className="flex-1 px-8 py-12 flex flex-col" style={{ backgroundColor: 'rgba(19,29,43,0.07)' }}>
           <span
             className="inline-block self-start text-[11px] font-semibold tracking-[0.2em] uppercase px-4 py-1.5 rounded-full mb-6"
             style={{ backgroundColor: '#31393c', color: '#ffffff' }}
           >
             Internal
           </span>
-          <h3 className="text-[#1a1a1a] text-[28px] md:text-[34px] font-light leading-[1.15] tracking-[-0.02em] mb-4">
+          <h3 className="text-[#1a1a1a] text-[28px] font-light leading-[1.15] tracking-[-0.02em] mb-4">
             For your <span className="tracking-wide">ORGANIZATION</span>
           </h3>
           <p className="text-[#6b6560] text-[15px] leading-[1.7] mb-8 max-w-[400px]">
@@ -66,25 +66,65 @@ export default function PodcastPathways() {
         </div>
 
         {/* Divider */}
-        <div className="hidden md:block w-px self-stretch" style={{ backgroundColor: 'rgba(49,57,60,0.1)' }} />
-        <div className="md:hidden h-px w-full" style={{ backgroundColor: 'rgba(49,57,60,0.1)' }} />
+        <div className="h-px w-full" style={{ backgroundColor: 'rgba(49,57,60,0.1)' }} />
 
-        {/* Public — right half */}
-        <div className="flex-1 px-8 md:px-16 py-12 flex flex-col" style={{ backgroundColor: '#31393c' }}>
+        {/* Public — mobile */}
+        <div className="flex-1 px-8 py-12 flex flex-col" style={{ backgroundColor: '#31393c' }}>
           <span
             className="inline-block self-start text-[11px] font-semibold tracking-[0.2em] uppercase px-4 py-1.5 rounded-full mb-6"
             style={{ backgroundColor: 'rgba(255,255,255,0.15)', color: '#ffffff' }}
           >
             Public
           </span>
-          <h3 className="text-[#ffffff] text-[28px] md:text-[34px] font-light leading-[1.15] tracking-[-0.02em] mb-4">
+          <h3 className="text-[#ffffff] text-[28px] font-light leading-[1.15] tracking-[-0.02em] mb-4">
             For your <span className="tracking-wide">AUDIENCE</span>
           </h3>
           <p className="text-[#ffffff]/70 text-[15px] leading-[1.7] mb-8 max-w-[400px]">
             Build trust with <strong className="text-white font-semibold">patients</strong>, <strong className="text-white font-semibold">providers</strong>, and <strong className="text-white font-semibold">caregivers</strong> through narrative media that educates, empowers, and drives meaningful action.
           </p>
         </div>
+      </div>
 
+      {/* ── Desktop / Tablet: two centered cards ── */}
+      <div className="hidden md:flex flex-row items-start justify-center gap-6 px-8 pb-2" style={fade(0.2)}>
+
+        {/* Internal card — centered on left convergence point (x=25% of width) */}
+        <div
+          className="w-[340px] lg:w-[380px] px-10 py-10 flex flex-col rounded-2xl"
+          style={{ backgroundColor: 'rgba(19,29,43,0.07)' }}
+        >
+          <span
+            className="inline-block self-start text-[11px] font-semibold tracking-[0.2em] uppercase px-4 py-1.5 rounded-full mb-6"
+            style={{ backgroundColor: '#31393c', color: '#ffffff' }}
+          >
+            Internal
+          </span>
+          <h3 className="text-[#1a1a1a] text-[28px] md:text-[32px] font-light leading-[1.15] tracking-[-0.02em] mb-4">
+            For your <span className="tracking-wide">ORGANIZATION</span>
+          </h3>
+          <p className="text-[#6b6560] text-[15px] leading-[1.7]">
+            Align teams, close knowledge gaps, and deliver leadership communication through media your people actually consume.
+          </p>
+        </div>
+
+        {/* Public card — centered on right convergence point (x=75% of width) */}
+        <div
+          className="w-[340px] lg:w-[380px] px-10 py-10 flex flex-col rounded-2xl"
+          style={{ backgroundColor: '#31393c' }}
+        >
+          <span
+            className="inline-block self-start text-[11px] font-semibold tracking-[0.2em] uppercase px-4 py-1.5 rounded-full mb-6"
+            style={{ backgroundColor: 'rgba(255,255,255,0.15)', color: '#ffffff' }}
+          >
+            Public
+          </span>
+          <h3 className="text-[#ffffff] text-[28px] md:text-[32px] font-light leading-[1.15] tracking-[-0.02em] mb-4">
+            For your <span className="tracking-wide">AUDIENCE</span>
+          </h3>
+          <p className="text-[#ffffff]/70 text-[15px] leading-[1.7]">
+            Build trust with <strong className="text-white font-semibold">patients</strong>, <strong className="text-white font-semibold">providers</strong>, and <strong className="text-white font-semibold">caregivers</strong> through narrative media that educates, empowers, and drives meaningful action.
+          </p>
+        </div>
       </div>
 
       {/* ── Curved brace connector (} rotated 90°) ── */}
@@ -95,17 +135,17 @@ export default function PodcastPathways() {
           className="w-full"
           style={{ height: '100px', display: 'block' }}
         >
-          {/* Left arm: curves from center of Internal half down to center point */}
+          {/* Left arm: from center of Internal card down to convergence point */}
           <path
-            d="M 250,0 C 250,70 500,30 500,100"
+            d="M 310,0 C 310,70 500,30 500,100"
             stroke="#b0a89e"
             strokeWidth="3"
             fill="none"
             strokeLinecap="round"
           />
-          {/* Right arm: curves from center of Public half down to center point */}
+          {/* Right arm: from center of Public card down to convergence point */}
           <path
-            d="M 750,0 C 750,70 500,30 500,100"
+            d="M 690,0 C 690,70 500,30 500,100"
             stroke="#b0a89e"
             strokeWidth="3"
             fill="none"
