@@ -178,23 +178,26 @@ export function DNAPulseOnly() {
 }
 
 // ─── Sound wave bar data for OurBeliefSection ────────────────────────────────
-const BELIEF_BAR_W  = 10;
-const BELIEF_BAR_GAP = 18;
-const BELIEF_BAR_W_DESK  = 13;
-const BELIEF_BAR_GAP_DESK = 24;
+const BELIEF_BAR_W       = 5;
+const BELIEF_BAR_GAP     = 9;
+const BELIEF_BAR_W_DESK  = 6;
+const BELIEF_BAR_GAP_DESK = 11;
 
-// Heights create a natural audio-waveform silhouette (scaled up ~30%)
+// Organic voice-note — speech bursts, natural dips, no perfectly even patterns
 const BELIEF_BAR_HEIGHTS = [
-  28, 72, 50, 104, 62, 130, 44, 94, 78, 143,
-  57, 111, 34, 124, 68, 101, 52, 88, 65, 137,
-  39, 114, 55, 120, 47, 81,  73, 107, 42, 127,
-  60, 91,  36, 98,  70, 117, 57, 85,  62, 109,
-  49, 94,  34, 125, 65, 78,  55, 101, 44, 114,
-  28, 72,  50, 104, 62, 130, 44, 94,  78, 143,
+  20, 36, 58, 82, 106, 124, 118, 96, 70, 48, 28, 20, 24, 40, 64,
+  88, 114, 132, 138, 126, 108, 84, 60, 38, 24, 18, 28, 50, 76, 102,
+  120, 130, 122, 100, 74, 52, 34, 22, 30, 54, 80, 108, 128, 134, 118,
+  94, 68, 44, 26, 20, 32, 56, 84, 112, 130, 136, 120, 96, 70, 46,
+  28, 20, 36, 62, 90, 116, 132, 124, 104, 78, 54, 32, 22, 18, 26,
+  46, 72, 98, 118, 128, 116, 90, 64, 42, 26, 20, 34, 60, 88, 114,
 ];
 
-// Three Flint palette colors cycling across bars
-const BELIEF_BAR_COLORS = ['#e09a18', '#ffde5f', '#fac12c'];
+// Colors — blue appears once every 11 bars for subtle sparse accents
+const BELIEF_BAR_COLORS = ['#e09a18', '#ffde5f', '#fac12c', '#ffde5f', '#e09a18', '#fac12c', '#ffde5f', '#e09a18', '#fac12c', '#ffde5f', '#72a9f7'];
+
+// Heights for blue accent bars — short and varied
+const BLUE_BAR_HEIGHTS = [22, 34, 16, 40, 26, 38, 18, 30, 42, 20, 36, 14, 28, 44, 24, 32];
 
 function BeliefSoundWave() {
   const waveRef = useRef<HTMLDivElement>(null);
@@ -218,18 +221,19 @@ function BeliefSoundWave() {
   const tileW       = barsPerTile * barGap;
   const numBars     = barsPerTile * 2; // two tiles side by side
   const totalW      = numBars * barGap + barW;
-  const svgH        = 220;
+  const svgH        = 300;
   const cy          = svgH / 2;
 
   return (
     <div ref={waveRef} className="w-full overflow-hidden pointer-events-none" style={{ height: svgH }} aria-hidden="true">
       <style>{`
         @keyframes beliefWave {
-          0%   { transform: scaleY(0.2);  }
-          25%  { transform: scaleY(1.25); }
-          50%  { transform: scaleY(0.28); }
-          75%  { transform: scaleY(1.1);  }
-          100% { transform: scaleY(0.2);  }
+          0%   { transform: scaleY(0.22); }
+          20%  { transform: scaleY(1.0);  }
+          40%  { transform: scaleY(0.35); }
+          60%  { transform: scaleY(0.9);  }
+          80%  { transform: scaleY(0.28); }
+          100% { transform: scaleY(0.22); }
         }
         @keyframes beliefScroll {
           0%   { transform: translateX(-${tileW}px); }
@@ -237,7 +241,7 @@ function BeliefSoundWave() {
         }
       `}</style>
       {/* Scrolling wrapper — moves right by one tile width then loops */}
-      <div style={{ animation: 'beliefScroll 50s linear infinite', willChange: 'transform' }}>
+      <div style={{ animation: 'beliefScroll 70s linear infinite', willChange: 'transform' }}>
         <svg
           width={totalW}
           height={svgH}
@@ -245,8 +249,9 @@ function BeliefSoundWave() {
           style={{ display: 'block' }}
         >
           {Array.from({ length: numBars }, (_, i) => {
-            const h     = BELIEF_BAR_HEIGHTS[i % BELIEF_BAR_HEIGHTS.length];
             const color = BELIEF_BAR_COLORS[i % BELIEF_BAR_COLORS.length];
+            const blueIdx = Math.floor(i / BELIEF_BAR_COLORS.length);
+            const h     = color === '#72a9f7' ? BLUE_BAR_HEIGHTS[blueIdx % BLUE_BAR_HEIGHTS.length] : BELIEF_BAR_HEIGHTS[i % BELIEF_BAR_HEIGHTS.length];
             const delay = -(i * 0.18);
             return (
               <rect
@@ -262,7 +267,7 @@ function BeliefSoundWave() {
                 style={{
                   transformBox: 'fill-box',
                   transformOrigin: 'center',
-                  animation: `beliefWave 7s ease-in-out ${delay}s infinite`,
+                  animation: `beliefWave ${5 + (i % 5) * 0.6}s ease-in-out ${delay}s infinite`,
                 }}
               />
             );
@@ -287,39 +292,36 @@ export function OurBeliefSection() {
         </p>
       </div>
 
-      {/* Sound wave + pills stacked with wave behind */}
-      <div className="relative w-full">
-
-        {/* Sound wave — absolute, vertically centered over pill block */}
-        <div
-          className="absolute left-0 right-0 pointer-events-none"
-          style={{ zIndex: 0, top: '50%', transform: 'translateY(-50%)' }}
-        >
-          <BeliefSoundWave />
+      {/* Pills block */}
+      <div className="container mx-auto px-8 pb-10">
+        <div className="flex flex-col gap-2.5 w-[88%] md:w-full md:max-w-[520px] mx-auto">
+          <p className="text-[#6b6560] text-[17px] md:text-[18px] leading-[1.7] w-full mb-1">
+            We achieve this through:
+          </p>
+          {[
+            { adj: 'Empathic',  noun: 'Listening',            bg: '#31393c', color: '#ffffff' },
+            { adj: 'Narrative', noun: 'Storytelling',          bg: '#31393c', color: '#ffffff' },
+            { adj: 'Quality',   noun: 'Learning Experiences',  bg: '#31393c', color: '#ffffff' },
+            { adj: 'Authentic', noun: 'Emotional Connection',  bg: '#31393c', color: '#ffffff' },
+          ].map(({ adj, noun, bg, color }) => (
+            <div
+              key={noun}
+              className="w-full py-2.5 text-[23px] md:text-[34px] font-light leading-[1.2] tracking-[-0.02em]"
+              style={{ color: '#1a1a1a' }}
+            >
+              {adj}{' '}
+              <span
+                className="font-serif italic px-5 py-1.5 rounded-lg"
+                style={{ backgroundColor: bg, color }}
+              >{noun}</span>
+            </div>
+          ))}
         </div>
+      </div>
 
-        {/* Pills block — sits above wave; solid bg masks bars in the center column */}
-        <div className="container mx-auto px-8 relative" style={{ zIndex: 1 }}>
-          <div className="flex flex-col items-center gap-2.5 w-[88%] md:w-full md:max-w-[520px] mx-auto" style={{ backgroundColor: '#f7f3ef', paddingTop: '4px', paddingBottom: '4px' }}>
-            <p className="text-[#6b6560] text-[17px] md:text-[18px] leading-[1.7] w-full mb-1">
-              We achieve this through:
-            </p>
-            {[
-              { adj: 'Empathic',  noun: 'Listening'            },
-              { adj: 'Narrative', noun: 'Storytelling'          },
-              { adj: 'Quality',   noun: 'Learning Experiences'  },
-              { adj: 'Authentic', noun: 'Connection'            },
-            ].map(({ adj, noun }, i) => (
-              <div
-                key={noun}
-                className="w-full rounded-xl px-5 md:px-7 py-3.5 text-[23px] md:text-[34px] font-light leading-[1.15] tracking-[-0.02em] whitespace-nowrap overflow-hidden"
-                style={{ backgroundColor: 'rgba(19,29,43,0.07)', color: '#31393c', border: '1.5px solid rgba(19,29,43,0.18)', position: 'relative', zIndex: 1 }}
-              >
-                <span className="relative z-10">{adj} <span className="font-serif italic">{noun}</span></span>
-              </div>
-            ))}
-          </div>
-        </div>
+      {/* Sound wave — below Authentic Connection, above bio section */}
+      <div className="w-full mt-10">
+        <BeliefSoundWave />
       </div>
 
     </section>
@@ -395,8 +397,8 @@ export default function DNAWaveSection() {
           </div>
         </div>
 
-
       </div>
+
 
     </section>
   );

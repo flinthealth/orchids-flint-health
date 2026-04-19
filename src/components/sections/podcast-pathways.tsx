@@ -53,7 +53,7 @@ export default function PodcastPathways() {
         <div className="flex-1 px-8 md:px-16 py-12 flex flex-col" style={{ backgroundColor: '#f5ede6' }}>
           <span
             className="inline-block self-start text-[11px] font-semibold tracking-[0.2em] uppercase px-4 py-1.5 rounded-full mb-6"
-            style={{ backgroundColor: '#a0522d', color: '#ffffff' }}
+            style={{ backgroundColor: '#31393c', color: '#ffffff' }}
           >
             Internal
           </span>
@@ -63,11 +63,6 @@ export default function PodcastPathways() {
           <p className="text-[#6b6560] text-[15px] leading-[1.7] mb-8 max-w-[400px]">
             Align teams, close knowledge gaps, and deliver leadership communication through media your people actually consume.
           </p>
-          {/* Team icon */}
-          <div className="mt-auto flex justify-center">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/icon-team-v5.png" alt="" width={200} height={200} style={{ display: 'block' }} />
-          </div>
         </div>
 
         {/* Divider */}
@@ -86,59 +81,8 @@ export default function PodcastPathways() {
             For your <span className="tracking-wide">AUDIENCE</span>
           </h3>
           <p className="text-[#ffffff]/70 text-[15px] leading-[1.7] mb-8 max-w-[400px]">
-            Build trust with patients, providers, and caregivers through narrative media that educates, empowers, and drives meaningful action.
+            Build trust with <strong className="text-white font-semibold">patients</strong>, <strong className="text-white font-semibold">providers</strong>, and <strong className="text-white font-semibold">caregivers</strong> through narrative media that educates, empowers, and drives meaningful action.
           </p>
-          {/* Audience icon set — Bauhaus geometric */}
-          <div className="mt-auto flex justify-center items-end gap-10">
-
-            {/* Patient — circle head + geometric headphones */}
-            <div className="flex flex-col items-center gap-3">
-              <svg width="96" height="110" viewBox="0 0 80 96" fill="none" xmlns="http://www.w3.org/2000/svg">
-                {/* Headphone band */}
-                <path d="M18 30 A22 22 0 0 1 62 30" stroke="#ffde5f" strokeWidth="5" fill="none" strokeLinecap="square"/>
-                {/* Ear cushions */}
-                <rect x="12" y="27" width="10" height="16" rx="5" fill="#ffde5f"/>
-                <rect x="58" y="27" width="10" height="16" rx="5" fill="#ffde5f"/>
-                {/* Head — large circle */}
-                <circle cx="40" cy="30" r="18" fill="#fac12c"/>
-                {/* Body — bold semicircle */}
-                <path d="M8 96 Q8 62 40 62 Q72 62 72 96" fill="#fac12c" opacity="0.35"/>
-              </svg>
-              <span className="text-[10px] font-semibold tracking-[0.15em] uppercase" style={{ color: 'rgba(255,255,255,0.4)' }}>Patient</span>
-            </div>
-
-            {/* Provider — circle + medical cross */}
-            <div className="flex flex-col items-center gap-3">
-              <svg width="96" height="110" viewBox="0 0 80 96" fill="none" xmlns="http://www.w3.org/2000/svg">
-                {/* Head */}
-                <circle cx="40" cy="22" r="18" fill="#6290c9"/>
-                {/* Body */}
-                <path d="M8 96 Q8 58 40 58 Q72 58 72 96" fill="#6290c9" opacity="0.3"/>
-                {/* Cross — bold rectangles */}
-                <rect x="36" y="62" width="8" height="26" rx="2" fill="#fac12c"/>
-                <rect x="27" y="71" width="26" height="8" rx="2" fill="#fac12c"/>
-              </svg>
-              <span className="text-[10px] font-semibold tracking-[0.15em] uppercase" style={{ color: 'rgba(255,255,255,0.4)' }}>Provider</span>
-            </div>
-
-            {/* Caregiver — two offset circles + geometric heart */}
-            <div className="flex flex-col items-center gap-3">
-              <svg width="96" height="110" viewBox="0 0 80 96" fill="none" xmlns="http://www.w3.org/2000/svg">
-                {/* Back figure */}
-                <circle cx="50" cy="24" r="13" fill="#fac12c" opacity="0.4"/>
-                <path d="M28 96 Q28 66 50 66 Q72 66 72 96" fill="#fac12c" opacity="0.15"/>
-                {/* Front figure */}
-                <circle cx="30" cy="26" r="18" fill="#fac12c"/>
-                <path d="M6 96 Q6 62 30 62 Q54 62 54 96" fill="#fac12c" opacity="0.35"/>
-                {/* Geometric heart — two circles + diamond */}
-                <circle cx="47" cy="44" r="7" fill="#ffde5f"/>
-                <circle cx="59" cy="44" r="7" fill="#ffde5f"/>
-                <polygon points="41,49 53,62 65,49" fill="#ffde5f"/>
-              </svg>
-              <span className="text-[10px] font-semibold tracking-[0.15em] uppercase" style={{ color: 'rgba(255,255,255,0.4)' }}>Caregiver</span>
-            </div>
-
-          </div>
         </div>
 
       </div>
