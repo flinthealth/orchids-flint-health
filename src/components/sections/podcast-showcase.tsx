@@ -90,7 +90,7 @@ function StatsBar({ stats }: { stats: Stat[] }) {
   return (
     <div
       className={`grid grid-cols-2 ${mdCols} relative overflow-hidden px-8 md:px-10 py-6 md:py-7`}
-      style={{ background: '#a0522d' }}
+      style={{ background: 'linear-gradient(to right, #3d4446 0%, #5a4035 50%, #7a4428 100%)' }}
     >
       {/* Noise overlay */}
       <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='gsb'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23gsb)'/%3E%3C/svg%3E")`, backgroundSize: '400px 400px', opacity: 0.28, mixBlendMode: 'overlay' }} />
@@ -198,26 +198,24 @@ export default function PodcastShowcase() {
       id="our-work"
       ref={sectionRef}
       className="relative pt-[88px] md:pt-[80px] pb-[100px] px-4 md:px-8 overflow-hidden"
-      style={{ backgroundColor: '#31393c' }}
+      style={{ backgroundColor: '#f7f3ef' }}
     >
-      {/* Noise overlay */}
-      <div className="absolute inset-0 z-[1] pointer-events-none" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='gsh'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23gsh)'/%3E%3C/svg%3E")`, backgroundSize: '400px 400px', opacity: 0.28, mixBlendMode: 'overlay' }} />
-      {/* Content sits above overlays */}
+      {/* Content */}
       <div className="relative z-[2]">
       {/* Header */}
       <div className="text-center max-w-[620px] mx-auto mb-16">
         <div className="mb-5">
-          <span className="text-[#ffffff]/60 text-[15px] font-semibold tracking-[0.1em] uppercase">
+          <span className="text-[#6b6560] text-[15px] font-semibold tracking-[0.1em] uppercase">
             In Practice
           </span>
         </div>
         <h2
-          className="text-[#ffffff] text-[40px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-5"
+          className="text-[#1a1a1a] text-[40px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-5"
           style={fade(0)}
         >
           Real results for<span className="hidden md:inline"><br /></span><span className="md:hidden"> </span><span className="font-serif italic">healthcare brands</span>
         </h2>
-        <p className="text-[#ffffff]/70 text-[15px] md:text-[16px] leading-[1.65]" style={fade(0.2)}>
+        <p className="text-[#6b6560] text-[15px] md:text-[16px] leading-[1.65]" style={fade(0.2)}>
           Proof that when the right message meets the right audience, something measurable happens.
         </p>
       </div>

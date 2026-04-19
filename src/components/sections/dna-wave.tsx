@@ -280,7 +280,7 @@ export function BeliefSoundWave() {
 
 export function OurBeliefSection() {
   return (
-    <section className="bg-[#f7f3ef] pt-[88px] md:pt-[120px] pb-[32px] overflow-hidden">
+    <section className="bg-white pt-[88px] md:pt-[120px] pb-[32px] overflow-hidden">
 
       {/* Headline + body */}
       <div className="container mx-auto px-8 text-center mb-4">
@@ -326,7 +326,7 @@ export function OurBeliefSection() {
 
 export default function DNAWaveSection() {
   return (
-    <section id="about" className="bg-[#f7f3ef] pt-[32px] md:pt-[40px] pb-[80px]">
+    <section id="about" className="bg-white pt-[32px] md:pt-[40px] pb-[80px]">
 
       {/* Founder section */}
       <div>
@@ -339,7 +339,7 @@ export default function DNAWaveSection() {
         </div>
 
         {/* Row 1: Photo + Bio text */}
-        <div className="flex flex-col md:flex-row items-stretch bg-[#f7f3ef] overflow-hidden rounded-[24px]">
+        <div className="flex flex-col md:flex-row items-stretch bg-white overflow-hidden rounded-[24px]">
 
           {/* Photo */}
           <div className="w-full md:w-[42%] flex-shrink-0 p-4 md:p-6 md:pb-6 md:self-start">
@@ -353,7 +353,7 @@ export default function DNAWaveSection() {
           </div>
 
           {/* Bio content */}
-          <div className="flex-1 flex flex-col px-8 md:px-14 lg:px-20 pt-12 pb-12 md:pt-16 md:pb-16 bg-[#f7f3ef]">
+          <div className="flex-1 flex flex-col px-8 md:px-14 lg:px-20 pt-12 pb-12 md:pt-16 md:pb-16 bg-white">
             <div className="flex flex-col max-w-[560px]">
 
               {/* Label */}
