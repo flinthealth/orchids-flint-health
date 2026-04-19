@@ -178,10 +178,10 @@ export function DNAPulseOnly() {
 }
 
 // ─── Sound wave bar data for OurBeliefSection ────────────────────────────────
-const BELIEF_BAR_W       = 5;
-const BELIEF_BAR_GAP     = 9;
-const BELIEF_BAR_W_DESK  = 6;
-const BELIEF_BAR_GAP_DESK = 11;
+const BELIEF_BAR_W       = 7;
+const BELIEF_BAR_GAP     = 12;
+const BELIEF_BAR_W_DESK  = 9;
+const BELIEF_BAR_GAP_DESK = 15;
 
 // Organic voice-note — speech bursts, natural dips, no perfectly even patterns
 const BELIEF_BAR_HEIGHTS = [
@@ -199,7 +199,7 @@ const BELIEF_BAR_COLORS = ['#e09a18', '#ffde5f', '#fac12c', '#ffde5f', '#e09a18'
 // Heights for blue accent bars — short and varied
 const BLUE_BAR_HEIGHTS = [22, 34, 16, 40, 26, 38, 18, 30, 42, 20, 36, 14, 28, 44, 24, 32];
 
-function BeliefSoundWave() {
+export function BeliefSoundWave() {
   const waveRef = useRef<HTMLDivElement>(null);
   const [containerW, setContainerW] = useState(1400);
 
@@ -290,11 +290,6 @@ export function OurBeliefSection() {
         <p className="text-[#6b6560] text-[17px] md:text-[18px] leading-[1.7] max-w-[560px] mx-auto">
           When science meets the right narrative, one that connects emotionally and lands cognitively, complex becomes clear, distant becomes personal, and information drives action.
         </p>
-      </div>
-
-      {/* Sound wave — after paragraph, before pills */}
-      <div className="w-full my-1">
-        <BeliefSoundWave />
       </div>
 
       {/* Pills block */}

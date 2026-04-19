@@ -3,6 +3,7 @@ import HeroSection from "@/components/sections/hero";
 import DNAWaveSection from "@/components/sections/dna-wave-client";
 import DNAPulseOnly from "@/components/sections/dna-pulse-client";
 import OurBeliefSection from "@/components/sections/our-belief-client";
+import { BeliefSoundWave } from "@/components/sections/dna-wave";
 import CarePlatformSection from "@/components/sections/care-platform";
 import FeaturesGrid from "@/components/sections/features-grid";
 import OutcomesStats from "@/components/sections/outcomes-stats";
@@ -40,6 +41,9 @@ export default function Home() {
         <PodcastPathways />
         <ContentPrism />
         {/* <FeaturesGrid /> */}
+        <div className="bg-[#f7f3ef] overflow-hidden pt-6 pb-16">
+          <BeliefSoundWave />
+        </div>
         <ContactSection />
 
         {/* Bibliography */}

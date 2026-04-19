@@ -61,28 +61,23 @@ function StatCell({
   const classes = [
     'flex flex-col py-4 px-4',
     isFullWidth ? 'col-span-2 md:col-span-1' : '',
-    // mobile left border — right column only
-    !isFullWidth && mobileCol % 2 !== 0
-      ? 'border-l border-[#1a1a1a]/15'
-      : '',
-    // mobile top border — second row
-    mobileBottomRow ? 'border-t border-[#1a1a1a]/15' : '',
-    // desktop: left border on every stat except first; remove top border
-    arrayIdx > 0 ? 'md:border-l md:border-[#1a1a1a]/15' : '',
+    !isFullWidth && mobileCol % 2 !== 0 ? 'border-l border-white/20' : '',
+    mobileBottomRow ? 'border-t border-white/20' : '',
+    arrayIdx > 0 ? 'md:border-l md:border-white/20' : '',
     'md:border-t-0',
   ].filter(Boolean).join(' ');
 
   return (
     <div className={`${classes}${isFullWidth ? ' md:items-start items-center text-center md:text-left' : ''}`}>
       <div className="flex items-center gap-1">
-        <span className="text-[#31393c] text-[22px] font-light leading-none tracking-[-0.02em]">{s.value}</span>
+        <span className="text-white text-[22px] font-light leading-none tracking-[-0.02em]">{s.value}</span>
         {s.up && (
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="mb-0.5 flex-shrink-0">
-            <path d="M7 11V3M7 3L3.5 6.5M7 3L10.5 6.5" stroke="#31a35e" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M7 11V3M7 3L3.5 6.5M7 3L10.5 6.5" stroke="#6ee7b7" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
         )}
       </div>
-      <span className="text-[#31393c]/50 text-[11px] font-medium tracking-[0.06em] uppercase mt-1 leading-snug">{s.label}</span>
+      <span className="text-white/60 text-[11px] font-medium tracking-[0.06em] uppercase mt-1 leading-snug">{s.label}</span>
     </div>
   );
 }
@@ -93,10 +88,15 @@ function StatsBar({ stats }: { stats: Stat[] }) {
   const mdCols       = count === 3 ? 'md:grid-cols-3' : count === 4 ? 'md:grid-cols-4' : 'md:grid-cols-3';
   let mobileCol      = 0;
   return (
-    <div className={`grid grid-cols-2 ${mdCols} relative`}>
+    <div
+      className={`grid grid-cols-2 ${mdCols} relative overflow-hidden px-8 md:px-10 py-6 md:py-7`}
+      style={{ background: '#a0522d' }}
+    >
+      {/* Noise overlay */}
+      <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='gsb'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23gsb)'/%3E%3C/svg%3E")`, backgroundSize: '400px 400px', opacity: 0.28, mixBlendMode: 'overlay' }} />
       {/* Full-height vertical center divider on mobile when a fullWidth row exists */}
       {hasFullWidth && (
-        <div className="md:hidden absolute left-1/2 top-0 bottom-0 w-px -translate-x-px" style={{ backgroundColor: 'rgba(26,26,26,0.15)' }} />
+        <div className="md:hidden absolute left-1/2 top-0 bottom-0 w-px -translate-x-px" style={{ backgroundColor: 'rgba(255,255,255,0.2)' }} />
       )}
       {stats.map((s, arrayIdx) => {
         const result = (
@@ -162,11 +162,9 @@ function PodcastCard({
         </div>
       </div>
 
-      {/* Stats — full card width on both breakpoints, stone gray bg */}
+      {/* Stats — full card width on both breakpoints */}
       <div className="mt-auto">
-        <div style={{ backgroundColor: '#f7f3ef' }} className="px-8 md:px-10 py-6 md:py-7">
-          <StatsBar stats={stats} />
-        </div>
+        <StatsBar stats={stats} />
       </div>
 
     </div>
