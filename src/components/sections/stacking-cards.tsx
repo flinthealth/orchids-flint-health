@@ -223,7 +223,7 @@ export default function StackingCards() {
     <section className="bg-white">
 
       {/* Header */}
-      <div className="container mx-auto px-4 md:px-8 pt-[88px] md:pt-[72px]">
+      <div className="container mx-auto px-4 md:px-8 pt-[120px] md:pt-[120px]">
         <div className="max-w-[1000px] mx-auto">
           <div className="mb-5 text-center max-w-[680px] mx-auto">
             <div className="mb-5">

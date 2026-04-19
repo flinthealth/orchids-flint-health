@@ -171,7 +171,7 @@ function HelixPulse() {
 
 export function DNAPulseOnly() {
   return (
-    <div className="bg-white w-full overflow-hidden py-8">
+    <div className="bg-[#f7f3ef] w-full overflow-hidden py-8">
       <HelixPulse />
     </div>
   );
@@ -280,45 +280,96 @@ export function BeliefSoundWave() {
 
 export function OurBeliefSection() {
   return (
-    <section className="bg-white pt-[88px] md:pt-[120px] pb-[32px] overflow-hidden">
+    <section className="relative pt-[88px] md:pt-[120px] pb-[32px] overflow-hidden" style={{ background: 'linear-gradient(to right, #31393c 0%, #6b4b3e 55%, #a0522d 100%)' }}>
+      {/* Keyframes */}
+      <style>{`
+        @keyframes beliefFlashlightArc {
+          0%   { transform: translate(-300px, -300px); opacity: 0; }
+          8%   { opacity: 1; }
+          50%  { transform: translate(500px, 200px); opacity: 1; }
+          92%  { opacity: 1; }
+          100% { transform: translate(1200px, -300px); opacity: 0; }
+        }
+        @keyframes beliefFlashlightMob {
+          0%   { transform: translate(-200px, -200px); opacity: 0; }
+          8%   { opacity: 1; }
+          50%  { transform: translate(180px, 180px); opacity: 1; }
+          92%  { opacity: 1; }
+          100% { transform: translate(420px, -200px); opacity: 0; }
+        }
+      `}</style>
 
+      {/* Grain overlay */}
+      <div className="absolute inset-0 pointer-events-none z-0" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='gbel'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23gbel)'/%3E%3C/svg%3E")`, backgroundSize: '400px 400px', opacity: 0.28, mixBlendMode: 'overlay' }} />
+
+      {/* Flashlight — desktop */}
+      <div className="hidden md:block absolute inset-0 z-[1] pointer-events-none overflow-hidden">
+        <div style={{
+          position: 'absolute', top: 0, left: 0,
+          width: '560px', height: '560px', borderRadius: '50%',
+          background: 'radial-gradient(circle at center, rgba(250,193,44,0.28) 0%, rgba(250,193,44,0.18) 12%, rgba(250,193,44,0.10) 25%, rgba(250,193,44,0.055) 38%, rgba(250,193,44,0.025) 52%, rgba(250,193,44,0.010) 65%, rgba(250,193,44,0.003) 78%, rgba(250,193,44,0.001) 88%, transparent 100%)',
+          animation: 'beliefFlashlightArc 18s ease-in-out infinite',
+          animationDelay: '1s',
+        }} />
+      </div>
+
+      {/* Flashlight — mobile */}
+      <div className="md:hidden absolute inset-0 z-[1] pointer-events-none overflow-hidden">
+        <div style={{
+          position: 'absolute', top: 0, left: 0,
+          width: '380px', height: '380px', borderRadius: '50%',
+          background: 'radial-gradient(circle at center, rgba(250,193,44,0.28) 0%, rgba(250,193,44,0.18) 12%, rgba(250,193,44,0.10) 25%, rgba(250,193,44,0.055) 38%, rgba(250,193,44,0.025) 52%, rgba(250,193,44,0.010) 65%, rgba(250,193,44,0.003) 78%, rgba(250,193,44,0.001) 88%, transparent 100%)',
+          animation: 'beliefFlashlightMob 18s ease-in-out infinite',
+          animationDelay: '1s',
+        }} />
+      </div>
+
+      {/* Content above grain */}
+      <div className="relative z-10">
       {/* Headline + body */}
       <div className="container mx-auto px-8 text-center mb-4">
-        <h2 className="text-[#1a1a1a] text-[40px] md:text-[52px] font-light leading-[1.15] tracking-[-0.02em] max-w-[680px] mx-auto mb-6">
+        <h2 className="text-[#ffffff] text-[40px] md:text-[52px] font-light leading-[1.15] tracking-[-0.02em] max-w-[680px] mx-auto mb-6">
           We believe information alone doesn't <span className="font-serif italic">move people</span>
         </h2>
-        <p className="text-[#6b6560] text-[17px] md:text-[18px] leading-[1.7] max-w-[560px] mx-auto">
+        <p className="text-[#ffffff]/70 text-[17px] md:text-[18px] leading-[1.7] max-w-[560px] mx-auto">
           When science meets the right narrative, one that connects emotionally and lands cognitively, complex becomes clear, distant becomes personal, and information drives action.
         </p>
       </div>
 
       {/* Pills block */}
-      <div className="container mx-auto px-8 pb-10">
+      <div className="container mx-auto px-8 pb-10 mt-12">
         <div className="flex flex-col gap-2.5 w-[88%] md:w-full md:max-w-[520px] mx-auto">
-          <p className="text-[#6b6560] text-[17px] md:text-[18px] leading-[1.7] w-full mb-1">
+          <p className="text-[#ffffff]/70 text-[17px] md:text-[18px] leading-[1.7] w-full mb-1">
             We achieve this through:
           </p>
           {[
-            { adj: 'Empathic',  noun: 'Listening',            bg: '#31393c', color: '#ffffff' },
-            { adj: 'Narrative', noun: 'Storytelling',          bg: '#31393c', color: '#ffffff' },
-            { adj: 'Quality',   noun: 'Learning Experiences',  bg: '#31393c', color: '#ffffff' },
-            { adj: 'Authentic', noun: 'Emotional Connection',  bg: '#31393c', color: '#ffffff' },
-          ].map(({ adj, noun, bg, color }) => (
-            <div
-              key={noun}
-              className="w-full py-2.5 text-[23px] md:text-[34px] font-light leading-[1.2] tracking-[-0.02em]"
-              style={{ color: '#1a1a1a' }}
-            >
-              {adj}{' '}
-              <span
-                className="font-serif italic px-5 py-1.5 rounded-lg"
-                style={{ backgroundColor: bg, color }}
-              >{noun}</span>
-            </div>
+            { adj: 'Empathic',  noun: 'Listening',            },
+            { adj: 'Narrative', noun: 'Storytelling',          },
+            { adj: 'Quality',   noun: 'Learning Experiences',  },
+            { adj: 'Authentic', noun: 'Emotional Connection',  },
+          ].map(({ adj, noun }, i, arr) => (
+            <React.Fragment key={noun}>
+              {i > 0 && (
+                <div className="w-full" style={{ height: '1px', backgroundColor: 'rgba(255,255,255,0.12)' }} />
+              )}
+              <div
+                className="w-full py-2.5 text-[23px] md:text-[34px] font-light leading-[1.2] tracking-[-0.02em]"
+                style={{ color: '#ffffff' }}
+              >
+                {adj}{' '}
+                <span
+                  className="font-serif italic px-5 py-1.5 rounded-lg"
+                  style={{ backgroundColor: 'rgba(255,255,255,0.2)', color: '#ffffff' }}
+                >{noun}</span>
+              </div>
+              {i === arr.length - 1 && (
+                <div className="w-full" style={{ height: '1px', backgroundColor: 'rgba(255,255,255,0.12)' }} />
+              )}
+            </React.Fragment>
           ))}
         </div>
       </div>
-
+      </div>
 
     </section>
   );
@@ -326,7 +377,7 @@ export function OurBeliefSection() {
 
 export default function DNAWaveSection() {
   return (
-    <section id="about" className="bg-white pt-[32px] md:pt-[40px] pb-[80px]">
+    <section id="about" className="bg-[#f7f3ef] pt-[80px] md:pt-[100px] pb-[80px]">
 
       {/* Founder section */}
       <div>
@@ -339,7 +390,7 @@ export default function DNAWaveSection() {
         </div>
 
         {/* Row 1: Photo + Bio text */}
-        <div className="flex flex-col md:flex-row items-stretch bg-white overflow-hidden rounded-[24px]">
+        <div className="flex flex-col md:flex-row items-stretch bg-[#f7f3ef] overflow-hidden rounded-[24px]">
 
           {/* Photo */}
           <div className="w-full md:w-[42%] flex-shrink-0 p-4 md:p-6 md:pb-6 md:self-start">
@@ -353,7 +404,7 @@ export default function DNAWaveSection() {
           </div>
 
           {/* Bio content */}
-          <div className="flex-1 flex flex-col px-8 md:px-14 lg:px-20 pt-12 pb-12 md:pt-16 md:pb-16 bg-white">
+          <div className="flex-1 flex flex-col px-8 md:px-14 lg:px-20 pt-12 pb-12 md:pt-16 md:pb-16 bg-[#f7f3ef]">
             <div className="flex flex-col max-w-[560px]">
 
               {/* Label */}

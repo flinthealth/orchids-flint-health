@@ -90,7 +90,7 @@ function StatsBar({ stats }: { stats: Stat[] }) {
   return (
     <div
       className={`grid grid-cols-2 ${mdCols} relative overflow-hidden px-8 md:px-10 py-6 md:py-7`}
-      style={{ background: 'linear-gradient(to right, #3d4446 0%, #5a4035 50%, #7a4428 100%)' }}
+      style={{ background: '#31393c' }}
     >
       {/* Noise overlay */}
       <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='gsb'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23gsb)'/%3E%3C/svg%3E")`, backgroundSize: '400px 400px', opacity: 0.28, mixBlendMode: 'overlay' }} />
@@ -198,7 +198,7 @@ export default function PodcastShowcase() {
       id="our-work"
       ref={sectionRef}
       className="relative pt-[88px] md:pt-[80px] pb-[100px] px-4 md:px-8 overflow-hidden"
-      style={{ backgroundColor: '#f7f3ef' }}
+      style={{ backgroundColor: 'rgba(19,29,43,0.07)' }}
     >
       {/* Content */}
       <div className="relative z-[2]">

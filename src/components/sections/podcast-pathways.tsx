@@ -50,7 +50,7 @@ export default function PodcastPathways() {
       <div className="flex flex-col md:flex-row" style={fade(0.2)}>
 
         {/* Internal — left half */}
-        <div className="flex-1 px-8 md:px-16 py-12 flex flex-col" style={{ backgroundColor: '#f5ede6' }}>
+        <div className="flex-1 px-8 md:px-16 py-12 flex flex-col" style={{ backgroundColor: 'rgba(19,29,43,0.07)' }}>
           <span
             className="inline-block self-start text-[11px] font-semibold tracking-[0.2em] uppercase px-4 py-1.5 rounded-full mb-6"
             style={{ backgroundColor: '#31393c', color: '#ffffff' }}

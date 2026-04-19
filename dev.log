@@ -216,3 +216,90 @@
  ✓ Compiled in 266ms (617 modules)
  GET /?_cb=1776568395271 200 in 74ms
  GET /?_cb=1776568488271 200 in 207ms
+ ✓ Compiled in 283ms (617 modules)
+ GET /?_cb=1776568488271 200 in 68ms
+ GET /?_cb=1776568649007 200 in 218ms
+ ✓ Compiled in 294ms (617 modules)
+ GET /?_cb=1776568649007 200 in 47ms
+ ✓ Compiled in 123ms (617 modules)
+ GET /?_cb=1776568649007 200 in 47ms
+ GET /?_cb=1776568789068 200 in 198ms
+ ✓ Compiled in 246ms (617 modules)
+ GET /?_cb=1776568789068 200 in 46ms
+ GET /?_cb=1776568879252 200 in 198ms
+ ✓ Compiled in 295ms (617 modules)
+ GET /?_cb=1776568879252 200 in 78ms
+ GET /?_cb=1776568999342 200 in 200ms
+ ✓ Compiled in 331ms (617 modules)
+ GET /?_cb=1776568999342 200 in 50ms
+ ⨯ ./src/components/sections/dna-wave.tsx
+Error:   [31mx[0m Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+     ,-[[36;1;4m/home/user/app/src/components/sections/dna-wave.tsx[0m:329:1]
+ [2m326[0m | 
+ [2m327[0m |     </section>
+ [2m328[0m |   );
+ [2m329[0m | }
+     : [35;1m^[0m
+ [2m330[0m | 
+ [2m331[0m | export default function DNAWaveSection() {
+ [2m332[0m |   return (
+     `----
+  [31mx[0m Expected '</', got 'jsx text (
+  [31m|[0m   );
+  [31m|[0m }
+  [31m|[0m
+  [31m|[0m export default function DNAWaveSection() )'
+     ,-[[36;1;4m/home/user/app/src/components/sections/dna-wave.tsx[0m:327:1]
+ [2m324[0m |           </div>
+ [2m325[0m |     
+ [2m326[0m |     
+ [2m327[0m | [35;1m,[0m[35;1m-[0m[35;1m>[0m     </section>
+ [2m328[0m | [35;1m|[0m     );
+ [2m329[0m | [35;1m|[0m   }
+ [2m330[0m | [35;1m|[0m   
+ [2m331[0m | [35;1m`[0m[35;1m-[0m[35;1m>[0m export default function DNAWaveSection() {
+ [2m332[0m |       return (
+ [2m333[0m |         <section id="about" className="bg-[#f7f3ef] pt-[32px] md:pt-[40px] pb-[80px]">
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/components/sections/dna-wave.tsx
+./src/components/sections/dna-wave-client.tsx
+ ✓ Compiled in 143ms (617 modules)
+ GET /?_cb=1776568999342 200 in 76ms
+ GET /?_cb=1776569102096 200 in 202ms
+ ✓ Compiled in 291ms (617 modules)
+ GET /?_cb=1776569102096 200 in 60ms
+ GET /?_cb=1776569181703 200 in 214ms
+ ✓ Compiled in 347ms (617 modules)
+ GET /?_cb=1776569181703 200 in 47ms
+ GET /?_cb=1776569304622 200 in 206ms
+ ✓ Compiled in 178ms (617 modules)
+ GET /?_cb=1776569304622 200 in 78ms
+ GET /?_cb=1776569351576 200 in 167ms
+ ✓ Compiled in 304ms (617 modules)
+ GET /?_cb=1776569351576 200 in 46ms
+ GET /?_cb=1776569421917 200 in 204ms
+ ✓ Compiled in 267ms (617 modules)
+ GET /?_cb=1776569421917 200 in 47ms
+ ⚠ Cross origin request detected from 3000-fb96a286-64ed-42c8-80df-6c8ec49096e0.orchids.cloud to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+Each child in a list should have a unique "key" prop.
+
+Check the render method of `OurBeliefSection`. See https://react.dev/link/warning-keys for more information.
+ GET /?_cb=1776569579111 200 in 215ms
+ ✓ Compiled in 288ms (617 modules)
+ GET /?_cb=1776569579111 200 in 83ms
+ GET /?_cb=1776569702291 200 in 187ms
+ ✓ Compiled in 375ms (617 modules)
+ GET /?_cb=1776569702291 200 in 63ms
+ GET /?_cb=1776569808131 200 in 202ms
+ ✓ Compiled in 141ms (617 modules)
+ GET /?_cb=1776569808131 200 in 45ms
+ GET /?_cb=1776569845866 200 in 210ms
+ ✓ Compiled in 258ms (617 modules)
+ GET /?_cb=1776569845866 200 in 49ms
+ GET /?_cb=1776569985080 200 in 214ms
