@@ -289,15 +289,21 @@ export default function StackingCards() {
                   willChange:      'transform',
                 }}
               >
+                {/* Gradient wrapper — shows through as top edge */}
                 <div
                   ref={el => { cardContentRefsMobile.current[stackIndex] = el; }}
                   style={{
-                    backgroundColor: BG,
-                    borderRadius:    '24px 24px 0 0',
-                    boxShadow:       `0 -6px 0 ${EDGE_COLOR}`,
+                    borderRadius: '24px 24px 0 0',
+                    background: 'linear-gradient(to right, #31393c 0%, #6b4b3e 55%, #a0522d 100%)',
+                    padding: '6px 0 0 0',
+                    position: 'relative',
+                    overflow: 'hidden',
                   }}
                 >
-                  <CardContent card={card} mobile={true} />
+                  <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='gscm'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23gscm)'/%3E%3C/svg%3E")`, backgroundSize: '400px 400px', opacity: 0.35, mixBlendMode: 'overlay' }} />
+                  <div style={{ backgroundColor: BG, borderRadius: '20px 20px 0 0', position: 'relative' }}>
+                    <CardContent card={card} mobile={true} />
+                  </div>
                 </div>
               </div>
               {!isLast && <div className="bg-white" style={{ height: '65vh' }} />}
@@ -326,14 +332,21 @@ export default function StackingCards() {
                 }}
               >
                 <div className="container mx-auto px-8">
+                  {/* Gradient wrapper — shows through as bottom edge, rounds naturally with card corners */}
                   <div
-                    className="max-w-[1000px] mx-auto rounded-3xl overflow-hidden"
+                    className="max-w-[1000px] mx-auto relative overflow-hidden"
                     style={{
-                      backgroundColor: BG,
-                      boxShadow:       `0 8px 0 ${EDGE_COLOR}, 0 16px 40px rgba(171,217,234,0.25)`,
+                      borderRadius: '24px',
+                      background: 'linear-gradient(to right, #31393c 0%, #6b4b3e 55%, #a0522d 100%)',
+                      padding: '0 0 8px 0',
+                      boxShadow: '0 16px 40px rgba(171,217,234,0.25)',
                     }}
                   >
-                    <CardContent card={card} mobile={false} />
+                    {/* Noise on gradient */}
+                    <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='gsc'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23gsc)'/%3E%3C/svg%3E")`, backgroundSize: '400px 400px', opacity: 0.35, mixBlendMode: 'overlay' }} />
+                    <div className="relative" style={{ backgroundColor: BG, borderRadius: '24px 24px 20px 20px', overflow: 'hidden' }}>
+                      <CardContent card={card} mobile={false} />
+                    </div>
                   </div>
                 </div>
               </div>
