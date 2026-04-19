@@ -329,7 +329,7 @@ export function OurBeliefSection() {
       {/* Headline + body */}
       <div className="container mx-auto px-8 text-center mb-4">
         <h2 className="text-[#ffffff] text-[40px] md:text-[52px] font-light leading-[1.15] tracking-[-0.02em] max-w-[680px] mx-auto mb-6">
-          We believe information alone doesn't <span className="font-serif italic">move people</span>
+          Information alone doesn't <span className="font-serif italic">move people</span>
         </h2>
         <p className="text-[#ffffff]/70 text-[17px] md:text-[18px] leading-[1.7] max-w-[560px] mx-auto">
           When science meets the right narrative, one that connects emotionally and lands cognitively, complex becomes clear, distant becomes personal, and information drives action.
@@ -337,8 +337,8 @@ export function OurBeliefSection() {
       </div>
 
       {/* Pills block */}
-      <div className="container mx-auto px-8 pb-10 mt-12">
-        <div className="flex flex-col gap-2.5 w-[88%] md:w-full md:max-w-[520px] mx-auto">
+      <div className="container mx-auto pl-6 pr-8 md:px-8 pb-10 mt-12">
+        <div className="flex flex-col gap-2.5 w-full md:max-w-[520px] md:mx-auto">
           <p className="text-[#ffffff]/70 text-[17px] md:text-[18px] leading-[1.7] w-full mb-1">
             We achieve this through:
           </p>
@@ -353,7 +353,7 @@ export function OurBeliefSection() {
                 <div className="w-full" style={{ height: '1px', backgroundColor: 'rgba(255,255,255,0.12)' }} />
               )}
               <div
-                className="w-full py-2.5 text-[23px] md:text-[34px] font-light leading-[1.2] tracking-[-0.02em]"
+                className="w-full py-2.5 text-[26px] md:text-[34px] font-light leading-[1.2] tracking-[-0.02em] whitespace-nowrap"
                 style={{ color: '#ffffff' }}
               >
                 {adj}{' '}

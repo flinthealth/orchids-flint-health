@@ -59,7 +59,7 @@ function StatCell({
   // Mobile: right-column items get left border; bottom-row items get top border
   // Desktop: every item except the first gets a left border; no top borders
   const classes = [
-    'flex flex-col py-4 px-4',
+    isFullWidth ? 'flex flex-col pt-6 pb-4 px-4 md:py-4' : 'flex flex-col py-4 px-4',
     isFullWidth ? 'col-span-2 md:col-span-1' : '',
     !isFullWidth && mobileCol % 2 !== 0 ? 'border-l border-white/20' : '',
     mobileBottomRow ? 'border-t border-white/20' : '',
@@ -94,10 +94,6 @@ function StatsBar({ stats }: { stats: Stat[] }) {
     >
       {/* Noise overlay */}
       <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='gsb'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23gsb)'/%3E%3C/svg%3E")`, backgroundSize: '400px 400px', opacity: 0.28, mixBlendMode: 'overlay' }} />
-      {/* Full-height vertical center divider on mobile when a fullWidth row exists */}
-      {hasFullWidth && (
-        <div className="md:hidden absolute left-1/2 top-0 bottom-0 w-px -translate-x-px" style={{ backgroundColor: 'rgba(255,255,255,0.2)' }} />
-      )}
       {stats.map((s, arrayIdx) => {
         const result = (
           <StatCell

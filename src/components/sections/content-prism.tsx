@@ -201,7 +201,7 @@ export default function ContentPrism() {
           {[
             { label: 'Audio',         bg: '#ffde5f', color: '#1a1a1a' },
             { label: 'Video',         bg: '#fac12c', color: '#1a1a1a' },
-            { label: 'Audio + Video', bg: '#e09a18', color: '#1a1a1a' },
+            { label: 'Audio + Video', bg: '#6290c9', color: '#ffffff' },
           ].map(({ label, bg, color }) => (
             <span key={label} className="text-[12px] font-semibold tracking-[0.05em] px-3 py-1.5 rounded-full" style={{ backgroundColor: bg, color }}>{label}</span>
           ))}
