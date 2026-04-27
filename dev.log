@@ -1,0 +1,62 @@
+
+> maven-clinic-clone@0.1.0 dev
+> next dev --port 3000
+
+   ▲ Next.js 15.5.8
+   - Local:        http://localhost:3000
+   - Network:      http://172.20.0.4:3000
+   - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 1157ms
+ ○ Compiling / ...
+ ✓ Compiled / in 2.8s (617 modules)
+ GET / 200 in 3147ms
+ GET /?_cb=1776899668813 200 in 228ms
+ GET /?_cb=1776899732946 200 in 222ms
+ GET /?_cb=1776900039445 200 in 220ms
+ ✓ Compiled in 403ms (262 modules)
+ GET /?_cb=1776900039445 200 in 46ms
+ ✓ Compiled in 164ms (262 modules)
+ GET /?_cb=1776900039445 200 in 27ms
+ ✓ Compiled in 279ms (617 modules)
+ GET /?_cb=1776900039445 200 in 75ms
+ GET /?_cb=1776904272118 200 in 287ms
+ ✓ Compiled in 225ms (262 modules)
+ GET /?_cb=1776904272118 200 in 60ms
+ ✓ Compiled in 148ms (262 modules)
+ GET /?_cb=1776904272118 200 in 38ms
+ ✓ Compiled in 297ms (617 modules)
+ GET /?_cb=1776904272118 200 in 112ms
+ GET /?_cb=1776904913388 200 in 226ms
+ ✓ Compiled in 198ms (262 modules)
+ GET /?_cb=1776904913388 200 in 35ms
+ ✓ Compiled in 151ms (262 modules)
+ ✓ Compiled in 116ms (262 modules)
+ GET /?_cb=1776904913388 200 in 37ms
+ GET /?_cb=1776904913388 200 in 37ms
+ ✓ Compiled in 360ms (617 modules)
+ GET /?_cb=1776904913388 200 in 127ms
+ GET /?_cb=1776905122060 200 in 230ms
+ ✓ Compiled in 176ms (262 modules)
+ GET /?_cb=1776905122060 200 in 18ms
+ ✓ Compiled in 150ms (262 modules)
+ ✓ Compiled in 125ms (262 modules)
+ GET /?_cb=1776905122060 200 in 26ms
+ GET /?_cb=1776905122060 200 in 40ms
+ ✓ Compiled in 318ms (617 modules)
+ GET /?_cb=1776905122060 200 in 105ms
+ GET /?_cb=1776907270784 200 in 245ms
+ ✓ Compiled in 529ms (617 modules)
+ GET /?_cb=1776907270784 200 in 115ms
+ GET /?_cb=1776908057788 200 in 229ms
+ ✓ Compiled in 429ms (617 modules)
+ GET /?_cb=1776908057788 200 in 103ms
+ GET /?_cb=1776908390376 200 in 232ms
+ ✓ Compiled in 459ms (617 modules)
+ GET /?_cb=1776908390376 200 in 78ms
+ ✓ Compiled in 226ms (617 modules)
+ GET /?_cb=1776908390376 200 in 90ms
+ GET /?_cb=1776908661502 200 in 266ms
+ ✓ Compiled in 376ms (617 modules)
+ GET /?_cb=1776908661502 200 in 124ms
