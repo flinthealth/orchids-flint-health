@@ -1,0 +1,260 @@
+
+> maven-clinic-clone@0.1.0 dev
+> next dev --port 3000
+
+   ▲ Next.js 15.5.8
+   - Local:        http://localhost:3000
+   - Network:      http://172.20.0.11:3000
+
+ ✓ Starting...
+Attention: Next.js now collects completely anonymous telemetry regarding usage.
+This information is used to shape Next.js' roadmap and prioritize features.
+You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+https://nextjs.org/telemetry
+
+ ✓ Ready in 1126ms
+ ○ Compiling / ...
+ ✓ Compiled / in 2.7s (616 modules)
+ GET / 200 in 3089ms
+ GET /?_cb=1775947612190 200 in 161ms
+ ✓ Compiled in 297ms (262 modules)
+ GET /?_cb=1775947612190 200 in 45ms
+ ✓ Compiled in 116ms (262 modules)
+ ✓ Compiled in 81ms (262 modules)
+ GET /?_cb=1775947612190 200 in 20ms
+ GET /?_cb=1775947612190 200 in 23ms
+ ✓ Compiled in 345ms (616 modules)
+ GET /?_cb=1775947612190 200 in 110ms
+ ✓ Compiled in 193ms (616 modules)
+ GET /?_cb=1775947612190 200 in 97ms
+ ✓ Compiled in 172ms (616 modules)
+ GET /?_cb=1775947612190 200 in 81ms
+ GET /?_cb=1775947885891 200 in 234ms
+ ✓ Compiled in 247ms (262 modules)
+ GET /?_cb=1775947885891 200 in 64ms
+ ✓ Compiled in 116ms (262 modules)
+ ✓ Compiled in 72ms (262 modules)
+ ✓ Compiled in 88ms (262 modules)
+ ✓ Compiled in 98ms (262 modules)
+ ✓ Compiled in 352ms (616 modules)
+ ✓ Compiled in 115ms (616 modules)
+ ✓ Compiled in 159ms (616 modules)
+ GET /?_cb=1775948046571 200 in 269ms
+ ✓ Compiled in 340ms (616 modules)
+ GET /?_cb=1775948046571 200 in 83ms
+ GET /?_cb=1775948395665 200 in 191ms
+ ✓ Compiled in 161ms (262 modules)
+ ✓ Compiled in 90ms (262 modules)
+ ✓ Compiled in 62ms (262 modules)
+ ✓ Compiled in 72ms (262 modules)
+ ✓ Compiled in 58ms (262 modules)
+ GET /?_cb=1775948395665 200 in 54ms
+ GET /?_cb=1775948395665 200 in 35ms
+ GET /?_cb=1775948395665 200 in 30ms
+ GET /?_cb=1775948395665 200 in 42ms
+ GET /?_cb=1775948395665 200 in 32ms
+ ✓ Compiled in 204ms (616 modules)
+ GET /?_cb=1775948395665 200 in 82ms
+ GET /?_cb=1775948554714 200 in 220ms
+ ✓ Compiled in 218ms (262 modules)
+ GET /?_cb=1775948554714 200 in 39ms
+ ✓ Compiled in 127ms (262 modules)
+ GET /?_cb=1775948554714 200 in 18ms
+ ✓ Compiled in 204ms (616 modules)
+ GET /?_cb=1775948554714 200 in 79ms
+ GET /?_cb=1775949033750 200 in 242ms
+ ✓ Compiled in 357ms (616 modules)
+ GET /?_cb=1775949033750 200 in 116ms
+ GET /?_cb=1775949335180 200 in 214ms
+ ✓ Compiled in 339ms (616 modules)
+ GET /?_cb=1775949335180 200 in 85ms
+ ✓ Compiled in 196ms (616 modules)
+ GET /?_cb=1775949335180 200 in 81ms
+ GET /?_cb=1775949648731 200 in 175ms
+ ✓ Compiled in 213ms (262 modules)
+ GET /?_cb=1775949648731 200 in 39ms
+ ✓ Compiled in 126ms (262 modules)
+ ✓ Compiled in 92ms (262 modules)
+ GET /?_cb=1775949648731 200 in 43ms
+ ✓ Compiled in 81ms (262 modules)
+ GET /?_cb=1775949648731 200 in 42ms
+ GET /?_cb=1775949648731 200 in 15ms
+ ✓ Compiled in 192ms (616 modules)
+ GET /?_cb=1775949648731 200 in 79ms
+ ✓ Compiled in 136ms (616 modules)
+ GET /?_cb=1775949648731 200 in 69ms
+ ✓ Compiled in 185ms (616 modules)
+ GET /?_cb=1775949648731 200 in 44ms
+ GET /?_cb=1775949863243 200 in 194ms
+ ✓ Compiled in 131ms (262 modules)
+ GET /?_cb=1775949863243 200 in 18ms
+ ✓ Compiled in 129ms (262 modules)
+ ✓ Compiled in 97ms (262 modules)
+ ✓ Compiled in 60ms (262 modules)
+ GET /?_cb=1775949863243 200 in 37ms
+ ✓ Compiled in 63ms (262 modules)
+ GET /?_cb=1775949863243 200 in 32ms
+ GET /?_cb=1775949863243 200 in 31ms
+ GET /?_cb=1775949863243 200 in 25ms
+ ✓ Compiled in 295ms (616 modules)
+ GET /?_cb=1775949863243 200 in 108ms
+ GET /?_cb=1775950054447 200 in 241ms
+ ✓ Compiled in 339ms (616 modules)
+ GET /?_cb=1775950054447 200 in 90ms
+ ⚠ Cross origin request detected from 3000-f5852511-4b8a-48da-9d93-9c43e8035300.orchids.cloud to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+ ✓ Compiled in 207ms (616 modules)
+ GET /?_cb=1775950054447 200 in 79ms
+ GET /?_cb=1775950247610 200 in 203ms
+ ✓ Compiled in 375ms (616 modules)
+ GET /?_cb=1775950247610 200 in 123ms
+ ✓ Compiled in 228ms (616 modules)
+ GET /?_cb=1775950247610 200 in 50ms
+ ✓ Compiled in 172ms (616 modules)
+ GET /?_cb=1775950247610 200 in 87ms
+ GET /?_cb=1775950552119 200 in 203ms
+ ✓ Compiled in 197ms (262 modules)
+ GET /?_cb=1775950552119 200 in 30ms
+ ✓ Compiled in 116ms (262 modules)
+ GET /?_cb=1775950552119 200 in 33ms
+ ✓ Compiled in 294ms (616 modules)
+ GET /?_cb=1775950552119 200 in 115ms
+ ✓ Compiled in 205ms (616 modules)
+ GET /?_cb=1775950552119 200 in 99ms
+ ✓ Compiled in 199ms (616 modules)
+ GET /?_cb=1775950552119 200 in 82ms
+ GET /?_cb=1775950780725 200 in 224ms
+ ✓ Compiled in 338ms (616 modules)
+ GET /?_cb=1775950780725 200 in 88ms
+ ✓ Compiled in 193ms (616 modules)
+ GET /?_cb=1775950780725 200 in 78ms
+ GET /?_cb=1775950953115 200 in 183ms
+ ✓ Compiled in 345ms (616 modules)
+ GET /?_cb=1775950953115 200 in 70ms
+ ✓ Compiled in 191ms (616 modules)
+ GET /?_cb=1775950953115 200 in 75ms
+ GET /?_cb=1775951094147 200 in 189ms
+ ✓ Compiled in 344ms (616 modules)
+ GET /?_cb=1775951094147 200 in 70ms
+ ✓ Compiled in 215ms (616 modules)
+ GET /?_cb=1775951094147 200 in 80ms
+ GET /?_cb=1775951190959 200 in 203ms
+ ✓ Compiled in 352ms (616 modules)
+ GET /?_cb=1775951190959 200 in 93ms
+ GET /?_cb=1775951362166 200 in 209ms
+ ✓ Compiled in 134ms (262 modules)
+ GET /?_cb=1775951362166 200 in 18ms
+ ✓ Compiled in 95ms (262 modules)
+ ✓ Compiled in 78ms (262 modules)
+ ✓ Compiled in 63ms (262 modules)
+ ✓ Compiled in 82ms (262 modules)
+ ✓ Compiled in 57ms (262 modules)
+ GET /?_cb=1775951362166 200 in 19ms
+ GET /?_cb=1775951362166 200 in 16ms
+ GET /?_cb=1775951362166 200 in 20ms
+ GET /?_cb=1775951362166 200 in 42ms
+ GET /?_cb=1775951362166 200 in 38ms
+ ✓ Compiled in 299ms (616 modules)
+ GET /?_cb=1775951362166 200 in 83ms
+ ✓ Compiled in 206ms (616 modules)
+ GET /?_cb=1775951362166 200 in 64ms
+ GET /?_cb=1775951479258 200 in 250ms
+ ✓ Compiled in 330ms (616 modules)
+ GET /?_cb=1775951479258 200 in 84ms
+ ✓ Compiled in 203ms (616 modules)
+ GET /?_cb=1775951479258 200 in 82ms
+ GET / 200 in 304ms
+ GET /?_cb=1775951633335 200 in 125ms
+ GET /?_cb=1775951634039 200 in 241ms
+ ✓ Compiled in 346ms (616 modules)
+ GET /?_cb=1775951634039 200 in 86ms
+ GET /?_cb=1775959446698 200 in 201ms
+ ✓ Compiled in 453ms (616 modules)
+ GET /?_cb=1775959446698 200 in 66ms
+ ✓ Compiled in 187ms (616 modules)
+ GET /?_cb=1775959446698 200 in 92ms
+ GET /?_cb=1775959446698 200 in 295ms
+ GET /?_cb=1775959615681 200 in 119ms
+ GET /?_cb=1775959621176 200 in 164ms
+ ✓ Compiled in 349ms (616 modules)
+ GET /?_cb=1775959621176 200 in 114ms
+ ✓ Compiled in 211ms (616 modules)
+ GET /?_cb=1775959621176 200 in 91ms
+ GET /?_cb=1775959871579 200 in 206ms
+ ✓ Compiled in 292ms (616 modules)
+ GET /?_cb=1775959871579 200 in 79ms
+ ✓ Compiled in 193ms (616 modules)
+ GET /?_cb=1775959871579 200 in 60ms
+ GET /?_cb=1775960229573 200 in 172ms
+ GET /?_cb=1775960229573 200 in 321ms
+ GET /?_cb=1775960877369 200 in 124ms
+ ✓ Compiled in 633ms (616 modules)
+ GET /?_cb=1775960877369 200 in 48ms
+ ✓ Compiled in 233ms (616 modules)
+ GET /?_cb=1775960877369 200 in 59ms
+ ✓ Compiled in 324ms (616 modules)
+ GET /?_cb=1775960877369 200 in 42ms
+ GET /?_cb=1775961211688 200 in 177ms
+ ✓ Compiled in 167ms (262 modules)
+ GET /?_cb=1775961211688 200 in 36ms
+ ✓ Compiled in 93ms (262 modules)
+ ✓ Compiled in 81ms (262 modules)
+ ✓ Compiled in 75ms (262 modules)
+ GET /?_cb=1775961211688 200 in 33ms
+ ✓ Compiled in 58ms (262 modules)
+ ✓ Compiled in 57ms (262 modules)
+ GET /?_cb=1775961211688 200 in 18ms
+ GET /?_cb=1775961211688 200 in 25ms
+ GET /?_cb=1775961211688 200 in 36ms
+ GET /?_cb=1775961211688 200 in 40ms
+ GET /?_cb=1775961211688 200 in 219ms
+ GET /?_cb=1775961298713 200 in 101ms
+ GET /?_cb=1775961299417 200 in 114ms
+ ✓ Compiled in 274ms (616 modules)
+ GET /?_cb=1775961299417 200 in 63ms
+ ✓ Compiled in 187ms (616 modules)
+ GET /?_cb=1775961299417 200 in 76ms
+ GET /?_cb=1775961367245 200 in 192ms
+ ✓ Compiled in 323ms (616 modules)
+ GET /?_cb=1775961367245 200 in 78ms
+ ✓ Compiled in 171ms (616 modules)
+ GET /?_cb=1775961367245 200 in 59ms
+ ✓ Compiled in 160ms (616 modules)
+ GET /?_cb=1775961367245 200 in 66ms
+ GET /?_cb=1775961542060 200 in 146ms
+ GET / 200 in 247ms
+ GET /?_cb=1775961560515 200 in 101ms
+ ✓ Compiled in 287ms (616 modules)
+ GET /?_cb=1775961560515 200 in 67ms
+ ✓ Compiled in 190ms (616 modules)
+ GET /?_cb=1775961560515 200 in 73ms
+ GET /?_cb=1775961677646 200 in 182ms
+ ✓ Compiled in 119ms (262 modules)
+ GET /?_cb=1775961677646 200 in 37ms
+ ✓ Compiled in 90ms (262 modules)
+ ✓ Compiled in 86ms (262 modules)
+ GET /?_cb=1775961677646 200 in 48ms
+ ✓ Compiled in 78ms (262 modules)
+ GET /?_cb=1775961677646 200 in 18ms
+ ✓ Compiled in 54ms (262 modules)
+ GET /?_cb=1775961677646 200 in 24ms
+ GET /?_cb=1775961677646 200 in 33ms
+ ✓ Compiled in 266ms (616 modules)
+ GET /?_cb=1775961677646 200 in 66ms
+ GET /?_cb=1775961872639 200 in 208ms
+ GET / 200 in 243ms
+ GET /?_cb=1775961884316 200 in 104ms
+ ✓ Compiled in 326ms (616 modules)
+ GET /?_cb=1775961884316 200 in 78ms
+ GET /?_cb=1775961960639 200 in 156ms
+ ✓ Compiled in 147ms (262 modules)
+ GET /?_cb=1775961960639 200 in 26ms
+ ✓ Compiled in 285ms (616 modules)
+ GET /?_cb=1775961960639 200 in 47ms
+ GET /?_cb=1775962316737 200 in 189ms
+ GET /?_cb=1775962418296 200 in 371ms
+ GET /?_cb=1775962316737 200 in 375ms
+ GET /?_cb=1775962418505 200 in 99ms
+ GET /?_cb=1775975406234 200 in 124ms
+ GET /?_cb=1775975408129 200 in 142ms
+ GET /?_cb=1775975408831 200 in 145ms

@@ -53,7 +53,7 @@ const segments = [
     id: "trust",
     label: "Trust",
     descriptor:
-      "The most valuable thing a healthcare brand can own is an audience that trusts them completely. Series are how you build it.",
+      "The most valuable thing a healthcare brand can nurture is a team and community that trusts them completely. Series are how you do it.",
     color: "#54819a",
     arcRotation: 30, // bottom
     // CCW 150°→30° through bottom — reads L→R at bottom ✓
