@@ -39,10 +39,10 @@ export default function Home() {
         <StackingCards />
         <PodcastShowcase />
         <DNAWaveSection />
+        <TestimonialSection />
         {/* <AudienceSolutions /> */}
         <PodcastPulse />
         <ContentPrism />
-        <TestimonialSection />
         {/* <FeaturesGrid /> */}
         <ContactSection />
 
