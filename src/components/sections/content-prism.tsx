@@ -11,13 +11,13 @@ const STEPS = [
     number: "01",
     title: "Prepare",
     summary: "We start by getting clear on what success actually looks like for you.",
-    bg: "#ede4da",
-    textDark: true,
-    numColor: "#54819a",
+    bg: "#4a5a66",
+    textDark: false,
+    numColor: "#677283",
     content: (_dark: boolean) => {
-      const body   = "rgba(43,51,53,0.75)";
+      const body   = "rgba(249,245,239,0.75)";
       const hdTxt  = "#c8850a";
-      const subTxt = "rgba(43,51,53,0.55)";
+      const subTxt = "rgba(249,245,239,0.55)";
       return (
         <div className="flex flex-col gap-5">
           <p style={{ color: body }} className="text-[15px] leading-[1.75]">
@@ -43,13 +43,13 @@ const STEPS = [
     number: "02",
     title: "Plan",
     summary: "Strategy first. Format second. Never the other way around.",
-    bg: "#ede4da",
-    textDark: true,
-    numColor: "#54819a",
+    bg: "#4a5a66",
+    textDark: false,
+    numColor: "#677283",
     content: (_dark: boolean) => {
-      const body   = "rgba(43,51,53,0.75)";
+      const body   = "rgba(249,245,239,0.75)";
       const hdTxt  = "#c8850a";
-      const subTxt = "rgba(43,51,53,0.55)";
+      const subTxt = "rgba(249,245,239,0.55)";
       return (
         <div className="flex flex-col gap-5">
           <p style={{ color: body }} className="text-[15px] leading-[1.75]">
@@ -79,11 +79,11 @@ const STEPS = [
     number: "03",
     title: "Produce",
     summary: "Record. Edit. Design. Score. Every detail handled.",
-    bg: "#ede4da",
-    textDark: true,
-    numColor: "#54819a",
+    bg: "#4a5a66",
+    textDark: false,
+    numColor: "#677283",
     content: (_dark: boolean) => {
-      const body = "rgba(43,51,53,0.75)";
+      const body = "rgba(249,245,239,0.75)";
       return (
         <div className="flex flex-col gap-5">
           <p style={{ color: body }} className="text-[15px] leading-[1.75]">
@@ -97,13 +97,13 @@ const STEPS = [
     number: "04",
     title: "Package & Distribute",
     summary: "Deliver to your people. Maximize reach.",
-    bg: "#ede4da",
-    textDark: true,
-    numColor: "#54819a",
+    bg: "#4a5a66",
+    textDark: false,
+    numColor: "#677283",
     content: (_dark: boolean) => {
-      const body   = "rgba(43,51,53,0.75)";
+      const body   = "rgba(249,245,239,0.75)";
       const hdTxt  = "#c8850a";
-      const subTxt = "rgba(43,51,53,0.55)";
+      const subTxt = "rgba(249,245,239,0.55)";
       return (
         <div className="flex flex-col gap-5">
           <p style={{ color: body }} className="text-[15px] leading-[1.75]">
@@ -128,13 +128,13 @@ const STEPS = [
     number: "05",
     title: "Measure & Optimize",
     summary: "Track. Iterate. Compound.",
-    bg: "#ede4da",
-    textDark: true,
-    numColor: "#54819a",
+    bg: "#4a5a66",
+    textDark: false,
+    numColor: "#677283",
     content: (_dark: boolean) => {
-      const body   = "rgba(43,51,53,0.75)";
+      const body   = "rgba(249,245,239,0.75)";
       const hdTxt  = "#c8850a";
-      const subTxt = "rgba(43,51,53,0.55)";
+      const subTxt = "rgba(249,245,239,0.55)";
       return (
         <div className="flex flex-col gap-5">
           <p style={{ color: body }} className="text-[15px] leading-[1.75]">
@@ -258,10 +258,7 @@ export default function ContentPrism() {
                       lineHeight: 1.15,
                       letterSpacing: '-0.04em',
                       fontVariantNumeric: 'tabular-nums',
-                      background: 'linear-gradient(to bottom, #2c3436 0%, #6b4b3e 55%, #a0522d 100%)',
-                      WebkitBackgroundClip: 'text',
-                      WebkitTextFillColor: 'transparent',
-                      backgroundClip: 'text',
+                      color: '#677283',
                     }}
                   >
                     {step.number}
@@ -277,10 +274,7 @@ export default function ContentPrism() {
                       lineHeight: 1.15,
                       letterSpacing: '-0.04em',
                       fontVariantNumeric: 'tabular-nums',
-                      background: 'linear-gradient(to bottom, #2c3436 0%, #6b4b3e 55%, #a0522d 100%)',
-                      WebkitBackgroundClip: 'text',
-                      WebkitTextFillColor: 'transparent',
-                      backgroundClip: 'text',
+                      color: '#677283',
                     }}
                   >
                     {step.number}

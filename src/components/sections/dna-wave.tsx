@@ -344,7 +344,7 @@ export function OurBeliefSection() {
 
 export default function DNAWaveSection() {
   return (
-    <section id="about" className="bg-[#f9f5ef] pt-[80px] md:pt-[100px] pb-[80px]">
+    <section id="about" className="bg-[#f9f5ef] pt-[80px] md:pt-[100px] pb-0">
 
       {/* Founder section */}
       <div>
@@ -414,14 +414,13 @@ export default function DNAWaveSection() {
 
       </div>
 
-
     </section>
   );
 }
 
 export function TestimonialSection() {
   return (
-    <div style={{ backgroundColor: '#677283' }}>
+    <div style={{ backgroundColor: '#4a5a66' }}>
       <div className="max-w-[1060px] mx-auto px-8 py-12 md:py-16">
         <div className="bg-white rounded-[20px] overflow-hidden flex flex-col md:flex-row items-stretch">
           {/* Bio: image + name + logo */}

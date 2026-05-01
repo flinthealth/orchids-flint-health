@@ -51,8 +51,15 @@ function CompletionRing() {
           width="100%" height="100%"
           style={{ transform: 'rotate(-90deg)', display: 'block' }}
         >
-          <circle cx={VB_CX} cy={VB_CX} r={VB_R} fill="none" stroke="rgba(74,90,102,0.2)" strokeWidth={VB_STROKE} />
-          <circle cx={VB_CX} cy={VB_CX} r={VB_R} fill="none" stroke="#4a5a66" strokeWidth={VB_STROKE}
+          <defs>
+            <linearGradient id="ring-grad" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+              <stop offset="0%"  stopColor="#2c3436"/>
+              <stop offset="55%" stopColor="#6b4b3e"/>
+              <stop offset="100%" stopColor="#a0522d"/>
+            </linearGradient>
+          </defs>
+          <circle cx={VB_CX} cy={VB_CX} r={VB_R} fill="none" stroke="rgba(74,90,102,0.15)" strokeWidth={VB_STROKE} />
+          <circle cx={VB_CX} cy={VB_CX} r={VB_R} fill="none" stroke="url(#ring-grad)" strokeWidth={VB_STROKE}
             strokeLinecap="round" strokeDasharray={VB_C} strokeDashoffset={offset} />
         </svg>
         <div className="absolute inset-0 flex flex-col items-center justify-center">
@@ -624,12 +631,12 @@ export default function PodcastExplainer() {
             {/* B — 4.7x Greater Recall */}
             <div
               className="rounded-3xl overflow-hidden relative flex flex-col justify-end p-7"
-              style={{ gridColumn: '5 / 13', gridRow: '1 / 5', background: 'linear-gradient(to bottom, #2c3436 0%, #6b4b3e 55%, #a0522d 100%)' }}
+              style={{ gridColumn: '5 / 13', gridRow: '1 / 5', background: 'linear-gradient(to bottom, #6b4b3e 0%, #a0522d 55%)' }}
             >
               <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 60%)' }} />
               <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='g1b'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23g1b)'/%3E%3C/svg%3E")`, backgroundSize: '400px 400px', opacity: 0.28, mixBlendMode: 'overlay' }} />
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/icon-brain-recall-v2.png" alt="" aria-hidden="true" className="absolute pointer-events-none z-0" style={{ right: '3%', top: '4%', width: '54%', maxWidth: 330, opacity: 0.93 }} />
+              <img src="/icon-brain-recall-v2.png" alt="" aria-hidden="true" className="absolute pointer-events-none z-0" style={{ right: '8%', top: '8%', width: '54%', maxWidth: 330, opacity: 0.93 }} />
               <div className="relative z-10">
                 <p className="text-[#ffffff] text-[80px] font-light leading-none tracking-[-0.04em] mb-1">6–7×</p>
                 <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-1">Greater Recall<a href="https://link.springer.com/article/10.3758/BF03332778" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">1</a></p>
@@ -660,7 +667,7 @@ export default function PodcastExplainer() {
                 poster="/stats-on-the-go.webp"
                 className="absolute inset-0 w-full h-full object-cover object-center"
               />
-              <div className="absolute inset-0" style={{ backgroundColor: 'rgba(255, 127, 41, 0.55)' }} />
+              <div className="absolute inset-0" style={{ backgroundColor: 'rgba(255, 127, 41, 0.50)' }} />
               {/* Content */}
               <div className="relative z-10 p-6 flex flex-col h-full">
                 <p className="text-[#ffffff] text-[80px] font-light leading-none tracking-[-0.03em] mb-1">71%</p>
@@ -716,7 +723,7 @@ export default function PodcastExplainer() {
             </div>
 
             {/* Mobile B — 4.7× Greater Recall */}
-            <div className="rounded-3xl overflow-hidden relative px-7 pt-7 pb-7 flex flex-col" style={{ background: 'linear-gradient(to bottom, #2c3436 0%, #6b4b3e 55%, #a0522d 100%)' }}>
+            <div className="rounded-3xl overflow-hidden relative px-7 pt-7 pb-7 flex flex-col" style={{ background: 'linear-gradient(to bottom, #2c3436 0%, #6b4b3e 25%, #a0522d 65%)' }}>
               <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 60%)' }} />
               <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='g4b'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23g4b)'/%3E%3C/svg%3E")`, backgroundSize: '400px 400px', opacity: 0.28, mixBlendMode: 'overlay' }} />
               <div className="relative z-10 flex flex-col">
@@ -747,7 +754,7 @@ export default function PodcastExplainer() {
                 poster="/stats-on-the-go.webp"
                 className="absolute inset-0 w-full h-full object-cover object-center"
               />
-              <div className="absolute inset-0" style={{ backgroundColor: 'rgba(255, 127, 41, 0.55)' }} />
+              <div className="absolute inset-0" style={{ backgroundColor: 'rgba(255, 127, 41, 0.50)' }} />
               <div className="relative z-10 p-7 flex flex-col h-full">
                 <p className="text-[#ffffff] text-[60px] font-light leading-none tracking-[-0.03em] mb-1">71%</p>
                 <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-4">Of podcast listeners tune in during their daily routine<a href="https://www.cohostpodcasting.com/resources/podcasting-unwrapped-2025" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">4</a></p>
