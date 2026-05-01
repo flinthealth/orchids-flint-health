@@ -319,8 +319,12 @@ export default function ContentPrism() {
                 }}
               >
                 <div className="pb-8 px-6 md:px-10">
-                  <div className="max-w-[520px]">
-                    {step.content(isDark)}
+                  <div className="flex gap-5 md:gap-8">
+                    {/* Spacer matching step number column — desktop only */}
+                    <div className="hidden md:block flex-shrink-0" style={{ minWidth: 'clamp(52px, 5.5vw, 80px)' }} />
+                    <div className="max-w-[520px]">
+                      {step.content(isDark)}
+                    </div>
                   </div>
                 </div>
               </div>

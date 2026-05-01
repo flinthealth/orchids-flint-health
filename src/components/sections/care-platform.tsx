@@ -230,14 +230,6 @@ const CarePlatformSection = () => {
     },
   ];
 
-  const COLS = 8;
-  const LABEL_CELLS: { label: string; gridCol: string; gridRow: number; order: number; pillBg: string; pillText: string }[] = [
-    { label: 'engagement', gridCol: `1/${COLS + 1}`, gridRow: 1, order: 0, pillBg: '#eeb20b', pillText: '#43382f' },
-    { label: 'adherence',  gridCol: `1/${COLS + 1}`, gridRow: 2, order: 1, pillBg: '#eeb20b', pillText: '#43382f' },
-    { label: 'retention',  gridCol: `1/${COLS + 1}`, gridRow: 3, order: 2, pillBg: '#eeb20b', pillText: '#43382f' },
-    { label: 'referrals',  gridCol: `1/${COLS + 1}`, gridRow: 4, order: 3, pillBg: '#2b3335', pillText: '#ffffff' },
-    { label: 'advocacy',   gridCol: `1/${COLS + 1}`, gridRow: 5, order: 4, pillBg: '#54819a', pillText: '#ffffff' },
-  ];
 
   return (
     <section id="services" style={{ backgroundColor: '#f9f5ef' }}>
@@ -305,102 +297,323 @@ const CarePlatformSection = () => {
         {/* Content on top of grid */}
         <div className="relative z-10">
 
-          {/* "The results that follow" — prominent */}
-          <div className="text-center pt-12 pb-6 px-6">
-            <span
-              className="text-[#ffffff] text-[13px] font-semibold uppercase tracking-[0.22em] px-5 py-2 rounded-full inline-block"
-              style={{
-                backgroundColor: '#677283',
-                opacity: tilesVisible ? 1 : 0,
-                transform: tilesVisible ? 'translateY(0)' : 'translateY(10px)',
-                transition: 'opacity 0.6s ease 0s, transform 0.6s ease 0s',
-              }}
-            >
-              The results that follow
-            </span>
+          {/* Section header */}
+          <div className="text-center pt-24 pb-1 px-6"
+            style={{
+              opacity: tilesVisible ? 1 : 0,
+              transform: tilesVisible ? 'translateY(0)' : 'translateY(10px)',
+              transition: 'opacity 0.6s ease 0s, transform 0.6s ease 0s',
+            }}
+          >
+            {/* Eyebrow */}
+            <p className="text-[15px] font-semibold tracking-[0.1em] uppercase mb-5" style={{ color: 'rgba(249,245,239,0.55)' }}>
+              THE SERIES EFFECT
+            </p>
+            {/* Headline */}
+            <h2 className="text-white text-[40px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-4">
+              One well-produced series.<br className="hidden md:block" />{' '}
+              <span className="font-serif italic" style={{ color: '#ffffff' }}>Five outcomes.</span>
+            </h2>
+            {/* Body */}
+            <p className="text-[16px] leading-[1.65] max-w-[560px] mx-auto" style={{ color: 'rgba(249,245,239,0.55)' }}>
+              Create a compounding chain of results. Each episode builds trust, deepens understanding, and moves your audience closer to action.
+            </p>
           </div>
 
-          {/* ── Mobile grid: 4 cols, one word per full-width row ── */}
-          {(() => {
-            const MOB_COLS = 4;
-            const MOB_ROWS = 5;
-            const MOB_LABELS: { label: string; gridRow: number; order: number }[] = [
-              { label: 'engagement', gridRow: 1, order: 0 },
-              { label: 'adherence',  gridRow: 2, order: 1 },
-              { label: 'retention',  gridRow: 3, order: 2 },
-              { label: 'referrals',  gridRow: 4, order: 3 },
-              { label: 'advocacy',   gridRow: 5, order: 4 },
-            ];
-            return (
-              // Outer div controls visibility — no inline display so md:hidden works correctly
-              <div className="block md:hidden">
-                <div style={{
-                  position: 'relative',
-                  display: 'grid',
-                  gridTemplateColumns: `repeat(${MOB_COLS}, 1fr)`,
-                  gridTemplateRows: `repeat(${MOB_ROWS}, 86px)`,
-                }}>
-                  {/* Flashlight */}
-                  <div style={{ position: 'absolute', inset: 0, zIndex: 2, pointerEvents: 'none', overflow: 'hidden' }}>
-                    <div style={{
-                      position: 'absolute', top: 0, left: 0,
-                      width: '380px', height: '380px', borderRadius: '50%',
-                      background: 'radial-gradient(circle at center, rgba(250,193,44,0.28) 0%, rgba(250,193,44,0.18) 12%, rgba(250,193,44,0.10) 25%, rgba(250,193,44,0.055) 38%, rgba(250,193,44,0.025) 52%, rgba(250,193,44,0.010) 65%, rgba(250,193,44,0.003) 78%, rgba(250,193,44,0.001) 88%, transparent 100%)',
-                      animation: 'flashlightMob 18s ease-in-out infinite',
-                      animationDelay: '0.5s',
-                    }} />
-                  </div>
-                  {/* Label cells — border-top/bottom for row lines, matching desktop */}
-                  {MOB_LABELS.map((lc) => (
-                    <div key={lc.label} style={{
-                      gridColumn: `1 / ${MOB_COLS + 1}`, gridRow: lc.gridRow,
-                      display: 'flex', alignItems: 'center', justifyContent: 'center',
-                      backgroundColor: 'transparent',
-                      borderTop: '1px solid rgba(255,255,255,0.07)',
-                      borderBottom: '1px solid rgba(255,255,255,0.07)',
-                      opacity: tilesVisible ? 1 : 0,
-                      transform: !tilesVisible ? 'translateY(10px)' : 'translateY(0)',
-                      transition: `opacity 0.6s ease ${0.3 + lc.order * 0.15}s, transform 0.6s ease ${0.3 + lc.order * 0.15}s`,
-                      position: 'relative', zIndex: 3,
-                    }}>
-                      <span style={{ color: 'rgba(255,255,255,0.92)', fontSize: 24, fontWeight: 300, letterSpacing: '-0.01em' }}>
-                        {lc.label}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            );
-          })()}
+          {/* ── Prism SVG v10 — right-pointing triangle, 3 flat shapes, continuous light path ── */}
+          {/*
+            ViewBox: 0 0 1260 700. Rendered width=960, height=533. Scale≈0.762.
 
-          {/* ── Desktop grid: 8 cols, 5 rows ── */}
-          <div className="hidden md:grid" style={{
-            position: 'relative',
-            gridTemplateColumns: `repeat(${COLS}, 1fr)`,
-            gridTemplateRows: 'repeat(5, 80px)',
-          }}>
-            {/* Label cells — border-top/bottom creates row lines perfectly centered around each word */}
-            {LABEL_CELLS.map((lc) => (
-              <div key={lc.label} style={{
-                gridColumn: lc.gridCol, gridRow: lc.gridRow,
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                backgroundColor: 'transparent',
-                borderTop: '1px solid rgba(255,255,255,0.07)',
-                borderBottom: '1px solid rgba(255,255,255,0.07)',
-                opacity: tilesVisible ? 1 : 0,
-                transform: !tilesVisible ? 'translateY(10px)' : 'translateY(0)',
-                transition: `opacity 0.6s ease ${0.3 + lc.order * 0.15}s, transform 0.6s ease ${0.3 + lc.order * 0.15}s`,
-                position: 'relative', zIndex: 3,
-              }}>
-                <span style={{ color: 'rgba(255,255,255,0.92)', fontSize: 24, fontWeight: 300, letterSpacing: '-0.01em' }}>
-                  {lc.label}
-                </span>
-              </div>
+            SHAPE 1 — Front face: right-pointing triangle
+              (230,338) top-left → (230,580) bottom-left → (510,459) right apex
+              Vertical left edge = entry face. Apex = exit point at y=459.
+              Fill: #54819a at 35% opacity.
+
+            SHAPE 2 — Bottom base: parallelogram attached to bottom slant of front face
+              Bottom slant of triangle: (230,580)→(510,459)
+              Extend ~20° down-right: offset +60x,+45y
+              Points: (230,580)→(510,459)→(570,504)→(290,625)
+              Darker: #54819a 12% + dark overlay.
+
+            SHAPE 3 — Diagonal refraction line: (255,385)→(475,535)
+              Slightly darker, suggests internal bending.
+
+            LIGHT PATH (all at y=459, one continuous horizontal journey):
+              Entry beam:    x=0→230,  y=459  Golden Ray
+              Internal cone: (230,459) → widens to (510,445)–(510,473) = 14px fan inside glass
+              Exit + rays:   fan from (510,459) to x=1080
+
+            ONE SERIES: x=120, y=422
+          */}
+          <div
+            className="flex justify-center items-center py-0 md:py-1 lg:py-0 px-2"
+            style={{
+              opacity: tilesVisible ? 1 : 0,
+              transform: tilesVisible ? 'translateY(0)' : 'translateY(16px)',
+              transition: 'opacity 0.7s ease 0.15s, transform 0.7s ease 0.15s',
+              overflow: 'visible',
+            }}
+          >
+            {/* ── DESKTOP SVG (lg and above) ── */}
+            <svg
+              className="hidden lg:block"
+              viewBox="0 0 1260 700"
+              width="960"
+              height="533"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              style={{ overflow: 'visible', maxWidth: '100%' }}
+            >
+              <defs>
+                {/*
+                  ── PNG PRISM APPROACH ──
+                  Prism PNG placed at x=200 y=240, width=420, height=360
+                  Entry beam hits left face at approx (220, 435)
+                  Rays exit from center-right of prism at approx (570, 430)
+                  Z-order: entry beam → PNG → rays
+                */}
+
+                {/*
+                  Single exit point on right face edge: (434, 374)
+                  Entry beam travels horizontally from x=0 → x=434 at y=374.
+                  All 5 rays originate from the same (434,372)–(434,376) slit.
+                  Ray3 (retention) travels horizontally; rays 1–2 angle up; rays 4–5 angle down.
+                */}
+
+                {/* Ray gradients — exit x=385, extend to x=1260 */}
+                <linearGradient id="cpa-ray1" x1="385" y1="0" x2="1260" y2="0" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%"  stopColor="#eeb20b" stopOpacity="0.92"/>
+                  <stop offset="65%" stopColor="#eeb20b" stopOpacity="0.32"/>
+                  <stop offset="100%" stopColor="#eeb20b" stopOpacity="0.00"/>
+                </linearGradient>
+                <linearGradient id="cpa-ray2" x1="385" y1="0" x2="1260" y2="0" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%"  stopColor="#ff7f29" stopOpacity="0.92"/>
+                  <stop offset="65%" stopColor="#ff7f29" stopOpacity="0.32"/>
+                  <stop offset="100%" stopColor="#ff7f29" stopOpacity="0.00"/>
+                </linearGradient>
+                <linearGradient id="cpa-ray3" x1="385" y1="0" x2="1260" y2="0" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%"  stopColor="#f5a020" stopOpacity="0.88"/>
+                  <stop offset="65%" stopColor="#f5a020" stopOpacity="0.28"/>
+                  <stop offset="100%" stopColor="#f5a020" stopOpacity="0.00"/>
+                </linearGradient>
+                <linearGradient id="cpa-ray4" x1="385" y1="0" x2="1260" y2="0" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%"  stopColor="#54819a" stopOpacity="0.92"/>
+                  <stop offset="65%" stopColor="#54819a" stopOpacity="0.32"/>
+                  <stop offset="100%" stopColor="#54819a" stopOpacity="0.00"/>
+                </linearGradient>
+                <linearGradient id="cpa-ray5" x1="385" y1="0" x2="1260" y2="0" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%"  stopColor="#677283" stopOpacity="0.88"/>
+                  <stop offset="65%" stopColor="#677283" stopOpacity="0.28"/>
+                  <stop offset="100%" stopColor="#677283" stopOpacity="0.00"/>
+                </linearGradient>
+
+                {/* Entry beam: from (-800,-252) → (285,374) */}
+                <linearGradient id="cpa-beam" x1="-800" y1="-252" x2="285" y2="374" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%"  stopColor="#eeb20b" stopOpacity="0.80"/>
+                  <stop offset="100%" stopColor="#eeb20b" stopOpacity="0.90"/>
+                </linearGradient>
+              </defs>
+
+              {/* ══ LAYER 1 — PRISM PNG shifted left to x=50 ══ */}
+              <image
+                href="/prism-flint.png"
+                x="50" y="230"
+                width="420" height="380"
+                preserveAspectRatio="xMidYMid meet"
+              />
+
+              {/* ══ LAYER 2 — ENTRY BEAM: (-800,-252) → (285,374) ══ */}
+              <line x1="-800" y1="-252" x2="285" y2="374"
+                stroke="#eeb20b" strokeWidth="20" strokeOpacity="0.09" strokeLinecap="butt"/>
+              <line x1="-800" y1="-252" x2="285" y2="374"
+                stroke="url(#cpa-beam)" strokeWidth="5" strokeLinecap="round"/>
+              <line x1="-800" y1="-252" x2="285" y2="374"
+                stroke="#ffffff" strokeWidth="1.5" strokeOpacity="0.38" strokeLinecap="round"/>
+
+              {/* ══ LAYER 3 — EXIT RAYS, extended fan y=-100→800 (overflow:visible) ══ */}
+              {/* Bands 180px each: -100→80, 80→260, 260→440, 440→620, 620→800          */}
+              <polygon points="285,374 1260,-100 1260,80"  fill="url(#cpa-ray1)"/>
+              <polygon points="285,374 1260,80   1260,260" fill="url(#cpa-ray2)"/>
+              <polygon points="285,374 1260,260  1260,440" fill="url(#cpa-ray3)"/>
+              <polygon points="285,374 1260,440  1260,620" fill="url(#cpa-ray4)"/>
+              <polygon points="285,374 1260,620  1260,800" fill="url(#cpa-ray5)"/>
+
+              {/* ── Outcome pills on rays — centered at x=915 (+15 shift)               */}
+              <g>
+                <rect x="823" y="111" width="184" height="42" rx="21" fill="#eeb20b" fillOpacity="0.13" stroke="#eeb20b" strokeOpacity="0.85" strokeWidth="1"/>
+                <text x="915" y="132" textAnchor="middle" dominantBaseline="middle" fontFamily="Inter, sans-serif" fontSize="15" fontWeight="600" fill="white" fillOpacity="0.96" letterSpacing="0.08em">ENGAGEMENT</text>
+              </g>
+              <g>
+                <rect x="823" y="224" width="184" height="42" rx="21" fill="#ff7f29" fillOpacity="0.13" stroke="#ff7f29" strokeOpacity="0.85" strokeWidth="1"/>
+                <text x="915" y="245" textAnchor="middle" dominantBaseline="middle" fontFamily="Inter, sans-serif" fontSize="15" fontWeight="600" fill="white" fillOpacity="0.96" letterSpacing="0.08em">ADHERENCE</text>
+              </g>
+              <g>
+                <rect x="823" y="338" width="184" height="42" rx="21" fill="#f5a020" fillOpacity="0.13" stroke="#f5a020" strokeOpacity="0.85" strokeWidth="1"/>
+                <text x="915" y="359" textAnchor="middle" dominantBaseline="middle" fontFamily="Inter, sans-serif" fontSize="15" fontWeight="600" fill="white" fillOpacity="0.96" letterSpacing="0.08em">RETENTION</text>
+              </g>
+              <g>
+                <rect x="823" y="451" width="184" height="42" rx="21" fill="#54819a" fillOpacity="0.13" stroke="#54819a" strokeOpacity="0.85" strokeWidth="1"/>
+                <text x="915" y="472" textAnchor="middle" dominantBaseline="middle" fontFamily="Inter, sans-serif" fontSize="15" fontWeight="600" fill="white" fillOpacity="0.96" letterSpacing="0.08em">REFERRALS</text>
+              </g>
+              <g>
+                <rect x="823" y="565" width="184" height="42" rx="21" fill="#677283" fillOpacity="0.13" stroke="#677283" strokeOpacity="0.85" strokeWidth="1"/>
+                <text x="915" y="586" textAnchor="middle" dominantBaseline="middle" fontFamily="Inter, sans-serif" fontSize="15" fontWeight="600" fill="white" fillOpacity="0.96" letterSpacing="0.08em">ADVOCACY</text>
+              </g>
+            </svg>
+
+            {/* ── TABLET SVG (md to lg: 768px–1023px) ── */}
+            <svg
+              className="hidden md:block lg:hidden"
+              viewBox="0 0 1260 700"
+              width="960"
+              height="533"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              style={{ overflow: 'visible', maxWidth: '100%', height: 'auto' }}
+            >
+              <defs>
+                {/* Ray gradients — exit x=295, fade to x=1260 (full width) */}
+                <linearGradient id="mob-ray1" x1="295" y1="0" x2="1260" y2="0" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%"  stopColor="#eeb20b" stopOpacity="0.92"/>
+                  <stop offset="65%" stopColor="#eeb20b" stopOpacity="0.32"/>
+                  <stop offset="100%" stopColor="#eeb20b" stopOpacity="0.00"/>
+                </linearGradient>
+                <linearGradient id="mob-ray2" x1="295" y1="0" x2="1260" y2="0" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%"  stopColor="#ff7f29" stopOpacity="0.92"/>
+                  <stop offset="65%" stopColor="#ff7f29" stopOpacity="0.32"/>
+                  <stop offset="100%" stopColor="#ff7f29" stopOpacity="0.00"/>
+                </linearGradient>
+                <linearGradient id="mob-ray3" x1="295" y1="0" x2="1260" y2="0" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%"  stopColor="#f5a020" stopOpacity="0.88"/>
+                  <stop offset="65%" stopColor="#f5a020" stopOpacity="0.28"/>
+                  <stop offset="100%" stopColor="#f5a020" stopOpacity="0.00"/>
+                </linearGradient>
+                <linearGradient id="mob-ray4" x1="295" y1="0" x2="1260" y2="0" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%"  stopColor="#54819a" stopOpacity="0.92"/>
+                  <stop offset="65%" stopColor="#54819a" stopOpacity="0.32"/>
+                  <stop offset="100%" stopColor="#54819a" stopOpacity="0.00"/>
+                </linearGradient>
+                <linearGradient id="mob-ray5" x1="295" y1="0" x2="1260" y2="0" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%"  stopColor="#677283" stopOpacity="0.88"/>
+                  <stop offset="65%" stopColor="#677283" stopOpacity="0.28"/>
+                  <stop offset="100%" stopColor="#677283" stopOpacity="0.00"/>
+                </linearGradient>
+
+                {/* Beam gradient — 120° (30° from horizontal), from (-400,-26) to (295,374) */}
+                <linearGradient id="mob-beam" x1="-400" y1="-26" x2="295" y2="374" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%"  stopColor="#eeb20b" stopOpacity="0.00"/>
+                  <stop offset="40%" stopColor="#eeb20b" stopOpacity="0.80"/>
+                  <stop offset="100%" stopColor="#eeb20b" stopOpacity="0.90"/>
+                </linearGradient>
+              </defs>
+
+              {/* LAYER 1 — Prism PNG shifted left */}
+              <image href="/prism-flint.png" x="60" y="230" width="420" height="380" preserveAspectRatio="xMidYMid meet"/>
+
+              {/* LAYER 2 — Entry beam at 120° from (-400,-26) → exit point (295,374) */}
+              <line x1="-400" y1="-26" x2="295" y2="374"
+                stroke="#eeb20b" strokeWidth="20" strokeOpacity="0.09" strokeLinecap="butt"/>
+              <line x1="-400" y1="-26" x2="295" y2="374"
+                stroke="url(#mob-beam)" strokeWidth="5" strokeLinecap="round"/>
+              <line x1="-400" y1="-26" x2="295" y2="374"
+                stroke="#ffffff" strokeWidth="1.5" strokeOpacity="0.38" strokeLinecap="round"/>
+
+              {/* LAYER 3 — 650px spread centered on y=370, 130px bands */}
+              {/* Bands: Ray1 y=45→175, Ray2 y=175→305, Ray3 y=305→435, Ray4 y=435→565, Ray5 y=565→695 */}
+              <polygon points="295,374 1260,45   1260,175" fill="url(#mob-ray1)"/>
+              <polygon points="295,374 1260,175  1260,305" fill="url(#mob-ray2)"/>
+              <polygon points="295,374 1260,305  1260,435" fill="url(#mob-ray3)"/>
+              <polygon points="295,374 1260,435  1260,565" fill="url(#mob-ray4)"/>
+              <polygon points="295,374 1260,565  1260,695" fill="url(#mob-ray5)"/>
+
+
+            </svg>
+
+            {/* ── MOBILE SVG (below md: < 768px) ── */}
+            <svg
+              className="block md:hidden"
+              viewBox="0 0 1260 700"
+              width="960"
+              height="533"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              style={{ overflow: 'visible', maxWidth: '100%', height: 'auto' }}
+            >
+              <defs>
+                {/* Rays extend to x=1260 */}
+                <linearGradient id="sm-ray1" x1="255" y1="0" x2="1260" y2="0" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%"  stopColor="#eeb20b" stopOpacity="0.92"/>
+                  <stop offset="65%" stopColor="#eeb20b" stopOpacity="0.32"/>
+                  <stop offset="100%" stopColor="#eeb20b" stopOpacity="0.00"/>
+                </linearGradient>
+                <linearGradient id="sm-ray2" x1="255" y1="0" x2="1260" y2="0" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%"  stopColor="#ff7f29" stopOpacity="0.92"/>
+                  <stop offset="65%" stopColor="#ff7f29" stopOpacity="0.32"/>
+                  <stop offset="100%" stopColor="#ff7f29" stopOpacity="0.00"/>
+                </linearGradient>
+                <linearGradient id="sm-ray3" x1="255" y1="0" x2="1260" y2="0" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%"  stopColor="#f5a020" stopOpacity="0.88"/>
+                  <stop offset="65%" stopColor="#f5a020" stopOpacity="0.28"/>
+                  <stop offset="100%" stopColor="#f5a020" stopOpacity="0.00"/>
+                </linearGradient>
+                <linearGradient id="sm-ray4" x1="255" y1="0" x2="1260" y2="0" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%"  stopColor="#54819a" stopOpacity="0.92"/>
+                  <stop offset="65%" stopColor="#54819a" stopOpacity="0.32"/>
+                  <stop offset="100%" stopColor="#54819a" stopOpacity="0.00"/>
+                </linearGradient>
+                <linearGradient id="sm-ray5" x1="255" y1="0" x2="1260" y2="0" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%"  stopColor="#677283" stopOpacity="0.88"/>
+                  <stop offset="65%" stopColor="#677283" stopOpacity="0.28"/>
+                  <stop offset="100%" stopColor="#677283" stopOpacity="0.00"/>
+                </linearGradient>
+                {/* Beam: prism moved 40px left, exit now (255,374) */}
+                <linearGradient id="sm-beam" x1="-400" y1="-26" x2="255" y2="374" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%"  stopColor="#eeb20b" stopOpacity="0.00"/>
+                  <stop offset="40%" stopColor="#eeb20b" stopOpacity="0.80"/>
+                  <stop offset="100%" stopColor="#eeb20b" stopOpacity="0.90"/>
+                </linearGradient>
+              </defs>
+
+              {/* LAYER 1 — Prism PNG shifted 40px left (x=20) */}
+              <image href="/prism-flint.png" x="20" y="230" width="420" height="380" preserveAspectRatio="xMidYMid meet"/>
+
+              {/* LAYER 2 — Entry beam to new exit (255,374) */}
+              <line x1="-400" y1="-26" x2="255" y2="374" stroke="#eeb20b" strokeWidth="20" strokeOpacity="0.09" strokeLinecap="butt"/>
+              <line x1="-400" y1="-26" x2="255" y2="374" stroke="url(#sm-beam)" strokeWidth="5" strokeLinecap="round"/>
+              <line x1="-400" y1="-26" x2="255" y2="374" stroke="#ffffff" strokeWidth="1.5" strokeOpacity="0.38" strokeLinecap="round"/>
+
+              {/* LAYER 3 — 650px fan, exit (255,374), rays to x=1260 */}
+              {/* Bands: 45→175, 175→305, 305→435, 435→565, 565→695 */}
+              <polygon points="255,374 1260,45   1260,175" fill="url(#sm-ray1)"/>
+              <polygon points="255,374 1260,175  1260,305" fill="url(#sm-ray2)"/>
+              <polygon points="255,374 1260,305  1260,435" fill="url(#sm-ray3)"/>
+              <polygon points="255,374 1260,435  1260,565" fill="url(#sm-ray4)"/>
+              <polygon points="255,374 1260,565  1260,695" fill="url(#sm-ray5)"/>
+
+            </svg>
+          </div>
+
+          {/* Outcome pills — tablet + mobile only, stacked vertically top→bottom */}
+          <div className="lg:hidden flex flex-col items-center gap-2 md:gap-3 px-6 pb-2 pt-1">
+            {[
+              { label: 'engagement', color: '#eeb20b' },
+              { label: 'adherence',  color: '#ff7f29' },
+              { label: 'retention',  color: '#f5a020' },
+              { label: 'referrals',  color: '#54819a' },
+              { label: 'advocacy',   color: '#677283' },
+            ].map(({ label, color }) => (
+              <span
+                key={label}
+                className="inline-block text-[11px] md:text-[15px] font-semibold tracking-[0.08em] uppercase px-3 md:px-5 py-1 md:py-2 rounded-full text-white"
+                style={{ background: `${color}22`, border: `1px solid ${color}55` }}
+              >
+                {label}
+              </span>
             ))}
           </div>
 
           {/* CTA */}
-          <div className="flex justify-center pt-12 pb-20 px-6">
+          <div className="flex justify-center pt-8 md:pt-12 pb-24 px-6">
             <a
               href="#contact"
               className="bg-[#ff7f29] hover:bg-[#e66e1e] text-[#ffffff] px-8 py-3.5 rounded-md font-semibold text-[16px] transition-colors"

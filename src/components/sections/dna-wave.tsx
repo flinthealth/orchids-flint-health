@@ -294,9 +294,9 @@ export function OurBeliefSection() {
       <div className="relative z-10">
       {/* Headline + body */}
       <div className="container mx-auto px-8 text-center mb-4">
-        <p className="text-[10px] font-semibold tracking-[0.18em] uppercase mb-4" style={{ color: 'rgba(249,245,239,0.55)' }}>Our Philosophy</p>
-        <h2 className="text-[#ffffff] text-[40px] md:text-[52px] font-light leading-[1.15] tracking-[-0.02em] max-w-[680px] mx-auto mb-6">
-          Information alone doesn't move people <span className="font-serif italic">to action</span>
+        <p className="text-[#677283] text-[15px] font-semibold tracking-[0.1em] uppercase mb-5">Our Philosophy</p>
+        <h2 className="text-[#ffffff] text-[40px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] max-w-[680px] mx-auto mb-6">
+          Information alone doesn't move people <span className="font-serif italic" style={{ color: '#ffffff' }}>to action</span>
         </h2>
         <p className="text-[#ffffff]/70 text-[17px] md:text-[18px] leading-[1.7] max-w-[560px] mx-auto">
           When science meets the right narrative, one that connects emotionally and lands cognitively, complex becomes clear, distant becomes personal, and information drives action.
@@ -352,8 +352,8 @@ export default function DNAWaveSection() {
         {/* Headline — above the photo/bio row */}
         <div className="px-8 md:px-14 lg:px-20 pt-2 pb-8 md:pb-10 text-center">
           <p className="text-[#677283] text-[15px] font-semibold tracking-[0.1em] uppercase mb-5">Our Philosophy</p>
-          <h2 className="text-[#43382f] text-[28px] md:text-[40px] font-light leading-[1.2] tracking-[-0.02em] max-w-[640px] mx-auto">
-            Information alone doesn&apos;t move people <span className="font-serif italic">to action</span>
+          <h2 className="text-[#43382f] text-[40px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] max-w-[640px] mx-auto">
+            Information alone doesn&apos;t move people <span className="font-serif italic" style={{ color: '#2b3335' }}>to action</span>
           </h2>
         </div>
 
@@ -377,9 +377,9 @@ export default function DNAWaveSection() {
 
               {/* Label */}
               <div className="mb-5 flex flex-col gap-1">
-                <span className="text-[#677283] text-[10px] font-semibold tracking-[0.25em] uppercase">Founder</span>
+                <span className="text-[#677283] text-[13px] font-semibold tracking-[0.2em] uppercase">Founder</span>
                 <div className="flex items-center gap-2">
-                  <span className="text-[18px] font-light tracking-[-0.01em] font-serif italic">Jessica Flint</span>
+                  <span className="text-[24px] font-light tracking-[-0.01em] font-serif italic">Jessica Flint</span>
                   <a
                     href="https://www.linkedin.com/in/jessicahflint/"
                     target="_blank"
@@ -399,13 +399,13 @@ export default function DNAWaveSection() {
                 I&apos;ve spent 12 years at the intersection of healthcare and media, long enough to know what works, what doesn&apos;t, and what&apos;s coming before most people see it.
               </p>
               <p className="text-[#677283] text-[17px] md:text-[18px] leading-[1.7] mb-4">
-                I built a behavioral health media platform from scratch — designing the app, growing a 450+ provider network, and scaling it to 4.2 million people and 30 million sessions. The engine behind all of it was narrative media that made people feel something first, understand something second, and act third.
+                I built a behavioral health media platform from scratch, designing the app, growing a 450+ provider network, and scaling it to 30 million sessions across a global community. The engine behind all of it was narrative media that made people feel something first, understand something second, and act third.
               </p>
               <p className="text-[#677283] text-[17px] md:text-[18px] leading-[1.7] mb-4">
                 What I learned is that the gap between having something vital to communicate and the right people actually receiving it is almost never a knowledge problem. It&apos;s a communication problem.
               </p>
               <p className="text-[#677283] text-[17px] md:text-[18px] leading-[1.7]">
-                That&apos;s what Flint exists to solve. I lead every engagement directly — from strategy through final delivery — backed by a trusted network of producers and editors I&apos;ve worked with for years.
+                That&apos;s what Flint exists to solve. I lead every engagement directly, from strategy through final delivery, backed by a trusted network of producers and editors I&apos;ve worked with for years.
               </p>
 
             </div>

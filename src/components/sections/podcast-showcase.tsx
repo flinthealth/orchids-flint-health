@@ -229,11 +229,11 @@ export default function PodcastShowcase() {
             In Practice
           </p>
           <h2
-            className="text-[36px] md:text-[48px] font-light leading-[1.1] tracking-[-0.02em] mb-5"
+            className="text-[40px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-5"
             style={{ color: "#ffffff" }}
           >
             Real results for{" "}
-            <span className="font-serif italic">healthcare brands</span>
+            <span className="font-serif italic" style={{ color: "#ffffff" }}>healthcare brands</span>
           </h2>
           <p
             className="text-[17px] md:text-[18px] leading-[1.7] max-w-[520px] mx-auto"

@@ -33,15 +33,15 @@ export default function Home() {
         {/* <ProblemSection /> */}
         <CarePlatformSection />
         {/* <ROIAttentionSection /> */}
-        <PodcastExplainer />
         <WhoWeBringTogether />
+        <PodcastExplainer />
         <PodcastPathways />
         <StackingCards />
         <PodcastShowcase />
         <DNAWaveSection />
         <TestimonialSection />
         {/* <AudienceSolutions /> */}
-        <PodcastPulse />
+        {/* <PodcastPulse /> */}
         <ContentPrism />
         {/* <FeaturesGrid /> */}
         <ContactSection />

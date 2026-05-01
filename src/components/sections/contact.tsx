@@ -40,13 +40,11 @@ export default function ContactSection() {
 
           {/* Left — copy */}
           <div>
-            <span className="inline-block text-[11px] font-semibold tracking-[0.2em] uppercase px-4 py-1.5 rounded-full mb-6" style={{ backgroundColor: '#54819a', color: '#ffffff' }}>
-              Contact
-            </span>
-            <h2 className="text-[#ffffff] text-[38px] md:text-[48px] font-light leading-[1.1] tracking-[-0.02em] mb-6">
+            <p className="text-[15px] font-semibold tracking-[0.1em] uppercase mb-5" style={{ color: 'rgba(249,245,239,0.55)' }}>Contact</p>
+            <h2 className="text-[#ffffff] text-[40px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-6">
               Let's build<br />
               something worth<br />
-              <span className="font-serif italic">paying attention to.</span>
+              <span className="font-serif italic" style={{ color: '#ffffff' }}>paying attention to.</span>
             </h2>
             <p className="text-[#ffffff]/60 text-[17px] leading-[1.7] mb-8">
               Whether you're ready to launch a branded podcast or just exploring what's possible — we'd love to hear from you.

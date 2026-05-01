@@ -231,8 +231,8 @@ export default function StackingCards() {
                 Explore the Applications
               </span>
             </div>
-            <h2 className="text-[#2b3335] text-[36px] md:text-[48px] font-light leading-[1.15] tracking-[-0.02em] mb-5">
-              The right solution for <span className="font-serif italic">every goal</span>
+            <h2 className="text-[#2b3335] text-[40px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-5">
+              The right solution for <span className="font-serif italic" style={{ color: '#2b3335' }}>every goal</span>
             </h2>
           </div>
 
@@ -294,7 +294,7 @@ export default function StackingCards() {
                   ref={el => { cardContentRefsMobile.current[stackIndex] = el; }}
                   style={{
                     borderRadius: '24px 24px 0 0',
-                    background: '#4a5a66',
+                    background: 'linear-gradient(to right, #2c3436 0%, #6b4b3e 55%, #a0522d 100%)',
                     padding: '6px 0 0 0',
                     position: 'relative',
                     overflow: 'hidden',
@@ -337,7 +337,7 @@ export default function StackingCards() {
                     className="max-w-[1000px] mx-auto relative overflow-hidden"
                     style={{
                       borderRadius: '24px',
-                      background: '#4a5a66',
+                      background: 'linear-gradient(to right, #2c3436 0%, #6b4b3e 55%, #a0522d 100%)',
                       padding: '0 0 8px 0',
                       boxShadow: '0 16px 40px rgba(171,217,234,0.25)',
                     }}
