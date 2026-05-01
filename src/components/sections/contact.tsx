@@ -44,12 +44,10 @@ export default function ContactSection() {
           <div>
             <p className="text-[15px] font-semibold tracking-[0.1em] uppercase mb-5" style={{ color: 'rgba(249,245,239,0.55)' }}>Contact</p>
             <h2 className="text-[#ffffff] text-[40px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-6">
-              Let's build<br />
-              something worth<br />
-              <span className="font-serif italic" style={{ color: '#ffffff' }}>paying attention to.</span>
+              Let's produce something worth <span className="font-serif italic">paying attention to.</span>
             </h2>
-            <p className="text-[#ffffff]/60 text-[18px] leading-[1.7] mb-8">
-              Whether you're ready to launch a branded podcast or just exploring what's possible — we'd love to hear from you.
+            <p className="text-[#ffffff]/60 text-[18px] leading-[1.5] mb-8">
+              Flint takes on a limited number of new series each quarter. If you're planning a launch in the next 90 days, now is the time to reach out.
             </p>
             <div className="flex flex-col gap-4">
               {[
