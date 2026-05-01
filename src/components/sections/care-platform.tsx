@@ -314,10 +314,9 @@ const CarePlatformSection = () => {
               One well-produced series.<br className="hidden md:block" />{' '}
               <span className="font-serif italic" style={{ color: '#ffffff' }}>Five outcomes.</span>
             </h2>
-            {/* Body — first sentence always visible; second sentence desktop only */}
+            {/* Body — first sentence always visible under headline */}
             <p className="text-[16px] leading-[1.65] max-w-[560px] mx-auto" style={{ color: 'rgba(249,245,239,0.55)' }}>
-              Create a compounding chain of results.{' '}
-              <span className="hidden lg:inline">Each episode builds trust, deepens understanding, and moves your audience closer to action.</span>
+              Create a compounding chain of results.
             </p>
           </div>
 
@@ -359,8 +358,8 @@ const CarePlatformSection = () => {
             <svg
               className="hidden lg:block"
               viewBox="0 0 1260 700"
-              width="960"
-              height="533"
+              width="816"
+              height="453"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
               style={{ overflow: 'visible', maxWidth: '100%' }}
@@ -425,11 +424,13 @@ const CarePlatformSection = () => {
 
               {/* ══ LAYER 2 — ENTRY BEAM: (-800,-252) → (285,374) ══ */}
               <line x1="-800" y1="-252" x2="285" y2="374"
-                stroke="#eeb20b" strokeWidth="20" strokeOpacity="0.09" strokeLinecap="butt"/>
+                stroke="#eeb20b" strokeWidth="100" strokeOpacity="0.03" strokeLinecap="butt"/>
               <line x1="-800" y1="-252" x2="285" y2="374"
-                stroke="url(#cpa-beam)" strokeWidth="5" strokeLinecap="round"/>
+                stroke="#eeb20b" strokeWidth="50" strokeOpacity="0.05" strokeLinecap="butt"/>
               <line x1="-800" y1="-252" x2="285" y2="374"
-                stroke="#ffffff" strokeWidth="1.5" strokeOpacity="0.38" strokeLinecap="round"/>
+                stroke="#eeb20b" strokeWidth="22" strokeOpacity="0.08" strokeLinecap="butt"/>
+              <line x1="-800" y1="-252" x2="285" y2="374"
+                stroke="url(#cpa-beam)" strokeWidth="8" strokeLinecap="butt" strokeOpacity="0.18"/>
 
               {/* ══ LAYER 3 — EXIT RAYS, extended fan y=-100→800 (overflow:visible) ══ */}
               {/* Bands 180px each: -100→80, 80→260, 260→440, 440→620, 620→800          */}
@@ -439,27 +440,6 @@ const CarePlatformSection = () => {
               <polygon points="285,374 1260,440  1260,620" fill="url(#cpa-ray4)"/>
               <polygon points="285,374 1260,620  1260,800" fill="url(#cpa-ray5)"/>
 
-              {/* ── Outcome pills on rays — centered at x=915 (+15 shift)               */}
-              <g>
-                <rect x="823" y="111" width="184" height="42" rx="21" fill="#eeb20b" fillOpacity="0.13" stroke="#eeb20b" strokeOpacity="0.85" strokeWidth="1"/>
-                <text x="915" y="132" textAnchor="middle" dominantBaseline="middle" fontFamily="Inter, sans-serif" fontSize="15" fontWeight="600" fill="white" fillOpacity="0.96" letterSpacing="0.08em">ENGAGEMENT</text>
-              </g>
-              <g>
-                <rect x="823" y="224" width="184" height="42" rx="21" fill="#ff7f29" fillOpacity="0.13" stroke="#ff7f29" strokeOpacity="0.85" strokeWidth="1"/>
-                <text x="915" y="245" textAnchor="middle" dominantBaseline="middle" fontFamily="Inter, sans-serif" fontSize="15" fontWeight="600" fill="white" fillOpacity="0.96" letterSpacing="0.08em">ADHERENCE</text>
-              </g>
-              <g>
-                <rect x="823" y="338" width="184" height="42" rx="21" fill="#f5a020" fillOpacity="0.13" stroke="#f5a020" strokeOpacity="0.85" strokeWidth="1"/>
-                <text x="915" y="359" textAnchor="middle" dominantBaseline="middle" fontFamily="Inter, sans-serif" fontSize="15" fontWeight="600" fill="white" fillOpacity="0.96" letterSpacing="0.08em">RETENTION</text>
-              </g>
-              <g>
-                <rect x="823" y="451" width="184" height="42" rx="21" fill="#54819a" fillOpacity="0.13" stroke="#54819a" strokeOpacity="0.85" strokeWidth="1"/>
-                <text x="915" y="472" textAnchor="middle" dominantBaseline="middle" fontFamily="Inter, sans-serif" fontSize="15" fontWeight="600" fill="white" fillOpacity="0.96" letterSpacing="0.08em">REFERRALS</text>
-              </g>
-              <g>
-                <rect x="823" y="565" width="184" height="42" rx="21" fill="#677283" fillOpacity="0.13" stroke="#677283" strokeOpacity="0.85" strokeWidth="1"/>
-                <text x="915" y="586" textAnchor="middle" dominantBaseline="middle" fontFamily="Inter, sans-serif" fontSize="15" fontWeight="600" fill="white" fillOpacity="0.96" letterSpacing="0.08em">ADVOCACY</text>
-              </g>
             </svg>
 
             {/* ── TABLET SVG (md to lg: 768px–1023px) ── */}
@@ -594,8 +574,8 @@ const CarePlatformSection = () => {
             </svg>
           </div>
 
-          {/* Outcome pills — tablet + mobile only, stacked vertically top→bottom */}
-          <div className="lg:hidden flex flex-col items-center gap-2 md:gap-3 px-6 pb-2 pt-1">
+          {/* Outcome pills — all screen sizes, stacked vertically top→bottom */}
+          <div className="flex flex-col items-center gap-2 md:gap-3 px-6 pb-2 pt-1">
             {[
               { label: 'engagement', color: '#eeb20b' },
               { label: 'adherence',  color: '#ff7f29' },
@@ -613,8 +593,8 @@ const CarePlatformSection = () => {
             ))}
           </div>
 
-          {/* Body — mobile/tablet only, below pills */}
-          <p className="lg:hidden text-center text-[16px] leading-[1.65] max-w-[480px] mx-auto px-6 pt-6 pb-2" style={{ color: 'rgba(249,245,239,0.55)' }}>
+          {/* Body — all screens, below pills */}
+          <p className="text-center text-[16px] leading-[1.65] max-w-[480px] mx-auto px-6 pt-6 pb-2" style={{ color: 'rgba(249,245,239,0.55)' }}>
             Each episode builds trust, deepens understanding, and moves your audience closer to action.
           </p>
 
