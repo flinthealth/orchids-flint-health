@@ -1,0 +1,22 @@
+
+> maven-clinic-clone@0.1.0 dev
+> next dev --port 3000
+
+   ▲ Next.js 15.5.8
+   - Local:        http://localhost:3000
+   - Network:      http://172.20.0.4:3000
+   - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 1212ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ○ Compiling / ...
+ ✓ Compiled / in 2.7s (620 modules)
+ GET / 200 in 146ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ GET /?_cb=1777655761913 200 in 3404ms
+ GET /?_cb=1777655761913 200 in 150ms
+ GET /?_cb=1777655863478 200 in 170ms
+ ✓ Compiled in 284ms (620 modules)
+ GET /?_cb=1777655863478 200 in 92ms
+ GET /?_cb=1777656042664 200 in 247ms

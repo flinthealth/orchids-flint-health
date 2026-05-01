@@ -22,6 +22,7 @@ import WhySeriesWork from "@/components/sections/why-series-work";
 import StackingCards from "@/components/sections/stacking-cards";
 import ProblemSection from "@/components/sections/problem";
 import ROIAttentionSection from "@/components/sections/roi-attention";
+import FAQSection from "@/components/sections/faq";
 
 export default function Home() {
   return (
@@ -44,6 +45,7 @@ export default function Home() {
         {/* <PodcastPulse /> */}
         <ContentPrism />
         {/* <FeaturesGrid /> */}
+        <FAQSection />
         <ContactSection />
 
         {/* Bibliography */}

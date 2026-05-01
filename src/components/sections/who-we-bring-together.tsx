@@ -72,7 +72,7 @@ export default function WhoWeBringTogether() {
             {/* Card content */}
             <div className="relative z-20 p-7 md:p-7">
               <p className="text-white text-[17px] font-semibold leading-snug mb-2">{card.title}</p>
-              <p className="text-white/80 text-[14px] leading-[1.6]">{card.body}</p>
+              <p className="text-white/80 text-[15px] leading-[1.6]">{card.body}</p>
             </div>
           </div>
         ))}

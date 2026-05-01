@@ -315,7 +315,7 @@ const CarePlatformSection = () => {
               <span className="font-serif italic" style={{ color: '#ffffff' }}>Five outcomes.</span>
             </h2>
             {/* Body — first sentence always visible under headline */}
-            <p className="text-[16px] leading-[1.65] max-w-[560px] mx-auto" style={{ color: 'rgba(249,245,239,0.55)' }}>
+            <p className="text-[18px] leading-[1.65] max-w-[560px] mx-auto" style={{ color: 'rgba(249,245,239,0.55)' }}>
               Create a compounding chain of results.
             </p>
           </div>
@@ -594,7 +594,7 @@ const CarePlatformSection = () => {
           </div>
 
           {/* Body — all screens, below pills */}
-          <p className="text-center text-[16px] leading-[1.65] max-w-[480px] mx-auto px-6 pt-6 pb-2" style={{ color: 'rgba(249,245,239,0.55)' }}>
+          <p className="text-center text-[18px] leading-[1.65] max-w-[480px] mx-auto px-6 pt-6 pb-2" style={{ color: 'rgba(249,245,239,0.55)' }}>
             Each episode builds trust, deepens understanding, and moves your audience closer to action.
           </p>
 

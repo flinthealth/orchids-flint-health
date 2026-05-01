@@ -48,7 +48,7 @@ export default function ContactSection() {
               something worth<br />
               <span className="font-serif italic" style={{ color: '#ffffff' }}>paying attention to.</span>
             </h2>
-            <p className="text-[#ffffff]/60 text-[17px] leading-[1.7] mb-8">
+            <p className="text-[#ffffff]/60 text-[18px] leading-[1.7] mb-8">
               Whether you're ready to launch a branded podcast or just exploring what's possible — we'd love to hear from you.
             </p>
             <div className="flex flex-col gap-4">
@@ -60,8 +60,8 @@ export default function ContactSection() {
                 <div key={label} className="flex gap-4 items-start">
                   <div className="w-1.5 h-1.5 rounded-full bg-[#54819a] mt-2.5 flex-shrink-0" />
                   <div>
-                    <p className="text-[#ffffff] text-[15px] font-medium">{label}</p>
-                    <p className="text-[#ffffff]/50 text-[13px] leading-[1.6]">{detail}</p>
+                    <p className="text-[#ffffff] text-[16px] font-medium">{label}</p>
+                    <p className="text-[#ffffff]/50 text-[14px] leading-[1.6]">{detail}</p>
                   </div>
                 </div>
               ))}
@@ -78,7 +78,7 @@ export default function ContactSection() {
                   </svg>
                 </div>
                 <p className="text-[#ffffff] text-[22px] font-light">Message received.</p>
-                <p className="text-[#ffffff]/55 text-[15px] leading-[1.65] max-w-[280px]">We'll be in touch within one business day.</p>
+                <p className="text-[#ffffff]/55 text-[16px] leading-[1.65] max-w-[280px]">We'll be in touch within one business day.</p>
               </div>
             ) : !mounted ? null : (
               <form onSubmit={handleSubmit} className="flex flex-col gap-4" autoComplete="off">

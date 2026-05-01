@@ -178,13 +178,13 @@ export default function StackingCards() {
             <p className={`${p1} font-normal leading-[1.3] tracking-[-0.01em] mb-4`} style={{ color: TEXT }}>
               {card.headline}
             </p>
-            <p className="text-[14px] leading-[1.7] mb-8" style={{ color: MUTED }}>{card.body}</p>
+            <p className="text-[16px] leading-[1.7] mb-8" style={{ color: MUTED }}>{card.body}</p>
             <p className="text-[11px] font-semibold tracking-[0.15em] uppercase mb-3" style={{ color: MUTED }}>Applications:</p>
             <div className="flex flex-col gap-[10px]">
               {(card.applications as unknown as string[]).map((item) => (
                 <div key={item} className="flex items-center gap-3 px-4 py-3 rounded-xl" style={{ backgroundColor: ITEM_BG }}>
                   <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: TEXT }} />
-                  <span className="text-[15px] leading-snug" style={{ color: TEXT }}>{item}</span>
+                  <span className="text-[16px] leading-snug" style={{ color: TEXT }}>{item}</span>
                 </div>
               ))}
             </div>
@@ -202,13 +202,13 @@ export default function StackingCards() {
               <p className={`${p1} font-normal leading-[1.3] tracking-[-0.01em] mb-4`} style={{ color: TEXT }}>
                 {card.headline}
               </p>
-              <p className="text-[14px] leading-[1.7] mb-8" style={{ color: MUTED }}>{card.body}</p>
+              <p className="text-[16px] leading-[1.7] mb-8" style={{ color: MUTED }}>{card.body}</p>
               <p className="text-[11px] font-semibold tracking-[0.15em] uppercase mb-3" style={{ color: MUTED }}>Applications:</p>
               <div className="flex flex-col gap-[10px]">
                 {(card.applications as unknown as string[]).map((item) => (
                   <div key={item} className="flex items-center gap-3 px-4 py-3 rounded-xl" style={{ backgroundColor: ITEM_BG }}>
                     <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: TEXT }} />
-                    <span className="text-[15px] leading-snug" style={{ color: TEXT }}>{item}</span>
+                    <span className="text-[16px] leading-snug" style={{ color: TEXT }}>{item}</span>
                   </div>
                 ))}
               </div>

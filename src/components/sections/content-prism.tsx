@@ -20,7 +20,7 @@ const STEPS = [
       const subTxt = "rgba(249,245,239,0.55)";
       return (
         <div className="flex flex-col gap-5">
-          <p style={{ color: body }} className="text-[15px] leading-[1.75]">
+          <p style={{ color: body }} className="text-[16px] leading-[1.75]">
             Every great series begins with a single question: what does this need to accomplish? We work with you to define the outcomes that matter — for your patients, your providers, or your teams — and build a creative brief that keeps every decision anchored to your goals.
           </p>
           <div className="flex flex-col gap-2.5">
@@ -30,8 +30,8 @@ const STEPS = [
               { label: "Establish how we'll measure success",                 desc: "Choose the signals that will tell us the series is working." },
             ].map((item, i) => (
               <div key={i} className="rounded-xl px-4 py-3.5" style={{ background: "rgba(250,193,44,0.18)" }}>
-                <p className="text-[13px] font-semibold mb-0.5" style={{ color: hdTxt }}>{item.label}</p>
-                <p className="text-[13px]" style={{ color: subTxt }}>{item.desc}</p>
+                <p className="text-[14px] font-semibold mb-0.5" style={{ color: hdTxt }}>{item.label}</p>
+                <p className="text-[14px]" style={{ color: subTxt }}>{item.desc}</p>
               </div>
             ))}
           </div>
@@ -52,10 +52,10 @@ const STEPS = [
       const subTxt = "rgba(249,245,239,0.55)";
       return (
         <div className="flex flex-col gap-5">
-          <p style={{ color: body }} className="text-[15px] leading-[1.75]">
+          <p style={{ color: body }} className="text-[16px] leading-[1.75]">
             We guide your team through a focused strategy session to build a show around your people, not just your message. Story structure, hosting style, guest criteria, distribution approach — all shaped by who you&apos;re trying to reach and what you need them to do.
           </p>
-          <p style={{ color: body }} className="text-[14px] leading-[1.6]">
+          <p style={{ color: body }} className="text-[15px] leading-[1.6]">
             This is also where we choose the storytelling format:
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
@@ -66,8 +66,8 @@ const STEPS = [
               { format: "Panel",          desc: "for inclusive, multi-voice dialogue" },
             ].map((f, i) => (
               <div key={i} className="rounded-xl px-4 py-3" style={{ background: "rgba(250,193,44,0.18)" }}>
-                <span className="text-[13px] font-semibold" style={{ color: hdTxt }}>{f.format}</span>
-                <span className="text-[13px]" style={{ color: subTxt }}> {f.desc}</span>
+                <span className="text-[14px] font-semibold" style={{ color: hdTxt }}>{f.format}</span>
+                <span className="text-[14px]" style={{ color: subTxt }}> {f.desc}</span>
               </div>
             ))}
           </div>
@@ -86,7 +86,7 @@ const STEPS = [
       const body = "rgba(249,245,239,0.75)";
       return (
         <div className="flex flex-col gap-5">
-          <p style={{ color: body }} className="text-[15px] leading-[1.75]">
+          <p style={{ color: body }} className="text-[16px] leading-[1.75]">
             From remote interviews to full studio production, we manage the entire creative process — combining editorial rigor with technical precision to make sure every episode sounds as sharp as the strategy behind it.
           </p>
         </div>
@@ -106,7 +106,7 @@ const STEPS = [
       const subTxt = "rgba(249,245,239,0.55)";
       return (
         <div className="flex flex-col gap-5">
-          <p style={{ color: body }} className="text-[15px] leading-[1.75]">
+          <p style={{ color: body }} className="text-[16px] leading-[1.75]">
             Your podcast is a branded experience, not just a content file. We build distribution strategies around how your audience actually consumes content — then deliver it in the format that reaches them best.
           </p>
           <div className="flex flex-col gap-2">
@@ -115,8 +115,8 @@ const STEPS = [
               { label: "Video-first", desc: "Visual storytelling assets that extend the impact and reach of every episode." },
             ].map((item, i) => (
               <div key={i} className="rounded-xl px-4 py-3.5" style={{ background: "rgba(250,193,44,0.18)" }}>
-                <p className="text-[13px] font-semibold mb-0.5" style={{ color: hdTxt }}>{item.label}</p>
-                <p className="text-[13px]" style={{ color: subTxt }}>{item.desc}</p>
+                <p className="text-[14px] font-semibold mb-0.5" style={{ color: hdTxt }}>{item.label}</p>
+                <p className="text-[14px]" style={{ color: subTxt }}>{item.desc}</p>
               </div>
             ))}
           </div>
@@ -137,7 +137,7 @@ const STEPS = [
       const subTxt = "rgba(249,245,239,0.55)";
       return (
         <div className="flex flex-col gap-5">
-          <p style={{ color: body }} className="text-[15px] leading-[1.75]">
+          <p style={{ color: body }} className="text-[16px] leading-[1.75]">
             You&apos;ll receive reporting tied to the outcomes that matter — from completion rates and engagement depth to brand sentiment and inquiry lift. We review performance together and refine continuously. The goal isn&apos;t a successful launch. It&apos;s a series that grows in value and authority over time.
           </p>
           <div className="flex flex-col gap-2">
@@ -147,8 +147,8 @@ const STEPS = [
               { label: "Content optimization", desc: "Topic performance, guest resonance, format testing, and distribution tuning." },
             ].map((item, i) => (
               <div key={i} className="rounded-xl px-4 py-3.5" style={{ background: "rgba(224,168,30,0.15)" }}>
-                <p className="text-[13px] font-semibold mb-0.5" style={{ color: hdTxt }}>{item.label}</p>
-                <p className="text-[13px]" style={{ color: subTxt }}>{item.desc}</p>
+                <p className="text-[14px] font-semibold mb-0.5" style={{ color: hdTxt }}>{item.label}</p>
+                <p className="text-[14px]" style={{ color: subTxt }}>{item.desc}</p>
               </div>
             ))}
           </div>
@@ -203,7 +203,7 @@ export default function ContentPrism() {
           A proven system,<br /><span className="font-serif italic">start to finish</span>
         </h2>
         <p
-          className="text-[#2b3335]/70 text-[17px] md:text-[19px] leading-[1.65] max-w-[560px] mx-auto"
+          className="text-[#2b3335]/70 text-[18px] leading-[1.65] max-w-[560px] mx-auto"
           style={{
             opacity:    visible ? 1 : 0,
             transform:  visible ? "translateY(0)" : "translateY(16px)",
@@ -289,7 +289,7 @@ export default function ContentPrism() {
                   >
                     {step.title}
                   </h3>
-                  <p className="text-[13px] md:text-[14px] leading-[1.55]" style={{ color: summaryColor }}>
+                  <p className="text-[14px] md:text-[15px] leading-[1.55]" style={{ color: summaryColor }}>
                     {step.summary}
                   </p>
                 </div>
