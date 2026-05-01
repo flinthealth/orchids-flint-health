@@ -16,7 +16,7 @@ const FAQS = [
     a: "Most series launch within one quarter, typically 10 to 12 weeks from strategy through first publish. Launch means your series is live and in market. Production of additional episodes can continue well beyond that, building your content library over time.",
   },
   {
-    q: "We don't have internal subject matter experts who are comfortable on camera or audio. Is that a problem?",
+    q: "Do we need experienced hosts?",
     a: "No on-camera or on-mic experience is necessary. Host development and coaching is part of our process. We've worked with experts who had never been recorded before and helped them find their natural voice, build confidence, and make the recording feel like a conversation.",
   },
   {
@@ -40,10 +40,18 @@ export default function FAQSection() {
     <section className="bg-[#ede4da] py-[80px] md:py-[100px]">
       <div className="max-w-[760px] mx-auto px-6 md:px-8">
 
+        {/* Eyebrow */}
+        <p className="text-center text-[15px] font-semibold tracking-[0.1em] uppercase mb-5" style={{ color: '#677283' }}>Good questions</p>
+
         {/* Headline */}
-        <h2 className="text-center text-[40px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-10" style={{ color: '#43382f' }}>
-          Frequently asked <span className="font-serif italic">questions</span>
+        <h2 className="text-center text-[40px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-5" style={{ color: '#43382f' }}>
+          Here's what most people<br /><span className="font-serif italic">want to know</span>
         </h2>
+
+        {/* Body */}
+        <p className="text-center text-[18px] leading-[1.65] max-w-[560px] mx-auto mb-10" style={{ color: '#43382f' }}>
+          Got more questions? Contact us below.
+        </p>
 
         {/* Accordions */}
         <div className="flex flex-col gap-3">
@@ -77,10 +85,6 @@ export default function FAQSection() {
           })}
         </div>
 
-        {/* Footer line */}
-        <p className="mt-8 text-center text-[14px] italic" style={{ color: '#677283' }}>
-          Got more questions? Contact us below.
-        </p>
 
       </div>
     </section>
