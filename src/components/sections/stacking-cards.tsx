@@ -146,7 +146,7 @@ export default function StackingCards() {
     const imgW = mobile ? 161     : 207;
     const h3   = mobile ? 'text-[28px]' : 'text-[36px]';
     const h3mb = mobile ? 'mb-5'  : 'mb-3';
-    const p1   = mobile ? 'text-[18px]' : 'text-[20px]';
+    const p1   = mobile ? 'text-[17px]' : 'text-[20px]';
     return (
       <div className={`${px} pt-8 pb-10`}>
         {/* Pills */}
@@ -178,7 +178,7 @@ export default function StackingCards() {
             <p className={`${p1} font-normal leading-[1.3] tracking-[-0.01em] mb-4`} style={{ color: TEXT }}>
               {card.headline}
             </p>
-            <p className="text-[16px] leading-[1.7] mb-8" style={{ color: MUTED }}>{card.body}</p>
+            <p className="text-[16px] leading-[1.5] mb-8" style={{ color: MUTED }}>{card.body}</p>
             <p className="text-[11px] font-semibold tracking-[0.15em] uppercase mb-3" style={{ color: MUTED }}>Applications:</p>
             <div className="flex flex-col gap-[10px]">
               {(card.applications as unknown as string[]).map((item) => (
@@ -202,7 +202,7 @@ export default function StackingCards() {
               <p className={`${p1} font-normal leading-[1.3] tracking-[-0.01em] mb-4`} style={{ color: TEXT }}>
                 {card.headline}
               </p>
-              <p className="text-[16px] leading-[1.7] mb-8" style={{ color: MUTED }}>{card.body}</p>
+              <p className="text-[16px] leading-[1.5] mb-8" style={{ color: MUTED }}>{card.body}</p>
               <p className="text-[11px] font-semibold tracking-[0.15em] uppercase mb-3" style={{ color: MUTED }}>Applications:</p>
               <div className="flex flex-col gap-[10px]">
                 {(card.applications as unknown as string[]).map((item) => (

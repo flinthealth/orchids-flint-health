@@ -117,7 +117,7 @@ export default function HeroSection() {
               </span>
             </h1>
 
-            <p className="animate-hero-sub1 text-white/80 text-[18px] md:text-[19px] font-normal mb-4 max-w-[440px]">
+            <p className="animate-hero-sub1 text-white/80 text-[17px] font-normal mb-4 max-w-[440px]">
               We produce series that reach the patients, providers, and teams that matter most to you.
             </p>
 

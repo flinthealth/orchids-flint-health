@@ -40,7 +40,7 @@ export default function WhoWeBringTogether() {
         <p className="text-[#ffffff]/40 text-[13px] md:text-[15px] font-normal uppercase tracking-[0.1em] mb-5 md:whitespace-nowrap leading-[2]">
           Health systems &amp; clinics&nbsp;&nbsp;·&nbsp;&nbsp;Digital health platforms&nbsp;&nbsp;·&nbsp;&nbsp;Pharma &amp; biotech
         </p>
-        <p className="text-[#ffffff]/70 text-[18px] md:text-[20px] leading-[1.6] max-w-[560px] mx-auto">
+        <p className="text-[#ffffff]/70 text-[17px] leading-[1.5] max-w-[560px] mx-auto">
           Whether you're reaching patients, educating providers, or aligning your teams, we make the media that moves them.
         </p>
       </div>
@@ -72,7 +72,7 @@ export default function WhoWeBringTogether() {
             {/* Card content */}
             <div className="relative z-20 p-7 md:p-7">
               <p className="text-white text-[17px] font-semibold leading-snug mb-2">{card.title}</p>
-              <p className="text-white/80 text-[15px] leading-[1.6]">{card.body}</p>
+              <p className="text-white/80 text-[15px] leading-[1.5]">{card.body}</p>
             </div>
           </div>
         ))}

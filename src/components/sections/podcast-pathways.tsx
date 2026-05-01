@@ -50,7 +50,7 @@ export default function PodcastPathways() {
           Launch a complete series <span className="font-serif italic" style={{ color: '#ffffff' }}>in one quarter.</span>
         </h2>
         <p
-          className="text-white/60 text-[18px] leading-[1.65] max-w-[460px] mx-auto"
+          className="text-white/60 text-[17px] leading-[1.5] max-w-[460px] mx-auto"
           style={fade(0.15)}
         >
           Who do you want to reach?
@@ -71,7 +71,7 @@ export default function PodcastPathways() {
           <h3 className="text-[#2b3335] text-[28px] font-light leading-[1.15] tracking-[-0.02em] mb-4">
             Your <span className="tracking-wide">TEAM</span>
           </h3>
-          <p className="text-[#43382f] text-[16px] leading-[1.7] mb-8 max-w-[400px]">
+          <p className="text-[#43382f] text-[16px] leading-[1.5] mb-8 max-w-[400px]">
             Align your people around a shared vision. From onboarding to leadership messaging, carry your <strong className="text-[#2b3335] font-semibold">values</strong> and <strong className="text-[#2b3335] font-semibold">mission</strong> to every member of your organization.
           </p>
         </div>
@@ -92,7 +92,7 @@ export default function PodcastPathways() {
           <h3 className="text-[#2b3335] text-[28px] font-light leading-[1.15] tracking-[-0.02em] mb-4">
             Your <span className="tracking-wide">COMMUNITY</span>
           </h3>
-          <p className="text-[#43382f] text-[16px] leading-[1.7] mb-8 max-w-[400px]">
+          <p className="text-[#43382f] text-[16px] leading-[1.5] mb-8 max-w-[400px]">
             Earn the trust of the <strong className="text-[#2b3335] font-semibold">patients</strong>, <strong className="text-[#2b3335] font-semibold">providers</strong>, and <strong className="text-[#2b3335] font-semibold">caregivers</strong> who need what you do. Meet them where they are, educating, empowering, and moving them to act.
           </p>
         </div>
@@ -115,7 +115,7 @@ export default function PodcastPathways() {
           <h3 className="text-[#2b3335] text-[28px] md:text-[32px] font-light leading-[1.15] tracking-[-0.02em] mb-4">
             Your <span className="tracking-wide">TEAM</span>
           </h3>
-          <p className="text-[#43382f] text-[16px] leading-[1.7]">
+          <p className="text-[#43382f] text-[16px] leading-[1.5]">
             Align your people around a shared vision. From onboarding to leadership messaging, carry your <strong className="text-[#2b3335] font-semibold">values</strong> and <strong className="text-[#2b3335] font-semibold">mission</strong> to every member of your organization.
           </p>
         </div>
@@ -134,7 +134,7 @@ export default function PodcastPathways() {
           <h3 className="text-[#2b3335] text-[28px] md:text-[32px] font-light leading-[1.15] tracking-[-0.02em] mb-4">
             Your <span className="tracking-wide">COMMUNITY</span>
           </h3>
-          <p className="text-[#43382f] text-[16px] leading-[1.7]">
+          <p className="text-[#43382f] text-[16px] leading-[1.5]">
             Earn the trust of the <strong className="text-[#2b3335] font-semibold">patients</strong>, <strong className="text-[#2b3335] font-semibold">providers</strong>, and <strong className="text-[#2b3335] font-semibold">caregivers</strong> who need what you do. Meet them where they are, educating, empowering, and moving them to act.
           </p>
         </div>

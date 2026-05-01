@@ -49,7 +49,7 @@ export default function FAQSection() {
         </h2>
 
         {/* Body */}
-        <p className="text-center text-[18px] leading-[1.65] max-w-[560px] mx-auto mb-10" style={{ color: '#43382f' }}>
+        <p className="text-center text-[17px] leading-[1.5] max-w-[560px] mx-auto mb-10" style={{ color: '#43382f' }}>
           Got more questions? Contact us below.
         </p>
 
@@ -65,7 +65,7 @@ export default function FAQSection() {
                 onClick={() => setOpenIdx(isOpen ? null : i)}
               >
                 <div className="flex items-center justify-between gap-4">
-                  <p className="text-[18px] font-medium leading-snug" style={{ color: '#43382f' }}>
+                  <p className="text-[17px] font-medium leading-snug" style={{ color: '#43382f' }}>
                     {item.q}
                   </p>
                   <span
@@ -76,7 +76,7 @@ export default function FAQSection() {
                   </span>
                 </div>
                 {isOpen && (
-                  <p className="text-[15px] leading-[1.7] mt-4" style={{ color: '#677283' }}>
+                  <p className="text-[15px] leading-[1.5] mt-4" style={{ color: '#677283' }}>
                     {item.a}
                   </p>
                 )}

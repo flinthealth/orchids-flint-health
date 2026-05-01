@@ -298,7 +298,7 @@ export function OurBeliefSection() {
         <h2 className="text-[#ffffff] text-[40px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] max-w-[680px] mx-auto mb-6">
           Information alone doesn't move people <span className="font-serif italic" style={{ color: '#ffffff' }}>to action</span>
         </h2>
-        <p className="text-[#ffffff]/70 text-[18px] leading-[1.7] max-w-[560px] mx-auto">
+        <p className="text-[#ffffff]/70 text-[17px] leading-[1.5] max-w-[560px] mx-auto">
           When science meets the right narrative, one that connects emotionally and lands cognitively, complex becomes clear, distant becomes personal, and information drives action.
         </p>
       </div>
@@ -306,7 +306,7 @@ export function OurBeliefSection() {
       {/* Pills block */}
       <div className="container mx-auto pl-6 pr-8 md:px-8 pb-10 mt-12">
         <div className="flex flex-col gap-2.5 w-full md:max-w-[520px] md:mx-auto">
-          <p className="text-[#ffffff]/70 text-[18px] leading-[1.7] w-full mb-1">
+          <p className="text-[#ffffff]/70 text-[17px] leading-[1.5] w-full mb-1">
             We achieve this through:
           </p>
           {[
@@ -395,16 +395,16 @@ export default function DNAWaveSection() {
               </div>
 
               {/* Story paragraphs */}
-              <p className="text-[#677283] text-[18px] leading-[1.7] mb-4">
+              <p className="text-[#677283] text-[17px] leading-[1.5] mb-4">
                 I&apos;ve spent 12 years at the intersection of healthcare and media, long enough to know what works, what doesn&apos;t, and what&apos;s coming before most people see it.
               </p>
-              <p className="text-[#677283] text-[18px] leading-[1.7] mb-4">
+              <p className="text-[#677283] text-[17px] leading-[1.5] mb-4">
                 I built a behavioral health media platform from scratch, designing the app, growing a 450+ provider network, and scaling it to 30 million sessions across a global community. The engine behind all of it was narrative media that made people feel something first, understand something second, and act third.
               </p>
-              <p className="text-[#677283] text-[18px] leading-[1.7] mb-4">
+              <p className="text-[#677283] text-[17px] leading-[1.5] mb-4">
                 What I learned is that the gap between having something vital to communicate and the right people actually receiving it is almost never a knowledge problem. It&apos;s a communication problem.
               </p>
-              <p className="text-[#677283] text-[18px] leading-[1.7]">
+              <p className="text-[#677283] text-[17px] leading-[1.5]">
                 That&apos;s what Flint exists to solve. I lead every engagement directly, from strategy through final delivery, backed by a trusted network of producers and editors I&apos;ve worked with for years.
               </p>
 
@@ -446,7 +446,7 @@ export function TestimonialSection() {
           <div className="hidden md:block w-px bg-black/08 my-8" />
           {/* Quote */}
           <div className="flex-1 p-8 md:p-12 flex flex-col justify-center">
-            <blockquote className="text-[18px] leading-[1.7] text-[#2b3335] font-light">
+            <blockquote className="text-[17px] leading-[1.5] text-[#2b3335] font-light">
               &ldquo;Thank you for the refresh in our brand and marketing strategy! You absolutely brought our voice and vision to the next phase and I want to commend your incredible talent at identifying the tone, message, and personality. Thank you for all of your efforts, patience and direction you provided us.&rdquo;
             </blockquote>
           </div>

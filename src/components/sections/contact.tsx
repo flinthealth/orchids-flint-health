@@ -46,7 +46,7 @@ export default function ContactSection() {
             <h2 className="text-[#ffffff] text-[40px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-6">
               Let's produce something worth <span className="font-serif italic">paying attention to.</span>
             </h2>
-            <p className="text-[#ffffff]/60 text-[18px] leading-[1.5] mb-8">
+            <p className="text-[#ffffff]/60 text-[17px] leading-[1.5] mb-8">
               Flint takes on a limited number of new series each quarter. If you're planning a launch in the next 90 days, now is the time to reach out.
             </p>
             <div className="flex flex-col gap-4">
@@ -59,7 +59,7 @@ export default function ContactSection() {
                   <div className="w-1.5 h-1.5 rounded-full bg-[#54819a] mt-2.5 flex-shrink-0" />
                   <div>
                     <p className="text-[#ffffff] text-[16px] font-medium">{label}</p>
-                    <p className="text-[#ffffff]/50 text-[14px] leading-[1.6]">{detail}</p>
+                    <p className="text-[#ffffff]/50 text-[14px] leading-[1.5]">{detail}</p>
                   </div>
                 </div>
               ))}
@@ -76,7 +76,7 @@ export default function ContactSection() {
                   </svg>
                 </div>
                 <p className="text-[#ffffff] text-[22px] font-light">Message received.</p>
-                <p className="text-[#ffffff]/55 text-[16px] leading-[1.65] max-w-[280px]">We'll be in touch within one business day.</p>
+                <p className="text-[#ffffff]/55 text-[16px] leading-[1.5] max-w-[280px]">We'll be in touch within one business day.</p>
               </div>
             ) : !mounted ? null : (
               <form onSubmit={handleSubmit} className="flex flex-col gap-4" autoComplete="off">

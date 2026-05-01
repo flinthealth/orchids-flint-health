@@ -117,7 +117,7 @@ function CaseStudyCard({
               {client}
             </p>
             <p
-              className="text-[15px] leading-[1.65]"
+              className="text-[15px] leading-[1.5]"
               style={{ color: "#677283" }}
             >
               {description}
@@ -168,7 +168,7 @@ function CaseStudyCard({
               {client}
             </p>
             <p
-              className="text-[15px] leading-[1.65]"
+              className="text-[15px] leading-[1.5]"
               style={{ color: "#677283" }}
             >
               {description}
@@ -236,7 +236,7 @@ export default function PodcastShowcase() {
             <span className="font-serif italic" style={{ color: "#ffffff" }}>healthcare brands</span>
           </h2>
           <p
-            className="text-[18px] leading-[1.7] max-w-[520px] mx-auto"
+            className="text-[17px] leading-[1.5] max-w-[520px] mx-auto"
             style={{ color: "rgba(249,245,239,0.55)" }}
           >
             Proof that when the right message meets the right audience, something

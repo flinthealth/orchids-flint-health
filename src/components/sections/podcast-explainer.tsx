@@ -447,7 +447,7 @@ function AnimatedTimeline() {
                       {year}
                     </span>
                     <p className="text-[#2b3335] text-[15px] font-medium leading-snug mb-0.5">{label}</p>
-                    <p className="text-[#2b3335]/50 text-[13px] leading-[1.65]">{detail}</p>
+                    <p className="text-[#2b3335]/50 text-[13px] leading-[1.5]">{detail}</p>
                   </div>
                 </div>
               </div>
@@ -611,7 +611,7 @@ export default function PodcastExplainer() {
           <h2 className="text-[#2b3335] text-[40px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-6 max-w-[720px] mx-auto">
             Series capture attention in a <span className="font-serif italic" style={{ color: '#2b3335' }}>world full of noise</span>
           </h2>
-          <p className="text-[#677283] text-[16px] md:text-[18px] leading-[1.7] max-w-[580px] mx-auto mb-6">
+          <p className="text-[#677283] text-[16px] md:text-[17px] leading-[1.5] max-w-[580px] mx-auto mb-6">
             Long-form podcast series in audio and video are the format with the highest trust, the deepest engagement, and the stats to prove it.
           </p>
         </div>
@@ -657,7 +657,7 @@ export default function PodcastExplainer() {
               <div className="relative z-10">
                 <p className="text-[#ffffff] text-[80px] font-light leading-none tracking-[-0.04em] mb-1">6–7×</p>
                 <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-1">Greater Recall<a href="https://link.springer.com/article/10.3758/BF03332778" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">1</a></p>
-                <p className="text-[#ffffff]/60 text-[15px] leading-[1.6] max-w-[360px]">Narratives are recalled six to seven times more than information studied through repetition alone.</p>
+                <p className="text-[#ffffff]/60 text-[15px] leading-[1.5] max-w-[360px]">Narratives are recalled six to seven times more than information studied through repetition alone.</p>
               </div>
             </div>
 
@@ -669,7 +669,7 @@ export default function PodcastExplainer() {
               <CompletionRing />
               <div className="mt-5">
                 <p className="text-[#2b3335] text-[17px] font-medium leading-snug mb-1">Completion Rate<a href="https://signalhillinsights.com/measuring-the-success-of-branded-podcasts-choosing-the-right-yardsticks/" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">2</a></p>
-                <p className="text-[#2b3335]/60 text-[15px] leading-[1.6]">Our leading formats ensure your vital messages are heard, absorbed, and completed.</p>
+                <p className="text-[#2b3335]/60 text-[15px] leading-[1.5]">Our leading formats ensure your vital messages are heard, absorbed, and completed.</p>
               </div>
             </div>
 
@@ -700,7 +700,7 @@ export default function PodcastExplainer() {
               <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='g2'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23g2)'/%3E%3C/svg%3E")`, backgroundSize: '400px 400px', opacity: 0.28, mixBlendMode: 'overlay' }} />
               <p className="text-[#ffffff] text-[80px] font-light leading-none tracking-[-0.04em] mb-2">61%</p>
               <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-1">Trust Lift<a href="https://signalhillinsights.com/measuring-the-success-of-branded-podcasts-choosing-the-right-yardsticks/" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">2</a></p>
-              <p className="text-[#ffffff]/65 text-[15px] leading-[1.6]">Podcasts improve brand perception and confidence by humanizing the science.</p>
+              <p className="text-[#ffffff]/65 text-[15px] leading-[1.5]">Podcasts improve brand perception and confidence by humanizing the science.</p>
             </div>
 
             {/* F — 3× More Influence */}
@@ -712,7 +712,7 @@ export default function PodcastExplainer() {
               <ConcentricRings />
               <p className="text-[#ffffff] text-[80px] font-light leading-none tracking-[-0.03em] mb-1 relative z-10">3×</p>
               <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-1 relative z-10">More Influence<a href="https://cumuluspodcastnetwork.com/cumulus-media-podcast-download-fall-2025/" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">3</a></p>
-              <p className="text-[#ffffff]/65 text-[15px] leading-[1.6] relative z-10">Podcasts carry triple the authority of standard influencer or social-led outreach.</p>
+              <p className="text-[#ffffff]/65 text-[15px] leading-[1.5] relative z-10">Podcasts carry triple the authority of standard influencer or social-led outreach.</p>
             </div>
 
             {/* G — Full-width closer (no card, plain text) */}
@@ -751,7 +751,7 @@ export default function PodcastExplainer() {
                 {/* Text below */}
                 <p className="text-[#ffffff] text-[60px] font-light leading-none tracking-[-0.03em] mb-1">6–7×</p>
                 <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-1">Greater Recall</p>
-                <p className="text-[#ffffff]/60 text-[15px] leading-[1.6]">Narratives are recalled six to seven times more than information studied through repetition alone.</p>
+                <p className="text-[#ffffff]/60 text-[15px] leading-[1.5]">Narratives are recalled six to seven times more than information studied through repetition alone.</p>
               </div>
             </div>
 
@@ -761,7 +761,7 @@ export default function PodcastExplainer() {
                 <CompletionRing />
               </div>
               <p className="text-[#2b3335] text-[17px] font-medium leading-snug mb-1 text-center mt-3">Completion Rate</p>
-              <p className="text-[#2b3335]/60 text-[15px] leading-[1.6] text-center">Most listeners stay engaged from the first insight to the final conclusion.</p>
+              <p className="text-[#2b3335]/60 text-[15px] leading-[1.5] text-center">Most listeners stay engaged from the first insight to the final conclusion.</p>
             </div>
 
             {/* Mobile D — 77%+ On-the-Go */}
@@ -798,7 +798,7 @@ export default function PodcastExplainer() {
               <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='g5'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23g5)'/%3E%3C/svg%3E")`, backgroundSize: '400px 400px', opacity: 0.28, mixBlendMode: 'overlay' }} />
               <p className="text-[#ffffff] text-[60px] font-light leading-none tracking-[-0.04em] mb-2">61%</p>
               <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-1">Trust Lift</p>
-              <p className="text-[#ffffff]/65 text-[15px] leading-[1.6]">Podcasts improve brand perception and confidence by humanizing the science.</p>
+              <p className="text-[#ffffff]/65 text-[15px] leading-[1.5]">Podcasts improve brand perception and confidence by humanizing the science.</p>
             </div>
 
             {/* Mobile F — 3× More Influence */}
@@ -807,7 +807,7 @@ export default function PodcastExplainer() {
               <ConcentricRings />
               <p className="text-[#ffffff] text-[60px] font-light leading-none tracking-[-0.03em] mb-1 relative z-10">3×</p>
               <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-1 relative z-10">More Influence</p>
-              <p className="text-[#ffffff]/65 text-[15px] leading-[1.6] relative z-10">Podcasts carry triple the authority of standard influencer or social-led outreach.</p>
+              <p className="text-[#ffffff]/65 text-[15px] leading-[1.5] relative z-10">Podcasts carry triple the authority of standard influencer or social-led outreach.</p>
             </div>
 
             {/* Mobile G — Bottom text (no card) */}
