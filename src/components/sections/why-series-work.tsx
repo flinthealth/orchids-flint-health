@@ -32,7 +32,7 @@ const segments = [
     id: "curiosity",
     label: "Curiosity",
     descriptor:
-      "Clear learning objectives delivered through narrative so compelling your audience doesn't just learn. They come back for more.",
+      "Narrative learning that educates, entertains, and keeps your audience coming back.",
     color: "#eeb20b",
     labelColor: "#a07800",
     arcRotation: 150, // left side
@@ -43,7 +43,7 @@ const segments = [
     id: "emotion",
     label: "Emotion",
     descriptor:
-      "People don't act on information. They act on how it makes them feel. Series create the emotional connection that turns understanding into action.",
+      "Emotion is the brain's highlighter. Series underline what matters most.",
     color: "#ff7f29",
     arcRotation: -90, // right / upper-right
     // CW -90°→30° — text flows from top to lower-right
@@ -53,7 +53,7 @@ const segments = [
     id: "trust",
     label: "Trust",
     descriptor:
-      "The most valuable thing a healthcare brand can nurture is a team and community that trusts them completely. Series are how you do it.",
+      "Trust is earned episode by episode. Series are how you build it.",
     color: "#54819a",
     arcRotation: 30, // bottom
     // CCW 150°→30° through bottom — reads L→R at bottom ✓
@@ -114,7 +114,7 @@ export default function WhySeriesWork() {
             </span>
           </h2>
           <p className="text-[#677283] text-[16px] leading-[1.65] max-w-[560px] mx-auto">
-            Create emotional resonance that builds loyalty and trust that protects your position in the AI era.
+            Create emotional resonance that builds loyalty and trust to protects your position in the AI era.
           </p>
         </div>
 

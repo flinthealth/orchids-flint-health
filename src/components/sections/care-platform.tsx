@@ -314,9 +314,10 @@ const CarePlatformSection = () => {
               One well-produced series.<br className="hidden md:block" />{' '}
               <span className="font-serif italic" style={{ color: '#ffffff' }}>Five outcomes.</span>
             </h2>
-            {/* Body */}
+            {/* Body — first sentence always visible; second sentence desktop only */}
             <p className="text-[16px] leading-[1.65] max-w-[560px] mx-auto" style={{ color: 'rgba(249,245,239,0.55)' }}>
-              Create a compounding chain of results. Each episode builds trust, deepens understanding, and moves your audience closer to action.
+              Create a compounding chain of results.{' '}
+              <span className="hidden lg:inline">Each episode builds trust, deepens understanding, and moves your audience closer to action.</span>
             </p>
           </div>
 
@@ -604,13 +605,18 @@ const CarePlatformSection = () => {
             ].map(({ label, color }) => (
               <span
                 key={label}
-                className="inline-block text-[11px] md:text-[15px] font-semibold tracking-[0.08em] uppercase px-3 md:px-5 py-1 md:py-2 rounded-full text-white"
+                className="inline-block text-[15px] md:text-[15px] font-semibold tracking-[0.08em] uppercase px-5 md:px-5 py-2 md:py-2 rounded-full text-white"
                 style={{ background: `${color}22`, border: `1px solid ${color}55` }}
               >
                 {label}
               </span>
             ))}
           </div>
+
+          {/* Body — mobile/tablet only, below pills */}
+          <p className="lg:hidden text-center text-[16px] leading-[1.65] max-w-[480px] mx-auto px-6 pt-6 pb-2" style={{ color: 'rgba(249,245,239,0.55)' }}>
+            Each episode builds trust, deepens understanding, and moves your audience closer to action.
+          </p>
 
           {/* CTA */}
           <div className="flex justify-center pt-8 md:pt-12 pb-24 px-6">

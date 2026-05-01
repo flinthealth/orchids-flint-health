@@ -40,7 +40,7 @@ export default function PodcastPathways() {
           className="md:hidden text-white text-[40px] font-light leading-[1.1] tracking-[-0.02em] mb-4 max-w-[640px] mx-auto"
           style={fade(0.1)}
         >
-          Launch a complete series<br /><span className="font-serif italic" style={{ color: '#ffffff' }}>in one quarter.</span>
+          Launch a<br />complete series<br /><span className="font-serif italic" style={{ color: '#ffffff' }}>in one quarter.</span>
         </h2>
         {/* Desktop headline */}
         <h2
@@ -58,10 +58,10 @@ export default function PodcastPathways() {
       </div>
 
       {/* ── Mobile: full-bleed split ── */}
-      <div className="flex flex-col md:hidden" style={fade(0.2)}>
+      <div className="flex flex-col md:hidden px-4 gap-0" style={fade(0.2)}>
 
         {/* Internal — mobile */}
-        <div className="flex-1 px-8 py-12 flex flex-col" style={{ backgroundColor: '#ede4da' }}>
+        <div className="flex-1 px-8 py-12 flex flex-col rounded-3xl" style={{ backgroundColor: '#ede4da' }}>
           <span
             className="inline-block self-start text-[11px] font-semibold tracking-[0.2em] uppercase px-4 py-1.5 rounded-full mb-6"
             style={{ backgroundColor: '#54819a', color: '#ffffff' }}
@@ -76,14 +76,16 @@ export default function PodcastPathways() {
           </p>
         </div>
 
-        {/* Divider */}
-        <div className="h-px w-full" style={{ backgroundColor: 'rgba(43,51,53,0.1)' }} />
+        {/* OR divider */}
+        <div className="flex items-center justify-center py-5">
+          <span className="text-white/60 text-[13px] font-semibold tracking-[0.15em] uppercase">or</span>
+        </div>
 
         {/* Public — mobile */}
-        <div className="flex-1 px-8 py-12 flex flex-col" style={{ backgroundColor: '#ede4da' }}>
+        <div className="flex-1 px-8 py-12 flex flex-col rounded-3xl" style={{ backgroundColor: '#ede4da' }}>
           <span
             className="inline-block self-start text-[11px] font-semibold tracking-[0.2em] uppercase px-4 py-1.5 rounded-full mb-6"
-            style={{ backgroundColor: '#eeb20b', color: '#43382f' }}
+            style={{ backgroundColor: '#677283', color: '#ffffff' }}
           >
             Public
           </span>
@@ -125,7 +127,7 @@ export default function PodcastPathways() {
         >
           <span
             className="inline-block self-start text-[11px] font-semibold tracking-[0.2em] uppercase px-4 py-1.5 rounded-full mb-6"
-            style={{ backgroundColor: '#eeb20b', color: '#43382f' }}
+            style={{ backgroundColor: '#677283', color: '#ffffff' }}
           >
             Public
           </span>

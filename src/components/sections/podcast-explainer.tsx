@@ -732,7 +732,7 @@ export default function PodcastExplainer() {
             </div>
 
             {/* Mobile C — 80% Completion Rate */}
-            <div className="rounded-3xl pt-6 px-7 pb-7 flex flex-col items-center min-h-[280px]" style={{ backgroundColor: '#677283' }}>
+            <div className="rounded-3xl pt-6 px-7 pb-7 flex flex-col items-center min-h-[280px]" style={{ backgroundColor: '#ede4da' }}>
               <div className="w-[300px] h-[300px] flex-shrink-0">
                 <CompletionRing />
               </div>
@@ -747,7 +747,7 @@ export default function PodcastExplainer() {
                 poster="/stats-on-the-go.webp"
                 className="absolute inset-0 w-full h-full object-cover object-center"
               />
-              <div className="absolute inset-0" style={{ backgroundColor: 'rgba(103, 114, 131, 0.55)' }} />
+              <div className="absolute inset-0" style={{ backgroundColor: 'rgba(255, 127, 41, 0.55)' }} />
               <div className="relative z-10 p-7 flex flex-col h-full">
                 <p className="text-[#ffffff] text-[60px] font-light leading-none tracking-[-0.03em] mb-1">71%</p>
                 <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-4">Of podcast listeners tune in during their daily routine<a href="https://www.cohostpodcasting.com/resources/podcasting-unwrapped-2025" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">4</a></p>
