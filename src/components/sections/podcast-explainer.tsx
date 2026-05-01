@@ -648,7 +648,7 @@ export default function PodcastExplainer() {
             {/* B — 4.7x Greater Recall */}
             <div
               className="rounded-3xl overflow-hidden relative flex flex-col justify-end p-7"
-              style={{ gridColumn: '5 / 13', gridRow: '1 / 5', background: 'linear-gradient(to bottom, #6b4b3e 0%, #a0522d 55%)' }}
+              style={{ gridColumn: '5 / 13', gridRow: '1 / 5', background: '#54819a' }}
             >
               <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 60%)' }} />
               <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='g1b'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23g1b)'/%3E%3C/svg%3E")`, backgroundSize: '400px 400px', opacity: 0.28, mixBlendMode: 'overlay' }} />
@@ -740,7 +740,7 @@ export default function PodcastExplainer() {
             </div>
 
             {/* Mobile B — 4.7× Greater Recall */}
-            <div className="rounded-3xl overflow-hidden relative px-7 pt-7 pb-7 flex flex-col" style={{ background: 'linear-gradient(to bottom, #2c3436 0%, #6b4b3e 25%, #a0522d 65%)' }}>
+            <div className="rounded-3xl overflow-hidden relative px-7 pt-7 pb-7 flex flex-col" style={{ background: '#54819a' }}>
               <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 60%)' }} />
               <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='g4b'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23g4b)'/%3E%3C/svg%3E")`, backgroundSize: '400px 400px', opacity: 0.28, mixBlendMode: 'overlay' }} />
               <div className="relative z-10 flex flex-col">
