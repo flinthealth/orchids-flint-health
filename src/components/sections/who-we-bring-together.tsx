@@ -33,15 +33,19 @@ export default function WhoWeBringTogether() {
       </div>
 
       {/* Header */}
-      <div className="text-center max-w-[900px] mx-auto mb-12 px-8">
+      <div className="text-center max-w-[900px] mx-auto mb-12 px-4 md:px-8">
+        <div className="flex flex-col items-center gap-1 mb-5">
+          {['Health systems & clinics', 'Digital health platforms', 'Pharma & biotech'].map(label => (
+            <p key={label} className="text-[15px] font-semibold tracking-[0.1em] uppercase" style={{ color: 'rgba(249,245,239,0.55)' }}>
+              {label}
+            </p>
+          ))}
+        </div>
         <h2 className="text-[#ffffff] text-[40px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-6">
           Built for <span className="font-serif italic" style={{ color: '#ffffff' }}>healthcare</span>
         </h2>
-        <p className="text-[#ffffff]/40 text-[13px] md:text-[15px] font-normal uppercase tracking-[0.1em] mb-5 md:whitespace-nowrap leading-[2]">
-          Health systems &amp; clinics&nbsp;&nbsp;·&nbsp;&nbsp;Digital health platforms&nbsp;&nbsp;·&nbsp;&nbsp;Pharma &amp; biotech
-        </p>
-        <p className="text-[#ffffff]/70 text-[17px] leading-[1.5] max-w-[560px] mx-auto">
-          Whether you're reaching patients, educating providers, or aligning your teams, we make the media that moves them.
+        <p className="text-[#ffffff]/70 text-[17px] leading-[1.5]">
+          Whether you're reaching patients,<br />educating providers, or aligning your teams,<br />we make the media that moves them.
         </p>
       </div>
 

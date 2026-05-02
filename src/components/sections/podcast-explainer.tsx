@@ -2,10 +2,10 @@
 
 import React, { useState, useRef, useEffect, useId } from 'react';
 // ─── Animated completion ring for 80% card ────────────────────────────────────
-const VB = 200; // viewBox coordinate space
+const VB = 230;
 const VB_CX = VB / 2;
-const VB_R = 56;
-const VB_STROKE = 10;
+const VB_R = 106;
+const VB_STROKE = 12;
 const VB_C = 2 * Math.PI * VB_R;
 
 function CompletionRing() {
@@ -25,7 +25,7 @@ function CompletionRing() {
       if (firedRef.current) return;
       firedRef.current = true;
       const start = performance.now();
-      const duration = 1400;
+      const duration = 1600;
       const tick = (now: number) => {
         const t = Math.min(1, (now - start) / duration);
         const eased = 1 - Math.pow(1 - t, 3);
@@ -37,11 +37,10 @@ function CompletionRing() {
 
     const obs = new IntersectionObserver(
       ([entry]) => { if (entry.isIntersecting) { run(); obs.disconnect(); } },
-      { threshold: 0.05, rootMargin: '0px 0px -10% 0px' }
+      { threshold: 0.2, rootMargin: '0px 0px -5% 0px' }
     );
     obs.observe(el);
-    const timer = setTimeout(run, 800);
-    return () => { obs.disconnect(); clearTimeout(timer); if (rafRef.current) cancelAnimationFrame(rafRef.current); };
+    return () => { obs.disconnect(); if (rafRef.current) cancelAnimationFrame(rafRef.current); };
   }, []);
 
   const offset = VB_C - (pct / 100) * VB_C;
@@ -55,7 +54,6 @@ function CompletionRing() {
           style={{ transform: 'rotate(-90deg)', display: 'block' }}
         >
           <defs>
-            {/* userSpaceOnUse coords match the 200×200 viewBox — no bounding-box issues */}
             <linearGradient id={gradId} x1="0" y1="0" x2="0" y2={VB} gradientUnits="userSpaceOnUse">
               <stop offset="0%"  stopColor="#2c3436"/>
               <stop offset="55%" stopColor="#6b4b3e"/>
@@ -71,7 +69,7 @@ function CompletionRing() {
           {/* Gradient fill arc */}
           <circle cx={VB_CX} cy={VB_CX} r={VB_R} fill="none" stroke={`url(#${gradId})`} strokeWidth={VB_STROKE}
             strokeLinecap="round" strokeDasharray={VB_C} strokeDashoffset={offset} />
-          {/* Grain noise overlay clipped to the arc via mask */}
+          {/* Grain noise overlay clipped to the arc */}
           <image
             href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='gr'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23gr)'/%3E%3C/svg%3E"
             x="0" y="0" width={VB} height={VB}
@@ -79,9 +77,9 @@ function CompletionRing() {
             style={{ opacity: 0.28, mixBlendMode: 'overlay' }}
           />
         </svg>
-        <div className="absolute inset-0 flex flex-col items-center justify-center" style={{ containerType: 'size' }}>
-          <span className="text-[#2b3335] font-light leading-none tracking-[-0.03em]" style={{ fontSize: 'clamp(36px, 18cqh, 66px)' }}>{pct}%</span>
-          <span className="text-[#2b3335]/50 font-semibold tracking-[0.1em] uppercase mt-1" style={{ fontSize: 'clamp(8px, 3cqh, 11px)' }}>complete</span>
+        <div className="absolute inset-0 flex flex-col items-center justify-center">
+          <span className="text-[#2b3335] font-light leading-none tracking-[-0.03em] text-[56px]">{pct}%</span>
+          <span className="text-[#2b3335]/50 text-[11px] font-semibold tracking-[0.1em] uppercase mt-1">complete</span>
         </div>
       </div>
     </div>
@@ -599,7 +597,7 @@ export default function PodcastExplainer() {
 
   return (
     <section id="solutions" className="bg-[#f9f5ef]">
-      <div className="container mx-auto px-8 pt-[80px] pb-[24px]">
+      <div className="container mx-auto px-4 md:px-8 pt-[80px] pb-[24px]">
 
         {/* ── Pill + headline ────────────────────────────────────────────── */}
         <div className="text-center mb-16">
@@ -611,8 +609,8 @@ export default function PodcastExplainer() {
           <h2 className="text-[#2b3335] text-[40px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-6 max-w-[720px] mx-auto">
             Series capture attention in a <span className="font-serif italic" style={{ color: '#2b3335' }}>world full of noise</span>
           </h2>
-          <p className="text-[#677283] text-[16px] md:text-[17px] leading-[1.5] max-w-[580px] mx-auto mb-6">
-            Long-form podcast series in audio and video are the format with the highest trust, the deepest engagement, and the stats to prove it.
+          <p className="text-[#677283] text-[16px] md:text-[17px] leading-[1.5] max-w-[680px] mx-auto mb-6">
+            Long-form podcast series in audio and video<br className="md:hidden" /> are the format with the highest trust,<br className="md:hidden" /> deepest engagement, and the stats to prove it.
           </p>
         </div>
 
@@ -655,7 +653,7 @@ export default function PodcastExplainer() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/icon-brain-recall-v2.png" alt="" aria-hidden="true" className="absolute pointer-events-none z-0" style={{ right: '8%', top: '8%', width: '54%', maxWidth: 330, opacity: 0.93 }} />
               <div className="relative z-10">
-                <p className="text-[#ffffff] text-[80px] font-light leading-none tracking-[-0.04em] mb-1">6–7×</p>
+                <p className="text-[#ffffff] text-[56px] font-light leading-none tracking-[-0.04em] mb-1">6–7×</p>
                 <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-1">Greater Recall<a href="https://link.springer.com/article/10.3758/BF03332778" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">1</a></p>
                 <p className="text-[#ffffff]/60 text-[15px] leading-[1.5] max-w-[360px]">Narratives are recalled six to seven times more than information studied through repetition alone.</p>
               </div>
@@ -663,13 +661,15 @@ export default function PodcastExplainer() {
 
             {/* C — 80% Completion Rate */}
             <div
-              className="rounded-3xl p-5 flex flex-col"
-              style={{ gridColumn: '5 / 9', gridRow: '5 / 9', backgroundColor: '#ede4da', containerType: 'inline-size' }}
+              className="rounded-3xl pt-5 px-7 pb-7 flex flex-col justify-between"
+              style={{ gridColumn: '5 / 9', gridRow: '5 / 9', backgroundColor: '#ede4da' }}
             >
-              <CompletionRing />
-              <div className="mt-5">
+              <div className="w-[95%] mx-auto flex-shrink-0" style={{ aspectRatio: '1' }}>
+                <CompletionRing />
+              </div>
+              <div className="mt-auto pt-3">
                 <p className="text-[#2b3335] text-[17px] font-medium leading-snug mb-1">Completion Rate<a href="https://signalhillinsights.com/measuring-the-success-of-branded-podcasts-choosing-the-right-yardsticks/" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">2</a></p>
-                <p className="text-[#2b3335]/60 text-[15px] leading-[1.5]">Our leading formats ensure your vital messages are heard, absorbed, and completed.</p>
+                <p className="text-[#2b3335]/60 text-[14px] leading-[1.5]">Ensure your vital messages are heard, absorbed, and completed.</p>
               </div>
             </div>
 
@@ -687,7 +687,7 @@ export default function PodcastExplainer() {
               <div className="absolute inset-0" style={{ backgroundColor: 'rgba(255, 127, 41, 0.50)' }} />
               {/* Content */}
               <div className="relative z-10 p-6 flex flex-col h-full">
-                <p className="text-[#ffffff] text-[80px] font-light leading-none tracking-[-0.03em] mb-1">71%</p>
+                <p className="text-[#ffffff] text-[56px] lg:text-[80px] font-light leading-none tracking-[-0.03em] mb-1">71%</p>
                 <p className="text-[#ffffff] text-[17px] font-medium leading-snug">Of podcast listeners tune in during their daily routine<a href="https://www.cohostpodcasting.com/resources/podcasting-unwrapped-2025" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">4</a></p>
               </div>
             </div>
@@ -698,7 +698,7 @@ export default function PodcastExplainer() {
               style={{ gridColumn: '1 / 5', gridRow: '9 / 13', backgroundColor: '#54819a' }}
             >
               <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='g2'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23g2)'/%3E%3C/svg%3E")`, backgroundSize: '400px 400px', opacity: 0.28, mixBlendMode: 'overlay' }} />
-              <p className="text-[#ffffff] text-[80px] font-light leading-none tracking-[-0.04em] mb-2">61%</p>
+              <p className="text-[#ffffff] text-[56px] font-light leading-none tracking-[-0.04em] mb-2">61%</p>
               <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-1">Trust Lift<a href="https://signalhillinsights.com/measuring-the-success-of-branded-podcasts-choosing-the-right-yardsticks/" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">2</a></p>
               <p className="text-[#ffffff]/65 text-[15px] leading-[1.5]">Podcasts improve brand perception and confidence by humanizing the science.</p>
             </div>
@@ -710,7 +710,7 @@ export default function PodcastExplainer() {
             >
               <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='g3'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23g3)'/%3E%3C/svg%3E")`, backgroundSize: '400px 400px', opacity: 0.28, mixBlendMode: 'overlay' }} />
               <ConcentricRings />
-              <p className="text-[#ffffff] text-[80px] font-light leading-none tracking-[-0.03em] mb-1 relative z-10">3×</p>
+              <p className="text-[#ffffff] text-[56px] font-light leading-none tracking-[-0.03em] mb-1 relative z-10">3×</p>
               <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-1 relative z-10">More Influence<a href="https://cumuluspodcastnetwork.com/cumulus-media-podcast-download-fall-2025/" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">3</a></p>
               <p className="text-[#ffffff]/65 text-[15px] leading-[1.5] relative z-10">Podcasts carry triple the authority of standard influencer or social-led outreach.</p>
             </div>
@@ -746,26 +746,26 @@ export default function PodcastExplainer() {
               <div className="relative z-10 flex flex-col">
                 <div className="flex justify-center mb-2">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/icon-brain-recall-v2.png" alt="" aria-hidden="true" style={{ width: '69%', maxWidth: 253, opacity: 0.93 }} />
+                  <img src="/icon-brain-recall-v2.png" alt="" aria-hidden="true" style={{ width: '83%', maxWidth: 304, opacity: 0.93, marginTop: '10px' }} />
                 </div>
                 {/* Text below */}
-                <p className="text-[#ffffff] text-[60px] font-light leading-none tracking-[-0.03em] mb-1">6–7×</p>
-                <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-1">Greater Recall</p>
+                <p className="text-[#ffffff] text-[64px] font-light leading-none tracking-[-0.03em] mb-1">6–7×</p>
+                <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-1">Greater Recall<a href="https://link.springer.com/article/10.3758/BF03332778" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">1</a></p>
                 <p className="text-[#ffffff]/60 text-[15px] leading-[1.5]">Narratives are recalled six to seven times more than information studied through repetition alone.</p>
               </div>
             </div>
 
             {/* Mobile C — 80% Completion Rate */}
-            <div className="rounded-3xl pt-6 px-7 pb-7 flex flex-col items-center min-h-[280px]" style={{ backgroundColor: '#ede4da' }}>
-              <div className="w-[280px] h-[280px] flex-shrink-0 flex">
+            <div className="rounded-3xl p-7 flex flex-col" style={{ backgroundColor: '#ede4da' }}>
+              <div className="w-[84%] mx-auto flex-shrink-0 mb-4" style={{ aspectRatio: '1' }}>
                 <CompletionRing />
               </div>
-              <p className="text-[#2b3335] text-[17px] font-medium leading-snug mb-1 text-center mt-3">Completion Rate</p>
-              <p className="text-[#2b3335]/60 text-[15px] leading-[1.5] text-center">Most listeners stay engaged from the first insight to the final conclusion.</p>
+              <p className="text-[#2b3335] text-[17px] font-medium leading-snug mb-1">Completion Rate<a href="https://signalhillinsights.com/measuring-the-success-of-branded-podcasts-choosing-the-right-yardsticks/" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">2</a></p>
+              <p className="text-[#2b3335]/60 text-[14px] leading-[1.5]">Most listeners stay engaged from the first insight to the final conclusion.</p>
             </div>
 
             {/* Mobile D — 77%+ On-the-Go */}
-            <div className="rounded-3xl overflow-hidden relative flex flex-col min-h-[340px]" style={{ backgroundColor: 'transparent' }}>
+            <div className="rounded-3xl overflow-hidden relative flex flex-col min-h-[560px]" style={{ backgroundColor: 'transparent' }}>
               <AutoPlayVideo
                 src="/stats-idle-time-compressed.mp4"
                 poster="/stats-on-the-go.webp"
@@ -773,7 +773,7 @@ export default function PodcastExplainer() {
               />
               <div className="absolute inset-0" style={{ backgroundColor: 'rgba(255, 127, 41, 0.50)' }} />
               <div className="relative z-10 p-7 flex flex-col h-full">
-                <p className="text-[#ffffff] text-[60px] font-light leading-none tracking-[-0.03em] mb-1">71%</p>
+                <p className="text-[#ffffff] text-[64px] font-light leading-none tracking-[-0.03em] mb-1">71%</p>
                 <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-4">Of podcast listeners tune in during their daily routine<a href="https://www.cohostpodcasting.com/resources/podcasting-unwrapped-2025" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">4</a></p>
                 <div className="flex flex-col gap-2 mt-auto">
                   {[
@@ -796,8 +796,8 @@ export default function PodcastExplainer() {
             {/* Mobile E — 61% Trust Lift */}
             <div className="rounded-3xl p-7 flex flex-col min-h-[200px] relative overflow-hidden" style={{ backgroundColor: '#54819a' }}>
               <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='g5'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23g5)'/%3E%3C/svg%3E")`, backgroundSize: '400px 400px', opacity: 0.28, mixBlendMode: 'overlay' }} />
-              <p className="text-[#ffffff] text-[60px] font-light leading-none tracking-[-0.04em] mb-2">61%</p>
-              <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-1">Trust Lift</p>
+              <p className="text-[#ffffff] text-[64px] font-light leading-none tracking-[-0.04em] mb-2">61%</p>
+              <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-1">Trust Lift<a href="https://signalhillinsights.com/measuring-the-success-of-branded-podcasts-choosing-the-right-yardsticks/" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">2</a></p>
               <p className="text-[#ffffff]/65 text-[15px] leading-[1.5]">Podcasts improve brand perception and confidence by humanizing the science.</p>
             </div>
 
@@ -805,8 +805,8 @@ export default function PodcastExplainer() {
             <div className="rounded-3xl p-7 flex flex-col relative overflow-hidden min-h-[200px]" style={{ background: 'linear-gradient(to bottom, #3d4d58 0%, #6b4b3e 55%, #a0522d 100%)' }}>
               <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='g6'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23g6)'/%3E%3C/svg%3E")`, backgroundSize: '400px 400px', opacity: 0.28, mixBlendMode: 'overlay' }} />
               <ConcentricRings />
-              <p className="text-[#ffffff] text-[60px] font-light leading-none tracking-[-0.03em] mb-1 relative z-10">3×</p>
-              <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-1 relative z-10">More Influence</p>
+              <p className="text-[#ffffff] text-[64px] font-light leading-none tracking-[-0.03em] mb-1 relative z-10">3×</p>
+              <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-1 relative z-10">More Influence<a href="https://cumuluspodcastnetwork.com/cumulus-media-podcast-download-fall-2025/" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">3</a></p>
               <p className="text-[#ffffff]/65 text-[15px] leading-[1.5] relative z-10">Podcasts carry triple the authority of standard influencer or social-led outreach.</p>
             </div>
 

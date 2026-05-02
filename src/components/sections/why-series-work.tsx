@@ -114,7 +114,7 @@ export default function WhySeriesWork() {
             </span>
           </h2>
           <p className="text-[#677283] text-[17px] leading-[1.5] max-w-[560px] mx-auto">
-            Create emotional resonance that builds loyalty and trust to protects your position in the AI era.
+            Create emotional resonance that<br />builds loyalty and trust to protect<br />your position in the AI era.
           </p>
         </div>
 

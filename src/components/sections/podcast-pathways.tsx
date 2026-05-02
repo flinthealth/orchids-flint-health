@@ -58,7 +58,7 @@ export default function PodcastPathways() {
       </div>
 
       {/* ── Mobile: full-bleed split ── */}
-      <div className="flex flex-col md:hidden px-4 gap-0" style={fade(0.2)}>
+      <div className="flex flex-col md:hidden px-4 gap-4" style={fade(0.2)}>
 
         {/* Internal — mobile */}
         <div className="flex-1 px-8 py-12 flex flex-col rounded-3xl" style={{ backgroundColor: '#ede4da' }}>
@@ -76,10 +76,6 @@ export default function PodcastPathways() {
           </p>
         </div>
 
-        {/* OR divider */}
-        <div className="flex items-center justify-center py-5">
-          <span className="text-white/60 text-[13px] font-semibold tracking-[0.15em] uppercase">or</span>
-        </div>
 
         {/* Public — mobile */}
         <div className="flex-1 px-8 py-12 flex flex-col rounded-3xl" style={{ backgroundColor: '#ede4da' }}>
