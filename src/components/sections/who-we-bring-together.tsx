@@ -46,7 +46,7 @@ export default function WhoWeBringTogether() {
           />
 
           {/* Frosted glass 71% card — top-left */}
-          <div className="absolute top-7 left-7 z-10 px-5 py-4 rounded-2xl" style={glassStyle}>
+          <div className="absolute bottom-7 right-7 z-10 px-5 py-4 rounded-2xl" style={glassStyle}>
             <p className="text-[#f9f5ef] font-light leading-none tracking-[-0.03em] mb-2" style={{ fontSize: 56 }}>
               71%
             </p>
