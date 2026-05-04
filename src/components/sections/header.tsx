@@ -54,19 +54,21 @@ const Header = () => {
       {/* Main Navigation */}
       <nav
         className={`w-full transition-all duration-300 border-b border-[#2b3335]/10 ${
-          isScrolled ? 'bg-white py-3 shadow-sm' : 'bg-white py-4'
+          isScrolled ? 'bg-[#f9f5ef] py-3 shadow-sm' : 'bg-[#f9f5ef] py-4'
         }`}
       >
         <div className="w-full max-w-[1280px] mx-auto flex items-center justify-between px-4 md:px-12">
-          {/* Logo — left */}
-          <a href="/" className="block flex-shrink-0">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/flint-logo-v8.png"
-              alt="Flint Logo"
-              className="h-[46px] w-auto max-w-[165px] object-contain object-left"
-            />
-          </a>
+          {/* Logo + nav links — left group */}
+          <div className="flex items-center gap-8">
+            <a href="/" className="block flex-shrink-0">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/flint-logo-v8.png"
+                alt="Flint Logo"
+                className="h-[56px] w-auto max-w-[200px] object-contain object-left"
+              />
+            </a>
+          </div>
 
           {/* CTA — right */}
           <a

@@ -2,86 +2,104 @@
 
 import React from 'react';
 
-const CARDS = [
+const CALLOUTS = [
   {
-    title: "Patient Education & Engagement",
-    body: "Reach the patients living with the conditions you treat.",
-    image: "/who-we-work-patient-advocacy-v2.webp",
+    icon: '/icon-patient-education-v6.png',
+    title: 'Patient Education & Engagement',
+    body: 'Reach the patients living with the conditions you treat.',
   },
   {
-    title: "Clinical Education & HCP Reach",
-    body: "Build authority with providers and drive clinical adoption.",
-    image: "/who-we-work-healthcare-professionals-v4.jpg",
+    icon: '/audience-provider.png',
+    title: 'Clinical Education & HCP Reach',
+    body: 'Build authority with providers and drive clinical adoption.',
   },
   {
-    title: "Internal Communications & Culture",
-    body: "Shape a culture that aligns with your mission and values.",
-    image: "/who-we-work-healthcare-brands.webp",
+    icon: '/audience-team.png',
+    title: 'Internal Communications & Culture',
+    body: 'Shape a culture that aligns with your mission and values.',
   },
 ];
 
+const glassStyle = {
+  background: 'rgba(255,255,255,0.10)',
+  backdropFilter: 'blur(16px)',
+  WebkitBackdropFilter: 'blur(16px)',
+  border: '1px solid rgba(255,255,255,0.18)',
+  boxShadow: '0 4px 24px rgba(0,0,0,0.18)',
+  maxWidth: 220,
+};
+
 export default function WhoWeBringTogether() {
   return (
-    <section className="bg-[#4a5a66] pt-[88px] md:pt-[80px] pb-[80px] relative overflow-hidden">
+    <section className="bg-[#ede4da] w-full overflow-hidden">
+      <div className="flex flex-col md:flex-row min-h-[640px] md:min-h-[760px]">
 
-      {/* Decorative background circle — lower right */}
-      <div className="absolute bottom-0 right-0 opacity-10 pointer-events-none">
-        <svg width="500" height="500" viewBox="0 0 500 500" fill="none">
-          <circle cx="400" cy="400" r="350" stroke="white" strokeWidth="0.5" />
-          <circle cx="400" cy="400" r="250" stroke="white" strokeWidth="0.5" />
-        </svg>
-      </div>
+        {/* ── Left: video with two frosted glass stat cards ── */}
+        <div className="w-full md:w-[42%] lg:w-[38%] relative flex-shrink-0 min-h-[520px] md:min-h-0">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+            src="/stats-idle-time-compressed.mp4"
+          />
 
-      {/* Header */}
-      <div className="text-center max-w-[900px] mx-auto mb-12 px-4 md:px-8">
-        <div className="flex flex-col items-center gap-1 mb-5">
-          {['Health systems & clinics', 'Digital health platforms', 'Pharma & biotech'].map(label => (
-            <p key={label} className="text-[15px] font-semibold tracking-[0.1em] uppercase" style={{ color: 'rgba(249,245,239,0.55)' }}>
-              {label}
+          {/* Frosted glass 71% card — top-left */}
+          <div className="absolute top-7 left-7 z-10 px-5 py-4 rounded-2xl" style={glassStyle}>
+            <p className="text-[#f9f5ef] font-light leading-none tracking-[-0.03em] mb-2" style={{ fontSize: 56 }}>
+              71%
             </p>
-          ))}
-        </div>
-        <h2 className="text-[#ffffff] text-[40px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-6">
-          Built for <span className="font-serif italic" style={{ color: '#ffffff' }}>healthcare</span>
-        </h2>
-        <p className="text-[#ffffff]/70 text-[17px] leading-[1.5]">
-          Whether you're reaching patients,<br />educating providers, or aligning your teams,<br />we make the media that moves them.
-        </p>
-      </div>
-
-      {/* Static cards */}
-      <div className="flex flex-col md:flex-row gap-3 h-auto md:h-[480px] px-4 md:px-6">
-        {CARDS.map((card, idx) => (
-          <div
-            key={idx}
-            className="relative rounded-[20px] overflow-hidden flex flex-col justify-end flex-1"
-            style={{ minHeight: '320px' }}
-          >
-            {/* Image */}
-            <div className="absolute inset-0 z-0">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={card.image}
-                alt={card.title}
-                className="w-full h-full object-cover object-top"
-              />
-            </div>
-
-            {/* Gradient overlay */}
-            <div
-              className="absolute inset-0 z-10"
-              style={{ background: 'linear-gradient(to top, rgba(19,29,43,0.95) 0%, rgba(19,29,43,0.65) 45%, rgba(19,29,43,0.25) 100%)' }}
-            />
-
-            {/* Card content */}
-            <div className="relative z-20 p-7 md:p-7">
-              <p className="text-white text-[17px] font-semibold leading-snug mb-2">{card.title}</p>
-              <p className="text-white/80 text-[15px] leading-[1.5]">{card.body}</p>
-            </div>
+            <p className="text-[13px] leading-[1.55]" style={{ color: 'rgba(249,245,239,0.80)' }}>
+              Of podcast listeners tune in during their daily routine.
+              <a
+                href="https://www.cohostpodcasting.com/resources/podcasting-unwrapped-2025"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[10px] align-super ml-0.5 opacity-50 hover:opacity-80 transition-opacity"
+                style={{ color: 'rgba(249,245,239,0.80)' }}
+              >4</a>
+            </p>
           </div>
-        ))}
-      </div>
 
+
+        </div>
+
+        {/* ── Right: content ── */}
+        <div className="flex-1 flex flex-col justify-center px-8 md:px-12 lg:px-16 py-14 md:py-16">
+
+          {/* Eyebrow */}
+          <p className="text-[#677283] text-[15px] font-semibold tracking-[0.1em] uppercase mb-5">
+            Built for Healthcare
+          </p>
+
+          {/* Headline */}
+          <h2 className="text-[#2b3335] text-[36px] md:text-[44px] lg:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-5 max-w-[520px]">
+            Reach patients, providers, and teams{' '}
+            <span className="font-serif italic" style={{ color: '#2b3335' }}>on their terms.</span>
+          </h2>
+
+          {/* Subhead */}
+          <p className="text-[16px] leading-[1.65] mb-8 max-w-[460px]" style={{ color: '#677283' }}>
+            Most content gets seconds. A well-produced series gets hours. That&rsquo;s not just more time. It&rsquo;s a fundamentally different relationship with your audience.
+          </p>
+
+          {/* Callouts — icon left, text right */}
+          <div className="flex flex-col gap-12 max-w-[460px]">
+            {CALLOUTS.map(({ icon, title, body }) => (
+              <div key={title} className="flex items-start gap-4">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={icon} alt="" className="flex-shrink-0 object-contain" style={{ width: 63, height: 63 }} />
+                <div>
+                  <p className="text-[#2b3335] font-semibold text-[15px] leading-snug mb-1">{title}</p>
+                  <p className="text-[14px] leading-[1.6]" style={{ color: '#677283' }}>{body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </div>
     </section>
   );
 }

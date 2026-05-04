@@ -2,28 +2,9 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 
-const ROTATING_WORDS = ["brand authority", "patient engagement", "clinical adoption", "team alignment"];
-
 export default function HeroSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [videoFailed, setVideoFailed] = useState(false);
-  const [wordIndex, setWordIndex] = useState(0);
-  const [visible, setVisible] = useState(true);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => { setMounted(true); }, []);
-
-  useEffect(() => {
-    if (!mounted) return;
-    const interval = setInterval(() => {
-      setVisible(false);
-      setTimeout(() => {
-        setWordIndex(i => (i + 1) % ROTATING_WORDS.length);
-        setVisible(true);
-      }, 350);
-    }, 2800);
-    return () => clearInterval(interval);
-  }, [mounted]);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -34,9 +15,6 @@ export default function HeroSection() {
 
     const tryPlay = () => video.play().catch(() => {});
 
-    // Register gesture listeners IMMEDIATELY on mount — don't wait for play() to fail.
-    // iOS Safari in low-power mode blocks autoplay; the first scroll, touch, or click
-    // from the user will then start the video without them having to tap the play button.
     const gestureEvents = ['touchstart', 'touchmove', 'scroll', 'click'] as const;
     const onGesture = () => {
       tryPlay();
@@ -46,7 +24,6 @@ export default function HeroSection() {
       document.addEventListener(e, onGesture, { passive: true, once: true })
     );
 
-    // Also try immediately via load events — works when autoplay IS allowed.
     video.load();
     video.addEventListener('loadeddata', tryPlay, { once: true });
     video.addEventListener('canplay',    tryPlay, { once: true });
@@ -89,38 +66,23 @@ export default function HeroSection() {
           )}
         </div>
 
-
         {/* Gradient overlay */}
         <div className="absolute inset-0 z-10 bg-gradient-to-t from-[#2b3335]/85 via-[#2b3335]/25 to-transparent" />
 
         {/* Content */}
-        <div className="relative z-20 w-full max-w-[1280px] mx-auto px-6 md:px-12 py-16 lg:py-24 text-left">
+        <div className="relative z-20 w-full max-w-[1280px] mx-auto px-6 md:px-24 py-16 lg:py-24 text-left">
           <div className="max-w-[820px]">
 
             <h1
               className="animate-hero-title text-white font-light mb-5 max-w-[560px] text-[46px] md:text-[clamp(36px,5.5vw,68px)]"
               style={{ lineHeight: 1.1, letterSpacing: '-0.02em' }}
             >
-              Command<br />attention<br />with a series<br />that ignites
-              <span className="block overflow-hidden" style={{ height: '1.35em' }}>
-                <span
-                  className="font-serif italic block text-white"
-                  style={{
-                    transform: visible ? 'translateY(0)' : 'translateY(-110%)',
-                    opacity: visible ? 1 : 0,
-                    transition: 'transform 350ms cubic-bezier(0.4,0,0.2,1), opacity 350ms ease',
-                    paddingBottom: '0.2em',
-                  }}
-                >
-                  {mounted ? ROTATING_WORDS[wordIndex] : ROTATING_WORDS[0]}
-                </span>
-              </span>
+              Premium<br />podcast series<br /><span className="font-serif italic">for healthcare</span>
             </h1>
 
-            <p className="animate-hero-sub1 text-white/80 text-[17px] font-normal mb-4 max-w-[440px]">
-              We produce series that reach the<br />patients, providers, and teams<br />that matter most to you.
+            <p className="animate-hero-sub1 text-white/80 text-[17px] font-normal mb-4 max-w-[460px]">
+              We turn clinical insights and real human stories into series that educate, engage, and drive results.
             </p>
-
 
             <div className="animate-hero-cta mt-6">
               <a

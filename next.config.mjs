@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  allowedDevOrigins: ['*.orchids.cloud'],
   webpack(config) {
     config.module.rules.push({
       test: /\.mp4$/,

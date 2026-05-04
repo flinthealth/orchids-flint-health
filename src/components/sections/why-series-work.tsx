@@ -23,40 +23,47 @@ function arcPath(startDeg: number, endDeg: number, sweep: 0 | 1): string {
 // New layout (clockwise from 12 o'clock):
 //   Emotion  : -90° → 30°  (right side, upper)
 //   Trust    :  30° → 150° (bottom)
-//   Curiosity: 150° → 270° (left side)
+//   Attention: 150° → 270° (left side)
 //
-// Animation order: Curiosity first, then Emotion, then Trust
+// Animation order: Attention first, then Emotion, then Trust
 
 const segments = [
   {
     id: "curiosity",
-    label: "Curiosity",
+    label: "Attention",
+    stat: "6–7×",
+    statRef: "1",
+    statUrl: "https://link.springer.com/article/10.3758/BF03332778",
     descriptor:
-      "Narrative learning that educates, entertains, and keeps your audience coming back.",
+      "Narratives are recalled six to seven times more than information studied through repetition alone.",
     color: "#eeb20b",
     labelColor: "#a07800",
-    arcRotation: 150, // left side
-    // CW 150°→270° — text flows upward on left side, tops face outward → readable
+    arcRotation: 150,
     textStart: 150, textEnd: 270, textSweep: 1 as const,
   },
   {
     id: "emotion",
     label: "Emotion",
+    stat: null,
+    statLabel: "Oxytocin Effect",
+    statRef: "2",
+    statUrl: "https://hbr.org/2014/10/why-your-brain-loves-good-storytelling",
     descriptor:
-      "Emotion is the brain's highlighter. Series underline what matters most.",
+      "Stories trigger oxytocin. The hormone that drives empathy, connection, and action.",
     color: "#ff7f29",
-    arcRotation: -90, // right / upper-right
-    // CW -90°→30° — text flows from top to lower-right
+    arcRotation: -90,
     textStart: -90, textEnd: 30, textSweep: 1 as const,
   },
   {
     id: "trust",
     label: "Trust",
+    stat: "61%",
+    statRef: "3",
+    statUrl: "https://signalhillinsights.com/measuring-the-success-of-branded-podcasts-choosing-the-right-yardsticks/",
     descriptor:
-      "Trust is earned episode by episode. Series are how you build it.",
+      "Of listeners feel more favorable toward a brand after a single episode.",
     color: "#54819a",
-    arcRotation: 30, // bottom
-    // CCW 150°→30° through bottom — reads L→R at bottom ✓
+    arcRotation: 30,
     textStart: 150, textEnd: 30, textSweep: 0 as const,
   },
 ];
@@ -64,9 +71,9 @@ const segments = [
 // Gradient junction blends — ±20° arcs centered at each colour transition
 // Coordinates computed from C=166, RADIUS=130
 const gradientJunctions = [
-  { id: "grad-ce", start: -110, end: -70  }, // Curiosity→Emotion (top)
+  { id: "grad-ce", start: -110, end: -70  }, // Attention→Emotion (top)
   { id: "grad-et", start:   10, end:  50  }, // Emotion→Trust (lower-right)
-  { id: "grad-tc", start:  130, end: 170  }, // Trust→Curiosity (lower-left)
+  { id: "grad-tc", start:  130, end: 170  }, // Trust→Attention (lower-left)
 ];
 
 export default function WhySeriesWork() {
@@ -113,8 +120,8 @@ export default function WhySeriesWork() {
               strategic storytelling
             </span>
           </h2>
-          <p className="text-[#677283] text-[17px] leading-[1.5] max-w-[560px] mx-auto">
-            Create emotional resonance that<br />builds loyalty and trust to protect<br />your position in the AI era.
+          <p className="text-[#677283] text-[17px] leading-[1.5] max-w-[420px] md:max-w-[660px] mx-auto">
+            In the AI era, emotional resonance and trust are what protect your position.<br className="hidden md:block" /> A well-produced series builds both.
           </p>
         </div>
 
@@ -234,14 +241,14 @@ export default function WhySeriesWork() {
                 letterSpacing="0.12em"
                 style={{ opacity: complete ? 1 : 0, transition: "opacity 0.4s ease 0.3s" }}
               >
-                SERIES
+                YOUR
               </text>
               <text x={C} y={C + 9} textAnchor="middle" fontSize="11"
                 fontWeight="600" fontFamily="Inter, sans-serif" fill="#677283"
                 letterSpacing="0.12em"
                 style={{ opacity: complete ? 1 : 0, transition: "opacity 0.4s ease 0.4s" }}
               >
-                EFFECT
+                MOAT
               </text>
             </svg>
           </div>
@@ -274,8 +281,27 @@ export default function WhySeriesWork() {
                     >
                       {seg.label}
                     </span>
+                    {seg.stat && (
+                      <p className="text-[#43382f] text-[40px] font-light leading-none tracking-[-0.02em] mb-1">
+                        {seg.stat}
+                      </p>
+                    )}
+                    {!seg.stat && (seg as any).statLabel && (
+                      <p className="text-[#43382f] text-[13px] font-medium tracking-[0.07em] uppercase mb-1" style={{ fontVariant: 'small-caps' }}>
+                        {(seg as any).statLabel}
+                      </p>
+                    )}
                     <p className="text-[#677283] text-[16px] leading-[1.5]">
                       {seg.descriptor}
+                      <a
+                        href={seg.statUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="align-super ml-0.5 opacity-50 hover:opacity-80 transition-opacity"
+                        style={{ fontSize: 10 }}
+                      >
+                        {seg.statRef}
+                      </a>
                     </p>
                   </div>
                 </div>

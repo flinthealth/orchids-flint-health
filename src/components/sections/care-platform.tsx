@@ -593,22 +593,10 @@ const CarePlatformSection = () => {
             ))}
           </div>
 
-          {/* Body — all screens, below pills */}
-          <p className="text-center text-[17px] leading-[1.5] max-w-[480px] mx-auto px-6 pt-6 pb-2" style={{ color: 'rgba(249,245,239,0.55)' }}>
+          {/* Closing line */}
+          <p className="text-center text-[17px] leading-[1.5] max-w-[480px] mx-auto px-6 pt-6 pb-24" style={{ color: 'rgba(249,245,239,0.55)' }}>
             Each episode builds trust, deepens understanding, and moves your audience closer to action.
           </p>
-
-          {/* CTA */}
-          <div className="flex justify-center pt-8 md:pt-12 pb-24 px-6">
-            <a
-              href="#contact"
-              className="bg-[#ff7f29] hover:bg-[#e66e1e] text-[#ffffff] px-8 py-3.5 rounded-md font-semibold text-[16px] transition-colors"
-              onMouseEnter={e => (e.currentTarget.style.animation = 'ctaPulse 0.8s ease-out')}
-              onMouseLeave={e => (e.currentTarget.style.animation = '')}
-            >
-              Learn More
-            </a>
-          </div>
 
         </div>{/* /content */}
       </div>{/* /grid block */}

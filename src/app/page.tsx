@@ -23,6 +23,7 @@ import StackingCards from "@/components/sections/stacking-cards";
 import ProblemSection from "@/components/sections/problem";
 import ROIAttentionSection from "@/components/sections/roi-attention";
 import FAQSection from "@/components/sections/faq";
+import StatInterstitial from "@/components/sections/stat-interstitial";
 
 export default function Home() {
   return (
@@ -32,18 +33,19 @@ export default function Home() {
         <HeroSection />
         <WhySeriesWork />
         {/* <ProblemSection /> */}
-        <CarePlatformSection />
-        {/* <ROIAttentionSection /> */}
         <WhoWeBringTogether />
-        <PodcastExplainer />
-        <PodcastPathways />
+        {/* <StatInterstitial /> */}
+        {/* <ROIAttentionSection /> */}
+        <CarePlatformSection />
+        {/* <PodcastExplainer /> */}
+        {/* <PodcastPathways /> */}
         <StackingCards />
         <PodcastShowcase />
         <DNAWaveSection />
         <TestimonialSection />
         {/* <AudienceSolutions /> */}
         {/* <PodcastPulse /> */}
-        <ContentPrism />
+        {/* <ContentPrism /> */}
         {/* <FeaturesGrid /> */}
         <FAQSection />
         <ContactSection />
@@ -55,9 +57,10 @@ export default function Home() {
             <div className="flex flex-col gap-2">
               {[
                 { n: '1', label: 'Bower & Clark, Narrative Stories as Mediators for Serial Learning, Stanford University / Psychonomic Science, 1969', url: 'https://link.springer.com/article/10.3758/BF03332778' },
-                { n: '2', label: 'Signal Hill Insights, Measuring the Success of Branded Podcasts, 2024', url: 'https://signalhillinsights.com/measuring-the-success-of-branded-podcasts-choosing-the-right-yardsticks/' },
-                { n: '3', label: 'Cumulus Media & Signal Hill Insights, Podcast Download — Fall 2025', url: 'https://cumuluspodcastnetwork.com/cumulus-media-podcast-download-fall-2025/' },
+                { n: '2', label: "Paul J. Zak, Why Your Brain Loves Good Storytelling, Harvard Business Review, October 2014. Zak's research at Claremont Graduate University demonstrated that narrative content triggers oxytocin release, driving empathy, trust, and action. Also published in Nature (2005) and Scientific American (2008).", url: 'https://hbr.org/2014/10/why-your-brain-loves-good-storytelling' },
+                { n: '3', label: 'Signal Hill Insights, Measuring the Success of Branded Podcasts, 2024', url: 'https://signalhillinsights.com/measuring-the-success-of-branded-podcasts-choosing-the-right-yardsticks/' },
                 { n: '4', label: 'CoHost, Podcasting Unwrapped 2025', url: 'https://www.cohostpodcasting.com/resources/podcasting-unwrapped-2025' },
+                { n: '5', label: 'Cumulus Media & Signal Hill Insights, Podcast Download — Fall 2025', url: 'https://cumuluspodcastnetwork.com/cumulus-media-podcast-download-fall-2025/' },
               ].map(({ n, label, url }) => (
                 <a
                   key={n}
