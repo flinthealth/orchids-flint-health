@@ -357,11 +357,11 @@ export default function DNAWaveSection() {
           </h2>
         </div>
 
-        {/* Row 1: Photo + Bio text */}
-        <div className="flex flex-col md:flex-row items-stretch bg-[#f9f5ef] overflow-hidden rounded-[24px]">
+        {/* Row 1: Headshot left — Founder label + paragraphs 1–2 right */}
+        <div className="flex flex-col md:flex-row items-stretch bg-[#f9f5ef]">
 
-          {/* Photo */}
-          <div className="w-full md:w-[42%] flex-shrink-0 p-4 md:p-6 md:pb-6 md:self-start">
+          {/* Headshot */}
+          <div className="w-full md:w-[42%] flex-shrink-0 p-4 md:p-6 md:pb-3 md:self-start">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/jessica-flint-office.jpg"
@@ -371,8 +371,8 @@ export default function DNAWaveSection() {
             />
           </div>
 
-          {/* Bio content */}
-          <div className="flex-1 flex flex-col px-8 md:px-14 lg:px-20 pt-12 pb-12 md:pt-16 md:pb-16 bg-[#f9f5ef]">
+          {/* Label + paragraphs 1–2 */}
+          <div className="flex-1 flex flex-col px-8 md:px-14 lg:px-20 pt-12 pb-8 md:pt-16 md:pb-10 bg-[#f9f5ef]">
             <div className="flex flex-col max-w-[560px]">
 
               {/* Label */}
@@ -394,22 +394,53 @@ export default function DNAWaveSection() {
                 </div>
               </div>
 
-              {/* Story paragraphs */}
               <p className="text-[#677283] text-[17px] leading-[1.5] mb-4">
-                I&apos;ve spent 12 years at the intersection of healthcare and media, long enough to know what works, what doesn&apos;t, and what&apos;s coming before most people see it.
+                I&apos;ve spent 12 years at the intersection of healthcare and media. Long enough to know what works, what doesn&apos;t, and what&apos;s coming before most people see it.
               </p>
-              <p className="text-[#677283] text-[17px] leading-[1.5] mb-4">
-                I built a behavioral health media platform from scratch, designing the app, growing a 450+ provider network, and scaling it to 30 million sessions across a global community. The engine behind all of it was narrative media that made people feel something first, understand something second, and act third.
+              <p className="text-[#677283] text-[17px] leading-[1.5] mb-6">
+                I built a behavioral health media platform from scratch, designing the app, growing a 450+ provider network, and scaling it to 30 million sessions across a global community. Organically.
               </p>
-              <p className="text-[#677283] text-[17px] leading-[1.5] mb-4">
-                What I learned is that the gap between having something vital to communicate and the right people actually receiving it is almost never a knowledge problem. It&apos;s a communication problem.
-              </p>
-              <p className="text-[#677283] text-[17px] leading-[1.5]">
-                That&apos;s what Flint exists to solve. I lead every engagement directly, from strategy through final delivery, backed by a trusted network of producers and editors I&apos;ve worked with for years.
+
+              {/* Editorial callout — Libre Baskerville italic, no border */}
+              <p
+                className="text-[20px] md:text-[22px] leading-[1.45]"
+                style={{ fontFamily: "'Libre Baskerville', serif", fontStyle: 'italic', color: '#43382f' }}
+              >
+                The spark behind all of it was understanding what every person in the care ecosystem actually needed, and building media that delivered it.
               </p>
 
             </div>
           </div>
+        </div>
+
+        {/* Row 2: Paragraphs 3–4 left — mic photo right */}
+        <div className="flex flex-col md:flex-row items-stretch bg-[#f9f5ef]">
+
+          {/* Body */}
+          <div className="flex-1 flex flex-col px-8 md:px-14 lg:px-20 pt-8 pb-12 md:pt-10 md:pb-16 bg-[#f9f5ef] order-2 md:order-1">
+            <div className="flex flex-col max-w-[560px]">
+
+              <p className="text-[#677283] text-[17px] leading-[1.5] mb-4">
+                The gap between having something vital to communicate and the right people actually receiving it is almost never a knowledge problem. It&apos;s a communication problem.
+              </p>
+              <p className="text-[#677283] text-[17px] leading-[1.5]">
+                That&apos;s what Flint exists to solve. I work directly with executive leadership as a strategic thought partner, helping you define your narrative, find your voice, and build the series that carries your vision to every patient, provider, and team member who needs to hear it. Every engagement runs through me, from strategy through final delivery, backed by a trusted network of producers and editors I&apos;ve worked with for years.
+              </p>
+
+            </div>
+          </div>
+
+          {/* Mic photo */}
+          <div className="w-full md:w-[42%] flex-shrink-0 p-4 md:p-6 md:pt-3 md:self-start order-1 md:order-2">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/jessica-flint-mic.jpg"
+              alt="Jessica Flint at the microphone"
+              className="w-full object-cover object-top rounded-[16px]"
+              style={{ display: 'block', aspectRatio: '3/4', maxHeight: '560px' }}
+            />
+          </div>
+
         </div>
 
       </div>

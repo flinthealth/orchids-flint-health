@@ -8,7 +8,7 @@ const CALLOUTS = [
     body: 'Reach the patients living with the conditions you treat.',
   },
   {
-    title: 'Clinical Education & HCP Reach',
+    title: 'Clinical Training & HCP Reach',
     body: 'Build authority with providers and drive clinical adoption.',
   },
   {
@@ -42,7 +42,7 @@ export default function WhoWeBringTogether() {
             loop
             muted
             playsInline
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover md:object-contain"
             src="/stats-idle-time-compressed.mp4"
           />
 
@@ -74,7 +74,7 @@ export default function WhoWeBringTogether() {
 
           {/* Headline */}
           <h2 className="text-[#2b3335] text-[36px] md:text-[44px] lg:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-10 max-w-[520px]">
-            Reach patients, providers, and teams{' '}
+            Reach patients, providers &amp; teams{' '}
             <br />
             <span style={{ fontFamily: "'Libre Baskerville', serif", fontStyle: 'italic', color: '#2b3335' }}>on their terms.</span>
           </h2>
