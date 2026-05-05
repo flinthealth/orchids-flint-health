@@ -104,11 +104,11 @@ const CarePlatformSection = () => {
           }
 
           /* ── Phase 2 keyframes ── */
-          @keyframes cpRayShimmer1 { 0%,100% { opacity: 1; } 50% { opacity: 0.68; } }
-          @keyframes cpRayShimmer2 { 0%,100% { opacity: 1; } 50% { opacity: 0.72; } }
-          @keyframes cpRayShimmer3 { 0%,100% { opacity: 1; } 50% { opacity: 0.65; } }
-          @keyframes cpRayShimmer4 { 0%,100% { opacity: 1; } 50% { opacity: 0.70; } }
-          @keyframes cpRayShimmer5 { 0%,100% { opacity: 1; } 50% { opacity: 0.74; } }
+          @keyframes cpRayShimmer1 { 0%,100% { opacity: 1; } 50% { opacity: 0.45; } }
+          @keyframes cpRayShimmer2 { 0%,100% { opacity: 1; } 50% { opacity: 0.40; } }
+          @keyframes cpRayShimmer3 { 0%,100% { opacity: 1; } 50% { opacity: 0.42; } }
+          @keyframes cpRayShimmer4 { 0%,100% { opacity: 1; } 50% { opacity: 0.38; } }
+          @keyframes cpRayShimmer5 { 0%,100% { opacity: 1; } 50% { opacity: 0.35; } }
 
           /* ── Beam line base state ── */
           .cp-beam-line {
@@ -142,11 +142,11 @@ const CarePlatformSection = () => {
           .cp-phase2 .cp-ray   { opacity: 1; }
           .cp-phase2 .cp-pill  { opacity: 1; }
           .cp-phase2 .cp-closing { opacity: 1; }
-          .cp-phase2 .cp-ray-1 { animation: cpRayShimmer1 3.5s ease-in-out infinite 0.2s !important; }
-          .cp-phase2 .cp-ray-2 { animation: cpRayShimmer2 4.1s ease-in-out infinite 0.9s !important; }
-          .cp-phase2 .cp-ray-3 { animation: cpRayShimmer3 3.8s ease-in-out infinite 0.5s !important; }
-          .cp-phase2 .cp-ray-4 { animation: cpRayShimmer4 4.3s ease-in-out infinite 1.2s !important; }
-          .cp-phase2 .cp-ray-5 { animation: cpRayShimmer5 3.6s ease-in-out infinite 0.4s !important; }
+          .cp-phase2 .cp-ray-1 { animation: cpRayShimmer1 5.5s ease-in-out infinite 0.0s !important; }
+          .cp-phase2 .cp-ray-2 { animation: cpRayShimmer2 6.2s ease-in-out infinite 1.0s !important; }
+          .cp-phase2 .cp-ray-3 { animation: cpRayShimmer3 5.8s ease-in-out infinite 2.0s !important; }
+          .cp-phase2 .cp-ray-4 { animation: cpRayShimmer4 6.5s ease-in-out infinite 1.5s !important; }
+          .cp-phase2 .cp-ray-5 { animation: cpRayShimmer5 5.2s ease-in-out infinite 0.8s !important; }
         `}</style>
 
         {/* Background gradient */}
