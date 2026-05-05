@@ -420,7 +420,10 @@ export default function DNAWaveSection() {
           <div className="flex-1 flex flex-col px-8 md:px-14 lg:px-20 pt-8 pb-12 md:pt-10 md:pb-16 bg-[#f9f5ef] order-2 md:order-1">
             <div className="flex flex-col max-w-[560px]">
 
-              <p className="text-[#677283] text-[17px] leading-[1.5] mb-4">
+              <p
+                className="text-[20px] md:text-[22px] leading-[1.45] mb-8 mt-4"
+                style={{ fontFamily: "'Libre Baskerville', serif", fontStyle: 'italic', color: '#43382f' }}
+              >
                 The gap between having something vital to communicate and the right people actually receiving it is almost never a knowledge problem. It&apos;s a communication problem.
               </p>
               <p className="text-[#677283] text-[17px] leading-[1.5]">
