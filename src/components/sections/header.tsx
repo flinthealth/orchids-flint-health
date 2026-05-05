@@ -54,7 +54,7 @@ const Header = () => {
       {/* Main Navigation */}
       <nav
         className={`w-full transition-all duration-300 border-b border-[#2b3335]/10 ${
-          isScrolled ? 'bg-[#f9f5ef] py-3 shadow-sm' : 'bg-[#f9f5ef] py-4'
+          isScrolled ? 'bg-white py-3 shadow-sm' : 'bg-white py-4'
         }`}
       >
         <div className="w-full max-w-[1280px] mx-auto flex items-center justify-between px-4 md:px-12">
