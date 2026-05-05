@@ -217,9 +217,20 @@ export default function PodcastShowcase() {
       id="our-work"
       ref={sectionRef}
       className="relative pt-[88px] md:pt-[100px] pb-[100px] md:pb-[120px] px-6 md:px-8 overflow-hidden"
-      style={{ backgroundColor: "#4a5a66" }}
+      style={{ background: 'linear-gradient(to right, #2c3436 0%, #6b4b3e 55%, #a0522d 100%)' }}
     >
-      <div className="max-w-[1000px] mx-auto">
+      {/* Grain overlay */}
+      <div
+        className="absolute inset-0 pointer-events-none z-0"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23g)'/%3E%3C/svg%3E")`,
+          backgroundRepeat: 'repeat',
+          backgroundSize: '400px 400px',
+          opacity: 0.18,
+          mixBlendMode: 'overlay',
+        }}
+      />
+      <div className="max-w-[1000px] mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-10 md:mb-12" style={fade(0)}>
           <p
