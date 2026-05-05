@@ -40,12 +40,9 @@ export default function FAQSection() {
     <section className="bg-[#ede4da] py-[80px] md:py-[100px]">
       <div className="max-w-[760px] mx-auto px-6 md:px-8">
 
-        {/* Eyebrow */}
-        <p className="text-center text-[15px] font-semibold tracking-[0.1em] uppercase mb-5" style={{ color: '#677283' }}>Good questions</p>
-
         {/* Headline */}
         <h2 className="text-center text-[40px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-5" style={{ color: '#43382f' }}>
-          Here's what most people<br /><span className="font-serif italic">want to know</span>
+          Frequently Asked Questions
         </h2>
 
         {/* Body */}

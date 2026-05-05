@@ -406,7 +406,7 @@ export default function DNAWaveSection() {
                 className="text-[20px] md:text-[22px] leading-[1.45]"
                 style={{ fontFamily: "'Libre Baskerville', serif", fontStyle: 'italic', color: '#43382f' }}
               >
-                The spark behind all of it was understanding what every person in the care ecosystem actually needed, and building media that delivered it.
+                The spark behind all of it was understanding what every person in the care ecosystem actually needed, and building media and experiences that delivered it.
               </p>
 
             </div>
