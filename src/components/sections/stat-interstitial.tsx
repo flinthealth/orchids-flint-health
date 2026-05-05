@@ -21,21 +21,12 @@ export default function StatInterstitial() {
         >3</a>
       </p>
 
-      {/* Four sentences */}
-      <div className="flex flex-col gap-6 max-w-[640px] mx-auto">
-        {[
-          'Most content gets seconds.',
-          'A well-produced series gets up to an hour.',
-          'That\u2019s not just more time.',
-          'It\u2019s a fundamentally different relationship with your audience.',
-        ].map((line) => (
-          <p
-            key={line}
-            className="text-[#f9f5ef] text-[20px] md:text-[24px] font-light leading-[1.4]"
-          >
-            {line}
-          </p>
-        ))}
+      {/* Two lines */}
+      <div className="max-w-none mx-auto">
+        <p className="text-[#f9f5ef] text-[20px] md:text-[24px] font-light leading-[1.4]">
+          <span className="block whitespace-nowrap">Most content gets seconds.</span>
+          <span className="block whitespace-nowrap">A well-produced series gets hours.</span>
+        </p>
       </div>
     </section>
   );

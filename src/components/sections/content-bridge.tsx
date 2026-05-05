@@ -24,14 +24,11 @@ export default function ContentBridge() {
       {/* Content */}
       <div className="relative z-10">
         <h2
-          className="font-light leading-[1.1] tracking-[-0.02em] mb-5 mx-auto max-w-[720px]"
+          className="font-light leading-[1.2] tracking-[-0.02em] mb-5 mx-auto"
           style={{ fontSize: 'clamp(32px, 5vw, 52px)', color: '#f9f5ef' }}
         >
-          Most content<br className="md:hidden" />
-          {' '}gets <span style={{ fontFamily: "'Libre Baskerville', serif", fontStyle: 'italic' }}>seconds.</span><br className="md:hidden" />
-          {' '}A well-produced<br className="md:hidden" />
-          {' '}series gets{' '}
-          <span style={{ fontFamily: "'Libre Baskerville', serif", fontStyle: 'italic' }}>hours.</span>
+          <span className="block whitespace-nowrap">Most content gets <span style={{ fontFamily: "'Libre Baskerville', serif", fontStyle: 'italic' }}>seconds.</span></span>
+          <span className="block whitespace-nowrap">A well-produced series gets <span style={{ fontFamily: "'Libre Baskerville', serif", fontStyle: 'italic' }}>hours.</span></span>
         </h2>
         <p
           className="text-[16px] md:text-[17px] leading-[1.65] max-w-[480px] mx-auto"
