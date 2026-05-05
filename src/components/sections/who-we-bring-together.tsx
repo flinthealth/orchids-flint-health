@@ -4,17 +4,14 @@ import React from 'react';
 
 const CALLOUTS = [
   {
-    icon: '/icon-patient-education-v6.png',
     title: 'Patient Education & Engagement',
     body: 'Reach the patients living with the conditions you treat.',
   },
   {
-    icon: '/audience-provider.png',
     title: 'Clinical Education & HCP Reach',
     body: 'Build authority with providers and drive clinical adoption.',
   },
   {
-    icon: '/audience-team.png',
     title: 'Internal Communications & Culture',
     body: 'Shape a culture that aligns with your mission and values.',
   },
@@ -29,9 +26,11 @@ const glassStyle = {
   maxWidth: 220,
 };
 
+const divider = { borderTop: '1px solid rgba(103,114,131,0.15)' };
+
 export default function WhoWeBringTogether() {
   return (
-    <section className="bg-[#ede4da] w-full overflow-hidden">
+    <section className="bg-[#f9f5ef] w-full overflow-hidden">
 
       {/* ── Two-column layout ── */}
       <div className="flex flex-col md:flex-row min-h-[640px] md:min-h-[700px]">
@@ -80,18 +79,16 @@ export default function WhoWeBringTogether() {
             <span style={{ fontFamily: "'Libre Baskerville', serif", fontStyle: 'italic', color: '#2b3335' }}>on their terms.</span>
           </h2>
 
-          {/* Callouts — icon left, text right */}
-          <div className="flex flex-col gap-12 max-w-[460px]">
-            {CALLOUTS.map(({ icon, title, body }) => (
-              <div key={title} className="flex items-start gap-4">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={icon} alt="" className="flex-shrink-0 object-contain" style={{ width: 63, height: 63 }} />
-                <div>
-                  <p className="text-[#2b3335] font-semibold text-[15px] leading-snug mb-1">{title}</p>
-                  <p className="text-[14px] leading-[1.6]" style={{ color: '#677283' }}>{body}</p>
-                </div>
+          {/* Stacked list */}
+          <div className="max-w-[460px]">
+            {CALLOUTS.map(({ title, body }) => (
+              <div key={title} style={divider} className="py-6">
+                <p className="text-[18px] font-semibold leading-snug mb-1" style={{ color: '#43382f' }}>{title}</p>
+                <p className="text-[14px] leading-[1.6]" style={{ color: '#677283' }}>{body}</p>
               </div>
             ))}
+            {/* Bottom divider */}
+            <div style={divider} />
           </div>
 
         </div>

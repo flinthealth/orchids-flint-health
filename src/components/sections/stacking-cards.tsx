@@ -294,13 +294,12 @@ export default function StackingCards() {
                   ref={el => { cardContentRefsMobile.current[stackIndex] = el; }}
                   style={{
                     borderRadius: '24px 24px 0 0',
-                    background: 'linear-gradient(to right, #2c3436 0%, #6b4b3e 55%, #a0522d 100%)',
+                    background: '#ede4da',
                     padding: '6px 0 0 0',
                     position: 'relative',
                     overflow: 'hidden',
                   }}
                 >
-                  <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='gscm'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23gscm)'/%3E%3C/svg%3E")`, backgroundSize: '400px 400px', opacity: 0.35, mixBlendMode: 'overlay' }} />
                   <div style={{ backgroundColor: BG, borderRadius: '20px 20px 0 0', position: 'relative' }}>
                     <CardContent card={card} mobile={true} />
                   </div>
@@ -337,13 +336,11 @@ export default function StackingCards() {
                     className="max-w-[1000px] mx-auto relative overflow-hidden"
                     style={{
                       borderRadius: '24px',
-                      background: 'linear-gradient(to right, #2c3436 0%, #6b4b3e 55%, #a0522d 100%)',
+                      background: '#ede4da',
                       padding: '0 0 8px 0',
                       boxShadow: '0 16px 40px rgba(171,217,234,0.25)',
                     }}
                   >
-                    {/* Noise on gradient */}
-                    <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='gsc'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23gsc)'/%3E%3C/svg%3E")`, backgroundSize: '400px 400px', opacity: 0.35, mixBlendMode: 'overlay' }} />
                     <div className="relative" style={{ backgroundColor: BG, borderRadius: '24px 24px 20px 20px', overflow: 'hidden' }}>
                       <CardContent card={card} mobile={false} />
                     </div>
