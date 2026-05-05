@@ -372,7 +372,7 @@ export default function DNAWaveSection() {
           </div>
 
           {/* Label + paragraphs 1–2 */}
-          <div className="flex-1 flex flex-col px-8 md:px-14 lg:px-20 pt-12 pb-8 md:pt-16 md:pb-10 bg-[#f9f5ef]">
+          <div className="flex-1 flex flex-col px-8 md:px-14 lg:px-20 pt-8 pb-8 md:pt-8 md:pb-10 bg-[#f9f5ef]">
             <div className="flex flex-col max-w-[560px]">
 
               {/* Label */}
@@ -404,7 +404,7 @@ export default function DNAWaveSection() {
               {/* Editorial callout — Libre Baskerville italic, no border */}
               <p
                 className="text-[20px] md:text-[22px] leading-[1.45]"
-                style={{ fontFamily: "'Libre Baskerville', serif", fontStyle: 'italic', color: '#43382f' }}
+                style={{ fontFamily: "'Libre Baskerville', serif", fontStyle: 'italic', color: '#2b3335' }}
               >
                 The spark behind all of it was understanding what every person in the care ecosystem actually needed, and building media and experiences that delivered it.
               </p>
@@ -420,13 +420,19 @@ export default function DNAWaveSection() {
           <div className="flex-1 flex flex-col px-8 md:px-14 lg:px-20 pt-8 pb-12 md:pt-10 md:pb-16 bg-[#f9f5ef] order-2 md:order-1">
             <div className="flex flex-col max-w-[560px]">
 
+              {/* Rule — desktop only */}
+              <div
+                className="hidden md:block"
+                style={{ width: 48, height: 3, backgroundColor: '#54819a', marginBottom: 24, marginTop: 32 }}
+              />
+
               <p
-                className="text-[20px] md:text-[22px] leading-[1.45] mb-8 mt-4"
-                style={{ fontFamily: "'Libre Baskerville', serif", fontStyle: 'italic', color: '#43382f' }}
+                className="text-[20px] md:text-[22px] leading-[1.45] mb-8 mt-4 md:mt-0"
+                style={{ fontFamily: "'Libre Baskerville', serif", fontStyle: 'italic', color: '#2b3335' }}
               >
                 The gap between having something vital to communicate and the right people actually receiving it is almost never a knowledge problem. It&apos;s a communication problem.
               </p>
-              <p className="text-[#677283] text-[17px] leading-[1.5]">
+              <p className="text-[#43382f] text-[17px] leading-[1.5]">
                 That&apos;s what Flint exists to solve. I work directly with executive leadership as a strategic thought partner, helping you define your narrative, find your voice, and build the series that carries your vision to every patient, provider, and team member who needs to hear it. Every engagement runs through me, from strategy through final delivery, backed by a trusted network of producers and editors I&apos;ve worked with for years.
               </p>
 

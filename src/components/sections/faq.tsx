@@ -37,7 +37,7 @@ export default function FAQSection() {
   const [openIdx, setOpenIdx] = useState<number | null>(null);
 
   return (
-    <section className="bg-[#ede4da] py-[80px] md:py-[100px]">
+    <section className="bg-[#f9f5ef] py-[80px] md:py-[100px]">
       <div className="max-w-[760px] mx-auto px-6 md:px-8">
 
         {/* Headline */}

@@ -23,13 +23,23 @@ export default function ContentBridge() {
 
       {/* Content */}
       <div className="relative z-10">
+
         <h2
-          className="font-light leading-[1.2] tracking-[-0.02em] mb-5 mx-auto"
+          className="font-light leading-[1.2] tracking-[-0.02em] mb-6 mx-auto"
           style={{ fontSize: 'clamp(32px, 5vw, 52px)', color: '#f9f5ef' }}
         >
-          <span className="block whitespace-nowrap">Most content gets <span style={{ fontFamily: "'Libre Baskerville', serif", fontStyle: 'italic' }}>seconds.</span></span>
-          <span className="block whitespace-nowrap">A well-produced series gets <span style={{ fontFamily: "'Libre Baskerville', serif", fontStyle: 'italic' }}>hours.</span></span>
+          <span className="block whitespace-nowrap">Most content gets <span className="font-serif italic">seconds.</span></span>
+          <span className="block whitespace-nowrap">A well-produced series gets <span className="font-serif italic">hours.</span></span>
         </h2>
+
+        {/* Pattern interrupt */}
+        <p
+          className="font-serif italic mb-8 mx-auto"
+          style={{ fontSize: 'clamp(15px, 2vw, 18px)', color: 'rgba(249,245,239,0.45)', letterSpacing: '0.02em' }}
+        >
+          (read that again).
+        </p>
+
         <p
           className="text-[16px] md:text-[17px] leading-[1.65] max-w-[480px] mx-auto"
           style={{ color: 'rgba(249,245,239,0.65)' }}

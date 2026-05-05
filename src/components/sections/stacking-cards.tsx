@@ -1,17 +1,16 @@
 "use client";
 
 import React, { useState, useEffect, useLayoutEffect, useRef } from 'react';
-import { Activity, Heart, Mic2, Layers } from 'lucide-react';
 
 const MIN_SCALE          = 0.88;
-const TOP_OFFSETS_MOBILE = [80, 96, 112, 128]; // staggered peek on mobile
-const DESKTOP_STICKY_TOP = 80;                  // all desktop cards at same position
+const TOP_OFFSETS_MOBILE = [80, 96, 112, 128];
+const DESKTOP_STICKY_TOP = 80;
 
 const FILTERS = [
-  { key: 'patient',     label: 'Patient Engagement',    Icon: Heart,    color: '#eeb20b', textColor: '#2b3335' },
-  { key: 'clinical',    label: 'Clinical Outcomes',      Icon: Activity, color: '#54819a', textColor: '#2b3335' },
-  { key: 'authority',   label: 'Authority & Influence',  Icon: Mic2,     color: '#ff7f29', textColor: '#2b3335' },
-  { key: 'operational', label: 'Operational Excellence', Icon: Layers,   color: '#7e320c', textColor: '#ffffff' },
+  { key: 'patient',     label: 'Patient Engagement',   color: '#eeb20b' },
+  { key: 'clinical',    label: 'Clinical Outcomes',     color: '#54819a' },
+  { key: 'authority',   label: 'Authority & Influence', color: '#ff7f29' },
+  { key: 'operational', label: 'Operational Excellence',color: '#7e320c' },
 ] as const;
 
 type FilterKey = typeof FILTERS[number]['key'];
@@ -85,7 +84,6 @@ const MUTED      = '#677283';
 const ITEM_BG    = 'rgba(19,29,43,0.07)';
 
 export default function StackingCards() {
-  const [activeFilter,        setActiveFilter]        = useState<FilterKey | null>(null);
   const [scales,              setScales]              = useState<number[]>([1, 1, 1, 1]);
   const [mobileAdjustedTops,  setMobileAdjustedTops]  = useState<number[]>([...TOP_OFFSETS_MOBILE]);
 
@@ -93,9 +91,7 @@ export default function StackingCards() {
   const cardRefsDesktop       = useRef<(HTMLDivElement | null)[]>([]);
   const cardContentRefsMobile = useRef<(HTMLDivElement | null)[]>([]);
 
-  const visibleCards = activeFilter
-    ? cards.filter(c => c.filters.includes(activeFilter))
-    : cards;
+  const visibleCards = cards;
 
   // Measure each mobile card's rendered height and compute the sticky top value
   // that ensures the full card fits in view before the next card slides in.
@@ -139,7 +135,7 @@ export default function StackingCards() {
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
     return () => window.removeEventListener('scroll', onScroll);
-  }, [visibleCards.length, activeFilter, mobileAdjustedTops]);
+  }, [visibleCards.length, mobileAdjustedTops]);
 
   function CardContent({ card, mobile }: { card: typeof cards[number]; mobile: boolean }) {
     const px   = mobile ? 'px-5'  : 'px-12';
@@ -159,7 +155,6 @@ export default function StackingCards() {
                 className="inline-flex items-center gap-1.5 rounded-full text-[10px] font-semibold tracking-[0.09em] uppercase"
                 style={{ padding: '5px 11px', border: '1.5px solid #2b3335', color: '#2b3335' }}
               >
-                <f.Icon size={11} />
                 {f.label}
               </div>
             );
@@ -225,48 +220,18 @@ export default function StackingCards() {
       {/* Header */}
       <div className="container mx-auto px-4 md:px-8 pt-[120px] md:pt-[120px]">
         <div className="max-w-[1000px] mx-auto">
-          <div className="mb-5 text-center max-w-[680px] mx-auto">
+          <div className="mb-14 text-center max-w-[680px] mx-auto">
             <div className="mb-5">
               <span className="text-[#677283] text-[15px] font-semibold tracking-[0.1em] uppercase">
                 Explore the Applications
               </span>
             </div>
-            <h2 className="text-[#2b3335] text-[40px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-5">
-              The right solution for <span className="font-serif italic" style={{ color: '#2b3335' }}>every goal</span>
+            <h2 className="text-[#2b3335] text-[40px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-0">
+              Here&rsquo;s the full range of what&rsquo;s{' '}
+              <span className="font-serif italic" style={{ color: '#2b3335' }}>possible.</span>
             </h2>
           </div>
 
-          {/* Filter pills */}
-          <div className="flex flex-wrap justify-center gap-2 mb-10 w-full">
-            <button
-              onClick={() => setActiveFilter(null)}
-              className="inline-flex items-center gap-1.5 rounded-full text-[11px] font-semibold tracking-[0.09em] uppercase transition-all w-auto"
-              style={{
-                padding: '7px 14px',
-                border: '1.5px solid #2b3335',
-                backgroundColor: activeFilter === null ? '#2b3335' : 'transparent',
-                color: activeFilter === null ? '#ffffff' : '#2b3335',
-              }}
-            >All</button>
-            {FILTERS.map(({ key, label, Icon, color, textColor }) => {
-              const active = activeFilter === key;
-              return (
-                <button
-                  key={key}
-                  onClick={() => setActiveFilter(active ? null : key)}
-                  className="inline-flex items-center gap-1.5 rounded-full text-[11px] font-semibold tracking-[0.09em] uppercase transition-all w-auto"
-                  style={{
-                    padding: '7px 14px',
-                    border: `1.5px solid ${active ? color : '#2b3335'}`,
-                    backgroundColor: active ? color : 'transparent',
-                    color: active ? textColor : '#2b3335',
-                  }}
-                >
-                  <Icon size={11} />{label}
-                </button>
-              );
-            })}
-          </div>
         </div>
       </div>
 

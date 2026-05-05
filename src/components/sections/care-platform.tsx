@@ -256,7 +256,7 @@ const CarePlatformSection = () => {
                 </defs>
 
                 {/* LAYER 1 — Prism PNG */}
-                <image href="/prism-flint.png" x="50" y="230" width="420" height="380" preserveAspectRatio="xMidYMid meet"/>
+                <image href="/prism-flint.png" x="150" y="230" width="420" height="380" preserveAspectRatio="xMidYMid meet"/>
 
                 {/* LAYER 2 — Entry beam (animated draw-in via dashoffset) */}
                 <line pathLength="1" className="cp-beam-line" x1="-800" y1="-252" x2="285" y2="374"
