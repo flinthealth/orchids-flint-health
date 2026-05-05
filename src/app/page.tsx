@@ -24,6 +24,7 @@ import ProblemSection from "@/components/sections/problem";
 import ROIAttentionSection from "@/components/sections/roi-attention";
 import FAQSection from "@/components/sections/faq";
 import StatInterstitial from "@/components/sections/stat-interstitial";
+import ContentBridge from "@/components/sections/content-bridge";
 
 export default function Home() {
   return (
@@ -33,6 +34,7 @@ export default function Home() {
         <HeroSection />
         <WhySeriesWork />
         {/* <ProblemSection /> */}
+        <ContentBridge />
         <WhoWeBringTogether />
         {/* <StatInterstitial /> */}
         {/* <ROIAttentionSection /> */}

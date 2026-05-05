@@ -72,6 +72,7 @@ export default function HeroSection() {
         {/* Content */}
         <div className="relative z-20 w-full max-w-[1280px] mx-auto px-6 md:px-24 py-16 lg:py-24 text-left">
           <div className="max-w-[820px]">
+            <div className="h-[22px] md:hidden" />
 
             <h1
               className="animate-hero-title text-white font-light mb-5 max-w-[560px] text-[46px] md:text-[clamp(36px,5.5vw,68px)]"

@@ -14,7 +14,7 @@ const CASE_STUDIES = [
       { value: "24",    label: "Episodes" },
       { value: "75K+",  label: "Downloads in 90 days" },
       { value: "7K+",   label: "Engagements" },
-      { value: "+257%", label: "Treatment Inquiries", highlight: true },
+      { value: "+257%", label: "Treatment Inquiry Lift", highlight: true },
     ],
   },
   {
@@ -177,7 +177,7 @@ function CaseStudyCard({
 
           {/* Stats row */}
           <div
-            className="flex flex-row flex-wrap gap-x-8 gap-y-5 pt-5"
+            className="grid grid-cols-2 gap-x-8 gap-y-5 pt-5"
             style={{ borderTop: "0.5px solid rgba(103,114,131,0.15)" }}
           >
             {stats.map((s) => (
@@ -239,8 +239,11 @@ export default function PodcastShowcase() {
             className="text-[17px] leading-[1.5] max-w-[520px] mx-auto"
             style={{ color: "rgba(249,245,239,0.55)" }}
           >
-            Proof that when the right message meets the right audience, something
-            measurable happens.
+            Proof that when the right{" "}
+            <br className="md:hidden" />
+            message meets the right audience,{" "}
+            <br className="md:hidden" />
+            something measurable happens.
           </p>
         </div>
 

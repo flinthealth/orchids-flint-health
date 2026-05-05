@@ -522,60 +522,60 @@ const CarePlatformSection = () => {
             >
               <defs>
                 {/* Rays extend to x=1260 */}
-                <linearGradient id="sm-ray1" x1="255" y1="0" x2="1260" y2="0" gradientUnits="userSpaceOnUse">
+                <linearGradient id="sm-ray1" x1="405" y1="0" x2="1260" y2="0" gradientUnits="userSpaceOnUse">
                   <stop offset="0%"  stopColor="#eeb20b" stopOpacity="0.92"/>
                   <stop offset="65%" stopColor="#eeb20b" stopOpacity="0.32"/>
                   <stop offset="100%" stopColor="#eeb20b" stopOpacity="0.00"/>
                 </linearGradient>
-                <linearGradient id="sm-ray2" x1="255" y1="0" x2="1260" y2="0" gradientUnits="userSpaceOnUse">
+                <linearGradient id="sm-ray2" x1="405" y1="0" x2="1260" y2="0" gradientUnits="userSpaceOnUse">
                   <stop offset="0%"  stopColor="#ff7f29" stopOpacity="0.92"/>
                   <stop offset="65%" stopColor="#ff7f29" stopOpacity="0.32"/>
                   <stop offset="100%" stopColor="#ff7f29" stopOpacity="0.00"/>
                 </linearGradient>
-                <linearGradient id="sm-ray3" x1="255" y1="0" x2="1260" y2="0" gradientUnits="userSpaceOnUse">
+                <linearGradient id="sm-ray3" x1="405" y1="0" x2="1260" y2="0" gradientUnits="userSpaceOnUse">
                   <stop offset="0%"  stopColor="#f5a020" stopOpacity="0.88"/>
                   <stop offset="65%" stopColor="#f5a020" stopOpacity="0.28"/>
                   <stop offset="100%" stopColor="#f5a020" stopOpacity="0.00"/>
                 </linearGradient>
-                <linearGradient id="sm-ray4" x1="255" y1="0" x2="1260" y2="0" gradientUnits="userSpaceOnUse">
+                <linearGradient id="sm-ray4" x1="405" y1="0" x2="1260" y2="0" gradientUnits="userSpaceOnUse">
                   <stop offset="0%"  stopColor="#54819a" stopOpacity="0.92"/>
                   <stop offset="65%" stopColor="#54819a" stopOpacity="0.32"/>
                   <stop offset="100%" stopColor="#54819a" stopOpacity="0.00"/>
                 </linearGradient>
-                <linearGradient id="sm-ray5" x1="255" y1="0" x2="1260" y2="0" gradientUnits="userSpaceOnUse">
+                <linearGradient id="sm-ray5" x1="405" y1="0" x2="1260" y2="0" gradientUnits="userSpaceOnUse">
                   <stop offset="0%"  stopColor="#677283" stopOpacity="0.88"/>
                   <stop offset="65%" stopColor="#677283" stopOpacity="0.28"/>
                   <stop offset="100%" stopColor="#677283" stopOpacity="0.00"/>
                 </linearGradient>
-                {/* Beam: prism moved 40px left, exit now (255,374) */}
-                <linearGradient id="sm-beam" x1="-400" y1="-26" x2="255" y2="374" gradientUnits="userSpaceOnUse">
+                {/* Beam: exit (405,374), diffuse glow */}
+                <linearGradient id="sm-beam" x1="-400" y1="-26" x2="405" y2="374" gradientUnits="userSpaceOnUse">
                   <stop offset="0%"  stopColor="#eeb20b" stopOpacity="0.00"/>
-                  <stop offset="40%" stopColor="#eeb20b" stopOpacity="0.80"/>
-                  <stop offset="100%" stopColor="#eeb20b" stopOpacity="0.90"/>
+                  <stop offset="50%" stopColor="#eeb20b" stopOpacity="0.45"/>
+                  <stop offset="100%" stopColor="#eeb20b" stopOpacity="0.65"/>
                 </linearGradient>
               </defs>
 
-              {/* LAYER 1 — Prism PNG shifted 40px left (x=20) */}
-              <image href="/prism-flint.png" x="20" y="230" width="420" height="380" preserveAspectRatio="xMidYMid meet"/>
+              {/* LAYER 1 — Prism PNG shifted right (x=170), size +12% */}
+              <image href="/prism-flint.png" x="170" y="217" width="470" height="426" preserveAspectRatio="xMidYMid meet"/>
 
-              {/* LAYER 2 — Entry beam to new exit (255,374) */}
-              <line x1="-400" y1="-26" x2="255" y2="374" stroke="#eeb20b" strokeWidth="20" strokeOpacity="0.09" strokeLinecap="butt"/>
-              <line x1="-400" y1="-26" x2="255" y2="374" stroke="url(#sm-beam)" strokeWidth="5" strokeLinecap="round"/>
-              <line x1="-400" y1="-26" x2="255" y2="374" stroke="#ffffff" strokeWidth="1.5" strokeOpacity="0.38" strokeLinecap="round"/>
+              {/* LAYER 2 — Entry beam, diffuse (wide soft glow + narrow core) */}
+              <line x1="-400" y1="-26" x2="405" y2="374" stroke="#eeb20b" strokeWidth="120" strokeOpacity="0.025" strokeLinecap="butt"/>
+              <line x1="-400" y1="-26" x2="405" y2="374" stroke="#eeb20b" strokeWidth="60" strokeOpacity="0.035" strokeLinecap="butt"/>
+              <line x1="-400" y1="-26" x2="405" y2="374" stroke="#eeb20b" strokeWidth="28" strokeOpacity="0.05" strokeLinecap="butt"/>
+              <line x1="-400" y1="-26" x2="405" y2="374" stroke="url(#sm-beam)" strokeWidth="4" strokeLinecap="round"/>
 
-              {/* LAYER 3 — 650px fan, exit (255,374), rays to x=1260 */}
-              {/* Bands: 45→175, 175→305, 305→435, 435→565, 565→695 */}
-              <polygon points="255,374 1260,45   1260,175" fill="url(#sm-ray1)"/>
-              <polygon points="255,374 1260,175  1260,305" fill="url(#sm-ray2)"/>
-              <polygon points="255,374 1260,305  1260,435" fill="url(#sm-ray3)"/>
-              <polygon points="255,374 1260,435  1260,565" fill="url(#sm-ray4)"/>
-              <polygon points="255,374 1260,565  1260,695" fill="url(#sm-ray5)"/>
+              {/* LAYER 3 — 650px fan, exit (405,374), rays to x=1260 */}
+              <polygon points="405,374 1260,45   1260,175" fill="url(#sm-ray1)"/>
+              <polygon points="405,374 1260,175  1260,305" fill="url(#sm-ray2)"/>
+              <polygon points="405,374 1260,305  1260,435" fill="url(#sm-ray3)"/>
+              <polygon points="405,374 1260,435  1260,565" fill="url(#sm-ray4)"/>
+              <polygon points="405,374 1260,565  1260,695" fill="url(#sm-ray5)"/>
 
             </svg>
           </div>
 
           {/* Outcome pills — all screen sizes, stacked vertically top→bottom */}
-          <div className="flex flex-col items-center gap-2 md:gap-3 px-6 pb-2 pt-1">
+          <div className="flex flex-col items-center gap-2 md:gap-3 px-6 pb-2 pt-10 md:pt-1">
             {[
               { label: 'engagement', color: '#eeb20b' },
               { label: 'adherence',  color: '#ff7f29' },
@@ -595,7 +595,11 @@ const CarePlatformSection = () => {
 
           {/* Closing line */}
           <p className="text-center text-[17px] leading-[1.5] max-w-[480px] mx-auto px-6 pt-6 pb-24" style={{ color: 'rgba(249,245,239,0.55)' }}>
-            Each episode builds trust, deepens understanding, and moves your audience closer to action.
+            Each episode builds trust,{" "}
+            <br className="md:hidden" />
+            deepens understanding, and{" "}
+            <br className="md:hidden" />
+            moves your audience closer to action.
           </p>
 
         </div>{/* /content */}

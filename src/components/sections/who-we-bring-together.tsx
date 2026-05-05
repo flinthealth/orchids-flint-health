@@ -32,9 +32,11 @@ const glassStyle = {
 export default function WhoWeBringTogether() {
   return (
     <section className="bg-[#ede4da] w-full overflow-hidden">
-      <div className="flex flex-col md:flex-row min-h-[640px] md:min-h-[760px]">
 
-        {/* ── Left: video with two frosted glass stat cards ── */}
+      {/* ── Two-column layout ── */}
+      <div className="flex flex-col md:flex-row min-h-[640px] md:min-h-[700px]">
+
+        {/* ── Left: video with frosted glass stat card ── */}
         <div className="w-full md:w-[42%] lg:w-[38%] relative flex-shrink-0 min-h-[520px] md:min-h-0">
           <video
             autoPlay
@@ -45,7 +47,7 @@ export default function WhoWeBringTogether() {
             src="/stats-idle-time-compressed.mp4"
           />
 
-          {/* Frosted glass 71% card — top-left */}
+          {/* Frosted glass 71% card — bottom-right */}
           <div className="absolute bottom-7 right-7 z-10 px-5 py-4 rounded-2xl" style={glassStyle}>
             <p className="text-[#f9f5ef] font-light leading-none tracking-[-0.03em] mb-2" style={{ fontSize: 56 }}>
               71%
@@ -61,12 +63,10 @@ export default function WhoWeBringTogether() {
               >4</a>
             </p>
           </div>
-
-
         </div>
 
         {/* ── Right: content ── */}
-        <div className="flex-1 flex flex-col justify-center px-8 md:px-12 lg:px-16 py-14 md:py-16">
+        <div className="flex-1 flex flex-col justify-center px-8 md:px-12 lg:px-16 pt-14 md:pt-0 pb-14 md:pb-0">
 
           {/* Eyebrow */}
           <p className="text-[#677283] text-[15px] font-semibold tracking-[0.1em] uppercase mb-5">
@@ -74,15 +74,11 @@ export default function WhoWeBringTogether() {
           </p>
 
           {/* Headline */}
-          <h2 className="text-[#2b3335] text-[36px] md:text-[44px] lg:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-5 max-w-[520px]">
+          <h2 className="text-[#2b3335] text-[36px] md:text-[44px] lg:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-10 max-w-[520px]">
             Reach patients, providers, and teams{' '}
-            <span className="font-serif italic" style={{ color: '#2b3335' }}>on their terms.</span>
+            <br />
+            <span style={{ fontFamily: "'Libre Baskerville', serif", fontStyle: 'italic', color: '#2b3335' }}>on their terms.</span>
           </h2>
-
-          {/* Subhead */}
-          <p className="text-[16px] leading-[1.65] mb-8 max-w-[460px]" style={{ color: '#677283' }}>
-            Most content gets seconds. A well-produced series gets hours. That&rsquo;s not just more time. It&rsquo;s a fundamentally different relationship with your audience.
-          </p>
 
           {/* Callouts — icon left, text right */}
           <div className="flex flex-col gap-12 max-w-[460px]">

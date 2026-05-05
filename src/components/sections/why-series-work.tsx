@@ -236,14 +236,21 @@ export default function WhySeriesWork() {
               ))}
 
               {/* Center label */}
-              <text x={C} y={C - 7} textAnchor="middle" fontSize="11"
+              <text x={C} y={C - 15} textAnchor="middle" fontSize="11"
                 fontWeight="600" fontFamily="Inter, sans-serif" fill="#677283"
                 letterSpacing="0.12em"
                 style={{ opacity: complete ? 1 : 0, transition: "opacity 0.4s ease 0.3s" }}
               >
                 YOUR
               </text>
-              <text x={C} y={C + 9} textAnchor="middle" fontSize="11"
+              <text x={C} y={C + 1} textAnchor="middle" fontSize="11"
+                fontWeight="600" fontFamily="Inter, sans-serif" fill="#677283"
+                letterSpacing="0.12em"
+                style={{ opacity: complete ? 1 : 0, transition: "opacity 0.4s ease 0.35s" }}
+              >
+                PROTECTIVE
+              </text>
+              <text x={C} y={C + 17} textAnchor="middle" fontSize="11"
                 fontWeight="600" fontFamily="Inter, sans-serif" fill="#677283"
                 letterSpacing="0.12em"
                 style={{ opacity: complete ? 1 : 0, transition: "opacity 0.4s ease 0.4s" }}

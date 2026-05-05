@@ -29,11 +29,11 @@ const cards = [
     filters: ['clinical', 'authority', 'operational'] as FilterKey[],
     title: 'HCP Training & Clinical Education',
     headline: 'Protocols are only as powerful as the providers who adopt them.',
-    body: "We don't replace clinical demonstrations — we make them stick. By wrapping technical training in narrative context, we ensure providers understand the why before they see the what. The result is faster adoption, stronger clinical judgment, and training your team actually looks forward to.",
+    body: "We don't replace clinical demonstrations. We make them stick. Narrative context helps providers understand the why before they see the what. The result is faster adoption, stronger clinical judgment, and training your team actually looks forward to.",
     applications: [
       'Protocol walkthroughs with expert clinical commentary',
-      'Clinical case study audio and video series',
-      'Field sales and MSL enablement content',
+      'Patient and clinical case study series',
+      'Sales and medical affairs enablement',
       'New treatment and device adoption programs',
     ],
   },
@@ -42,7 +42,7 @@ const cards = [
     filters: ['patient', 'clinical', 'authority'] as FilterKey[],
     title: 'Patient Education & Engagement',
     headline: 'When patients truly understand, everything changes.',
-    body: "We create audio and video series that meet patients where they are — weaving expert clinical voices with real human stories to make complex health information feel accessible, trustworthy, and actionable. Better-informed patients engage more, adhere more, and advocate more.",
+    body: "Expert clinical voices. Real human stories. The combination that makes complex health information feel accessible, trustworthy, and actionable. Better-informed patients engage more, adhere more, and advocate more.",
     applications: [
       'Condition and treatment education series',
       'Post-diagnosis support and shared decision-making guides',
@@ -55,7 +55,7 @@ const cards = [
     filters: ['patient', 'clinical'] as FilterKey[],
     title: 'Patient Immersions & Journey Maps',
     headline: "Don't just report on the patient experience, bring it to life.",
-    body: "We transform static research and white papers into immersive narrative audio series that your R&D, Medical Affairs, and clinical teams actually finish. When your people truly hear the patient story — not just skim a summary — it changes how they think, decide, and build.",
+    body: "We transform static research and white papers into immersive narrative series that your R&D, Medical Affairs, and clinical teams actually finish. When your people truly hear the patient story, not just skim a summary, it changes how they think, decide, and build.",
     applications: [
       'Authentic patient voice recordings',
       'Deep-dive qualitative interview series',
@@ -68,7 +68,7 @@ const cards = [
     filters: ['operational', 'authority'] as FilterKey[],
     title: 'Employee Onboarding & Culture',
     headline: 'Build a culture that travels with your team.',
-    body: "Onboarding shouldn't end after week one — and culture shouldn't live only in all-hands meetings. We help healthcare organizations build an ongoing audio and video presence that carries your values, vision, and standards to every new hire and veteran team member, wherever they are.",
+    body: "Culture shouldn't live only in all-hands meetings and onboarding manuals. We build the ongoing audio and video presence that carries your values and vision to every member of your team, wherever they are.",
     applications: [
       'Leadership vision and values series',
       'New hire welcome and culture immersion programs',
