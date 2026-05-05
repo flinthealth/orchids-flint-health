@@ -36,13 +36,13 @@ export default function WhoWeBringTogether() {
       <div className="flex flex-col md:flex-row min-h-[640px] md:min-h-[700px]">
 
         {/* ── Left: video with frosted glass stat card ── */}
-        <div className="w-full md:w-[42%] lg:w-[38%] relative flex-shrink-0 min-h-[520px] md:min-h-0">
+        <div className="w-full md:w-[42%] lg:w-[38%] relative flex-shrink-0 min-h-[520px] md:min-h-full self-stretch">
           <video
             autoPlay
             loop
             muted
             playsInline
-            className="absolute inset-0 w-full h-full object-cover md:object-contain"
+            className="absolute inset-0 w-full h-full object-cover object-left"
             src="/stats-idle-time-compressed.mp4"
           />
 
