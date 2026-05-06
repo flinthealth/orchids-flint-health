@@ -29,7 +29,7 @@ export default function ContentBridge() {
           style={{ fontSize: 'clamp(32px, 5vw, 52px)', color: '#f9f5ef' }}
         >
           <span className="block whitespace-nowrap">Most content gets <span className="font-serif italic">seconds.</span></span>
-          <span className="block whitespace-nowrap">A well-produced series gets <span className="font-serif italic">hours.</span></span>
+          <span className="block whitespace-nowrap">A strategic series gets <span className="font-serif italic">hours.</span></span>
         </h2>
 
         {/* Pattern interrupt */}

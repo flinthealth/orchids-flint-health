@@ -232,6 +232,50 @@ export default function StackingCards() {
             </h2>
           </div>
 
+          {/* ── Format indicators ── */}
+          <div className="flex items-center justify-center gap-4 sm:gap-6 mt-8 mb-10">
+            {/* Audio */}
+            <div className="flex flex-col items-center gap-2">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#677283" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="10" y="2" width="8" height="14" rx="4" />
+                <path d="M5 13a9 9 0 0 0 18 0" />
+                <line x1="14" y1="22" x2="14" y2="26" />
+                <line x1="10" y1="26" x2="18" y2="26" />
+              </svg>
+              <span style={{ color: '#677283', fontSize: '11px', letterSpacing: '0.14em', fontWeight: 600, textTransform: 'uppercase', fontFamily: 'Inter, sans-serif' }}>Audio</span>
+            </div>
+
+            {/* Separator */}
+            <div style={{ width: '1px', height: '32px', backgroundColor: '#677283', opacity: 0.2 }} />
+
+            {/* Video */}
+            <div className="flex flex-col items-center gap-2">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#677283" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="2" y="6" width="18" height="16" rx="3" />
+                <path d="M20 11l6-4v14l-6-4" />
+              </svg>
+              <span style={{ color: '#677283', fontSize: '11px', letterSpacing: '0.14em', fontWeight: 600, textTransform: 'uppercase', fontFamily: 'Inter, sans-serif' }}>Video</span>
+            </div>
+
+            {/* Separator */}
+            <div style={{ width: '1px', height: '32px', backgroundColor: '#677283', opacity: 0.2 }} />
+
+            {/* Hybrid */}
+            <div className="flex flex-col items-center gap-2">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#677283" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                {/* mic (left, slightly smaller) */}
+                <rect x="3" y="4" width="7" height="12" rx="3.5" />
+                <path d="M2.5 12a4 4 0 0 0 8 0" />
+                <line x1="6.5" y1="16" x2="6.5" y2="19" />
+                <line x1="4.5" y1="19" x2="8.5" y2="19" />
+                {/* video camera (right) */}
+                <rect x="13" y="8" width="10" height="9" rx="2" />
+                <path d="M23 11l4-2.5v7l-4-2.5" />
+              </svg>
+              <span style={{ color: '#677283', fontSize: '11px', letterSpacing: '0.14em', fontWeight: 600, textTransform: 'uppercase', fontFamily: 'Inter, sans-serif' }}>Hybrid</span>
+            </div>
+          </div>
+
         </div>
       </div>
 

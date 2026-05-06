@@ -17,6 +17,7 @@ import PodcastPulse from "@/components/sections/podcast-pulse";
 import WhoWeBringTogether from "@/components/sections/who-we-bring-together";
 import ContentPrism from "@/components/sections/content-prism";
 import PodcastShowcase from "@/components/sections/podcast-showcase";
+import YourSeries from "@/components/sections/your-series";
 import PodcastExplainer from "@/components/sections/podcast-explainer";
 import WhySeriesWork from "@/components/sections/why-series-work";
 import StackingCards from "@/components/sections/stacking-cards";
@@ -43,6 +44,7 @@ export default function Home() {
         {/* <PodcastPathways /> */}
         <StackingCards />
         <PodcastShowcase />
+        <YourSeries />
         <DNAWaveSection />
         <TestimonialSection />
         {/* <AudienceSolutions /> */}
