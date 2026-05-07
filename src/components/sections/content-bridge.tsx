@@ -25,7 +25,7 @@ export default function ContentBridge() {
       <div className="relative z-10">
 
         <h2
-          className="text-[36px] md:text-[44px] lg:text-[52px] font-light leading-[1.2] tracking-[-0.02em] mb-6 mx-auto"
+          className="text-[40px] md:text-[44px] lg:text-[52px] font-light leading-[1.2] tracking-[-0.02em] mb-6 mx-auto"
           style={{ color: '#f9f5ef' }}
         >
           <span className="block md:whitespace-nowrap mb-4 md:mb-0">Most content<br className="md:hidden" /> gets <span className="font-serif italic">seconds.</span></span>
@@ -34,8 +34,8 @@ export default function ContentBridge() {
 
         {/* Pattern interrupt */}
         <p
-          className="font-serif italic mb-8 mx-auto"
-          style={{ fontSize: 'clamp(15px, 2vw, 18px)', color: 'rgba(249,245,239,0.45)', letterSpacing: '0.02em' }}
+          className="text-[20px] md:text-[22px] font-serif italic mb-8 mx-auto"
+          style={{ color: 'rgba(249,245,239,0.45)', letterSpacing: '0.02em' }}
         >
           (read that again).
         </p>
