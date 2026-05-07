@@ -296,7 +296,8 @@ export function OurBeliefSection() {
       <div className="container mx-auto px-8 text-center mb-4">
         <p className="text-[#677283] text-[15px] font-semibold tracking-[0.1em] uppercase mb-5">Our Philosophy</p>
         <h2 className="text-[#ffffff] text-[40px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] max-w-[680px] mx-auto mb-6">
-          Information alone doesn't move people <span className="font-serif italic" style={{ color: '#ffffff' }}>to action</span>
+          <span className="md:hidden">Build a great series<br />and you&apos;ll have<br /><span className="font-serif italic" style={{ color: '#ffffff' }}>great outcomes</span></span>
+          <span className="hidden md:inline">Build a great series and<br />you&apos;ll have <span className="font-serif italic" style={{ color: '#ffffff' }}>great outcomes</span></span>
         </h2>
         <p className="text-[#ffffff]/70 text-[17px] leading-[1.5] max-w-[560px] mx-auto">
           When science meets the right narrative, one that connects emotionally and lands cognitively, complex becomes clear, distant becomes personal, and information drives action.
@@ -353,7 +354,8 @@ export default function DNAWaveSection() {
         <div className="px-8 md:px-14 lg:px-20 pt-2 pb-8 md:pb-10 text-center">
           <p className="text-[#677283] text-[15px] font-semibold tracking-[0.1em] uppercase mb-5">Our Philosophy</p>
           <h2 className="text-[#43382f] text-[40px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] max-w-[640px] mx-auto">
-            Information alone doesn&apos;t move people <span className="font-serif italic" style={{ color: '#2b3335' }}>to action</span>
+            <span className="md:hidden">Build a great series<br />and you&apos;ll have<br /><span className="font-serif italic" style={{ color: '#2b3335' }}>great outcomes</span></span>
+            <span className="hidden md:inline">Build a great series and<br />you&apos;ll have <span className="font-serif italic" style={{ color: '#2b3335' }}>great outcomes</span></span>
           </h2>
         </div>
 
@@ -401,14 +403,6 @@ export default function DNAWaveSection() {
                 I built a behavioral health media platform from scratch, designing the app, growing a 450+ provider network, and scaling it to 30 million sessions across a global community. Organically.
               </p>
 
-              {/* Editorial callout — Libre Baskerville italic, no border */}
-              <p
-                className="text-[20px] md:text-[22px] leading-[1.45]"
-                style={{ fontFamily: "'Libre Baskerville', serif", fontStyle: 'italic', color: '#2b3335' }}
-              >
-                The spark behind all of it was understanding what every person in the care ecosystem actually needed, and building media and experiences that delivered it.
-              </p>
-
             </div>
           </div>
         </div>
@@ -426,11 +420,12 @@ export default function DNAWaveSection() {
                 style={{ width: 48, height: 3, backgroundColor: '#54819a', marginBottom: 24, marginTop: 32 }}
               />
 
+              {/* Editorial callout — moved from Row 1 */}
               <p
                 className="text-[20px] md:text-[22px] leading-[1.45] mb-8 mt-4 md:mt-0"
                 style={{ fontFamily: "'Libre Baskerville', serif", fontStyle: 'italic', color: '#2b3335' }}
               >
-                The gap between having something vital to communicate and the right people actually receiving it is almost never a knowledge problem. It&apos;s a communication problem.
+                The spark behind all of it was understanding what every person in the care ecosystem actually needed, and building media and experiences that delivered it.
               </p>
               <p className="text-[#43382f] text-[17px] leading-[1.5]">
                 That&apos;s what Flint exists to solve. I work directly with executive leadership as a strategic thought partner, helping you define your narrative, find your voice, and build the series that carries your vision to every patient, provider, and team member who needs to hear it. Every engagement runs through me, from strategy through final delivery, backed by a trusted network of producers and editors I&apos;ve worked with for years.

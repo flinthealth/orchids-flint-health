@@ -4,10 +4,6 @@ import React, { useState } from "react";
 
 const FAQS = [
   {
-    q: "What exactly do we get?",
-    a: "A fully produced series in audio, video, or both depending on your goals and budget. From strategy and scripting support through recording, editing, sound design, and distribution, we handle every detail. You receive a complete, ready-to-publish content asset for Spotify, Apple Podcasts, YouTube, and any internal platform.",
-  },
-  {
     q: "Is this the same thing as a podcast?",
     a: "The word podcast has outgrown what the medium is becoming. And that's a good thing. At its core it's always been something simple and powerful. Authentic conversation about topics people genuinely care about. Today that conversation lives everywhere. Audio on Spotify and Apple, video on YouTube, clips on social, sequences in email. What we produce is a strategic series built with clear learning objectives, a narrative arc, and a specific audience outcome. Every episode is designed to move your audience from awareness to action.",
   },

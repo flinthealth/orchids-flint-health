@@ -75,7 +75,7 @@ export default function HeroSection() {
             <div className="h-[22px] md:hidden" />
 
             <h1
-              className="animate-hero-title text-white font-light mb-5 max-w-[560px] text-[46px] md:text-[clamp(36px,5.5vw,68px)]"
+              className="animate-hero-title text-white font-light mb-5 max-w-[560px] text-[46px] md:text-[clamp(52px,5.5vw,68px)]"
               style={{ lineHeight: 1.1, letterSpacing: '-0.02em' }}
             >
               Premium<br />podcast series<br /><span className="font-serif italic">for healthcare</span>

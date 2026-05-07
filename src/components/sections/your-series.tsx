@@ -4,15 +4,15 @@ import React, { useRef, useState, useEffect, useLayoutEffect } from 'react';
 
 const BLOCKS = [
   {
-    title: 'Strategy first.',
+    title: 'Plan',
     body: 'We define your brand positioning, narrative, voice, and format before a single episode is recorded. Interview, conversational, narrative, or panel. The right choice makes everything that follows more powerful. Every creative decision flows from your goals and the outcomes that matter most.',
   },
   {
-    title: 'Production handled.',
+    title: 'Produce',
     body: 'From scripting and scheduling to editing, scoring, and distribution, we manage the entire creative process. You choose the voice. We build the narrative around your experts, with every production decision anchored to your goals.',
   },
   {
-    title: 'Measure and grow.',
+    title: 'Grow',
     body: 'Your series launches and the results follow. Each episode compounds the last, deepening trust, strengthening alignment, and creating a media presence your brand owns permanently. We track what matters and refine as we go.',
   },
 ];
@@ -93,12 +93,13 @@ export default function YourSeries() {
             className="text-[40px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-4"
             style={{ color: '#43382f' }}
           >
-            From strategy to first episode
-            <br />
+            <span className="md:hidden">From strategy to first episode<br /></span>
+            <span className="hidden md:inline">From strategy to<br />first episode </span>
             <span className="font-serif italic">in 90 days.</span>
           </h2>
           <p className="text-[17px] leading-[1.5]" style={{ color: '#43382f' }}>
-            Here&apos;s how we build yours.
+            <span className="md:hidden">Every series follows the same proven path. Three phases. One complete series. Real outcomes.</span>
+            <span className="hidden md:inline">Every series follows the same proven path.<br />Three phases. One complete series. Real outcomes.</span>
           </p>
         </div>
 
@@ -106,7 +107,7 @@ export default function YourSeries() {
         <div className="flex gap-8 md:gap-10">
 
           {/* Bar column */}
-          <div ref={barColRef} className="flex-shrink-0 self-stretch relative w-3 md:w-6">
+          <div ref={barColRef} className="flex-shrink-0 self-stretch relative w-3 md:w-[29px]">
 
             {/* Track: always visible at low opacity, flat ends */}
             <div
@@ -147,7 +148,7 @@ export default function YourSeries() {
                   className="text-[17px] md:text-[19px] font-semibold leading-snug mb-3"
                   style={{ color: '#2b3335' }}
                 >
-                  {block.title}
+                  {i + 1}. {block.title}
                 </h3>
                 <p
                   className="text-[15px] md:text-[16px] leading-[1.65]"
@@ -163,8 +164,8 @@ export default function YourSeries() {
 
         {/* ── Closing line ── */}
         <p
-          className="text-center mt-14 md:mt-16 font-serif italic"
-          style={{ color: '#43382f', fontSize: 'clamp(20px, 2.2vw, 22px)', lineHeight: 1.55, maxWidth: '600px', margin: '3.5rem auto 0' }}
+          className="text-center text-[20px] md:text-[22px] leading-[1.45] mt-14 md:mt-16"
+          style={{ fontFamily: "'Libre Baskerville', serif", fontStyle: 'italic', color: '#2b3335', maxWidth: '600px', margin: '3.5rem auto 0' }}
         >
           Every series is custom-built around your goals, your audience, and the outcomes that matter most.
         </p>
