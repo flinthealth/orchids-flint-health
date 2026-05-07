@@ -298,13 +298,13 @@ export default function StackingCards() {
                   willChange:      'transform',
                 }}
               >
-                {/* Gradient wrapper — shows through as top edge */}
+                {/* Gradient wrapper — shows through as bottom edge */}
                 <div
                   ref={el => { cardContentRefsMobile.current[stackIndex] = el; }}
                   style={{
                     borderRadius: '24px 24px 0 0',
                     background: '#ede4da',
-                    padding: '6px 0 0 0',
+                    padding: '0 0 6px 0',
                     position: 'relative',
                     overflow: 'hidden',
                   }}
