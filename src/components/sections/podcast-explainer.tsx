@@ -76,7 +76,7 @@ export default function PodcastExplainer() {
           <h2 className="text-[#2b3335] text-[40px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-6 max-w-[720px] mx-auto">
             Series capture attention in a <span className="font-serif italic" style={{ color: '#2b3335' }}>world full of noise</span>
           </h2>
-          <p className="text-[#677283] text-[16px] md:text-[17px] leading-[1.5] max-w-[680px] mx-auto mb-6">
+          <p className="text-[#43382f] text-[16px] md:text-[17px] leading-[1.5] max-w-[680px] mx-auto mb-6">
             Long-form podcast series in audio and video<br className="md:hidden" /> are the format with the highest trust,<br className="md:hidden" /> deepest engagement, and the stats to prove it.
           </p>
         </div>

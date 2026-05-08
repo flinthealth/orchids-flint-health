@@ -120,7 +120,7 @@ export default function WhySeriesWork() {
               strategic storytelling
             </span>
           </h2>
-          <p className="text-[#677283] text-[17px] leading-[1.5] max-w-[420px] md:max-w-[660px] mx-auto">
+          <p className="text-[#43382f] text-[17px] leading-[1.5] max-w-[420px] md:max-w-[660px] mx-auto">
             In the AI era, emotional resonance and trust are what protect your position.<br className="hidden md:block" /> A well-produced series builds both.
           </p>
         </div>
@@ -298,7 +298,7 @@ export default function WhySeriesWork() {
                         {(seg as any).statLabel}
                       </p>
                     )}
-                    <p className="text-[#677283] text-[16px] leading-[1.5]">
+                    <p className="text-[#43382f] text-[16px] leading-[1.5]">
                       {seg.descriptor}
                       <a
                         href={seg.statUrl}

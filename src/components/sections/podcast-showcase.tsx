@@ -118,7 +118,7 @@ function CaseStudyCard({
             </p>
             <p
               className="text-[15px] leading-[1.5]"
-              style={{ color: "#677283" }}
+              style={{ color: "#43382f" }}
             >
               {description}
             </p>
@@ -169,7 +169,7 @@ function CaseStudyCard({
             </p>
             <p
               className="text-[15px] leading-[1.5]"
-              style={{ color: "#677283" }}
+              style={{ color: "#43382f" }}
             >
               {description}
             </p>

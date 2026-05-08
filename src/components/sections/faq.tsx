@@ -69,7 +69,7 @@ export default function FAQSection() {
                   </span>
                 </div>
                 {isOpen && (
-                  <p className="text-[15px] leading-[1.5] mt-4" style={{ color: '#677283' }}>
+                  <p className="text-[15px] leading-[1.5] mt-4" style={{ color: '#43382f' }}>
                     {item.a}
                   </p>
                 )}

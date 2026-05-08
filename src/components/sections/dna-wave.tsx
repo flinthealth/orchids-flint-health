@@ -396,10 +396,10 @@ export default function DNAWaveSection() {
                 </div>
               </div>
 
-              <p className="text-[#677283] text-[17px] leading-[1.5] mb-4">
+              <p className="text-[#43382f] text-[17px] leading-[1.5] mb-4">
                 I&apos;ve spent 12 years at the intersection of healthcare and media. Long enough to know what works, what doesn&apos;t, and what&apos;s coming before most people see it.
               </p>
-              <p className="text-[#677283] text-[17px] leading-[1.5] mb-6">
+              <p className="text-[#43382f] text-[17px] leading-[1.5] mb-6">
                 I built a behavioral health media platform from scratch, designing the app, growing a 450+ provider network, and scaling it to 30 million sessions across a global community. Organically.
               </p>
 

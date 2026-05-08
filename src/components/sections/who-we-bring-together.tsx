@@ -84,7 +84,7 @@ export default function WhoWeBringTogether() {
             {CALLOUTS.map(({ title, body }) => (
               <div key={title} style={divider} className="py-6">
                 <p className="text-[18px] font-semibold leading-snug mb-1" style={{ color: '#43382f' }}>{title}</p>
-                <p className="text-[14px] leading-[1.6]" style={{ color: '#677283' }}>{body}</p>
+                <p className="text-[14px] leading-[1.6]" style={{ color: '#43382f' }}>{body}</p>
               </div>
             ))}
             {/* Bottom divider */}
