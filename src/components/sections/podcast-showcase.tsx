@@ -217,7 +217,7 @@ export default function PodcastShowcase() {
       id="our-work"
       ref={sectionRef}
       className="relative pt-[88px] md:pt-[100px] pb-[100px] md:pb-[120px] px-6 md:px-8 overflow-hidden"
-      style={{ background: 'linear-gradient(to right, #2c3436 0%, #6b4b3e 55%, #a0522d 100%)' }}
+      style={{ background: 'linear-gradient(to right, #3d4d58 0%, #6b4b3e 55%, #a0522d 100%)' }}
     >
       {/* Grain overlay */}
       <div

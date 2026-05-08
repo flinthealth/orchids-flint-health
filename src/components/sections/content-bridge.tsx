@@ -6,7 +6,7 @@ export default function ContentBridge() {
   return (
     <section className="relative w-full py-24 px-6 text-center overflow-hidden"
       style={{
-        background: 'linear-gradient(to right, #2c3436 0%, #6b4b3e 55%, #a0522d 100%)',
+        background: 'linear-gradient(to right, #3d4d58 0%, #6b4b3e 55%, #a0522d 100%)',
       }}
     >
       {/* Grain overlay */}

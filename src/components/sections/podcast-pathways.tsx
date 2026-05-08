@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 
-const GRADIENT_BG = 'linear-gradient(to right, #2c3436 0%, #6b4b3e 55%, #a0522d 100%)';
+const GRADIENT_BG = 'linear-gradient(to right, #3d4d58 0%, #6b4b3e 55%, #a0522d 100%)';
 
 const GRAIN = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='gpp'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23gpp)'/%3E%3C/svg%3E")`;
 

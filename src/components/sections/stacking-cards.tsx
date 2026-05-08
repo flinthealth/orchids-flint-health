@@ -7,19 +7,48 @@ const TOP_OFFSETS_MOBILE = [80, 96, 112, 128];
 const DESKTOP_STICKY_TOP = 80;
 
 const FILTERS = [
-  { key: 'patient',     label: 'Patient Engagement',   color: '#eeb20b' },
-  { key: 'clinical',    label: 'Clinical Outcomes',     color: '#54819a' },
-  { key: 'authority',   label: 'Authority & Influence', color: '#ff7f29' },
-  { key: 'operational', label: 'Operational Excellence',color: '#7e320c' },
+  { key: 'patient',     label: 'Patient Engagement',    color: '#ff7f29' },
+  { key: 'clinical',    label: 'Clinical Outcomes',      color: '#54819a' },
+  { key: 'authority',   label: 'Authority & Influence',  color: '#eeb20b' },
+  { key: 'operational', label: 'Operational Excellence', color: '#43382f' },
 ] as const;
+
+// Small inline SVG icons — one per category, colored via the filter color
+const FILTER_ICONS: Record<string, (c: string) => React.ReactNode> = {
+  patient: (c) => (
+    <svg width="10" height="10" viewBox="0 0 10 10" fill={c} xmlns="http://www.w3.org/2000/svg">
+      <path d="M5 9C4.4 8.4 1 6 1 3.6 1 2.2 2 1 3.4 1 4.1 1 4.7 1.4 5 1.9 5.3 1.4 5.9 1 6.6 1 8 1 9 2.2 9 3.6 9 6 5.6 8.4 5 9Z"/>
+    </svg>
+  ),
+  clinical: (c) => (
+    <svg width="13" height="10" viewBox="0 0 13 10" fill="none" stroke={c} strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
+      <polyline points="0.5,5 2,5 3,2 4,8 5.5,3.5 6.5,6.5 7.5,5 12.5,5"/>
+    </svg>
+  ),
+  authority: (c) => (
+    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke={c} strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="3" cy="3.5" r="2"/>
+      <circle cx="7" cy="3.5" r="2"/>
+      <line x1="5" y1="3.5" x2="5" y2="3.5"/>
+      <circle cx="5" cy="7.5" r="2"/>
+    </svg>
+  ),
+  operational: (c) => (
+    <svg width="10" height="10" viewBox="0 0 10 10" fill={c} xmlns="http://www.w3.org/2000/svg">
+      <rect x="1" y="1.5" width="8" height="1.6" rx="0.8"/>
+      <rect x="1" y="4.2" width="8" height="1.6" rx="0.8"/>
+      <rect x="1" y="6.9" width="8" height="1.6" rx="0.8"/>
+    </svg>
+  ),
+};
 
 type FilterKey = typeof FILTERS[number]['key'];
 
 const CARD_ICONS: Record<number, string> = {
-  0: '/icon-provider-education-v8.png',
-  1: '/icon-patient-education-v8.png',
+  0: '/icon-provider-education-v9.png',
+  1: '/icon-patient-education-v9.png',
   2: '/icon-patient-journey-v7.png',
-  3: '/icon-team-v9.png',
+  3: '/icon-team-v10.png',
 };
 
 const cards = [
@@ -152,8 +181,13 @@ export default function StackingCards() {
             return (
               <div
                 key={fKey}
-                className="inline-flex items-center gap-1.5 rounded-full text-[10px] font-semibold tracking-[0.09em] uppercase"
-                style={{ padding: '5px 11px', border: '1.5px solid #2b3335', color: '#2b3335' }}
+                className="inline-flex items-center rounded-full text-[10px] font-semibold tracking-[0.09em] uppercase"
+                style={{
+                  padding: '5px 11px',
+                  border: '1.5px solid rgba(43,51,53,0.22)',
+                  color: '#2b3335',
+                  backgroundColor: 'transparent',
+                }}
               >
                 {f.label}
               </div>
@@ -173,8 +207,7 @@ export default function StackingCards() {
             <p className={`${p1} font-normal leading-[1.3] tracking-[-0.01em] mb-4`} style={{ color: TEXT }}>
               {card.headline}
             </p>
-            <p className="text-[16px] leading-[1.5] mb-8" style={{ color: MUTED }}>{card.body}</p>
-            <p className="text-[11px] font-semibold tracking-[0.15em] uppercase mb-3" style={{ color: MUTED }}>Applications:</p>
+            <p className="text-[16px] leading-[1.5] mb-8" style={{ color: '#2b3335' }}>{card.body}</p>
             <div className="flex flex-col gap-[10px]">
               {(card.applications as unknown as string[]).map((item) => (
                 <div key={item} className="flex items-center gap-3 px-4 py-3 rounded-xl" style={{ backgroundColor: ITEM_BG }}>
@@ -197,8 +230,7 @@ export default function StackingCards() {
               <p className={`${p1} font-normal leading-[1.3] tracking-[-0.01em] mb-4`} style={{ color: TEXT }}>
                 {card.headline}
               </p>
-              <p className="text-[16px] leading-[1.5] mb-8" style={{ color: MUTED }}>{card.body}</p>
-              <p className="text-[11px] font-semibold tracking-[0.15em] uppercase mb-3" style={{ color: MUTED }}>Applications:</p>
+              <p className="text-[16px] leading-[1.5] mb-8" style={{ color: '#2b3335' }}>{card.body}</p>
               <div className="flex flex-col gap-[10px]">
                 {(card.applications as unknown as string[]).map((item) => (
                   <div key={item} className="flex items-center gap-3 px-4 py-3 rounded-xl" style={{ backgroundColor: ITEM_BG }}>

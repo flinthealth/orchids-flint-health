@@ -34,7 +34,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="relative pt-[88px] md:pt-[100px] pb-[100px] px-6 md:px-16" style={{ background: 'linear-gradient(to right, #2c3436 0%, #6b4b3e 55%, #a0522d 100%)' }}>
+    <section id="contact" className="relative pt-[88px] md:pt-[100px] pb-[100px] px-6 md:px-16" style={{ background: 'linear-gradient(to right, #3d4d58 0%, #6b4b3e 55%, #a0522d 100%)' }}>
       {/* Grain overlay */}
       <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='gc'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23gc)'/%3E%3C/svg%3E")`, backgroundSize: '400px 400px', opacity: 0.28, mixBlendMode: 'overlay' }} />
       <div className="max-w-[960px] mx-auto relative z-10">
