@@ -21,13 +21,16 @@ export default function ContentBridge() {
         }}
       />
 
-      {/* Responsive photo height */}
+      {/* Responsive photo height + bleed */}
       <style>{`
         .cb-photo { height: 65vh; }
         @media (min-width: 768px)  { .cb-photo { height: clamp(500px, 65vw, 88vh); } }
         @media (min-width: 1200px) { .cb-photo { height: 73vh; } }
         .cb-bleed { height: 55%; background: linear-gradient(to bottom, transparent 0%, rgba(90,65,50,0.55) 40%, rgba(90,65,50,0.85) 65%, rgba(90,65,50,1) 100%); }
         @media (min-width: 1200px) { .cb-bleed { height: 65%; background: linear-gradient(to bottom, transparent 0%, rgba(80,58,44,0.25) 20%, rgba(84,61,46,0.60) 45%, rgba(88,64,48,0.88) 68%, rgba(90,65,50,1) 88%); } }
+        .cb-text { padding-top: 60px; padding-bottom: 60px; }
+        @media (min-width: 768px)  { .cb-text { padding-top: 100px; padding-bottom: 100px; } }
+        @media (min-width: 1200px) { .cb-text { padding-top: 120px; padding-bottom: 120px; } }
       `}</style>
 
       {/* Photo block — bleeds into gradient */}
@@ -39,12 +42,20 @@ export default function ContentBridge() {
           className="w-full h-full object-cover object-[center_15%]"
           style={{ display: 'block' }}
         />
-        {/* Gradient bleed */}
+        {/* Soft top-edge fade — eases transition from the section above */}
+        <div
+          className="absolute top-0 left-0 right-0 pointer-events-none"
+          style={{
+            height: 'clamp(24px, 5vw, 48px)',
+            background: 'linear-gradient(to bottom, rgba(60,50,44,0.55) 0%, transparent 100%)',
+          }}
+        />
+        {/* Gradient bleed — bottom fade into text section */}
         <div className="cb-bleed absolute bottom-0 left-0 right-0 pointer-events-none" />
       </div>
 
       {/* Content — sits on gradient below the photo */}
-      <div className="relative z-20 px-6 pt-[60px] pb-[60px] md:pt-[100px] md:pb-[100px]">
+      <div className="cb-text relative z-20 px-6">
 
         <h2
           className="text-[40px] md:text-[44px] lg:text-[52px] font-light leading-[1.2] tracking-[-0.02em] mb-6 mx-auto"
