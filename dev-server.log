@@ -4,71 +4,15 @@
 
    ▲ Next.js 15.5.8
    - Local:        http://localhost:3000
-   - Network:      http://172.20.0.16:3000
+   - Network:      http://172.20.0.24:3000
    - Environments: .env.local
 
  ✓ Starting...
-Attention: Next.js now collects completely anonymous telemetry regarding usage.
-This information is used to shape Next.js' roadmap and prioritize features.
-You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
-https://nextjs.org/telemetry
-
- ✓ Ready in 1312ms
+ ✓ Ready in 1229ms
  ○ Compiling / ...
- ✓ Compiled / in 3s (617 modules)
- GET / 200 in 3481ms
- GET /?_cb=1777636954281 200 in 186ms
- GET / 200 in 153ms
- GET /?_cb=1777636987402 200 in 143ms
- ✓ Compiled in 336ms (617 modules)
- GET /?_cb=1777636987402 200 in 101ms
- ✓ Compiled in 192ms (617 modules)
- GET /?_cb=1777636987402 200 in 59ms
- ✓ Compiled in 159ms (617 modules)
- GET /?_cb=1777636987402 200 in 60ms
- ✓ Compiled in 157ms (617 modules)
- GET /?_cb=1777636987402 200 in 65ms
- GET /?_cb=1777637869579 200 in 270ms
- ✓ Compiled in 496ms (617 modules)
- GET /?_cb=1777637869579 200 in 97ms
- ✓ Compiled in 217ms (617 modules)
- GET /?_cb=1777637869579 200 in 60ms
- ✓ Compiled in 194ms (617 modules)
- GET /?_cb=1777637869579 200 in 63ms
- ✓ Compiled in 208ms (617 modules)
- GET /?_cb=1777637869579 200 in 64ms
- ✓ Compiled in 191ms (617 modules)
- GET /?_cb=1777637869579 200 in 66ms
- ✓ Compiled in 146ms (617 modules)
- GET /?_cb=1777637869579 200 in 62ms
- GET /?_cb=1777638438822 200 in 261ms
- ✓ Compiled in 374ms (617 modules)
- GET /?_cb=1777638438822 200 in 92ms
- ✓ Compiled in 181ms (617 modules)
- GET /?_cb=1777638438822 200 in 83ms
- GET /?_cb=1777638536001 200 in 253ms
- ✓ Compiled in 368ms (617 modules)
- GET /?_cb=1777638536001 200 in 94ms
- GET /?_cb=1777638614817 200 in 239ms
- ✓ Compiled in 254ms (617 modules)
- GET /?_cb=1777638614817 200 in 59ms
- GET /?_cb=1777638693330 200 in 212ms
- ✓ Compiled in 374ms (617 modules)
- GET /?_cb=1777638693330 200 in 101ms
- ✓ Compiled in 197ms (617 modules)
- GET /?_cb=1777638693330 200 in 64ms
- ✓ Compiled in 150ms (617 modules)
- GET /?_cb=1777638693330 200 in 64ms
- ✓ Compiled in 206ms (617 modules)
- GET /?_cb=1777638693330 200 in 56ms
- ✓ Compiled in 168ms (617 modules)
- GET /?_cb=1777638693330 200 in 58ms
- ✓ Compiled in 154ms (617 modules)
- GET /?_cb=1777638693330 200 in 63ms
- GET /?_cb=1777639790026 200 in 246ms
- ✓ Compiled in 383ms (617 modules)
- GET /?_cb=1777639790026 200 in 101ms
- GET /?_cb=1777639921050 200 in 232ms
- ✓ Compiled in 310ms (617 modules)
- GET /?_cb=1777639921050 200 in 99ms
- GET /?_cb=1777640176870 200 in 203ms
+ ✓ Compiled / in 3s (607 modules)
+ ✓ Compiled in 694ms (257 modules)
+ GET /?_cb=1778360560577 200 in 3753ms
+ ✓ Compiled in 298ms (607 modules)
+ GET /?_cb=1778360560577 200 in 101ms
+ GET /?_cb=1778360607035 200 in 201ms

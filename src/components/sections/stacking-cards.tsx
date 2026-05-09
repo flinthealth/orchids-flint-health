@@ -47,7 +47,7 @@ type FilterKey = typeof FILTERS[number]['key'];
 const CARD_ICONS: Record<number, string> = {
   0: '/icon-provider-education-v9.png',
   1: '/icon-patient-education-v9.png',
-  2: '/icon-patient-journey-v7.png',
+  2: '/icon-patient-journey-v8.png',
   3: '/icon-team-v10.png',
 };
 
