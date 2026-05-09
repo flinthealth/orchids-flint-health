@@ -4,34 +4,31 @@ import React, { useRef, useState, useEffect, useLayoutEffect } from 'react';
 
 const BLOCKS = [
   {
-    title: 'Plan',
+    title: 'Strategy first.',
     body: 'We define your brand positioning, narrative, voice, and format before a single episode is recorded. Interview, conversational, narrative, or panel. The right choice makes everything that follows more powerful. Every creative decision flows from your goals and the outcomes that matter most.',
   },
   {
-    title: 'Produce',
+    title: 'Production handled.',
     body: 'From scripting and scheduling to editing, scoring, and distribution, we manage the entire creative process. You choose the voice. We build the narrative around your experts, with every production decision anchored to your goals.',
   },
   {
-    title: 'Grow',
+    title: 'Measure and grow.',
     body: 'Your series launches and the results follow. Each episode compounds the last, deepening trust, strengthening alignment, and creating a media presence your brand owns permanently. We track what matters and refine as we go.',
   },
 ];
 
-
 const BAR_GRADIENT = 'linear-gradient(to bottom, #eeb20b 0%, #ff7f29 50%, #54819a 100%)';
 
 export default function YourSeries() {
-  const sectionRef  = useRef<HTMLElement>(null);
-  const barColRef   = useRef<HTMLDivElement>(null);
-  const b0Ref       = useRef<HTMLDivElement>(null);
-  const b1Ref       = useRef<HTMLDivElement>(null);
-  const b2Ref       = useRef<HTMLDivElement>(null);
-  const blockRefs   = [b0Ref, b1Ref, b2Ref];
+  const sectionRef = useRef<HTMLElement>(null);
+  const barColRef  = useRef<HTMLDivElement>(null);
+  const b0Ref      = useRef<HTMLDivElement>(null);
+  const b1Ref      = useRef<HTMLDivElement>(null);
+  const b2Ref      = useRef<HTMLDivElement>(null);
+  const blockRefs  = [b0Ref, b1Ref, b2Ref];
 
-  // 0–1: how far the gradient fill has progressed down the bar
   const [fillFrac, setFillFrac] = useState(0);
-  // bar height in px (for inner fill div)
-  const [barH, setBarH] = useState(400);
+  const [barH, setBarH]         = useState(400);
 
   const measureLayout = () => {
     const barEl = barColRef.current;
@@ -50,30 +47,23 @@ export default function YourSeries() {
     const onScroll = () => {
       const secEl = sectionRef.current;
       if (!secEl) return;
-      const rect  = secEl.getBoundingClientRect();
-      const vh    = window.innerHeight;
+      const rect = secEl.getBoundingClientRect();
+      const vh   = window.innerHeight;
 
-      const sectionH   = secEl.offsetHeight;
-      // start: section top hits viewport bottom
-      const startY     = rect.top - vh;          // negative means we've passed start
-      // end: last block's midline hits 40% down screen
+      const sectionH    = secEl.offsetHeight;
+      const startY      = rect.top - vh;
       const lastBlockEl = b2Ref.current;
-      let endY = -sectionH * 0.5; // fallback
+      let endY = -sectionH * 0.5;
       if (lastBlockEl) {
         const lRect = lastBlockEl.getBoundingClientRect();
         endY = lRect.top - vh * 0.40;
       }
 
-      // startY < 0 means section top has passed viewport bottom (we've started scrolling in)
-      // endY < 0 means last block has passed 40% of viewport (fill should be complete)
-      const scrolled = -startY;          // px scrolled since section entered viewport
-      const total    = -(endY - startY); // total px between start and completion
+      const scrolled = -startY;
+      const total    = -(endY - startY);
       if (total <= 0) { setFillFrac(1); return; }
-      const frac = Math.max(0, Math.min(1, scrolled / total));
-
-      setFillFrac(frac);
+      setFillFrac(Math.max(0, Math.min(1, scrolled / total)));
     };
-
 
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
@@ -90,16 +80,16 @@ export default function YourSeries() {
             Your Series
           </p>
           <h2
-            className="text-[40px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-4"
+            className="text-[40px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-5"
             style={{ color: '#43382f' }}
           >
             <span className="md:hidden">From strategy to first episode<br /></span>
             <span className="hidden md:inline">From strategy to<br />first episode </span>
             <span className="font-serif italic">in 90 days.</span>
           </h2>
-          <p className="text-[17px] leading-[1.5]" style={{ color: '#43382f' }}>
-            <span className="md:hidden">Every series follows the same proven path. Three phases. One complete series. Real outcomes.</span>
-            <span className="hidden md:inline">Every series follows the same proven path.<br />Three phases. One complete series. Real outcomes.</span>
+          <p className="text-[17px] leading-[1.65]" style={{ color: '#43382f' }}>
+            Every series follows the same proven path.<br />
+            Three phases. One complete series. Real outcomes.
           </p>
         </div>
 
@@ -109,26 +99,22 @@ export default function YourSeries() {
           {/* Bar column */}
           <div ref={barColRef} className="flex-shrink-0 self-stretch relative w-3 md:w-[29px]">
 
-            {/* Track: always visible at low opacity, flat ends */}
+            {/* Track */}
             <div
               className="absolute inset-0"
               style={{ background: BAR_GRADIENT, opacity: 0.10, borderRadius: 0 }}
             />
 
-            {/* Fill: clip reveal from top — inner div always = barH so gradient proportions stay true */}
+            {/* Animated fill */}
             <div
               className="absolute top-0 left-0 right-0 overflow-hidden"
-              style={{
-                height:       `${fillFrac * 100}%`,
-                borderRadius: 0,
-                transition:   'height 0.1s linear',
-              }}
+              style={{ height: `${fillFrac * 100}%`, borderRadius: 0, transition: 'height 0.1s linear' }}
             >
               <div
                 style={{
-                  position:   'absolute',
-                  top:        0, left: 0, right: 0,
-                  height:     `${barH}px`,
+                  position: 'absolute',
+                  top: 0, left: 0, right: 0,
+                  height: `${barH}px`,
                   background: BAR_GRADIENT,
                 }}
               />
@@ -145,13 +131,13 @@ export default function YourSeries() {
                 className={i < BLOCKS.length - 1 ? 'mb-12 md:mb-14' : ''}
               >
                 <h3
-                  className="text-[17px] md:text-[19px] font-semibold leading-snug mb-3"
+                  className="text-[32px] md:text-[34px] font-bold leading-[1.1] tracking-[-0.01em] mb-3"
                   style={{ color: '#2b3335' }}
                 >
-                  {i + 1}. {block.title}
+                  {block.title}
                 </h3>
                 <p
-                  className="text-[15px] md:text-[16px] leading-[1.65]"
+                  className="text-[14px] md:text-[15px] leading-[1.65]"
                   style={{ color: '#43382f' }}
                 >
                   {block.body}

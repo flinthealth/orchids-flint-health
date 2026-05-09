@@ -345,108 +345,74 @@ export function OurBeliefSection() {
 
 export default function DNAWaveSection() {
   return (
-    <section id="about" className="bg-[#f9f5ef] pt-[80px] md:pt-[100px] pb-0">
+    <section id="about" className="bg-[#f9f5ef] pt-[80px] md:pt-[100px] pb-[80px] md:pb-[100px]">
 
-      {/* Founder section */}
-      <div>
+      {/* Headline */}
+      <div className="px-8 md:px-14 lg:px-20 pt-2 pb-10 md:pb-14 text-center">
+        <p className="text-[#677283] text-[15px] font-semibold tracking-[0.1em] uppercase mb-5">Our Philosophy</p>
+        <h2 className="text-[#43382f] text-[40px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] max-w-[640px] mx-auto">
+          <span className="md:hidden">Build a great series<br />and you&apos;ll have<br /><span className="font-serif italic" style={{ color: '#2b3335' }}>great outcomes</span></span>
+          <span className="hidden md:inline">Build a great series and<br />you&apos;ll have <span className="font-serif italic" style={{ color: '#2b3335' }}>great outcomes</span></span>
+        </h2>
+      </div>
 
-        {/* Headline — above the photo/bio row */}
-        <div className="px-8 md:px-14 lg:px-20 pt-2 pb-8 md:pb-10 text-center">
-          <p className="text-[#677283] text-[15px] font-semibold tracking-[0.1em] uppercase mb-5">Our Philosophy</p>
-          <h2 className="text-[#43382f] text-[40px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] max-w-[640px] mx-auto">
-            <span className="md:hidden">Build a great series<br />and you&apos;ll have<br /><span className="font-serif italic" style={{ color: '#2b3335' }}>great outcomes</span></span>
-            <span className="hidden md:inline">Build a great series and<br />you&apos;ll have <span className="font-serif italic" style={{ color: '#2b3335' }}>great outcomes</span></span>
-          </h2>
-        </div>
+      {/* Two-column: headshot left, bio right */}
+      <div className="px-8 md:px-14 lg:px-20">
+        <div className="flex flex-col md:flex-row md:items-stretch gap-8 md:gap-12 max-w-[1060px] mx-auto">
 
-        {/* Row 1: Headshot left — Founder label + paragraphs 1–2 right */}
-        <div className="flex flex-col md:flex-row items-stretch bg-[#f9f5ef]">
-
-          {/* Headshot */}
-          <div className="w-full md:w-[42%] flex-shrink-0 p-4 md:p-6 md:pb-3 md:self-start">
+          {/* Headshot — full-width on mobile, fixed width on desktop matching right column height */}
+          <div className="w-full md:w-[38%] flex-shrink-0">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/jessica-flint-office.jpg"
+              src="/jessica-flint-headshot.jpg"
               alt="Jessica Flint, Founder"
-              className="w-full object-cover object-[center_20%] rounded-[16px]"
-              style={{ display: 'block', aspectRatio: '3/4', maxHeight: '560px' }}
+              className="w-full h-full object-cover object-[center_20%] rounded-[16px]"
+              style={{ display: 'block', minHeight: 260 }}
             />
           </div>
 
-          {/* Label + paragraphs 1–2 */}
-          <div className="flex-1 flex flex-col px-8 md:px-14 lg:px-20 pt-8 pb-8 md:pt-8 md:pb-10 bg-[#f9f5ef]">
-            <div className="flex flex-col max-w-[560px]">
+          {/* Bio content */}
+          <div className="flex-1 flex flex-col justify-center">
 
-              {/* Label */}
-              <div className="mb-5 flex flex-col gap-1">
-                <span className="text-[#677283] text-[13px] font-semibold tracking-[0.2em] uppercase">Founder</span>
-                <div className="flex items-center gap-2">
-                  <span className="text-[24px] font-light tracking-[-0.01em] font-serif italic">Jessica Flint</span>
-                  <a
-                    href="https://www.linkedin.com/in/jessicahflint/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-shrink-0 text-[#0a66c2] hover:text-[#004182] transition-colors"
-                    aria-label="Jessica Flint on LinkedIn"
-                  >
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                    </svg>
-                  </a>
-                </div>
+            {/* Eyebrow + name */}
+            <div className="mb-6 flex flex-col gap-1">
+              <span className="text-[#677283] text-[13px] font-semibold tracking-[0.2em] uppercase">Founder</span>
+              <div className="flex items-center gap-2">
+                <span className="text-[24px] font-light tracking-[-0.01em] font-serif italic" style={{ color: '#2b3335' }}>Jessica Flint</span>
+                <a
+                  href="https://www.linkedin.com/in/jessicahflint/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-shrink-0 text-[#0a66c2] hover:text-[#004182] transition-colors"
+                  aria-label="Jessica Flint on LinkedIn"
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                  </svg>
+                </a>
               </div>
-
-              <p className="text-[#43382f] text-[17px] leading-[1.5] mb-4">
-                I&apos;ve spent 12 years at the intersection of healthcare and media. Long enough to know what works, what doesn&apos;t, and what&apos;s coming before most people see it.
-              </p>
-              <p className="text-[#43382f] text-[17px] leading-[1.5] mb-6">
-                I built a behavioral health media platform from scratch, designing the app, growing a 450+ provider network, and scaling it to 30 million sessions across a global community. Organically.
-              </p>
-
             </div>
+
+            <p className="text-[#43382f] text-[17px] leading-[1.5] mb-4">
+              I&apos;ve spent 12 years at the intersection of healthcare and media. Long enough to know what works, what doesn&apos;t, and what&apos;s coming before most people see it.
+            </p>
+            <p className="text-[#43382f] text-[17px] leading-[1.5] mb-6">
+              I built a behavioral health media platform from scratch, designing the app, growing a 450+ provider network, and scaling it to 30 million sessions across a global community. Organically.
+            </p>
+
+            <p
+              className="text-[20px] md:text-[22px] leading-[1.45] mb-6"
+              style={{ fontFamily: "'Libre Baskerville', serif", fontStyle: 'italic', color: '#2b3335' }}
+            >
+              The spark behind all of it was understanding what every person in the care ecosystem actually needed, and building media and experiences that delivered it.
+            </p>
+
+            <p className="text-[#43382f] text-[17px] leading-[1.5]">
+              That&apos;s what Flint exists to solve. I work directly with executive leadership as a strategic thought partner, helping you define your narrative, find your voice, and build the series that carries your vision to every patient, provider, and team member who needs to hear it. Every engagement runs through me, from strategy through final delivery, backed by a trusted network of producers and editors I&apos;ve worked with for years.
+            </p>
+
           </div>
         </div>
-
-        {/* Row 2: Paragraphs 3–4 left — mic photo right */}
-        <div className="flex flex-col md:flex-row items-stretch bg-[#f9f5ef]">
-
-          {/* Body */}
-          <div className="flex-1 flex flex-col px-8 md:px-14 lg:px-20 pt-8 pb-12 md:pt-10 md:pb-16 bg-[#f9f5ef] order-2 md:order-1">
-            <div className="flex flex-col max-w-[560px]">
-
-              {/* Rule — desktop only */}
-              <div
-                className="hidden md:block"
-                style={{ width: 48, height: 3, backgroundColor: '#54819a', marginBottom: 24, marginTop: 32 }}
-              />
-
-              {/* Editorial callout — moved from Row 1 */}
-              <p
-                className="text-[20px] md:text-[22px] leading-[1.45] mb-8 mt-4 md:mt-0"
-                style={{ fontFamily: "'Libre Baskerville', serif", fontStyle: 'italic', color: '#2b3335' }}
-              >
-                The spark behind all of it was understanding what every person in the care ecosystem actually needed, and building media and experiences that delivered it.
-              </p>
-              <p className="text-[#43382f] text-[17px] leading-[1.5]">
-                That&apos;s what Flint exists to solve. I work directly with executive leadership as a strategic thought partner, helping you define your narrative, find your voice, and build the series that carries your vision to every patient, provider, and team member who needs to hear it. Every engagement runs through me, from strategy through final delivery, backed by a trusted network of producers and editors I&apos;ve worked with for years.
-              </p>
-
-            </div>
-          </div>
-
-          {/* Mic photo */}
-          <div className="w-full md:w-[42%] flex-shrink-0 p-4 md:p-6 md:pt-3 md:self-start order-1 md:order-2">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/jessica-flint-mic.jpg"
-              alt="Jessica Flint at the microphone"
-              className="w-full object-cover object-top rounded-[16px]"
-              style={{ display: 'block', aspectRatio: '3/4', maxHeight: '560px' }}
-            />
-          </div>
-
-        </div>
-
       </div>
 
     </section>
