@@ -25,7 +25,7 @@ export default function ContentBridge() {
       <style>{`
         .cb-photo { height: 65vh; }
         @media (min-width: 768px)  { .cb-photo { height: clamp(500px, 65vw, 88vh); } }
-        @media (min-width: 1200px) { .cb-photo { height: 73vh; } }
+        @media (min-width: 1200px) { .cb-photo { height: 87vh; } }
         .cb-bleed { height: 55%; background: linear-gradient(to bottom, transparent 0%, rgba(90,65,50,0.55) 40%, rgba(90,65,50,0.85) 65%, rgba(90,65,50,1) 100%); }
         @media (min-width: 1200px) { .cb-bleed { height: 65%; background: linear-gradient(to bottom, transparent 0%, rgba(80,58,44,0.25) 20%, rgba(84,61,46,0.60) 45%, rgba(88,64,48,0.88) 68%, rgba(90,65,50,1) 88%); } }
         .cb-text { padding-top: 60px; padding-bottom: 60px; }
@@ -39,7 +39,7 @@ export default function ContentBridge() {
         <img
           src="/jessica-flint-mic.jpg"
           alt="Jessica Flint at the microphone"
-          className="w-full h-full object-cover object-[center_15%]"
+          className="w-full h-full object-cover object-[center_15%] lg:object-[center_35%]"
           style={{ display: 'block' }}
         />
         {/* Soft top-edge fade — eases transition from the section above */}

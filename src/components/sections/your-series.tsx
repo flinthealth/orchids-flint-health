@@ -5,14 +5,17 @@ import React, { useRef, useState, useEffect, useLayoutEffect } from 'react';
 const BLOCKS = [
   {
     title: 'Strategy first.',
+    sub: 'Define your narrative before a single episode is recorded.',
     body: 'We define your brand positioning, narrative, voice, and format before a single episode is recorded. Interview, conversational, narrative, or panel. The right choice makes everything that follows more powerful. Every creative decision flows from your goals and the outcomes that matter most.',
   },
   {
     title: 'Production handled.',
+    sub: 'You choose the voice. We handle everything else.',
     body: 'From scripting and scheduling to editing, scoring, and distribution, we manage the entire creative process. You choose the voice. We build the narrative around your experts, with every production decision anchored to your goals.',
   },
   {
     title: 'Measure and grow.',
+    sub: 'Each episode compounds the last.',
     body: 'Your series launches and the results follow. Each episode compounds the last, deepening trust, strengthening alignment, and creating a media presence your brand owns permanently. We track what matters and refine as we go.',
   },
 ];
@@ -131,13 +134,19 @@ export default function YourSeries() {
                 className={i < BLOCKS.length - 1 ? 'mb-12 md:mb-14' : ''}
               >
                 <h3
-                  className="text-[32px] md:text-[34px] font-bold leading-[1.1] tracking-[-0.01em] mb-3"
+                  className="text-[22px] md:text-[24px] font-bold leading-[1.15] tracking-[-0.01em] mb-1"
                   style={{ color: '#2b3335' }}
                 >
                   {block.title}
                 </h3>
                 <p
-                  className="text-[14px] md:text-[15px] leading-[1.65]"
+                  className="text-[16px] md:text-[17px] leading-[1.4] mb-3 font-serif italic"
+                  style={{ color: '#43382f' }}
+                >
+                  {block.sub}
+                </p>
+                <p
+                  className="text-[14px] leading-[1.65]"
                   style={{ color: '#43382f' }}
                 >
                   {block.body}
