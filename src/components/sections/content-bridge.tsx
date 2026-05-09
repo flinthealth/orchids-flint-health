@@ -24,7 +24,10 @@ export default function ContentBridge() {
       {/* Responsive photo height */}
       <style>{`
         .cb-photo { height: 65vh; }
-        @media (min-width: 768px) { .cb-photo { height: clamp(500px, 65vw, 88vh); } }
+        @media (min-width: 768px)  { .cb-photo { height: clamp(500px, 65vw, 88vh); } }
+        @media (min-width: 1200px) { .cb-photo { height: 73vh; } }
+        .cb-bleed { height: 55%; background: linear-gradient(to bottom, transparent 0%, rgba(90,65,50,0.55) 40%, rgba(90,65,50,0.85) 65%, rgba(90,65,50,1) 100%); }
+        @media (min-width: 1200px) { .cb-bleed { height: 65%; background: linear-gradient(to bottom, transparent 0%, rgba(80,58,44,0.25) 20%, rgba(84,61,46,0.60) 45%, rgba(88,64,48,0.88) 68%, rgba(90,65,50,1) 88%); } }
       `}</style>
 
       {/* Photo block — bleeds into gradient */}
@@ -36,14 +39,8 @@ export default function ContentBridge() {
           className="w-full h-full object-cover object-[center_15%]"
           style={{ display: 'block' }}
         />
-        {/* Gradient bleed — bottom 35% of photo fades into section background */}
-        <div
-          className="absolute bottom-0 left-0 right-0 pointer-events-none"
-          style={{
-            height: '55%',
-            background: 'linear-gradient(to bottom, transparent 0%, rgba(90,65,50,0.55) 40%, rgba(90,65,50,0.85) 65%, rgba(90,65,50,1) 100%)',
-          }}
-        />
+        {/* Gradient bleed */}
+        <div className="cb-bleed absolute bottom-0 left-0 right-0 pointer-events-none" />
       </div>
 
       {/* Content — sits on gradient below the photo */}
