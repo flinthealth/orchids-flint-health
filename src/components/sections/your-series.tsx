@@ -2,25 +2,152 @@
 
 import React, { useRef, useState, useEffect, useLayoutEffect } from 'react';
 
-const BLOCKS = [
+// ── Icons ────────────────────────────────────────────────────────────────────
+
+const IconPositioning = () => (
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#677283" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="8" cy="8" r="3"/>
+    <path d="M8 1v2M8 13v2M1 8h2M13 8h2"/>
+  </svg>
+);
+
+const IconFormat = () => (
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#677283" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="3" width="12" height="10" rx="1.5"/>
+    <path d="M5 3V2M11 3V2"/>
+    <path d="M2 7h12"/>
+  </svg>
+);
+
+const IconConcept = () => (
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#677283" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M8 2a4 4 0 0 1 4 4c0 2-1.5 3.5-2 4.5H6C5.5 9.5 4 8 4 6a4 4 0 0 1 4-4Z"/>
+    <path d="M6 13h4M7 15h2"/>
+  </svg>
+);
+
+const IconEpisode = () => (
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#677283" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M3 4h10M3 8h7M3 12h5"/>
+  </svg>
+);
+
+const IconMic = () => (
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#677283" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="5.5" y="1" width="5" height="8" rx="2.5"/>
+    <path d="M2.5 8a5.5 5.5 0 0 0 11 0"/>
+    <line x1="8" y1="13.5" x2="8" y2="15"/>
+    <line x1="5.5" y1="15" x2="10.5" y2="15"/>
+  </svg>
+);
+
+const IconVideo = () => (
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#677283" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="1" y="4" width="10" height="8" rx="1.5"/>
+    <path d="M11 7l4-2.5v7L11 9"/>
+  </svg>
+);
+
+const IconWave = () => (
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#677283" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <polyline points="1,8 3,8 4,4 5,12 6.5,6 8,10 9.5,8 16,8"/>
+  </svg>
+);
+
+const IconDistribution = () => (
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#677283" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="8" cy="3" r="1.5"/>
+    <circle cx="3" cy="12" r="1.5"/>
+    <circle cx="13" cy="12" r="1.5"/>
+    <path d="M8 4.5L3 10.5M8 4.5L13 10.5M3 10.5h10"/>
+  </svg>
+);
+
+const IconChart = () => (
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#677283" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <polyline points="1,12 5,7 8,10 11,5 15,3"/>
+    <line x1="1" y1="14" x2="15" y2="14"/>
+  </svg>
+);
+
+const IconSentiment = () => (
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#677283" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="8" cy="8" r="6"/>
+    <path d="M5.5 9.5s.8 1.5 2.5 1.5 2.5-1.5 2.5-1.5"/>
+    <circle cx="5.5" cy="6.5" r="0.75" fill="#677283"/>
+    <circle cx="10.5" cy="6.5" r="0.75" fill="#677283"/>
+  </svg>
+);
+
+const IconCompletion = () => (
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#677283" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="8" cy="8" r="6"/>
+    <path d="M8 2v6l3.5 3.5" strokeLinecap="round"/>
+  </svg>
+);
+
+const IconRetention = () => (
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#677283" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M2 4h12M2 8h9M2 12h6"/>
+    <circle cx="13" cy="10" r="2.5"/>
+    <path d="M12 10l.8.8 1.7-1.6"/>
+  </svg>
+);
+
+// ── Data ─────────────────────────────────────────────────────────────────────
+
+type Tile = { icon: React.ReactNode; title: string; body: string };
+type PillGroup = { label: string; color: string; tiles: Tile[] };
+type Block = { title: string; sub: string; tiles?: Tile[]; pillGroups?: PillGroup[] };
+
+const BLOCKS: Block[] = [
   {
     title: 'Strategy first.',
-    sub: 'Define your narrative before a single episode is recorded.',
-    body: 'We define your brand positioning, narrative, voice, and format before a single episode is recorded. Interview, conversational, narrative, or panel. The right choice makes everything that follows more powerful. Every creative decision flows from your goals and the outcomes that matter most.',
+    sub: 'Before we record a word, we know exactly what your series needs to do.',
+    tiles: [
+      { icon: <IconPositioning />, title: 'Brand Positioning & Narrative', body: 'Your story, voice, and competitive angle defined before production begins.' },
+      { icon: <IconFormat />,      title: 'Format Selection',              body: 'Interview, conversational, narrative, or panel chosen for your goals and audience.' },
+      { icon: <IconConcept />,     title: 'Series Conceptualization',      body: 'Your vision shaped into a compelling series with clear editorial direction.' },
+      { icon: <IconEpisode />,     title: 'Episode Planning',              body: 'Every episode structured, scripted, and on-brand before anyone steps to a mic.' },
+    ],
   },
   {
     title: 'Production handled.',
-    sub: 'You choose the voice. We handle everything else.',
-    body: 'From scripting and scheduling to editing, scoring, and distribution, we manage the entire creative process. You choose the voice. We build the narrative around your experts, with every production decision anchored to your goals.',
+    sub: 'You show up. We handle everything else.',
+    tiles: [
+      { icon: <IconMic />,          title: 'Audio Recording',                    body: 'Studio-quality sound whether remote or in-person.' },
+      { icon: <IconVideo />,        title: 'Video Recording & Editing',          body: 'Every frame captured and polished to match the quality of your brand.' },
+      { icon: <IconWave />,         title: 'Full Audio Editing & Sound Design',  body: 'Engineered, mixed, and scored for maximum listener retention.' },
+      { icon: <IconDistribution />, title: 'Distribution',                       body: 'Delivered to all major platforms or privately to your internal teams.' },
+    ],
   },
   {
     title: 'Measure and grow.',
-    sub: 'Each episode compounds the last.',
-    body: 'Your series launches and the results follow. Each episode compounds the last, deepening trust, strengthening alignment, and creating a media presence your brand owns permanently. We track what matters and refine as we go.',
+    sub: 'The series that earns attention keeps earning it.',
+    pillGroups: [
+      {
+        label: 'Public',
+        color: '#ff7f29',
+        tiles: [
+          { icon: <IconChart />,     title: 'Downloads & Audience Growth',    body: 'Track reach and listener growth across every platform.' },
+          { icon: <IconSentiment />, title: 'Brand Sentiment & Inquiry Lift', body: 'Measure how your series moves perception and drives action.' },
+        ],
+      },
+      {
+        label: 'Internal',
+        color: '#54819a',
+        tiles: [
+          { icon: <IconCompletion />, title: 'Completion Rates',                        body: 'See how many people finish each episode and where attention holds strongest.' },
+          { icon: <IconRetention />,  title: 'Knowledge Retention & Team Alignment',   body: 'Track how well your series is landing with your people.' },
+        ],
+      },
+    ],
   },
 ];
 
 const BAR_GRADIENT = 'linear-gradient(to bottom, #eeb20b 0%, #ff7f29 50%, #54819a 100%)';
+
+// ── Component ─────────────────────────────────────────────────────────────────
 
 export default function YourSeries() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -91,8 +218,8 @@ export default function YourSeries() {
             <span className="font-serif italic">in 90 days.</span>
           </h2>
           <p className="text-[17px] leading-[1.65]" style={{ color: '#43382f' }}>
-            Every series follows the same proven path.<br />
-            Three phases. One complete series. Real outcomes.
+            <span className="hidden md:inline">Every series is custom-built around your goals, your audience,<br />and the outcomes that matter most.</span>
+            <span className="md:hidden">Every series is custom-built around<br />your goals, your audience, and the<br />outcomes that matter most.</span>
           </p>
         </div>
 
@@ -101,28 +228,13 @@ export default function YourSeries() {
 
           {/* Bar column */}
           <div ref={barColRef} className="flex-shrink-0 self-stretch relative w-3 md:w-[29px]">
-
-            {/* Track */}
-            <div
-              className="absolute inset-0"
-              style={{ background: BAR_GRADIENT, opacity: 0.10, borderRadius: 0 }}
-            />
-
-            {/* Animated fill */}
+            <div className="absolute inset-0" style={{ background: BAR_GRADIENT, opacity: 0.10, borderRadius: 0 }} />
             <div
               className="absolute top-0 left-0 right-0 overflow-hidden"
               style={{ height: `${fillFrac * 100}%`, borderRadius: 0, transition: 'height 0.1s linear' }}
             >
-              <div
-                style={{
-                  position: 'absolute',
-                  top: 0, left: 0, right: 0,
-                  height: `${barH}px`,
-                  background: BAR_GRADIENT,
-                }}
-              />
+              <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: `${barH}px`, background: BAR_GRADIENT }} />
             </div>
-
           </div>
 
           {/* Process blocks */}
@@ -133,37 +245,98 @@ export default function YourSeries() {
                 ref={blockRefs[i]}
                 className={i < BLOCKS.length - 1 ? 'mb-12 md:mb-14' : ''}
               >
+                {/* Title */}
                 <h3
                   className="text-[22px] md:text-[24px] font-bold leading-[1.15] tracking-[-0.01em] mb-1"
                   style={{ color: '#2b3335' }}
                 >
                   {block.title}
                 </h3>
+
+                {/* Subheadline */}
                 <p
-                  className="text-[16px] md:text-[17px] leading-[1.4] mb-3 font-serif italic"
+                  className="text-[18px] md:text-[20px] leading-[1.4] mb-4 font-serif italic"
                   style={{ color: '#43382f' }}
                 >
                   {block.sub}
                 </p>
-                <p
-                  className="text-[14px] leading-[1.65]"
-                  style={{ color: '#43382f' }}
-                >
-                  {block.body}
-                </p>
+
+                {/* Service tile grid (blocks 0 & 1) */}
+                {block.tiles && (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {block.tiles.map((tile) => (
+                      <div
+                        key={tile.title}
+                        className="flex flex-col gap-2 p-4 rounded-[12px]"
+                        style={{
+                          background: '#f9f5ef',
+                          border: '1px solid rgba(43,51,53,0.08)',
+                        }}
+                      >
+                        <div className="flex items-center gap-2">
+                          {tile.icon}
+                          <span className="text-[14px] font-semibold leading-snug" style={{ color: '#2b3335' }}>
+                            {tile.title}
+                          </span>
+                        </div>
+                        <p className="text-[13px] leading-[1.55]" style={{ color: '#43382f' }}>
+                          {tile.body}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {/* Pill + metric card groups (block 2) */}
+                {block.pillGroups && (
+                  <div className="flex flex-col gap-6">
+                    {block.pillGroups.map((group) => (
+                      <div key={group.label}>
+                        {/* Pill label */}
+                        <span
+                          className="inline-block text-[12px] font-semibold tracking-[0.08em] uppercase px-4 py-1.5 rounded-full mb-3"
+                          style={{
+                            background: `${group.color}22`,
+                            border: `1px solid ${group.color}66`,
+                            color: group.color,
+                          }}
+                        >
+                          {group.label}
+                        </span>
+                        {/* 2-col tile grid — same style as Strategy/Production tiles */}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                          {group.tiles.map((tile) => (
+                            <div
+                              key={tile.title}
+                              className="flex flex-col gap-2 p-4 rounded-[12px]"
+                              style={{
+                                background: '#f9f5ef',
+                                border: '1px solid rgba(43,51,53,0.08)',
+                              }}
+                            >
+                              <div className="flex items-center gap-2">
+                                {tile.icon}
+                                <span className="text-[14px] font-semibold leading-snug" style={{ color: '#2b3335' }}>
+                                  {tile.title}
+                                </span>
+                              </div>
+                              <p className="text-[13px] leading-[1.55]" style={{ color: '#43382f' }}>
+                                {tile.body}
+                              </p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
               </div>
             ))}
           </div>
 
         </div>
 
-        {/* ── Closing line ── */}
-        <p
-          className="text-center text-[20px] md:text-[22px] leading-[1.45] mt-14 md:mt-16"
-          style={{ fontFamily: "'Libre Baskerville', serif", fontStyle: 'italic', color: '#2b3335', maxWidth: '600px', margin: '3.5rem auto 0' }}
-        >
-          Every series is custom-built around your goals, your audience, and the outcomes that matter most.
-        </p>
 
       </div>
     </section>

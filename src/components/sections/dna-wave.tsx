@@ -358,21 +358,21 @@ export default function DNAWaveSection() {
 
       {/* Two-column: headshot left, bio right */}
       <div className="px-8 md:px-14 lg:px-20">
-        <div className="flex flex-col md:flex-row md:items-stretch gap-8 md:gap-12 max-w-[1060px] mx-auto">
+        <div className="flex flex-col md:flex-row md:items-start gap-8 md:gap-12 max-w-[1060px] mx-auto">
 
-          {/* Headshot — full-width on mobile, fixed width on desktop matching right column height */}
-          <div className="w-full md:w-[38%] flex-shrink-0">
+          {/* Headshot — tablet: 44% (15% bigger than desktop 38%), desktop: 38% */}
+          <div className="w-full md:w-[44%] lg:w-[38%] flex-shrink-0 md:self-start lg:self-stretch">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/jessica-flint-headshot.jpg"
               alt="Jessica Flint, Founder"
-              className="w-full h-full object-cover object-[center_20%] rounded-[16px]"
-              style={{ display: 'block', minHeight: 260 }}
+              className="w-full object-cover object-[center_20%] rounded-[16px] md:max-h-[530px] lg:max-h-none lg:h-full"
+              style={{ display: 'block', aspectRatio: '3/4' }}
             />
           </div>
 
-          {/* Bio content */}
-          <div className="flex-1 flex flex-col justify-center">
+          {/* Bio content — top portion (eyebrow + paras 1 & 2) always in right column */}
+          <div className="flex-1 flex flex-col justify-start lg:justify-center">
 
             {/* Eyebrow + name */}
             <div className="mb-6 flex flex-col gap-1">
@@ -396,23 +396,52 @@ export default function DNAWaveSection() {
             <p className="text-[#43382f] text-[17px] leading-[1.5] mb-4">
               I&apos;ve spent 12 years at the intersection of healthcare and media. Long enough to know what works, what doesn&apos;t, and what&apos;s coming before most people see it.
             </p>
-            <p className="text-[#43382f] text-[17px] leading-[1.5] mb-6">
+            <p className="text-[#43382f] text-[17px] leading-[1.5] md:mb-0 lg:mb-6">
               I built a behavioral health media platform from scratch, designing the app, growing a 450+ provider network, and scaling it to 30 million sessions across a global community. Organically.
             </p>
 
-            <p
-              className="text-[20px] md:text-[22px] leading-[1.45] mb-6"
-              style={{ fontFamily: "'Libre Baskerville', serif", fontStyle: 'italic', color: '#2b3335' }}
-            >
-              The spark behind all of it was understanding what every person in the care ecosystem actually needed, and building media and experiences that delivered it.
-            </p>
+            {/* Callout + para 3 — hidden on tablet (shown below), visible on mobile & desktop */}
+            <div className="hidden lg:block md:hidden">
+              <p
+                className="text-[20px] md:text-[22px] leading-[1.45] mb-6 mt-6"
+                style={{ fontFamily: "'Libre Baskerville', serif", fontStyle: 'italic', color: '#2b3335' }}
+              >
+                The spark behind all of it was understanding what every person in the care ecosystem actually needed, and building media and experiences that delivered it.
+              </p>
+              <p className="text-[#43382f] text-[17px] leading-[1.5]">
+                That&apos;s what Flint exists to solve. I work directly with executive leadership as a strategic thought partner, helping you define your narrative, find your voice, and build the series that carries your vision to every patient, provider, and team member who needs to hear it. Every engagement runs through me, from strategy through final delivery, backed by a trusted network of producers and editors I&apos;ve worked with for years.
+              </p>
+            </div>
 
-            <p className="text-[#43382f] text-[17px] leading-[1.5]">
-              That&apos;s what Flint exists to solve. I work directly with executive leadership as a strategic thought partner, helping you define your narrative, find your voice, and build the series that carries your vision to every patient, provider, and team member who needs to hear it. Every engagement runs through me, from strategy through final delivery, backed by a trusted network of producers and editors I&apos;ve worked with for years.
-            </p>
+            {/* Mobile-only: callout + para 3 in column flow */}
+            <div className="block md:hidden mt-6">
+              <p
+                className="text-[20px] leading-[1.45] mb-6"
+                style={{ fontFamily: "'Libre Baskerville', serif", fontStyle: 'italic', color: '#2b3335' }}
+              >
+                The spark behind all of it was understanding what every person in the care ecosystem actually needed, and building media and experiences that delivered it.
+              </p>
+              <p className="text-[#43382f] text-[17px] leading-[1.5]">
+                That&apos;s what Flint exists to solve. I work directly with executive leadership as a strategic thought partner, helping you define your narrative, find your voice, and build the series that carries your vision to every patient, provider, and team member who needs to hear it. Every engagement runs through me, from strategy through final delivery, backed by a trusted network of producers and editors I&apos;ve worked with for years.
+              </p>
+            </div>
 
           </div>
         </div>
+
+        {/* Tablet-only: callout + para 3 as full-width block below the two columns */}
+        <div className="hidden md:block lg:hidden max-w-[1060px] mx-auto mt-10">
+          <p
+            className="text-[22px] leading-[1.45] mb-6"
+            style={{ fontFamily: "'Libre Baskerville', serif", fontStyle: 'italic', color: '#2b3335' }}
+          >
+            The spark behind all of it was understanding what every person in the care ecosystem actually needed, and building media and experiences that delivered it.
+          </p>
+          <p className="text-[#43382f] text-[17px] leading-[1.5]">
+            That&apos;s what Flint exists to solve. I work directly with executive leadership as a strategic thought partner, helping you define your narrative, find your voice, and build the series that carries your vision to every patient, provider, and team member who needs to hear it. Every engagement runs through me, from strategy through final delivery, backed by a trusted network of producers and editors I&apos;ve worked with for years.
+          </p>
+        </div>
+
       </div>
 
     </section>
