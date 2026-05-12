@@ -38,7 +38,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative w-full bg-[#f9f5ef] overflow-hidden">
+    <section className="relative w-full bg-[#2b3335] overflow-hidden">
       <div className="relative min-h-[680px] lg:min-h-[800px] flex flex-col justify-center pt-[74px] md:pt-[74px]">
 
         {/* Background: video with image fallback */}

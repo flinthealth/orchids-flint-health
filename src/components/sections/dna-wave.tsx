@@ -450,8 +450,18 @@ export default function DNAWaveSection() {
 
 export function TestimonialSection() {
   return (
-    <div style={{ backgroundColor: '#4a5a66' }}>
-      <div className="max-w-[1060px] mx-auto px-8 py-12 md:py-16">
+    <div className="relative overflow-hidden" style={{ background: 'linear-gradient(to right, #3d4d58 0%, #6b4b3e 55%, #a0522d 100%)' }}>
+      {/* Grain overlay */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='gt'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23gt)'/%3E%3C/svg%3E")`,
+          backgroundSize: '400px 400px',
+          opacity: 0.18,
+          mixBlendMode: 'overlay',
+        }}
+      />
+      <div className="relative max-w-[1060px] mx-auto px-8 py-12 md:py-16">
         <div className="bg-white rounded-[20px] overflow-hidden flex flex-col md:flex-row items-stretch">
           {/* Bio: image + name + logo */}
           <div className="w-full md:w-[240px] flex-shrink-0 flex flex-col items-start p-8 gap-4">

@@ -2,30 +2,49 @@
 
 import React, { useState } from "react";
 
-const FAQS = [
+const FAQS: { q: string; a: string[] }[] = [
   {
     q: "Is this the same thing as a podcast?",
-    a: "The word podcast has outgrown what the medium is becoming. And that's a good thing. At its core it's always been something simple and powerful. Authentic conversation about topics people genuinely care about. Today that conversation lives everywhere. Audio on Spotify and Apple, video on YouTube, clips on social, sequences in email. What we produce is a strategic series built with clear learning objectives, a narrative arc, and a specific audience outcome. Every episode is designed to move your audience from awareness to action.",
+    a: [
+      "The word podcast has outgrown what the medium is becoming. And that's a good thing.",
+      "At its core it's always been something simple and powerful. Authentic conversation about topics people genuinely care about. Today that conversation lives everywhere. Audio on Spotify and Apple, video on YouTube, clips on social, sequences in email.",
+      "What we produce is a strategic series built with clear learning objectives, a narrative arc, and a specific audience outcome. Every episode is designed to move your audience from awareness to action.",
+    ],
   },
   {
     q: "How long does it take to launch a series?",
-    a: "Most series launch within one quarter, typically 10 to 12 weeks from strategy through first publish. Launch means your series is live and in market. Production of additional episodes can continue well beyond that, building your content library over time.",
+    a: [
+      "Most series launch within one quarter, typically 10 to 12 weeks from strategy through first publish. Launch means your series is live and in market. Production of additional episodes can continue well beyond that, building your content library over time.",
+    ],
   },
   {
     q: "Do we need experienced hosts?",
-    a: "No on-camera or on-mic experience is necessary. Host development and coaching is part of our process. We've worked with experts who had never been recorded before and helped them find their natural voice, build confidence, and make the recording feel like a conversation.",
+    a: [
+      "No on-camera or on-mic experience is necessary. Host development and coaching is part of our process.",
+      "We've worked with experts who had never been recorded before and helped them find their natural voice, build confidence, and make the recording feel like a conversation.",
+    ],
   },
   {
     q: "How do we market or distribute our series?",
-    a: "It depends on who you're building for. Public series are distributed across Spotify, Apple Podcasts, and YouTube, with short-form clips and email sequences that bring new listeners into the series and keep current ones engaged across your entire content ecosystem. Internal series are private by design. The platform decision is made together based on your organization's existing infrastructure and needs, whether that's a dedicated internal podcast platform, your intranet, or another solution that fits how your team already works.",
+    a: [
+      "It depends on who you're building for.",
+      "Public series are distributed across Spotify, Apple Podcasts, and YouTube, with short-form clips and email sequences that bring new listeners into the series and keep current ones engaged across your entire content ecosystem.",
+      "Internal series are private by design. The platform decision is made together based on your organization's existing infrastructure and needs, whether that's a dedicated internal podcast platform, your intranet, or another solution that fits how your team already works.",
+    ],
   },
   {
     q: "How do you measure whether the series is working?",
-    a: "We track completion rates, downloads, and engagement across every platform using industry-leading analytics tools. For outcomes like referrals, inquiries, and behavior change, we work directly with your team to build attribution tracking that connects series performance to your actual business goals. Success metrics are defined before we produce a single episode so we're measuring what matters to you, not just what's easy to count.",
+    a: [
+      "We track completion rates, downloads, and engagement across every platform using industry-leading analytics tools.",
+      "For outcomes like referrals, inquiries, and behavior change, we work directly with your team to build attribution tracking that connects series performance to your actual business goals. Success metrics are defined before we produce a single episode so we're measuring what matters to you, not just what's easy to count.",
+    ],
   },
   {
     q: "What's the investment?",
-    a: "Series engagements typically range from $25,000 to $100,000. The primary factor is the level of video production required to bring your series vision to life. Audio-first series sit toward the lower end. Full video production with higher creative execution sits toward the upper end. Every proposal is custom-built around your goals, format, and episode scope.",
+    a: [
+      "Series engagements typically range from $25,000 to $100,000. The primary factor is the level of video production required to bring your series vision to life.",
+      "Audio-first series sit toward the lower end. Full video production with higher creative execution sits toward the upper end. Every proposal is custom-built around your goals, format, and episode scope.",
+    ],
   },
 ];
 
@@ -69,15 +88,18 @@ export default function FAQSection() {
                   </span>
                 </div>
                 {isOpen && (
-                  <p className="text-[15px] leading-[1.5] mt-4" style={{ color: '#43382f' }}>
-                    {item.a}
-                  </p>
+                  <div className="mt-4 flex flex-col gap-3">
+                    {item.a.map((para, j) => (
+                      <p key={j} className="text-[15px] leading-[1.65]" style={{ color: '#43382f' }}>
+                        {para}
+                      </p>
+                    ))}
+                  </div>
                 )}
               </div>
             );
           })}
         </div>
-
 
       </div>
     </section>
