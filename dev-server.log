@@ -4,52 +4,75 @@
 
    ▲ Next.js 15.5.8
    - Local:        http://localhost:3000
-   - Network:      http://172.20.0.24:3000
+   - Network:      http://172.20.0.11:3000
    - Environments: .env.local
 
  ✓ Starting...
- ✓ Ready in 1229ms
+ ✓ Ready in 1203ms
  ○ Compiling / ...
- ✓ Compiled / in 3s (607 modules)
- ✓ Compiled in 694ms (257 modules)
- GET /?_cb=1778360560577 200 in 3753ms
- ✓ Compiled in 298ms (607 modules)
- GET /?_cb=1778360560577 200 in 101ms
- GET /?_cb=1778360607035 200 in 201ms
- ✓ Compiled in 171ms (257 modules)
- GET /?_cb=1778360607035 200 in 43ms
- ✓ Compiled in 97ms (257 modules)
- ✓ Compiled in 412ms (607 modules)
- ✓ Compiled in 229ms (607 modules)
- GET /?_cb=1778361455701 200 in 260ms
- ✓ Compiled in 296ms (607 modules)
- GET /?_cb=1778361455701 200 in 88ms
- GET /?_cb=1778362534018 200 in 184ms
- ✓ Compiled in 231ms (607 modules)
- GET /?_cb=1778362534018 200 in 53ms
- ✓ Compiled in 298ms (607 modules)
- GET /?_cb=1778362534018 200 in 56ms
- GET /?_cb=1778363166655 200 in 175ms
- ✓ Compiled in 266ms (607 modules)
- GET /?_cb=1778363166655 200 in 95ms
- ✓ Compiled in 148ms (607 modules)
- GET /?_cb=1778363166655 200 in 83ms
- GET /?_cb=1778363664164 200 in 166ms
- ✓ Compiled in 272ms (607 modules)
+ ✓ Compiled / in 2.7s (607 modules)
+ GET /?_cb=1778625738848 200 in 3093ms
+ ✓ Compiled in 137ms (257 modules)
+ GET /?_cb=1778625738848 200 in 25ms
+ ✓ Compiled in 141ms (257 modules)
+ GET /?_cb=1778625738848 200 in 23ms
+ ✓ Compiled in 216ms (607 modules)
+ GET /?_cb=1778625738848 200 in 81ms
+ GET /?_cb=1778626483458 200 in 211ms
+ ✓ Compiled in 253ms (607 modules)
+ GET /?_cb=1778626483458 200 in 88ms
+ ✓ Compiled in 135ms (607 modules)
+ GET /?_cb=1778626483458 200 in 97ms
+ GET /?_cb=1778626918925 200 in 219ms
+ ✓ Compiled in 265ms (607 modules)
+ GET /?_cb=1778626918925 200 in 103ms
+ GET /?_cb=1778627879644 200 in 191ms
+ ✓ Compiled in 208ms (607 modules)
+ ✓ Compiled in 120ms (607 modules)
+ ✓ Compiled in 123ms (607 modules)
+ GET /?_cb=1778628320497 200 in 221ms
+ GET /?_cb=1778628578857 200 in 138ms
+ ✓ Compiled in 125ms (257 modules)
+ GET /?_cb=1778628578857 200 in 18ms
+ ✓ Compiled in 101ms (257 modules)
+ GET /?_cb=1778628578857 200 in 22ms
+ ✓ Compiled in 179ms (607 modules)
+ GET /?_cb=1778628578857 200 in 84ms
+ ✓ Compiled in 119ms (607 modules)
+ GET /?_cb=1778628578857 200 in 50ms
+ GET /?_cb=1778628795657 200 in 189ms
+ ✓ Compiled in 224ms (607 modules)
+ GET /?_cb=1778628795657 200 in 84ms
+ ✓ Compiled in 134ms (607 modules)
+ GET /?_cb=1778628795657 200 in 50ms
+ GET /?_cb=1778629124062 200 in 154ms
+ ✓ Compiled in 220ms (607 modules)
+ GET /?_cb=1778629124062 200 in 105ms
+ GET /?_cb=1778629619015 200 in 176ms
+ ✓ Compiled in 206ms (607 modules)
+ GET /?_cb=1778629619015 200 in 60ms
+ ✓ Compiled in 283ms (607 modules)
+ GET /?_cb=1778629619015 200 in 43ms
+ GET /?_cb=1778629864678 200 in 186ms
+ ✓ Compiled in 217ms (607 modules)
+ ✓ Compiled in 136ms (607 modules)
+ GET /?_cb=1778630101091 200 in 228ms
+ ✓ Compiled in 195ms (607 modules)
+ GET /?_cb=1778630101091 200 in 57ms
+ GET /?_cb=1778630308479 200 in 153ms
+ ✓ Compiled in 227ms (607 modules)
+ GET /?_cb=1778630308479 200 in 80ms
+ ✓ Compiled in 128ms (607 modules)
+ GET /?_cb=1778630308479 200 in 51ms
  ✓ Compiled in 166ms (607 modules)
- GET /?_cb=1778364992435 200 in 240ms
- ✓ Compiled in 288ms (607 modules)
- GET /?_cb=1778364992435 200 in 55ms
- GET /?_cb=1778365732096 200 in 162ms
- ✓ Compiled in 214ms (607 modules)
- GET /?_cb=1778365732096 200 in 49ms
- GET /?_cb=1778365867021 200 in 149ms
- ✓ Compiled in 221ms (607 modules)
- GET /?_cb=1778365867021 200 in 44ms
- ✓ Compiled in 144ms (607 modules)
- GET /?_cb=1778365867021 200 in 51ms
- GET /?_cb=1778366049751 200 in 146ms
- ✓ Compiled in 281ms (607 modules)
- GET /?_cb=1778366049751 200 in 91ms
- ✓ Compiled in 149ms (607 modules)
- GET /?_cb=1778366049751 200 in 49ms
+ GET /?_cb=1778630308479 200 in 51ms
+ GET /?_cb=1778630428675 200 in 181ms
+ ✓ Compiled in 133ms (257 modules)
+ GET /?_cb=1778630428675 200 in 24ms
+ ✓ Compiled in 110ms (257 modules)
+ GET /?_cb=1778630428675 200 in 22ms
+ ✓ Compiled in 197ms (607 modules)
+ GET /?_cb=1778630428675 200 in 105ms
+ ✓ Compiled in 130ms (607 modules)
+ GET /?_cb=1778630428675 200 in 50ms
+ GET /?_cb=1778631249941 200 in 174ms

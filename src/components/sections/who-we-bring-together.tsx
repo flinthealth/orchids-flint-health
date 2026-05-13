@@ -73,7 +73,7 @@ export default function WhoWeBringTogether() {
           </p>
 
           {/* Headline */}
-          <h2 className="text-[#2b3335] text-[40px] md:text-[44px] lg:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-10 max-w-[520px]">
+          <h2 className="text-[#2b3335] text-[36px] md:text-[46px] lg:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-10 max-w-[520px]">
             Reach patients, providers &amp; teams{' '}
             <br />
             <span className="font-serif italic" style={{ color: '#2b3335' }}>on their terms.</span>

@@ -38,6 +38,8 @@
   --color-warm-cream: #f9f5ef;
   --color-button-hover: #e0a81e;
 
+  --gradient-brand: linear-gradient(to right, #3d4d58 0%, #6b4b3e 55%, #a0522d 100%);
+
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "EB Garamond", ui-serif, Georgia, serif;
   --font-display: "Inter", ui-sans-serif, system-ui, sans-serif;
