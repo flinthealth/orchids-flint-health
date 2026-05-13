@@ -220,7 +220,7 @@ export default function ContentBridge() {
             z-index: 20;
           }
 
-          .cb-continuation { display: none; }
+          .cb-continuation { display: none !important; }
           .cb-body-on-photo { display: block; }
 
           .cb-text-on-photo h2 {
@@ -297,8 +297,8 @@ export default function ContentBridge() {
       </div>
       </div>{/* end cb-photo-wrapper */}
 
-      {/* Body copy continuation block — mobile & tablet only (desktop: display:none via CSS) */}
-      <div className="cb-continuation">
+      {/* Body copy continuation block — mobile & tablet only */}
+      <div className="cb-continuation lg:hidden">
         <p>
           That&rsquo;s not just more time. It&rsquo;s a fundamentally different relationship with your audience.
         </p>
