@@ -33,7 +33,7 @@ export default function WhoWeBringTogether() {
     <section className="bg-[#f9f5ef] w-full overflow-hidden">
 
       {/* ── Two-column layout ── */}
-      <div className="flex flex-col md:flex-row min-h-[640px] md:min-h-[700px]">
+      <div className="flex flex-col md:flex-row min-h-[640px] md:min-h-[700px] lg:min-h-[820px] xl:min-h-[900px]">
 
         {/* ── Left: video with frosted glass stat card ── */}
         <div className="w-full md:w-[42%] lg:w-[38%] relative flex-shrink-0 min-h-[520px] md:min-h-full self-stretch">
