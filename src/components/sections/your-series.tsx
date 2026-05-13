@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState, useEffect, useLayoutEffect } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 
 // ── Icons ────────────────────────────────────────────────────────────────────
 
@@ -145,60 +145,54 @@ const BLOCKS: Block[] = [
   },
 ];
 
-const BAR_GRADIENT = 'linear-gradient(to bottom, #eeb20b 0%, #ff7f29 50%, #54819a 100%)';
 
 // ── Component ─────────────────────────────────────────────────────────────────
 
 export default function YourSeries() {
   const sectionRef = useRef<HTMLElement>(null);
   const barColRef  = useRef<HTMLDivElement>(null);
-  const b0Ref      = useRef<HTMLDivElement>(null);
-  const b1Ref      = useRef<HTMLDivElement>(null);
-  const b2Ref      = useRef<HTMLDivElement>(null);
-  const blockRefs  = [b0Ref, b1Ref, b2Ref];
+  const lightRef   = useRef<HTMLDivElement>(null);
+  const [isDesktop, setIsDesktop] = useState(false);
 
-  const [fillFrac, setFillFrac] = useState(0);
-  const [barH, setBarH]         = useState(400);
-
-  const measureLayout = () => {
-    const barEl = barColRef.current;
-    if (!barEl) return;
-    const h = barEl.offsetHeight;
-    setBarH(h > 0 ? h : 400);
-  };
-
-  useLayoutEffect(() => {
-    measureLayout();
-    window.addEventListener('resize', measureLayout);
-    return () => window.removeEventListener('resize', measureLayout);
+  // detect desktop (≥1200px)
+  useEffect(() => {
+    const mq = window.matchMedia('(min-width: 1200px)');
+    setIsDesktop(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
+    mq.addEventListener('change', handler);
+    return () => mq.removeEventListener('change', handler);
   }, []);
 
+  // drive light position directly via DOM ref — no React state re-renders
   useEffect(() => {
+    if (!isDesktop) return;
+    let rafId: number;
+
     const onScroll = () => {
-      const secEl = sectionRef.current;
-      if (!secEl) return;
-      const rect = secEl.getBoundingClientRect();
-      const vh   = window.innerHeight;
+      cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(() => {
+        const sectionEl = sectionRef.current;
+        const barEl     = barColRef.current;
+        const lightEl   = lightRef.current;
+        if (!sectionEl || !barEl || !lightEl) return;
 
-      const sectionH    = secEl.offsetHeight;
-      const startY      = rect.top - vh;
-      const lastBlockEl = b2Ref.current;
-      let endY = -sectionH * 0.5;
-      if (lastBlockEl) {
-        const lRect = lastBlockEl.getBoundingClientRect();
-        endY = lRect.top - vh * 0.40;
-      }
+        const sectionRect   = sectionEl.getBoundingClientRect();
+        const barHeight     = barEl.offsetHeight;
+        const viewportCenter = window.innerHeight * 0.5;
 
-      const scrolled = -startY;
-      const total    = -(endY - startY);
-      if (total <= 0) { setFillFrac(1); return; }
-      setFillFrac(Math.max(0, Math.min(1, scrolled / total)));
+        const progress = Math.max(0, Math.min(1,
+          (viewportCenter - sectionRect.top) / sectionRect.height
+        ));
+
+        const lightY = progress * (barHeight - 180);
+        lightEl.style.top = `${lightY}px`;
+      });
     };
 
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
+    return () => { window.removeEventListener('scroll', onScroll); cancelAnimationFrame(rafId); };
+  }, [isDesktop]);
 
   return (
     <section ref={sectionRef} className="bg-white py-20 md:py-28">
@@ -224,27 +218,60 @@ export default function YourSeries() {
         </div>
 
         {/* ── Bar + Blocks ── */}
-        <div className="flex gap-8 md:gap-10">
+        <div className="flex gap-6 md:gap-8">
 
-          {/* Bar column */}
-          <div ref={barColRef} className="flex-shrink-0 self-stretch relative w-3 md:w-[29px]">
-            <div className="absolute inset-0" style={{ background: BAR_GRADIENT, opacity: 0.10, borderRadius: 0 }} />
-            <div
-              className="absolute top-0 left-0 right-0 overflow-hidden"
-              style={{ height: `${fillFrac * 100}%`, borderRadius: 0, transition: 'height 0.1s linear' }}
-            >
-              <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: `${barH}px`, background: BAR_GRADIENT }} />
+          {/* Continuous bar column */}
+          <div
+            ref={barColRef}
+            className="flex-shrink-0 self-stretch"
+            style={{ width: '24px', position: 'relative', borderRadius: '12px', overflow: 'hidden' }}
+          >
+            {/* Static bar — gradient + grain */}
+            <div style={{
+              position: 'absolute', inset: 0,
+              borderRadius: '12px',
+              background: 'linear-gradient(to bottom, #3d4d58 0%, #6b4b3e 55%, #a0522d 100%)',
+            }}>
+              <div style={{
+                position: 'absolute', inset: 0,
+                backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23g)'/%3E%3C/svg%3E")`,
+                backgroundSize: '400px 400px',
+                opacity: 0.18,
+                mixBlendMode: 'overlay' as const,
+                pointerEvents: 'none',
+              }} />
             </div>
+            {/* Traveling light orb — desktop only */}
+            {isDesktop && (
+              <div
+                ref={lightRef}
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  width: '60px',
+                  height: '180px',
+                  background: `radial-gradient(
+                    ellipse at center,
+                    rgba(255,230,120,1) 0%,
+                    rgba(238,178,11,0.8) 20%,
+                    rgba(255,180,50,0.4) 45%,
+                    rgba(238,178,11,0.1) 70%,
+                    transparent 100%
+                  )`,
+                  mixBlendMode: 'screen' as const,
+                  pointerEvents: 'none',
+                  filter: 'blur(4px)',
+                }}
+              />
+            )}
           </div>
 
-          {/* Process blocks */}
-          <div className="flex-1">
+          {/* All blocks */}
+          <div className="flex-1 flex flex-col gap-12 md:gap-14">
             {BLOCKS.map((block, i) => (
-              <div
-                key={block.title}
-                ref={blockRefs[i]}
-                className={i < BLOCKS.length - 1 ? 'mb-12 md:mb-14' : ''}
-              >
+              <div key={block.title}>
                 {/* Title */}
                 <h3
                   className="text-[22px] md:text-[24px] font-bold leading-[1.15] tracking-[-0.01em] mb-1"
@@ -334,10 +361,9 @@ export default function YourSeries() {
 
               </div>
             ))}
-          </div>
+          </div>{/* end all blocks */}
 
-        </div>
-
+        </div>{/* end bar + blocks flex row */}
 
       </div>
     </section>
