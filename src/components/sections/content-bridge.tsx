@@ -102,6 +102,66 @@ export default function ContentBridge() {
           .cb-text-desktop { display: none; }
         }
 
+        /* ── RESTORE MOBILE ── */
+        @media (max-width: 767px) {
+          .cb-continuation {
+            display: block;
+            background: linear-gradient(to right, #3d4d58 0%, #6b4b3e 55%, #a0522d 100%);
+            margin-top: -4px;
+            padding: 20px 24px 48px;
+            text-align: left;
+          }
+          .cb-continuation p {
+            font-size: 17px;
+            color: rgba(249,245,239,0.72);
+            line-height: 1.6;
+            max-width: none;
+            margin: 0;
+          }
+          .cb-text-on-photo {
+            display: block;
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            padding: 0 24px 0px;
+            text-align: left;
+            z-index: 20;
+          }
+          .cb-text-on-photo h2 { font-size: 36px; }
+          .cb-text-on-photo p { font-size: 20px; }
+          .cb-vignette-sides { display: none; }
+          .cb-vignette-bottom { display: none; }
+        }
+
+        /* ── RESTORE TABLET ── */
+        @media (min-width: 768px) and (max-width: 1199px) {
+          .cb-continuation {
+            display: block;
+            background: linear-gradient(to right, #3d4d58 0%, #6b4b3e 55%, #a0522d 100%);
+            margin-top: -4px;
+            padding: 20px 48px 56px;
+            text-align: left;
+          }
+          .cb-continuation p {
+            font-size: 18px;
+            color: rgba(249,245,239,0.72);
+            line-height: 1.6;
+            max-width: 560px;
+            margin: 0;
+          }
+          .cb-text-on-photo {
+            display: block;
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            padding: 0 48px 0px;
+            text-align: left;
+            z-index: 20;
+          }
+          .cb-text-on-photo h2 { font-size: 52px; }
+          .cb-text-on-photo p { font-size: 22px; }
+          .cb-vignette-sides { display: none; }
+          .cb-vignette-bottom { display: none; }
+        }
+
         /* ── DESKTOP ── */
         @media (min-width: 1200px) {
           .cb-photo-wrapper { display: contents; }
@@ -236,6 +296,13 @@ export default function ContentBridge() {
         </div>
       </div>
       </div>{/* end cb-photo-wrapper */}
+
+      {/* Body copy continuation block — mobile & tablet only (desktop: display:none via CSS) */}
+      <div className="cb-continuation">
+        <p>
+          That&rsquo;s not just more time. It&rsquo;s a fundamentally different relationship with your audience.
+        </p>
+      </div>
 
       {/* Tablet + Desktop — original centered layout */}
       <div className="cb-text-desktop">
