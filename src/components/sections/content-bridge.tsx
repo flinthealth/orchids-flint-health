@@ -50,6 +50,9 @@ export default function ContentBridge() {
         }
         .cb-text-below { display: block; }
         .cb-text-desktop { display: none; }
+        .cb-vignette-sides { display: none; }
+        .cb-vignette-bottom { display: none; }
+        .cb-body-on-photo { display: none; }
 
         /* ── TABLET ── */
         @media (min-width: 768px) {
@@ -101,52 +104,91 @@ export default function ContentBridge() {
 
         /* ── DESKTOP ── */
         @media (min-width: 1200px) {
+          .cb-photo-wrapper { display: contents; }
+
           .cb-photo {
-            height: 600px;
-            max-width: 700px;
-            margin: 0 auto;
-            border-radius: 4px;
-            overflow: hidden;
+            height: 95vh;
+            width: 100%;
+            max-width: none;
+            margin: 0;
           }
 
           .cb-bleed {
-            position: absolute; bottom: 0; left: 0; right: 0;
+            position: absolute; inset: 0;
             height: 100%;
-            background: linear-gradient(to right, #3d4d58 0%, #6b4b3e 55%, #a0522d 100%);
-            -webkit-mask-image: radial-gradient(ellipse 85% 60% at 50% 100%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 40%, rgba(0,0,0,0.3) 65%, transparent 100%);
-            mask-image: radial-gradient(ellipse 85% 60% at 50% 100%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 40%, rgba(0,0,0,0.3) 65%, transparent 100%);
+            background: none;
+            -webkit-mask-image: none;
+            mask-image: none;
             pointer-events: none;
+          }
+
+          .cb-vignette-sides { display: block; }
+          .cb-vignette-bottom { display: block; }
+
+          .cb-vignette-sides {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: -80px;
+            background:
+              linear-gradient(to right, #3d4d58 0%, rgba(61,77,88,0.9) 22%, rgba(61,77,88,0.5) 38%, transparent 50%,
+              transparent 50%, rgba(160,82,45,0.5) 62%, rgba(160,82,45,0.9) 78%, #a0522d 100%);
+            pointer-events: none;
+            z-index: 2;
+          }
+
+          .cb-vignette-bottom {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 65%;
+            background: linear-gradient(to bottom,
+              transparent 0%,
+              rgba(61,77,88,0.15) 30%,
+              rgba(61,77,88,0.5) 55%,
+              rgba(61,77,88,0.85) 75%,
+              #3d4d58 100%
+            );
+            pointer-events: none;
+            z-index: 2;
           }
 
           .cb-text-on-photo {
             display: block;
             position: absolute;
             bottom: 0; left: 0; right: 0;
-            padding: 0 48px 32px;
-            text-align: center;
+            padding: 0 80px 48px;
+            text-align: left;
             z-index: 20;
-            max-width: 700px;
-            margin: 0 auto;
           }
+
+          .cb-continuation { display: none; }
+          .cb-body-on-photo { display: block; }
 
           .cb-text-on-photo h2 {
             font-size: 52px;
-            max-width: 560px;
-            margin: 0 auto 16px;
+            text-align: left;
+            margin: 0 0 12px;
+            max-width: 680px;
+          }
+
+          .cb-text-on-photo p {
+            font-size: 20px;
+            text-align: left;
           }
 
           .cb-continuation {
             display: block;
+            position: relative;
+            z-index: 30;
+            margin-top: 0;
+            padding: 32px 80px 56px;
+            text-align: left;
             background: linear-gradient(to right, #3d4d58 0%, #6b4b3e 55%, #a0522d 100%);
-            margin-top: -2px;
-            padding: 20px 0 56px;
-            text-align: center;
           }
 
           .cb-continuation p {
             font-size: 18px;
-            max-width: 420px;
-            margin: 0 auto;
+            max-width: 520px;
+            margin: 0;
+            color: rgba(249,245,239,0.72);
           }
 
           .cb-text-desktop { display: none; }
@@ -154,12 +196,13 @@ export default function ContentBridge() {
       `}</style>
 
       {/* Photo block */}
+      <div className="cb-photo-wrapper">
       <div className="cb-photo relative w-full">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/jessica-flint-mic.jpg"
           alt="Jessica Flint at the microphone"
-          className="w-full h-full object-cover object-[center_15%] md:object-[center_25%] lg:object-[center_25%]"
+          className="w-full h-full object-cover object-[center_15%] md:object-[center_25%] lg:object-[center_20%]"
           style={{ display: 'block' }}
         />
         {/* Top edge fade */}
@@ -172,8 +215,11 @@ export default function ContentBridge() {
         />
         {/* Gradient bleed over photo */}
         <div className="cb-bleed" />
+        {/* Desktop vignettes */}
+        <div className="cb-vignette-sides" />
+        <div className="cb-vignette-bottom" />
 
-        {/* Mobile only — headline + (read that again) on the photo */}
+        {/* Headline + (read that again) on the photo */}
         <div className="cb-text-on-photo">
           <h2
             style={{ color: '#f9f5ef', fontWeight: 300, lineHeight: 1.2, letterSpacing: '-0.02em', marginBottom: '16px' }}
@@ -183,12 +229,16 @@ export default function ContentBridge() {
           <p style={{ color: 'rgba(249,245,239,0.45)', fontSize: '20px', fontFamily: 'var(--font-serif)', fontStyle: 'italic', letterSpacing: '0.02em' }}>
             (read that again).
           </p>
+          <p className="cb-body-on-photo" style={{ color: 'rgba(249,245,239,0.72)', fontSize: '17px', lineHeight: 1.65, marginTop: '16px' }}>
+            That&rsquo;s not just more time. It&rsquo;s a fundamentally different relationship with your audience.
+          </p>
         </div>
       </div>
+      </div>{/* end cb-photo-wrapper */}
 
-      {/* Mobile only — body copy continuation block */}
+      {/* Body copy continuation block */}
       <div className="cb-continuation">
-        <p style={{ color: 'rgba(249,245,239,0.65)', fontSize: '17px', lineHeight: 1.65 }}>
+        <p style={{ color: 'rgba(249,245,239,0.72)', fontSize: '17px', lineHeight: 1.65 }}>
           That&rsquo;s not just more time. It&rsquo;s a fundamentally different relationship with your audience.
         </p>
       </div>

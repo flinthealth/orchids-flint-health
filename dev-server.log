@@ -76,3 +76,72 @@
  ✓ Compiled in 130ms (607 modules)
  GET /?_cb=1778630428675 200 in 50ms
  GET /?_cb=1778631249941 200 in 174ms
+ ✓ Compiled in 364ms (257 modules)
+ GET /?_cb=1778631249941 200 in 27ms
+ ✓ Compiled in 503ms (257 modules)
+ ✓ Compiled in 274ms (607 modules)
+ ✓ Compiled in 145ms (607 modules)
+ ⨯ ./src/components/sections/content-bridge.tsx
+Error:   [31mx[0m Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+     ,-[[36;1;4m/home/user/app/src/components/sections/content-bridge.tsx[0m:262:1]
+ [2m259[0m | 
+ [2m260[0m |     </section>
+ [2m261[0m |   );
+ [2m262[0m | }
+     : [35;1m^[0m
+     `----
+  [31mx[0m Expected '</', got 'jsx text (
+  [31m|[0m   );
+  [31m|[0m }
+  [31m|[0m )'
+     ,-[[36;1;4m/home/user/app/src/components/sections/content-bridge.tsx[0m:260:1]
+ [2m257[0m |             </div>
+ [2m258[0m |           </div>
+ [2m259[0m |     
+ [2m260[0m | [35;1m,[0m[35;1m-[0m[35;1m>[0m     </section>
+ [2m261[0m | [35;1m|[0m     );
+ [2m262[0m | [35;1m`[0m[35;1m-[0m[35;1m>[0m }
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/components/sections/content-bridge.tsx
+./src/app/page.tsx
+ ✓ Compiled in 123ms (607 modules)
+ GET /?_cb=1778631667062 200 in 279ms
+ ✓ Compiled in 134ms (257 modules)
+ GET /?_cb=1778631667062 200 in 24ms
+ ✓ Compiled in 98ms (257 modules)
+ ✓ Compiled in 227ms (607 modules)
+ ✓ Compiled in 1241ms (607 modules)
+ GET /?_cb=1778632063727 200 in 228ms
+ ✓ Compiled in 248ms (607 modules)
+ GET /?_cb=1778632063727 200 in 68ms
+ GET /?_cb=1778632165869 200 in 150ms
+ ✓ Compiled in 198ms (607 modules)
+ GET /?_cb=1778632165869 200 in 47ms
+ ✓ Compiled in 138ms (607 modules)
+ GET /?_cb=1778632165869 200 in 56ms
+ ✓ Compiled in 99ms (607 modules)
+ GET /?_cb=1778632165869 200 in 46ms
+ GET /?_cb=1778632329966 200 in 160ms
+ ✓ Compiled in 229ms (607 modules)
+ GET /?_cb=1778632329966 200 in 57ms
+ ✓ Compiled in 134ms (607 modules)
+ GET /?_cb=1778632329966 200 in 47ms
+ ✓ Compiled in 110ms (607 modules)
+ GET /?_cb=1778632329966 200 in 53ms
+ GET /?_cb=1778632604207 200 in 145ms
+ ✓ Compiled in 277ms (607 modules)
+ GET /?_cb=1778632604207 200 in 77ms
+ ✓ Compiled in 118ms (607 modules)
+ GET /?_cb=1778632604207 200 in 51ms
+ ✓ Compiled in 111ms (607 modules)
+ GET /?_cb=1778632604207 200 in 48ms
+ ✓ Compiled in 103ms (607 modules)
+ GET /?_cb=1778632604207 200 in 46ms
+ ✓ Compiled in 135ms (607 modules)
+ GET /?_cb=1778632604207 200 in 58ms
+ GET /?_cb=1778632795989 200 in 172ms
