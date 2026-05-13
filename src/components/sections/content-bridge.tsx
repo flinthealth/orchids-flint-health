@@ -141,9 +141,10 @@ export default function ContentBridge() {
             height: 65%;
             background: linear-gradient(to bottom,
               transparent 0%,
-              rgba(61,77,88,0.15) 30%,
-              rgba(61,77,88,0.5) 55%,
-              rgba(61,77,88,0.85) 75%,
+              transparent 45%,
+              rgba(61,77,88,0.15) 55%,
+              rgba(61,77,88,0.5) 70%,
+              rgba(61,77,88,0.85) 85%,
               #3d4d58 100%
             );
             pointer-events: none;
@@ -153,8 +154,8 @@ export default function ContentBridge() {
           .cb-text-on-photo {
             display: block;
             position: absolute;
-            bottom: 0; left: 0; right: 0;
-            padding: 0 80px 48px;
+            bottom: 0; top: auto; left: 0; right: 0;
+            padding: 0 80px 80px;
             text-align: left;
             z-index: 20;
           }
@@ -235,13 +236,6 @@ export default function ContentBridge() {
         </div>
       </div>
       </div>{/* end cb-photo-wrapper */}
-
-      {/* Body copy continuation block */}
-      <div className="cb-continuation">
-        <p style={{ color: 'rgba(249,245,239,0.72)', fontSize: '17px', lineHeight: 1.65 }}>
-          That&rsquo;s not just more time. It&rsquo;s a fundamentally different relationship with your audience.
-        </p>
-      </div>
 
       {/* Tablet + Desktop — original centered layout */}
       <div className="cb-text-desktop">
