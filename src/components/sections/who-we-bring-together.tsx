@@ -80,7 +80,7 @@ export default function WhoWeBringTogether() {
           </h2>
 
           {/* Stacked list */}
-          <div className="max-w-[460px]">
+          <div className="max-w-[460px] lg:flex lg:flex-col lg:gap-8">
             {CALLOUTS.map(({ title, body }) => (
               <div key={title} style={divider} className="py-6">
                 <p className="text-[18px] font-semibold leading-snug mb-1" style={{ color: '#43382f' }}>{title}</p>
