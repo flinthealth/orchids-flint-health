@@ -279,7 +279,7 @@ export default function ContentBridge() {
         <img
           src="/jessica-flint-mic.jpg"
           alt="Jessica Flint at the microphone"
-          className="w-full h-full object-cover object-[center_15%] md:object-[center_25%] lg:object-[center_20%]"
+          className="w-full h-full object-cover object-[center_15%] md:object-[center_25%] lg:object-[center_20%] 2xl:object-[center_25%]"
           style={{
             display: 'block',
             position: 'absolute',
