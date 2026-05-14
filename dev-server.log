@@ -1,66 +1,24 @@
    ▲ Next.js 15.5.8
    - Local:        http://localhost:3000
-   - Network:      http://172.20.0.38:3000
+   - Network:      http://172.20.0.12:3000
    - Environments: .env.local
 
  ✓ Starting...
-Attention: Next.js now collects completely anonymous telemetry regarding usage.
-This information is used to shape Next.js' roadmap and prioritize features.
-You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
-https://nextjs.org/telemetry
-
- ✓ Ready in 1091ms
+ ✓ Ready in 1175ms
  ○ Compiling / ...
- ✓ Compiled / in 2.8s (607 modules)
- GET / 200 in 3128ms
- GET /?_cb=1778758825431 200 in 205ms
- GET / 200 in 189ms
- GET /?_cb=1778758859755 200 in 176ms
- GET / 200 in 134ms
- GET /?_cb=1778758893297 200 in 153ms
- ✓ Compiled in 315ms (607 modules)
- GET /?_cb=1778758893297 200 in 74ms
- GET /?_cb=1778759249673 200 in 215ms
- ✓ Compiled in 350ms (607 modules)
- GET /?_cb=1778759249673 200 in 126ms
- GET /?_cb=1778759556098 200 in 208ms
- ✓ Compiled in 286ms (607 modules)
- GET /?_cb=1778759556098 200 in 89ms
- GET /?_cb=1778759738988 200 in 194ms
- ✓ Compiled in 371ms (607 modules)
- GET /?_cb=1778759738988 200 in 125ms
- GET /?_cb=1778759913046 200 in 210ms
- ✓ Compiled in 297ms (607 modules)
- GET /?_cb=1778759913046 200 in 74ms
- GET /?_cb=1778760142130 200 in 209ms
- ✓ Compiled in 314ms (607 modules)
- GET /?_cb=1778760142130 200 in 77ms
- GET /?_cb=1778760429460 200 in 196ms
- ✓ Compiled in 352ms (607 modules)
- GET /?_cb=1778760429460 200 in 127ms
- GET /?_cb=1778760579969 200 in 207ms
- ✓ Compiled in 280ms (607 modules)
- GET /?_cb=1778760579969 200 in 84ms
- GET /?_cb=1778760954457 200 in 199ms
- ✓ Compiled in 305ms (607 modules)
- GET /?_cb=1778760954457 200 in 94ms
- GET /?_cb=1778761101098 200 in 201ms
- ✓ Compiled in 278ms (607 modules)
- GET /?_cb=1778761101098 200 in 76ms
- ✓ Compiled in 125ms (607 modules)
- GET /?_cb=1778761101098 200 in 41ms
- ✓ Compiled in 111ms (607 modules)
- GET /?_cb=1778761101098 200 in 40ms
- GET /?_cb=1778761319587 200 in 162ms
- ✓ Compiled in 215ms (607 modules)
- GET /?_cb=1778761319587 200 in 81ms
- GET /?_cb=1778761567897 200 in 154ms
- ✓ Compiled in 213ms (607 modules)
- GET /?_cb=1778761567897 200 in 47ms
- GET /?_cb=1778762054295 200 in 138ms
- ✓ Compiled in 199ms (607 modules)
- GET /?_cb=1778762054295 200 in 43ms
- GET /?_cb=1778762194221 200 in 140ms
- ✓ Compiled in 248ms (607 modules)
- GET /?_cb=1778762194221 200 in 82ms
- GET /?_cb=1778762665805 200 in 160ms
+ ✓ Compiled / in 2.5s (607 modules)
+ GET / 200 in 2916ms
+ GET /?_cb=1778786233771 200 in 132ms
+ ✓ Compiled in 143ms (257 modules)
+ GET /?_cb=1778786233771 200 in 24ms
+ ✓ Compiled in 92ms (257 modules)
+ ✓ Compiled in 74ms (257 modules)
+ ✓ Compiled in 70ms (257 modules)
+ ✓ Compiled in 79ms (257 modules)
+ GET /?_cb=1778786233771 200 in 70ms
+ GET /?_cb=1778786233771 200 in 19ms
+ GET /?_cb=1778786233771 200 in 37ms
+ GET /?_cb=1778786233771 200 in 30ms
+ ✓ Compiled in 442ms (607 modules)
+ GET /?_cb=1778786233771 200 in 122ms
+ GET /?_cb=1778786630548 200 in 181ms
