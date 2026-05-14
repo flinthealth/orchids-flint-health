@@ -254,6 +254,16 @@ export default function ContentBridge() {
 
           .cb-text-desktop { display: none; }
         }
+
+        @media (min-width: 1400px) {
+          .cb-photo {
+            height: 95vh;
+            max-height: 780px;
+          }
+          .cb-photo img {
+            object-position: center 20%;
+          }
+        }
       `}</style>
 
       {/* Photo block */}
