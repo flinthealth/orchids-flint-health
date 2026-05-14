@@ -372,10 +372,10 @@ export default function DNAWaveSection() {
           </div>
 
           {/* Bio content — top portion (eyebrow + paras 1 & 2) always in right column */}
-          <div className="flex-1 flex flex-col justify-start lg:justify-center">
+          <div className="flex-1 flex flex-col justify-start md:justify-center lg:justify-center">
 
             {/* Eyebrow + name */}
-            <div className="mb-6 flex flex-col gap-1">
+            <div className="mb-6 flex flex-col gap-1 md:pt-8">
               <span className="text-[#677283] text-[13px] font-semibold tracking-[0.2em] uppercase">Founder</span>
               <div className="flex items-center gap-2">
                 <span className="text-[24px] font-light tracking-[-0.01em] font-serif italic" style={{ color: '#2b3335' }}>Jessica Flint</span>
@@ -403,7 +403,7 @@ export default function DNAWaveSection() {
             {/* Callout + para 3 — hidden on tablet (shown below), visible on mobile & desktop */}
             <div className="hidden lg:block md:hidden">
               <p
-                className="text-[20px] md:text-[22px] leading-[1.45] mb-6 mt-6"
+                className="text-[20px] md:text-[22px] leading-[1.45] mb-6 mt-2"
                 style={{ fontFamily: "'Libre Baskerville', serif", fontStyle: 'italic', color: '#2b3335' }}
               >
                 The spark behind all of it was understanding what every person in the care ecosystem actually needed, and building media and experiences that delivered it.
