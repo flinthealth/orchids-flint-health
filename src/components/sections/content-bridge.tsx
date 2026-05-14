@@ -274,7 +274,7 @@ export default function ContentBridge() {
 
       {/* Photo block */}
       <div className="cb-photo-wrapper">
-      <div className="cb-photo relative w-full 2xl:scale-90 2xl:overflow-hidden" style={{ position: 'relative' }}>
+      <div className="cb-photo relative w-full" style={{ position: 'relative' }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/jessica-flint-mic.jpg"
