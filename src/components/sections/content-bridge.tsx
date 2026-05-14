@@ -257,24 +257,40 @@ export default function ContentBridge() {
 
         @media (min-width: 1400px) {
           .cb-photo {
-            height: 95vh;
-            max-height: 780px;
+            height: 90vh;
           }
           .cb-photo img {
-            object-position: center 20%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%, black 72%, transparent 100%);
+            mask-image: linear-gradient(to right, transparent 0%, black 12%, black 72%, transparent 100%);
           }
         }
       `}</style>
 
       {/* Photo block */}
       <div className="cb-photo-wrapper">
-      <div className="cb-photo relative w-full">
+      <div className="cb-photo relative w-full 2xl:scale-90 2xl:overflow-hidden" style={{ position: 'relative' }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/jessica-flint-mic.jpg"
           alt="Jessica Flint at the microphone"
           className="w-full h-full object-cover object-[center_15%] md:object-[center_25%] lg:object-[center_20%]"
-          style={{ display: 'block' }}
+          style={{
+            display: 'block',
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 12%, black 72%, transparent 100%)',
+            maskImage: 'linear-gradient(to right, transparent 0%, black 12%, black 72%, transparent 100%)',
+          }}
         />
         {/* Top edge fade */}
         <div

@@ -1,160 +1,57 @@
-
-> maven-clinic-clone@0.1.0 dev
-> next dev --port 3000
-
    ▲ Next.js 15.5.8
    - Local:        http://localhost:3000
-   - Network:      http://172.20.0.59:3000
+   - Network:      http://172.20.0.38:3000
    - Environments: .env.local
 
  ✓ Starting...
- ✓ Ready in 1159ms
+Attention: Next.js now collects completely anonymous telemetry regarding usage.
+This information is used to shape Next.js' roadmap and prioritize features.
+You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+https://nextjs.org/telemetry
+
+ ✓ Ready in 1091ms
  ○ Compiling / ...
- ✓ Compiled / in 2.6s (607 modules)
- GET /?_cb=1778715762609 200 in 3118ms
- ✓ Compiled in 343ms (607 modules)
- GET /?_cb=1778715762609 200 in 127ms
- GET /?_cb=1778716429495 200 in 230ms
- GET /?_cb=1778717187958 200 in 165ms
- ✓ Compiled in 389ms (607 modules)
- GET /?_cb=1778717187958 200 in 85ms
- ✓ Compiled in 209ms (607 modules)
- GET /?_cb=1778717187958 200 in 112ms
- ✓ Compiled in 269ms (607 modules)
- GET /?_cb=1778717187958 200 in 85ms
- GET / 200 in 174ms
- GET /?_cb=1778717469333 200 in 155ms
- ✓ Compiled in 262ms (607 modules)
- GET /?_cb=1778717469333 200 in 98ms
- ✓ Compiled in 146ms (607 modules)
- GET /?_cb=1778717469333 200 in 71ms
- GET /?_cb=1778718443669 200 in 166ms
- ⨯ ./src/components/sections/care-platform.tsx
-Error:   [31mx[0m Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
-     ,-[[36;1;4m/home/user/app/src/components/sections/care-platform.tsx[0m:493:1]
- [2m490[0m |       </div>{/* /grid block */}
- [2m491[0m |     </section>
- [2m492[0m |   );
- [2m493[0m | };
-     : [35;1m^[0m
- [2m494[0m | 
- [2m495[0m | export default CarePlatformSection;
-     `----
-  [31mx[0m Expected '</', got 'jsx text (
-  [31m|[0m   );
-  [31m|[0m };
-  [31m|[0m
-  [31m|[0m export default CarePlatformSection;
-  [31m|[0m )'
-     ,-[[36;1;4m/home/user/app/src/components/sections/care-platform.tsx[0m:491:1]
- [2m488[0m |     
- [2m489[0m |             </div>{/* /content */}
- [2m490[0m |           </div>{/* /grid block */}
- [2m491[0m | [35;1m,[0m[35;1m-[0m[35;1m>[0m     </section>
- [2m492[0m | [35;1m|[0m     );
- [2m493[0m | [35;1m|[0m   };
- [2m494[0m | [35;1m|[0m   
- [2m495[0m | [35;1m`[0m[35;1m-[0m[35;1m>[0m export default CarePlatformSection;
-     `----
-
-Caused by:
-    Syntax Error
-
-Import trace for requested module:
-./src/components/sections/care-platform.tsx
-./src/app/page.tsx
- ○ Compiling /_error ...
- ⨯ ./src/components/sections/care-platform.tsx
-Error:   [31mx[0m Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
-     ,-[[36;1;4m/home/user/app/src/components/sections/care-platform.tsx[0m:493:1]
- [2m490[0m |       </div>{/* /grid block */}
- [2m491[0m |     </section>
- [2m492[0m |   );
- [2m493[0m | };
-     : [35;1m^[0m
- [2m494[0m | 
- [2m495[0m | export default CarePlatformSection;
-     `----
-  [31mx[0m Expected '</', got 'jsx text (
-  [31m|[0m   );
-  [31m|[0m };
-  [31m|[0m
-  [31m|[0m export default CarePlatformSection;
-  [31m|[0m )'
-     ,-[[36;1;4m/home/user/app/src/components/sections/care-platform.tsx[0m:491:1]
- [2m488[0m |     
- [2m489[0m |             </div>{/* /content */}
- [2m490[0m |           </div>{/* /grid block */}
- [2m491[0m | [35;1m,[0m[35;1m-[0m[35;1m>[0m     </section>
- [2m492[0m | [35;1m|[0m     );
- [2m493[0m | [35;1m|[0m   };
- [2m494[0m | [35;1m|[0m   
- [2m495[0m | [35;1m`[0m[35;1m-[0m[35;1m>[0m export default CarePlatformSection;
-     `----
-
-Caused by:
-    Syntax Error
-
-Import trace for requested module:
-./src/components/sections/care-platform.tsx
-./src/app/page.tsx
- GET /?_cb=1778718443669 500 in 3126ms
- GET /?_cb=1778718443669 500 in 12ms
- ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
- GET /?_cb=1778718443669 500 in 23ms
- GET /?_cb=1778718443669 500 in 9ms
- GET /?_cb=1778718443669 500 in 22ms
- ✓ Compiled /_error in 217ms (947 modules)
- ⚠ Fast Refresh had to perform a full reload due to a runtime error.
- ⚠ Fast Refresh had to perform a full reload due to a runtime error.
- GET /?_cb=1778718443669 200 in 615ms
- GET /?_cb=1778718443669 200 in 285ms
- GET /?_cb=1778718443669 200 in 287ms
- ✓ Compiled in 297ms (947 modules)
- GET /?_cb=1778718443669 200 in 87ms
- GET /?_cb=1778718805508 200 in 191ms
- ✓ Compiled in 330ms (947 modules)
- ✓ Compiled in 235ms (947 modules)
- GET /?_cb=1778719398442 200 in 217ms
- GET /?_cb=1778719432573 200 in 108ms
- ✓ Compiled in 320ms (947 modules)
- GET /?_cb=1778719432573 200 in 77ms
- ✓ Compiled in 211ms (947 modules)
- GET /?_cb=1778719432573 200 in 60ms
- ✓ Compiled in 206ms (947 modules)
- GET /?_cb=1778719432573 200 in 65ms
- ✓ Compiled in 217ms (947 modules)
- GET /?_cb=1778719432573 200 in 49ms
- GET /?_cb=1778720815369 200 in 176ms
- ✓ Compiled in 287ms (947 modules)
- GET /?_cb=1778720815369 200 in 94ms
- ✓ Compiled in 207ms (947 modules)
- GET /?_cb=1778720815369 200 in 80ms
- ✓ Compiled in 202ms (947 modules)
- GET /?_cb=1778720815369 200 in 84ms
- ✓ Compiled in 213ms (947 modules)
- GET /?_cb=1778720815369 200 in 91ms
- ✓ Compiled in 157ms (947 modules)
- GET /?_cb=1778720815369 200 in 72ms
- GET /?_cb=1778721225141 200 in 225ms
- ✓ Compiled in 386ms (947 modules)
- GET /?_cb=1778721225141 200 in 73ms
- GET /?_cb=1778721428313 200 in 191ms
- ✓ Compiled in 330ms (947 modules)
- GET /?_cb=1778721428313 200 in 63ms
- GET /?_cb=1778721503168 200 in 199ms
- ✓ Compiled in 598ms (947 modules)
- GET /?_cb=1778721503168 200 in 91ms
- GET /?_cb=1778722057595 200 in 176ms
- ✓ Compiled in 358ms (947 modules)
- GET /?_cb=1778722057595 200 in 114ms
- GET /?_cb=1778722517480 200 in 182ms
- ✓ Compiled in 338ms (947 modules)
- GET /?_cb=1778722517480 200 in 82ms
- GET /?_cb=1778722733338 200 in 166ms
- ✓ Compiled in 381ms (947 modules)
- GET /?_cb=1778722733338 200 in 85ms
- GET /?_cb=1778723567089 200 in 201ms
- ✓ Compiled in 329ms (947 modules)
- GET /?_cb=1778723567089 200 in 87ms
- GET /?_cb=1778724055751 200 in 190ms
+ ✓ Compiled / in 2.8s (607 modules)
+ GET / 200 in 3128ms
+ GET /?_cb=1778758825431 200 in 205ms
+ GET / 200 in 189ms
+ GET /?_cb=1778758859755 200 in 176ms
+ GET / 200 in 134ms
+ GET /?_cb=1778758893297 200 in 153ms
+ ✓ Compiled in 315ms (607 modules)
+ GET /?_cb=1778758893297 200 in 74ms
+ GET /?_cb=1778759249673 200 in 215ms
+ ✓ Compiled in 350ms (607 modules)
+ GET /?_cb=1778759249673 200 in 126ms
+ GET /?_cb=1778759556098 200 in 208ms
+ ✓ Compiled in 286ms (607 modules)
+ GET /?_cb=1778759556098 200 in 89ms
+ GET /?_cb=1778759738988 200 in 194ms
+ ✓ Compiled in 371ms (607 modules)
+ GET /?_cb=1778759738988 200 in 125ms
+ GET /?_cb=1778759913046 200 in 210ms
+ ✓ Compiled in 297ms (607 modules)
+ GET /?_cb=1778759913046 200 in 74ms
+ GET /?_cb=1778760142130 200 in 209ms
+ ✓ Compiled in 314ms (607 modules)
+ GET /?_cb=1778760142130 200 in 77ms
+ GET /?_cb=1778760429460 200 in 196ms
+ ✓ Compiled in 352ms (607 modules)
+ GET /?_cb=1778760429460 200 in 127ms
+ GET /?_cb=1778760579969 200 in 207ms
+ ✓ Compiled in 280ms (607 modules)
+ GET /?_cb=1778760579969 200 in 84ms
+ GET /?_cb=1778760954457 200 in 199ms
+ ✓ Compiled in 305ms (607 modules)
+ GET /?_cb=1778760954457 200 in 94ms
+ GET /?_cb=1778761101098 200 in 201ms
+ ✓ Compiled in 278ms (607 modules)
+ GET /?_cb=1778761101098 200 in 76ms
+ ✓ Compiled in 125ms (607 modules)
+ GET /?_cb=1778761101098 200 in 41ms
+ ✓ Compiled in 111ms (607 modules)
+ GET /?_cb=1778761101098 200 in 40ms
+ GET /?_cb=1778761319587 200 in 162ms
+ ✓ Compiled in 215ms (607 modules)
+ GET /?_cb=1778761319587 200 in 81ms
+ GET /?_cb=1778761567897 200 in 154ms
