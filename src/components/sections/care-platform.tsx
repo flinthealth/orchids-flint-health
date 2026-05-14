@@ -5,11 +5,11 @@ import React, { useState, useEffect, useRef } from 'react';
 const ROTATING_WORDS = ['patient engagement', 'brand authority', 'clinical adoption', 'team alignment'];
 
 const OUTCOMES = [
-  { label: 'engagement', color: '#eeb20b' },
-  { label: 'adherence',  color: '#ff7f29' },
-  { label: 'retention',  color: '#f5a020' },
-  { label: 'referrals',  color: '#54819a' },
-  { label: 'advocacy',   color: '#677283' },
+  { label: 'engagement', color: '#eeb20b', bgRgba: 'rgba(238,178,11,0.55)',  borderRgba: 'rgba(238,178,11,0.7)'  },
+  { label: 'adherence',  color: '#ff7f29', bgRgba: 'rgba(255,127,41,0.55)',  borderRgba: 'rgba(255,127,41,0.7)'  },
+  { label: 'retention',  color: '#f5a020', bgRgba: 'rgba(245,160,32,0.55)',  borderRgba: 'rgba(245,160,32,0.7)'  },
+  { label: 'referrals',  color: '#54819a', bgRgba: 'rgba(84,129,154,0.55)',  borderRgba: 'rgba(84,129,154,0.7)'  },
+  { label: 'advocacy',   color: '#677283', bgRgba: 'rgba(103,114,131,0.55)', borderRgba: 'rgba(103,114,131,0.7)' },
 ];
 
 const CarePlatformSection = () => {
@@ -196,8 +196,8 @@ const CarePlatformSection = () => {
               THE SERIES EFFECT
             </p>
             <h2 className="text-white text-[40px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-4">
-              One well-produced series.<br className="hidden md:block" />{' '}
-              <span className="font-serif italic" style={{ color: '#ffffff' }}>Five outcomes.</span>
+              One compelling series.<br className="hidden md:block" />{' '}
+              <span className="font-serif italic" style={{ color: '#ffffff' }}>Five key outcomes.</span>
             </h2>
             <p className="text-[17px] leading-[1.5] max-w-[560px] mx-auto" style={{ color: 'rgba(249,245,239,0.55)' }}>
               Create a compounding chain of results.
@@ -209,42 +209,43 @@ const CarePlatformSection = () => {
 
             {/* Prism SVG flex wrapper */}
             <div
-              className="flex justify-center items-center py-0 md:py-1 lg:py-0 px-2"
+              className="flex justify-center items-center py-0 md:py-1 lg:py-0 px-2 xl:justify-start xl:pl-[8%]"
               style={{ overflow: 'visible' }}
             >
 
-              {/* ── DESKTOP SVG (lg+) ── */}
+              {/* ── DESKTOP SVG (lg+) — wrapped for pill overlay anchoring ── */}
+              <div className="hidden lg:block relative" style={{ lineHeight: 0, flexShrink: 0 }}>
               <svg
-                className="hidden lg:block"
-                viewBox="0 0 1260 700"
-                width="816"
+                className="block"
+                viewBox="0 0 1600 700"
+                width="100%"
                 height="453"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
                 style={{ overflow: 'visible', maxWidth: '100%' }}
               >
                 <defs>
-                  <linearGradient id="cpa-ray1" x1="385" y1="0" x2="1260" y2="0" gradientUnits="userSpaceOnUse">
+                  <linearGradient id="cpa-ray1" x1="385" y1="0" x2="1600" y2="0" gradientUnits="userSpaceOnUse">
                     <stop offset="0%"  stopColor="#eeb20b" stopOpacity="0.92"/>
                     <stop offset="65%" stopColor="#eeb20b" stopOpacity="0.32"/>
                     <stop offset="100%" stopColor="#eeb20b" stopOpacity="0.00"/>
                   </linearGradient>
-                  <linearGradient id="cpa-ray2" x1="385" y1="0" x2="1260" y2="0" gradientUnits="userSpaceOnUse">
+                  <linearGradient id="cpa-ray2" x1="385" y1="0" x2="1600" y2="0" gradientUnits="userSpaceOnUse">
                     <stop offset="0%"  stopColor="#ff7f29" stopOpacity="0.92"/>
                     <stop offset="65%" stopColor="#ff7f29" stopOpacity="0.32"/>
                     <stop offset="100%" stopColor="#ff7f29" stopOpacity="0.00"/>
                   </linearGradient>
-                  <linearGradient id="cpa-ray3" x1="385" y1="0" x2="1260" y2="0" gradientUnits="userSpaceOnUse">
+                  <linearGradient id="cpa-ray3" x1="385" y1="0" x2="1600" y2="0" gradientUnits="userSpaceOnUse">
                     <stop offset="0%"  stopColor="#f5a020" stopOpacity="0.88"/>
                     <stop offset="65%" stopColor="#f5a020" stopOpacity="0.28"/>
                     <stop offset="100%" stopColor="#f5a020" stopOpacity="0.00"/>
                   </linearGradient>
-                  <linearGradient id="cpa-ray4" x1="385" y1="0" x2="1260" y2="0" gradientUnits="userSpaceOnUse">
+                  <linearGradient id="cpa-ray4" x1="385" y1="0" x2="1600" y2="0" gradientUnits="userSpaceOnUse">
                     <stop offset="0%"  stopColor="#54819a" stopOpacity="0.92"/>
                     <stop offset="65%" stopColor="#54819a" stopOpacity="0.32"/>
                     <stop offset="100%" stopColor="#54819a" stopOpacity="0.00"/>
                   </linearGradient>
-                  <linearGradient id="cpa-ray5" x1="385" y1="0" x2="1260" y2="0" gradientUnits="userSpaceOnUse">
+                  <linearGradient id="cpa-ray5" x1="385" y1="0" x2="1600" y2="0" gradientUnits="userSpaceOnUse">
                     <stop offset="0%"  stopColor="#677283" stopOpacity="0.88"/>
                     <stop offset="65%" stopColor="#677283" stopOpacity="0.28"/>
                     <stop offset="100%" stopColor="#677283" stopOpacity="0.00"/>
@@ -269,11 +270,11 @@ const CarePlatformSection = () => {
                   stroke="url(#cpa-beam)" strokeWidth="8" strokeLinecap="butt" strokeOpacity="0.18"/>
 
                 {/* LAYER 3 — Exit rays (staggered fade-in) */}
-                <polygon className="cp-ray cp-ray-1" points="285,374 1260,-100 1260,80"  fill="url(#cpa-ray1)"/>
-                <polygon className="cp-ray cp-ray-2" points="285,374 1260,80   1260,260" fill="url(#cpa-ray2)"/>
-                <polygon className="cp-ray cp-ray-3" points="285,374 1260,260  1260,440" fill="url(#cpa-ray3)"/>
-                <polygon className="cp-ray cp-ray-4" points="285,374 1260,440  1260,620" fill="url(#cpa-ray4)"/>
-                <polygon className="cp-ray cp-ray-5" points="285,374 1260,620  1260,800" fill="url(#cpa-ray5)"/>
+                <polygon className="cp-ray cp-ray-1" points="285,374 1600,-100 1600,80"  fill="url(#cpa-ray1)"/>
+                <polygon className="cp-ray cp-ray-2" points="285,374 1600,80   1600,260" fill="url(#cpa-ray2)"/>
+                <polygon className="cp-ray cp-ray-3" points="285,374 1600,260  1600,440" fill="url(#cpa-ray3)"/>
+                <polygon className="cp-ray cp-ray-4" points="285,374 1600,440  1600,620" fill="url(#cpa-ray4)"/>
+                <polygon className="cp-ray cp-ray-5" points="285,374 1600,620  1600,800" fill="url(#cpa-ray5)"/>
 
                 {/* LAYER 4 — Phase 2 particles along entry beam */}
                 {phase2 && [0, 0.42, 0.84].map((delay) => (
@@ -286,6 +287,8 @@ const CarePlatformSection = () => {
                   </circle>
                 ))}
               </svg>
+
+              </div>{/* /desktop SVG wrapper */}
 
               {/* ── TABLET SVG (md–lg) ── */}
               <svg
@@ -437,13 +440,13 @@ const CarePlatformSection = () => {
 
             </div>{/* /prism flex */}
 
-            {/* Outcome pills */}
-            <div className="flex flex-col items-center gap-2 md:gap-3 px-6 pb-2 pt-10 md:pt-1">
-              {OUTCOMES.map(({ label, color }, idx) => (
+            {/* Outcome pills — mobile/tablet stacked (hidden at xl) */}
+            <div className="flex flex-col items-center gap-2 md:gap-3 px-6 pb-2 pt-10 md:pt-1 xl:pt-8">
+              {OUTCOMES.map(({ label, bgRgba, borderRgba }, idx) => (
                 <span
                   key={label}
                   className={`cp-pill cp-pill-${idx + 1} inline-block text-[15px] font-semibold tracking-[0.08em] uppercase px-5 py-2 rounded-full text-white`}
-                  style={{ background: `${color}22`, border: `1px solid ${color}55` }}
+                  style={{ background: bgRgba, border: `1px solid ${borderRgba}` }}
                 >
                   {label}
                 </span>

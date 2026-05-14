@@ -121,7 +121,7 @@ export default function WhySeriesWork() {
             </span>
           </h2>
           <p className="text-[#43382f] text-[17px] leading-[1.5] max-w-[420px] md:max-w-[660px] mx-auto">
-            In the AI era, emotional resonance and trust are what protect your position.<br className="hidden md:block" /> A well-produced series builds both.
+            In the AI era, emotional resonance and trust protect your position.<br className="hidden md:block" /> A well-produced series builds both.
           </p>
         </div>
 
@@ -248,14 +248,14 @@ export default function WhySeriesWork() {
                 letterSpacing="0.12em"
                 style={{ opacity: complete ? 1 : 0, transition: "opacity 0.4s ease 0.35s" }}
               >
-                PROTECTIVE
+                COMPETITIVE
               </text>
               <text x={C} y={C + 17} textAnchor="middle" fontSize="11"
                 fontWeight="600" fontFamily="Inter, sans-serif" fill="#677283"
                 letterSpacing="0.12em"
                 style={{ opacity: complete ? 1 : 0, transition: "opacity 0.4s ease 0.4s" }}
               >
-                MOAT
+                ADVANTAGE
               </text>
             </svg>
           </div>

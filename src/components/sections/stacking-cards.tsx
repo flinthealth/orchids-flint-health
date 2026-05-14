@@ -255,7 +255,7 @@ export default function StackingCards() {
           <div className="mb-14 text-center max-w-[680px] mx-auto">
             <div className="mb-5">
               <span className="text-[#677283] text-[15px] font-semibold tracking-[0.1em] uppercase">
-                Explore the Applications
+                Healthcare Applications
               </span>
             </div>
             <h2 className="text-[#2b3335] text-[40px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-0">
