@@ -57,7 +57,7 @@ export default function FAQSection() {
 
         {/* Headline */}
         <h2 className="text-center text-[40px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-5" style={{ color: '#43382f' }}>
-          Frequently Asked Questions
+          Dig a little <span className="font-serif italic">deeper</span>
         </h2>
 
         {/* Body */}

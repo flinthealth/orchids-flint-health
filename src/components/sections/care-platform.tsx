@@ -209,43 +209,43 @@ const CarePlatformSection = () => {
 
             {/* Prism SVG flex wrapper */}
             <div
-              className="flex justify-center items-center py-0 md:py-1 lg:py-0 px-2 xl:justify-start xl:pl-[8%]"
-              style={{ overflow: 'visible' }}
+              className="flex justify-center items-center py-0 md:py-1 lg:py-0 px-0 xl:justify-start xl:pl-[8%]"
+              style={{ overflow: 'visible', width: '100%' }}
             >
 
               {/* ── DESKTOP SVG (lg+) — wrapped for pill overlay anchoring ── */}
               <div className="hidden lg:block relative" style={{ lineHeight: 0, flexShrink: 0 }}>
               <svg
                 className="block"
-                viewBox="0 0 1600 700"
+                viewBox="0 0 1920 700"
                 width="100%"
                 height="453"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                style={{ overflow: 'visible', maxWidth: '100%' }}
+                style={{ overflow: 'visible', maxWidth: 'none' }}
               >
                 <defs>
-                  <linearGradient id="cpa-ray1" x1="385" y1="0" x2="1600" y2="0" gradientUnits="userSpaceOnUse">
+                  <linearGradient id="cpa-ray1" x1="385" y1="0" x2="1920" y2="0" gradientUnits="userSpaceOnUse">
                     <stop offset="0%"  stopColor="#eeb20b" stopOpacity="0.92"/>
                     <stop offset="65%" stopColor="#eeb20b" stopOpacity="0.32"/>
                     <stop offset="100%" stopColor="#eeb20b" stopOpacity="0.00"/>
                   </linearGradient>
-                  <linearGradient id="cpa-ray2" x1="385" y1="0" x2="1600" y2="0" gradientUnits="userSpaceOnUse">
+                  <linearGradient id="cpa-ray2" x1="385" y1="0" x2="1920" y2="0" gradientUnits="userSpaceOnUse">
                     <stop offset="0%"  stopColor="#ff7f29" stopOpacity="0.92"/>
                     <stop offset="65%" stopColor="#ff7f29" stopOpacity="0.32"/>
                     <stop offset="100%" stopColor="#ff7f29" stopOpacity="0.00"/>
                   </linearGradient>
-                  <linearGradient id="cpa-ray3" x1="385" y1="0" x2="1600" y2="0" gradientUnits="userSpaceOnUse">
+                  <linearGradient id="cpa-ray3" x1="385" y1="0" x2="1920" y2="0" gradientUnits="userSpaceOnUse">
                     <stop offset="0%"  stopColor="#f5a020" stopOpacity="0.88"/>
                     <stop offset="65%" stopColor="#f5a020" stopOpacity="0.28"/>
                     <stop offset="100%" stopColor="#f5a020" stopOpacity="0.00"/>
                   </linearGradient>
-                  <linearGradient id="cpa-ray4" x1="385" y1="0" x2="1600" y2="0" gradientUnits="userSpaceOnUse">
+                  <linearGradient id="cpa-ray4" x1="385" y1="0" x2="1920" y2="0" gradientUnits="userSpaceOnUse">
                     <stop offset="0%"  stopColor="#54819a" stopOpacity="0.92"/>
                     <stop offset="65%" stopColor="#54819a" stopOpacity="0.32"/>
                     <stop offset="100%" stopColor="#54819a" stopOpacity="0.00"/>
                   </linearGradient>
-                  <linearGradient id="cpa-ray5" x1="385" y1="0" x2="1600" y2="0" gradientUnits="userSpaceOnUse">
+                  <linearGradient id="cpa-ray5" x1="385" y1="0" x2="1920" y2="0" gradientUnits="userSpaceOnUse">
                     <stop offset="0%"  stopColor="#677283" stopOpacity="0.88"/>
                     <stop offset="65%" stopColor="#677283" stopOpacity="0.28"/>
                     <stop offset="100%" stopColor="#677283" stopOpacity="0.00"/>
@@ -270,11 +270,11 @@ const CarePlatformSection = () => {
                   stroke="url(#cpa-beam)" strokeWidth="8" strokeLinecap="butt" strokeOpacity="0.18"/>
 
                 {/* LAYER 3 — Exit rays (staggered fade-in) */}
-                <polygon className="cp-ray cp-ray-1" points="285,374 1600,-100 1600,80"  fill="url(#cpa-ray1)"/>
-                <polygon className="cp-ray cp-ray-2" points="285,374 1600,80   1600,260" fill="url(#cpa-ray2)"/>
-                <polygon className="cp-ray cp-ray-3" points="285,374 1600,260  1600,440" fill="url(#cpa-ray3)"/>
-                <polygon className="cp-ray cp-ray-4" points="285,374 1600,440  1600,620" fill="url(#cpa-ray4)"/>
-                <polygon className="cp-ray cp-ray-5" points="285,374 1600,620  1600,800" fill="url(#cpa-ray5)"/>
+                <polygon className="cp-ray cp-ray-1" points="285,374 1920,-180 1920,80"  fill="url(#cpa-ray1)"/>
+                <polygon className="cp-ray cp-ray-2" points="285,374 1920,80   1920,300" fill="url(#cpa-ray2)"/>
+                <polygon className="cp-ray cp-ray-3" points="285,374 1920,300  1920,480" fill="url(#cpa-ray3)"/>
+                <polygon className="cp-ray cp-ray-4" points="285,374 1920,480  1920,660" fill="url(#cpa-ray4)"/>
+                <polygon className="cp-ray cp-ray-5" points="285,374 1920,660  1920,900" fill="url(#cpa-ray5)"/>
 
                 {/* LAYER 4 — Phase 2 particles along entry beam */}
                 {phase2 && [0, 0.42, 0.84].map((delay) => (
