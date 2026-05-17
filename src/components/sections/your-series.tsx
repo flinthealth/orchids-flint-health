@@ -30,7 +30,7 @@ export default function YourSeries() {
 
       {/* ── Phase 1 heading block ── */}
       <div className="ys-phase-block max-w-[1000px] mx-auto w-full px-6 md:px-8 pt-10 pb-10 md:pb-4">
-        <div className="ys-phase-number text-[88px] font-light text-[#d4cdc5] tracking-[-0.04em] leading-none mb-1">1</div>
+        <div className="ys-phase-number ys-phase-gradient text-[88px] font-light tracking-[-0.04em] leading-none mb-1">1</div>
         <div className="text-[26px] font-bold text-[#2b3335] leading-tight mb-5">Strategy first.</div>
         <p className="font-serif italic text-[17px] text-[#43382f] leading-relaxed mb-3">
           Before we record a word, we know exactly what your series needs to do.
@@ -47,39 +47,31 @@ export default function YourSeries() {
 
         {/* ── Cell 1 — Narrative ── */}
         <div className="px-6 md:px-10 py-8 md:py-0 md:pt-10 md:pb-0 border-b border-[rgba(43,51,53,0.08)] md:border-b-0 md:border-r border-[rgba(43,51,53,0.08)]">
-          <div className="flex flex-col items-start md:flex-row md:items-start md:justify-between gap-4 md:gap-5 pb-3 lg:pb-4">
+          <div className="flex flex-col items-center text-center pb-1">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/icon-format-narrative-v2.png" className="w-[100px] h-[100px] block md:hidden mx-auto mb-2 object-contain" alt="" />
-            <div className="flex-1 text-left">
-              <p className="text-[22px] font-extrabold tracking-[0.06em] uppercase text-[#2b3335] mb-2">NARRATIVE</p>
-              <p className="text-[13px] font-medium text-[#677283] uppercase tracking-[0.08em] mb-3">STORY-ARC DRIVEN</p>
-              <p className="font-serif italic text-[16px] text-[#677283]">Like Serial or This American Life — for healthcare</p>
-            </div>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/icon-format-narrative-v2.png" className="hidden md:block w-[88px] h-[88px] object-contain flex-shrink-0" alt="" />
+            <img src="/icon-format-narrative-v2.png" className="w-[120px] h-[120px] object-contain mx-auto mb-6" alt="" />
+            <p className="text-[22px] font-extrabold tracking-[0.06em] uppercase text-[#2b3335] mb-2">NARRATIVE</p>
+            <p className="text-[13px] font-medium text-[#677283] uppercase tracking-[0.08em] mb-3">STORY-ARC DRIVEN</p>
           </div>
-          <div className="border-[rgba(43,51,53,0.08)] pt-4 md:pt-6 pb-2 md:pb-0 lg:pb-10">
+          <div className="border-[rgba(43,51,53,0.08)] pt-2 md:pt-2 pb-2 md:pb-0 lg:pb-10">
             <p className="text-[17px] text-[#677283] leading-relaxed mb-3">Documentary-style. Multiple perspectives woven into one cohesive arc with episode hooks, emotional pull, and narrative tension that keeps audiences coming back. Great for series that represent a journey or transformation.</p>
-            <p className="text-[17px] font-bold text-[#2b3335]">Premium tier format.</p>
+            <p className="text-[17px] font-bold text-[#2b3335] mb-2">Premium tier format.</p>
+            <p className="font-serif italic text-[16px] text-[#677283]">Like Serial or This American Life — for healthcare</p>
           </div>
         </div>
 
         {/* ── Cell 2 — Interview ── */}
         <div className="px-6 md:px-10 py-8 md:py-0 md:pt-10 md:pb-0 border-b border-[rgba(43,51,53,0.08)] md:border-b-0">
-          <div className="flex flex-col items-start md:flex-row md:items-start md:justify-between gap-4 md:gap-5 pb-3 lg:pb-4">
+          <div className="flex flex-col items-center text-center pb-1">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/icon-format-interview-v4.png" className="w-[100px] h-[100px] block md:hidden mx-auto mb-2 object-contain" alt="" />
-            <div className="flex-1 text-left">
-              <p className="text-[22px] font-extrabold tracking-[0.06em] uppercase text-[#2b3335] mb-2">INTERVIEW</p>
-              <p className="text-[13px] font-medium text-[#677283] uppercase tracking-[0.08em] mb-3">GUEST-DRIVEN DEPTH</p>
-              <p className="font-serif italic text-[16px] text-[#677283]">Like Armchair Expert or Fresh Air — for healthcare</p>
-            </div>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/icon-format-interview-v4.png" className="hidden md:block w-[88px] h-[88px] object-contain flex-shrink-0" alt="" />
+            <img src="/icon-format-interview-v4.png" className="w-[120px] h-[120px] object-contain mx-auto mb-6" alt="" />
+            <p className="text-[22px] font-extrabold tracking-[0.06em] uppercase text-[#2b3335] mb-2">INTERVIEW</p>
+            <p className="text-[13px] font-medium text-[#677283] uppercase tracking-[0.08em] mb-3">GUEST-DRIVEN DEPTH</p>
           </div>
-          <div className="border-[rgba(43,51,53,0.08)] pt-4 md:pt-6 pb-2 md:pb-0 lg:pb-10">
+          <div className="border-[rgba(43,51,53,0.08)] pt-2 md:pt-2 pb-2 md:pb-0 lg:pb-10">
             <p className="text-[17px] text-[#677283] leading-relaxed mb-3">One guest, one conversation, one perspective at a time. Each episode builds authority, grows trust, and adds a meaningful connection to your network. Great for thought leadership, brand authority, and expanding your reach.</p>
-            <p className="text-[17px] font-bold text-[#2b3335]">Most familiar format.</p>
+            <p className="text-[17px] font-bold text-[#2b3335] mb-2">Most familiar format.</p>
+            <p className="font-serif italic text-[16px] text-[#677283]">Like Armchair Expert or Fresh Air — for healthcare</p>
           </div>
         </div>
 
@@ -88,39 +80,31 @@ export default function YourSeries() {
 
         {/* ── Cell 3 — Conversational ── */}
         <div className="px-6 md:px-10 py-8 md:py-0 md:pt-10 md:pb-10 border-b border-[rgba(43,51,53,0.08)] md:border-b-0 md:border-r border-[rgba(43,51,53,0.08)]">
-          <div className="flex flex-col items-start md:flex-row md:items-start md:justify-between gap-4 md:gap-5 pb-3 lg:pb-4">
+          <div className="flex flex-col items-center text-center pb-1">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/icon-format-conversational-v5.png" className="w-[100px] h-[100px] block md:hidden mx-auto mb-2 object-contain" alt="" />
-            <div className="flex-1 text-left">
-              <p className="text-[22px] font-extrabold tracking-[0.06em] uppercase text-[#2b3335] mb-2">CONVERSATIONAL</p>
-              <p className="text-[13px] font-medium text-[#677283] uppercase tracking-[0.08em] mb-3">CO-HOST CHEMISTRY</p>
-              <p className="font-serif italic text-[16px] text-[#677283]">Like Stuff You Should Know or We Can Do Hard Things — for healthcare</p>
-            </div>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/icon-format-conversational-v5.png" className="hidden md:block w-[88px] h-[88px] object-contain flex-shrink-0 md:pr-4" alt="" />
+            <img src="/icon-format-conversational-v5.png" className="w-[120px] h-[120px] object-contain mx-auto mb-6" alt="" />
+            <p className="text-[22px] font-extrabold tracking-[0.06em] uppercase text-[#2b3335] mb-2">CONVERSATIONAL</p>
+            <p className="text-[13px] font-medium text-[#677283] uppercase tracking-[0.08em] mb-3">CO-HOST CHEMISTRY</p>
           </div>
-          <div className="border-[rgba(43,51,53,0.08)] pt-4 md:pt-6 pb-2 md:pb-0">
+          <div className="border-[rgba(43,51,53,0.08)] pt-2 md:pt-2 pb-2 md:pb-0">
             <p className="text-[17px] text-[#677283] leading-relaxed mb-3">Two hosts, structured and conversational. Makes even the densest clinical or technical ideas feel accessible and easy to follow for public audiences or internal teams. Great for making complex topics feel approachable.</p>
-            <p className="text-[17px] font-bold text-[#2b3335]">Eavesdropping on experts format.</p>
+            <p className="text-[17px] font-bold text-[#2b3335] mb-2">Eavesdropping on experts format.</p>
+            <p className="font-serif italic text-[16px] text-[#677283]">Like Stuff You Should Know or We Can Do Hard Things — for healthcare</p>
           </div>
         </div>
 
         {/* ── Cell 4 — Panel ── */}
         <div className="px-6 md:px-10 py-8 md:py-0 md:pt-10 md:pb-10">
-          <div className="flex flex-col items-start md:flex-row md:items-start md:justify-between gap-4 md:gap-5 pb-3 lg:pb-4">
+          <div className="flex flex-col items-center text-center pb-1">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/icon-format-panel-v2.png" className="w-[100px] h-[100px] block md:hidden mx-auto mb-2 object-contain" alt="" />
-            <div className="flex-1 text-left">
-              <p className="text-[22px] font-extrabold tracking-[0.06em] uppercase text-[#2b3335] mb-2">PANEL</p>
-              <p className="text-[13px] font-medium text-[#677283] uppercase tracking-[0.08em] mb-3">MULTI-EXPERT VOICES</p>
-              <p className="font-serif italic text-[16px] text-[#677283]">Like Intelligence Squared or This Week in Tech — for healthcare</p>
-            </div>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/icon-format-panel-v2.png" className="hidden md:block w-[88px] h-[88px] object-contain flex-shrink-0" alt="" />
+            <img src="/icon-format-panel-v2.png" className="w-[120px] h-[120px] object-contain mx-auto mb-6" alt="" />
+            <p className="text-[22px] font-extrabold tracking-[0.06em] uppercase text-[#2b3335] mb-2">PANEL</p>
+            <p className="text-[13px] font-medium text-[#677283] uppercase tracking-[0.08em] mb-3">MULTI-EXPERT VOICES</p>
           </div>
-          <div className="border-[rgba(43,51,53,0.08)] pt-4 md:pt-6 pb-2 md:pb-0">
+          <div className="border-[rgba(43,51,53,0.08)] pt-2 md:pt-2 pb-2 md:pb-0">
             <p className="text-[17px] text-[#677283] leading-relaxed mb-3">Multiple expert voices in dialogue or debate. Elevates your clinicians and brand in equal measure while signaling range and depth. Great for showcasing expertise and building influence across multiple sectors and specialties.</p>
-            <p className="text-[17px] font-bold text-[#2b3335]">Network-building format.</p>
+            <p className="text-[17px] font-bold text-[#2b3335] mb-2">Network-building format.</p>
+            <p className="font-serif italic text-[16px] text-[#677283]">Like Intelligence Squared or This Week in Tech — for healthcare</p>
           </div>
         </div>
 
@@ -148,7 +132,7 @@ export default function YourSeries() {
 
       {/* ── Phase 2 ── */}
       <div className="ys-phase-block max-w-[1000px] mx-auto w-full px-6 md:px-8 pt-16 pb-10 border-t border-[rgba(43,51,53,0.08)]">
-        <div className="ys-phase-number text-[88px] font-light text-[#d4cdc5] tracking-[-0.04em] leading-none mb-1">2</div>
+        <div className="ys-phase-number ys-phase-gradient text-[88px] font-light tracking-[-0.04em] leading-none mb-1">2</div>
         <div className="text-[26px] font-bold text-[#2b3335] leading-tight mb-5">Production handled.</div>
         <p className="font-serif italic text-[17px] text-[#43382f] leading-relaxed mb-3">
           You show up. We handle everything else.
@@ -160,7 +144,7 @@ export default function YourSeries() {
 
       {/* ── Phase 3 ── */}
       <div className="ys-phase-block max-w-[1000px] mx-auto w-full px-6 md:px-8 pt-16 pb-10 border-t border-[rgba(43,51,53,0.08)]">
-        <div className="ys-phase-number text-[88px] font-light text-[#d4cdc5] tracking-[-0.04em] leading-none mb-1">3</div>
+        <div className="ys-phase-number ys-phase-gradient text-[88px] font-light tracking-[-0.04em] leading-none mb-1">3</div>
         <div className="text-[26px] font-bold text-[#2b3335] leading-tight mb-5">Measure and grow.</div>
         <p className="font-serif italic text-[17px] text-[#43382f] leading-relaxed mb-3">
           The series that earns attention keeps earning it.
@@ -172,6 +156,9 @@ export default function YourSeries() {
 
       {/* Styles */}
       <style>{`
+        .ys-phase-gradient {
+          color: #43382f;
+        }
         @media (max-width: 767px) {
           .ys-phase-block {
             padding-left: 24px !important;
