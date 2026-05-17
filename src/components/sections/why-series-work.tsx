@@ -121,7 +121,7 @@ export default function WhySeriesWork() {
             </span>
           </h2>
           <p className="text-[#43382f] text-[17px] leading-[1.5] max-w-[420px] md:max-w-[660px] mx-auto">
-            In the AI era, emotional resonance and trust protect your position.<br className="hidden md:block" /> A well-produced series builds both.
+            In the AI era, emotional resonance and trust protect your position.<br className="hidden md:block" /> A well-produced episodic series builds both.
           </p>
         </div>
 

@@ -66,11 +66,13 @@ export default function HeroSection() {
           )}
         </div>
 
-        {/* Gradient overlay */}
-        <div className="absolute inset-0 z-10 bg-gradient-to-t from-[#2b3335]/85 via-[#2b3335]/25 to-transparent" />
+        {/* Gradient overlay — mobile/tablet */}
+        <div className="absolute inset-0 z-10 lg:hidden" style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.55) 60%, rgba(0,0,0,0.75) 100%)' }} />
+        {/* Gradient overlay — desktop */}
+        <div className="absolute inset-0 z-10 hidden lg:block bg-gradient-to-t from-[#2b3335]/85 via-[#2b3335]/25 to-transparent" />
 
         {/* Content */}
-        <div className="relative z-20 w-full max-w-[1280px] mx-auto px-6 md:px-24 py-16 lg:py-24 text-left">
+        <div className="relative z-20 w-full max-w-[1280px] mx-auto px-6 md:px-24 pt-[26vh] pb-16 md:py-16 lg:py-24 text-left">
           <div className="max-w-[820px]">
             <div className="h-[22px] md:hidden" />
 

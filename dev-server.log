@@ -1,24 +1,42 @@
    ▲ Next.js 15.5.8
    - Local:        http://localhost:3000
-   - Network:      http://172.20.0.12:3000
+   - Network:      http://172.20.0.34:3000
    - Environments: .env.local
 
  ✓ Starting...
- ✓ Ready in 1175ms
+Attention: Next.js now collects completely anonymous telemetry regarding usage.
+This information is used to shape Next.js' roadmap and prioritize features.
+You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+https://nextjs.org/telemetry
+
+ ✓ Ready in 1159ms
  ○ Compiling / ...
- ✓ Compiled / in 2.5s (607 modules)
- GET / 200 in 2916ms
- GET /?_cb=1778786233771 200 in 132ms
- ✓ Compiled in 143ms (257 modules)
- GET /?_cb=1778786233771 200 in 24ms
+ ✓ Compiled / in 2.7s (606 modules)
+ GET / 200 in 3122ms
+ GET /?_cb=1779040961268 200 in 149ms
+ GET / 200 in 149ms
+ GET /?_cb=1779040992932 200 in 129ms
+ GET / 200 in 93ms
+ GET /?_cb=1779041024060 200 in 161ms
+ ✓ Compiled in 229ms (257 modules)
+ GET /?_cb=1779041024060 200 in 43ms
  ✓ Compiled in 92ms (257 modules)
- ✓ Compiled in 74ms (257 modules)
- ✓ Compiled in 70ms (257 modules)
- ✓ Compiled in 79ms (257 modules)
- GET /?_cb=1778786233771 200 in 70ms
- GET /?_cb=1778786233771 200 in 19ms
- GET /?_cb=1778786233771 200 in 37ms
- GET /?_cb=1778786233771 200 in 30ms
- ✓ Compiled in 442ms (607 modules)
- GET /?_cb=1778786233771 200 in 122ms
- GET /?_cb=1778786630548 200 in 181ms
+ ✓ Compiled in 75ms (257 modules)
+ GET /?_cb=1779041024060 200 in 40ms
+ GET /?_cb=1779041024060 200 in 42ms
+ ✓ Compiled in 258ms (606 modules)
+ GET /?_cb=1779041024060 200 in 115ms
+ GET /?_cb=1779041144307 200 in 229ms
+ ✓ Compiled in 393ms (606 modules)
+ GET /?_cb=1779041144307 200 in 108ms
+ GET / 200 in 155ms
+ GET /?_cb=1779041783936 200 in 92ms
+ ✓ Compiled in 335ms (606 modules)
+ GET /?_cb=1779041783936 200 in 120ms
+ GET /?_cb=1779041944525 200 in 219ms
+ ✓ Compiled in 335ms (606 modules)
+ GET /?_cb=1779041944525 200 in 80ms
+ GET /?_cb=1779042134578 200 in 216ms
+ ✓ Compiled in 304ms (606 modules)
+ GET /?_cb=1779042134578 200 in 93ms
+ GET /?_cb=1779042235264 200 in 165ms

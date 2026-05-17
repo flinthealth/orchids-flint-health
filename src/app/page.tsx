@@ -1,7 +1,6 @@
 import Header from "@/components/sections/header";
 import HeroSection from "@/components/sections/hero";
 import DNAWaveSection from "@/components/sections/dna-wave-client";
-import { TestimonialSection } from "@/components/sections/dna-wave";
 import DNAPulseOnly from "@/components/sections/dna-pulse-client";
 import CarePlatformSection from "@/components/sections/care-platform";
 import FeaturesGrid from "@/components/sections/features-grid";
@@ -46,7 +45,6 @@ export default function Home() {
         <PodcastShowcase />
         <YourSeries />
         <DNAWaveSection />
-        <TestimonialSection />
         {/* <AudienceSolutions /> */}
         {/* <PodcastPulse /> */}
         {/* <ContentPrism /> */}
