@@ -336,7 +336,7 @@ export default function StackingCards() {
                   style={{
                     borderRadius: '24px 24px 0 0',
                     background: '#ede4da',
-                    padding: '0 0 6px 0',
+                    padding: '6px 0 6px 0',
                     position: 'relative',
                     overflow: 'hidden',
                   }}

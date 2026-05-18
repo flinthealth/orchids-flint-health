@@ -32,7 +32,7 @@ export default function YourSeries() {
       <div className="ys-phase-block max-w-[1000px] mx-auto w-full px-6 md:px-8 pt-10 pb-10 md:pb-4">
         <div className="ys-phase-number ys-phase-gradient text-[88px] font-light tracking-[-0.04em] leading-none mb-1">1</div>
         <div className="text-[26px] font-bold text-[#2b3335] leading-tight mb-5">Strategy first.</div>
-        <p className="font-serif italic text-[17px] text-[#43382f] leading-relaxed mb-3">
+        <p className="font-serif italic text-[20px] md:text-[22px] text-[#43382f] leading-relaxed mb-3">
           Before we record a word, we know exactly what your series needs to do.
         </p>
         <p className="text-[17px] text-[#677283] leading-relaxed mb-10">
@@ -121,7 +121,7 @@ export default function YourSeries() {
           {/* Attribution — desktop: left column stacked. Mobile: bottom row */}
           <div className="flex md:flex-col flex-row items-center md:items-center flex-shrink-0 md:w-[104px] gap-3 md:gap-0 order-2 md:order-1">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/testimonial-erin-knopf.jpg" className="ys-testimonial-photo w-[96px] h-[96px] md:w-[96px] md:h-[96px] rounded-full object-cover md:mb-3 flex-shrink-0" alt="Dr. Erin Knopf" />
+            <img src="/testimonial-erin-knopf.jpg" className="ys-testimonial-photo w-[160px] h-[160px] md:w-[96px] md:h-[96px] rounded-full object-cover md:mb-3 flex-shrink-0" alt="Dr. Erin Knopf" />
             <div className="md:text-center">
               <div className="text-[14px] font-semibold text-[#2b3335] leading-snug">Dr. Erin Knopf</div>
               <div className="text-[13px] text-[#677283]">Very Health</div>
@@ -134,7 +134,7 @@ export default function YourSeries() {
       <div className="ys-phase-block max-w-[1000px] mx-auto w-full px-6 md:px-8 pt-16 pb-10 border-t border-[rgba(43,51,53,0.08)]">
         <div className="ys-phase-number ys-phase-gradient text-[88px] font-light tracking-[-0.04em] leading-none mb-1">2</div>
         <div className="text-[26px] font-bold text-[#2b3335] leading-tight mb-5">Production handled.</div>
-        <p className="font-serif italic text-[17px] text-[#43382f] leading-relaxed mb-3">
+        <p className="font-serif italic text-[20px] md:text-[22px] text-[#43382f] leading-relaxed mb-3">
           You show up. We handle everything else.
         </p>
         <p className="text-[17px] text-[#677283] leading-relaxed">
@@ -146,8 +146,8 @@ export default function YourSeries() {
       <div className="ys-phase-block max-w-[1000px] mx-auto w-full px-6 md:px-8 pt-16 pb-10 border-t border-[rgba(43,51,53,0.08)]">
         <div className="ys-phase-number ys-phase-gradient text-[88px] font-light tracking-[-0.04em] leading-none mb-1">3</div>
         <div className="text-[26px] font-bold text-[#2b3335] leading-tight mb-5">Measure and grow.</div>
-        <p className="font-serif italic text-[17px] text-[#43382f] leading-relaxed mb-3">
-          The series that earns attention keeps earning it.
+        <p className="font-serif italic text-[20px] md:text-[22px] text-[#43382f] leading-relaxed mb-3">
+          A great series doesn&rsquo;t just perform. It compounds.
         </p>
         <p className="text-[17px] text-[#677283] leading-relaxed">
           Downloads, audience growth, brand sentiment, and inquiry lift for public series. Completion rates and knowledge retention for internal ones.

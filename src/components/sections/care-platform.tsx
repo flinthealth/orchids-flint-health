@@ -454,7 +454,7 @@ const CarePlatformSection = () => {
             </div>
 
             {/* Closing line */}
-            <p className="cp-closing text-center text-[17px] leading-[1.5] max-w-[480px] mx-auto px-6 pt-6 pb-24"
+            <p className="cp-closing text-center text-[17px] leading-[1.5] max-w-[480px] mx-auto px-6 pt-10 md:pt-6 pb-24"
               style={{ color: 'rgba(249,245,239,0.55)' }}>
               Each episode builds trust,{" "}
               <br className="md:hidden" />
