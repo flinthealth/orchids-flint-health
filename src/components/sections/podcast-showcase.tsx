@@ -47,6 +47,7 @@ const CASE_STUDIES = [
 type Stat = { value: string; label: string; highlight?: boolean };
 
 function StatItem({ stat }: { stat: Stat }) {
+  const parts = stat.label.split('\n');
   return (
     <div className="flex flex-col">
       <span
@@ -59,7 +60,12 @@ function StatItem({ stat }: { stat: Stat }) {
         className="text-[10px] font-semibold tracking-[0.12em] uppercase mt-1.5 leading-snug"
         style={{ color: "#677283" }}
       >
-        {stat.label}
+        {parts.map((part, i) => (
+          <React.Fragment key={i}>
+            {part}
+            {i < parts.length - 1 && <br className="hidden md:block lg:hidden" />}
+          </React.Fragment>
+        ))}
       </span>
     </div>
   );
@@ -124,7 +130,7 @@ function CaseStudyCard({
 
           {/* Stats row */}
           <div
-            className="flex flex-row flex-wrap gap-x-8 gap-y-3 pt-4"
+            className="flex flex-row flex-wrap md:flex-nowrap gap-x-8 gap-y-3 pt-4"
             style={{ borderTop: "0.5px solid rgba(103,114,131,0.15)" }}
           >
             {stats.map((s) => (
@@ -173,13 +179,26 @@ function CaseStudyCard({
             </p>
           </div>
 
-          {/* Stats row */}
+          {/* Stats — mobile: 3 centered rows */}
           <div
-            className="grid grid-cols-2 gap-x-8 gap-y-5 pt-5"
+            className="flex flex-col items-center gap-4 pt-5"
             style={{ borderTop: "0.5px solid rgba(103,114,131,0.15)" }}
           >
             {stats.map((s) => (
-              <StatItem key={s.label} stat={s} />
+              <div key={s.label} className="text-center">
+                <span
+                  className="block text-[22px] font-medium leading-none tracking-[-0.02em]"
+                  style={{ color: s.highlight ? "#ff7f29" : "#43382f" }}
+                >
+                  {s.value}
+                </span>
+                <span
+                  className="block text-[10px] font-semibold tracking-[0.12em] uppercase mt-1.5 leading-snug"
+                  style={{ color: "#677283" }}
+                >
+                  {s.label.replace('\n', ' ')}
+                </span>
+              </div>
             ))}
           </div>
         </div>
