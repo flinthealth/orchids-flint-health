@@ -409,7 +409,7 @@ export default function DNAWaveSection() {
                 The spark behind all of it was understanding what every person in the care ecosystem actually needed, and building media and experiences that delivered it.
               </p>
               <p className="text-[#43382f] text-[17px] leading-[1.5]">
-                That&apos;s what Flint exists to solve. I work directly with executive leadership as a strategic thought partner, helping you define your narrative, find your voice, and build the series that carries your vision to every patient, provider, and team member who needs to hear it. Every engagement runs through me, from strategy through final delivery, backed by a trusted network of producers and editors I&apos;ve worked with for years.
+                That&apos;s what Flint is here for. I work directly with executive leadership as a strategic thought partner, helping you define your narrative, find your voice, and build the series that carries your vision to every patient, provider, and team member who needs to hear it. Every engagement runs through me, from strategy through final delivery, backed by a trusted network of producers and editors I&apos;ve worked with for years.
               </p>
             </div>
 
@@ -422,7 +422,7 @@ export default function DNAWaveSection() {
                 The spark behind all of it was understanding what every person in the care ecosystem actually needed, and building media and experiences that delivered it.
               </p>
               <p className="text-[#43382f] text-[17px] leading-[1.5]">
-                That&apos;s what Flint exists to solve. I work directly with executive leadership as a strategic thought partner, helping you define your narrative, find your voice, and build the series that carries your vision to every patient, provider, and team member who needs to hear it. Every engagement runs through me, from strategy through final delivery, backed by a trusted network of producers and editors I&apos;ve worked with for years.
+                That&apos;s what Flint is here for. I work directly with executive leadership as a strategic thought partner, helping you define your narrative, find your voice, and build the series that carries your vision to every patient, provider, and team member who needs to hear it. Every engagement runs through me, from strategy through final delivery, backed by a trusted network of producers and editors I&apos;ve worked with for years.
               </p>
             </div>
 
@@ -438,7 +438,7 @@ export default function DNAWaveSection() {
             The spark behind all of it was understanding what every person in the care ecosystem actually needed, and building media and experiences that delivered it.
           </p>
           <p className="text-[#43382f] text-[17px] leading-[1.5]">
-            That&apos;s what Flint exists to solve. I work directly with executive leadership as a strategic thought partner, helping you define your narrative, find your voice, and build the series that carries your vision to every patient, provider, and team member who needs to hear it. Every engagement runs through me, from strategy through final delivery, backed by a trusted network of producers and editors I&apos;ve worked with for years.
+            That&apos;s what Flint is here for. I work directly with executive leadership as a strategic thought partner, helping you define your narrative, find your voice, and build the series that carries your vision to every patient, provider, and team member who needs to hear it. Every engagement runs through me, from strategy through final delivery, backed by a trusted network of producers and editors I&apos;ve worked with for years.
           </p>
         </div>
 
