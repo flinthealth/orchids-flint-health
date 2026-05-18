@@ -57,7 +57,7 @@ const cards = [
     filters: ['clinical', 'authority', 'operational'] as FilterKey[],
     title: 'HCP Training & Clinical Education',
     headline: 'Protocols are only as powerful as the providers who adopt them.',
-    body: "We don't replace clinical demonstrations. We make them stick. Narrative context helps providers understand the why before they see the what. The result is faster adoption, stronger clinical judgment, and training your team actually looks forward to.",
+    body: "The best clinical training doesn't just inform. It changes how providers think and practice. We build narrative series that bring protocols, frameworks, and therapeutic approaches to life, driving faster adoption and stronger clinical judgment across your team.",
     applications: [
       'Protocol walkthroughs with expert clinical commentary',
       'Patient and clinical case study series',
@@ -70,7 +70,7 @@ const cards = [
     filters: ['patient', 'clinical', 'authority'] as FilterKey[],
     title: 'Patient Education & Engagement',
     headline: 'When patients truly understand, everything changes.',
-    body: "Expert clinical voices. Real human stories. The combination that makes complex health information feel accessible, trustworthy, and actionable. Better-informed patients engage more, adhere more, and advocate more.",
+    body: "When patients hear from real clinicians and real people who've been where they are, complex health information feels accessible, trustworthy, and worth acting on. Better-informed patients engage more, adhere more, and advocate more.",
     applications: [
       'Condition and treatment education series',
       'Post-diagnosis support and shared decision-making guides',
@@ -96,7 +96,7 @@ const cards = [
     filters: ['operational', 'authority'] as FilterKey[],
     title: 'Employee Onboarding & Culture',
     headline: 'Build a culture that travels with your team.',
-    body: "Culture shouldn't live only in all-hands meetings and onboarding manuals. We build the ongoing audio and video presence that carries your values and vision to every member of your team, wherever they are.",
+    body: "Culture doesn't scale on its own. When teams grow fast and work remotely, values drift, alignment breaks down, and new hires never quite get it from a manual. We build the communication that carries your culture and mission to every person on your team, wherever they are and whenever they join.",
     applications: [
       'Leadership vision and values series',
       'New hire welcome and culture immersion programs',
