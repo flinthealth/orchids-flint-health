@@ -288,8 +288,6 @@ export default function ContentBridge() {
             width: '100%',
             height: '100%',
             objectFit: 'cover',
-            WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 12%, black 72%, transparent 100%)',
-            maskImage: 'linear-gradient(to right, transparent 0%, black 12%, black 72%, transparent 100%)',
           }}
         />
         {/* Top edge fade */}
