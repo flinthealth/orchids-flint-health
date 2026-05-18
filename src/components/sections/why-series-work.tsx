@@ -49,7 +49,7 @@ const segments = [
     statRef: "2",
     statUrl: "https://hbr.org/2014/10/why-your-brain-loves-good-storytelling",
     descriptor:
-      "Stories trigger oxytocin. The hormone that drives empathy, connection, and action.",
+      "Emotionally compelling stories trigger oxytocin, a hormone that drives empathy, connection, and action.",
     color: "#ff7f29",
     arcRotation: -90,
     textStart: -90, textEnd: 30, textSweep: 1 as const,

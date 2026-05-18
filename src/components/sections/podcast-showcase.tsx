@@ -7,21 +7,20 @@ const CASE_STUDIES = [
     title: "Equipped to Recover",
     image: "/podcast-equipped-to-recover.webp",
     client: "Equip Health",
-    tag: "Virtual Eating Disorder Treatment",
+    tag: "Virtual Treatment",
     description:
-      "An interview-based series developed with Equip that combined recovery stories and clinical insight to help patients and families recognize symptoms, feel less alone, and take action.",
+      "An interview-based series developed with Equip Health through a patient advocacy partnership, combining recovery stories and clinical insight to help patients and families recognize symptoms, feel less alone, and take action. After 8 months of traditional digital promotion across the partnership's channels, the podcast debuted and drove a 257% lift in treatment inquiries in its first 3 months on air.",
     stats: [
-      { value: "24",    label: "Episodes" },
-      { value: "75K+",  label: "Downloads in 90 days" },
-      { value: "7K+",   label: "Engagements" },
-      { value: "+257%", label: "Treatment Inquiry Lift", highlight: true },
+      { value: "24",     label: "Episodes" },
+      { value: "75K+",   label: "Downloads in 90 days" },
+      { value: "1.26M+", label: "Cross-channel campaign reach", highlight: true },
     ],
   },
   {
     title: "In This Body",
     image: "/podcast-in-this-body.webp",
     client: "Reasons Eating Disorder Center",
-    tag: "Residential Eating Disorder Treatment",
+    tag: "Residential Treatment",
     description:
       "An interview-based series created to challenge assumptions around eating disorders and expand representation in care through diverse lived experience perspectives.",
     stats: [
@@ -34,14 +33,13 @@ const CASE_STUDIES = [
     title: "The Recovery Warrior Shows",
     image: "/podcast-recovery-warrior.webp",
     client: "Recovery Warriors",
-    tag: "Advocacy Podcast Network",
+    tag: "Advocacy Community",
     description:
-      "Built and scaled a multi-show podcast network to expand reach, build trust, and drive patient acquisition in behavioral health.",
+      "Built and scaled a multi-show podcast channel from a single show into a network of formats, expanding reach and driving patient acquisition in behavioral health.",
     stats: [
-      { value: "145",   label: "Episodes Produced" },
-      { value: "500K+", label: "Annual Downloads" },
+      { value: "300+",  label: "Episodes Produced" },
       { value: "4",     label: "Show Formats" },
-      { value: "+600%", label: "Download Growth YOY", highlight: true },
+      { value: "3.8M+", label: "Lifetime Downloads", highlight: true },
     ],
   },
 ];
