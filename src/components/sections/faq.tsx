@@ -4,11 +4,12 @@ import React, { useState } from "react";
 
 const FAQS: { q: string; a: string[] }[] = [
   {
-    q: "How is a series different than a podcast?",
+    q: "What's the difference between a podcast and a series?",
     a: [
-      "The word podcast has outgrown what the medium is becoming. And that's a good thing.",
-      "At its core it's always been something simple and powerful. Authentic conversation about topics people genuinely care about. Today that conversation lives everywhere. Audio on Spotify and Apple, video on YouTube, clips on social, sequences in email.",
-      "What we produce is a strategic series built with clear learning objectives, a narrative arc, and a specific audience outcome. Every episode is designed to move your audience from awareness to action.",
+      "A podcast is a format. A series is a strategy.",
+      "Most of what we produce is distributed as a podcast — audio on Spotify and Apple, video on YouTube, clips across social. But the format is just the delivery. What you're actually building is a structured arc of episodes with clear objectives, a narrative thread, and a defined audience outcome.",
+      "That structure lets one series do two jobs. Externally it builds authority and reaches the patients, providers, or partners you're growing with. Internally it travels inside onboarding sequences, clinical training programs, and team communication.",
+      "Episodic storytelling across all channels is where media is heading. The healthcare organizations and brands pulling ahead aren't focused on pumping out content for SEO. They're building something deliberate and durable that their competitors can't replicate.",
     ],
   },
   {
