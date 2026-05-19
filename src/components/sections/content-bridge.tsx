@@ -275,21 +275,19 @@ export default function ContentBridge() {
       {/* Photo block */}
       <div className="cb-photo-wrapper">
       <div className="cb-photo relative w-full" style={{ position: 'relative' }}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/jessica-flint-mic.jpg"
-          alt="Jessica Flint at the microphone"
-          className="w-full h-full object-cover object-[center_15%] md:object-[center_25%] lg:object-[center_20%] 2xl:object-[center_25%]"
-          style={{
-            display: 'block',
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-          }}
-        />
+        <picture>
+          <source
+            media="(min-width: 1400px)"
+            srcSet="/Jessica-Flint-Podcasting-Widescreen.jpg"
+          />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/jessica-flint-mic.jpg"
+            alt="Jessica Flint at the microphone"
+            className="w-full h-full object-cover object-[center_15%] md:object-[center_25%] lg:object-[center_20%]"
+            style={{ display: 'block', position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 12%, black 72%, transparent 100%)', maskImage: 'linear-gradient(to right, transparent 0%, black 12%, black 72%, transparent 100%)' }}
+          />
+        </picture>
         {/* Top edge fade */}
         <div
           className="absolute top-0 left-0 right-0 pointer-events-none"
