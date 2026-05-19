@@ -119,7 +119,7 @@ export default function WhoWeBringTogether() {
                     </p>
                     <p
                       className="text-[11px] font-semibold uppercase tracking-[0.1em] leading-snug"
-                      style={{ color: '#677283' }}
+                      style={{ color: '#989693' }}
                     >
                       {statLabelMobile[0]}<br />{statLabelMobile[1]}
                       <a
@@ -157,7 +157,7 @@ export default function WhoWeBringTogether() {
                     </p>
                     <p
                       className="text-[11px] font-semibold uppercase tracking-[0.1em] leading-snug"
-                      style={{ color: '#677283' }}
+                      style={{ color: '#989693' }}
                     >
                       {statLabel[0]}<br />{statLabel[1]}<br />{statLabel[2]}
                       <a

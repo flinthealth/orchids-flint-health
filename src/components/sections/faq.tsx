@@ -4,7 +4,7 @@ import React, { useState } from "react";
 
 const FAQS: { q: string; a: string[] }[] = [
   {
-    q: "Is this the same thing as a podcast?",
+    q: "How is a series different than a podcast?",
     a: [
       "The word podcast has outgrown what the medium is becoming. And that's a good thing.",
       "At its core it's always been something simple and powerful. Authentic conversation about topics people genuinely care about. Today that conversation lives everywhere. Audio on Spotify and Apple, video on YouTube, clips on social, sequences in email.",
