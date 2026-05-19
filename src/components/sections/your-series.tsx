@@ -64,7 +64,7 @@ export default function YourSeries() {
         <div className="px-6 md:px-10 py-8 md:py-0 md:pt-10 md:pb-0 border-b border-[rgba(43,51,53,0.08)] md:border-b-0">
           <div className="flex flex-col items-center text-center pb-1">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/icon-interview-v7.png" className="w-[225px] h-[225px] object-contain mx-auto mb-6" alt="" />
+            <img src="/icon-interview-v8.png" className="w-[225px] h-[225px] object-contain mx-auto mb-6" alt="" />
             <p className="text-[22px] font-extrabold tracking-[0.06em] uppercase text-[#2b3335] mb-2">INTERVIEW</p>
             <p className="text-[13px] font-medium text-[#677283] uppercase tracking-[0.08em] mb-3">GUEST-DRIVEN DEPTH</p>
           </div>
@@ -82,7 +82,7 @@ export default function YourSeries() {
         <div className="px-6 md:px-10 py-8 md:py-0 md:pt-10 md:pb-10 border-b border-[rgba(43,51,53,0.08)] md:border-b-0 md:border-r border-[rgba(43,51,53,0.08)]">
           <div className="flex flex-col items-center text-center pb-1">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/icon-conversational-v9.png" className="w-[225px] h-[225px] object-contain mx-auto mb-6" alt="" />
+            <img src="/icon-conversational-v10.png" className="w-[225px] h-[225px] object-contain mx-auto mb-6" alt="" />
             <p className="text-[22px] font-extrabold tracking-[0.06em] uppercase text-[#2b3335] mb-2">CONVERSATIONAL</p>
             <p className="text-[13px] font-medium text-[#677283] uppercase tracking-[0.08em] mb-3">CO-HOST CHEMISTRY</p>
           </div>

@@ -61,8 +61,10 @@ export default function Home() {
                 { n: '1', label: 'Bower & Clark, Narrative Stories as Mediators for Serial Learning, Stanford University / Psychonomic Science, 1969', url: 'https://link.springer.com/article/10.3758/BF03332778' },
                 { n: '2', label: "Paul J. Zak, Why Your Brain Loves Good Storytelling, Harvard Business Review, October 2014. Zak's research at Claremont Graduate University demonstrated that narrative content triggers oxytocin release, driving empathy, trust, and action. Also published in Nature (2005) and Scientific American (2008).", url: 'https://hbr.org/2014/10/why-your-brain-loves-good-storytelling' },
                 { n: '3', label: 'Signal Hill Insights, Measuring the Success of Branded Podcasts, 2024', url: 'https://signalhillinsights.com/measuring-the-success-of-branded-podcasts-choosing-the-right-yardsticks/' },
-                { n: '4', label: 'CoHost, Podcasting Unwrapped 2025', url: 'https://www.cohostpodcasting.com/resources/podcasting-unwrapped-2025' },
-                { n: '5', label: 'Cumulus Media & Signal Hill Insights, Podcast Download — Fall 2025', url: 'https://cumuluspodcastnetwork.com/cumulus-media-podcast-download-fall-2025/' },
+                { n: '4', label: 'Cumulus Media, & Signal Hill Insights. (2025, November). Podcast download fall 2025 report. Westwood One. westwoodone.com', url: 'https://www.westwoodone.com/wp-content/uploads/2025/11/Cumulus-Media-and-Signal-Hill-Insights-Podcast-Download-Fall-2025_WWO.pdf' },
+                { n: '5', label: 'Centers for Disease Control and Prevention, Health Literacy: Tell Others', url: 'https://www.cdc.gov/health-literacy/php/about/tell-others.html' },
+                { n: '6', label: 'Managed Healthcare Executive, Survey Reveals Cancer Doctors Struggle to Keep Up as Treatments Advance Quickly', url: 'https://www.managedhealthcareexecutive.com/view/survey-reveals-cancer-doctors-struggle-to-keep-up-as-treatments-advance-quickly' },
+                { n: '7', label: 'Agility PR, Bad Connection: Study Finds Poor Communication Costs Businesses $1.2 Trillion Annually', url: 'https://www.agilitypr.com/pr-news/pr-skills-profession/bad-connection-study-finds-poor-communication-costs-businesses-1-2-trillion-annually/' },
               ].map(({ n, label, url }) => (
                 <a
                   key={n}

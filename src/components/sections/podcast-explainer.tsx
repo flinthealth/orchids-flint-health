@@ -101,7 +101,7 @@ export default function PodcastExplainer() {
                 <p className="text-[#ffffff] text-[72px] font-light leading-none tracking-[-0.03em] mb-1">71%</p>
                 <p className="text-[#ffffff] text-[16px] font-medium leading-snug">
                   Of podcast listeners tune in during their daily routine
-                  <a href="https://www.cohostpodcasting.com/resources/podcasting-unwrapped-2025" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">4</a>
+                  <a href="https://www.westwoodone.com/wp-content/uploads/2025/11/Cumulus-Media-and-Signal-Hill-Insights-Podcast-Download-Fall-2025_WWO.pdf" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">4</a>
                 </p>
               </div>
             </div>
