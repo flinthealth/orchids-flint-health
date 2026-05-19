@@ -46,15 +46,15 @@ export default function WhoWeBringTogether() {
             src="/stats-idle-time-compressed.mp4"
           />
 
-          {/* Frosted glass 71% card — bottom-right */}
+          {/* Frosted glass 92% card — bottom-right */}
           <div className="absolute bottom-7 right-7 z-10 px-5 py-4 rounded-2xl" style={glassStyle}>
             <p className="text-[#f9f5ef] font-light leading-none tracking-[-0.03em] mb-2" style={{ fontSize: 56 }}>
-              71%
+              92%
             </p>
             <p className="text-[13px] leading-[1.55]" style={{ color: 'rgba(249,245,239,0.80)' }}>
               Of podcast listeners tune in during their daily routine.
               <a
-                href="https://www.cohostpodcasting.com/resources/podcasting-unwrapped-2025"
+                href="https://www.westwoodone.com/wp-content/uploads/2025/11/Cumulus-Media-and-Signal-Hill-Insights-Podcast-Download-Fall-2025_WWO.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[10px] align-super ml-0.5 opacity-50 hover:opacity-80 transition-opacity"
