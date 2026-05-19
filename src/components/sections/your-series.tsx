@@ -89,7 +89,7 @@ export default function YourSeries() {
           <div className="border-[rgba(43,51,53,0.08)] pt-2 md:pt-2 pb-2 md:pb-0">
             <p className="text-[17px] text-[#677283] leading-relaxed mb-3">Two hosts, structured and conversational. Makes even the densest clinical or technical ideas feel accessible and easy to follow for public audiences or internal teams. Great for making complex topics feel approachable.</p>
             <p className="text-[17px] font-bold text-[#2b3335] mb-2">Eavesdropping on experts format.</p>
-            <p className="font-serif italic text-[16px] text-[#677283]">Like Stuff You Should Know or We Can Do Hard Things — for healthcare</p>
+            <p className="font-serif italic text-[16px] text-[#677283]">Crime Junkie or Stuff You Should Know — for healthcare</p>
           </div>
         </div>
 
@@ -104,7 +104,7 @@ export default function YourSeries() {
           <div className="border-[rgba(43,51,53,0.08)] pt-2 md:pt-2 pb-2 md:pb-0">
             <p className="text-[17px] text-[#677283] leading-relaxed mb-3">Multiple expert voices in dialogue or debate. Elevates your clinicians and brand in equal measure while signaling range and depth. Great for showcasing expertise and building influence across multiple sectors and specialties.</p>
             <p className="text-[17px] font-bold text-[#2b3335] mb-2">Network-building format.</p>
-            <p className="font-serif italic text-[16px] text-[#677283]">Like Intelligence Squared or This Week in Tech — for healthcare</p>
+            <p className="font-serif italic text-[16px] text-[#677283]">Like Intelligence Squared or TED Radio Hour — for healthcare</p>
           </div>
         </div>
 
