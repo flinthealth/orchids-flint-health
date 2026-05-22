@@ -356,23 +356,23 @@ export default function DNAWaveSection() {
         </h2>
       </div>
 
-      {/* Two-column: headshot left, bio right */}
+      {/* Two-column: headshot left, text right — tablet/desktop only above the fold */}
       <div className="px-8 md:px-14 lg:px-20">
         <div className="flex flex-col md:flex-row md:items-start gap-8 md:gap-12 max-w-[1060px] mx-auto">
 
-          {/* Headshot — tablet: 44% (15% bigger than desktop 38%), desktop: 38% */}
-          <div className="w-full md:w-[44%] lg:w-[38%] flex-shrink-0 md:self-start lg:self-stretch">
+          {/* Headshot */}
+          <div className="w-full md:w-[44%] lg:w-[38%] flex-shrink-0 md:self-start">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/jessica-flint-headshot.jpg"
               alt="Jessica Flint, Founder"
-              className="w-full object-cover object-[center_20%] rounded-[16px] md:max-h-[530px] lg:max-h-none lg:h-full"
+              className="w-full object-cover object-[center_20%] rounded-[16px]"
               style={{ display: 'block', aspectRatio: '3/4' }}
             />
           </div>
 
-          {/* Bio content — top portion (eyebrow + paras 1 & 2) always in right column */}
-          <div className="flex-1 flex flex-col justify-start md:justify-center lg:justify-center">
+          {/* Bio content in right column — eyebrow + paras that sit beside the photo */}
+          <div className="flex-1 flex flex-col justify-start">
 
             {/* Eyebrow + name */}
             <div className="mb-6 flex flex-col gap-1 md:pt-8">
@@ -394,51 +394,43 @@ export default function DNAWaveSection() {
             </div>
 
             <p className="text-[#43382f] text-[17px] leading-[1.5] mb-4">
-              I&apos;ve spent 12 years at the intersection of healthcare and media. Long enough to know what works, what doesn&apos;t, and what&apos;s coming before most people see it.
+              I built my first health tech company from a ship.
             </p>
-            <p className="text-[#43382f] text-[17px] leading-[1.5] md:mb-0 lg:mb-6">
-              I built a behavioral health media platform from scratch, designing the app, growing a 450+ provider network, and scaling it to 30 million sessions across a global community. Organically.
+            <p className="text-[#43382f] text-[17px] leading-[1.5] mb-4">
+              As a seagoing oceanographer I spent 100 days a year at sea. Between research expeditions, living beachside in M&eacute;xico, I bootstrapped a mental health app with $25,000 of my own savings.
             </p>
-
-            {/* Callout + para 3 — hidden on tablet (shown below), visible on mobile & desktop */}
-            <div className="hidden lg:block md:hidden">
-              <p
-                className="text-[20px] md:text-[22px] leading-[1.45] mb-6 mt-2"
-                style={{ fontFamily: "'Libre Baskerville', serif", fontStyle: 'italic', color: '#2b3335' }}
-              >
-                The spark behind all of it was understanding what every person in the care ecosystem actually needed, and building media and experiences that delivered it.
-              </p>
-              <p className="text-[#43382f] text-[17px] leading-[1.5]">
-                That&apos;s what Flint is here for. I work directly with executive leadership as a strategic thought partner, helping you define your narrative, find your voice, and build the series that carries your vision to every patient, provider, and team member who needs to hear it. Every engagement runs through me, from strategy through final delivery, backed by a trusted network of producers and editors I&apos;ve worked with for years.
-              </p>
-            </div>
-
-            {/* Mobile-only: callout + para 3 in column flow */}
-            <div className="block md:hidden mt-6">
-              <p
-                className="text-[20px] leading-[1.45] mb-6"
-                style={{ fontFamily: "'Libre Baskerville', serif", fontStyle: 'italic', color: '#2b3335' }}
-              >
-                The spark behind all of it was understanding what every person in the care ecosystem actually needed, and building media and experiences that delivered it.
-              </p>
-              <p className="text-[#43382f] text-[17px] leading-[1.5]">
-                That&apos;s what Flint is here for. I work directly with executive leadership as a strategic thought partner, helping you define your narrative, find your voice, and build the series that carries your vision to every patient, provider, and team member who needs to hear it. Every engagement runs through me, from strategy through final delivery, backed by a trusted network of producers and editors I&apos;ve worked with for years.
-              </p>
-            </div>
+            <p className="text-[#43382f] text-[17px] leading-[1.5] mb-4">
+              It reached 500,000 downloads, organically, and grew into Recovery Warriors, a behavioral health media and advocacy network that reached 30M+ sessions and over 4.2M global users.
+            </p>
+            <p
+              className="md:hidden lg:block text-[24px] md:text-[28px] leading-[1.4] mb-6"
+              style={{ fontFamily: "'EB Garamond', serif", fontStyle: 'italic', color: '#2b3335' }}
+            >
+              Podcasting became the most powerful tool in the ecosystem. Not just for content and connection, but as a conversion engine.
+            </p>
 
           </div>
         </div>
 
-        {/* Tablet-only: callout + para 3 as full-width block below the two columns */}
-        <div className="hidden md:block lg:hidden max-w-[1060px] mx-auto mt-10">
+        {/* Full-width continuation block — below the photo on all breakpoints */}
+        <div className="max-w-[1060px] mx-auto mt-0 md:mt-10">
           <p
-            className="text-[22px] leading-[1.45] mb-6"
-            style={{ fontFamily: "'Libre Baskerville', serif", fontStyle: 'italic', color: '#2b3335' }}
+            className="hidden md:block lg:hidden text-[24px] md:text-[28px] leading-[1.4] mb-6"
+            style={{ fontFamily: "'EB Garamond', serif", fontStyle: 'italic', color: '#2b3335' }}
           >
-            The spark behind all of it was understanding what every person in the care ecosystem actually needed, and building media and experiences that delivered it.
+            Podcasting became the most powerful tool in the ecosystem. Not just for content and connection, but as a conversion engine.
+          </p>
+          <p className="text-[#43382f] text-[17px] leading-[1.5] mb-6">
+            Flint exists to bring this to healthcare brands who are ready to build strategic series their patients, providers, and teams actually want to listen to and act on.
+          </p>
+          <p
+            className="text-[24px] md:text-[28px] leading-[1.4] mb-6"
+            style={{ fontFamily: "'EB Garamond', serif", fontStyle: 'italic', color: '#2b3335' }}
+          >
+            Done right, podcasting creates a ripple effect no other media can rival.
           </p>
           <p className="text-[#43382f] text-[17px] leading-[1.5]">
-            That&apos;s what Flint is here for. I work directly with executive leadership as a strategic thought partner, helping you define your narrative, find your voice, and build the series that carries your vision to every patient, provider, and team member who needs to hear it. Every engagement runs through me, from strategy through final delivery, backed by a trusted network of producers and editors I&apos;ve worked with for years.
+            I work directly with executive leadership from strategy through final delivery, backed by a trusted network of producers and editors I&apos;ve worked with for years.
           </p>
         </div>
 
