@@ -204,7 +204,7 @@ export default function StackingCards() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={CARD_ICONS[card.id]} alt="" width={imgW} height={imgW} style={{ display: 'block' }} />
             </div>
-            <p className={`${p1} font-bold leading-[1.3] tracking-[-0.01em] mb-4`} style={{ color: TEXT }}>
+            <p className="text-[16px] font-medium uppercase tracking-[0.08em] leading-[1.4] mb-4" style={{ color: '#677283' }}>
               {card.headline}
             </p>
             <p className="text-[16px] leading-[1.5] mb-8" style={{ color: '#2b3335' }}>{card.body}</p>
@@ -227,7 +227,7 @@ export default function StackingCards() {
               <h3 className={`${h3} font-normal leading-[1.15] tracking-[-0.02em] ${h3mb}`} style={{ color: TEXT }}>
                 {card.title}
               </h3>
-              <p className={`${p1} font-bold leading-[1.3] tracking-[-0.01em] mb-4`} style={{ color: TEXT }}>
+              <p className="text-[16px] font-medium uppercase tracking-[0.08em] leading-[1.4] mb-4" style={{ color: '#677283' }}>
                 {card.headline}
               </p>
               <p className="text-[16px] leading-[1.5] mb-8" style={{ color: '#2b3335' }}>{card.body}</p>

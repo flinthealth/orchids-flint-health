@@ -351,8 +351,8 @@ export default function DNAWaveSection() {
       <div className="px-8 md:px-14 lg:px-20 pt-2 pb-10 md:pb-14 text-center">
         <p className="text-[#677283] text-[15px] font-semibold tracking-[0.1em] uppercase mb-5">Our Philosophy</p>
         <h2 className="text-[#43382f] text-[40px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] max-w-[640px] mx-auto">
-          <span className="md:hidden">Build a great series<br />and you&apos;ll have<br /><span className="font-serif italic" style={{ color: '#2b3335' }}>great outcomes</span></span>
-          <span className="hidden md:inline">Build a great series and<br />you&apos;ll have <span className="font-serif italic" style={{ color: '#2b3335' }}>great outcomes</span></span>
+          <span className="md:hidden">Build something<br />great and you&apos;ll<br />have <span className="font-serif italic" style={{ color: '#2b3335' }}>great outcomes</span></span>
+          <span className="hidden md:inline">Build something great and<br />you&apos;ll have <span className="font-serif italic" style={{ color: '#2b3335' }}>great outcomes</span></span>
         </h2>
       </div>
 
@@ -403,10 +403,12 @@ export default function DNAWaveSection() {
               It reached 500,000 downloads, organically, and grew into Recovery Warriors, a behavioral health media and advocacy network that reached 30M+ sessions and over 4.2M global users.
             </p>
             <p
-              className="md:hidden lg:block text-[24px] md:text-[28px] leading-[1.4] mb-6"
-              style={{ fontFamily: "'EB Garamond', serif", fontStyle: 'italic', color: '#2b3335' }}
+              className="md:hidden lg:block text-[18px] font-medium text-[#43382f] uppercase tracking-[0.08em] leading-[1.4] mb-6"
             >
               Podcasting became the most powerful tool in the ecosystem. Not just for content and connection, but as a conversion engine.
+            </p>
+            <p className="hidden lg:block text-[#43382f] text-[17px] leading-[1.5]">
+              Flint exists to bring this to healthcare brands who are ready to build strategic series their patients, providers, and teams actually want to listen to and act on.
             </p>
 
           </div>
@@ -415,12 +417,11 @@ export default function DNAWaveSection() {
         {/* Full-width continuation block — below the photo on all breakpoints */}
         <div className="max-w-[1060px] mx-auto mt-0 md:mt-10">
           <p
-            className="hidden md:block lg:hidden text-[24px] md:text-[28px] leading-[1.4] mb-6"
-            style={{ fontFamily: "'EB Garamond', serif", fontStyle: 'italic', color: '#2b3335' }}
+            className="hidden md:block lg:hidden text-[18px] font-medium text-[#43382f] uppercase tracking-[0.08em] leading-[1.4] mb-6"
           >
             Podcasting became the most powerful tool in the ecosystem. Not just for content and connection, but as a conversion engine.
           </p>
-          <p className="text-[#43382f] text-[17px] leading-[1.5] mb-6">
+          <p className="lg:hidden text-[#43382f] text-[17px] leading-[1.5] mb-6">
             Flint exists to bring this to healthcare brands who are ready to build strategic series their patients, providers, and teams actually want to listen to and act on.
           </p>
           <p
