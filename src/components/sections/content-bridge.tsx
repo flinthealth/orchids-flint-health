@@ -313,7 +313,7 @@ export default function ContentBridge() {
             (read that again).
           </p>
           <p className="cb-body-on-photo" style={{ color: 'rgba(249,245,239,0.72)', fontSize: '17px', lineHeight: 1.65, marginTop: '16px' }}>
-            That&rsquo;s not just more time. It&rsquo;s a fundamentally different relationship with your audience.
+            Deeper engagement creates a fundamentally different relationship with your audience.
           </p>
         </div>
       </div>
@@ -322,7 +322,7 @@ export default function ContentBridge() {
       {/* Body copy continuation block — mobile & tablet only */}
       <div className="cb-continuation lg:hidden">
         <p>
-          That&rsquo;s not just more time. It&rsquo;s a fundamentally different relationship with your audience.
+          Deeper engagement creates a fundamentally different relationship with your audience.
         </p>
       </div>
 
@@ -346,7 +346,7 @@ export default function ContentBridge() {
             className="text-[16px] md:text-[17px] leading-[1.65] max-w-[480px] mx-auto"
             style={{ color: 'rgba(249,245,239,0.65)' }}
           >
-            That&rsquo;s not just more time. It&rsquo;s a fundamentally different relationship with your audience.
+            Deeper engagement creates a fundamentally different relationship with your audience.
           </p>
         </div>
       </div>
