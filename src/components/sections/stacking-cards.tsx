@@ -101,7 +101,7 @@ const cards = [
       'Leadership vision and values series',
       'New hire welcome and culture immersion programs',
       'Peer spotlight and recognition content',
-      'Internal alignment and change communication series',
+      'Knowledge transfer and change rollouts',
     ],
   },
 ] as const;
