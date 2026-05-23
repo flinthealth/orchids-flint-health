@@ -95,8 +95,8 @@ const cards = [
     id: 3,
     filters: ['operational', 'authority'] as FilterKey[],
     title: 'Employee Onboarding & Culture',
-    headline: 'Build a culture that travels with your team.',
-    body: "Culture doesn't scale on its own. When teams grow fast and work remotely, values drift, alignment breaks down, and new hires never quite get it from a manual. We build the communication that carries your culture and mission to every person on your team, wherever they are and whenever they join.",
+    headline: 'Improve workplace culture, reduce information silos, and spark collaboration',
+    body: "We build the communication that carries your culture, mission, and best practices to every person on your team, wherever they are and whenever they join.",
     applications: [
       'Leadership vision and values series',
       'New hire welcome and culture immersion programs',
