@@ -56,8 +56,8 @@ const cards = [
     id: 0,
     filters: ['clinical', 'authority', 'operational'] as FilterKey[],
     title: 'HCP Training & Clinical Education',
-    headline: 'Protocols are only as powerful as the providers who adopt them.',
-    body: "The best clinical training doesn't just inform. It changes how providers think and practice. We build narrative series that bring protocols, frameworks, and therapeutic approaches to life, driving faster adoption and stronger clinical judgment across your team.",
+    headline: 'Get providers up to speed on the latest research, protocols, and advancements',
+    body: "We build series that bring important frameworks, devices, and therapeutic approaches to life, driving faster adoption and stronger clinical judgment across your team.",
     applications: [
       'Protocol walkthroughs with expert clinical commentary',
       'Patient and clinical case study series',
@@ -69,8 +69,8 @@ const cards = [
     id: 1,
     filters: ['patient', 'clinical', 'authority'] as FilterKey[],
     title: 'Patient Education & Engagement',
-    headline: 'When patients truly understand, everything changes.',
-    body: "When patients hear from real clinicians and real people who've been where they are, complex health information feels accessible, trustworthy, and worth acting on. Better-informed patients engage more, adhere more, and advocate more.",
+    headline: 'Guide patients on their health journey so they feel inspired and informed',
+    body: "We create bingeworthy series that help patients feel less alone. By answering all the questions that run through their minds, you can inspire patients to engage more, adhere more, and become your strongest advocates.",
     applications: [
       'Condition and treatment education series',
       'Post-diagnosis support and shared decision-making guides',
@@ -82,8 +82,8 @@ const cards = [
     id: 2,
     filters: ['patient', 'clinical'] as FilterKey[],
     title: 'Patient Immersions & Journey Maps',
-    headline: "Don't just report on the patient experience, bring it to life.",
-    body: "We transform static research and white papers into immersive narrative series that your R&D, Medical Affairs, and clinical teams actually finish. When your people truly hear the patient story, not just skim a summary, it changes how they think, decide, and build.",
+    headline: "Bring the patient experience to life through an immersive report",
+    body: "When your R&D, Medical Affairs, and clinical teams truly hear the patient story, not just skim a summary, it changes how they think, decide, and build.",
     applications: [
       'Authentic patient voice recordings',
       'Deep-dive qualitative interview series',
@@ -99,7 +99,7 @@ const cards = [
     body: "We build the communication that carries your culture, mission, and best practices to every person on your team, wherever they are and whenever they join.",
     applications: [
       'Leadership vision and values series',
-      'New hire welcome and culture immersion programs',
+      'Recruitment and new hire onboarding',
       'Peer spotlight and recognition content',
       'Knowledge transfer and change rollouts',
     ],
