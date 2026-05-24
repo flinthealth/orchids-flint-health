@@ -115,7 +115,7 @@ export default function WhySeriesWork() {
             Why Series Work
           </span>
           <h2 className="text-[#43382f] text-[40px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-4">
-            The new competitive moat is{" "}
+            Standout with{" "}
             <span className="font-serif italic" style={{ color: "#2b3335" }}>
               strategic storytelling
             </span>
