@@ -101,12 +101,44 @@ export default function WhySeriesWork() {
     return () => observer.disconnect();
   }, [hasAnimated]);
 
+  const WORDS = ["brand", "mission", "product"];
+  const [wordIndex, setWordIndex] = useState(0);
+  const [fade, setFade] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFade(false);
+      setTimeout(() => {
+        setWordIndex((i) => (i + 1) % WORDS.length);
+        setFade(true);
+      }, 300);
+    }, 2200);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section
       ref={sectionRef}
       style={{ background: "#f9f5ef" }}
       className="w-full py-24 px-6 md:px-12 overflow-hidden"
     >
+      <style>{`
+        @keyframes wordFadeIn {
+          from { opacity: 0; transform: translateY(6px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+        .rotating-word {
+          display: inline-block;
+          transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .rotating-word.visible {
+          animation: wordFadeIn 0.3s ease forwards;
+        }
+        .rotating-word.hidden-word {
+          opacity: 0;
+          transform: translateY(-6px);
+        }
+      `}</style>
       <div className="max-w-[1280px] mx-auto">
 
         {/* Centered header */}
@@ -115,13 +147,18 @@ export default function WhySeriesWork() {
             Why Series Work
           </span>
           <h2 className="text-[#43382f] text-[40px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-4">
-            Standout with{" "}
-            <span className="font-serif italic" style={{ color: "#2b3335" }}>
-              strategic storytelling
+            Your{" "}
+            <span
+              className={`font-serif italic rotating-word ${fade ? "visible" : "hidden-word"}`}
+              style={{ color: "#2b3335" }}
+            >
+              {WORDS[wordIndex]}
             </span>
+            <br />
+            needs to stand out
           </h2>
           <p className="text-[#43382f] text-[17px] leading-[1.5] max-w-[420px] md:max-w-[660px] mx-auto">
-            In the AI era, emotional resonance and trust protect your position.<br className="hidden md:block" /> A well-produced episodic series builds both.
+            In the AI era, attention and trust must be earned.<br className="hidden md:block" /> A well-produced narrative series helps build the emotional connection and leadership that protects your position.
           </p>
         </div>
 
