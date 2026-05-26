@@ -101,7 +101,7 @@ export default function WhySeriesWork() {
     return () => observer.disconnect();
   }, [hasAnimated]);
 
-  const WORDS = ["brand", "mission", "product"];
+  const WORDS = ["brand", "mission", "product", "team"];
   const [wordIndex, setWordIndex] = useState(0);
   const [fade, setFade] = useState(true);
 
@@ -112,7 +112,7 @@ export default function WhySeriesWork() {
         setWordIndex((i) => (i + 1) % WORDS.length);
         setFade(true);
       }, 300);
-    }, 2200);
+    }, 3000);
     return () => clearInterval(interval);
   }, []);
 
@@ -144,7 +144,7 @@ export default function WhySeriesWork() {
         {/* Centered header */}
         <div className="text-center mb-16 max-w-2xl mx-auto">
           <span className="text-[#677283] text-[15px] font-semibold tracking-[0.1em] uppercase block mb-5">
-            Why Series Work
+            In the AI Era
           </span>
           <h2 className="text-[#43382f] text-[40px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-4">
             Your{" "}
@@ -158,7 +158,7 @@ export default function WhySeriesWork() {
             needs to stand out
           </h2>
           <p className="text-[#43382f] text-[17px] leading-[1.5] max-w-[420px] md:max-w-[660px] mx-auto">
-            In the AI era, attention and trust must be earned.<br className="hidden md:block" /> A well-produced narrative series helps build the emotional connection and leadership that protects your position.
+            A well-produced series helps protect your position with genuine human connection that builds trust and meaningful engagement.
           </p>
         </div>
 
