@@ -144,14 +144,14 @@ export default function WhySeriesWork() {
         {/* Centered header */}
         <div className="text-center mb-16 max-w-2xl mx-auto">
           <span className="text-[#677283] text-[15px] font-semibold tracking-[0.1em] uppercase block mb-5">
-            Why Series
+            The Strategy
           </span>
           <h2 className="text-[#43382f] text-[40px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-4">
             A series gives you complete control over{" "}
             <span className="font-serif italic" style={{ color: "#2b3335" }}>your messaging</span>
           </h2>
           <p className="text-[#43382f] text-[17px] leading-[1.5] max-w-[420px] md:max-w-[660px] mx-auto">
-            Turn dense clinical data into memorable narratives that engage providers, drive patient action, and align teams
+            A well-produced series takes patients, providers, and healthcare teams on a journey that educates, motivates, and drives measurable behavioral shifts.
           </p>
         </div>
 
