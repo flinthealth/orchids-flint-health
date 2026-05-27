@@ -8,8 +8,9 @@ const CASE_STUDIES = [
     image: "/podcast-equipped-to-recover.webp",
     client: "Equip Health",
     tag: "Virtual Treatment",
-    description:
-      "An interview-based series developed with Equip Health through a patient advocacy partnership, combining recovery stories and clinical insight to help patients and families recognize symptoms, feel less alone, and take action. After 8 months of traditional digital promotion across the partnership's channels, the podcast debuted and drove a 257% lift in treatment inquiries in its first 3 months on air.",
+    description: (
+      <>An interview-based series developed with Equip Health through a patient advocacy partnership, combining recovery stories and clinical insight to help patients and families recognize symptoms, feel less alone, and take action. After 8 months of traditional digital promotion across the partnership&apos;s channels, the podcast debuted and drove a <strong style={{ fontFamily: 'Inter, sans-serif' }}>257% lift in treatment inquiries</strong> in its first 3 months on air.</>
+    ),
     stats: [
       { value: "24",     label: "Episodes" },
       { value: "75K+",   label: "Downloads in 90 days" },
@@ -75,7 +76,7 @@ function CaseStudyCard({
   image, title, client, tag, description, stats, style,
 }: {
   image: string; title: string; client: string; tag: string;
-  description: string; stats: Stat[]; style: React.CSSProperties;
+  description: React.ReactNode; stats: Stat[]; style: React.CSSProperties;
 }) {
   return (
     <div

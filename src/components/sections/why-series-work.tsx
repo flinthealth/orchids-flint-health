@@ -101,7 +101,7 @@ export default function WhySeriesWork() {
     return () => observer.disconnect();
   }, [hasAnimated]);
 
-  const WORDS = ["brand", "mission", "product", "team"];
+  const WORDS = ["mission", "message", "product", "brand", "team"];
   const [wordIndex, setWordIndex] = useState(0);
   const [fade, setFade] = useState(true);
 
@@ -158,7 +158,7 @@ export default function WhySeriesWork() {
             needs to stand out
           </h2>
           <p className="text-[#43382f] text-[17px] leading-[1.5] max-w-[420px] md:max-w-[660px] mx-auto">
-            A well-produced series helps protect your position with genuine human connection that builds trust and meaningful engagement.
+            Protect your position with a well-produced series that builds trust, loyalty, and meaningful engagement.
           </p>
         </div>
 
