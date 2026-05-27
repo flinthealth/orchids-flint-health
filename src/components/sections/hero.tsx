@@ -72,15 +72,15 @@ export default function HeroSection() {
         <div className="absolute inset-0 z-10 hidden lg:block bg-gradient-to-t from-[#2b3335]/85 via-[#2b3335]/25 to-transparent" />
 
         {/* Content */}
-        <div className="relative z-20 w-full max-w-[1280px] mx-auto px-6 md:px-12 lg:px-24 pt-[26vh] pb-16 md:py-16 lg:py-24 text-left">
-          <div className="max-w-[820px] md:max-w-[360px] lg:max-w-[820px]">
+        <div className="relative z-20 w-full max-w-[1280px] mx-auto px-6 md:px-12 pt-[26vh] pb-16 md:py-16 lg:py-24 text-left">
+          <div className="max-w-[820px] md:max-w-[460px] lg:max-w-[560px]">
             <div className="h-[22px] md:hidden" />
 
             <h1
-              className="animate-hero-title text-white font-light mb-5 text-[34px] md:text-[32px] lg:text-[clamp(38px,4vw,52px)]"
+              className="animate-hero-title text-white font-light mb-5 text-[34px] md:text-[40px] lg:text-[50px]"
               style={{ lineHeight: 1.15, letterSpacing: '-0.02em' }}
             >
-              A creative studio<br className="md:hidden" /> that produces<br className="md:hidden" /> branded series to<br className="md:hidden" /> drive engagement,<br className="md:hidden" /> retention &amp; referrals
+              A creative studio<br /> that produces<br /> branded series<br /> to drive engagement,<br /> retention &amp; referrals
             </h1>
 
             <p className="animate-hero-sub1 text-white/80 text-[17px] md:text-[15px] lg:text-[17px] font-normal mb-4">
