@@ -153,6 +153,22 @@ export default function WhySeriesWork() {
           <p className="text-[#43382f] text-[17px] leading-[1.5] max-w-[420px] md:max-w-[660px] mx-auto">
             A well-produced series takes patients, providers, and healthcare teams on a journey that educates, motivates, and drives measurable behavioral shifts.
           </p>
+          <div className="mt-8 flex flex-col gap-4 max-w-[560px] text-left">
+            {[
+              { label: "A Finished Asset:", desc: "A defined beginning, middle, and end. Not an endless feed." },
+              { label: "Goal-Driven Design:", desc: "Every single episode is mapped to a specific business objective." },
+              { label: "One-Time Investment:", desc: "Batch-produced once, then deployed to drive value for years." },
+              { label: "Scalable Impact:", desc: "Onboard patients, train providers, and build authority without ongoing production costs." },
+            ].map(({ label, desc }) => (
+              <div key={label} className="flex items-start gap-3">
+                <span className="text-[#ff7f29] font-normal text-[17px] flex-shrink-0 mt-[2px]">→</span>
+                <p className="text-[17px] leading-[1.5]">
+                  <span className="font-semibold text-[#2b3335]">{label}</span>{" "}
+                  <span className="text-[#43382f] font-normal">{desc}</span>
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Ring + Text cards */}
