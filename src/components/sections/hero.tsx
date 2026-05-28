@@ -80,11 +80,11 @@ export default function HeroSection() {
               className="animate-hero-title text-white font-light mb-5 text-[34px] md:text-[40px] lg:text-[50px]"
               style={{ lineHeight: 1.15, letterSpacing: '-0.02em' }}
             >
-              A creative studio<br /> that produces<br /> branded series<br /> to drive engagement,<br /> retention &amp; referrals
+              A creative studio<br /> that produces<br /> branded series<br /> that turn attention<br /> into lifetime value
             </h1>
 
             <p className="animate-hero-sub1 text-white/80 text-[17px] md:text-[15px] lg:text-[17px] font-normal mb-4">
-              Innovative healthcare brands work with Flint to develop, produce &amp; market series that support their growth goals.
+              Innovative healthcare brands work with Flint to create<br className="hidden lg:block" /> series that increase engagement, retention, and referrals.
             </p>
 
             <div className="animate-hero-cta mt-6">
