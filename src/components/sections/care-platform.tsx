@@ -4,13 +4,6 @@ import React, { useState, useEffect, useRef } from 'react';
 
 const ROTATING_WORDS = ['patient engagement', 'brand authority', 'clinical adoption', 'team alignment'];
 
-const OUTCOMES = [
-  { label: 'engagement', color: '#eeb20b', bgRgba: 'rgba(238,178,11,0.55)',  borderRgba: 'rgba(238,178,11,0.7)'  },
-  { label: 'adherence',  color: '#ff7f29', bgRgba: 'rgba(255,127,41,0.55)',  borderRgba: 'rgba(255,127,41,0.7)'  },
-  { label: 'retention',  color: '#f5a020', bgRgba: 'rgba(245,160,32,0.55)',  borderRgba: 'rgba(245,160,32,0.7)'  },
-  { label: 'referrals',  color: '#54819a', bgRgba: 'rgba(84,129,154,0.55)',  borderRgba: 'rgba(84,129,154,0.7)'  },
-  { label: 'advocacy',   color: '#677283', bgRgba: 'rgba(103,114,131,0.55)', borderRgba: 'rgba(103,114,131,0.7)' },
-];
 
 const CarePlatformSection = () => {
   const [wordIndex, setWordIndex] = useState(0);
@@ -440,28 +433,37 @@ const CarePlatformSection = () => {
 
             </div>{/* /prism flex */}
 
-            {/* Outcome pills — mobile/tablet stacked (hidden at xl) */}
-            <div className="flex flex-col items-center gap-2 md:gap-3 px-6 pb-2 pt-10 md:pt-1 xl:pt-8">
-              {OUTCOMES.map(({ label, bgRgba, borderRgba }, idx) => (
-                <span
-                  key={label}
-                  className={`cp-pill cp-pill-${idx + 1} inline-block text-[15px] font-semibold tracking-[0.08em] uppercase px-5 py-2 rounded-full text-white`}
-                  style={{ background: bgRgba, border: `1px solid ${borderRgba}` }}
-                >
-                  {label}
-                </span>
-              ))}
-            </div>
+            {/* Comparison table */}
+            <div className="cp-closing max-w-[860px] mx-auto px-6 pb-20 pt-8 md:pt-4 w-full">
+              <div style={{ borderRadius: '12px', overflow: 'hidden', border: '0.5px solid rgba(249,245,239,0.18)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', background: 'rgba(20, 25, 35, 0.45)' }}>
 
-            {/* Closing line */}
-            <p className="cp-closing text-center text-[17px] leading-[1.5] max-w-[480px] mx-auto px-6 pt-10 md:pt-6 pb-24"
-              style={{ color: 'rgba(249,245,239,0.55)' }}>
-              Each episode builds trust,{" "}
-              <br className="md:hidden" />
-              deepens understanding, and{" "}
-              <br className="md:hidden" />
-              moves your audience closer to action.
-            </p>
+                {/* Table header */}
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', borderBottom: '1px solid rgba(249,245,239,0.12)', padding: '12px 16px' }}>
+                  <div style={{ fontSize: '11px', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(249,245,239,0.35)' }}>Category</div>
+                  <div style={{ fontSize: '11px', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(249,245,239,0.35)' }}>Podcast</div>
+                  <div style={{ fontSize: '11px', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#ff7f29', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                    <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#ff7f29', display: 'inline-block', flexShrink: 0 }}></span>
+                    Strategic series
+                  </div>
+                </div>
+
+                {/* Rows */}
+                {[
+                  { cat: 'Structure',    podcast: 'Open-ended, no set finish',      series: 'Finite arc with a destination' },
+                  { cat: 'Purpose',      podcast: 'Audience growth over time',      series: 'Drive a specific behavior' },
+                  { cat: 'Production',   podcast: 'Ongoing publishing schedule',    series: 'Built once, deployed for years' },
+                  { cat: 'Distribution', podcast: 'Public feed — Spotify, Apple',   series: 'Every channel, internal and external' },
+                  { cat: 'ROI',          podcast: 'Reach and downloads',            series: 'Measurable outcomes' },
+                ].map(({ cat, podcast, series }, i) => (
+                  <div key={cat} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', borderTop: i === 0 ? 'none' : '0.5px solid rgba(249,245,239,0.08)' }}>
+                    <div style={{ padding: '14px 16px', fontSize: '11px', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'rgba(249,245,239,0.35)', display: 'flex', alignItems: 'center' }}>{cat}</div>
+                    <div style={{ padding: '14px 16px', fontSize: '13px', lineHeight: 1.5, color: 'rgba(249,245,239,0.6)', borderLeft: '0.5px solid rgba(249,245,239,0.08)' }}>{podcast}</div>
+                    <div style={{ padding: '14px 16px', fontSize: '13px', lineHeight: 1.5, color: 'rgba(249,245,239,0.85)', borderLeft: '1.5px solid rgba(255,127,41,0.35)', background: 'rgba(255,127,41,0.08)' }}>{series}</div>
+                  </div>
+                ))}
+
+              </div>
+            </div>
 
           </div>{/* /animation container */}
 
