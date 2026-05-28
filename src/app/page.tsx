@@ -13,12 +13,13 @@ import CtaFinal from "@/components/sections/cta-final";
 import Footer from "@/components/sections/footer";
 import PodcastPathways from "@/components/sections/podcast-pathways";
 import PodcastPulse from "@/components/sections/podcast-pulse";
-import WhoWeBringTogether from "@/components/sections/who-we-bring-together";
 import ContentPrism from "@/components/sections/content-prism";
 import PodcastShowcase from "@/components/sections/podcast-showcase";
 import YourSeries from "@/components/sections/your-series";
 import PodcastExplainer from "@/components/sections/podcast-explainer";
 import WhySeriesWork from "@/components/sections/why-series-work";
+import SeriesReach from "@/components/sections/series-reach";
+import SeriesCost from "@/components/sections/series-cost";
 import StackingCards from "@/components/sections/stacking-cards";
 import ProblemSection from "@/components/sections/problem";
 import ROIAttentionSection from "@/components/sections/roi-attention";
@@ -33,14 +34,15 @@ export default function Home() {
       <Header />
       <div>
         <HeroSection />
+        <CarePlatformSection />
         <WhySeriesWork />
+        <ContentBridge />
+        <SeriesReach />
+        <SeriesCost />
         {/* <MissionSection /> */}
         {/* <ProblemSection /> */}
-        <ContentBridge />
-        <WhoWeBringTogether />
         {/* <StatInterstitial /> */}
         {/* <ROIAttentionSection /> */}
-        <CarePlatformSection />
         {/* <PodcastExplainer /> */}
         {/* <PodcastPathways /> */}
         <StackingCards />

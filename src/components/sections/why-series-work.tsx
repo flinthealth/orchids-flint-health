@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Heart, Stethoscope, Users, Handshake } from 'lucide-react';
+import SeriesWheel from '@/components/ui/series-wheel';
 
 const RADIUS = 130;
 const STROKE = 44;
@@ -154,158 +154,14 @@ export default function WhySeriesWork() {
           <p className="text-[#43382f] text-[17px] leading-[1.5] max-w-[420px] md:max-w-[660px] mx-auto">
             A well-produced series takes patients, providers, and healthcare teams on a journey that educates, motivates, and drives measurable behavioral shifts.
           </p>
-          <p className="text-[15px] font-semibold tracking-[0.1em] uppercase text-[#677283] mb-6 mt-10 text-left">WHO DO YOU NEED TO REACH?</p>
-          <div className="flex flex-col gap-5 max-w-[560px] text-left mt-6">
-            {[
-              { Icon: Heart, label: "Patients living with your condition.", desc: "Give them the science and the stories that move them from confusion to confidence." },
-              { Icon: Stethoscope, label: "Providers who need to adopt your protocol.", desc: "Meet them in their workflow with content that builds trust and changes practice." },
-              { Icon: Users, label: "A team that needs to believe in what you're building.", desc: "Culture doesn't scale on its own. A series carries your mission to every new hire." },
-              { Icon: Handshake, label: "Partners and referral networks.", desc: "Establish authority before the first meeting with content that speaks for itself." },
-            ].map(({ Icon, label, desc }) => (
-              <div key={label} className="flex items-start gap-3">
-                <Icon className="text-[#ff7f29] flex-shrink-0 mt-[2px]" size={18} />
-                <div>
-                  <span className="font-semibold text-[17px] text-[#2b3335]">{label}</span>{" "}
-                  <span className="font-normal text-[17px] text-[#43382f]">{desc}</span>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
 
         {/* Ring + Text cards */}
         <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-20">
 
-          {/* SVG Ring */}
+          {/* Series Wheel */}
           <div className="flex-shrink-0 w-full md:w-auto flex justify-center">
-            <svg
-              width={CANVAS}
-              height={CANVAS}
-              viewBox={`0 0 ${CANVAS} ${CANVAS}`}
-              style={{ maxWidth: "min(100%, 340px)", display: "block" }}
-            >
-              <defs>
-                {segments.map((seg) => (
-                  <path
-                    key={`tp-${seg.id}`}
-                    id={`arc-${seg.id}`}
-                    d={arcPath(seg.textStart, seg.textEnd, seg.textSweep)}
-                    fill="none"
-                  />
-                ))}
-                {/* Junction gradient fills — C=166, RADIUS=130 */}
-                <linearGradient id="grad-ce" gradientUnits="userSpaceOnUse" x1="121.5" y1="43.8" x2="210.5" y2="43.8">
-                  <stop offset="0%" stopColor="#eeb20b"/>
-                  <stop offset="100%" stopColor="#ff7f29"/>
-                </linearGradient>
-                <linearGradient id="grad-et" gradientUnits="userSpaceOnUse" x1="294" y1="188.6" x2="249.6" y2="265.6">
-                  <stop offset="0%" stopColor="#ff7f29"/>
-                  <stop offset="100%" stopColor="#54819a"/>
-                </linearGradient>
-                <linearGradient id="grad-tc" gradientUnits="userSpaceOnUse" x1="82.4" y1="265.6" x2="38" y2="188.6">
-                  <stop offset="0%" stopColor="#54819a"/>
-                  <stop offset="100%" stopColor="#eeb20b"/>
-                </linearGradient>
-              </defs>
-
-              {/* Outer + inner border (black stroke around ring) */}
-              <circle
-                cx={C} cy={C} r={RADIUS + STROKE / 2}
-                fill="none"
-                stroke="#2b3335"
-                strokeWidth="2"
-              />
-              <circle
-                cx={C} cy={C} r={RADIUS - STROKE / 2}
-                fill="none"
-                stroke="#2b3335"
-                strokeWidth="2"
-              />
-
-              {/* Colored segments — butt cap, no gap */}
-              {segments.map((seg, i) => {
-                const drawn = active >= i;
-                const dashArray = `${drawn ? SEG : 0} ${CIRCUMFERENCE - (drawn ? SEG : 0)}`;
-                return (
-                  <circle
-                    key={seg.id}
-                    cx={C} cy={C} r={RADIUS}
-                    fill="none"
-                    stroke={seg.color}
-                    strokeWidth={STROKE}
-                    strokeLinecap="butt"
-                    strokeDasharray={dashArray}
-                    strokeDashoffset={0}
-                    transform={`rotate(${seg.arcRotation} ${C} ${C})`}
-                    style={{
-                      transition: drawn
-                        ? "stroke-dasharray 0.4s cubic-bezier(0.4,0,0.2,1)"
-                        : "none",
-                    }}
-                  />
-                );
-              })}
-
-              {/* Gradient blends at segment junctions — fade in after ring completes */}
-              {gradientJunctions.map((jg) => (
-                <path
-                  key={jg.id}
-                  d={arcPath(jg.start, jg.end, 1)}
-                  fill="none"
-                  stroke={`url(#${jg.id})`}
-                  strokeWidth={STROKE}
-                  strokeLinecap="butt"
-                  style={{ opacity: complete ? 1 : 0, transition: "opacity 0.5s ease 0.3s" }}
-                />
-              ))}
-
-              {/* Curved labels */}
-              {segments.map((seg, i) => (
-                <text
-                  key={`label-${seg.id}`}
-                  fontSize="12"
-                  fontWeight="700"
-                  fontFamily="Inter, sans-serif"
-                  fill="#ffffff"
-                  letterSpacing="0.1em"
-                  style={{
-                    opacity: active >= i ? 1 : 0,
-                    transition: "opacity 0.35s ease",
-                  }}
-                >
-                  <textPath
-                    href={`#arc-${seg.id}`}
-                    startOffset="50%"
-                    textAnchor="middle"
-                  >
-                    {seg.label.toUpperCase()}
-                  </textPath>
-                </text>
-              ))}
-
-              {/* Center label */}
-              <text x={C} y={C - 15} textAnchor="middle" fontSize="11"
-                fontWeight="600" fontFamily="Inter, sans-serif" fill="#677283"
-                letterSpacing="0.12em"
-                style={{ opacity: complete ? 1 : 0, transition: "opacity 0.4s ease 0.3s" }}
-              >
-                THE
-              </text>
-              <text x={C} y={C + 1} textAnchor="middle" fontSize="11"
-                fontWeight="600" fontFamily="Inter, sans-serif" fill="#677283"
-                letterSpacing="0.12em"
-                style={{ opacity: complete ? 1 : 0, transition: "opacity 0.4s ease 0.35s" }}
-              >
-                SERIES
-              </text>
-              <text x={C} y={C + 17} textAnchor="middle" fontSize="11"
-                fontWeight="600" fontFamily="Inter, sans-serif" fill="#677283"
-                letterSpacing="0.12em"
-                style={{ opacity: complete ? 1 : 0, transition: "opacity 0.4s ease 0.4s" }}
-              >
-                EFFECT
-              </text>
-            </svg>
+            <SeriesWheel size={340} />
           </div>
 
           {/* Text cards */}
@@ -364,6 +220,7 @@ export default function WhySeriesWork() {
             })}
           </div>
         </div>
+
       </div>
     </section>
   );

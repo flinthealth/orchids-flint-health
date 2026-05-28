@@ -1,0 +1,100 @@
+"use client";
+import React, { useRef, useState, useEffect } from 'react';
+
+const RADIUS = 130;
+const STROKE = 36;
+const CANVAS = (RADIUS + STROKE / 2 + 14) * 2;
+const C = CANVAS / 2;
+
+function toXY(deg: number, r: number) {
+  const rad = (deg * Math.PI) / 180;
+  return { x: C + r * Math.cos(rad), y: C + r * Math.sin(rad) };
+}
+
+function arcPath(startDeg: number, endDeg: number, sweep: 0 | 1): string {
+  const s = toXY(startDeg, RADIUS);
+  const e = toXY(endDeg, RADIUS);
+  return `M ${s.x} ${s.y} A ${RADIUS} ${RADIUS} 0 0 ${sweep} ${e.x} ${e.y}`;
+}
+
+const segments = [
+  { id: "curiosity", label: "Attention", color: "#eeb20b", arcRotation: 150, textStart: 150, textEnd: 270, textSweep: 1 as const },
+  { id: "emotion", label: "Emotion", color: "#ff7f29", arcRotation: -90, textStart: -90, textEnd: 30, textSweep: 1 as const },
+  { id: "trust", label: "Trust", color: "#54819a", arcRotation: 30, textStart: 150, textEnd: 30, textSweep: 0 as const },
+];
+
+const gradientJunctions = [
+  { id: "grad-ce", start: -110, end: -70 },
+  { id: "grad-et", start: 10, end: 50 },
+  { id: "grad-tc", start: 130, end: 170 },
+];
+
+const SEG = (2 * Math.PI * RADIUS) / 3;
+const CIRCUMFERENCE = 2 * Math.PI * RADIUS;
+
+export default function SeriesWheel({ size = 280 }: { size?: number }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [active, setActive] = useState(-1);
+  const [complete, setComplete] = useState(false);
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAnimated) {
+          setHasAnimated(true);
+          setActive(0);
+          setTimeout(() => setActive(1), 600);
+          setTimeout(() => setActive(2), 1200);
+          setTimeout(() => setComplete(true), 1800);
+        }
+      },
+      { threshold: 0.25 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [hasAnimated]);
+
+  return (
+    <div ref={ref} style={{ width: size, height: size }}>
+      <svg width={CANVAS} height={CANVAS} viewBox={`0 0 ${CANVAS} ${CANVAS}`} style={{ width: '100%', height: '100%', display: 'block' }}>
+        <defs>
+          {segments.map((seg) => (
+            <path key={`tp-${seg.id}`} id={`arc-${seg.id}`} d={arcPath(seg.textStart, seg.textEnd, seg.textSweep)} fill="none" />
+          ))}
+          <linearGradient id="grad-ce" gradientUnits="userSpaceOnUse" x1="121.5" y1="43.8" x2="210.5" y2="43.8">
+            <stop offset="0%" stopColor="#eeb20b"/><stop offset="100%" stopColor="#ff7f29"/>
+          </linearGradient>
+          <linearGradient id="grad-et" gradientUnits="userSpaceOnUse" x1="294" y1="188.6" x2="249.6" y2="265.6">
+            <stop offset="0%" stopColor="#ff7f29"/><stop offset="100%" stopColor="#54819a"/>
+          </linearGradient>
+          <linearGradient id="grad-tc" gradientUnits="userSpaceOnUse" x1="82.4" y1="265.6" x2="38" y2="188.6">
+            <stop offset="0%" stopColor="#54819a"/><stop offset="100%" stopColor="#eeb20b"/>
+          </linearGradient>
+        </defs>
+        <circle cx={C} cy={C} r={RADIUS + STROKE / 2} fill="none" stroke="#2b3335" strokeWidth="2" />
+        <circle cx={C} cy={C} r={RADIUS - STROKE / 2} fill="none" stroke="#2b3335" strokeWidth="2" />
+        {segments.map((seg, i) => {
+          const drawn = active >= i;
+          const dashArray = `${drawn ? SEG : 0} ${CIRCUMFERENCE - (drawn ? SEG : 0)}`;
+          return (
+            <circle key={seg.id} cx={C} cy={C} r={RADIUS} fill="none" stroke={seg.color} strokeWidth={STROKE} strokeLinecap="butt" strokeDasharray={dashArray} strokeDashoffset={0} transform={`rotate(${seg.arcRotation} ${C} ${C})`} style={{ transition: drawn ? "stroke-dasharray 0.4s cubic-bezier(0.4,0,0.2,1)" : "none" }} />
+          );
+        })}
+        {gradientJunctions.map((jg) => (
+          <path key={jg.id} d={arcPath(jg.start, jg.end, 1)} fill="none" stroke={`url(#${jg.id})`} strokeWidth={STROKE} strokeLinecap="butt" style={{ opacity: complete ? 1 : 0, transition: "opacity 0.5s ease 0.3s" }} />
+        ))}
+        {segments.map((seg, i) => (
+          <text key={`label-${seg.id}`} fontSize="12" fontWeight="700" fontFamily="Inter, sans-serif" fill="#ffffff" letterSpacing="0.1em" style={{ opacity: active >= i ? 1 : 0, transition: "opacity 0.35s ease" }}>
+            <textPath href={`#arc-${seg.id}`} startOffset="50%" textAnchor="middle">{seg.label.toUpperCase()}</textPath>
+          </text>
+        ))}
+        <text x={C} y={C - 15} textAnchor="middle" fontSize="11" fontWeight="600" fontFamily="Inter, sans-serif" fill="#677283" letterSpacing="0.12em" style={{ opacity: complete ? 1 : 0, transition: "opacity 0.4s ease 0.3s" }}>THE</text>
+        <text x={C} y={C + 1} textAnchor="middle" fontSize="11" fontWeight="600" fontFamily="Inter, sans-serif" fill="#677283" letterSpacing="0.12em" style={{ opacity: complete ? 1 : 0, transition: "opacity 0.4s ease 0.35s" }}>SERIES</text>
+        <text x={C} y={C + 17} textAnchor="middle" fontSize="11" fontWeight="600" fontFamily="Inter, sans-serif" fill="#677283" letterSpacing="0.12em" style={{ opacity: complete ? 1 : 0, transition: "opacity 0.4s ease 0.4s" }}>EFFECT</text>
+      </svg>
+    </div>
+  );
+}

@@ -38,56 +38,16 @@ const CALLOUTS = [
   },
 ];
 
-const glassStyle = {
-  background: 'rgba(255,255,255,0.10)',
-  backdropFilter: 'blur(16px)',
-  WebkitBackdropFilter: 'blur(16px)',
-  border: '1px solid rgba(255,255,255,0.18)',
-  boxShadow: '0 4px 24px rgba(0,0,0,0.18)',
-  maxWidth: 220,
-};
-
 const divider = { borderTop: '1px solid rgba(103,114,131,0.15)' };
 
 export default function WhoWeBringTogether() {
   return (
     <section className="bg-[#f9f5ef] w-full overflow-hidden">
 
-      {/* ── Two-column layout ── */}
-      <div className="flex flex-col md:flex-row min-h-[640px] md:min-h-[700px] lg:min-h-[820px] xl:min-h-[900px]">
+      <div className="flex flex-col">
 
-        {/* ── Left: video with frosted glass stat card ── */}
-        <div className="w-full md:w-[42%] lg:w-[38%] relative flex-shrink-0 min-h-[520px] md:min-h-full self-stretch">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover object-left"
-            src="/stats-idle-time-compressed.mp4"
-          />
-
-          {/* Frosted glass 92% card — bottom-right */}
-          <div className="absolute bottom-7 right-7 z-10 px-5 py-4 rounded-2xl" style={glassStyle}>
-            <p className="text-[#f9f5ef] font-light leading-none tracking-[-0.03em] mb-2" style={{ fontSize: 56 }}>
-              92%
-            </p>
-            <p className="text-[13px] leading-[1.55]" style={{ color: 'rgba(249,245,239,0.80)' }}>
-              Of podcast listeners tune in during their daily routine.
-              <a
-                href="https://www.westwoodone.com/wp-content/uploads/2025/11/Cumulus-Media-and-Signal-Hill-Insights-Podcast-Download-Fall-2025_WWO.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[10px] align-super ml-0.5 opacity-50 hover:opacity-80 transition-opacity"
-                style={{ color: 'rgba(249,245,239,0.80)' }}
-              >4</a>
-            </p>
-          </div>
-        </div>
-
-        {/* ── Right: content ── */}
-        {/* tablet (md): extra top padding; desktop (lg): vertically centred, no top pad */}
-        <div className="flex-1 flex flex-col justify-center px-8 md:px-12 lg:px-16 pt-14 md:pt-16 lg:pt-0 pb-14 md:pb-0">
+        {/* ── Content ── */}
+        <div className="flex flex-col justify-center px-8 md:px-12 lg:px-16 pt-14 pb-14">
 
           {/* Eyebrow */}
           <p className="text-[#677283] text-[15px] font-semibold tracking-[0.1em] uppercase mb-5">

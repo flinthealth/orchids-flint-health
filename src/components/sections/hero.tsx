@@ -80,7 +80,7 @@ export default function HeroSection() {
               className="animate-hero-title text-white font-light mb-5 text-[40px] md:text-[52px]"
               style={{ lineHeight: 1.15, letterSpacing: '-0.02em' }}
             >
-              Premium<br /> branded series<br /> that turn attention<br /> into lifetime value
+              Premium<br /> branded series<br /> that turn attention<br /> into <span className="font-serif italic">lifetime value</span>
             </h1>
 
             <p className="animate-hero-sub1 text-white/80 text-[17px] md:text-[15px] lg:text-[17px] font-normal mb-4">
