@@ -77,7 +77,7 @@ export default function HeroSection() {
             <div className="h-[22px] md:hidden" />
 
             <h1
-              className="animate-hero-title text-white font-light mb-5 text-[34px] md:text-[40px] lg:text-[50px]"
+              className="animate-hero-title text-white font-light mb-5 text-[40px] md:text-[52px]"
               style={{ lineHeight: 1.15, letterSpacing: '-0.02em' }}
             >
               Premium<br /> branded series<br /> that turn attention<br /> into lifetime value

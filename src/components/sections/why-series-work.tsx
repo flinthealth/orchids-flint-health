@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { Heart, Stethoscope, Users, Handshake } from 'lucide-react';
 
 const RADIUS = 130;
 const STROKE = 44;
@@ -153,19 +154,20 @@ export default function WhySeriesWork() {
           <p className="text-[#43382f] text-[17px] leading-[1.5] max-w-[420px] md:max-w-[660px] mx-auto">
             A well-produced series takes patients, providers, and healthcare teams on a journey that educates, motivates, and drives measurable behavioral shifts.
           </p>
-          <div className="mt-8 flex flex-col gap-4 max-w-[560px] text-left">
+          <p className="text-[15px] font-semibold tracking-[0.1em] uppercase text-[#677283] mb-6 mt-10 text-left">WHO DO YOU NEED TO REACH?</p>
+          <div className="flex flex-col gap-5 max-w-[560px] text-left mt-6">
             {[
-              { label: "A Finished Asset:", desc: "A defined beginning, middle, and end. Not an endless feed." },
-              { label: "Goal-Driven Design:", desc: "Every single episode is mapped to a specific business objective." },
-              { label: "One-Time Investment:", desc: "Batch-produced once, then deployed to drive value for years." },
-              { label: "Scalable Impact:", desc: "Onboard patients, train providers, and build authority without ongoing production costs." },
-            ].map(({ label, desc }) => (
+              { Icon: Heart, label: "Patients living with your condition.", desc: "Give them the science and the stories that move them from confusion to confidence." },
+              { Icon: Stethoscope, label: "Providers who need to adopt your protocol.", desc: "Meet them in their workflow with content that builds trust and changes practice." },
+              { Icon: Users, label: "A team that needs to believe in what you're building.", desc: "Culture doesn't scale on its own. A series carries your mission to every new hire." },
+              { Icon: Handshake, label: "Partners and referral networks.", desc: "Establish authority before the first meeting with content that speaks for itself." },
+            ].map(({ Icon, label, desc }) => (
               <div key={label} className="flex items-start gap-3">
-                <span className="text-[#ff7f29] font-normal text-[17px] flex-shrink-0 mt-[2px]">→</span>
-                <p className="text-[17px] leading-[1.5]">
-                  <span className="font-semibold text-[#2b3335]">{label}</span>{" "}
-                  <span className="text-[#43382f] font-normal">{desc}</span>
-                </p>
+                <Icon className="text-[#ff7f29] flex-shrink-0 mt-[2px]" size={18} />
+                <div>
+                  <span className="font-semibold text-[17px] text-[#2b3335]">{label}</span>{" "}
+                  <span className="font-normal text-[17px] text-[#43382f]">{desc}</span>
+                </div>
               </div>
             ))}
           </div>
