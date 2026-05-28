@@ -431,7 +431,7 @@ export default function DNAWaveSection() {
             Done right, podcasting creates a ripple effect no other media can rival.
           </p>
           <p className="text-[#43382f] text-[17px] leading-[1.5]">
-            I work directly with executive leadership from strategy through final delivery, backed by a trusted network of producers and editors I&apos;ve worked with for years.
+            The work is selective by design. I work directly with executive leadership from strategy through final delivery. Each engagement is treated as one of a handful I take each year, and run accordingly.
           </p>
         </div>
 

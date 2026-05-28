@@ -2,11 +2,15 @@
 
 export default function SeriesCost() {
   return (
-    <section style={{ background: "#f9f5ef" }} className="w-full py-24 px-6 md:px-12 overflow-hidden">
+    <section style={{ background: "#f9f5ef" }} className="w-full pt-12 pb-24 px-6 md:px-12 overflow-hidden">
       <div className="max-w-[1280px] mx-auto">
-        <h2 className="text-[#2b3335] text-[36px] md:text-[46px] lg:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-10 max-w-[520px]">
+        <h2 className="text-[#2b3335] text-[36px] md:text-[46px] lg:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-0 max-w-[520px]">
           How much does it cost not to reach them?
         </h2>
+        <p className="max-w-[580px] mb-10 mt-4 text-[17px] text-[#43382f] leading-relaxed">
+          Every unreached patient, provider, and team member has a cost.{" "}
+          <em className="font-serif italic text-[17px] text-[#43382f]">Lost time. Missed outcomes. Avoidable setbacks.</em>
+        </p>
         <div className="flex flex-col md:flex-row gap-8 md:gap-12">
           {[
             { pill: "Patients",   color: "#eeb20b", labelColor: "#a07800", stat: "9 in 10", descriptor: "Patients struggle with health information.",       cite: "5", citeUrl: "https://www.cdc.gov/health-literacy/php/about/tell-others.html" },

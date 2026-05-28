@@ -193,7 +193,7 @@ const CarePlatformSection = () => {
               Multiple uses. <span className="font-serif italic" style={{ color: '#ffffff' }}>Measurable impact.</span>
             </h2>
             <p className="text-[17px] leading-[1.5] max-w-[560px] mx-auto" style={{ color: 'rgba(249,245,239,0.55)' }}>
-              Create a compounding chain of results.
+              It pays to be strategic and resourceful.
             </p>
           </div>
 
@@ -433,36 +433,18 @@ const CarePlatformSection = () => {
 
             </div>{/* /prism flex */}
 
-            {/* Comparison table */}
-            <div className="cp-closing max-w-[860px] mx-auto px-6 pb-20 pt-8 md:pt-4 w-full">
-              <div style={{ borderRadius: '12px', overflow: 'hidden', border: '0.5px solid rgba(249,245,239,0.18)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', background: 'rgba(20, 25, 35, 0.45)' }}>
-
-                {/* Table header */}
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', borderBottom: '1px solid rgba(249,245,239,0.12)', padding: '12px 16px' }}>
-                  <div style={{ fontSize: '11px', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(249,245,239,0.35)' }}>Category</div>
-                  <div style={{ fontSize: '11px', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(249,245,239,0.35)' }}>Podcast</div>
-                  <div style={{ fontSize: '11px', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#ff7f29', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                    <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#ff7f29', display: 'inline-block', flexShrink: 0 }}></span>
-                    Strategic series
-                  </div>
-                </div>
-
-                {/* Rows */}
-                {[
-                  { cat: 'Structure',    podcast: 'Open-ended, no set finish',      series: 'Finite arc with a destination' },
-                  { cat: 'Purpose',      podcast: 'Audience growth over time',      series: 'Drive a specific behavior' },
-                  { cat: 'Production',   podcast: 'Ongoing publishing schedule',    series: 'Built once, deployed for years' },
-                  { cat: 'Distribution', podcast: 'Public feed — Spotify, Apple',   series: 'Every channel, internal and external' },
-                  { cat: 'ROI',          podcast: 'Reach and downloads',            series: 'Measurable outcomes' },
-                ].map(({ cat, podcast, series }, i) => (
-                  <div key={cat} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', borderTop: i === 0 ? 'none' : '0.5px solid rgba(249,245,239,0.08)' }}>
-                    <div style={{ padding: '14px 16px', fontSize: '11px', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'rgba(249,245,239,0.35)', display: 'flex', alignItems: 'center' }}>{cat}</div>
-                    <div style={{ padding: '14px 16px', fontSize: '13px', lineHeight: 1.5, color: 'rgba(249,245,239,0.6)', borderLeft: '0.5px solid rgba(249,245,239,0.08)' }}>{podcast}</div>
-                    <div style={{ padding: '14px 16px', fontSize: '13px', lineHeight: 1.5, color: 'rgba(249,245,239,0.85)', borderLeft: '1.5px solid rgba(255,127,41,0.35)', background: 'rgba(255,127,41,0.08)' }}>{series}</div>
-                  </div>
-                ))}
-
-              </div>
+            {/* Closing lines */}
+            <div className="cp-closing text-center max-w-[640px] mx-auto px-6 pt-10 md:pt-6 pb-24">
+              <h2 className="text-white text-[32px] md:text-[42px] font-light leading-[1.15] tracking-[-0.02em] mb-3">
+                Most content gets <em className="font-serif italic">seconds.</em><br />
+                A strategic series gets <em className="font-serif italic">hours.</em>
+              </h2>
+              <p className="text-[15px] tracking-[0.05em] mb-6" style={{ color: 'rgba(249,245,239,0.40)' }}>
+                <em className="font-serif italic">(read that again.)</em>
+              </p>
+              <p className="text-[17px] leading-relaxed" style={{ color: 'rgba(249,245,239,0.55)' }}>
+                This creates a fundamentally different relationship with your audience.
+              </p>
             </div>
 
           </div>{/* /animation container */}

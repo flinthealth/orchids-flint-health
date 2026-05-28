@@ -31,7 +31,7 @@ export default function YourSeries() {
       {/* ── Phase 1 heading block ── */}
       <div className="ys-phase-block max-w-[1000px] mx-auto w-full px-6 md:px-8 pt-10 pb-10 md:pb-4">
         <div className="ys-phase-number ys-phase-gradient text-[88px] font-light tracking-[-0.04em] leading-none mb-1">1</div>
-        <div className="text-[26px] font-bold text-[#2b3335] leading-tight mb-5">Strategy first.</div>
+        <div className="text-[26px] font-bold text-[#2b3335] leading-tight mb-5">Outcomes first.</div>
         <p className="font-serif italic text-[20px] md:text-[22px] text-[#43382f] leading-relaxed mb-3">
           Before we record a word, we know exactly what your series needs to do.
         </p>

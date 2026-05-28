@@ -4,15 +4,6 @@ import React, { useState } from "react";
 
 const FAQS: { q: string; a: string[] }[] = [
   {
-    q: "What's the difference between a podcast and a series?",
-    a: [
-      "A podcast is a format. A series is a strategy.",
-      "Most of what we produce is distributed as a podcast — audio on Spotify and Apple, video on YouTube, clips across social. But the format is just the delivery. What you're actually building is a structured arc of episodes with clear objectives, a narrative thread, and a defined audience outcome.",
-      "That structure lets one series do two jobs. Externally it builds authority and reaches the patients, providers, or partners you're growing with. Internally it travels inside onboarding sequences, clinical training programs, and team communication.",
-      "Episodic storytelling across all channels is where media is heading. The healthcare organizations and brands pulling ahead aren't focused on pumping out content for SEO. They're building something deliberate and durable that their competitors can't replicate.",
-    ],
-  },
-  {
     q: "How long does it take to launch a series?",
     a: [
       "Most series launch within one quarter, typically 10 to 12 weeks from strategy through first publish. Launch means your series is live and in market. Production of additional episodes can continue well beyond that, building your content library over time.",

@@ -4,7 +4,7 @@ import { Heart, Stethoscope, Users, Handshake } from 'lucide-react';
 
 export default function SeriesReach() {
   return (
-    <section style={{ background: "#f9f5ef" }} className="w-full py-24 px-6 md:px-12 overflow-hidden">
+    <section style={{ background: "#f9f5ef" }} className="w-full pt-24 pb-12 px-6 md:px-12 overflow-hidden">
       <div className="max-w-[1280px] mx-auto">
         <div className="flex flex-col md:flex-row gap-10 md:gap-16 items-stretch">
           {/* Video */}

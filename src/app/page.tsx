@@ -27,6 +27,7 @@ import FAQSection from "@/components/sections/faq";
 import StatInterstitial from "@/components/sections/stat-interstitial";
 import ContentBridge from "@/components/sections/content-bridge";
 import MissionSection from "@/components/sections/mission";
+import SeriousAboutSeries from "@/components/sections/serious-about-series";
 
 export default function Home() {
   return (
@@ -34,8 +35,9 @@ export default function Home() {
       <Header />
       <div>
         <HeroSection />
+        <SeriousAboutSeries />
         <CarePlatformSection />
-        <WhySeriesWork />
+        {/* <WhySeriesWork /> */}
         <ContentBridge />
         <SeriesReach />
         <SeriesCost />

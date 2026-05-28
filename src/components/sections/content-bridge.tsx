@@ -40,7 +40,7 @@ export default function ContentBridge() {
           text-align: left;
           z-index: 20;
         }
-        .cb-text-on-photo h2 { font-size: 36px; }
+        .cb-text-on-photo h2 { font-size: 40px; }
         .cb-continuation {
           display: block;
           background: linear-gradient(to right, #3d4d58 0%, #6b4b3e 55%, #a0522d 100%);
@@ -70,7 +70,9 @@ export default function ContentBridge() {
           .cb-text-on-photo {
             display: block;
             position: absolute;
-            bottom: 0; left: 0; right: 0;
+            bottom: 0; left: 0; right: auto;
+            width: 55%;
+            max-width: 560px;
             padding: 0 48px 0px;
             text-align: left;
             z-index: 20;
@@ -82,7 +84,7 @@ export default function ContentBridge() {
           }
 
           .cb-text-on-photo p {
-            font-size: 22px;
+            font-size: 17px;
           }
 
           .cb-continuation {
@@ -121,13 +123,15 @@ export default function ContentBridge() {
           .cb-text-on-photo {
             display: block;
             position: absolute;
-            bottom: 0; left: 0; right: 0;
+            bottom: 0; left: 0; right: auto;
+            width: 90%;
+            max-width: 460px;
             padding: 0 24px 0px;
             text-align: left;
             z-index: 20;
           }
-          .cb-text-on-photo h2 { font-size: 36px; }
-          .cb-text-on-photo p { font-size: 20px; }
+          .cb-text-on-photo h2 { font-size: 40px; }
+          .cb-text-on-photo p { font-size: 17px; }
           .cb-vignette-sides { display: none; }
           .cb-vignette-bottom { display: none; }
         }
@@ -151,13 +155,15 @@ export default function ContentBridge() {
           .cb-text-on-photo {
             display: block;
             position: absolute;
-            bottom: 0; left: 0; right: 0;
+            bottom: 0; left: 0; right: auto;
+            width: 60%;
+            max-width: 620px;
             padding: 0 48px 0px;
             text-align: left;
             z-index: 20;
           }
           .cb-text-on-photo h2 { font-size: 52px; }
-          .cb-text-on-photo p { font-size: 22px; }
+          .cb-text-on-photo p { font-size: 17px; }
           .cb-vignette-sides { display: none; }
           .cb-vignette-bottom { display: none; }
         }
@@ -214,7 +220,9 @@ export default function ContentBridge() {
           .cb-text-on-photo {
             display: block;
             position: absolute;
-            bottom: 0; top: auto; left: 0; right: 0;
+            bottom: 0; top: auto; left: 0; right: auto;
+            width: 44vw;
+            min-width: 400px;
             padding: 0 80px 80px;
             text-align: left;
             z-index: 20;
@@ -226,12 +234,11 @@ export default function ContentBridge() {
           .cb-text-on-photo h2 {
             font-size: 52px;
             text-align: left;
-            margin: 0 0 12px;
-            max-width: 680px;
+            margin: 0 0 16px;
           }
 
           .cb-text-on-photo p {
-            font-size: 20px;
+            font-size: 17px;
             text-align: left;
           }
 
@@ -303,17 +310,16 @@ export default function ContentBridge() {
         <div className="cb-vignette-bottom" />
 
         {/* Headline + (read that again) on the photo */}
-        <div className="cb-text-on-photo">
+        <div className="cb-text-on-photo" style={{ right: 'auto', width: 'clamp(320px, 80vw, 640px)' }}>
           <h2
             style={{ color: '#f9f5ef', fontWeight: 300, lineHeight: 1.2, letterSpacing: '-0.02em', marginBottom: '16px' }}
           >
-            Most content<br />gets <em>seconds.</em><br />A strategic series<br />gets <em>hours.</em>
+            A series gives you<br />
+            complete control<br />
+            over <span className="font-serif italic">your messaging</span>
           </h2>
-          <p style={{ color: 'rgba(249,245,239,0.45)', fontSize: '20px', fontFamily: 'var(--font-serif)', fontStyle: 'italic', letterSpacing: '0.02em' }}>
-            (read that again).
-          </p>
-          <p className="cb-body-on-photo" style={{ color: 'rgba(249,245,239,0.72)', fontSize: '17px', lineHeight: 1.65, marginTop: '16px' }}>
-            Deeper engagement creates a fundamentally different relationship with your audience.
+          <p className="cb-body-on-photo" style={{ color: 'rgba(249,245,239,0.72)', lineHeight: 1.65, marginTop: '12px' }}>
+            The right experts. Compelling stories. A clear call to action.
           </p>
         </div>
       </div>
@@ -321,8 +327,8 @@ export default function ContentBridge() {
 
       {/* Body copy continuation block — mobile & tablet only */}
       <div className="cb-continuation lg:hidden">
-        <p>
-          Deeper engagement creates a fundamentally different relationship with your audience.
+        <p style={{ color: 'rgba(249,245,239,0.72)', fontSize: '17px', lineHeight: 1.65 }}>
+          The right experts. Compelling stories. A clear call to action.
         </p>
       </div>
 
@@ -330,23 +336,18 @@ export default function ContentBridge() {
       <div className="cb-text-desktop">
         <div className="cb-text-desktop-inner relative z-20 px-6 text-center">
           <h2
-            className="text-[40px] md:text-[44px] lg:text-[52px] font-light leading-[1.2] tracking-[-0.02em] mb-6 mx-auto"
+            className="text-[40px] md:text-[44px] lg:text-[52px] font-light leading-[1.2] tracking-[-0.02em] mb-3 mx-auto"
             style={{ color: '#f9f5ef' }}
           >
-            <span className="block md:whitespace-nowrap mb-4 md:mb-0">Most content gets <span className="font-serif italic">seconds.</span></span>
-            <span className="block md:whitespace-nowrap">A strategic series gets <span className="font-serif italic">hours.</span></span>
+            A series gives you<br />
+            complete control<br />
+            over <span className="font-serif italic">your messaging</span>
           </h2>
           <p
-            className="text-[20px] md:text-[22px] font-serif italic mb-8 mx-auto"
-            style={{ color: 'rgba(249,245,239,0.45)', letterSpacing: '0.02em' }}
+            className="text-[20px] max-w-[480px] mx-auto mt-3"
+            style={{ color: 'rgba(249,245,239,0.72)', lineHeight: 1.65 }}
           >
-            (read that again).
-          </p>
-          <p
-            className="text-[16px] md:text-[17px] leading-[1.65] max-w-[480px] mx-auto"
-            style={{ color: 'rgba(249,245,239,0.65)' }}
-          >
-            Deeper engagement creates a fundamentally different relationship with your audience.
+            The right experts. Compelling stories. A clear call to action.
           </p>
         </div>
       </div>

@@ -56,7 +56,7 @@ const cards = [
     id: 0,
     filters: ['clinical', 'authority', 'operational'] as FilterKey[],
     title: 'HCP Training & Clinical Education',
-    headline: 'Get providers up to speed on the latest research, protocols, and advancements',
+    headline: 'Get providers up to speed and practice-ready.',
     body: "We build series that bring important frameworks, devices, and therapeutic approaches to life, driving faster adoption and stronger clinical judgment across your team.",
     applications: [
       'Protocol walkthroughs with expert clinical commentary',
@@ -69,7 +69,7 @@ const cards = [
     id: 1,
     filters: ['patient', 'clinical', 'authority'] as FilterKey[],
     title: 'Patient Education & Engagement',
-    headline: 'Guide patients on their health journey so they feel inspired and informed',
+    headline: 'Educate, motivate, and support patients on their health journey',
     body: "We create bingeworthy series that help patients feel less alone. By answering all the questions that run through their minds, you can inspire patients to engage more, adhere more, and become your strongest advocates.",
     applications: [
       'Condition and treatment education series',
