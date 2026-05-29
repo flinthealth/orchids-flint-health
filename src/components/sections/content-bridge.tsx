@@ -221,8 +221,8 @@ export default function ContentBridge() {
             display: block;
             position: absolute;
             bottom: 0; top: auto; left: 0; right: auto;
-            width: 48vw;
-            min-width: 500px;
+            width: 65vw;
+            min-width: 680px;
             padding: 0 80px 80px;
             text-align: left;
             z-index: 20;
@@ -310,9 +310,9 @@ export default function ContentBridge() {
         <div className="cb-vignette-bottom" />
 
         {/* Headline + (read that again) on the photo */}
-        <div className="cb-text-on-photo" style={{ right: 'auto', width: 'clamp(320px, 80vw, 760px)' }}>
+        <div className="cb-text-on-photo" style={{ right: 'auto', width: 'clamp(680px, 65vw, 1000px)' }}>
           <h2
-            className="text-[40px] lg:text-[56px] max-w-[320px] lg:max-w-[580px]"
+            className="text-[40px] lg:text-[56px] max-w-[440px] lg:max-w-[800px]"
             style={{ color: '#f9f5ef', fontWeight: 300, lineHeight: 1.2, letterSpacing: '-0.02em', marginBottom: '16px' }}
           >
             A series gives you<br />

@@ -22,7 +22,7 @@ export default function SeriesReach() {
           {/* Who do you need to reach? */}
           <div className="flex-1 flex flex-col justify-center">
             <h2 className="text-[#2b3335] text-[36px] md:text-[46px] lg:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-8 max-w-[520px]">
-              Who do you need to <em className="font-serif italic">reach</em>?
+              Who do you<br className="md:hidden" /> need to <em className="font-serif italic">reach</em>?
             </h2>
             <div className="flex flex-col gap-5 max-w-[560px]">
               {[

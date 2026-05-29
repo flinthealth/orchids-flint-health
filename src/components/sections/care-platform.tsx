@@ -178,7 +178,7 @@ const CarePlatformSection = () => {
         <div className="relative z-10">
 
           {/* Section header */}
-          <div className="text-center pt-24 pb-1 px-6"
+          <div className="text-center pt-24 pb-1 px-3 md:px-6"
             style={{
               opacity: tilesVisible ? 1 : 0,
               transform: tilesVisible ? 'translateY(0)' : 'translateY(10px)',
@@ -436,8 +436,8 @@ const CarePlatformSection = () => {
             {/* Closing lines */}
             <div className="cp-closing text-center max-w-[640px] mx-auto px-6 pt-10 md:pt-6 pb-24">
               <h2 className="text-white text-[32px] md:text-[42px] font-light leading-[1.15] tracking-[-0.02em] mb-3">
-                Most content gets <em className="font-serif italic">seconds.</em><br />
-                A strategic series gets <em className="font-serif italic">hours.</em>
+                Most content<br className="md:hidden" /> gets <em className="font-serif italic">seconds.</em><br />
+                A strategic series<br className="md:hidden" /> gets <em className="font-serif italic">hours.</em>
               </h2>
               <p className="text-[15px] tracking-[0.05em] mb-6" style={{ color: 'rgba(249,245,239,0.40)' }}>
                 <em className="font-serif italic">(read that again.)</em>
