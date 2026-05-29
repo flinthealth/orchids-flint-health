@@ -4,7 +4,7 @@ export default function SeriesCost() {
   return (
     <section style={{ background: "#f9f5ef" }} className="w-full pt-12 pb-24 px-6 md:px-12 overflow-hidden">
       <div className="max-w-[1280px] mx-auto">
-        <h2 className="text-[#2b3335] text-[36px] md:text-[46px] lg:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-0 max-w-[520px]">
+        <h2 className="text-[#2b3335] text-[36px] md:text-[46px] lg:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-0 max-w-[760px]">
           How much does it cost <em className="font-serif italic">not</em> to reach them?
         </h2>
         <p className="max-w-[780px] mb-10 mt-4 text-[19px] text-[#43382f] leading-relaxed">

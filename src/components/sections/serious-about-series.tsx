@@ -6,23 +6,23 @@ const ROWS = [
   {
     cat: 'Structure',
     podcast: 'Open-ended, no set finish',
-    series: 'Finite arc with a destination',
+    series: 'A complete arc. One series or structured seasons.',
     seriesSub: null,
     podcastSub: null,
     popover: {
       podcast: 'Episodes are independent. Listeners can start anywhere. No predetermined end date.',
-      series: 'A defined beginning, middle, and end. Each episode builds toward a specific resolution.',
+      series: 'A defined arc with a clear destination. Built as one complete series or structured across seasons, each with its own objective.',
     },
   },
   {
     cat: 'Purpose',
     podcast: 'Audience growth over time',
-    series: 'Drive a specific behavior',
+    series: 'Drive a specific behavior or outcome',
     seriesSub: null,
     podcastSub: null,
     popover: {
       podcast: 'Built for long-term audience cultivation. Success measured in listener numbers over months or years.',
-      series: 'Engineered to drive a specific outcome: clinical adoption, patient action, team alignment.',
+      series: 'Engineered to drive a specific behavior or outcome: clinical adoption, patient action, team alignment.',
     },
   },
   {
@@ -56,6 +56,17 @@ const ROWS = [
     popover: {
       podcast: 'Success is audience size and growth. Hard to tie directly to revenue or behavioral change.',
       series: 'Episode retention, behavioral shifts, training completion, treatment inquiries, referrals.',
+    },
+  },
+  {
+    cat: 'Syndication',
+    podcast: 'Starts and stays on your own channel.',
+    series: 'Can launch on established niche channels.',
+    seriesSub: null,
+    podcastSub: null,
+    popover: {
+      podcast: 'You own the feed and build the audience yourself. Growth is slow and starts from zero.',
+      series: 'Air on established channels with existing healthcare audiences. Your series reaches the right people from the first episode.',
     },
   },
 ];
@@ -107,8 +118,8 @@ export default function SeriousAboutSeries() {
         <p className="text-[15px] font-semibold tracking-[0.1em] uppercase text-[#677283] mb-4">
           SERIOUS ABOUT SERIES
         </p>
-        <h2 className="text-[32px] md:text-[38px] font-light text-[#2b3335] leading-[1.15] tracking-[-0.02em] max-w-[640px] mb-4">
-          Flint is a full-service creative studio that makes it easy for healthcare brands to develop, launch and grow bingeworthy series across all&nbsp;channels.
+        <h2 className="text-[34px] md:text-[40px] font-light text-[#2b3335] leading-[1.15] tracking-[-0.02em] max-w-[660px] mb-4">
+          Flint is a full-service creative studio that makes it easy for healthcare brands to develop, launch and grow bingeworthy series across multiple channels.
         </h2>
         <p className="text-[17px] text-[#43382f] leading-relaxed max-w-[560px] mb-12 opacity-80">
           Not sure what makes a series different from a podcast? Here's the short version.
@@ -123,14 +134,14 @@ export default function SeriousAboutSeries() {
                 <th style={{ width: '110px' }} />
                 {/* Podcast */}
                 <th className="text-left pb-3 border-b border-[rgba(43,51,53,0.15)] pl-2 md:pl-8 pr-3"
-                  style={{ fontSize: '11px', fontWeight: 600, letterSpacing: '0.09em', textTransform: 'uppercase', color: '#677283' }}>
+                  style={{ fontSize: '13px', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#677283' }}>
                   Podcast
                 </th>
                 {/* vs — spacer only in header */}
                 <th style={{ width: '48px', paddingBottom: '12px', borderBottom: '1px solid rgba(43,51,53,0.15)' }} />
                 {/* Strategic series */}
                 <th className="pl-4 pb-3 border-b border-[rgba(43,51,53,0.15)] text-left"
-                  style={{ fontSize: '11px', fontWeight: 600, letterSpacing: '0.09em', textTransform: 'uppercase', color: '#ff7f29' }}>
+                  style={{ fontSize: '13px', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#ff7f29' }}>
                   <span style={{ display: 'inline-flex', alignItems: 'center', gap: '7px' }}>
                     <span style={{ width: '7px', height: '7px', borderRadius: '50%', background: '#ff7f29', display: 'inline-block', flexShrink: 0 }} />
                     Strategic series

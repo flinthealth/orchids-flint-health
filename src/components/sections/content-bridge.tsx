@@ -124,8 +124,8 @@ export default function ContentBridge() {
             display: block;
             position: absolute;
             bottom: 0; left: 0; right: auto;
-            width: 90%;
-            max-width: 460px;
+            width: 95%;
+            max-width: 680px;
             padding: 0 24px 0px;
             text-align: left;
             z-index: 20;
@@ -156,8 +156,8 @@ export default function ContentBridge() {
             display: block;
             position: absolute;
             bottom: 0; left: 0; right: auto;
-            width: 60%;
-            max-width: 620px;
+            width: 90%;
+            max-width: 860px;
             padding: 0 48px 0px;
             text-align: left;
             z-index: 20;
@@ -221,8 +221,8 @@ export default function ContentBridge() {
             display: block;
             position: absolute;
             bottom: 0; top: auto; left: 0; right: auto;
-            width: 44vw;
-            min-width: 400px;
+            width: 48vw;
+            min-width: 500px;
             padding: 0 80px 80px;
             text-align: left;
             z-index: 20;
@@ -232,7 +232,7 @@ export default function ContentBridge() {
           .cb-body-on-photo { display: block; }
 
           .cb-text-on-photo h2 {
-            font-size: 52px;
+            font-size: 56px;
             text-align: left;
             margin: 0 0 16px;
           }
@@ -310,8 +310,9 @@ export default function ContentBridge() {
         <div className="cb-vignette-bottom" />
 
         {/* Headline + (read that again) on the photo */}
-        <div className="cb-text-on-photo" style={{ right: 'auto', width: 'clamp(320px, 80vw, 640px)' }}>
+        <div className="cb-text-on-photo" style={{ right: 'auto', width: 'clamp(320px, 80vw, 760px)' }}>
           <h2
+            className="text-[40px] lg:text-[56px] max-w-[320px] lg:max-w-[580px]"
             style={{ color: '#f9f5ef', fontWeight: 300, lineHeight: 1.2, letterSpacing: '-0.02em', marginBottom: '16px' }}
           >
             A series gives you<br />
