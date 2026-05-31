@@ -425,8 +425,7 @@ export default function DNAWaveSection() {
             Flint exists to bring this to healthcare brands who are ready to build strategic series their patients, providers, and teams actually want to listen to and act on.
           </p>
           <p
-            className="text-[24px] md:text-[28px] leading-[1.4] mb-6"
-            style={{ fontFamily: "'EB Garamond', serif", fontStyle: 'italic', color: '#2b3335' }}
+            className="text-[18px] font-medium text-[#43382f] uppercase tracking-[0.08em] leading-[1.4] mb-6"
           >
             Done right, podcasting creates a ripple effect no other media can rival.
           </p>
