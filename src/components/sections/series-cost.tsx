@@ -5,11 +5,11 @@ export default function SeriesCost() {
     <section style={{ background: "#f9f5ef" }} className="w-full pt-12 pb-24 px-6 md:px-12 overflow-hidden">
       <div className="max-w-[1280px] mx-auto">
         <h2 className="text-[#2b3335] text-[36px] md:text-[46px] lg:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-0 max-w-[760px]">
-          How much does<br className="md:hidden" /> it cost <em className="font-serif italic">not</em> to<br className="md:hidden" /> reach them?
+          How much does it cost <br /><em className="font-serif italic">not</em> to reach them?
         </h2>
         <p className="max-w-[780px] mb-10 mt-4 text-[19px] text-[#43382f] leading-relaxed">
           Every unreached patient, provider, and team member has a cost.<br />
-          <em className="font-serif italic text-[21px] text-[#43382f]">Lost time. Missed outcomes. Avoidable setbacks.</em>
+          <span className="text-[16px] font-medium uppercase tracking-[0.08em] leading-[1.8]" style={{ color: '#677283', display: 'block', marginTop: '4px' }}>Lost time.<br />Missed outcomes.<br />Avoidable setbacks.</span>
         </p>
         <div className="flex flex-col md:flex-row gap-8 md:gap-12">
           {[

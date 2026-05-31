@@ -32,8 +32,8 @@ export default function YourSeries() {
       <div className="ys-phase-block max-w-[1000px] mx-auto w-full px-6 md:px-8 pt-10 pb-10 md:pb-4">
         <div className="ys-phase-number ys-phase-gradient text-[88px] font-light tracking-[-0.04em] leading-none mb-1">1</div>
         <div className="text-[26px] font-bold text-[#2b3335] leading-tight mb-5">Outcomes first.</div>
-        <p className="font-serif italic text-[20px] md:text-[22px] text-[#43382f] leading-relaxed mb-3">
-          Before we record a word, we know exactly what your series needs to do.
+        <p className="text-[16px] font-medium uppercase tracking-[0.08em] leading-[1.4] mb-4" style={{ color: '#677283' }}>
+          We start with the end in mind. What does success look like?
         </p>
         <p className="text-[17px] text-[#677283] leading-relaxed mb-10">
           Your story, voice, competitive angle, and format locked before anyone steps to a mic. The right format makes the difference between a bingeworthy series or one someone barely engages with.
@@ -134,7 +134,7 @@ export default function YourSeries() {
       <div className="ys-phase-block max-w-[1000px] mx-auto w-full px-6 md:px-8 pt-16 pb-10 border-t border-[rgba(43,51,53,0.08)]">
         <div className="ys-phase-number ys-phase-gradient text-[88px] font-light tracking-[-0.04em] leading-none mb-1">2</div>
         <div className="text-[26px] font-bold text-[#2b3335] leading-tight mb-5">Production handled.</div>
-        <p className="font-serif italic text-[20px] md:text-[22px] text-[#43382f] leading-relaxed mb-3">
+        <p className="text-[16px] font-medium uppercase tracking-[0.08em] leading-[1.4] mb-4" style={{ color: '#677283' }}>
           You show up. We handle everything else.
         </p>
         <p className="text-[17px] text-[#677283] leading-relaxed">
@@ -146,7 +146,7 @@ export default function YourSeries() {
       <div className="ys-phase-block max-w-[1000px] mx-auto w-full px-6 md:px-8 pt-16 pb-10 border-t border-[rgba(43,51,53,0.08)]">
         <div className="ys-phase-number ys-phase-gradient text-[88px] font-light tracking-[-0.04em] leading-none mb-1">3</div>
         <div className="text-[26px] font-bold text-[#2b3335] leading-tight mb-5">Measure and grow.</div>
-        <p className="font-serif italic text-[20px] md:text-[22px] text-[#43382f] leading-relaxed mb-3">
+        <p className="text-[16px] font-medium uppercase tracking-[0.08em] leading-[1.4] mb-4" style={{ color: '#677283' }}>
           A great series doesn&rsquo;t just perform. It compounds.
         </p>
         <p className="text-[17px] text-[#677283] leading-relaxed">

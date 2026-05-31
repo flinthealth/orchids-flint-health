@@ -320,7 +320,7 @@ export default function ContentBridge() {
             over <span className="font-serif italic">your messaging</span>
           </h2>
           <p className="cb-body-on-photo" style={{ color: 'rgba(249,245,239,0.72)', lineHeight: 1.65, marginTop: '12px' }}>
-            The right experts. Compelling stories. A clear call to action.
+            Hand-picked experts. Evidence-based insights.<br />Compelling stories. A clear narrative arc.
           </p>
         </div>
       </div>
@@ -329,7 +329,7 @@ export default function ContentBridge() {
       {/* Body copy continuation block — mobile & tablet only */}
       <div className="cb-continuation lg:hidden">
         <p style={{ color: 'rgba(249,245,239,0.72)', fontSize: '17px', lineHeight: 1.65 }}>
-          The right experts. Compelling stories. A clear call to action.
+          Hand-picked experts. Evidence-based insights.<br />Compelling stories. A clear narrative arc.
         </p>
       </div>
 
@@ -348,7 +348,7 @@ export default function ContentBridge() {
             className="text-[20px] max-w-[480px] mx-auto mt-3"
             style={{ color: 'rgba(249,245,239,0.72)', lineHeight: 1.65 }}
           >
-            The right experts. Compelling stories. A clear call to action.
+            Hand-picked experts. Evidence-based insights.<br />Compelling stories. A clear narrative arc.
           </p>
         </div>
       </div>
