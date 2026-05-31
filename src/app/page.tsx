@@ -35,10 +35,10 @@ export default function Home() {
       <Header />
       <div>
         <HeroSection />
-        <SeriousAboutSeries />
         <CarePlatformSection />
-        {/* <WhySeriesWork /> */}
+        <SeriousAboutSeries />
         <ContentBridge />
+        {/* <WhySeriesWork /> */}
         <SeriesReach />
         <SeriesCost />
         {/* <MissionSection /> */}
