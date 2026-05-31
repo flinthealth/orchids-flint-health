@@ -57,6 +57,7 @@ const cards = [
     filters: ['clinical', 'authority', 'operational'] as FilterKey[],
     title: 'HCP Training & Clinical Education',
     headline: 'Get providers up to speed and practice-ready',
+    headlineLarge: true,
     body: "",
     applications: [
       'Protocol walkthroughs with expert clinical commentary',
@@ -70,6 +71,7 @@ const cards = [
     filters: ['patient', 'clinical', 'authority'] as FilterKey[],
     title: 'Patient Education & Engagement',
     headline: 'Reach patients before, during, and after care',
+    headlineLarge: true,
     body: "",
     applications: [
       'Condition and treatment education series',
@@ -83,6 +85,7 @@ const cards = [
     filters: ['patient', 'clinical'] as FilterKey[],
     title: 'Patient Immersions & Journey Maps',
     headline: 'Turn patient insights into better care',
+    headlineLarge: true,
     body: "",
     applications: [
       'Authentic patient voice recordings',
@@ -95,7 +98,8 @@ const cards = [
     id: 3,
     filters: ['operational', 'authority'] as FilterKey[],
     title: 'Employee Onboarding & Culture',
-    headline: 'Transfer knowledge and unite your team',
+    headline: 'Unite and scale your team',
+    headlineLarge: true,
     body: "",
     applications: [
       'Leadership vision and values series',
@@ -204,9 +208,10 @@ export default function StackingCards() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={CARD_ICONS[card.id]} alt="" width={imgW} height={imgW} style={{ display: 'block' }} />
             </div>
-            <p className="text-[16px] font-medium uppercase tracking-[0.08em] leading-[1.4] mb-4" style={{ color: '#677283' }}>
-              {card.headline}
-            </p>
+            {(card as any).headlineLarge
+              ? <div className="text-[20px] font-bold leading-[1.2] mb-4" style={{ color: '#677283' }}>{card.headline}</div>
+              : <p className="text-[16px] font-medium uppercase tracking-[0.08em] leading-[1.4] mb-4" style={{ color: '#677283' }}>{card.headline}</p>
+            }
             <p className="text-[16px] leading-[1.5] mb-8" style={{ color: '#2b3335' }}>{card.body}</p>
             <div className="flex flex-col gap-[10px]">
               {(card.applications as unknown as string[]).map((item) => (
@@ -227,9 +232,10 @@ export default function StackingCards() {
               <h3 className={`${h3} font-normal leading-[1.15] tracking-[-0.02em] ${h3mb}`} style={{ color: TEXT }}>
                 {card.title}
               </h3>
-              <p className="text-[16px] font-medium uppercase tracking-[0.08em] leading-[1.4] mb-4" style={{ color: '#677283' }}>
-                {card.headline}
-              </p>
+              {(card as any).headlineLarge
+                ? <div className="text-[20px] font-bold leading-[1.2] mb-4" style={{ color: '#677283' }}>{card.headline}</div>
+                : <p className="text-[16px] font-medium uppercase tracking-[0.08em] leading-[1.4] mb-4" style={{ color: '#677283' }}>{card.headline}</p>
+              }
               <p className="text-[16px] leading-[1.5] mb-8" style={{ color: '#2b3335' }}>{card.body}</p>
               <div className="flex flex-col gap-[10px]">
                 {(card.applications as unknown as string[]).map((item) => (

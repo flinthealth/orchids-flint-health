@@ -21,9 +21,9 @@ export default function SeriesCost() {
           <span className="md:hidden">How much does<br />it cost when you<br /><em className="font-serif italic">don&rsquo;t</em> reach them?</span>
           <span className="hidden md:inline">How much does it cost<br />when you <em className="font-serif italic">don&rsquo;t</em> reach them?</span>
         </h2>
-        <p className="max-w-[780px] mb-10 mt-4 text-[19px] leading-relaxed" style={{ color: 'rgba(249,245,239,0.72)' }}>
+        <p className="max-w-[780px] mb-10 mt-4 text-[17px] leading-relaxed" style={{ color: 'rgba(249,245,239,0.72)' }}>
           Every unreached patient, provider, and team member has a cost.<br />
-          <span className="text-[16px] font-medium uppercase tracking-[0.08em] leading-[1.8]" style={{ color: 'rgba(249,245,239,0.55)', display: 'block', marginTop: '4px' }}>Lost time<br />Missed outcomes<br />Avoidable setbacks</span>
+          <span className="text-[16px] font-medium uppercase tracking-[0.08em] leading-[1.8]" style={{ color: '#f9f5ef', display: 'block', marginTop: '4px' }}>Lost time<br />Missed outcomes<br />Avoidable setbacks</span>
         </p>
         <div className="flex flex-col md:flex-row gap-8 md:gap-12">
           {[
