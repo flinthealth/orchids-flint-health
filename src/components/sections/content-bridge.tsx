@@ -319,18 +319,28 @@ export default function ContentBridge() {
             complete control<br />
             over <span className="font-serif italic">your messaging</span>
           </h2>
-          <p className="cb-body-on-photo" style={{ color: 'rgba(249,245,239,0.72)', lineHeight: 1.65, marginTop: '12px' }}>
-            Hand-picked experts. Evidence-based insights.<br />Compelling stories. A clear narrative arc.
-          </p>
+          <ul className="cb-body-on-photo" style={{ color: 'rgba(249,245,239,0.72)', lineHeight: 1.8, marginTop: '12px', listStyle: 'none', padding: 0 }}>
+            {['Hand-picked experts', 'Evidence-based insights', 'Compelling stories', 'A clear narrative arc'].map((item) => (
+              <li key={item} style={{ display: 'flex', alignItems: 'baseline', gap: '8px' }}>
+                <span style={{ color: '#ff7f29', flexShrink: 0 }}>✓</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
       </div>{/* end cb-photo-wrapper */}
 
       {/* Body copy continuation block — mobile & tablet only */}
       <div className="cb-continuation lg:hidden">
-        <p style={{ color: 'rgba(249,245,239,0.72)', fontSize: '17px', lineHeight: 1.65 }}>
-          Hand-picked experts. Evidence-based insights.<br />Compelling stories. A clear narrative arc.
-        </p>
+        <ul style={{ color: 'rgba(249,245,239,0.72)', fontSize: '17px', lineHeight: 1.8, listStyle: 'none', padding: 0 }}>
+          {['Hand-picked experts', 'Evidence-based insights', 'Compelling stories', 'A clear narrative arc'].map((item) => (
+            <li key={item} style={{ display: 'flex', alignItems: 'baseline', gap: '8px' }}>
+              <span style={{ color: '#ff7f29', flexShrink: 0 }}>✓</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
       </div>
 
       {/* Tablet + Desktop — original centered layout */}
@@ -344,12 +354,17 @@ export default function ContentBridge() {
             complete control<br />
             over <span className="font-serif italic">your messaging</span>
           </h2>
-          <p
+          <ul
             className="text-[20px] max-w-[480px] mx-auto mt-3"
-            style={{ color: 'rgba(249,245,239,0.72)', lineHeight: 1.65 }}
+            style={{ color: 'rgba(249,245,239,0.72)', lineHeight: 1.8, listStyle: 'none', padding: 0 }}
           >
-            Hand-picked experts. Evidence-based insights.<br />Compelling stories. A clear narrative arc.
-          </p>
+            {['Hand-picked experts', 'Evidence-based insights', 'Compelling stories', 'A clear narrative arc'].map((item) => (
+              <li key={item} style={{ display: 'flex', alignItems: 'baseline', gap: '8px', justifyContent: 'center' }}>
+                <span style={{ color: '#ff7f29', flexShrink: 0 }}>✓</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
 

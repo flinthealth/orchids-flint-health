@@ -189,8 +189,8 @@ const CarePlatformSection = () => {
               THE SERIES EFFECT
             </p>
             <h2 className="text-white text-[40px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-4">
-              One compelling series.<br className="hidden md:block" />{' '}
-              Multiple uses. <span className="font-serif italic" style={{ color: '#ffffff' }}>Measurable impact.</span>
+              Multiple uses.<br />
+              <span className="font-serif italic" style={{ color: '#ffffff' }}>Measurable impact.</span>
             </h2>
             <p className="text-[17px] leading-[1.5] max-w-[560px] mx-auto" style={{ color: 'rgba(249,245,239,0.55)' }}>
               It pays to be strategic and resourceful.

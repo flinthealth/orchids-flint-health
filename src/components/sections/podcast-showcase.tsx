@@ -14,7 +14,7 @@ const CASE_STUDIES = [
     stats: [
       { value: "24",     label: "Episodes" },
       { value: "75K+",   label: "Downloads in 90 days" },
-      { value: "1.26M+", label: "Cross-channel campaign reach", highlight: true },
+      { value: "257%",   label: "Lift in treatment inquiries from partner's channel", mobileLabel: ["Lift in treatment inquiries", "from partner's channel"], highlight: true },
     ],
   },
   {
@@ -45,10 +45,9 @@ const CASE_STUDIES = [
   },
 ];
 
-type Stat = { value: string; label: string; highlight?: boolean };
+type Stat = { value: string; label: string; mobileLabel?: string[]; highlight?: boolean };
 
 function StatItem({ stat }: { stat: Stat }) {
-  const parts = stat.label.split('\n');
   return (
     <div className="flex flex-col">
       <span
@@ -61,12 +60,7 @@ function StatItem({ stat }: { stat: Stat }) {
         className="text-[10px] font-semibold tracking-[0.12em] uppercase mt-1.5 leading-snug"
         style={{ color: "#677283" }}
       >
-        {parts.map((part, i) => (
-          <React.Fragment key={i}>
-            {part}
-            {i < parts.length - 1 && <br className="hidden md:block lg:hidden" />}
-          </React.Fragment>
-        ))}
+        {stat.label}
       </span>
     </div>
   );
@@ -197,7 +191,12 @@ function CaseStudyCard({
                   className="block text-[10px] font-semibold tracking-[0.12em] uppercase mt-1.5 leading-snug"
                   style={{ color: "#677283" }}
                 >
-                  {s.label.replace('\n', ' ')}
+                  {s.mobileLabel ? s.mobileLabel.map((part, i, arr) => (
+                    <React.Fragment key={i}>
+                      {part}
+                      {i < arr.length - 1 && <br />}
+                    </React.Fragment>
+                  )) : s.label}
                 </span>
               </div>
             ))}

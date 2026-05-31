@@ -18,11 +18,12 @@ export default function SeriesCost() {
       />
       <div className="relative z-10 max-w-[1280px] mx-auto">
         <h2 className="text-white text-[36px] md:text-[46px] lg:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-0 max-w-[760px]">
-          How much does it cost <br /><em className="font-serif italic">not</em> to reach them?
+          <span className="md:hidden">How much does<br />it cost when you<br /><em className="font-serif italic">don&rsquo;t</em> reach them?</span>
+          <span className="hidden md:inline">How much does it cost<br />when you <em className="font-serif italic">don&rsquo;t</em> reach them?</span>
         </h2>
         <p className="max-w-[780px] mb-10 mt-4 text-[19px] leading-relaxed" style={{ color: 'rgba(249,245,239,0.72)' }}>
           Every unreached patient, provider, and team member has a cost.<br />
-          <span className="text-[16px] font-medium uppercase tracking-[0.08em] leading-[1.8]" style={{ color: 'rgba(249,245,239,0.55)', display: 'block', marginTop: '4px' }}>Lost time.<br />Missed outcomes.<br />Avoidable setbacks.</span>
+          <span className="text-[16px] font-medium uppercase tracking-[0.08em] leading-[1.8]" style={{ color: 'rgba(249,245,239,0.55)', display: 'block', marginTop: '4px' }}>Lost time<br />Missed outcomes<br />Avoidable setbacks</span>
         </p>
         <div className="flex flex-col md:flex-row gap-8 md:gap-12">
           {[
@@ -31,7 +32,7 @@ export default function SeriesCost() {
             { pill: "Teams",      color: "#ff7f29", stat: "$12K+",   descriptor: "Cost of poor communication per employee.",          cite: "7", citeUrl: "https://www.agilitypr.com/pr-news/pr-skills-profession/bad-connection-study-finds-poor-communication-costs-businesses-1-2-trillion-annually/" },
           ].map(({ pill, color, stat, descriptor, cite, citeUrl }) => (
             <div key={pill} style={{ display: "flex", gap: "14px", alignItems: "flex-start", flex: 1 }}>
-              <div style={{ width: 3, borderRadius: 2, background: color, flexShrink: 0, alignSelf: "stretch" }} />
+              <div style={{ width: 3, borderRadius: 2, background: `${color}80`, flexShrink: 0, alignSelf: "stretch" }} />
               <div>
                 <span
                   className="inline-block text-[11px] font-semibold tracking-[0.08em] uppercase px-3 py-1 rounded-full mb-2"

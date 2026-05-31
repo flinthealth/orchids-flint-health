@@ -394,7 +394,7 @@ export default function DNAWaveSection() {
             </div>
 
             <p className="text-[#43382f] text-[17px] leading-[1.5] mb-4">
-              I built my first health tech company from a ship.
+              I built my first health tech company from a ship. (Not quite the Life Aquatic, but close.)
             </p>
             <p className="text-[#43382f] text-[17px] leading-[1.5] mb-4">
               As a seagoing oceanographer I spent 100 days a year at sea. Between research expeditions, living beachside in M&eacute;xico, I bootstrapped a mental health app with $25,000 of my own savings.
@@ -403,12 +403,9 @@ export default function DNAWaveSection() {
               It reached 500,000 downloads, organically, and grew into Recovery Warriors, a behavioral health media and advocacy network that reached 30M+ sessions and over 4.2M global users.
             </p>
             <p
-              className="md:hidden lg:block text-[18px] font-medium text-[#43382f] uppercase tracking-[0.08em] leading-[1.4] mb-6"
+              className="md:hidden lg:block text-[18px] font-medium text-[#43382f] uppercase tracking-[0.08em] leading-[1.4] mb-4"
             >
-              Podcasting became the most powerful tool in the ecosystem. Not just for content and connection, but as a conversion engine.
-            </p>
-            <p className="hidden lg:block text-[#43382f] text-[17px] leading-[1.5]">
-              Flint exists to bring this to healthcare brands who are ready to build strategic series their patients, providers, and teams actually want to listen to and act on.
+              The growth was fueled by a bet I made early&hellip;that blending science and storytelling through audio would educate, motivate, and support people in profound ways.
             </p>
 
           </div>
@@ -417,20 +414,23 @@ export default function DNAWaveSection() {
         {/* Full-width continuation block — below the photo on all breakpoints */}
         <div className="max-w-[1060px] mx-auto mt-0 md:mt-10">
           <p
-            className="hidden md:block lg:hidden text-[18px] font-medium text-[#43382f] uppercase tracking-[0.08em] leading-[1.4] mb-6"
+            className="hidden md:block lg:hidden text-[18px] font-medium text-[#43382f] uppercase tracking-[0.08em] leading-[1.4] mb-4"
           >
-            Podcasting became the most powerful tool in the ecosystem. Not just for content and connection, but as a conversion engine.
+            The growth was fueled by a bet I made early&hellip;that blending science and storytelling through audio would educate, motivate, and support people in profound ways.
           </p>
-          <p className="lg:hidden text-[#43382f] text-[17px] leading-[1.5] mb-6">
-            Flint exists to bring this to healthcare brands who are ready to build strategic series their patients, providers, and teams actually want to listen to and act on.
+          <p className="hidden md:block text-[#43382f] text-[17px] leading-[1.5] mb-4">
+            That bet was placed 14 years ago, before anyone in healthcare was paying attention. Inside the podcast I started building series. Structured, intentional, finite. And they consistently outperformed everything else.
+          </p>
+          <p className="hidden md:block text-[#43382f] text-[17px] leading-[1.5] mb-6">
+            Flint exists to bring this approach to healthcare brands who are ready to build something their patients, providers, and teams actually want to listen to and act on.
           </p>
           <p
             className="text-[18px] font-medium text-[#43382f] uppercase tracking-[0.08em] leading-[1.4] mb-6"
           >
-            Done right, podcasting creates a ripple effect no other media can rival.
+            Done right, a strategic series creates a ripple effect no other media can rival.
           </p>
           <p className="text-[#43382f] text-[17px] leading-[1.5]">
-            The work is selective by design. I work directly with executive leadership from strategy through final delivery. Each engagement is treated as one of a handful I take each year, and run accordingly.
+            Flint is selective by design. I work directly with executive leadership from strategy through final delivery. Your success is our success. That&rsquo;s not a tagline&hellip;it&rsquo;s how we operate and why we take on fewer clients and go deeper with each one.
           </p>
         </div>
 
