@@ -2,7 +2,7 @@
 
 export default function SeriesCost() {
   return (
-    <section className="relative w-full pt-24 pb-24 px-6 md:px-12 overflow-hidden" style={{
+    <section className="relative w-full pt-32 pb-32 px-6 md:px-12 overflow-hidden" style={{
       background: 'linear-gradient(to right, #3d4d58 0%, #6b4b3e 55%, #a0522d 100%)',
     }}>
       {/* Grain overlay */}
@@ -17,15 +17,15 @@ export default function SeriesCost() {
         }}
       />
       <div className="relative z-10 max-w-[1280px] mx-auto">
-        <h2 className="text-white text-[36px] md:text-[46px] lg:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-0 max-w-[760px]">
+        <h2 className="text-white text-[36px] md:text-[46px] lg:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-4 max-w-[760px]">
           <span className="md:hidden">How much does<br />it cost when you<br /><em className="font-serif italic">don&rsquo;t</em> reach them?</span>
           <span className="hidden md:inline">How much does it cost<br />when you <em className="font-serif italic">don&rsquo;t</em> reach them?</span>
         </h2>
-        <p className="max-w-[780px] mb-10 mt-4 text-[17px] leading-relaxed" style={{ color: 'rgba(249,245,239,0.72)' }}>
+        <p className="max-w-[780px] mb-16 mt-6 text-[17px] leading-relaxed" style={{ color: 'rgba(249,245,239,0.72)' }}>
           Every unreached patient, provider, and team member has a cost.<br />
           <span className="text-[16px] font-medium uppercase tracking-[0.08em] leading-[1.8]" style={{ color: '#f9f5ef', display: 'block', marginTop: '4px' }}>Lost time<br />Missed outcomes<br />Avoidable setbacks</span>
         </p>
-        <div className="flex flex-col md:flex-row gap-8 md:gap-12">
+        <div className="flex flex-col md:flex-row gap-10 md:gap-16">
           {[
             { pill: "Patients",   color: "#eeb20b", stat: "9 in 10", descriptor: "Patients struggle with health information.",       cite: "5", citeUrl: "https://www.cdc.gov/health-literacy/php/about/tell-others.html" },
             { pill: "Clinicians", color: "#54819a", stat: "75%",     descriptor: "Of clinicians overwhelmed by treatment advances.", cite: "6", citeUrl: "https://www.managedhealthcareexecutive.com/view/survey-reveals-cancer-doctors-struggle-to-keep-up-as-treatments-advance-quickly" },
@@ -36,7 +36,7 @@ export default function SeriesCost() {
               <div>
                 <span
                   className="inline-block text-[11px] font-semibold tracking-[0.08em] uppercase px-3 py-1 rounded-full mb-2"
-                  style={{ background: `${color}80`, color: '#ffffff', border: `1px solid ${color}bb` }}
+                  style={{ background: `${color}80`, color: '#ffffff' }}
                 >
                   {pill}
                 </span>
