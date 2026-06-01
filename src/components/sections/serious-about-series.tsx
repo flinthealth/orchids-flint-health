@@ -1,12 +1,22 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from 'react';
+import { AlignLeft, Target, Layers, Cast, TrendingUp, GitFork } from 'lucide-react';
+
+const CAT_ICONS: Record<string, React.ReactNode> = {
+  Structure:    <AlignLeft   size={14} color="#43382f" />,
+  Purpose:      <Target      size={14} color="#43382f" />,
+  Production:   <Layers      size={14} color="#43382f" />,
+  Distribution: <Cast        size={14} color="#43382f" />,
+  ROI:          <TrendingUp  size={14} color="#43382f" />,
+  Syndication:  <GitFork     size={14} color="#43382f" />,
+};
 
 const ROWS = [
   {
     cat: 'Structure',
     podcast: 'Open-ended, no set finish',
-    series: 'A complete arc. One series or structured seasons.',
+    series: 'A complete arc, one series or multiple seasons.',
     seriesSub: null,
     podcastSub: null,
     popover: {
@@ -39,7 +49,7 @@ const ROWS = [
   {
     cat: 'Distribution',
     podcast: 'Public feed',
-    series: 'High leverage channels',
+    series: 'Multiple channels',
     seriesSub: 'Internal and public facing',
     podcastSub: 'Spotify, Apple, YouTube',
     popover: {
@@ -50,7 +60,7 @@ const ROWS = [
   {
     cat: 'ROI',
     podcast: 'Reach and downloads',
-    series: 'Measurable outcomes',
+    series: 'The KPIs that matter most',
     seriesSub: null,
     podcastSub: null,
     popover: {
@@ -60,7 +70,7 @@ const ROWS = [
   },
   {
     cat: 'Syndication',
-    podcast: 'Starts and stays on your own channel.',
+    podcast: 'Your feed only.',
     series: 'Can launch on established niche channels.',
     seriesSub: null,
     podcastSub: null,
@@ -111,6 +121,41 @@ export default function SeriousAboutSeries() {
   }, [activeRow]);
 
   return (
+    <>
+    <style>{`
+      @media (max-width: 767px) {
+        .sas-table-wrapper {
+          margin-left: -24px;
+          margin-right: -24px;
+          width: calc(100% + 48px);
+        }
+        .sas-cat-cell {
+          width: 72px;
+          padding-right: 8px;
+          padding-left: 8px;
+        }
+        .sas-cat-inner {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 4px;
+        }
+        .sas-cat-label {
+          font-size: 11px;
+        }
+        .sas-podcast-cell {
+          padding-right: 8px;
+          width: 26%;
+        }
+        .sas-series-cell {
+          padding-left: 8px;
+          width: 44%;
+        }
+        .sas-data-cell {
+          padding-top: 14px;
+          padding-bottom: 14px;
+        }
+      }
+    `}</style>
     <section style={{ background: '#f9f5ef' }}>
       <div className="max-w-[1000px] mx-auto px-6 md:px-12 py-20">
 
@@ -118,7 +163,7 @@ export default function SeriousAboutSeries() {
         <p className="text-[15px] font-semibold tracking-[0.1em] uppercase text-[#677283] mb-4">
           SERIOUS ABOUT SERIES
         </p>
-        <h2 className="text-[34px] md:text-[36px] font-normal text-[#2b3335] leading-[1.2] tracking-[-0.01em] max-w-[660px] mb-4">
+        <h2 className="text-[28px] md:text-[32px] font-normal text-[#2b3335] leading-[1.2] tracking-[-0.01em] max-w-[660px] mb-4">
           Flint is a full-service creative studio that makes it easy for healthcare brands to develop, launch and grow bingeworthy series across multiple channels.
         </h2>
         <p className="text-[17px] text-[#43382f] leading-relaxed max-w-[560px] mb-12 opacity-80">
@@ -126,15 +171,15 @@ export default function SeriousAboutSeries() {
         </p>
 
         {/* Table */}
-        <div style={{ overflowX: 'auto' }}>
+        <div className="sas-table-wrapper" style={{ overflowX: 'auto' }}>
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
             <thead>
               <tr>
                 {/* Empty */}
-                <th style={{ width: '110px' }} />
+                <th style={{ width: '80px', paddingLeft: '16px', paddingRight: '16px' }} />
                 {/* Podcast */}
                 <th className="text-left pb-3 border-b border-[rgba(43,51,53,0.15)] pl-2 md:pl-8 pr-3"
-                  style={{ fontSize: '13px', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#677283' }}>
+                  style={{ fontSize: '13px', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#54819a' }}>
                   Podcast
                 </th>
                 {/* vs — spacer only in header */}
@@ -153,11 +198,14 @@ export default function SeriousAboutSeries() {
               {ROWS.map((row, i) => (
                 <tr key={row.cat} style={{ borderBottom: i < ROWS.length - 1 ? '1px solid rgba(43,51,53,0.08)' : 'none' }}>
                   {/* Category */}
-                  <td style={{ fontSize: '13px', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'rgba(103,114,131,0.6)', paddingTop: '16px', paddingBottom: '16px', paddingRight: '16px', width: '110px', verticalAlign: 'middle' }}>
-                    {row.cat}
+                  <td className="sas-cat-cell" style={{ fontSize: '13px', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#43382f', paddingTop: '22px', paddingBottom: '22px', paddingRight: '16px', paddingLeft: '16px', width: '80px', verticalAlign: 'middle', background: '#ede4da' }}>
+                    <div className="sas-cat-inner flex items-center gap-2">
+                      {CAT_ICONS[row.cat]}
+                      <span className="sas-cat-label">{row.cat}</span>
+                    </div>
                   </td>
                   {/* Podcast */}
-                  <td className="pl-2 md:pl-8" style={{ fontSize: '15px', color: '#43382f', paddingTop: '16px', paddingBottom: '16px', paddingRight: '12px', verticalAlign: 'middle', lineHeight: 1.35 }}>
+                  <td className="sas-podcast-cell sas-data-cell pl-2 md:pl-8" style={{ fontSize: '15px', color: '#43382f', paddingTop: '22px', paddingBottom: '22px', paddingRight: '12px', verticalAlign: 'middle', lineHeight: 1.35 }}>
                     {row.podcast}
                     {row.podcastSub && (
                       <span style={{ fontSize: '13px', color: 'rgba(67,56,47,0.55)', display: 'block', marginTop: '2px' }}>{row.podcastSub}</span>
@@ -172,7 +220,7 @@ export default function SeriousAboutSeries() {
                     )} */}
                   </td>
                   {/* Series */}
-                  <td style={{ fontSize: '15px', fontWeight: 500, color: '#2b3335', paddingTop: '16px', paddingBottom: '16px', paddingLeft: '16px', verticalAlign: 'middle', lineHeight: 1.35, borderLeft: '2px solid rgba(255,127,41,0.25)', background: 'rgba(255,127,41,0.03)', position: 'relative' }}>
+                  <td className="sas-series-cell sas-data-cell" style={{ fontSize: '15px', fontWeight: 500, color: '#2b3335', paddingTop: '22px', paddingBottom: '22px', paddingLeft: '16px', paddingRight: '24px', verticalAlign: 'middle', lineHeight: 1.35, borderLeft: '2px solid rgba(255,127,41,0.25)', background: 'rgba(255,127,41,0.03)', position: 'relative' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <span>{row.series}</span>
                       <button
@@ -200,6 +248,12 @@ export default function SeriousAboutSeries() {
               ))}
             </tbody>
           </table>
+        </div>
+
+        {/* Closing text block */}
+        <div className="max-w-[760px] mt-10">
+          <p className="text-[15px] font-semibold tracking-[0.1em] uppercase text-[#677283] mb-3">Long Story Short</p>
+          <p className="text-[24px] md:text-[28px] font-normal text-[#43382f] leading-[1.2] tracking-[-0.01em]">A series is flexible in the best way. It can live inside a podcast, build out into seasons, and travel throughout your organization to drive real outcomes.</p>
         </div>
 
         {/* Popover */}
@@ -238,5 +292,6 @@ export default function SeriousAboutSeries() {
 
       </div>
     </section>
+    </>
   );
 }

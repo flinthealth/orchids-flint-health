@@ -137,6 +137,7 @@ export default function WhoWeBringTogether() {
             <div style={divider} />
           </div>
 
+
         </div>
       </div>
     </section>

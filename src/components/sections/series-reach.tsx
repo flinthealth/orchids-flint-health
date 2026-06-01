@@ -8,7 +8,7 @@ export default function SeriesReach() {
       <div className="max-w-[1280px] mx-auto">
         <div className="flex flex-col md:flex-row gap-10 md:gap-16 items-stretch">
           {/* Video */}
-          <div className="w-full md:w-[45%] flex-shrink-0 rounded-2xl overflow-hidden min-h-[320px] md:min-h-[420px]">
+          <div className="relative w-full md:w-[45%] flex-shrink-0 rounded-2xl overflow-hidden min-h-[320px] md:min-h-[420px]">
             <video
               autoPlay
               loop
@@ -17,6 +17,30 @@ export default function SeriesReach() {
               className="w-full h-full object-cover"
               src="/stats-idle-time-compressed.mp4"
             />
+            {/* Frosted glass stat card */}
+            <div style={{
+              position: 'absolute',
+              bottom: 20,
+              right: 20,
+              zIndex: 20,
+              background: 'rgba(255,255,255,0.12)',
+              border: '1px solid rgba(255,255,255,0.22)',
+              backdropFilter: 'blur(12px)',
+              WebkitBackdropFilter: 'blur(12px)',
+              borderRadius: 12,
+              padding: '14px 18px',
+            }}>
+              <div style={{ fontSize: 36, fontWeight: 300, color: '#f9f5ef', lineHeight: 1, marginBottom: 4 }}>92%</div>
+              <div style={{ fontSize: 11, color: 'rgba(249,245,239,0.75)', lineHeight: 1.4, maxWidth: 140 }}>
+                of podcast listeners tune in during their daily routine.
+                <a
+                  href="https://www.westwoodone.com/wp-content/uploads/2025/11/Cumulus-Media-and-Signal-Hill-Insights-Podcast-Download-Fall-2025_WWO.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ fontSize: 8, verticalAlign: 'super', marginLeft: 1, opacity: 0.5 }}
+                >4</a>
+              </div>
+            </div>
           </div>
 
           {/* Who do you need to reach? */}

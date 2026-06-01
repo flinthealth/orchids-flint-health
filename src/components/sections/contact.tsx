@@ -47,7 +47,7 @@ export default function ContactSection() {
               Let's produce something worth <span className="font-serif italic">paying attention to.</span>
             </h2>
             <p className="text-[#ffffff]/60 text-[17px] leading-[1.5] mb-8">
-              Flint takes on a limited number of new series each quarter. If you're planning a launch in the next 90 days, now is the time to reach out.
+              Flint takes on a limited number of new series each year. Good series take time. Reach out before you need us.
             </p>
             <div className="flex flex-col gap-4">
               {[
