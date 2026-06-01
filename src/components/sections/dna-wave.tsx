@@ -419,7 +419,7 @@ export default function DNAWaveSection() {
             The growth was fueled by a bet I made early&hellip;that blending science and storytelling through audio would educate, motivate, and support people in profound ways.
           </p>
           <p className="text-[#43382f] text-[17px] leading-[1.5] mb-4">
-            That bet was placed 14 years ago, before anyone in healthcare was paying attention. Inside the podcast I started building series. Structured, intentional, finite. And they consistently outperformed everything else.
+            That bet was placed 12 years ago, before anyone in healthcare was paying attention. Inside the podcast I started building series. Structured, intentional, finite. And they consistently outperformed everything else.
           </p>
           <p className="text-[#43382f] text-[17px] leading-[1.5] mb-6">
             Flint exists to bring this approach to healthcare brands who are ready to build something their patients, providers, and teams actually want to listen to and act on.
