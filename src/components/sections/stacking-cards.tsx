@@ -253,7 +253,7 @@ export default function StackingCards() {
   }
 
   return (
-    <section className="bg-white">
+    <section className="bg-[#ede4da]">
 
       {/* Header */}
       <div className="container mx-auto px-4 md:px-8 pt-[120px] md:pt-[120px]">
@@ -318,7 +318,7 @@ export default function StackingCards() {
       </div>
 
       {/* ── MOBILE stacking cards ── */}
-      <div className="md:hidden bg-white">
+      <div className="md:hidden bg-[#ede4da]">
         {visibleCards.map((card, stackIndex) => {
           const isLast    = stackIndex === visibleCards.length - 1;
           const topOffset = TOP_OFFSETS_MOBILE[stackIndex] ?? 128;
@@ -352,15 +352,15 @@ export default function StackingCards() {
                   </div>
                 </div>
               </div>
-              {!isLast && <div className="bg-white" style={{ height: '65vh' }} />}
+              {!isLast && <div className="bg-[#ede4da]" style={{ height: '65vh' }} />}
             </React.Fragment>
           );
         })}
-        <div className="bg-white h-[60px]" />
+        <div className="bg-[#ede4da] h-[60px]" />
       </div>
 
       {/* ── DESKTOP stacking cards ── */}
-      <div className="hidden md:block bg-white pb-[90px]">
+      <div className="hidden md:block bg-[#ede4da] pb-[90px]">
         {visibleCards.map((card, stackIndex) => {
           const isLast = stackIndex === visibleCards.length - 1;
           return (
@@ -385,7 +385,7 @@ export default function StackingCards() {
                       borderRadius: '24px',
                       background: '#ede4da',
                       padding: '0 0 8px 0',
-                      boxShadow: '0 16px 40px rgba(171,217,234,0.25)',
+                      boxShadow: '0 16px 40px rgba(103,84,64,0.18)',
                     }}
                   >
                     <div className="relative" style={{ backgroundColor: BG, borderRadius: '24px 24px 20px 20px', overflow: 'hidden' }}>
@@ -394,7 +394,7 @@ export default function StackingCards() {
                   </div>
                 </div>
               </div>
-              {!isLast && <div className="bg-white" style={{ height: '40vh' }} />}
+              {!isLast && <div className="bg-[#ede4da]" style={{ height: '40vh' }} />}
             </React.Fragment>
           );
         })}
