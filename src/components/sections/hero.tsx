@@ -92,7 +92,7 @@ export default function HeroSection() {
                 href="#contact"
                 className="inline-flex items-center justify-center bg-[#ff7f29] hover:bg-[#e66e1e] text-[#ffffff] font-semibold text-[16px] px-8 py-4 rounded-[6px] transition-colors duration-200"
               >
-                Get a Quote
+                Book a Discovery Call
               </a>
             </div>
 
