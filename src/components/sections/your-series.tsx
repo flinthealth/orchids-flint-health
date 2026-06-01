@@ -145,21 +145,6 @@ export default function YourSeries() {
         </div>
       </section>
 
-      {/* ── Phase 3 (Gradient) ── */}
-      <section className="relative py-16 md:py-20" style={{ background: 'linear-gradient(to right, #3d4d58 0%, #6b4b3e 55%, #a0522d 100%)' }}>
-        {/* Grain overlay */}
-        <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='gc'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23gc)'/%3E%3C/svg%3E")`, backgroundSize: '400px 400px', opacity: 0.28, mixBlendMode: 'overlay' }} />
-        <div className="ys-phase-block max-w-[1000px] mx-auto w-full px-6 md:px-8 relative z-10">
-          <div className="ys-phase-number text-[88px] font-light tracking-[-0.04em] leading-none mb-1" style={{ color: '#f9f5ef' }}>3</div>
-          <div className="text-[26px] font-bold leading-tight mb-5" style={{ color: '#f9f5ef' }}>Measure and grow.</div>
-          <p className="text-[16px] font-medium uppercase tracking-[0.08em] leading-[1.4] mb-4" style={{ color: '#ede4da' }}>
-            A great series doesn&rsquo;t just perform. It compounds.
-          </p>
-          <p className="text-[17px] leading-relaxed" style={{ color: '#ede4da' }}>
-            Downloads, audience growth, brand sentiment, and inquiry lift for public series. Completion rates and knowledge retention for internal ones.
-          </p>
-        </div>
-      </section>
 
       {/* Styles */}
       <style>{`

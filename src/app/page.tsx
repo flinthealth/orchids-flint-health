@@ -16,6 +16,7 @@ import PodcastPulse from "@/components/sections/podcast-pulse";
 import ContentPrism from "@/components/sections/content-prism";
 import PodcastShowcase from "@/components/sections/podcast-showcase";
 import YourSeries from "@/components/sections/your-series";
+import MeasureAndGrow from "@/components/sections/measure-and-grow";
 import PodcastExplainer from "@/components/sections/podcast-explainer";
 import WhySeriesWork from "@/components/sections/why-series-work";
 import SeriesReach from "@/components/sections/series-reach";
@@ -50,6 +51,7 @@ export default function Home() {
         <StackingCards />
         <PodcastShowcase />
         <YourSeries />
+        <MeasureAndGrow />
         <DNAWaveSection />
         {/* <AudienceSolutions /> */}
         {/* <PodcastPulse /> */}
