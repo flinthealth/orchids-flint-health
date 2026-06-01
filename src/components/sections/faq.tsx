@@ -34,8 +34,9 @@ const FAQS: { q: string; a: string[] }[] = [
   {
     q: "What's the investment?",
     a: [
-      "Series engagements typically range from $25,000 to $100,000. The primary factor is the level of video production required to bring your series vision to life.",
-      "Audio-first series sit toward the lower end. Full video production with higher creative execution sits toward the upper end. Every proposal is custom-built around your goals, format, and episode scope.",
+      "Series engagements typically range from $25,000 to $100,000. Pricing reflects the format, narrative complexity, and production scope required to bring your vision to life.",
+      "A conversational or interview series sits toward the lower end. A narrative series, with multiple perspectives, story arcs, sound engineering, and cinematic production, sits toward the upper end. The investment reflects not just how it's made, but what it's designed to do.",
+      "Every proposal is custom-built around your goals, format, and episode scope.",
     ],
   },
 ];
