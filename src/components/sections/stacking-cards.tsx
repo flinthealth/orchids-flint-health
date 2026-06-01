@@ -209,7 +209,7 @@ export default function StackingCards() {
               <img src={CARD_ICONS[card.id]} alt="" width={imgW} height={imgW} style={{ display: 'block' }} />
             </div>
             {(card as any).headlineLarge
-              ? <div className="text-[20px] font-bold leading-[1.2] mb-4" style={{ color: '#677283' }}>{card.headline}</div>
+              ? <p className="text-[16px] font-medium uppercase tracking-[0.08em] leading-[1.4] mb-4" style={{ color: '#677283' }}>{card.headline}</p>
               : <p className="text-[16px] font-medium uppercase tracking-[0.08em] leading-[1.4] mb-4" style={{ color: '#677283' }}>{card.headline}</p>
             }
             <p className="text-[16px] leading-[1.5] mb-8" style={{ color: '#2b3335' }}>{card.body}</p>

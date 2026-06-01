@@ -8,9 +8,7 @@ const CASE_STUDIES = [
     image: "/podcast-equipped-to-recover.webp",
     client: "Equip Health",
     tag: "Virtual Treatment",
-    description: (
-      <>An interview-based series developed with Equip Health through a patient advocacy partnership, combining recovery stories and clinical insight to help patients and families recognize symptoms, feel less alone, and take action. After 8 months of traditional digital promotion across the partnership&apos;s channels, the podcast debuted and drove a <strong style={{ fontFamily: 'Inter, sans-serif' }}>257% lift in treatment inquiries</strong> in its first 3 months on air.</>
-    ),
+    description: "An interview-based series combining recovery stories and clinical insight to help patients and families recognize symptoms, feel less alone, and take action. Launched on a single partner channel after 8 months of digital promotion — it outperformed everything before it.",
     stats: [
       { value: "24",     label: "Episodes" },
       { value: "75K+",   label: "Downloads in 90 days" },
@@ -36,11 +34,23 @@ const CASE_STUDIES = [
     client: "Recovery Warriors",
     tag: "Advocacy Community",
     description:
-      "Built and scaled a multi-show podcast channel from a single show into a network of formats, expanding reach and driving patient acquisition in behavioral health.",
+      "Built and scaled a network of branded series from a single show, expanding reach and driving patient acquisition across behavioral health audiences.",
     stats: [
-      { value: "300+",  label: "Episodes Produced" },
-      { value: "4",     label: "Show Formats" },
+      { value: "350+",  label: "Episodes Produced" },
+      { value: "8",     label: "Branded Series" },
       { value: "3.8M+", label: "Lifetime Downloads", highlight: true },
+    ],
+  },
+  {
+    title: "Body Talk",
+    image: "/podcast-body-talk.webp",
+    client: "Recovery Warriors",
+    tag: "Program Launch",
+    description: "An alumni-driven series built to launch the Beyond Body program — combining recovery stories and lived experience to move listeners from awareness to enrollment in a single 5-week campaign.",
+    stats: [
+      { value: "15",  label: "Episodes Produced" },
+      { value: "55%", label: "Discovery call close rate" },
+      { value: "94%", label: "Of enrollments attributed to the series", highlight: true },
     ],
   },
 ];
