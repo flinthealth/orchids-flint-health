@@ -161,7 +161,7 @@ export default function MeasureAndGrow() {
               </div>
             </div>
 
-            <div className="mag-pills">
+            <div className="mag-pills" style={{ background: 'rgba(19,29,43,0.35)' }}>
               <span className="mag-pill blue">Activation rates</span>
               <span className="mag-pill orange">Pathway completion</span>
               <span className="mag-pill gold">Knowledge retention</span>
@@ -169,7 +169,7 @@ export default function MeasureAndGrow() {
               <span className="mag-pill gray">Sustained participation</span>
             </div>
 
-            <div className="mag-body">
+            <div className="mag-body" style={{ background: 'rgba(19,29,43,0.3)' }}>
               <div className="mag-body-label">Pathway progression by episode</div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                 {[
@@ -192,14 +192,14 @@ export default function MeasureAndGrow() {
 
             <div className="mag-divider"></div>
 
-            <div className="mag-two-col">
-              <div className="mag-col">
+            <div className="mag-two-col" style={{ background: 'rgba(19,29,43,0.35)' }}>
+              <div className="mag-col" style={{ background: 'rgba(19,29,43,0.3)' }}>
                 <div className="mag-col-label">Knowledge retention</div>
                 <div className="mag-col-item">Week 1 check <span>88%</span></div>
                 <div className="mag-col-item">Week 4 check <span>82%</span></div>
                 <div className="mag-col-item">Week 8 check <span>79%</span></div>
               </div>
-              <div className="mag-col">
+              <div className="mag-col" style={{ background: 'rgba(19,29,43,0.3)' }}>
                 <div className="mag-col-label">Enrollment curve</div>
                 <div className="mag-col-item">Started series <span>147</span></div>
                 <div className="mag-col-item">Completed Ep 5 <span>104</span></div>
@@ -208,14 +208,14 @@ export default function MeasureAndGrow() {
             </div>
 
             <div className="mag-divider"></div>
-            <div className="mag-insight">
+            <div className="mag-insight" style={{ background: 'rgba(19,29,43,0.3)' }}>
               <strong>Drop-off signal:</strong> Episode 4 shows a 7pt dip — content adjustment recommended &nbsp;·&nbsp; <strong>Top performer:</strong> Episode 2 at 94%
             </div>
           </div>
         </div>
 
         {/* Disclaimer */}
-        <p style={{ fontSize: 14, color: '#ede4da', lineHeight: 1.6, maxWidth: 600 }}>
+        <p style={{ fontSize: 17, color: '#ede4da', lineHeight: 1.6, maxWidth: 600 }}>
           Metrics tracked vary by series type, distribution channel, and client goals. Every engagement includes a custom measurement framework built around what success actually looks like for your organization.
         </p>
 
