@@ -1,5 +1,6 @@
 import Header from "@/components/sections/header";
 import HeroSection from "@/components/sections/hero";
+import IgniteSection from "@/components/sections/ignite";
 import DNAWaveSection from "@/components/sections/dna-wave-client";
 import DNAPulseOnly from "@/components/sections/dna-pulse-client";
 import CarePlatformSection from "@/components/sections/care-platform";
@@ -36,9 +37,10 @@ export default function Home() {
       <Header />
       <div>
         <HeroSection />
-        <CarePlatformSection />
+        <IgniteSection />
         <SeriousAboutSeries />
         <ContentBridge />
+        <CarePlatformSection />
         {/* <WhySeriesWork /> */}
         <SeriesReach />
         <SeriesCost />

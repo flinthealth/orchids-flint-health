@@ -163,8 +163,8 @@ export default function SeriousAboutSeries() {
         <p className="text-[15px] font-semibold tracking-[0.1em] uppercase text-[#677283] mb-4">
           SERIOUS ABOUT SERIES
         </p>
-        <h2 className="text-[28px] md:text-[36px] font-normal text-[#2b3335] leading-[1.2] tracking-[-0.01em] max-w-[660px] mb-4">
-          Flint is a full-service creative studio that makes it easy for healthcare brands to develop, launch and grow bingeworthy series across multiple channels.
+        <h2 className="text-[28px] md:text-[36px] font-light text-[#2b3335] leading-[1.2] tracking-[-0.01em] max-w-[660px] mb-4">
+          Flint is a full-service creative studio that makes it easy for healthcare brands to develop, launch and grow memorable series across multiple channels.
         </h2>
         <p className="text-[17px] text-[#43382f] leading-relaxed max-w-[560px] mb-12 opacity-80">
           Not sure what makes a series different from a podcast? Here's the short version.
@@ -179,7 +179,7 @@ export default function SeriousAboutSeries() {
                 <th style={{ width: '80px', paddingLeft: '16px', paddingRight: '16px' }} />
                 {/* Podcast */}
                 <th className="text-left pb-3 border-b border-[rgba(43,51,53,0.15)] pl-2 md:pl-8 pr-3"
-                  style={{ fontSize: '13px', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#54819a' }}>
+                  style={{ fontSize: '13px', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#677283' }}>
                   Podcast
                 </th>
                 {/* vs — spacer only in header */}
@@ -253,7 +253,7 @@ export default function SeriousAboutSeries() {
         {/* Closing text block */}
         <div className="max-w-[760px] mt-16 md:mt-20">
           <p className="text-[15px] font-semibold tracking-[0.1em] uppercase text-[#677283] mb-3">Long Story Short</p>
-          <p className="text-[24px] md:text-[32px] font-normal text-[#43382f] leading-[1.2] tracking-[-0.01em]">A series is flexible in the best way. It can live inside a podcast, build out into seasons, and travel throughout your organization to drive real outcomes.</p>
+          <p className="text-[24px] md:text-[32px] font-light text-[#43382f] leading-[1.2] tracking-[-0.01em]">A series is flexible in the best way. It can live inside a podcast, build out into seasons, and travel throughout your organization to drive real outcomes.</p>
         </div>
 
         {/* Popover */}
