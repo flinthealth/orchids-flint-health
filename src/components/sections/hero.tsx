@@ -73,14 +73,16 @@ export default function HeroSection() {
 
         {/* Content */}
         <div className="relative z-20 w-full max-w-[1280px] mx-auto px-6 md:px-12 pt-[26vh] pb-16 md:py-16 lg:py-24 text-left">
-          <div className="max-w-[820px] md:max-w-[460px] lg:max-w-[560px]">
+          <div className="max-w-[820px] md:max-w-[450px] lg:max-w-[560px]">
             <div className="h-[22px] md:hidden" />
 
             <h1
-              className="animate-hero-title text-white font-light mb-5 text-[40px] md:text-[52px]"
+              className="animate-hero-title text-white font-light mb-5 text-[40px] md:text-[51px]"
               style={{ lineHeight: 1.15, letterSpacing: '-0.02em' }}
             >
-              Premium<br /> branded series<br /> that turn attention<br /> into <span className="font-serif italic">lifetime value</span>
+              <span className="md:hidden">We Illuminate<br />your mission so<br />it&rsquo;s seen, sought<br />out, and <span className="font-serif italic">shared</span></span>
+              <span className="hidden lg:inline">We Illuminate your<br />mission so it&rsquo;s seen,<br />sought out, and <span className="font-serif italic">shared</span></span>
+              <span className="hidden md:block lg:hidden">We Illuminate<br />your mission so<br />it&rsquo;s seen, sought<br />out, and <span className="font-serif italic">shared</span></span>
             </h1>
 
             <p className="animate-hero-sub1 text-white/80 text-[17px] md:text-[15px] lg:text-[17px] font-normal mb-4">
