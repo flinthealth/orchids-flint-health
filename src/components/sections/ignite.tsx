@@ -5,12 +5,19 @@ import React, { useEffect, useRef, useState } from 'react';
 interface PhaseData {
   text: string;
   italicWord: string | null;
+  lines?: string[];
+  mobileLines?: string[];
 }
 
 const PHASES: PhaseData[] = [
   {
     text: 'A product or service that changes lives shouldn\'t go unseen.',
     italicWord: 'unseen',
+    lines: [
+      'A product or service',
+      'that changes lives',
+      "shouldn't go unseen.",
+    ],
   },
   {
     text: 'Flint exists so what you\'ve built gets noticed.',
@@ -19,25 +26,50 @@ const PHASES: PhaseData[] = [
   {
     text: 'We craft your vital data, research, and outcomes into stories that stick and sell.',
     italicWord: 'stories',
+    lines: [
+      'We craft your vital data,',
+      'research, and outcomes',
+      'into stories that stick and sell.',
+    ],
+    mobileLines: [
+      'We craft your vital',
+      'data, research, and',
+      'outcomes into stories',
+      'that stick and sell.',
+    ],
   },
 ];
 
 const TEXT_STYLE =
-  'text-[36px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] text-center mx-auto px-8 md:px-16 max-w-[860px]';
+  'text-[36px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] text-center mx-auto px-4 md:px-16 max-w-[860px]';
 
-function renderText(phase: PhaseData) {
-  if (!phase.italicWord) {
-    return <>{phase.text}</>;
-  }
-  const idx = phase.text.indexOf(phase.italicWord);
-  if (idx === -1) return <>{phase.text}</>;
+function renderText(text: string, italicWord: string | null) {
+  if (!italicWord) return <>{text}</>;
+  const idx = text.indexOf(italicWord);
+  if (idx === -1) return <>{text}</>;
   return (
     <>
-      {phase.text.slice(0, idx)}
-      <span className="font-serif italic">{phase.italicWord}</span>
-      {phase.text.slice(idx + phase.italicWord.length)}
+      {text.slice(0, idx)}
+      <span className="font-serif italic">{italicWord}</span>
+      {text.slice(idx + italicWord.length)}
     </>
   );
+}
+
+function renderLines(lines: string[], italicWord: string | null) {
+  return lines.map((line, i) => {
+    const elements: React.ReactNode[] = [];
+    if (i > 0) elements.push(<br key={`br-${i}`} />);
+    if (italicWord && line.includes(italicWord)) {
+      const idx = line.indexOf(italicWord);
+      elements.push(line.slice(0, idx));
+      elements.push(<span key={`it-${i}`} className="font-serif italic">{italicWord}</span>);
+      elements.push(line.slice(idx + italicWord.length));
+    } else {
+      elements.push(line);
+    }
+    return <React.Fragment key={i}>{elements}</React.Fragment>;
+  });
 }
 
 const BACKGROUNDS = [
@@ -50,7 +82,7 @@ const TEXT_COLORS = ['#ffffff', '#43382f', '#43382f'];
 
 export default function IgniteSection() {
   const phaseRef = useRef(0);
-  const [phase, setPhase] = useState(0);
+  const [phaseIdx, setPhaseIdx] = useState(0);
   const [visible, setVisible] = useState(false);
   const [started, setStarted] = useState(false);
 
@@ -87,7 +119,7 @@ export default function IgniteSection() {
       setTimeout(() => {
         const next = (phaseRef.current + 1) % 3;
         phaseRef.current = next;
-        setPhase(next);
+        setPhaseIdx(next);
         setTimeout(() => setVisible(true), 100);
       }, 700);
     }, 5000);
@@ -97,6 +129,8 @@ export default function IgniteSection() {
       clearInterval(timer);
     };
   }, [started]);
+
+  const p = PHASES[phaseIdx];
 
   return (
     <section
@@ -110,7 +144,7 @@ export default function IgniteSection() {
           className="absolute inset-0 transition-opacity duration-[800ms]"
           style={{
             background: bg,
-            opacity: phase === i ? 1 : 0,
+            opacity: phaseIdx === i ? 1 : 0,
           }}
         />
       ))}
@@ -133,12 +167,28 @@ export default function IgniteSection() {
           <p
             className={TEXT_STYLE}
             style={{
-              color: TEXT_COLORS[phase],
+              color: TEXT_COLORS[phaseIdx],
               transition: 'opacity 0.5s ease',
               opacity: started ? (visible ? 1 : 0) : 0,
             }}
           >
-            {renderText(PHASES[phase])}
+            {phaseIdx === 2 ? (
+              <>
+                <span className="hidden lg:inline">
+                  {renderText(p.text, p.italicWord)}
+                </span>
+                <span className="hidden md:block lg:hidden">
+                  {p.lines ? renderLines(p.lines, p.italicWord) : renderText(p.text, p.italicWord)}
+                </span>
+                <span className="md:hidden">
+                  {p.mobileLines ? renderLines(p.mobileLines, p.italicWord) : p.lines ? renderLines(p.lines, p.italicWord) : renderText(p.text, p.italicWord)}
+                </span>
+              </>
+            ) : p.lines ? (
+              renderLines(p.lines, p.italicWord)
+            ) : (
+              renderText(p.text, p.italicWord)
+            )}
           </p>
         </div>
       </div>
