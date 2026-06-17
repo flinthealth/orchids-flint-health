@@ -6,7 +6,6 @@ interface PhaseData {
   text: string;
   italicWord: string | null;
   lines?: string[];
-  mobileLines?: string[];
 }
 
 const PHASES: PhaseData[] = [
@@ -22,26 +21,24 @@ const PHASES: PhaseData[] = [
   {
     text: 'Flint exists so what you\'ve built gets noticed.',
     italicWord: null,
+    lines: [
+      'Flint exists so what',
+      "you've built gets noticed.",
+    ],
   },
   {
     text: 'We craft your vital data, research, and outcomes into stories that stick and sell.',
     italicWord: 'stories',
     lines: [
       'We craft your vital data,',
-      'research, and outcomes',
-      'into stories that stick and sell.',
-    ],
-    mobileLines: [
-      'We craft your vital',
-      'data, research, and',
-      'outcomes into stories',
-      'that stick and sell.',
+      'research, and outcomes into',
+      'stories that stick and sell.',
     ],
   },
 ];
 
 const TEXT_STYLE =
-  'text-[36px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] text-center mx-auto px-4 md:px-16 max-w-[860px]';
+  'text-[36px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] text-center mx-auto px-4 md:px-8 max-w-[860px]';
 
 function renderText(text: string, italicWord: string | null) {
   if (!italicWord) return <>{text}</>;
@@ -150,7 +147,7 @@ export default function IgniteSection() {
       ))}
 
       {/* Text content */}
-      <div className="relative z-10 px-6 md:px-12 w-full flex items-center justify-center">
+      <div className="relative z-10 px-6 md:px-6 w-full flex items-center justify-center">
         <div
           className="flex items-center justify-center w-full"
           style={{
@@ -172,23 +169,7 @@ export default function IgniteSection() {
               opacity: started ? (visible ? 1 : 0) : 0,
             }}
           >
-            {phaseIdx === 2 ? (
-              <>
-                <span className="hidden lg:inline">
-                  {renderText(p.text, p.italicWord)}
-                </span>
-                <span className="hidden md:block lg:hidden">
-                  {p.lines ? renderLines(p.lines, p.italicWord) : renderText(p.text, p.italicWord)}
-                </span>
-                <span className="md:hidden">
-                  {p.mobileLines ? renderLines(p.mobileLines, p.italicWord) : p.lines ? renderLines(p.lines, p.italicWord) : renderText(p.text, p.italicWord)}
-                </span>
-              </>
-            ) : p.lines ? (
-              renderLines(p.lines, p.italicWord)
-            ) : (
-              renderText(p.text, p.italicWord)
-            )}
+            {p.lines ? renderLines(p.lines, p.italicWord) : renderText(p.text, p.italicWord)}
           </p>
         </div>
       </div>
