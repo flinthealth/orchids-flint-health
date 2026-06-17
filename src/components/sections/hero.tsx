@@ -80,9 +80,9 @@ export default function HeroSection() {
               className="animate-hero-title text-white font-light mb-5 text-[40px] md:text-[51px]"
               style={{ lineHeight: 1.15, letterSpacing: '-0.02em' }}
             >
-              <span className="md:hidden">We illuminate<br />your mission so<br />it&rsquo;s seen, sought<br />out, and <span className="font-serif italic">shared</span></span>
-              <span className="hidden lg:inline">We illuminate your<br />mission so it&rsquo;s seen,<br />sought out, and <span className="font-serif italic">shared</span></span>
-              <span className="hidden md:block lg:hidden">We illuminate<br />your mission so<br />it&rsquo;s seen, sought<br />out, and <span className="font-serif italic">shared</span></span>
+              <span className="md:hidden">We illuminate<br />what you&rsquo;ve built<br />so it&rsquo;s seen, shared<br />and <span className="font-serif italic">sought out</span></span>
+              <span className="hidden lg:inline">We illuminate your<br />mission so it&rsquo;s seen,<br />shared, and <span className="font-serif italic">sought out</span></span>
+              <span className="hidden md:block lg:hidden">We illuminate<br />what you&rsquo;ve built<br />so it&rsquo;s seen, shared<br />and <span className="font-serif italic">sought out</span></span>
             </h1>
 
             <p className="animate-hero-sub1 text-white/80 text-[17px] md:text-[15px] lg:text-[17px] font-normal mb-4">

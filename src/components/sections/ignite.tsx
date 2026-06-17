@@ -9,12 +9,12 @@ interface PhaseData {
 
 const PHASES: PhaseData[] = [
   {
-    text: 'The world is worse off every time something truly valuable goes unseen.',
+    text: 'A product or service that changes lives shouldn\'t go unseen.',
     italicWord: 'unseen',
   },
   {
-    text: 'Flint exists so your life-changing work gets noticed.',
-    italicWord: 'life-changing',
+    text: 'Flint exists so what you\'ve built gets noticed.',
+    italicWord: null,
   },
   {
     text: 'We craft your vital data, research, and outcomes into stories that stick and sell.',
