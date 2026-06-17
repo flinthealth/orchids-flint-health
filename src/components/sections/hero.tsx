@@ -86,7 +86,7 @@ export default function HeroSection() {
             </h1>
 
             <p className="animate-hero-sub1 text-white/80 text-[17px] md:text-[15px] lg:text-[17px] font-normal mb-4">
-              Innovative healthcare brands work with Flint to create<br className="hidden lg:block" /> series that increase engagement, retention, and referrals.
+              Healthcare brands work with Flint to create branded series that earn trust and hold attention.
             </p>
 
             <div className="animate-hero-cta mt-6">
