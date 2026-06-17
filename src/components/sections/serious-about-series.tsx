@@ -252,8 +252,8 @@ export default function SeriousAboutSeries() {
 
         {/* Closing text block */}
         <div className="max-w-[760px] mt-16 md:mt-20">
-          <p className="text-[15px] font-semibold tracking-[0.1em] uppercase text-[#677283] mb-3">Long Story Short</p>
-          <p className="text-[24px] md:text-[32px] font-light text-[#43382f] leading-[1.2] tracking-[-0.01em]">A series is flexible in the best way. It can live inside a podcast, build out into seasons, and travel throughout your organization to drive real outcomes.</p>
+          <p className="text-[15px] font-semibold tracking-[0.1em] uppercase text-[#677283] mb-3">Bottom line</p>
+          <p className="text-[24px] md:text-[32px] font-light text-[#43382f] leading-[1.2] tracking-[-0.01em]">A series is flexible in the best way. It can live inside a podcast, build out into seasons, and travel across every stage of the patient or provider journey.</p>
         </div>
 
         {/* Popover */}
