@@ -7,7 +7,7 @@ export default function YourSeries() {
     <div>
 
       {/* ── Header + Phase 1 (white) ── */}
-      <section style={{ backgroundColor: '#f9f5ef' }} className="pt-20 md:pt-28 pb-16 md:pb-20">
+      <section style={{ backgroundColor: '#ffffff' }} className="pt-20 md:pt-28 pb-16 md:pb-20">
         <div className="max-w-[840px] mx-auto px-6 md:px-12">
 
           {/* ── Header ── */}
@@ -132,7 +132,7 @@ export default function YourSeries() {
       </section>
 
       {/* ── Phase 2 (Mother Swan) ── */}
-      <section style={{ backgroundColor: '#ede4da' }} className="py-16 md:py-20">
+      <section style={{ backgroundColor: '#f9f5ef' }} className="py-16 md:py-20">
         <div className="ys-phase-block max-w-[1000px] mx-auto w-full px-6 md:px-8">
           <div className="ys-phase-number ys-phase-gradient text-[88px] font-light tracking-[-0.04em] leading-none mb-1">2</div>
           <div className="text-[26px] font-bold text-[#2b3335] leading-tight mb-5">Production handled.</div>

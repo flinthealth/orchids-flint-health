@@ -73,20 +73,20 @@ export default function HeroSection() {
 
         {/* Content */}
         <div className="relative z-20 w-full max-w-[1280px] mx-auto px-6 md:px-12 pt-[26vh] pb-16 md:py-16 lg:py-24 text-left">
-          <div className="max-w-[820px] md:max-w-[450px] lg:max-w-[560px]">
+          <div className="max-w-[820px] md:max-w-[540px] lg:max-w-[560px]">
             <div className="h-[22px] md:hidden" />
 
             <h1
               className="animate-hero-title text-white font-light mb-5 text-[40px] md:text-[51px]"
               style={{ lineHeight: 1.15, letterSpacing: '-0.02em' }}
             >
-              <span className="md:hidden">We illuminate<br />what you&rsquo;ve built<br />so it&rsquo;s seen, <span className="font-serif italic">shared</span><br />and sought out</span>
-              <span className="hidden lg:inline">We illuminate what<br />you&rsquo;ve built so it&rsquo;s seen,<br />sought out, and <span className="font-serif italic">shared</span></span>
-              <span className="hidden md:block lg:hidden">We illuminate<br />what you&rsquo;ve built<br />so it&rsquo;s seen, <span className="font-serif italic">shared</span><br />and sought out</span>
+              <span className="md:hidden">We illuminate your<br />life-changing work<br />so it&rsquo;s seen, <span className="font-serif italic">shared</span><br />and sought out</span>
+              <span className="hidden lg:inline">We illuminate your<br />life-changing work so<br />it&rsquo;s seen, sought out<br />and <span className="font-serif italic">shared</span></span>
+              <span className="hidden md:block lg:hidden">We illuminate your<br />life-changing work so<br />it&rsquo;s seen, sought out<br />and <span className="font-serif italic">shared</span></span>
             </h1>
 
             <p className="animate-hero-sub1 text-white/80 text-[17px] md:text-[15px] lg:text-[17px] font-normal mb-4">
-              Healthcare brands work with Flint to create branded series that hold attention and earn trust.
+              Flint crafts premium branded series for complex care and medical innovations that command attention and anchor deep trust.
             </p>
 
             <div className="animate-hero-cta mt-6">

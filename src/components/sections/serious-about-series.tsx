@@ -164,7 +164,7 @@ export default function SeriousAboutSeries() {
           SERIOUS ABOUT SERIES
         </p>
         <h2 className="text-[28px] md:text-[36px] font-light text-[#2b3335] leading-[1.2] tracking-[-0.01em] max-w-[660px] mb-4">
-          Flint is a full-service creative studio that makes it easy for healthcare brands to develop, launch and grow memorable series across multiple channels.
+          Flint is a full-service production partner. We handle the heavy lifting, making it easy for healthcare brands to develop, launch, and grow branded series across all channels.
         </h2>
         <p className="text-[17px] text-[#43382f] leading-relaxed max-w-[560px] mb-12 opacity-80">
           Not sure what makes a series different from a podcast? Here's the short version.

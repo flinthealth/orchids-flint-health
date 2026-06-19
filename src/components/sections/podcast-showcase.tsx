@@ -12,7 +12,7 @@ const CASE_STUDIES = [
     stats: [
       { value: "24",     label: "Episodes" },
       { value: "75K+",   label: "Downloads in 90 days" },
-      { value: "257%",   label: "Lift in treatment inquiries from partner's channel", mobileLabel: ["Lift in treatment inquiries", "from partner's channel"], highlight: true },
+      { value: "257%",   label: "Lift in treatment inquiries from the partner's channel", mobileLabel: ["Lift in treatment inquiries", "from the partner's channel"], highlight: true },
     ],
   },
   {
