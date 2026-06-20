@@ -80,13 +80,13 @@ export default function HeroSection() {
               className="animate-hero-title text-white font-light mb-5 text-[40px] md:text-[51px]"
               style={{ lineHeight: 1.15, letterSpacing: '-0.02em' }}
             >
-              <span className="md:hidden">We illuminate your<br />life-changing work<br />so it&rsquo;s seen, <span className="font-serif italic">shared</span><br />and sought out</span>
-              <span className="hidden lg:inline">We illuminate your<br />life-changing work so<br />it&rsquo;s seen, sought out<br />and <span className="font-serif italic">shared</span></span>
-              <span className="hidden md:block lg:hidden">We illuminate your<br />life-changing work so<br />it&rsquo;s seen, sought out<br />and <span className="font-serif italic">shared</span></span>
+              <span className="md:hidden">Branded series<br />built for visibility<br />and trust</span>
+              <span className="hidden lg:inline">Branded series<br />built for visibility<br />and trust</span>
+              <span className="hidden md:block lg:hidden">Branded series<br />built for visibility<br />and trust</span>
             </h1>
 
             <p className="animate-hero-sub1 text-white/80 text-[17px] md:text-[15px] lg:text-[17px] font-normal mb-4">
-              Flint crafts premium branded series for complex care and medical innovations that command attention and anchor deep trust.
+              Leading healthcare brands work with Flint to craft premium, multi-channel series that drive engagement, retention, and referrals.
             </p>
 
             <div className="animate-hero-cta mt-6">
