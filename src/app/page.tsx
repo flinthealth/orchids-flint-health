@@ -40,10 +40,9 @@ export default function Home() {
         <IgniteSection />
         <SeriousAboutSeries />
         <ContentBridge />
+        <SeriesReach />
         <CarePlatformSection />
         {/* <WhySeriesWork /> */}
-        <SeriesReach />
-        <SeriesCost />
         {/* <MissionSection /> */}
         {/* <ProblemSection /> */}
         {/* <StatInterstitial /> */}

@@ -85,8 +85,10 @@ export default function HeroSection() {
               <span className="hidden md:block lg:hidden">Branded series<br />built for visibility<br />and trust</span>
             </h1>
 
-            <p className="animate-hero-sub1 text-white/80 text-[17px] md:text-[15px] lg:text-[17px] font-normal mb-4">
-              Leading healthcare brands work with Flint to craft premium, multi-channel series that drive engagement, retention, and referrals.
+            <p className="animate-hero-sub1 text-white/80 text-[17px] md:text-[17px] lg:text-[19px] font-normal mb-4">
+              Leading healthcare brands work with Flint to <br className="hidden md:block" />
+craft premium, multi-channel series that <br className="hidden md:block" />
+drive engagement, retention, and referrals.
             </p>
 
             <div className="animate-hero-cta mt-6">

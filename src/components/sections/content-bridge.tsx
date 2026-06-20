@@ -319,28 +319,18 @@ export default function ContentBridge() {
             complete control<br />
             over <span className="font-serif italic">your messaging</span>
           </h2>
-          <ul className="cb-body-on-photo" style={{ color: 'rgba(249,245,239,0.72)', lineHeight: 1.8, marginTop: '12px', listStyle: 'none', padding: 0 }}>
-            {['Hand-picked experts', 'Evidence-based insights', 'Compelling stories', 'A clear narrative arc'].map((item) => (
-              <li key={item} style={{ display: 'flex', alignItems: 'baseline', gap: '8px' }}>
-                <span style={{ color: '#ff7f29', flexShrink: 0 }}>✓</span>
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
+          <p className="cb-body-on-photo" style={{ color: 'rgba(249,245,239,0.72)', lineHeight: 1.6, marginTop: '12px', maxWidth: '460px' }}>
+            From the experts and evidence-based insights you bring into the story, every detail stays true to your message.
+          </p>
         </div>
       </div>
       </div>{/* end cb-photo-wrapper */}
 
       {/* Body copy continuation block — mobile & tablet only */}
       <div className="cb-continuation lg:hidden">
-        <ul style={{ color: 'rgba(249,245,239,0.72)', fontSize: '17px', lineHeight: 1.8, listStyle: 'none', padding: 0 }}>
-          {['Hand-picked experts', 'Evidence-based insights', 'Compelling stories', 'A clear narrative arc'].map((item) => (
-            <li key={item} style={{ display: 'flex', alignItems: 'baseline', gap: '8px' }}>
-              <span style={{ color: '#ff7f29', flexShrink: 0 }}>✓</span>
-              <span>{item}</span>
-            </li>
-          ))}
-        </ul>
+        <p style={{ color: 'rgba(249,245,239,0.72)', fontSize: '17px', lineHeight: 1.6 }}>
+          From the experts and evidence-based insights you bring into the story, every detail stays true to your message.
+        </p>
       </div>
 
       {/* Tablet + Desktop — original centered layout */}
@@ -354,17 +344,12 @@ export default function ContentBridge() {
             complete control<br />
             over <span className="font-serif italic">your messaging</span>
           </h2>
-          <ul
+          <p
             className="text-[20px] max-w-[480px] mx-auto mt-3"
-            style={{ color: 'rgba(249,245,239,0.72)', lineHeight: 1.8, listStyle: 'none', padding: 0 }}
+            style={{ color: 'rgba(249,245,239,0.72)', lineHeight: 1.6 }}
           >
-            {['Hand-picked experts', 'Evidence-based insights', 'Compelling stories', 'A clear narrative arc'].map((item) => (
-              <li key={item} style={{ display: 'flex', alignItems: 'baseline', gap: '8px', justifyContent: 'center' }}>
-                <span style={{ color: '#ff7f29', flexShrink: 0 }}>✓</span>
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
+            From the experts and evidence-based insights you bring into the story, every detail stays true to your message.
+          </p>
         </div>
       </div>
 
