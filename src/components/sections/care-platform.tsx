@@ -185,11 +185,8 @@ const CarePlatformSection = () => {
               transition: 'opacity 0.6s ease 0s, transform 0.6s ease 0s',
             }}
           >
-            <p className="text-[15px] font-semibold tracking-[0.1em] uppercase mb-5" style={{ color: 'rgba(249,245,239,0.55)' }}>
-              Your Series
-            </p>
             <h2 className="text-white text-[40px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-4">
-              One series. The <span className="font-serif italic" style={{ color: '#ffffff' }}>right channels.</span>
+              One series.<br />Multiple <span className="font-serif italic" style={{ color: '#ffffff' }}>key channels.</span>
             </h2>
             <p className="text-[17px] leading-[1.5] max-w-[560px] mx-auto" style={{ color: 'rgba(249,245,239,0.55)' }}>
               From strategy to first episode in 90 days, every series is custom-built around your goals, your audience, and the outcomes that matter most.
@@ -433,16 +430,12 @@ const CarePlatformSection = () => {
             </div>{/* /prism flex */}
 
             {/* Closing lines */}
-            <div className="cp-closing text-center max-w-[640px] mx-auto px-6 pt-10 md:pt-6 pb-24">
-              <h2 className="text-white text-[32px] md:text-[42px] font-light leading-[1.15] tracking-[-0.02em] mb-3">
-                Most content<br className="md:hidden" /> gets <em className="font-serif italic">seconds.</em><br />
-                A strategic series<br className="md:hidden" /> gets <em className="font-serif italic">hours.</em>
+            <div className="cp-closing text-center max-w-[800px] mx-auto px-6 pt-10 md:pt-6 pb-24">
+              <h2 className="text-white text-[32px] md:text-[42px] font-light leading-[1.15] tracking-[-0.02em] mb-6">
+                Premium long-form is the foundation, where listeners and viewers spend hours building trust.
               </h2>
-              <p className="text-[15px] tracking-[0.05em] mb-6" style={{ color: 'rgba(249,245,239,0.40)' }}>
-                <em className="font-serif italic">(read that again.)</em>
-              </p>
               <p className="text-[17px] leading-relaxed" style={{ color: 'rgba(249,245,239,0.55)' }}>
-                This creates a fundamentally different relationship with your audience.
+                From there, your series breaks into platform-specific content for social, articles, and email sequences, so your reach grows without adding extra production.
               </p>
             </div>
 

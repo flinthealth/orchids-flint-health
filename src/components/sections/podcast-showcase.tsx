@@ -46,7 +46,7 @@ const CASE_STUDIES = [
     image: "/podcast-body-talk.webp",
     client: "Recovery Warriors",
     tag: "Program Launch",
-    description: "An alumni-driven series built to launch the Beyond Body program — combining recovery stories and lived experience to move listeners from awareness to enrollment in a single 5-week campaign.",
+    description: "An alumni-driven series built to launch a cohort-based program — combining recovery stories and lived experience to move listeners from awareness to enrollment in a single 5-week campaign.",
     stats: [
       { value: "15",  label: "Episodes Produced" },
       { value: "55%", label: "Discovery call close rate" },

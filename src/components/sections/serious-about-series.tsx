@@ -16,8 +16,8 @@ export default function SeriousAboutSeries() {
             <h2 className="text-[40px] md:text-[52px] font-light text-[#2b3335] leading-[1.1] tracking-[-0.02em] mb-5">
               Flint makes it easy to develop, launch, and grow branded series across all channels.
             </h2>
-            <p className="text-[16px] text-[#677283] leading-relaxed">
-              Most content gets <em className="font-serif italic">seconds.</em> A strategic series gets <em className="font-serif italic">hours.</em>
+            <p className="text-[17px] text-[#43382f] leading-relaxed opacity-90">
+              A series is flexible in the best way. It can build out into seasons and travel across every stage of the patient, provider, or employee journey.
             </p>
           </div>
 
