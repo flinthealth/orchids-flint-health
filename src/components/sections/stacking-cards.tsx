@@ -265,8 +265,8 @@ export default function StackingCards() {
               </span>
             </div>
             <h2 className="text-[#2b3335] text-[40px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-0">
-              Here&rsquo;s the full range of what&rsquo;s{' '}
-              <span className="font-serif italic" style={{ color: '#2b3335' }}>possible.</span>
+              <span className="md:hidden">We help you<br />reach them</span>
+              <span className="hidden md:inline">We help you reach them</span>
             </h2>
           </div>
 

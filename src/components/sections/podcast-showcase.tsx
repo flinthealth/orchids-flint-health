@@ -244,7 +244,7 @@ export default function PodcastShowcase() {
       id="our-work"
       ref={sectionRef}
       className="relative pt-[88px] md:pt-[100px] pb-[100px] md:pb-[120px] px-6 md:px-8 overflow-hidden"
-      style={{ background: 'linear-gradient(to right, #3d4d58 0%, #6b4b3e 55%, #a0522d 100%)' }}
+      style={{ background: '#ede4da' }}
     >
       {/* Grain overlay */}
       <div
@@ -262,20 +262,20 @@ export default function PodcastShowcase() {
         <div className="text-center mb-10 md:mb-12" style={fade(0)}>
           <p
             className="text-[15px] font-semibold tracking-[0.1em] uppercase mb-5"
-            style={{ color: "rgba(249,245,239,0.55)" }}
+            style={{ color: "#677283" }}
           >
             In Practice
           </p>
           <h2
             className="text-[40px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-5"
-            style={{ color: "#ffffff" }}
+            style={{ color: "#2b3335" }}
           >
             Real results for{" "}
-            <span className="font-serif italic" style={{ color: "#ffffff" }}>healthcare brands</span>
+            <span className="font-serif italic" style={{ color: "#2b3335" }}>healthcare brands</span>
           </h2>
           <p
             className="text-[17px] leading-[1.5] max-w-[520px] mx-auto"
-            style={{ color: "rgba(249,245,239,0.55)" }}
+            style={{ color: "#43382f" }}
           >
             Proof that when the right{" "}
             <br className="md:hidden" />

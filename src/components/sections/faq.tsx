@@ -262,6 +262,58 @@ function ComparisonTable() {
   );
 }
 
+function SeriesFormats() {
+  const FORMATS = [
+    {
+      icon: '/icon-narrative-v3.png',
+      title: 'Narrative',
+      subtitle: 'Story-arc driven',
+      desc: 'Documentary-style, multiple perspectives woven into one arc. Great for a journey or transformation.',
+      ref: "Like Serial or This American Life — for healthcare",
+    },
+    {
+      icon: '/icon-interview-v8.png',
+      title: 'Interview',
+      subtitle: 'Guest-driven depth',
+      desc: 'One guest, one conversation at a time. Builds authority and trust episode by episode.',
+      ref: "Like Armchair Expert or Fresh Air — for healthcare",
+    },
+    {
+      icon: '/icon-conversational-v10.png',
+      title: 'Conversational',
+      subtitle: 'Co-host chemistry',
+      desc: 'Two hosts make dense clinical topics feel accessible for public or internal audiences.',
+      ref: "Crime Junkie or Stuff You Should Know — for healthcare",
+    },
+    {
+      icon: '/icon-panel-v4.png',
+      title: 'Panel',
+      subtitle: 'Multi-expert voices',
+      desc: 'Multiple experts in dialogue or debate. Signals range, depth, and influence.',
+      ref: "Like Intelligence Squared or TED Radio Hour — for healthcare",
+    },
+  ];
+
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+      {FORMATS.map((f) => (
+        <div key={f.title}>
+          <div className="flex items-center gap-3 mb-2">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={f.icon} className="w-14 h-14 object-contain flex-shrink-0" alt="" />
+            <div>
+              <p className="text-[15px] font-bold uppercase tracking-[0.04em] text-[#43382f]">{f.title}</p>
+              <p className="text-[11px] font-medium uppercase tracking-[0.06em] text-[#677283]">{f.subtitle}</p>
+            </div>
+          </div>
+          <p className="text-[14px] text-[#43382f] leading-relaxed mb-1">{f.desc}</p>
+          <p className="font-serif italic text-[13px] text-[#677283]">{f.ref}</p>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 /* ── FAQ data (unchanged) ── */
 
 const FAQS: { q: string; a: string[] }[] = [
@@ -346,9 +398,33 @@ export default function FAQSection() {
             )}
           </div>
 
-          {/* Existing FAQ items (offset index by 1) */}
+          {/* New item: series formats */}
+          <div
+            className="bg-white rounded-[12px] px-6 py-5 cursor-pointer"
+            style={{ border: '1px solid rgba(103,114,131,0.15)' }}
+            onClick={() => setOpenIdx(openIdx === 1 ? null : 1)}
+          >
+            <div className="flex items-center justify-between gap-4">
+              <p className="text-[17px] font-medium leading-snug" style={{ color: '#43382f' }}>
+                What are the different series formats?
+              </p>
+              <span
+                className="flex-shrink-0 text-[24px] font-light leading-none select-none"
+                style={{ color: '#677283' }}
+              >
+                {openIdx === 1 ? '−' : '+'}
+              </span>
+            </div>
+            {openIdx === 1 && (
+              <div className="mt-5" onClick={(e) => e.stopPropagation()}>
+                <SeriesFormats />
+              </div>
+            )}
+          </div>
+
+          {/* Existing FAQ items (offset index by 2) */}
           {FAQS.map((item, i) => {
-            const idx = i + 1;
+            const idx = i + 2;
             const isOpen = openIdx === idx;
             return (
               <div

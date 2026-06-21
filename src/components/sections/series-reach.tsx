@@ -57,11 +57,9 @@ export default function SeriesReach() {
         {/* Headline */}
         <div className="mb-14 max-w-[700px] mx-auto text-center">
           <h2 className="text-[#2b3335] text-[36px] md:text-[46px] lg:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-3">
-            Who do you need to <em className="font-serif italic">reach</em>?
+            <span className="md:hidden">Who do you<br />need to reach?<br /><em className="font-serif italic">And what does it cost<br />when you don&rsquo;t?</em></span>
+            <span className="hidden md:inline">Who do you need to reach? <em className="font-serif italic">And what does it cost when you don&rsquo;t?</em></span>
           </h2>
-          <p className="text-[20px] md:text-[24px] font-light text-[#677283] leading-[1.3]">
-            And what does it cost when you <em className="font-serif italic">don&rsquo;t</em>?
-          </p>
         </div>
 
         <div className="flex flex-col md:flex-row gap-10 md:gap-16 items-start">
