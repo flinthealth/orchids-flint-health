@@ -165,10 +165,7 @@ export default function ProcessSection() {
               ))}
             </div>
           </div>
-          <div className="w-full lg:w-[340px] flex-shrink-0 flex items-center justify-center">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/icon-format-narrative.png" alt="" className="w-full max-w-[320px] object-contain" />
-          </div>
+          <div className="hidden lg:block lg:w-[340px] lg:flex-shrink-0" />
         </div>
       </div>
 
@@ -209,10 +206,7 @@ export default function ProcessSection() {
               ))}
             </div>
           </div>
-          <div className="w-full lg:w-[340px] flex-shrink-0 flex items-center justify-center">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/icon-format-conversational.png" alt="" className="w-full max-w-[320px] object-contain" />
-          </div>
+          <div className="hidden lg:block lg:w-[340px] lg:flex-shrink-0" />
         </div>
       </div>
 
