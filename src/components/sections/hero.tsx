@@ -39,7 +39,7 @@ export default function HeroSection() {
 
   return (
     <section className="relative w-full bg-[#2b3335] overflow-hidden">
-      <div className="relative min-h-[680px] lg:min-h-[800px] xl:min-h-[90vh] flex flex-col justify-center pt-[74px] md:pt-[74px]">
+      <div className="relative min-h-[680px] lg:min-h-[800px] xl:min-h-[920px] 2xl:min-h-[1040px] flex flex-col justify-center pt-[74px] md:pt-[74px]">
 
         {/* Background: video with image fallback */}
         <div className="absolute inset-0 z-0">
