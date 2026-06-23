@@ -70,7 +70,7 @@ function renderLines(lines: string[], italicWord: string | null) {
 }
 
 const BACKGROUNDS = [
-  '#2b3335', // Phase 1 — Gentle Abyss solid
+  '#1a2530', // Phase 1 — darkest solid
   'linear-gradient(to bottom, #f9f5ef, #eeb20b)', // Phase 2 — Mother Swan → Golden Ray
   'radial-gradient(circle, #f9f5ef, #f2c84d)', // Phase 3 — light center, softer golden outside
 ];

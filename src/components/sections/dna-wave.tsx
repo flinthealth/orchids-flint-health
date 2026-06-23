@@ -246,7 +246,7 @@ export function BeliefSoundWave() {
 
 export function OurBeliefSection() {
   return (
-    <section className="relative pt-[88px] md:pt-[120px] pb-[32px] overflow-hidden" style={{ background: 'linear-gradient(to right, #3d4d58 0%, #6b4b3e 55%, #a0522d 100%)' }}>
+    <section className="relative pt-[88px] md:pt-[120px] pb-[32px] overflow-hidden" style={{ background: 'radial-gradient(circle, #3d4d58 0%, #2b3a45 50%, #1a2530 100%)' }}>
       {/* Keyframes */}
       <style>{`
         @keyframes beliefFlashlightArc {

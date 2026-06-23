@@ -2,8 +2,6 @@
 
 import React, { useEffect, useRef } from 'react';
 
-interface Blip { x: number; y: number; color: string; age: number; }
-
 const CHANNELS = [
   { angle: -90,  color: '#ff7f29', r: 0.82 },
   { angle: -45,  color: '#eeb20b', r: 0.74 },
@@ -16,7 +14,6 @@ const CHANNELS = [
 ];
 
 const SPEED = 0.35;
-const DECAY = 3.2;
 
 function toRad(deg: number) { return deg * Math.PI / 180; }
 
@@ -37,7 +34,6 @@ export default function RadarDial() {
 
     let sweepAngle = -90;
     let animId: number;
-    const blips: Blip[] = [];
 
     function drawBackground() {
       const bg = ctx!.createRadialGradient(cx, cy, 0, cx, cy, R);
@@ -122,32 +118,6 @@ export default function RadarDial() {
       ctx!.shadowBlur = 0;
     }
 
-    function drawBlips() {
-      blips.forEach(b => {
-        if (b.age > DECAY) return;
-        const fade = Math.max(0, 1 - b.age / DECAY);
-        const pulse = 1 + Math.sin(b.age * 6) * 0.3 * fade;
-        const pr = 5 * pulse;
-        ctx!.beginPath();
-        ctx!.arc(b.x, b.y, pr, 0, Math.PI * 2);
-        ctx!.fillStyle = b.color;
-        ctx!.globalAlpha = fade;
-        ctx!.shadowColor = b.color;
-        ctx!.shadowBlur = 16 * fade;
-        ctx!.fill();
-        ctx!.globalAlpha = 1;
-        ctx!.shadowBlur = 0;
-        ctx!.beginPath();
-        ctx!.arc(b.x, b.y, 2, 0, Math.PI * 2);
-        ctx!.fillStyle = `rgba(255,255,255,${fade * 0.9})`;
-        ctx!.fill();
-        b.age += (0.016 * SPEED * 60);
-      });
-      for (let i = blips.length - 1; i >= 0; i--) {
-        if (blips[i].age >= DECAY) blips.splice(i, 1);
-      }
-    }
-
     function drawCenter() {
       const hub = ctx!.createRadialGradient(cx, cy, 0, cx, cy, 30);
       hub.addColorStop(0, 'rgba(255,127,41,0.35)');
@@ -167,21 +137,7 @@ export default function RadarDial() {
       ctx!.arc(cx, cy, 2, 0, Math.PI * 2);
       ctx!.fillStyle = '#fff';
       ctx!.fill();
-      ctx!.textAlign = 'center';
-      ctx!.font = '300 28px sans-serif';
-      ctx!.fillStyle = 'rgba(249,245,239,0.9)';
-      ctx!.fillText('360°', cx, cy + 10);
-    }
-
-    function checkBlips() {
-      CHANNELS.forEach(ch => {
-        const diff = ((sweepAngle - ch.angle) % 360 + 360) % 360;
-        if (diff < SPEED * 1.8 && diff >= 0) {
-          const a = toRad(ch.angle);
-          blips.push({ x: cx + Math.cos(a) * ch.r * R, y: cy + Math.sin(a) * ch.r * R, color: ch.color, age: 0 });
-        }
-      });
-    }
+      }
 
     function frame() {
       ctx!.clearRect(0, 0, W, H);
@@ -191,11 +147,9 @@ export default function RadarDial() {
       ctx!.clip();
       drawBackground();
       drawSweep();
-      drawBlips();
       drawCenter();
       ctx!.restore();
       sweepAngle = (sweepAngle + SPEED) % 360;
-      checkBlips();
       animId = requestAnimationFrame(frame);
     }
 
@@ -204,16 +158,23 @@ export default function RadarDial() {
   }, []);
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px' }}>
+    <div style={{ position: 'relative', width: '100%', maxWidth: '420px', margin: '0 auto' }}>
       <canvas
         ref={canvasRef}
         width={420}
         height={420}
-        style={{ width: '100%', maxWidth: '420px', height: 'auto', display: 'block' }}
+        style={{ width: '100%', height: 'auto', display: 'block' }}
       />
-      <p style={{ fontSize: '13px', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#677283', textAlign: 'center' }}>
-        360° Campaigns
-      </p>
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='gr'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23gr)'/%3E%3C/svg%3E")`,
+          backgroundRepeat: 'repeat',
+          backgroundSize: '400px 400px',
+          opacity: 0.18,
+          mixBlendMode: 'overlay',
+        }}
+      />
     </div>
   );
 }
