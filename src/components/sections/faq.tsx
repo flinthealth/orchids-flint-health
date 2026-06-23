@@ -295,7 +295,7 @@ function SeriesFormats() {
   ];
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+    <div className="flex flex-col gap-5">
       {FORMATS.map((f) => (
         <div key={f.title}>
           <div className="flex items-center gap-3 mb-2">

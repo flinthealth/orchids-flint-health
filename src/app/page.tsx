@@ -16,8 +16,6 @@ import PodcastPathways from "@/components/sections/podcast-pathways";
 import PodcastPulse from "@/components/sections/podcast-pulse";
 import ContentPrism from "@/components/sections/content-prism";
 import PodcastShowcase from "@/components/sections/podcast-showcase";
-import YourSeries from "@/components/sections/your-series";
-import MeasureAndGrow from "@/components/sections/measure-and-grow";
 import PodcastExplainer from "@/components/sections/podcast-explainer";
 import WhySeriesWork from "@/components/sections/why-series-work";
 import SeriesReach from "@/components/sections/series-reach";
@@ -30,6 +28,7 @@ import StatInterstitial from "@/components/sections/stat-interstitial";
 import ContentBridge from "@/components/sections/content-bridge";
 import MissionSection from "@/components/sections/mission";
 import SeriousAboutSeries from "@/components/sections/serious-about-series";
+import ProcessSection from "@/components/sections/process-section";
 
 export default function Home() {
   return (
@@ -43,8 +42,7 @@ export default function Home() {
         <SeriesReach />
         <StackingCards />
         <CarePlatformSection />
-        <YourSeries />
-        <MeasureAndGrow />
+        <ProcessSection />
         {/* <WhySeriesWork /> */}
         {/* <MissionSection /> */}
         {/* <ProblemSection /> */}

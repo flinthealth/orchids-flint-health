@@ -194,7 +194,7 @@ const CarePlatformSection = () => {
           </div>
 
           {/* ── Animation container — wraps prism + pills + closing ── */}
-          <div ref={prismRef} className={`${animClass} ${p2Class}`}>
+          <div ref={prismRef} className={`${animClass} ${p2Class} pb-24`}>
 
             {/* Prism SVG flex wrapper */}
             <div
@@ -428,16 +428,6 @@ const CarePlatformSection = () => {
               </svg>
 
             </div>{/* /prism flex */}
-
-            {/* Closing lines */}
-            <div className="cp-closing text-center max-w-[800px] mx-auto px-6 pt-10 md:pt-6 pb-24">
-              <h2 className="text-white text-[32px] md:text-[42px] font-light leading-[1.15] tracking-[-0.02em] mb-6">
-                Premium long-form is the foundation, where listeners and viewers spend hours building trust.
-              </h2>
-              <p className="text-[17px] leading-relaxed" style={{ color: 'rgba(249,245,239,0.55)' }}>
-                From there, your series breaks into platform-specific content for social, articles, and email sequences, so your reach grows without adding extra production.
-              </p>
-            </div>
 
           </div>{/* /animation container */}
 
