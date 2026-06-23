@@ -140,9 +140,10 @@ export default function IgniteSection() {
           100% { opacity: 1; }
         }
         @keyframes flamePulse {
-          0%   { opacity: 0.55; transform: scale(1); }
-          50%  { opacity: 0.9;  transform: scale(1.08); }
-          100% { opacity: 0.55; transform: scale(1); }
+          0%   { opacity: 0.25; transform: scale(0.85); }
+          35%  { opacity: 1.0;  transform: scale(1.15); }
+          55%  { opacity: 0.5;  transform: scale(1.02); }
+          100% { opacity: 0.25; transform: scale(0.85); }
         }
         `}</style>
 
@@ -170,18 +171,18 @@ export default function IgniteSection() {
         />
       )}
 
-      {/* Flame pulse overlay — warm center breathes like a flame during Phase 3 */}
+      {/* Phase 3: flame pulse center */}
       {phaseIdx === 2 && (
-        <div
-          key="phase3-flame-pulse"
-          className="absolute inset-0 z-[1]"
-          style={{
-            background:
-              'radial-gradient(circle at 50% 50%, #eeb20b 0%, #ff7f29 20%, #a0522d 45%, transparent 70%)',
-            animation: 'flamePulse 3.5s ease-in-out infinite',
-            transformOrigin: 'center center',
-          }}
-        />
+        <div key="phase3-flame" className="absolute inset-0 z-[1] pointer-events-none overflow-hidden">
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                'radial-gradient(circle at 50% 50%, #eeb20b 0%, #ff7f29 18%, #a0522d 38%, transparent 58%)',
+              animation: 'flamePulse 6s ease-in-out infinite',
+            }}
+          />
+        </div>
       )}
 
       {/* Grain overlay */}
