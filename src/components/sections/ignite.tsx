@@ -71,11 +71,11 @@ function renderLines(lines: string[], italicWord: string | null) {
 
 const BACKGROUNDS = [
   '#1a2530', // Phase 1 — darkest solid
-  'linear-gradient(to bottom, #f9f5ef, #eeb20b)', // Phase 2 — Mother Swan → Golden Ray
-  'radial-gradient(circle, #f9f5ef, #f2c84d)', // Phase 3 — light center, softer golden outside
+  '#1a2530', // Phase 2 — starts dark, sunrise animation reveals warm gradient
+  'radial-gradient(circle, #eeb20b 0%, #ff7f29 25%, #a0522d 50%, #3d4d58 100%)', // Phase 3 — bloom radial gradient (static)
 ];
 
-const TEXT_COLORS = ['#ffffff', '#43382f', '#43382f'];
+const TEXT_COLORS = ['#ffffff', '#ffffff', '#ffffff'];
 
 export default function IgniteSection() {
   const phaseRef = useRef(0);
@@ -134,6 +134,18 @@ export default function IgniteSection() {
       id="ignite-section"
       className="relative w-full min-h-[80vh] flex items-center justify-center overflow-hidden"
     >
+      <style>{`
+        @keyframes p2Sunrise {
+          0%   { opacity: 0; }
+          100% { opacity: 1; }
+        }
+        @keyframes flamePulse {
+          0%   { opacity: 0.55; transform: scale(1); }
+          50%  { opacity: 0.9;  transform: scale(1.08); }
+          100% { opacity: 0.55; transform: scale(1); }
+        }
+        `}</style>
+
       {/* Background layers — crossfade between phases */}
       {BACKGROUNDS.map((bg, i) => (
         <div
@@ -145,6 +157,44 @@ export default function IgniteSection() {
           }}
         />
       ))}
+
+      {/* Sunrise overlay — fades in warm gradient over dark Phase 2 base */}
+      {phaseIdx === 1 && (
+        <div
+          key="phase2-sunrise"
+          className="absolute inset-0"
+          style={{
+            background: 'linear-gradient(to bottom, #f5a020 0%, #ff7f29 40%, #3d4d58 100%)',
+            animation: 'p2Sunrise 3s ease-out forwards',
+          }}
+        />
+      )}
+
+      {/* Flame pulse overlay — warm center breathes like a flame during Phase 3 */}
+      {phaseIdx === 2 && (
+        <div
+          key="phase3-flame-pulse"
+          className="absolute inset-0 z-[1]"
+          style={{
+            background:
+              'radial-gradient(circle at 50% 50%, #eeb20b 0%, #ff7f29 20%, #a0522d 45%, transparent 70%)',
+            animation: 'flamePulse 3.5s ease-in-out infinite',
+            transformOrigin: 'center center',
+          }}
+        />
+      )}
+
+      {/* Grain overlay */}
+      <div
+        className="absolute inset-0 pointer-events-none z-[2]"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='ig'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23ig)'/%3E%3C/svg%3E")`,
+          backgroundRepeat: 'repeat',
+          backgroundSize: '400px 400px',
+          opacity: 0.14,
+          mixBlendMode: 'overlay',
+        }}
+      />
 
       {/* Text content */}
       <div className="relative z-10 px-6 md:px-6 w-full flex items-center justify-center">
