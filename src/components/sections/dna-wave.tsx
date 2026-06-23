@@ -346,17 +346,6 @@ export function OurBeliefSection() {
 export default function DNAWaveSection() {
   return (
     <section id="about" className="bg-[#f9f5ef] pt-[80px] md:pt-[100px] pb-[80px] md:pb-[100px]">
-
-      {/* Headline */}
-      <div className="px-8 md:px-14 lg:px-20 pt-2 pb-10 md:pb-14 text-center">
-        <p className="text-[#677283] text-[15px] font-semibold tracking-[0.1em] uppercase mb-5">Our Philosophy</p>
-        <h2 className="text-[#43382f] text-[40px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] max-w-[640px] mx-auto">
-          <span className="md:hidden">Build something<br />great and you&apos;ll<br />have <span className="font-serif italic" style={{ color: '#2b3335' }}>great outcomes</span></span>
-          <span className="hidden md:inline">Build something great and<br />you&apos;ll have <span className="font-serif italic" style={{ color: '#2b3335' }}>great outcomes</span></span>
-        </h2>
-      </div>
-
-      {/* Two-column: headshot left, text right — tablet/desktop only above the fold */}
       <div className="px-8 md:px-14 lg:px-20">
         <div className="flex flex-col md:flex-row md:items-start gap-8 md:gap-12 max-w-[1060px] mx-auto">
 
@@ -371,71 +360,51 @@ export default function DNAWaveSection() {
             />
           </div>
 
-          {/* Bio content in right column — eyebrow + paras that sit beside the photo */}
-          <div className="flex-1 flex flex-col justify-start">
+          {/* Bio */}
+          <div className="flex-1 flex flex-col justify-start md:pt-8">
 
-            {/* Eyebrow + name */}
-            <div className="mb-6 flex flex-col gap-1 md:pt-8">
+            <div className="mb-6 flex flex-col gap-1">
               <span className="text-[#677283] text-[13px] font-semibold tracking-[0.2em] uppercase">Founder</span>
-              <div className="flex items-center gap-2">
-                <span className="text-[24px] font-light tracking-[-0.01em] font-serif italic" style={{ color: '#2b3335' }}>Jessica Flint</span>
-                <a
-                  href="https://www.linkedin.com/in/jessicahflint/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-shrink-0 text-[#0a66c2] hover:text-[#004182] transition-colors"
-                  aria-label="Jessica Flint on LinkedIn"
-                >
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                  </svg>
-                </a>
-              </div>
+              <span className="text-[24px] font-light tracking-[-0.01em] font-serif italic" style={{ color: '#2b3335' }}>Jessica Flint</span>
             </div>
 
-            <p className="text-[#43382f] text-[17px] leading-[1.5] mb-4">
-              I built my first health tech company from a ship. (Not quite the Life Aquatic, but close.)
+            <p className="text-[#43382f] text-[17px] leading-[1.6] mb-4">
+              Designer at heart, strategist by nature. I built Flint for brands truly making a difference.
             </p>
-            <p className="text-[#43382f] text-[17px] leading-[1.5] mb-4">
-              As a seagoing oceanographer I spent 100 days a year at sea. Between research expeditions, living beachside in M&eacute;xico, I bootstrapped a mental health app with $25,000 of my own savings.
+            <p className="text-[#43382f] text-[17px] leading-[1.6] mb-4">
+              I specialize in behavioral health, women&rsquo;s health, and mental health. Stigmatized topics that demand to be handled with sincerity and care.
             </p>
-            <p className="text-[#43382f] text-[17px] leading-[1.5] mb-4">
-              It reached 500,000 downloads, organically, and grew into Recovery Warriors, a behavioral health media and advocacy network that reached 30M+ sessions and over 4.2M global users.
+            <p className="text-[#43382f] text-[17px] leading-[1.6] mb-8">
+              Deeply collaborative. Relentlessly creative. A natural evangelist, I intuitively know how to position life-changing brands so they shine.
             </p>
-            <p
-              className="md:hidden lg:block text-[18px] font-medium text-[#43382f] uppercase tracking-[0.08em] leading-[1.4] mb-4"
-            >
-              The growth was fueled by a bet I made early&hellip;that blending science and storytelling through audio would educate, motivate, and support people in profound ways.
-            </p>
+
+            <div className="flex flex-col sm:flex-row gap-3">
+              <a
+                href="https://www.linkedin.com/in/jessicahflint/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center transition-colors"
+                style={{ background: '#2b3335', color: '#ffffff', width: '44px', height: '44px', borderRadius: '8px', flexShrink: 0 }}
+                aria-label="Jessica Flint on LinkedIn"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+              </a>
+              <a
+                href="https://calendly.com/flint-discovery-call/20min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center px-5 py-3 rounded-[8px] text-[15px] font-semibold transition-colors"
+                style={{ background: '#ff7f29', color: '#ffffff' }}
+              >
+                Schedule a Call
+              </a>
+            </div>
 
           </div>
         </div>
-
-        {/* Full-width continuation block — below the photo on all breakpoints */}
-        <div className="max-w-[1060px] mx-auto mt-0 md:mt-10">
-          <p
-            className="hidden md:block lg:hidden text-[18px] font-medium text-[#43382f] uppercase tracking-[0.08em] leading-[1.4] mb-4"
-          >
-            The growth was fueled by a bet I made early&hellip;that blending science and storytelling through audio would educate, motivate, and support people in profound ways.
-          </p>
-          <p className="text-[#43382f] text-[17px] leading-[1.5] mb-4">
-            That was 14 years ago, before anyone in healthcare was paying attention. Inside the podcast I started building series. Structured, intentional, finite. And they consistently outperformed everything else.
-          </p>
-          <p className="text-[#43382f] text-[17px] leading-[1.5] mb-6">
-            Flint exists to bring this approach to healthcare brands who are ready to build something their patients, providers, and teams actually want to listen to and act on.
-          </p>
-          <p
-            className="text-[18px] font-medium text-[#43382f] uppercase tracking-[0.08em] leading-[1.4] mb-6"
-          >
-            Done right, a strategic series creates a ripple effect no other media can rival.
-          </p>
-          <p className="text-[#43382f] text-[17px] leading-[1.5]">
-            Flint is selective by design. I work directly with executive leadership from strategy through final delivery. Your success is our success. That&rsquo;s not a tagline&hellip;it&rsquo;s how we operate and why we take on fewer clients and go deeper with each one.
-          </p>
-        </div>
-
       </div>
-
     </section>
   );
 }
