@@ -109,7 +109,7 @@ export default function ProcessSection() {
       {/* ── Sticky tab bar ── */}
       <div
         ref={tabBarRef}
-        className="sticky top-[64px] z-30 w-full"
+        className="sticky top-[89px] z-30 w-full"
         style={{ background: '#f9f5ef', borderBottom: '1px solid rgba(43,51,53,0.1)' }}
       >
         <div className="max-w-[1000px] mx-auto px-6 md:px-8 flex gap-1 overflow-x-auto py-2">
