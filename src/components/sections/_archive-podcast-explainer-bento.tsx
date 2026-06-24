@@ -662,7 +662,7 @@ export default function PodcastExplainer() {
             {/* C — 80% Completion Rate */}
             <div
               className="rounded-3xl pt-5 px-7 pb-7 flex flex-col justify-between"
-              style={{ gridColumn: '5 / 9', gridRow: '5 / 9', backgroundColor: '#ede4da' }}
+              style={{ gridColumn: '5 / 9', gridRow: '5 / 9', backgroundColor: '#e1dfdd' }}
             >
               <div className="w-full mx-auto flex-shrink-0" style={{ aspectRatio: '1', maxWidth: 'min(95%, 200px)' }}>
                 <CompletionRing />
@@ -756,7 +756,7 @@ export default function PodcastExplainer() {
             </div>
 
             {/* Mobile C — 80% Completion Rate */}
-            <div className="rounded-3xl p-7 flex flex-col" style={{ backgroundColor: '#ede4da' }}>
+            <div className="rounded-3xl p-7 flex flex-col" style={{ backgroundColor: '#e1dfdd' }}>
               <div className="w-[84%] mx-auto flex-shrink-0 mb-4" style={{ aspectRatio: '1' }}>
                 <CompletionRing />
               </div>

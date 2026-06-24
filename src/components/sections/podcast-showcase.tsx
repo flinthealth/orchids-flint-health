@@ -244,7 +244,7 @@ export default function PodcastShowcase() {
       id="our-work"
       ref={sectionRef}
       className="relative pt-[88px] md:pt-[100px] pb-[100px] md:pb-[120px] px-6 md:px-8 overflow-hidden"
-      style={{ background: '#ede4da' }}
+      style={{ background: '#ede8e1' }}
     >
       {/* Grain overlay */}
       <div

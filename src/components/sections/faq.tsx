@@ -182,7 +182,7 @@ function ComparisonTable() {
           <tbody>
             {ROWS.map((row, i) => (
               <tr key={row.cat} style={{ borderBottom: i < ROWS.length - 1 ? '1px solid rgba(43,51,53,0.08)' : 'none' }}>
-                <td className="sas-faq-cat-cell" style={{ fontSize: '13px', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#43382f', paddingTop: '22px', paddingBottom: '22px', paddingRight: '16px', paddingLeft: '16px', width: '80px', verticalAlign: 'middle', background: '#ede4da' }}>
+                <td className="sas-faq-cat-cell" style={{ fontSize: '13px', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#43382f', paddingTop: '22px', paddingBottom: '22px', paddingRight: '16px', paddingLeft: '16px', width: '80px', verticalAlign: 'middle', background: '#e1dfdd' }}>
                   <div className="sas-faq-cat-inner flex items-center gap-2">
                     {CAT_ICONS[row.cat]}
                     <span className="sas-faq-cat-label">{row.cat}</span>
@@ -359,7 +359,7 @@ export default function FAQSection() {
   const [openIdx, setOpenIdx] = useState<number | null>(null);
 
   return (
-    <section className="bg-[#ede4da] py-[80px] md:py-[100px]">
+    <section className="bg-[#ede8e1] py-[80px] md:py-[100px]">
       <div className="max-w-[760px] mx-auto px-6 md:px-8">
 
         {/* Headline */}

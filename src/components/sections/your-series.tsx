@@ -57,7 +57,7 @@ export default function YourSeries() {
               <span
                 key={item}
                 className="text-[13px] font-semibold tracking-[0.04em] text-[#2b3335]"
-                style={{ background: '#ede4da', borderRadius: '20px', padding: '8px 16px' }}
+                style={{ background: '#e1dfdd', borderRadius: '20px', padding: '8px 16px' }}
               >
                 {item}
               </span>

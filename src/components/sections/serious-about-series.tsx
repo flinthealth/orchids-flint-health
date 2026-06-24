@@ -9,7 +9,7 @@ export default function SeriousAboutSeries() {
       <div className="max-w-[1000px] mx-auto px-6 md:px-12 py-20">
 
         <h1 className="text-center text-[40px] md:text-[51px] font-light text-[#2b3335] leading-[1.15] tracking-[-0.02em] mb-10">
-          A <span className="font-serif italic" style={{ color: '#2b3335' }}>full-service</span><br />
+          Flint's a <span className="font-serif italic" style={{ color: '#2b3335' }}>full-service</span><br />
           production partner
         </h1>
 

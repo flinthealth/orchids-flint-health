@@ -3,7 +3,7 @@ import React from 'react';
 
 export default function MeasureAndGrow() {
   return (
-    <section style={{ backgroundColor: '#ede4da' }} className="relative w-full overflow-hidden">
+    <section style={{ backgroundColor: '#e1dfdd' }} className="relative w-full overflow-hidden">
 
       <style>{`
         .mag-wrap { padding: 48px 24px 56px; }

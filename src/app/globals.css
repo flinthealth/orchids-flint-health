@@ -6,21 +6,21 @@
 
 @theme {
   --color-background: #ffffff;
-  --color-foreground: #43382f;
+  --color-foreground: #2b3a45;
 
   --color-card: #ffffff;
-  --color-card-foreground: #43382f;
+  --color-card-foreground: #2b3a45;
 
   --color-popover: #ffffff;
-  --color-popover-foreground: #43382f;
+  --color-popover-foreground: #2b3a45;
 
-  --color-primary: #eeb20b;
-  --color-primary-foreground: #43382f;
+  --color-primary: #ff7f29;
+  --color-primary-foreground: #ffffff;
 
-  --color-secondary: #2b3335;
-  --color-secondary-foreground: #ffffff;
+  --color-secondary: #2b3a45;
+  --color-secondary-foreground: #f9f5ef;
 
-  --color-muted: #f0ede9;
+  --color-muted: #ede8e1;
   --color-muted-foreground: #677283;
 
   --color-accent: #eeb20b;
@@ -29,14 +29,25 @@
   --color-destructive: #ef4444;
   --color-destructive-foreground: #fafafa;
 
-  --color-border: #2b33351a;
-  --color-input: #f0ede9;
-  --color-ring: #eeb20b;
+  --color-border: rgba(43,58,69,0.12);
+  --color-input: #ede8e1;
+  --color-ring: #ff7f29;
 
-  --color-brand-green: #eeb20b;
-  --color-deep-green: #2b3335;
-  --color-warm-cream: #f9f5ef;
-  --color-button-hover: #e0a81e;
+  --color-lucky-orange: #ff7f29;
+  --color-warm-ember: #f5a020;
+  --color-bright-gold: #fac12c;
+  --color-golden-ray: #eeb20b;
+
+  --color-deep-navy: #1a2530;
+  --color-dark-slate: #2b3a45;
+  --color-slate-blue: #3d4d58;
+  --color-warm-brown: #6b4b3e;
+  --color-sienna: #a0522d;
+
+  --color-mother-earth: #43382f;
+  --color-flint-gray: #677283;
+  --color-mother-swan: #f9f5ef;
+  --color-bare-hands: #ede8e1;
 
   --gradient-brand: linear-gradient(to right, #3d4d58 0%, #6b4b3e 55%, #a0522d 100%);
 
@@ -52,20 +63,12 @@
   --animate-accordion-up: accordion-up 0.2s ease-out;
 
   @keyframes accordion-down {
-    from {
-      height: 0;
-    }
-    to {
-      height: var(--radix-accordion-content-height);
-    }
+    from { height: 0; }
+    to { height: var(--radix-accordion-content-height); }
   }
   @keyframes accordion-up {
-    from {
-      height: var(--radix-accordion-content-height);
-    }
-    to {
-      height: 0;
-    }
+    from { height: var(--radix-accordion-content-height); }
+    to { height: 0; }
   }
 }
 
@@ -80,24 +83,24 @@
 
   :root {
     --background: #ffffff;
-    --foreground: #43382f;
+    --foreground: #2b3a45;
     --card: #ffffff;
-    --card-foreground: #43382f;
+    --card-foreground: #2b3a45;
     --popover: #ffffff;
-    --popover-foreground: #43382f;
-    --primary: #eeb20b;
-    --primary-foreground: #43382f;
-    --secondary: #2b3335;
-    --secondary-foreground: #ffffff;
-    --muted: #f0ede9;
+    --popover-foreground: #2b3a45;
+    --primary: #ff7f29;
+    --primary-foreground: #ffffff;
+    --secondary: #2b3a45;
+    --secondary-foreground: #f9f5ef;
+    --muted: #ede8e1;
     --muted-foreground: #677283;
     --accent: #eeb20b;
     --accent-foreground: #43382f;
     --destructive: #ef4444;
     --destructive-foreground: #fafafa;
-    --border: #2b33351a;
-    --input: #f0ede9;
-    --ring: #eeb20b;
+    --border: rgba(43,58,69,0.12);
+    --input: #ede8e1;
+    --ring: #ff7f29;
     --radius: 1.5rem;
   }
 
@@ -213,17 +216,17 @@
     text-wrap: balance;
   }
 
-  .bg-deep-green {
-    background-color: var(--color-deep-green);
+  .bg-dark-slate {
+    background-color: var(--color-dark-slate);
   }
 
-  .text-brand-green {
-    color: var(--color-brand-green);
+  .text-golden-ray {
+    color: var(--color-golden-ray);
   }
 
   .btn-primary {
-    background-color: var(--color-brand-green);
-    color: var(--color-deep-green);
+    background-color: var(--color-golden-ray);
+    color: var(--color-dark-slate);
     padding: 0.75rem 1.5rem;
     border-radius: 6px;
     font-weight: 600;
@@ -231,12 +234,12 @@
   }
 
   .btn-primary:hover {
-    background-color: var(--color-button-hover);
+    background-color: var(--color-warm-ember);
   }
 
   .btn-ghost {
-    border: 1px solid var(--color-brand-green);
-    color: var(--color-brand-green);
+    border: 1px solid var(--color-golden-ray);
+    color: var(--color-golden-ray);
     padding: 0.75rem 1.5rem;
     border-radius: 6px;
     font-weight: 600;
@@ -244,8 +247,8 @@
   }
 
   .btn-ghost:hover {
-    background-color: var(--color-brand-green);
-    color: var(--color-deep-green);
+    background-color: var(--color-golden-ray);
+    color: var(--color-dark-slate);
   }
 
   .italic-emphasis {
