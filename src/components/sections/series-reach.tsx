@@ -5,7 +5,7 @@ import { Heart, Stethoscope, Users, Handshake } from 'lucide-react';
 const ROWS = [
   {
     Icon: Heart,
-    iconColor: "#eeb20b",
+    iconColor: "#677283",
     label: "Patients living with your condition.",
     desc: "Give them the science and the stories that move them from confusion to confidence.",
     stat: "9 in 10",
@@ -15,7 +15,7 @@ const ROWS = [
   },
   {
     Icon: Stethoscope,
-    iconColor: "#54819a",
+    iconColor: "#677283",
     label: "Providers who need to adopt your protocol.",
     desc: "Meet them in their workflow with content that builds trust and changes practice.",
     stat: "75%",
@@ -25,7 +25,7 @@ const ROWS = [
   },
   {
     Icon: Users,
-    iconColor: "#9c522e",
+    iconColor: "#677283",
     label: "A team that needs to believe in what you're building.",
     desc: "Culture doesn't scale on its own. A series carries your mission to every new hire.",
     stat: "$12K+",
@@ -52,9 +52,13 @@ export default function SeriesReach() {
 
         {/* Headline */}
         <div className="mb-14 max-w-[700px] mx-auto text-center">
-          <h2 className="text-[#2b3335] text-[36px] md:text-[46px] lg:text-[52px] font-light leading-[1.1] tracking-[-0.02em]">
-            Who do you need to reach?
+          <h2 className="text-[#2b3335] text-[36px] md:text-[46px] lg:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-6">
+            Most content gets <span className="font-serif italic" style={{ color: '#2b3335' }}>seconds</span><br />
+            A strategic series gets <span className="font-serif italic" style={{ color: '#2b3335' }}>hours</span>
           </h2>
+          <p className="text-[#43382f] text-[17px] leading-[1.6] max-w-[560px] mx-auto">
+            Become a part of important decision makers and stakeholders daily routine.
+          </p>
         </div>
 
         <div className="flex flex-col md:flex-row gap-10 md:gap-16 items-start">
@@ -95,6 +99,9 @@ export default function SeriesReach() {
 
           {/* Audience rows — narrower column, label as its own headline, desc below */}
           <div className="flex flex-col w-full md:max-w-[440px]">
+            <p className="text-[#677283] text-[15px] font-semibold tracking-[0.1em] uppercase mb-2">
+              Who do you want to connect with?
+            </p>
             {ROWS.map(({ Icon, iconColor, label, desc }, i) => (
               <div
                 key={label}
@@ -113,26 +120,28 @@ export default function SeriesReach() {
 
         {/* Cost question — regular header, not italic */}
         <div className="mt-16 md:mt-20 mb-8 max-w-[700px] mx-auto text-center">
-          <h3 className="text-[#2b3335] text-[28px] md:text-[36px] font-light leading-[1.2] tracking-[-0.01em]">
-            And what does it cost when you don&rsquo;t?
+          <h3 className="text-[#2b3335] text-[28px] md:text-[36px] font-light leading-[1.2] tracking-[-0.01em] mb-4">
+            A goldmine of opportunity
           </h3>
+          <p className="text-[#43382f] text-[17px] leading-[1.6] max-w-[560px] mx-auto">
+            What is the cost of missed opportunities and lost time to you?
+          </p>
         </div>
 
-        {/* Cost pills — Mother Earth outline, background-matching fill, Gentle Abyss text */}
+        {/* Cost pills — radar dial dark background, white text */}
         <div className="flex flex-col md:flex-row gap-5">
           {ROWS.filter((r) => r.stat).map(({ stat, statDesc, cite, citeUrl }) => (
             <div
               key={statDesc}
               style={{
-                background: '#f9f5ef',
-                border: '2px solid #43382f',
+                background: 'radial-gradient(circle at 50% 30%, #3d4d58 0%, #2b3a45 50%, #1a2530 100%)',
                 borderRadius: '20px',
                 padding: '28px 32px',
                 flex: 1,
               }}
             >
-              <div style={{ fontSize: 40, fontWeight: 300, color: '#2b3335', lineHeight: 1 }}>{stat}</div>
-              <div style={{ fontSize: 14, color: '#677283', lineHeight: 1.4, marginTop: 8 }}>
+              <div style={{ fontSize: 40, fontWeight: 300, color: '#ffffff', lineHeight: 1 }}>{stat}</div>
+              <div style={{ fontSize: 14, color: 'rgba(255,255,255,0.7)', lineHeight: 1.4, marginTop: 8 }}>
                 {statDesc}
                 <a href={citeUrl!} target="_blank" rel="noopener noreferrer"
                   className="align-super ml-0.5 opacity-70 hover:opacity-100 transition-opacity"

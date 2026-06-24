@@ -9,7 +9,7 @@ export default function SeriousAboutSeries() {
       <div className="max-w-[1000px] mx-auto px-6 md:px-12 py-20">
 
         <h1 className="text-center text-[40px] md:text-[51px] font-light text-[#2b3335] leading-[1.15] tracking-[-0.02em] mb-10">
-          A full-service<br />
+          A <span className="font-serif italic" style={{ color: '#2b3335' }}>full-service</span><br />
           production partner
         </h1>
 
@@ -21,7 +21,7 @@ export default function SeriousAboutSeries() {
               We make it easy for healthcare brands to develop, launch, and grow branded series across all channels.
             </h2>
             <p className="text-[17px] text-[#43382f] leading-relaxed">
-              Flint helps you master 360° campaigns that travel across every stage of your patient, provider, or employee journey.
+              Flint helps you <strong>master 360° campaigns</strong> that travel across every stage of your patient, provider, or employee journey.
             </p>
           </div>
 

@@ -259,15 +259,13 @@ export default function StackingCards() {
       <div className="container mx-auto px-4 md:px-8 pt-[120px] md:pt-[120px]">
         <div className="max-w-[1000px] mx-auto">
           <div className="mb-14 text-center max-w-[680px] mx-auto">
-            <div className="mb-5">
-              <span className="text-[#677283] text-[15px] font-semibold tracking-[0.1em] uppercase">
-                Healthcare Applications
-              </span>
-            </div>
-            <h2 className="text-[#2b3335] text-[40px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-0">
-              <span className="md:hidden">We help you<br />reach them</span>
-              <span className="hidden md:inline">We help you reach them</span>
+            <h2 className="text-[#2b3335] text-[40px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-4">
+              <span className="md:hidden">We help you<br />reach who matters</span>
+              <span className="hidden md:inline">We help you<br />reach who matters</span>
             </h2>
+            <p className="text-[#43382f] text-[17px] leading-[1.6] max-w-[560px] mx-auto">
+              Connect with the patients, providers, and team members that fuel your mission and help you grow.
+            </p>
           </div>
 
           {/* ── Format indicators ── */}
