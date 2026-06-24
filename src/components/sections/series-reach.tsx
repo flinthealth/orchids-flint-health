@@ -26,7 +26,7 @@ const ROWS = [
   {
     Icon: Users,
     iconColor: "#677283",
-    label: "A team that needs to believe in what you're building.",
+    label: "A team with knowledge to transfer.",
     desc: "Culture doesn't scale on its own. A series carries your mission to every new hire.",
     stat: "$12K+",
     statDesc: "Cost of poor communication per employee.",
@@ -57,7 +57,7 @@ export default function SeriesReach() {
             A strategic series gets <span className="font-serif italic" style={{ color: '#2b3335' }}>hours</span>
           </h2>
           <p className="text-[#43382f] text-[17px] leading-[1.6] max-w-[560px] mx-auto">
-            Become a part of important decision makers and stakeholders daily routine.
+            Insert your message into your stakeholders daily routine.
           </p>
         </div>
 
@@ -134,10 +134,12 @@ export default function SeriesReach() {
             <div
               key={statDesc}
               style={{
-                background: 'radial-gradient(circle at 50% 30%, #3d4d58 0%, #2b3a45 50%, #1a2530 100%)',
+                background: '#1a2530',
+                border: '1.5px solid rgba(255,210,140,0.85)',
                 borderRadius: '20px',
                 padding: '28px 32px',
                 flex: 1,
+                boxShadow: '0 0 10px rgba(255,127,41,0.55), inset 0 0 6px rgba(255,210,140,0.06)',
               }}
             >
               <div style={{ fontSize: 40, fontWeight: 300, color: '#ffffff', lineHeight: 1 }}>{stat}</div>
