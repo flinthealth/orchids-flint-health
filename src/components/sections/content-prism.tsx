@@ -20,7 +20,7 @@ const STEPS = [
       const subTxt = "rgba(249,245,239,0.55)";
       return (
         <div className="flex flex-col gap-5">
-          <p style={{ color: body }} className="text-[16px] leading-[1.5]">
+          <p style={{ color: body }} className="leading-[1.5]">
             Every great series begins with a single question: what does this need to accomplish? We work with you to define the outcomes that matter — for your patients, your providers, or your teams — and build a creative brief that keeps every decision anchored to your goals.
           </p>
           <div className="flex flex-col gap-2.5">
@@ -52,7 +52,7 @@ const STEPS = [
       const subTxt = "rgba(249,245,239,0.55)";
       return (
         <div className="flex flex-col gap-5">
-          <p style={{ color: body }} className="text-[16px] leading-[1.5]">
+          <p style={{ color: body }} className="leading-[1.5]">
             We guide your team through a focused strategy session to build a show around your people, not just your message. Story structure, hosting style, guest criteria, distribution approach — all shaped by who you&apos;re trying to reach and what you need them to do.
           </p>
           <p style={{ color: body }} className="text-[15px] leading-[1.5]">
@@ -86,7 +86,7 @@ const STEPS = [
       const body = "rgba(249,245,239,0.75)";
       return (
         <div className="flex flex-col gap-5">
-          <p style={{ color: body }} className="text-[16px] leading-[1.5]">
+          <p style={{ color: body }} className="leading-[1.5]">
             From remote interviews to full studio production, we manage the entire creative process — combining editorial rigor with technical precision to make sure every episode sounds as sharp as the strategy behind it.
           </p>
         </div>
@@ -106,7 +106,7 @@ const STEPS = [
       const subTxt = "rgba(249,245,239,0.55)";
       return (
         <div className="flex flex-col gap-5">
-          <p style={{ color: body }} className="text-[16px] leading-[1.5]">
+          <p style={{ color: body }} className="leading-[1.5]">
             Your podcast is a branded experience, not just a content file. We build distribution strategies around how your audience actually consumes content — then deliver it in the format that reaches them best.
           </p>
           <div className="flex flex-col gap-2">
@@ -137,7 +137,7 @@ const STEPS = [
       const subTxt = "rgba(249,245,239,0.55)";
       return (
         <div className="flex flex-col gap-5">
-          <p style={{ color: body }} className="text-[16px] leading-[1.5]">
+          <p style={{ color: body }} className="leading-[1.5]">
             You&apos;ll receive reporting tied to the outcomes that matter — from completion rates and engagement depth to brand sentiment and inquiry lift. We review performance together and refine continuously. The goal isn&apos;t a successful launch. It&apos;s a series that grows in value and authority over time.
           </p>
           <div className="flex flex-col gap-2">
@@ -193,7 +193,7 @@ export default function ContentPrism() {
           Our Process
         </p>
         <h2
-          className="text-[#2b3335] text-[40px] md:text-[54px] font-light leading-[1.1] tracking-[-0.02em] mb-5"
+          className="text-[#2b3335] font-light tracking-[-0.02em] mb-5"
           style={{
             opacity:    visible ? 1 : 0,
             transform:  visible ? "translateY(0)" : "translateY(16px)",
@@ -203,7 +203,7 @@ export default function ContentPrism() {
           A proven system,<br /><span className="font-serif italic">start to finish</span>
         </h2>
         <p
-          className="text-[#2b3335]/70 text-[17px] leading-[1.5] max-w-[560px] mx-auto"
+          className="text-[#2b3335]/70 max-w-[560px] mx-auto"
           style={{
             opacity:    visible ? 1 : 0,
             transform:  visible ? "translateY(0)" : "translateY(16px)",

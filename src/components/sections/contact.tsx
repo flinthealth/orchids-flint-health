@@ -43,10 +43,10 @@ export default function ContactSection() {
           {/* Left — copy */}
           <div>
             <p className="text-[15px] font-semibold tracking-[0.1em] uppercase mb-5" style={{ color: 'rgba(249,245,239,0.55)' }}>Contact</p>
-            <h2 className="text-[#ffffff] text-[40px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-6">
+            <h2 className="text-[#ffffff] font-light tracking-[-0.02em] mb-6">
               Let's produce something worth <span className="font-serif italic">paying attention to.</span>
             </h2>
-            <p className="text-[#ffffff]/60 text-[17px] leading-[1.5] mb-8">
+            <p className="text-[#ffffff]/60 mb-8">
               Flint takes on a limited number of new series each year. Good series take time. Reach out before you need us.
             </p>
             <div className="flex flex-col gap-4">

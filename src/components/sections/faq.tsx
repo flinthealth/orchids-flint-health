@@ -363,12 +363,12 @@ export default function FAQSection() {
       <div className="max-w-[760px] mx-auto px-6 md:px-8">
 
         {/* Headline */}
-        <h2 className="text-center text-[40px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-5" style={{ color: '#43382f' }}>
+        <h2 className="text-center font-light tracking-[-0.02em] mb-5" style={{ color: '#43382f' }}>
           Dig a little <span className="font-serif italic">deeper</span>
         </h2>
 
         {/* Body */}
-        <p className="text-center text-[17px] leading-[1.5] max-w-[560px] mx-auto mb-10" style={{ color: '#43382f' }}>
+        <p className="text-center max-w-[560px] mx-auto mb-10" style={{ color: '#43382f' }}>
           Got more questions? Contact us below.
         </p>
 

@@ -46,9 +46,18 @@ function ChartIcon({ color }: { color: string }) {
 }
 
 const CARD_ICONS: Record<string, React.FC<{ color: string }>> = {
-  strategy: TargetIcon,
-  production: PlayIcon,
-  growth: ChartIcon,
+  strategy: () => (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img src="/process-strategy-icon.png?v=2" alt="Strategy" width={53} height={53} style={{ display: 'block' }} />
+  ),
+  production: () => (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img src="/icon-process-production.png" alt="Production" width={53} height={53} style={{ display: 'block' }} />
+  ),
+  growth: () => (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img src="/icon-process-data-driven-growth.png" alt="Data-Driven Growth" width={53} height={53} style={{ display: 'block' }} />
+  ),
 };
 
 const OVERVIEW_CARDS = [
@@ -140,11 +149,11 @@ export default function ProcessSection() {
 
       {/* ── Intro ── */}
       <div className="max-w-[920px] mx-auto px-6 md:px-8 pt-20 pb-12 text-center">
-        <h2 className="text-[#2b3335] text-[36px] md:text-[46px] lg:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-5">
+        <h2 className="text-[#2b3335] font-light tracking-[-0.02em] mb-5">
           Everything you need, from<br />
           strategy to measurable impact
         </h2>
-        <p className="text-[16px] leading-[1.65] max-w-[560px] mx-auto text-[#43382f]">
+        <p className="max-w-[560px] mx-auto text-[#43382f]">
           A creative, full-service production partner who champions your brand and the outcomes that matter most.
         </p>
       </div>
@@ -168,7 +177,7 @@ export default function ProcessSection() {
                 <div className="mb-5" style={{ color: '#2b3335' }}>
                   {Icon && <Icon color="#2b3335" />}
                 </div>
-                <p className="text-[17px] font-bold mb-2" style={{ color: '#2b3335' }}>
+                <p className="font-bold mb-2" style={{ color: '#2b3335' }}>
                   {label}
                 </p>
                 <p className="text-[15px] leading-relaxed max-w-[260px]" style={{ color: '#43382f' }}>
@@ -229,10 +238,10 @@ export default function ProcessSection() {
               <div className="w-2 h-2 rounded-full" style={{ background: '#ff7f29' }} />
               <p className="text-[13px] font-semibold tracking-[0.1em] uppercase" style={{ color: '#ff7f29' }}>Strategy</p>
             </div>
-            <h3 className="text-[28px] md:text-[36px] font-light text-[#2b3335] leading-[1.15] tracking-[-0.01em] mb-4">
+            <h3 className="font-light text-[#2b3335] tracking-[-0.01em] mb-4">
               Start with the end in mind.
             </h3>
-            <p className="text-[17px] text-[#43382f] leading-relaxed mb-8">
+            <p className="text-[#43382f] leading-relaxed mb-8">
               Lock in your dream outcome and KPIs before anyone steps to a mic.
             </p>
             <div className="flex flex-col gap-3">
@@ -244,7 +253,7 @@ export default function ProcessSection() {
               ].map(item => (
                 <div key={item} className="flex items-start gap-3">
                   <CircleCheck />
-                  <span className="text-[16px] text-[#43382f] leading-relaxed">{item}</span>
+                  <span className="text-[#43382f] leading-relaxed">{item}</span>
                 </div>
               ))}
             </div>
@@ -270,10 +279,10 @@ export default function ProcessSection() {
               <div className="w-2 h-2 rounded-full" style={{ background: '#eeb20b' }} />
               <p className="text-[13px] font-semibold tracking-[0.1em] uppercase" style={{ color: '#eeb20b' }}>Production</p>
             </div>
-            <h3 className="text-[28px] md:text-[36px] font-light text-[#2b3335] leading-[1.15] tracking-[-0.01em] mb-4">
+            <h3 className="font-light text-[#2b3335] tracking-[-0.01em] mb-4">
               You show up. We handle everything else.
             </h3>
-            <p className="text-[17px] text-[#43382f] leading-relaxed mb-8">
+            <p className="text-[#43382f] leading-relaxed mb-8">
               Enjoy the luxury of full-service production, knowing every technical and creative detail is handled.
             </p>
             <div className="flex flex-col gap-3">
@@ -285,7 +294,7 @@ export default function ProcessSection() {
               ].map(item => (
                 <div key={item} className="flex items-start gap-3">
                   <CircleCheck />
-                  <span className="text-[16px] text-[#43382f] leading-relaxed">{item}</span>
+                  <span className="text-[#43382f] leading-relaxed">{item}</span>
                 </div>
               ))}
             </div>
@@ -311,10 +320,10 @@ export default function ProcessSection() {
               <div className="w-2 h-2 rounded-full" style={{ background: '#54819a' }} />
               <p className="text-[13px] font-semibold tracking-[0.1em] uppercase" style={{ color: '#54819a' }}>Data-Driven Growth</p>
             </div>
-            <h3 className="text-[28px] md:text-[36px] font-light text-[#2b3335] leading-[1.15] tracking-[-0.01em] mb-4">
+            <h3 className="font-light text-[#2b3335] tracking-[-0.01em] mb-4">
               Connect series performance to real business outcomes.
             </h3>
-            <p className="text-[17px] text-[#43382f] leading-relaxed mb-8">
+            <p className="text-[#43382f] leading-relaxed mb-8">
               Know which episodes hold attention, which channels convert, and what&rsquo;s driving results.
             </p>
             <div className="flex flex-col gap-3 mb-10">
@@ -326,7 +335,7 @@ export default function ProcessSection() {
               ].map(item => (
                 <div key={item} className="flex items-start gap-3">
                   <CircleCheck />
-                  <span className="text-[16px] text-[#43382f] leading-relaxed">{item}</span>
+                  <span className="text-[#43382f] leading-relaxed">{item}</span>
                 </div>
               ))}
             </div>

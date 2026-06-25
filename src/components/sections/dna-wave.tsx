@@ -295,11 +295,11 @@ export function OurBeliefSection() {
       {/* Headline + body */}
       <div className="container mx-auto px-8 text-center mb-4">
         <p className="text-[#677283] text-[15px] font-semibold tracking-[0.1em] uppercase mb-5">Our Philosophy</p>
-        <h2 className="text-[#ffffff] text-[40px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] max-w-[680px] mx-auto mb-6">
+        <h2 className="text-[#ffffff] font-light tracking-[-0.02em] max-w-[680px] mx-auto mb-6">
           <span className="md:hidden">Build a great series<br />and you&apos;ll have<br /><span className="font-serif italic" style={{ color: '#ffffff' }}>great outcomes</span></span>
           <span className="hidden md:inline">Build a great series and<br />you&apos;ll have <span className="font-serif italic" style={{ color: '#ffffff' }}>great outcomes</span></span>
         </h2>
-        <p className="text-[#ffffff]/70 text-[17px] leading-[1.5] max-w-[560px] mx-auto">
+        <p className="text-[#ffffff]/70 max-w-[560px] mx-auto">
           When science meets the right narrative, one that connects emotionally and lands cognitively, complex becomes clear, distant becomes personal, and information drives action.
         </p>
       </div>
@@ -307,7 +307,7 @@ export function OurBeliefSection() {
       {/* Pills block */}
       <div className="container mx-auto pl-6 pr-8 md:px-8 pb-10 mt-12">
         <div className="flex flex-col gap-2.5 w-full md:max-w-[520px] md:mx-auto">
-          <p className="text-[#ffffff]/70 text-[17px] leading-[1.5] w-full mb-1">
+          <p className="text-[#ffffff]/70 w-full mb-1">
             We achieve this through:
           </p>
           {[
@@ -368,10 +368,10 @@ export default function DNAWaveSection() {
               <span className="text-[24px] font-light tracking-[-0.01em] font-serif italic" style={{ color: '#2b3335' }}>Jessica Flint</span>
             </div>
 
-            <p className="text-[#43382f] text-[17px] leading-[1.6] mb-4">
+            <p className="text-[#43382f] mb-4">
               Designer at heart, strategist by nature. I built Flint for brands truly making a difference.
             </p>
-            <p className="text-[#43382f] text-[17px] leading-[1.6] mb-4">
+            <p className="text-[#43382f] mb-4">
               I specialize in behavioral health, women&rsquo;s health, and mental health. Stigmatized topics that demand to be handled with sincerity and care.
             </p>
             <p className="text-[#43382f] text-[17px] leading-[1.6] mb-8">
@@ -447,7 +447,7 @@ export function TestimonialSection() {
           <div className="hidden md:block w-px bg-black/08 my-8" />
           {/* Quote */}
           <div className="flex-1 p-8 md:p-12 flex flex-col justify-center">
-            <blockquote className="text-[17px] leading-[1.5] text-[#2b3335] font-light">
+            <blockquote className="text-[#2b3335] font-light">
               &ldquo;Thank you for the refresh in our brand and marketing strategy! You absolutely brought our voice and vision to the next phase and I want to commend your incredible talent at identifying the tone, message, and personality. Thank you for all of your efforts, patience and direction you provided us.&rdquo;
             </blockquote>
           </div>

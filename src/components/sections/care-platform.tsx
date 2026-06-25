@@ -185,10 +185,10 @@ const CarePlatformSection = () => {
               transition: 'opacity 0.6s ease 0s, transform 0.6s ease 0s',
             }}
           >
-            <h2 className="text-white text-[40px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-4">
+            <h2 className="text-white font-light tracking-[-0.02em] mb-4">
               One series.<br />Multiple <span className="font-serif italic" style={{ color: '#ffffff' }}>key channels.</span>
             </h2>
-            <p className="text-[17px] leading-[1.5] max-w-[560px] mx-auto" style={{ color: 'rgba(249,245,239,0.55)' }}>
+            <p className="max-w-[560px] mx-auto" style={{ color: 'rgba(249,245,239,0.55)' }}>
               From strategy to first episode in 90 days, every series is custom-built around your goals, your audience, and the outcomes that matter most.
             </p>
           </div>

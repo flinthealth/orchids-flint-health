@@ -267,14 +267,14 @@ export default function PodcastShowcase() {
             In Practice
           </p>
           <h2
-            className="text-[40px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-5"
+            className="font-light tracking-[-0.02em] mb-5"
             style={{ color: "#2b3335" }}
           >
             Real results for{" "}
             <span className="font-serif italic" style={{ color: "#2b3335" }}>healthcare brands</span>
           </h2>
           <p
-            className="text-[17px] leading-[1.5] max-w-[520px] mx-auto"
+            className="max-w-[520px] mx-auto"
             style={{ color: "#43382f" }}
           >
             Proof that when the right{" "}

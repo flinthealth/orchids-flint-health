@@ -52,7 +52,7 @@ export default function SeriesReach() {
 
         {/* Headline */}
         <div className="mb-14 max-w-[700px] mx-auto text-center">
-          <h2 className="text-[#2b3335] text-[36px] md:text-[46px] lg:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-6">
+          <h2 className="text-[#2b3335] font-light tracking-[-0.02em] mb-6">
             <span className="md:hidden">
               Most content<br />
               gets <span className="font-serif italic" style={{ color: '#2b3335' }}>seconds</span><br />
@@ -64,7 +64,7 @@ export default function SeriesReach() {
               A strategic series gets <span className="font-serif italic" style={{ color: '#2b3335' }}>hours</span>
             </span>
           </h2>
-          <p className="text-[#43382f] text-[17px] leading-[1.6] max-w-[560px] mx-auto">
+          <p className="text-[#43382f] max-w-[560px] mx-auto">
             This creates a fundamentally different relationship with your audience where you become part of their daily routine.
           </p>
         </div>
@@ -116,11 +116,10 @@ export default function SeriesReach() {
                 className="py-6"
                 style={{ borderBottom: i < ROWS.length - 1 ? '1px solid rgba(43,51,53,0.1)' : 'none' }}
               >
-                <div className="flex items-center gap-3 mb-2">
-                  <Icon style={{ color: iconColor }} className="flex-shrink-0" size={20} />
+                <div className="mb-2">
                   <h3 className="font-bold text-[20px] text-[#2b3335] leading-snug">{label}</h3>
                 </div>
-                <p className="text-[16px] text-[#43382f] leading-relaxed">{desc}</p>
+                <p className="text-[#43382f] leading-relaxed">{desc}</p>
               </div>
             ))}
           </div>
@@ -128,11 +127,11 @@ export default function SeriesReach() {
 
         {/* Cost question — regular header, not italic */}
         <div className="mt-16 md:mt-20 mb-8 max-w-[700px] mx-auto text-center">
-          <h3 className="text-[#2b3335] text-[28px] md:text-[36px] font-light leading-[1.2] tracking-[-0.01em] mb-4">
-            A goldmine of opportunity
+          <h3 className="text-[#2b3335] font-light tracking-[-0.01em] mb-4">
+            The costs of going unseen and unheard
           </h3>
-          <p className="text-[#43382f] text-[17px] leading-[1.6] max-w-[560px] mx-auto">
-            What is the cost of missed opportunities and lost time to you?
+          <p className="text-[#43382f] max-w-[560px] mx-auto">
+            The missed opportunities and lost time add up.
           </p>
         </div>
 

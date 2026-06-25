@@ -181,9 +181,9 @@ export default function StackingCards() {
   function CardContent({ card, mobile }: { card: typeof cards[number]; mobile: boolean }) {
     const px   = mobile ? 'px-5'  : 'px-12';
     const imgW = mobile ? 161     : 207;
-    const h3   = mobile ? 'text-[28px]' : 'text-[36px]';
+    const h3   = '';
     const h3mb = mobile ? 'mb-5'  : 'mb-3';
-    const p1   = mobile ? 'text-[17px]' : 'text-[20px]';
+    const p1   = '';
     return (
       <div className={`${px} pt-8 pb-10`}>
         {/* Pills */}
@@ -220,12 +220,12 @@ export default function StackingCards() {
               ? <p className="text-[15px] font-semibold uppercase tracking-[0.1em] leading-[1.4] mb-4" style={{ color: '#677283' }}>{card.headline}</p>
               : <p className="text-[15px] font-semibold uppercase tracking-[0.1em] leading-[1.4] mb-4" style={{ color: '#677283' }}>{card.headline}</p>
             }
-            <p className="text-[16px] leading-[1.5] mb-8" style={{ color: '#2b3335' }}>{card.body}</p>
+            <p className="leading-[1.5] mb-8" style={{ color: '#2b3335' }}>{card.body}</p>
             <div className="flex flex-col gap-[10px]">
               {(card.applications as unknown as string[]).map((item) => (
                 <div key={item} className="flex items-center gap-3 px-4 py-3 rounded-xl" style={{ backgroundColor: ITEM_BG }}>
                   <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: TEXT }} />
-                  <span className="text-[16px] leading-snug" style={{ color: TEXT }}>{item}</span>
+                  <span className="leading-snug" style={{ color: TEXT }}>{item}</span>
                 </div>
               ))}
             </div>
@@ -244,12 +244,12 @@ export default function StackingCards() {
                 ? <p className="text-[15px] font-semibold uppercase tracking-[0.1em] leading-[1.4] mb-4" style={{ color: '#677283' }}>{card.headline}</p>
                 : <p className="text-[15px] font-semibold uppercase tracking-[0.1em] leading-[1.4] mb-4" style={{ color: '#677283' }}>{card.headline}</p>
               }
-              <p className="text-[16px] leading-[1.5] mb-8" style={{ color: '#2b3335' }}>{card.body}</p>
+              <p className="leading-[1.5] mb-8" style={{ color: '#2b3335' }}>{card.body}</p>
               <div className="flex flex-col gap-[10px]">
                 {(card.applications as unknown as string[]).map((item) => (
                   <div key={item} className="flex items-center gap-3 px-4 py-3 rounded-xl" style={{ backgroundColor: ITEM_BG }}>
                     <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: TEXT }} />
-                    <span className="text-[16px] leading-snug" style={{ color: TEXT }}>{item}</span>
+                    <span className="leading-snug" style={{ color: TEXT }}>{item}</span>
                   </div>
                 ))}
               </div>
@@ -271,11 +271,11 @@ export default function StackingCards() {
         <div className="container mx-auto px-4 md:px-8 pt-[120px] md:pt-[120px]">
           <div className="max-w-[1000px] mx-auto">
             <div className="mb-14 text-center max-w-[680px] mx-auto">
-              <h2 className="text-[#ffffff] text-[40px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-4">
+              <h2 className="text-[#ffffff] font-light tracking-[-0.02em] mb-4">
                 <span className="md:hidden">We help you<br />reach who matters</span>
                 <span className="hidden md:inline">We help you<br />reach who matters</span>
               </h2>
-              <p className="text-[rgba(255,255,255,0.7)] text-[17px] leading-[1.6] max-w-[560px] mx-auto">
+              <p className="text-[rgba(255,255,255,0.7)] max-w-[560px] mx-auto">
                 Connect with the patients, providers, and team members that fuel your mission and help you grow.
               </p>
             </div>
@@ -374,11 +374,11 @@ export default function StackingCards() {
         <div className="container mx-auto px-4 md:px-8 pt-[120px] md:pt-[120px]">
           <div className="max-w-[1000px] mx-auto">
             <div className="mb-14 text-center max-w-[680px] mx-auto">
-              <h2 className="text-[#ffffff] text-[40px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-4">
+              <h2 className="text-[#ffffff] font-light tracking-[-0.02em] mb-4">
                 <span className="md:hidden">We help you<br />reach who matters</span>
                 <span className="hidden md:inline">We help you<br />reach who matters</span>
               </h2>
-              <p className="text-[rgba(255,255,255,0.7)] text-[17px] leading-[1.6] max-w-[560px] mx-auto">
+              <p className="text-[rgba(255,255,255,0.7)] max-w-[560px] mx-auto">
                 Connect with the patients, providers, and team members that fuel your mission and help you grow.
               </p>
             </div>

@@ -8,7 +8,7 @@ export default function SeriousAboutSeries() {
     <section style={{ background: '#f9f5ef' }}>
       <div className="max-w-[1000px] mx-auto px-6 md:px-12 py-20">
 
-        <h1 className="text-center text-[40px] md:text-[51px] font-light text-[#2b3335] leading-[1.15] tracking-[-0.02em] mb-10">
+        <h1 className="text-center font-light text-[#2b3335] tracking-[-0.02em] mb-10">
           Flint's a <span className="font-serif italic" style={{ color: '#2b3335' }}>full-service</span><br />
           production partner
         </h1>
@@ -17,16 +17,18 @@ export default function SeriousAboutSeries() {
 
           {/* Text column */}
           <div className="lg:max-w-[560px] lg:pt-4">
-            <h2 className="text-[28px] md:text-[36px] font-light text-[#2b3335] leading-[1.2] tracking-[-0.01em] mb-4">
-              We make it easy for healthcare brands to develop, launch, and grow branded series across all channels.
-            </h2>
+            <div className="bg-[#ede8e1] rounded-[16px] p-5 md:p-6 mb-4">
+              <h4 className="font-light text-[#2b3335] tracking-[-0.01em]">
+                We make it easy for healthcare brands to develop, launch, and grow branded series across all channels.
+              </h4>
+            </div>
 
             {/* Mobile-only radar */}
             <div className="lg:hidden flex justify-center my-10">
               <RadarDial />
             </div>
 
-            <p className="text-[17px] text-[#43382f] leading-relaxed">
+            <p className="text-[#43382f] leading-relaxed mt-6">
               <strong>Master 360° campaigns</strong> that travel across every stage of your patient, provider, or employee journey.
             </p>
           </div>

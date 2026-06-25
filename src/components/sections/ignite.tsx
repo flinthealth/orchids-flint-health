@@ -38,7 +38,7 @@ const PHASES: PhaseData[] = [
 ];
 
 const TEXT_STYLE =
-  'text-[36px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] text-center mx-auto px-4 md:px-8 max-w-[860px]';
+  'font-light tracking-[-0.02em] text-center mx-auto px-4 md:px-8 max-w-[860px]';
 
 function renderText(text: string, italicWord: string | null) {
   if (!italicWord) return <>{text}</>;
@@ -212,7 +212,7 @@ export default function IgniteSection() {
               : 'translateY(30px)',
           }}
         >
-          <p
+          <h1
             className={TEXT_STYLE}
             style={{
               color: TEXT_COLORS[phaseIdx],
@@ -221,7 +221,7 @@ export default function IgniteSection() {
             }}
           >
             {p.lines ? renderLines(p.lines, p.italicWord) : renderText(p.text, p.italicWord)}
-          </p>
+          </h1>
         </div>
       </div>
     </section>

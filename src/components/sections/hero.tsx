@@ -77,7 +77,7 @@ export default function HeroSection() {
             <div className="h-[22px] md:hidden" />
 
             <h1
-              className="animate-hero-title text-white font-light mb-5 text-[40px] md:text-[51px]"
+              className="animate-hero-title text-white font-light mb-5"
               style={{ lineHeight: 1.15, letterSpacing: '-0.02em' }}
             >
               <span className="md:hidden">Branded podcast<br />&amp; CTV series built<br />for visibility and trust</span>
@@ -85,7 +85,7 @@ export default function HeroSection() {
               <span className="hidden md:block lg:hidden">Branded podcast<br />&amp; CTV series built<br />for visibility and trust</span>
             </h1>
 
-            <p className="animate-hero-sub1 text-white/80 text-[17px] md:text-[17px] lg:text-[19px] font-normal mb-4">
+            <p className="animate-hero-sub1 text-white/80 font-normal mb-4">
               Leading healthcare brands work with Flint to <br className="hidden md:block" />
 craft premium, multi-channel series that <br className="hidden md:block" />
 drive engagement, retention, and referrals.
