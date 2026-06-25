@@ -263,10 +263,11 @@ export default function StackingCards() {
   return (
     <section style={{ background: GRADIENT }}>
 
-      {/* Header — dark background */}
-      <div style={{ background: GRADIENT, position: 'relative' }}>
+      {/* ── MOBILE stacking cards ── */}
+      <div className="md:hidden" style={{ background: GRADIENT, position: 'relative' }}>
         {/* Grain overlay */}
         <div className="absolute inset-0 pointer-events-none" style={GRAIN_STYLE} />
+        {/* Header content */}
         <div className="container mx-auto px-4 md:px-8 pt-[120px] md:pt-[120px]">
           <div className="max-w-[1000px] mx-auto">
             <div className="mb-14 text-center max-w-[680px] mx-auto">
@@ -278,59 +279,53 @@ export default function StackingCards() {
                 Connect with the patients, providers, and team members that fuel your mission and help you grow.
               </p>
             </div>
-
-            {/* ── Format indicators ── */}
-            <div className="flex items-center justify-center gap-4 sm:gap-6 mt-8 mb-10">
-              {/* Audio */}
-              <div className="flex flex-col items-center gap-2">
-                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#ffffff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="10" y="2" width="8" height="14" rx="4" />
-                  <path d="M5 13a9 9 0 0 0 18 0" />
-                  <line x1="14" y1="22" x2="14" y2="26" />
-                  <line x1="10" y1="26" x2="18" y2="26" />
-                </svg>
-                <span style={{ color: '#ffffff', fontSize: '11px', letterSpacing: '0.14em', fontWeight: 600, textTransform: 'uppercase', fontFamily: 'Inter, sans-serif' }}>Audio</span>
-              </div>
-
-              {/* Separator */}
-              <div style={{ width: '1px', height: '32px', backgroundColor: '#ffffff', opacity: 0.2 }} />
-
-              {/* Video */}
-              <div className="flex flex-col items-center gap-2">
-                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#ffffff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="2" y="6" width="18" height="16" rx="3" />
-                  <path d="M20 11l6-4v14l-6-4" />
-                </svg>
-                <span style={{ color: '#ffffff', fontSize: '11px', letterSpacing: '0.14em', fontWeight: 600, textTransform: 'uppercase', fontFamily: 'Inter, sans-serif' }}>Video</span>
-              </div>
-
-              {/* Separator */}
-              <div style={{ width: '1px', height: '32px', backgroundColor: '#ffffff', opacity: 0.2 }} />
-
-              {/* Hybrid */}
-              <div className="flex flex-col items-center gap-2">
-                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#ffffff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  {/* mic (left, slightly smaller) */}
-                  <rect x="3" y="4" width="7" height="12" rx="3.5" />
-                  <path d="M2.5 12a4 4 0 0 0 8 0" />
-                  <line x1="6.5" y1="16" x2="6.5" y2="19" />
-                  <line x1="4.5" y1="19" x2="8.5" y2="19" />
-                  {/* video camera (right) */}
-                  <rect x="13" y="8" width="10" height="9" rx="2" />
-                  <path d="M23 11l4-2.5v7l-4-2.5" />
-                </svg>
-                <span style={{ color: '#ffffff', fontSize: '11px', letterSpacing: '0.14em', fontWeight: 600, textTransform: 'uppercase', fontFamily: 'Inter, sans-serif' }}>Hybrid</span>
-              </div>
-            </div>
-
           </div>
         </div>
-      </div>
 
-      {/* ── MOBILE stacking cards ── */}
-      <div className="md:hidden" style={{ background: GRADIENT, position: 'relative' }}>
-        {/* Grain overlay */}
-        <div className="absolute inset-0 pointer-events-none" style={GRAIN_STYLE} />
+        {/* ── Format indicators ── */}
+        <div className="flex items-center justify-center gap-4 sm:gap-6 mb-10">
+          {/* Audio */}
+          <div className="flex flex-col items-center gap-2">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#ffffff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="10" y="2" width="8" height="14" rx="4" />
+              <path d="M5 13a9 9 0 0 0 18 0" />
+              <line x1="14" y1="22" x2="14" y2="26" />
+              <line x1="10" y1="26" x2="18" y2="26" />
+            </svg>
+            <span style={{ color: '#ffffff', fontSize: '11px', letterSpacing: '0.14em', fontWeight: 600, textTransform: 'uppercase', fontFamily: 'Inter, sans-serif' }}>Audio</span>
+          </div>
+
+          {/* Separator */}
+          <div style={{ width: '1px', height: '32px', backgroundColor: '#ffffff', opacity: 0.2 }} />
+
+          {/* Video */}
+          <div className="flex flex-col items-center gap-2">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#ffffff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="2" y="6" width="18" height="16" rx="3" />
+              <path d="M20 11l6-4v14l-6-4" />
+            </svg>
+            <span style={{ color: '#ffffff', fontSize: '11px', letterSpacing: '0.14em', fontWeight: 600, textTransform: 'uppercase', fontFamily: 'Inter, sans-serif' }}>Video</span>
+          </div>
+
+          {/* Separator */}
+          <div style={{ width: '1px', height: '32px', backgroundColor: '#ffffff', opacity: 0.2 }} />
+
+          {/* Hybrid */}
+          <div className="flex flex-col items-center gap-2">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#ffffff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              {/* mic (left, slightly smaller) */}
+              <rect x="3" y="4" width="7" height="12" rx="3.5" />
+              <path d="M2.5 12a4 4 0 0 0 8 0" />
+              <line x1="6.5" y1="16" x2="6.5" y2="19" />
+              <line x1="4.5" y1="19" x2="8.5" y2="19" />
+              {/* video camera (right) */}
+              <rect x="13" y="8" width="10" height="9" rx="2" />
+              <path d="M23 11l4-2.5v7l-4-2.5" />
+            </svg>
+            <span style={{ color: '#ffffff', fontSize: '11px', letterSpacing: '0.14em', fontWeight: 600, textTransform: 'uppercase', fontFamily: 'Inter, sans-serif' }}>Hybrid</span>
+          </div>
+        </div>
+
         {visibleCards.map((card, stackIndex) => {
           const isLast    = stackIndex === visibleCards.length - 1;
           const topOffset = TOP_OFFSETS_MOBILE[stackIndex] ?? 128;
@@ -375,6 +370,65 @@ export default function StackingCards() {
       <div className="hidden md:block pb-[90px]" style={{ background: GRADIENT, position: 'relative' }}>
         {/* Grain overlay */}
         <div className="absolute inset-0 pointer-events-none" style={GRAIN_STYLE} />
+        {/* Header content */}
+        <div className="container mx-auto px-4 md:px-8 pt-[120px] md:pt-[120px]">
+          <div className="max-w-[1000px] mx-auto">
+            <div className="mb-14 text-center max-w-[680px] mx-auto">
+              <h2 className="text-[#ffffff] text-[40px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-4">
+                <span className="md:hidden">We help you<br />reach who matters</span>
+                <span className="hidden md:inline">We help you<br />reach who matters</span>
+              </h2>
+              <p className="text-[rgba(255,255,255,0.7)] text-[17px] leading-[1.6] max-w-[560px] mx-auto">
+                Connect with the patients, providers, and team members that fuel your mission and help you grow.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* ── Format indicators ── */}
+        <div className="flex items-center justify-center gap-4 sm:gap-6 mb-10">
+          {/* Audio */}
+          <div className="flex flex-col items-center gap-2">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#ffffff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="10" y="2" width="8" height="14" rx="4" />
+              <path d="M5 13a9 9 0 0 0 18 0" />
+              <line x1="14" y1="22" x2="14" y2="26" />
+              <line x1="10" y1="26" x2="18" y2="26" />
+            </svg>
+            <span style={{ color: '#ffffff', fontSize: '11px', letterSpacing: '0.14em', fontWeight: 600, textTransform: 'uppercase', fontFamily: 'Inter, sans-serif' }}>Audio</span>
+          </div>
+
+          {/* Separator */}
+          <div style={{ width: '1px', height: '32px', backgroundColor: '#ffffff', opacity: 0.2 }} />
+
+          {/* Video */}
+          <div className="flex flex-col items-center gap-2">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#ffffff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="2" y="6" width="18" height="16" rx="3" />
+              <path d="M20 11l6-4v14l-6-4" />
+            </svg>
+            <span style={{ color: '#ffffff', fontSize: '11px', letterSpacing: '0.14em', fontWeight: 600, textTransform: 'uppercase', fontFamily: 'Inter, sans-serif' }}>Video</span>
+          </div>
+
+          {/* Separator */}
+          <div style={{ width: '1px', height: '32px', backgroundColor: '#ffffff', opacity: 0.2 }} />
+
+          {/* Hybrid */}
+          <div className="flex flex-col items-center gap-2">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#ffffff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              {/* mic (left, slightly smaller) */}
+              <rect x="3" y="4" width="7" height="12" rx="3.5" />
+              <path d="M2.5 12a4 4 0 0 0 8 0" />
+              <line x1="6.5" y1="16" x2="6.5" y2="19" />
+              <line x1="4.5" y1="19" x2="8.5" y2="19" />
+              {/* video camera (right) */}
+              <rect x="13" y="8" width="10" height="9" rx="2" />
+              <path d="M23 11l4-2.5v7l-4-2.5" />
+            </svg>
+            <span style={{ color: '#ffffff', fontSize: '11px', letterSpacing: '0.14em', fontWeight: 600, textTransform: 'uppercase', fontFamily: 'Inter, sans-serif' }}>Hybrid</span>
+          </div>
+        </div>
+
         {visibleCards.map((card, stackIndex) => {
           const isLast = stackIndex === visibleCards.length - 1;
           return (

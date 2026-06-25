@@ -65,7 +65,7 @@ export default function SeriesReach() {
             </span>
           </h2>
           <p className="text-[#43382f] text-[17px] leading-[1.6] max-w-[560px] mx-auto">
-            Insert your message into your stakeholders daily routine.
+            This creates a fundamentally different relationship with your audience where you become part of their daily routine.
           </p>
         </div>
 
