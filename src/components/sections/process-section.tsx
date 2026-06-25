@@ -145,7 +145,7 @@ export default function ProcessSection() {
           strategy to measurable impact
         </h2>
         <p className="text-[16px] leading-[1.65] max-w-[560px] mx-auto text-[#43382f]">
-          A creative, full-service production partner who champions your brand and nails your message.
+          A creative, full-service production partner who champions your brand and the outcomes that matter most.
         </p>
       </div>
 

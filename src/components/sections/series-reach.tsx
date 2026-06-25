@@ -53,8 +53,16 @@ export default function SeriesReach() {
         {/* Headline */}
         <div className="mb-14 max-w-[700px] mx-auto text-center">
           <h2 className="text-[#2b3335] text-[36px] md:text-[46px] lg:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-6">
-            Most content gets <span className="font-serif italic" style={{ color: '#2b3335' }}>seconds</span><br />
-            A strategic series gets <span className="font-serif italic" style={{ color: '#2b3335' }}>hours</span>
+            <span className="md:hidden">
+              Most content<br />
+              gets <span className="font-serif italic" style={{ color: '#2b3335' }}>seconds</span><br />
+              A strategic series<br />
+              gets <span className="font-serif italic" style={{ color: '#2b3335' }}>hours</span>
+            </span>
+            <span className="hidden md:inline">
+              Most content gets <span className="font-serif italic" style={{ color: '#2b3335' }}>seconds</span><br />
+              A strategic series gets <span className="font-serif italic" style={{ color: '#2b3335' }}>hours</span>
+            </span>
           </h2>
           <p className="text-[#43382f] text-[17px] leading-[1.6] max-w-[560px] mx-auto">
             Insert your message into your stakeholders daily routine.

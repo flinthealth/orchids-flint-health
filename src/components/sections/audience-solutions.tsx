@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { ArrowRight, MapPin, Stethoscope, BookOpen } from 'lucide-react';
+import { ArrowRight, MapPin, Stethoscope } from 'lucide-react';
 
 const ROTATING_WORDS = [
   'R&D',
@@ -34,7 +34,7 @@ const stakeholders = [
   },
   {
     name: 'Patient Education & Engagement',
-    icon: BookOpen,
+    icon: '/icon-patient-education-v10.png',
     image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=900&q=80',
     alt: 'Patient education and engagement',
     description: [
@@ -96,8 +96,8 @@ const AudienceSolutions = () => {
             {/* Stakeholder Navigation List */}
             <nav className="flex flex-col gap-3 mb-12">
               {stakeholders.map((s, i) => {
-                const Icon = s.icon;
                 const isActive = activeItem === i;
+                const isImageIcon = typeof s.icon === 'string';
                 return (
                   <div key={s.name} className="flex flex-col">
                     <button
@@ -114,7 +114,11 @@ const AudienceSolutions = () => {
                           className="flex items-center justify-center w-9 h-9 rounded-full flex-shrink-0 transition-colors duration-300"
                           style={{ backgroundColor: isActive ? 'rgba(253,255,214,0.15)' : 'rgba(19,29,43,0.1)' }}
                         >
-                          <Icon size={18} className={isActive ? 'text-[#ffffff]' : 'text-[#2b3335]'} />
+                          {isImageIcon ? (
+                            <img src={s.icon as string} alt="" width={18} height={18} style={{ display: 'block', filter: isActive ? 'brightness(0) invert(1)' : 'none' }} />
+                          ) : (
+                            <s.icon size={18} className={isActive ? 'text-[#ffffff]' : 'text-[#2b3335]'} />
+                          )}
                         </div>
                         <span
                           className="text-[18px] md:text-[20px] font-medium transition-colors duration-300"

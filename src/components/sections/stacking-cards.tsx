@@ -45,10 +45,10 @@ const FILTER_ICONS: Record<string, (c: string) => React.ReactNode> = {
 type FilterKey = typeof FILTERS[number]['key'];
 
 const CARD_ICONS: Record<number, string> = {
-  0: '/icon-provider-education-v12.png',
-  1: '/icon-patient-education-v10.png',
-  2: '/icon-patient-journey-v12.png',
-  3: '/icon-team-v12.png',
+  0: '/icon-provider-education-v12.png?v=7',
+  1: '/icon-patient-education-v10.png?v=6',
+  2: '/icon-patient-journey-v12.png?v=5',
+  3: '/icon-team-v12.png?v=6',
 };
 
 const cards = [

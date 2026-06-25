@@ -41,7 +41,7 @@ export default function Home() {
         <ContentBridge />
         <SeriesReach />
         <StackingCards />
-        <CarePlatformSection />
+        {/* <CarePlatformSection /> */}
         <ProcessSection />
         {/* <WhySeriesWork /> */}
         {/* <MissionSection /> */}
