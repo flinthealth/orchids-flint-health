@@ -112,7 +112,7 @@ export default function ProcessSection() {
 
     if (cardsEl) cardsObserver.observe(cardsEl);
 
-    // Container observer — hide tab bar when leaving the section
+    // Container observer — hide tab bar when leaving, show when re-entering from below
     const containerEl = scrollContainerRef.current;
     const containerObserver = new IntersectionObserver(
       (entries) => {
@@ -121,6 +121,20 @@ export default function ProcessSection() {
           if (!entry.isIntersecting && showTabBarRef.current) {
             showTabBarRef.current = false;
             setShowTabBar(false);
+          }
+          // When re-entering the section from below (scrolling up),
+          // show the tab bar if the overview cards are off-screen above.
+          // The cards observer handles hiding when cards re-enter at 25%+.
+          if (entry.isIntersecting && !showTabBarRef.current) {
+            const cardsEl = cardsRef.current;
+            if (cardsEl) {
+              const cr = cardsEl.getBoundingClientRect();
+              // Cards are fully above the viewport (scrolling up from below)
+              if (cr.bottom < 0) {
+                showTabBarRef.current = true;
+                setShowTabBar(true);
+              }
+            }
           }
         });
       },
@@ -248,7 +262,7 @@ export default function ProcessSection() {
               {/* Tab bar spacer */}
               <div className="hidden md:block flex-shrink-0 h-[56px]" />
               {/* Content area */}
-              <div className="flex-1 flex flex-col justify-center max-w-[1000px] mx-auto px-6 md:px-8 w-full">
+              <div className="flex-1 flex flex-col justify-start pt-16 max-w-[1000px] mx-auto px-6 md:px-8 w-full">
                 <div className="flex flex-col md:flex-row gap-12 md:gap-16 lg:gap-20 items-start">
                   <div className="flex-1">
                     <h3 className="font-light text-[#2b3335] tracking-[-0.01em] mb-4">
@@ -297,7 +311,7 @@ export default function ProcessSection() {
             <div className="flex flex-col h-full">
               <div className="hidden md:block flex-shrink-0 h-[76px]" />
               <div className="hidden md:block flex-shrink-0 h-[56px]" />
-              <div className="flex-1 flex flex-col justify-center max-w-[1000px] mx-auto px-6 md:px-8 w-full">
+              <div className="flex-1 flex flex-col justify-start pt-16 max-w-[1000px] mx-auto px-6 md:px-8 w-full">
                 <div className="flex flex-col md:flex-row gap-12 md:gap-16 lg:gap-20 items-start">
                   <div className="flex-1">
                     <h3 className="font-light text-[#2b3335] tracking-[-0.01em] mb-4">
@@ -346,7 +360,7 @@ export default function ProcessSection() {
             <div className="flex flex-col h-full">
               <div className="hidden md:block flex-shrink-0 h-[76px]" />
               <div className="hidden md:block flex-shrink-0 h-[56px]" />
-              <div className="flex-1 flex flex-col justify-center max-w-[1000px] mx-auto px-6 md:px-8 w-full">
+              <div className="flex-1 flex flex-col justify-start pt-16 max-w-[1000px] mx-auto px-6 md:px-8 w-full">
                 <div className="flex flex-col md:flex-row gap-12 md:gap-16 lg:gap-20 items-start">
                   <div className="flex-1">
                     <h3 className="font-light text-[#2b3335] tracking-[-0.01em] mb-4">

@@ -83,7 +83,7 @@ export default function SeriesReach() {
             </span>
           </h2>
           <p className="text-[#43382f] max-w-[560px] mx-auto">
-            This creates a fundamentally different relationship with your audience where you become part of their daily routine.
+            Meet your audience where they are at and make your message part of their daily routine.
           </p>
         </div>
 
