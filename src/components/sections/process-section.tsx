@@ -251,7 +251,7 @@ export default function ProcessSection() {
           </div>
           <div className="hidden md:flex md:w-[320px] lg:w-[380px] flex-shrink-0 items-start">
             <Testimonial
-              photo="/Jennifer-Kreatsoulas.jpg"
+              photo="/Jennifer-Kreatsoulas.jpg?v=2"
               quote="Working with Jessica on a video series several years ago still leads new clients to my business. The cinematic-quality content brought my brand's message to life and spoke directly to the hearts of clients and patients."
               name="Jennifer Kreatsoulas, PhD, C-IAYT"
               title="Yoga for Eating Disorders"

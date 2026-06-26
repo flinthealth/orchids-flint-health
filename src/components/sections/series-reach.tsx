@@ -125,7 +125,7 @@ export default function SeriesReach() {
 
           {/* Audience rows — narrower column, label as its own headline, desc below */}
           <div className="flex flex-col w-full md:max-w-[440px]">
-            <p className="text-[#6b4b3e] text-[15px] font-semibold tracking-[0.1em] uppercase mb-2">
+            <p className="text-[#2a3742] text-[15px] font-semibold tracking-[0.1em] uppercase mb-2">
               Who do you want to connect with?
             </p>
             {ROWS.map(({ Icon, iconColor, label, desc }, i) => (
