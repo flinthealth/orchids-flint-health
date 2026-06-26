@@ -42,11 +42,6 @@ const PHASES: PhaseData[] = [
     text: 'We craft your vital data, research, and outcomes into stories that stick and sell.',
     italicWord: 'stories',
     lines: [
-      'We craft your vital data,',
-      'research, and outcomes into',
-      'stories that stick and sell.',
-    ],
-    mobileLines: [
       'We craft your',
       'brand mission &',
       'impact into stories',

@@ -114,8 +114,8 @@ const BG         = '#f9f5ef';
 const EDGE_COLOR = '#e0dbd5';
 const TEXT       = '#2b3335';
 const MUTED      = '#677283';
-const ITEM_BG    = '#ede8e1';
-const GRADIENT   = 'linear-gradient(to right, #3d4d58 0%, #6b4b3e 55%, #a0522d 100%)';
+const ITEM_BG    = '#ede7e0';
+const GRADIENT   = 'linear-gradient(to bottom, #2a3742 0%, #3d4d58 33%, #6b4b3e 66%, #a0522d 100%)';
 const GRAIN      = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23g)'/%3E%3C/svg%3E")`;
 const GRAIN_STYLE: React.CSSProperties = {
   backgroundImage: GRAIN,
@@ -217,8 +217,8 @@ export default function StackingCards() {
               <img src={CARD_ICONS[card.id]} alt="" width={imgW} height={imgW} style={{ display: 'block' }} />
             </div>
             {(card as any).headlineLarge
-              ? <p className="text-[15px] font-semibold uppercase tracking-[0.1em] leading-[1.4] mb-4" style={{ color: '#677283' }}>{card.headline}</p>
-              : <p className="text-[15px] font-semibold uppercase tracking-[0.1em] leading-[1.4] mb-4" style={{ color: '#677283' }}>{card.headline}</p>
+              ? <p className="text-[15px] font-semibold uppercase tracking-[0.1em] leading-[1.4] mb-4" style={{ color: '#6b4b3e' }}>{card.headline}</p>
+              : <p className="text-[15px] font-semibold uppercase tracking-[0.1em] leading-[1.4] mb-4" style={{ color: '#6b4b3e' }}>{card.headline}</p>
             }
             <p className="leading-[1.5] mb-8" style={{ color: '#2b3335' }}>{card.body}</p>
             <div className="flex flex-col gap-[10px]">
@@ -241,8 +241,8 @@ export default function StackingCards() {
                 {card.title}
               </h3>
               {(card as any).headlineLarge
-                ? <p className="text-[15px] font-semibold uppercase tracking-[0.1em] leading-[1.4] mb-4" style={{ color: '#677283' }}>{card.headline}</p>
-                : <p className="text-[15px] font-semibold uppercase tracking-[0.1em] leading-[1.4] mb-4" style={{ color: '#677283' }}>{card.headline}</p>
+                ? <p className="text-[15px] font-semibold uppercase tracking-[0.1em] leading-[1.4] mb-4" style={{ color: '#6b4b3e' }}>{card.headline}</p>
+                : <p className="text-[15px] font-semibold uppercase tracking-[0.1em] leading-[1.4] mb-4" style={{ color: '#6b4b3e' }}>{card.headline}</p>
               }
               <p className="leading-[1.5] mb-8" style={{ color: '#2b3335' }}>{card.body}</p>
               <div className="flex flex-col gap-[10px]">
@@ -272,8 +272,8 @@ export default function StackingCards() {
           <div className="max-w-[1000px] mx-auto">
             <div className="mb-14 text-center max-w-[680px] mx-auto">
               <h2 className="text-[#ffffff] font-light tracking-[-0.02em] mb-4">
-                <span className="md:hidden">We help you<br />reach who matters</span>
-                <span className="hidden md:inline">We help you<br />reach who matters</span>
+                <span className="md:hidden">We help you reach<br />who matters most</span>
+                <span className="hidden md:inline">We help you reach<br />who matters most</span>
               </h2>
               <p className="text-[rgba(255,255,255,0.7)] max-w-[560px] mx-auto">
                 Connect with the patients, providers, and team members that fuel your mission and help you grow.
@@ -359,11 +359,11 @@ export default function StackingCards() {
                   </div>
                 </div>
               </div>
-              {!isLast && <div style={{ background: GRADIENT, height: '65vh' }} />}
+              {!isLast && <div style={{ height: '65vh' }} />}
             </React.Fragment>
           );
         })}
-        <div style={{ background: GRADIENT, height: '60px' }} />
+        <div style={{ height: '60px' }} />
       </div>
 
       {/* ── DESKTOP stacking cards ── */}
@@ -375,8 +375,8 @@ export default function StackingCards() {
           <div className="max-w-[1000px] mx-auto">
             <div className="mb-14 text-center max-w-[680px] mx-auto">
               <h2 className="text-[#ffffff] font-light tracking-[-0.02em] mb-4">
-                <span className="md:hidden">We help you<br />reach who matters</span>
-                <span className="hidden md:inline">We help you<br />reach who matters</span>
+                <span className="md:hidden">We help you reach<br />who matters most</span>
+                <span className="hidden md:inline">We help you reach<br />who matters most</span>
               </h2>
               <p className="text-[rgba(255,255,255,0.7)] max-w-[560px] mx-auto">
                 Connect with the patients, providers, and team members that fuel your mission and help you grow.
@@ -462,7 +462,7 @@ export default function StackingCards() {
                   </div>
                 </div>
               </div>
-              {!isLast && <div style={{ background: GRADIENT, height: '40vh' }} />}
+              {!isLast && <div style={{ height: '40vh' }} />}
             </React.Fragment>
           );
         })}

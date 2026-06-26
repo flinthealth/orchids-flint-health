@@ -174,7 +174,7 @@ function ComparisonTable() {
                 style={{ fontSize: '13px', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#ff7f29' }}>
                 <span style={{ display: 'inline-flex', alignItems: 'center', gap: '7px' }}>
                   <span style={{ width: '7px', height: '7px', borderRadius: '50%', background: '#ff7f29', display: 'inline-block', flexShrink: 0 }} />
-                  Strategic series
+                  Branded series
                 </span>
               </th>
             </tr>
@@ -251,7 +251,7 @@ function ComparisonTable() {
             {ROWS[activeRow].popover.podcast}
           </p>
           <p style={{ fontSize: '10px', fontWeight: 600, letterSpacing: '0.07em', textTransform: 'uppercase', color: '#ff7f29', marginBottom: '4px' }}>
-            STRATEGIC SERIES
+            BRANDED SERIES
           </p>
           <p style={{ fontSize: '12px', color: 'rgba(249,245,239,0.85)', lineHeight: 1.6 }}>
             {ROWS[activeRow].popover.series}
@@ -359,7 +359,7 @@ export default function FAQSection() {
   const [openIdx, setOpenIdx] = useState<number | null>(null);
 
   return (
-    <section className="bg-[#ede8e1] py-[80px] md:py-[100px]">
+    <section className="bg-[#ede7e0] py-[80px] md:py-[100px]">
       <div className="max-w-[760px] mx-auto px-6 md:px-8">
 
         {/* Headline */}
@@ -382,7 +382,7 @@ export default function FAQSection() {
           >
             <div className="flex items-center justify-between gap-4">
               <p className="text-[17px] font-medium leading-snug" style={{ color: '#43382f' }}>
-                What&rsquo;s the difference between a podcast and a strategic series?
+                What&rsquo;s the difference between a podcast and a branded series?
               </p>
               <span
                 className="flex-shrink-0 text-[24px] font-light leading-none select-none"

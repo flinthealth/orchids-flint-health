@@ -4,8 +4,8 @@ import React, { useState, useEffect, useRef } from 'react';
 
 const TABS = [
   { id: 'strategy',    label: 'Strategy',           color: '#ff7f29' },
-  { id: 'production',  label: 'Production',          color: '#eeb20b' },
-  { id: 'growth',      label: 'Data-Driven Growth',  color: '#54819a' },
+  { id: 'production',  label: 'Production',          color: '#fac12c' },
+  { id: 'growth',      label: 'Data-Driven Growth',  color: '#a0522d' },
 ];
 
 const CHECK_COLOR = '#677283';
@@ -70,13 +70,13 @@ const OVERVIEW_CARDS = [
   {
     id: 'production',
     label: 'Production',
-    color: '#eeb20b',
+    color: '#fac12c',
     desc: 'Full-service production handled start to finish.',
   },
   {
     id: 'growth',
     label: 'Data-Driven Growth',
-    color: '#54819a',
+    color: '#a0522d',
     desc: 'Connect series performance to real business outcomes.',
   },
 ];
@@ -204,7 +204,7 @@ export default function ProcessSection() {
           style={{ opacity: showTabBar ? 1 : 0, transition: 'opacity 0.3s ease 0.15s' }}
         >
           <div className="max-w-[1000px] mx-auto px-6 md:px-8 pt-4 pb-3 flex gap-3">
-            {TABS.map(({ id, label, color }) => {
+            {TABS.map(({ id, label }) => {
               const isActiveBar = activeTab === id;
               return (
                 <button
@@ -212,10 +212,11 @@ export default function ProcessSection() {
                   onClick={() => scrollTo(id)}
                   className="flex-1 py-3 px-5 text-[14px] font-semibold tracking-[0.02em] transition-all rounded-md"
                   style={{
-                    background: isActiveBar ? color : 'rgba(103,114,131,0.08)',
-                    color: isActiveBar ? '#ffffff' : '#677283',
-                    border: 'none',
+                    background: isActiveBar ? '#EDEBE7' : 'rgba(237,235,231,0.5)',
+                    color: '#3d4d58',
+                    border: isActiveBar ? '1px solid #2b3335' : '1px solid transparent',
                     cursor: 'pointer',
+                    boxShadow: isActiveBar ? '0 0 16px rgba(245, 160, 32, 0.76), 0 0 0 2px #ff7f29' : 'none',
                   }}
                 >
                   {label}
@@ -276,8 +277,8 @@ export default function ProcessSection() {
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
           <div className="flex-1">
             <div className="flex items-center gap-2 mb-5">
-              <div className="w-2 h-2 rounded-full" style={{ background: '#eeb20b' }} />
-              <p className="text-[13px] font-semibold tracking-[0.1em] uppercase" style={{ color: '#eeb20b' }}>Production</p>
+              <div className="w-2 h-2 rounded-full" style={{ background: '#fac12c' }} />
+              <p className="text-[13px] font-semibold tracking-[0.1em] uppercase" style={{ color: '#fac12c' }}>Production</p>
             </div>
             <h3 className="font-light text-[#2b3335] tracking-[-0.01em] mb-4">
               You show up. We handle everything else.
@@ -317,8 +318,8 @@ export default function ProcessSection() {
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
           <div className="flex-1">
             <div className="flex items-center gap-2 mb-5">
-              <div className="w-2 h-2 rounded-full" style={{ background: '#54819a' }} />
-              <p className="text-[13px] font-semibold tracking-[0.1em] uppercase" style={{ color: '#54819a' }}>Data-Driven Growth</p>
+              <div className="w-2 h-2 rounded-full" style={{ background: '#a0522d' }} />
+              <p className="text-[13px] font-semibold tracking-[0.1em] uppercase" style={{ color: '#a0522d' }}>Data-Driven Growth</p>
             </div>
             <h3 className="font-light text-[#2b3335] tracking-[-0.01em] mb-4">
               Connect series performance to real business outcomes.
@@ -350,7 +351,7 @@ export default function ProcessSection() {
               </div>
               <div className="flex flex-wrap gap-2">
                 {PUBLIC_PILLS.map(pill => (
-                  <span key={pill} style={{ background: '#eeb20b', color: '#2b3335', borderRadius: 20, padding: '6px 14px', fontSize: 12, fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase' }}>{pill}</span>
+                  <span key={pill} style={{ background: '#f9f5ef', color: '#2b3335', borderRadius: 20, padding: '6px 14px', fontSize: 12, fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase' }}>{pill}</span>
                 ))}
               </div>
             </div>
@@ -361,7 +362,7 @@ export default function ProcessSection() {
               </div>
               <div className="flex flex-wrap gap-2">
                 {INTERNAL_PILLS.map(pill => (
-                  <span key={pill} style={{ background: '#54819a', color: '#f9f5ef', borderRadius: 20, padding: '6px 14px', fontSize: 12, fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase' }}>{pill}</span>
+                  <span key={pill} style={{ background: '#3d4d58', color: '#f9f5ef', borderRadius: 20, padding: '6px 14px', fontSize: 12, fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase' }}>{pill}</span>
                 ))}
               </div>
             </div>

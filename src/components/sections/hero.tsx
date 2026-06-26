@@ -81,8 +81,8 @@ export default function HeroSection() {
               style={{ lineHeight: 1.15, letterSpacing: '-0.02em' }}
             >
               <span className="md:hidden">Branded podcast<br />&amp; CTV series built<br />for visibility and earned trust</span>
-              <span className="hidden lg:inline">Branded podcast<br />&amp; CTV series built<br />for visibility and earned trust</span>
-              <span className="hidden md:block lg:hidden">Branded podcast<br />&amp; CTV series built<br />for visibility and earned trust</span>
+              <span className="hidden lg:inline">Branded podcast<br />&amp; CTV series built<br />for visibility and <br />earned trust</span>
+              <span className="hidden md:block lg:hidden">Branded podcast<br />&amp; CTV series built<br />for visibility and <br />earned trust</span>
             </h1>
 
             <p className="animate-hero-sub1 text-white/80 font-normal mb-4">

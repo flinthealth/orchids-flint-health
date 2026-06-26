@@ -13,22 +13,23 @@ export default function SeriousAboutSeries() {
           production partner
         </h1>
 
+        {/* Divider */}
+        <div className="w-full h-px mb-10" style={{ background: 'rgba(43,51,53,0.1)' }}></div>
+
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-10">
 
           {/* Text column */}
-          <div className="lg:max-w-[560px] lg:pt-4">
-            <div className="bg-[#ede8e1] rounded-[16px] p-5 md:p-6 mb-4">
-              <h4 className="font-light text-[#2b3335] tracking-[-0.01em]">
+          <div className="md:max-w-[540px] md:mx-auto lg:max-w-[560px] lg:pt-4 lg:mx-0">
+              <h3 className="font-normal leading-[1.15] tracking-[-0.02em] mb-4" style={{ color: '#2b3335' }}>
                 We make it easy for healthcare brands to develop, launch, and grow branded series across all channels.
-              </h4>
-            </div>
+              </h3>
 
             {/* Mobile-only radar */}
             <div className="lg:hidden flex justify-center my-10">
               <RadarDial />
             </div>
 
-            <p className="text-[#43382f] leading-relaxed mt-6">
+            <p className="text-[#43382f] leading-relaxed mt-6 md:max-w-[400px] md:mx-auto lg:max-w-none lg:mx-0 text-center lg:text-left">
               <strong>Master 360° campaigns</strong> that travel across every stage of your patient, provider, or employee journey.
             </p>
           </div>

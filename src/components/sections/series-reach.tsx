@@ -6,7 +6,7 @@ const ROWS = [
   {
     Icon: Heart,
     iconColor: "#677283",
-    label: "Patients living with your condition.",
+    label: "Patients",
     desc: "Give them the science and the stories that move them from confusion to confidence.",
     stat: "9 in 10",
     statDesc: "Patients struggle with health information.",
@@ -16,7 +16,7 @@ const ROWS = [
   {
     Icon: Stethoscope,
     iconColor: "#677283",
-    label: "Providers who need to adopt your protocol.",
+    label: "Providers",
     desc: "Meet them in their workflow with content that builds trust and changes practice.",
     stat: "75%",
     statDesc: "Of clinicians overwhelmed by treatment advances.",
@@ -26,7 +26,7 @@ const ROWS = [
   {
     Icon: Users,
     iconColor: "#677283",
-    label: "A team with knowledge to transfer.",
+    label: "Team",
     desc: "Culture doesn't scale on its own. A series carries your mission to every new hire.",
     stat: "$12K+",
     statDesc: "Cost of poor communication per employee.",
@@ -36,7 +36,7 @@ const ROWS = [
   {
     Icon: Handshake,
     iconColor: "#677283",
-    label: "Partners and referral networks.",
+    label: "Partners & Referral Networks",
     desc: "Establish authority before the first meeting with content that speaks for itself.",
     stat: null,
     statDesc: null,
@@ -44,6 +44,24 @@ const ROWS = [
     citeUrl: null,
   },
 ];
+
+function PillLabel({ label }: { label: string }) {
+  return (
+    <span
+      className="text-[16px] md:text-[18px] font-semibold uppercase tracking-[0.1em]"
+      style={{
+        background: '#ede7e0',
+        color: '#6b4b3e',
+        padding: '4px 10px',
+        borderRadius: '6px',
+        display: 'inline-block',
+        verticalAlign: 'middle',
+      }}
+    >
+      {label}
+    </span>
+  );
+}
 
 export default function SeriesReach() {
   return (
@@ -107,7 +125,7 @@ export default function SeriesReach() {
 
           {/* Audience rows — narrower column, label as its own headline, desc below */}
           <div className="flex flex-col w-full md:max-w-[440px]">
-            <p className="text-[#677283] text-[15px] font-semibold tracking-[0.1em] uppercase mb-2">
+            <p className="text-[#6b4b3e] text-[15px] font-semibold tracking-[0.1em] uppercase mb-2">
               Who do you want to connect with?
             </p>
             {ROWS.map(({ Icon, iconColor, label, desc }, i) => (
@@ -117,7 +135,7 @@ export default function SeriesReach() {
                 style={{ borderBottom: i < ROWS.length - 1 ? '1px solid rgba(43,51,53,0.1)' : 'none' }}
               >
                 <div className="mb-2">
-                  <h3 className="font-bold text-[20px] text-[#2b3335] leading-snug">{label}</h3>
+                  <h3 className="leading-snug"><PillLabel label={label} /></h3>
                 </div>
                 <p className="text-[#43382f] leading-relaxed">{desc}</p>
               </div>
@@ -128,27 +146,29 @@ export default function SeriesReach() {
         {/* Cost question — regular header, not italic */}
         <div className="mt-16 md:mt-20 mb-8 max-w-[700px] mx-auto text-center">
           <h3 className="text-[#2b3335] font-light tracking-[-0.01em] mb-4">
-            The costs of going unseen and unheard
+            Costs of being unseen and unheard
           </h3>
           <p className="text-[#43382f] max-w-[560px] mx-auto">
-            The missed opportunities and lost time add up.
+            Missed opportunities and lost time add up.
           </p>
         </div>
 
-        {/* Cost pills — radar dial dark background, white text */}
+        {/* Cost pills — bare hands background, dark text */}
         <div className="flex flex-col md:flex-row gap-5">
           {ROWS.filter((r) => r.stat).map(({ stat, statDesc, cite, citeUrl }) => (
             <div
               key={statDesc}
               style={{
-                background: '#2b3a45',
+                background: '#ede7e0',
                 borderRadius: '20px',
                 padding: '28px 32px',
                 flex: 1,
+                boxShadow: '0 0 16px rgba(245, 160, 32, 0.76), 0 0 0 2px #ff7f29',
+                border: '1px solid #2b3335',
               }}
             >
-              <div style={{ fontSize: 40, fontWeight: 300, color: '#ffffff', lineHeight: 1 }}>{stat}</div>
-              <div style={{ fontSize: 14, color: 'rgba(255,255,255,0.7)', lineHeight: 1.4, marginTop: 8 }}>
+              <div style={{ fontSize: 40, fontWeight: 300, color: '#6b4b3e', lineHeight: 1 }}>{stat}</div>
+              <div style={{ fontSize: 14, color: '#43382f', lineHeight: 1.4, marginTop: 8 }}>
                 {statDesc}
                 <a href={citeUrl!} target="_blank" rel="noopener noreferrer"
                   className="align-super ml-0.5 opacity-70 hover:opacity-100 transition-opacity"

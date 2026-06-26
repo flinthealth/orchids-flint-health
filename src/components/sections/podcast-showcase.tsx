@@ -244,7 +244,7 @@ export default function PodcastShowcase() {
       id="our-work"
       ref={sectionRef}
       className="relative pt-[88px] md:pt-[100px] pb-[100px] md:pb-[120px] px-6 md:px-8 overflow-hidden"
-      style={{ background: '#ede8e1' }}
+      style={{ background: '#ede7e0' }}
     >
       {/* Grain overlay */}
       <div
@@ -260,12 +260,6 @@ export default function PodcastShowcase() {
       <div className="max-w-[1000px] mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-10 md:mb-12" style={fade(0)}>
-          <p
-            className="text-[15px] font-semibold tracking-[0.1em] uppercase mb-5"
-            style={{ color: "#677283" }}
-          >
-            In Practice
-          </p>
           <h2
             className="font-light tracking-[-0.02em] mb-5"
             style={{ color: "#2b3335" }}
