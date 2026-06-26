@@ -6,6 +6,7 @@ interface PhaseData {
   text: string;
   italicWord: string | null;
   lines?: string[];
+  mobileLines?: string[];
 }
 
 const PHASES: PhaseData[] = [
@@ -17,6 +18,12 @@ const PHASES: PhaseData[] = [
       'that changes lives',
       "shouldn't go unseen.",
     ],
+    mobileLines: [
+      'A product or',
+      'service that',
+      'changes lives',
+      "shouldn't go unseen.",
+    ],
   },
   {
     text: 'Flint exists so what you\'ve built gets noticed.',
@@ -24,6 +31,11 @@ const PHASES: PhaseData[] = [
     lines: [
       'Flint exists so what',
       "you've built gets noticed.",
+    ],
+    mobileLines: [
+      'Flint exists so',
+      "what you've built",
+      'gets noticed.',
     ],
   },
   {
@@ -33,6 +45,12 @@ const PHASES: PhaseData[] = [
       'We craft your vital data,',
       'research, and outcomes into',
       'stories that stick and sell.',
+    ],
+    mobileLines: [
+      'We craft your',
+      'brand mission &',
+      'impact into stories',
+      'that stick and sell.',
     ],
   },
 ];
@@ -220,7 +238,12 @@ export default function IgniteSection() {
               opacity: started ? (visible ? 1 : 0) : 0,
             }}
           >
-            {p.lines ? renderLines(p.lines, p.italicWord) : renderText(p.text, p.italicWord)}
+            {p.lines ? (
+            <>
+              <span className="hidden md:inline">{renderLines(p.lines, p.italicWord)}</span>
+              <span className="md:hidden">{renderLines(p.mobileLines || p.lines, p.italicWord)}</span>
+            </>
+          ) : renderText(p.text, p.italicWord)}
           </h1>
         </div>
       </div>

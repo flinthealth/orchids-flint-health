@@ -48,7 +48,7 @@ function ChartIcon({ color }: { color: string }) {
 const CARD_ICONS: Record<string, React.FC<{ color: string }>> = {
   strategy: () => (
     // eslint-disable-next-line @next/next/no-img-element
-    <img src="/process-strategy-icon.png?v=2" alt="Strategy" width={53} height={53} style={{ display: 'block' }} />
+    <img src="/process-strategy-icon.png?v=3" alt="Strategy" width={53} height={53} style={{ display: 'block' }} />
   ),
   production: () => (
     // eslint-disable-next-line @next/next/no-img-element
