@@ -146,7 +146,7 @@ export default function SeriesReach() {
         {/* Cost question — regular header, not italic */}
         <div className="mt-16 md:mt-20 mb-8 max-w-[700px] mx-auto text-center">
           <h3 className="text-[#2b3335] font-light tracking-[-0.01em] mb-4">
-            Costs of being unseen and unheard
+            Being unseen and unheard costs you
           </h3>
           <p className="text-[#43382f] max-w-[560px] mx-auto">
             Missed opportunities and lost time add up.

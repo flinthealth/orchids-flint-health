@@ -351,7 +351,7 @@ export default function DNAWaveSection() {
         {/* Headline above columns */}
         <h2 className="text-[#2b3335] font-light tracking-[-0.02em] leading-[1.1] mb-10 md:mb-14 max-w-[1060px] mx-auto text-center">
           The better the <span className="font-serif italic" style={{ color: '#2b3335' }}>story</span>,<br />
-          the better the <span className="font-serif italic" style={{ color: '#2b3335' }}>brand</span>
+          the stronger the <span className="font-serif italic" style={{ color: '#2b3335' }}>brand</span>
         </h2>
 
         <div className="flex flex-col md:flex-row md:items-start gap-8 md:gap-12 max-w-[1060px] mx-auto">

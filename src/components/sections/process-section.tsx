@@ -59,47 +59,97 @@ const OVERVIEW_CARDS = [
 const PUBLIC_PILLS   = ['Episode retention', 'Inquiry lift', 'Referral attribution', 'Intakes scheduled', 'Listener acquisition'];
 const INTERNAL_PILLS = ['Activation rate', 'Pathway completion', 'Knowledge retention', 'Enrollment curve', 'Sustained participation'];
 
+const NAV_HEIGHT = 76; // fixed nav height when scrolled
+
 export default function ProcessSection() {
   const [activeTab, setActiveTab] = useState('strategy');
   const [showTabBar, setShowTabBar] = useState(false);
-  const sectionRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
   const tabBarRef = useRef<HTMLDivElement | null>(null);
   const cardsRef = useRef<HTMLDivElement | null>(null);
+  const scrollContainerRef = useRef<HTMLDivElement | null>(null);
   const isScrolling = useRef(false);
   const showTabBarRef = useRef(false);
+  const containerInViewRef = useRef(false);
+  const activeTabRef = useRef('strategy');
 
   useEffect(() => {
+    // Scroll-based active panel detection
     const handleScroll = () => {
       if (isScrolling.current) return;
-      let currentId = 'strategy';
-      for (const { id } of TABS) {
-        const el = sectionRefs.current[id];
-        if (!el) continue;
-        if (el.getBoundingClientRect().top < 150) currentId = id;
-      }
-      setActiveTab(currentId);
-      const cardsEl = cardsRef.current;
-      if (cardsEl) {
-        const shouldShow = cardsEl.getBoundingClientRect().bottom < 100;
-        if (shouldShow !== showTabBarRef.current) {
-          showTabBarRef.current = shouldShow;
-          setShowTabBar(shouldShow);
-        }
+      const container = scrollContainerRef.current;
+      if (!container) return;
+      const rect = container.getBoundingClientRect();
+      const scrolledIntoView = -rect.top;
+      if (scrolledIntoView < 0) return;
+      // Each panel occupies 100vh of the 300vh container (3 panels × 100vh)
+      const idx = Math.min(2, Math.max(0, Math.floor(scrolledIntoView / window.innerHeight)));
+      const id = TABS[idx].id;
+      if (id !== activeTabRef.current) {
+        activeTabRef.current = id;
+        setActiveTab(id);
       }
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    // Cards observer — show tab bar when <20% of cards remain visible
+    const cardsEl = cardsRef.current;
+    const cardsObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const ratio = entry.intersectionRatio;
+          if (ratio < 0.21 && containerInViewRef.current && !showTabBarRef.current) {
+            showTabBarRef.current = true;
+            setShowTabBar(true);
+          }
+          else if (ratio >= 0.25 && showTabBarRef.current) {
+            showTabBarRef.current = false;
+            setShowTabBar(false);
+          }
+        });
+      },
+      { threshold: [0, 0.1, 0.2, 0.3] }
+    );
+
+    if (cardsEl) cardsObserver.observe(cardsEl);
+
+    // Container observer — hide tab bar when leaving the section
+    const containerEl = scrollContainerRef.current;
+    const containerObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          containerInViewRef.current = entry.isIntersecting;
+          if (!entry.isIntersecting && showTabBarRef.current) {
+            showTabBarRef.current = false;
+            setShowTabBar(false);
+          }
+        });
+      },
+      { threshold: 0 }
+    );
+
+    if (containerEl) containerObserver.observe(containerEl);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      cardsObserver.disconnect();
+      containerObserver.disconnect();
+    };
   }, []);
 
   const scrollTo = (id: string) => {
-    const el = sectionRefs.current[id];
-    if (!el) return;
-    if (!showTabBarRef.current) { showTabBarRef.current = true; setShowTabBar(true); }
-    const tabBarH = tabBarRef.current?.offsetHeight ?? 56;
-    const headerH = 64;
-    const top = el.getBoundingClientRect().top + window.scrollY - tabBarH - headerH - 16;
+    const idx = TABS.findIndex((t) => t.id === id);
+    if (idx < 0) return;
+    const container = scrollContainerRef.current;
+    if (!container) return;
+
+    if (!showTabBarRef.current) {
+      showTabBarRef.current = true;
+      setShowTabBar(true);
+    }
+
+    const top = container.offsetTop - NAV_HEIGHT + idx * window.innerHeight;
     window.scrollTo({ top, behavior: 'smooth' });
+    activeTabRef.current = id;
     setActiveTab(id);
     isScrolling.current = true;
     window.addEventListener('scrollend', () => { isScrolling.current = false; }, { once: true });
@@ -143,16 +193,19 @@ export default function ProcessSection() {
         </div>
       </div>
 
-      {/* ── Sticky tab bar ── */}
+      {/* ── Sticky tab bar (md+) ── */}
+      {/* Sits in the DOM flow between overview cards and panels.
+          Always occupies ~56px of space — invisible at first, then
+          revealed from underneath as the cards scroll off. */}
       <div
-        className="sticky top-[88px] z-30 w-full overflow-hidden transition-all duration-500 ease-in-out"
+        ref={tabBarRef}
+        className="hidden md:sticky md:block md:top-[76px] md:z-30 bg-white border-b border-[rgba(43,51,53,0.1)] transition-opacity duration-300 ease-in-out"
         style={{
-          maxHeight: showTabBar ? '96px' : 0,
-          background: '#ffffff',
-          borderBottom: showTabBar ? '1px solid rgba(43,51,53,0.08)' : '1px solid transparent',
+          opacity: showTabBar ? 1 : 0,
+          pointerEvents: showTabBar ? 'auto' : 'none',
         }}
       >
-        <div ref={tabBarRef} className="w-full" style={{ opacity: showTabBar ? 1 : 0, transition: 'opacity 0.3s ease 0.15s' }}>
+        <div className="w-full">
           <div className="max-w-[1000px] mx-auto px-6 md:px-8 pt-4 pb-3 flex gap-3">
             {TABS.map(({ id, label }) => {
               const isActiveBar = activeTab === id;
@@ -163,7 +216,7 @@ export default function ProcessSection() {
                   className="flex-1 py-3 px-5 text-[14px] font-semibold tracking-[0.02em] transition-all rounded-md"
                   style={{
                     background: isActiveBar ? '#EDEBE7' : 'rgba(237,235,231,0.5)',
-                    color: '#3d4d58',
+                    color: isActiveBar ? '#2b3335' : '#3d4d58',
                     border: isActiveBar ? '1px solid #2b3335' : '1px solid transparent',
                     cursor: 'pointer',
                     boxShadow: isActiveBar ? '0 0 16px rgba(245,160,32,0.76), 0 0 0 2px #ff7f29' : 'none',
@@ -177,146 +230,174 @@ export default function ProcessSection() {
         </div>
       </div>
 
-      {/* ── Step: Strategy ── */}
-      <div
-        ref={el => { sectionRefs.current['strategy'] = el; }}
-        id="process-strategy"
-        className="max-w-[1000px] mx-auto px-6 md:px-8 py-20 md:min-h-[calc(100vh-140px)] md:flex md:flex-col md:justify-center"
-      >
-        <div className="flex flex-col md:flex-row gap-12 md:gap-16 lg:gap-20 items-start">
-          <div className="flex-1">
-            <h3 className="font-light text-[#2b3335] tracking-[-0.01em] mb-4">
-              Start with the end in mind.
-            </h3>
-            <p className="text-[#43382f] leading-relaxed mb-8">
-              Lock in your dream outcome and KPIs before anyone steps to a mic.
-            </p>
-            <div className="flex flex-col gap-3">
-              {[
-                'Craft a compelling narrative arc',
-                'Spotlight expert voices and lived experience',
-                'Own your competitive angle and unique differentiation',
-                'Choose your binge-worthy format',
-              ].map(item => (
-                <div key={item} className="flex items-start gap-3">
-                  <CircleCheck />
-                  <span className="text-[#43382f] leading-relaxed">{item}</span>
+      {/* ── Sticky scroll container (md+) ── */}
+      <div ref={scrollContainerRef} className="md:relative">
+        <div className="md:h-[300vh]">
+
+          {/* ── Step: Strategy ── */}
+          {/* Each panel fills the full viewport (h-screen). Internal spacers
+              push the content below the nav (76px) + tab bar (56px).
+              bg-white prevents content from lower panels showing through. */}
+          <div
+            id="process-strategy"
+            className="md:sticky md:top-0 md:h-screen bg-white md:overflow-hidden"
+          >
+            <div className="flex flex-col h-full">
+              {/* Nav spacer */}
+              <div className="hidden md:block flex-shrink-0 h-[76px]" />
+              {/* Tab bar spacer */}
+              <div className="hidden md:block flex-shrink-0 h-[56px]" />
+              {/* Content area */}
+              <div className="flex-1 flex flex-col justify-center max-w-[1000px] mx-auto px-6 md:px-8 w-full">
+                <div className="flex flex-col md:flex-row gap-12 md:gap-16 lg:gap-20 items-start">
+                  <div className="flex-1">
+                    <h3 className="font-light text-[#2b3335] tracking-[-0.01em] mb-4">
+                      Start with the end in mind.
+                    </h3>
+                    <p className="text-[#43382f] leading-relaxed mb-8">
+                      Lock in your dream outcome and KPIs before anyone steps to a mic.
+                    </p>
+                    <div className="flex flex-col gap-3">
+                      {[
+                        'Craft a compelling narrative arc',
+                        'Spotlight expert voices and lived experience',
+                        'Own your competitive angle and unique differentiation',
+                        'Choose your binge-worthy format',
+                      ].map(item => (
+                        <div key={item} className="flex items-start gap-3">
+                          <CircleCheck />
+                          <span className="text-[#43382f] leading-relaxed">{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="hidden md:flex md:w-[320px] lg:w-[380px] flex-shrink-0 items-start">
+                    <Testimonial
+                      photo="/testimonial-erin-knopf.jpg"
+                      quote="You absolutely brought our voice and vision to the next phase and I want to commend your incredible talent at identifying the tone, message, and personality."
+                      name="Dr. Erin Knopf"
+                      title="Very Health"
+                    />
+                  </div>
                 </div>
-              ))}
+              </div>
             </div>
           </div>
-          <div className="hidden md:flex md:w-[320px] lg:w-[380px] flex-shrink-0 items-start">
-            <Testimonial
-              photo="/testimonial-erin-knopf.jpg"
-              quote="You absolutely brought our voice and vision to the next phase and I want to commend your incredible talent at identifying the tone, message, and personality."
-              name="Dr. Erin Knopf"
-              title="Very Health"
-            />
+
+          {/* Divider (mobile only) */}
+          <div className="md:hidden max-w-[1000px] mx-auto px-6 md:px-8">
+            <div style={{ height: '1px', background: 'rgba(43,51,53,0.1)' }} />
           </div>
-        </div>
-      </div>
 
-      {/* Divider */}
-      <div className="md:hidden max-w-[1000px] mx-auto px-6 md:px-8">
-        <div style={{ height: '1px', background: 'rgba(43,51,53,0.1)' }} />
-      </div>
-
-      {/* ── Step: Production ── */}
-      <div
-        ref={el => { sectionRefs.current['production'] = el; }}
-        id="process-production"
-        className="max-w-[1000px] mx-auto px-6 md:px-8 py-20 md:min-h-[calc(100vh-140px)] md:flex md:flex-col md:justify-center"
-      >
-        <div className="flex flex-col md:flex-row gap-12 md:gap-16 lg:gap-20 items-start">
-          <div className="flex-1">
-            <h3 className="font-light text-[#2b3335] tracking-[-0.01em] mb-4">
-              You show up. We handle everything else.
-            </h3>
-            <p className="text-[#43382f] leading-relaxed mb-8">
-              Enjoy the luxury of full-service production, knowing every technical and creative detail is handled.
-            </p>
-            <div className="flex flex-col gap-3">
-              {[
-                'Scheduling and prepping guests',
-                'Studio-quality audio and video',
-                'Full editing and sound design',
-                'Promotional assets',
-              ].map(item => (
-                <div key={item} className="flex items-start gap-3">
-                  <CircleCheck />
-                  <span className="text-[#43382f] leading-relaxed">{item}</span>
+          {/* ── Step: Production ── */}
+          <div
+            id="process-production"
+            className="md:sticky md:top-0 md:h-screen bg-white md:overflow-hidden"
+          >
+            <div className="flex flex-col h-full">
+              <div className="hidden md:block flex-shrink-0 h-[76px]" />
+              <div className="hidden md:block flex-shrink-0 h-[56px]" />
+              <div className="flex-1 flex flex-col justify-center max-w-[1000px] mx-auto px-6 md:px-8 w-full">
+                <div className="flex flex-col md:flex-row gap-12 md:gap-16 lg:gap-20 items-start">
+                  <div className="flex-1">
+                    <h3 className="font-light text-[#2b3335] tracking-[-0.01em] mb-4">
+                      You show up. We handle everything else.
+                    </h3>
+                    <p className="text-[#43382f] leading-relaxed mb-8">
+                      Enjoy the luxury of full-service production, knowing every technical and creative detail is handled.
+                    </p>
+                    <div className="flex flex-col gap-3">
+                      {[
+                        'Scheduling and prepping guests',
+                        'Studio-quality audio and video',
+                        'Full editing and sound design',
+                        'Promotional assets',
+                      ].map(item => (
+                        <div key={item} className="flex items-start gap-3">
+                          <CircleCheck />
+                          <span className="text-[#43382f] leading-relaxed">{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="hidden md:flex md:w-[320px] lg:w-[380px] flex-shrink-0 items-start">
+                    <Testimonial
+                      photo="/Jennifer-Kreatsoulas.jpg?v=2"
+                      quote="Working with Jessica on a video series several years ago still leads new clients to my business. The cinematic-quality content brought my brand's message to life and spoke directly to the hearts of clients and patients."
+                      name="Jennifer Kreatsoulas, PhD, C-IAYT"
+                      title="Yoga for Eating Disorders"
+                    />
+                  </div>
                 </div>
-              ))}
+              </div>
             </div>
           </div>
-          <div className="hidden md:flex md:w-[320px] lg:w-[380px] flex-shrink-0 items-start">
-            <Testimonial
-              photo="/Jennifer-Kreatsoulas.jpg?v=2"
-              quote="Working with Jessica on a video series several years ago still leads new clients to my business. The cinematic-quality content brought my brand's message to life and spoke directly to the hearts of clients and patients."
-              name="Jennifer Kreatsoulas, PhD, C-IAYT"
-              title="Yoga for Eating Disorders"
-            />
+
+          {/* Divider (mobile only) */}
+          <div className="md:hidden max-w-[1000px] mx-auto px-6 md:px-8">
+            <div style={{ height: '1px', background: 'rgba(43,51,53,0.1)' }} />
           </div>
-        </div>
-      </div>
 
-      {/* Divider */}
-      <div className="md:hidden max-w-[1000px] mx-auto px-6 md:px-8">
-        <div style={{ height: '1px', background: 'rgba(43,51,53,0.1)' }} />
-      </div>
-
-      {/* ── Step: Data-Driven Growth ── */}
-      <div
-        ref={el => { sectionRefs.current['growth'] = el; }}
-        id="process-growth"
-        className="max-w-[1000px] mx-auto px-6 md:px-8 py-20 md:min-h-[calc(100vh-140px)] md:flex md:flex-col md:justify-center"
-      >
-        <div className="flex flex-col md:flex-row gap-12 md:gap-16 lg:gap-20 items-start">
-          <div className="flex-1">
-            <h3 className="font-light text-[#2b3335] tracking-[-0.01em] mb-4">
-              Connect series performance to real business outcomes.
-            </h3>
-            <p className="text-[#43382f] leading-relaxed mb-8">
-              Know which episodes hold attention, which channels convert, and what&rsquo;s driving results.
-            </p>
-            <div className="flex flex-col gap-3 mb-10">
-              {[
-                'Track your KPIs',
-                'Measure episode-level performance',
-                'Gather direct audience feedback',
-                'See your series as a full 360° campaign',
-              ].map(item => (
-                <div key={item} className="flex items-start gap-3">
-                  <CircleCheck />
-                  <span className="text-[#43382f] leading-relaxed">{item}</span>
+          {/* ── Step: Data-Driven Growth ── */}
+          <div
+            id="process-growth"
+            className="md:sticky md:top-0 md:h-screen bg-white md:overflow-hidden"
+          >
+            <div className="flex flex-col h-full">
+              <div className="hidden md:block flex-shrink-0 h-[76px]" />
+              <div className="hidden md:block flex-shrink-0 h-[56px]" />
+              <div className="flex-1 flex flex-col justify-center max-w-[1000px] mx-auto px-6 md:px-8 w-full">
+                <div className="flex flex-col md:flex-row gap-12 md:gap-16 lg:gap-20 items-start">
+                  <div className="flex-1">
+                    <h3 className="font-light text-[#2b3335] tracking-[-0.01em] mb-4">
+                      Connect series performance to real business outcomes.
+                    </h3>
+                    <p className="text-[#43382f] leading-relaxed mb-8">
+                      Know which episodes hold attention, which channels convert, and what&rsquo;s driving results.
+                    </p>
+                    <div className="flex flex-col gap-3 mb-10">
+                      {[
+                        'Track your KPIs',
+                        'Measure episode-level performance',
+                        'Gather direct audience feedback',
+                        'See your series as a full 360° campaign',
+                      ].map(item => (
+                        <div key={item} className="flex items-start gap-3">
+                          <CircleCheck />
+                          <span className="text-[#43382f] leading-relaxed">{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="w-full md:w-[320px] lg:w-[380px] flex-shrink-0">
+                    <div className="mb-6">
+                      <div className="flex items-center gap-2 mb-3">
+                        <p className="text-[15px] font-semibold text-[#2b3335]">Public Series</p>
+                        <span className="text-[12px] text-[#677283] font-medium uppercase tracking-[0.06em]">— Patients &amp; Providers</span>
+                      </div>
+                      <div className="flex flex-wrap gap-2">
+                        {PUBLIC_PILLS.map(pill => (
+                          <span key={pill} style={{ background: '#a0522d', color: '#f9f5ef', borderRadius: 20, padding: '6px 14px', fontSize: 12, fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase' }}>{pill}</span>
+                        ))}
+                      </div>
+                    </div>
+                    <div>
+                      <div className="flex items-center gap-2 mb-3">
+                        <p className="text-[15px] font-semibold text-[#2b3335]">Internal Series</p>
+                        <span className="text-[12px] text-[#677283] font-medium uppercase tracking-[0.06em]">— Teams &amp; Providers</span>
+                      </div>
+                      <div className="flex flex-wrap gap-2">
+                        {INTERNAL_PILLS.map(pill => (
+                          <span key={pill} style={{ background: '#3d4d58', color: '#f9f5ef', borderRadius: 20, padding: '6px 14px', fontSize: 12, fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase' }}>{pill}</span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              ))}
-            </div>
-          </div>
-          <div className="w-full md:w-[320px] lg:w-[380px] flex-shrink-0">
-            <div className="mb-6">
-              <div className="flex items-center gap-2 mb-3">
-                <p className="text-[15px] font-semibold text-[#2b3335]">Public Series</p>
-                <span className="text-[12px] text-[#677283] font-medium uppercase tracking-[0.06em]">— Patients &amp; Providers</span>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {PUBLIC_PILLS.map(pill => (
-                  <span key={pill} style={{ background: '#f9f5ef', color: '#2b3335', borderRadius: 20, padding: '6px 14px', fontSize: 12, fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase' }}>{pill}</span>
-                ))}
-              </div>
-            </div>
-            <div>
-              <div className="flex items-center gap-2 mb-3">
-                <p className="text-[15px] font-semibold text-[#2b3335]">Internal Series</p>
-                <span className="text-[12px] text-[#677283] font-medium uppercase tracking-[0.06em]">— Teams &amp; Providers</span>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {INTERNAL_PILLS.map(pill => (
-                  <span key={pill} style={{ background: '#3d4d58', color: '#f9f5ef', borderRadius: 20, padding: '6px 14px', fontSize: 12, fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase' }}>{pill}</span>
-                ))}
               </div>
             </div>
           </div>
+
         </div>
       </div>
 
