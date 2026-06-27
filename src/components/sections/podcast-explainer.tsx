@@ -1,8 +1,15 @@
 "use client";
 
-import React, { useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 // ─── iOS-safe autoplay video ──────────────────────────────────────────────────
+// iOS Safari ignores the autoPlay attribute and won't buffer without video.load().
+// Strategy:
+//  1. Call video.load() to force iOS to start buffering.
+//  2. Play as soon as readyState ≥ 2 or canplay/loadeddata fires.
+//  3. If blocked (low-power mode), retry on first document touchstart — this
+//     covers the case where the video sits behind overlay divs and tap events
+//     never reach the <video> element itself.
 function AutoPlayVideo({ src, poster, className }: { src: string; poster: string; className: string }) {
   const ref = useRef<HTMLVideoElement>(null);
 
@@ -18,12 +25,17 @@ function AutoPlayVideo({ src, poster, className }: { src: string; poster: string
       played = true;
       video.play().catch(() => {
         played = false;
-        const onTouch = () => { video.play().catch(() => {}); };
+        // Blocked — retry on first user touch anywhere on the page.
+        // This handles videos behind overlay divs that intercept touch events.
+        const onTouch = () => {
+          video.play().catch(() => {});
+        };
         document.addEventListener('touchstart', onTouch, { once: true });
         document.addEventListener('click',      onTouch, { once: true });
       });
     };
 
+    // Force iOS Safari to start buffering; without this readyState stays 0.
     video.load();
 
     const obs = new IntersectionObserver(
@@ -62,115 +74,138 @@ function AutoPlayVideo({ src, poster, className }: { src: string; poster: string
 }
 
 export default function PodcastExplainer() {
+
   return (
     <section id="solutions" className="bg-[#f9f5ef]">
       <div className="container mx-auto px-4 md:px-8 pt-[80px] pb-[24px]">
 
-        {/* ── Eyebrow + headline ─────────────────────────────────────────── */}
+        {/* ── Pill + headline ────────────────────────────────────────────── */}
         <div className="text-center mb-16">
-          <div className="mb-5">
-            <span className="text-[#677283] text-[15px] font-semibold tracking-[0.1em] uppercase">
-              Narrative Media
-            </span>
-          </div>
           <h2 className="text-[#2b3335] text-[40px] md:text-[52px] font-light leading-[1.1] tracking-[-0.02em] mb-6 max-w-[720px] mx-auto">
-            Series capture attention in a <span className="font-serif italic" style={{ color: '#2b3335' }}>world full of noise</span>
+            Most content gets seconds. A strategic series gets <span className="font-serif italic" style={{ color: '#2b3335' }}>hours</span>.
           </h2>
-          <p className="text-[#43382f] text-[16px] md:text-[17px] leading-[1.5] max-w-[680px] mx-auto mb-6">
+          <p className="text-[#677283] text-[16px] md:text-[17px] leading-[1.5] max-w-[680px] mx-auto mb-6">
             Long-form podcast series in audio and video<br className="md:hidden" /> are the format with the highest trust,<br className="md:hidden" /> deepest engagement, and the stats to prove it.
           </p>
         </div>
 
-        {/* ── Two-column media + stats strip ──────────────────────────────── */}
-        <div className="max-w-[1000px] mx-auto">
-
-          {/* Two columns */}
-          <div className="flex flex-col md:flex-row gap-3 md:h-[600px]">
-
-            {/* Left — autoplay video with 71% stat at top */}
-            <div className="flex-1 relative overflow-hidden" style={{ borderRadius: 12, aspectRatio: '3/4', minHeight: 0 }}>
+        {/* ── Bento stats grid — 4-card 2-column layout ──────────────────────── */}
+        <div className="max-w-[1000px] mx-auto mb-12">
+          <div
+            className="hidden md:grid gap-3"
+            style={{ gridTemplateColumns: 'repeat(12, 1fr)', gridAutoRows: '40px' }}
+          >
+            {/* Left — Video card (full height, spans all rows) */}
+            <div
+              className="rounded-3xl flex flex-col gap-4 overflow-hidden"
+              style={{ gridColumn: '1 / 5', gridRow: '1 / 13', position: 'relative', backgroundColor: 'transparent' }}
+            >
               <AutoPlayVideo
                 src="/stats-idle-time-compressed.mp4"
                 poster="/stats-on-the-go.webp"
-                className="w-full h-full object-cover"
+                className="absolute inset-0 w-full h-full object-cover object-center"
               />
-              {/* Lucky Orange overlay */}
-              <div className="absolute inset-0" style={{ backgroundColor: 'rgba(255,127,41,0.50)' }} />
-              {/* 71% stat — top */}
-              <div className="absolute inset-0 flex flex-col justify-start p-7 z-10">
-                <p className="text-[#ffffff] text-[72px] font-light leading-none tracking-[-0.03em] mb-1">71%</p>
-                <p className="text-[#ffffff] text-[16px] font-medium leading-snug">
-                  Of podcast listeners tune in during their daily routine
-                  <a href="https://www.westwoodone.com/wp-content/uploads/2025/11/Cumulus-Media-and-Signal-Hill-Insights-Podcast-Download-Fall-2025_WWO.pdf" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">4</a>
-                </p>
+              <div className="absolute inset-0" style={{ backgroundColor: 'rgba(255, 127, 41, 0.45)', zIndex: 1 }} />
+              <div className="absolute" style={{ zIndex: 2, bottom: 16, left: 16, right: 16 }}>
+                <div style={{ background: 'rgba(255,255,255,0.12)', border: '1px solid rgba(255,255,255,0.22)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderRadius: 12, padding: '14px 18px', display: 'inline-block' }}>
+                  <p className="text-[#ffffff] text-[56px] font-light leading-none tracking-[-0.03em] mb-1">92%</p>
+                  <p className="text-[#ffffff] text-[17px] font-medium leading-snug">Of podcast listeners tune in during their daily routine<a href="https://www.westwoodone.com/wp-content/uploads/2025/11/Cumulus-Media-and-Signal-Hill-Insights-Podcast-Download-Fall-2025_WWO.pdf" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">4</a></p>
+                </div>
               </div>
             </div>
 
-            {/* Right — Jessica photo */}
-            <div className="flex-1 overflow-hidden" style={{ borderRadius: 12, aspectRatio: '3/4', minHeight: 0 }}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/jessica-flint-mic.jpg"
-                alt="Jessica Flint at the microphone"
-                className="w-full h-full object-cover object-top"
-              />
+            {/* Top right — 75% Profit Uplift */}
+            <div
+              className="rounded-3xl p-7 flex flex-col justify-center relative overflow-hidden"
+              style={{ gridColumn: '5 / 9', gridRow: '1 / 7', background: 'linear-gradient(to right, #3d4d58 0%, #6b4b3e 55%, #a0522d 100%)' }}
+            >
+              <p className="text-[#ffffff] text-[56px] font-light leading-none tracking-[-0.04em] mb-1">75%</p>
+              <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-1">Profit Uplift<a href="https://www.radiocentre.org" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">1</a></p>
+              <p className="text-[#ffffff]/65 text-[15px] leading-[1.5]">Audio in the marketing mix delivers 75% profit uplift and 19% customer acquisition gain — across 1,262 campaigns over 17 years.</p>
             </div>
 
+            {/* Bottom right left — 81% Increase in Consumer Trust */}
+            <div
+              className="rounded-3xl p-6 flex flex-col justify-center relative overflow-hidden"
+              style={{ gridColumn: '9 / 13', gridRow: '1 / 7', backgroundColor: '#3d4d58' }}
+            >
+              <p className="text-[#ffffff] text-[56px] font-light leading-none tracking-[-0.04em] mb-2">81%</p>
+              <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-1">Increase in Consumer Trust<a href="https://www.radiocentre.org" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">2</a></p>
+              <p className="text-[#ffffff]/65 text-[15px] leading-[1.5]">Listeners consistently rate brands that show up in audio as more credible and trustworthy.</p>
+            </div>
+
+            {/* Bottom right right — 6–7× Greater Recall */}
+            <div
+              className="rounded-3xl p-6 flex flex-col justify-center relative overflow-hidden"
+              style={{ gridColumn: '5 / 13', gridRow: '7 / 13', backgroundColor: '#ede8e1' }}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/Who-We-Work-With-Healthcare-Professionals-and-Leaders.webp?v=2"
+                alt=""
+                className="absolute inset-0 w-full h-full object-cover object-[center_20%]"
+                style={{ zIndex: 0 }}
+              />
+              <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(43,51,53,0.75) 40%, rgba(43,51,53,0.15) 100%)', borderRadius: 24, zIndex: 1 }} />
+              <div style={{ position: 'relative', zIndex: 2 }}>
+                <p className="text-[#ffffff] text-[56px] font-light leading-none tracking-[-0.04em] mb-2">6–7×</p>
+                <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-1">Greater Recall<a href="https://link.springer.com/article/10.3758/BF03332778" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">3</a></p>
+                <p className="text-[rgba(255,255,255,0.75)] text-[15px] leading-[1.5]" style={{ maxWidth: '260px' }}>Narratives are recalled six to seven times more than information studied through repetition alone.</p>
+              </div>
+            </div>
           </div>
 
-          {/* Stats strip — all Flint with grain */}
-          <div className="grid grid-cols-2 md:grid-cols-4">
-            {[
-              {
-                n: '6–7×', label: 'GREATER RECALL',
-                desc: 'Narratives are recalled six to seven times more than information studied through repetition alone.',
-                ref: '1', refUrl: 'https://link.springer.com/article/10.3758/BF03332778',
-              },
-              {
-                n: '80%', label: 'COMPLETION RATE',
-                desc: 'Our leading formats ensure your vital messages are heard, absorbed, and completed.',
-                ref: '3', refUrl: 'https://signalhillinsights.com/measuring-the-success-of-branded-podcasts-choosing-the-right-yardsticks/',
-              },
-              {
-                n: '61%', label: 'TRUST LIFT',
-                desc: 'Podcasts improve brand perception and confidence by humanizing the science.',
-                ref: '3', refUrl: 'https://signalhillinsights.com/measuring-the-success-of-branded-podcasts-choosing-the-right-yardsticks/',
-              },
-              {
-                n: '3×', label: 'MORE INFLUENCE',
-                desc: 'Podcasts carry triple the authority of standard influencer or social-led outreach.',
-                ref: '5', refUrl: 'https://cumuluspodcastnetwork.com/cumulus-media-podcast-download-fall-2025/',
-              },
-            ].map((stat, i) => {
-              const bl = i === 0 ? '0px' : i === 2 ? '12px' : '0px';
-              const br = i === 1 ? '0px' : i === 3 ? '12px' : '0px';
-              return (
-                <div
-                  key={stat.label}
-                  className="relative flex flex-col items-center text-center px-5 py-5 overflow-hidden"
-                  style={{ backgroundColor: '#4a5a66', borderRadius: `0 0 ${br} ${bl}` }}
-                >
-                  {/* Grain overlay */}
-                  <div
-                    className="absolute inset-0 pointer-events-none"
-                    style={{
-                      backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='gs${i}'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23gs${i})'/%3E%3C/svg%3E")`,
-                      backgroundSize: '400px 400px',
-                      opacity: 0.28,
-                      mixBlendMode: 'overlay',
-                    }}
-                  />
-                  <div className="relative z-10 flex flex-col items-center">
-                    <p className="text-[32px] font-medium leading-none mb-1 text-white">{stat.n}</p>
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.08em] mb-2" style={{ color: 'rgba(255,255,255,0.6)' }}>
-                      {stat.label}
-                      <a href={stat.refUrl} target="_blank" rel="noopener noreferrer" className="align-super ml-0.5 opacity-60 hover:opacity-100 transition-opacity" style={{ fontSize: 8 }}>{stat.ref}</a>
-                    </p>
-                    <p className="text-[12px] leading-[1.5]" style={{ color: 'rgba(255,255,255,0.75)' }}>{stat.desc}</p>
-                  </div>
+          {/* ── Mobile cards ── */}
+          <div className="flex md:hidden flex-col gap-3">
+            {/* Mobile A — Video */}
+            <div className="rounded-3xl overflow-hidden relative flex flex-col min-h-[560px]" style={{ backgroundColor: 'transparent' }}>
+              <AutoPlayVideo
+                src="/stats-idle-time-compressed.mp4"
+                poster="/stats-on-the-go.webp"
+                className="absolute inset-0 w-full h-full object-cover object-center"
+              />
+              <div className="absolute inset-0" style={{ backgroundColor: 'rgba(255, 127, 41, 0.45)', zIndex: 1 }} />
+              <div className="relative p-7 flex flex-col h-full" style={{ zIndex: 2 }}>
+                <p className="text-[#ffffff] text-[64px] font-light leading-none tracking-[-0.03em] mb-1">92%</p>
+                <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-4">Of podcast listeners tune in during their daily routine<a href="https://www.westwoodone.com/wp-content/uploads/2025/11/Cumulus-Media-and-Signal-Hill-Insights-Podcast-Download-Fall-2025_WWO.pdf" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">4</a></p>
+                <div className="flex flex-col gap-2 mt-auto">
+                  {[
+                    { emoji: '🍳', label: 'Cooking' },
+                    { emoji: '🧹', label: 'Cleaning' },
+                    { emoji: '🛒', label: 'Running Errands' },
+                    { emoji: '🚗', label: 'Driving' },
+                    { emoji: '💪', label: 'Exercising' },
+                  ].map((item, i) => (
+                    <div key={item.label} className="flex items-center gap-3 px-4 py-2.5 rounded-[10px]"
+                      style={{ backgroundColor: `rgba(253,255,214,${0.07 + i * 0.03})` }}>
+                      <span style={{ fontSize: '18px' }}>{item.emoji}</span>
+                      <span className="text-[#ffffff] text-[13px] font-medium">{item.label}</span>
+                    </div>
+                  ))}
                 </div>
-              );
-            })}
+              </div>
+            </div>
+
+            {/* Mobile B — 75% Profit Uplift */}
+            <div className="rounded-3xl p-7 flex flex-col relative overflow-hidden" style={{ background: 'linear-gradient(to right, #3d4d58 0%, #6b4b3e 55%, #a0522d 100%)' }}>
+              <p className="text-[#ffffff] text-[64px] font-light leading-none tracking-[-0.04em] mb-2">75%</p>
+              <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-1">Profit Uplift<a href="https://www.radiocentre.org" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">1</a></p>
+              <p className="text-[#ffffff]/65 text-[15px] leading-[1.5]">Audio in the marketing mix delivers 75% profit uplift and 19% customer acquisition gain — across 1,262 campaigns over 17 years.</p>
+            </div>
+
+            {/* Mobile C — 81% Increase in Consumer Trust */}
+            <div className="rounded-3xl p-7 flex flex-col min-h-[200px] relative overflow-hidden" style={{ backgroundColor: '#3d4d58' }}>
+              <p className="text-[#ffffff] text-[64px] font-light leading-none tracking-[-0.04em] mb-2">81%</p>
+              <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-1">Increase in Consumer Trust<a href="https://www.radiocentre.org" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">2</a></p>
+              <p className="text-[#ffffff]/65 text-[15px] leading-[1.5]">Listeners consistently rate brands that show up in audio as more credible and trustworthy.</p>
+            </div>
+
+            {/* Mobile D — 6–7× Greater Recall */}
+            <div className="rounded-3xl p-7 flex flex-col min-h-[200px] relative overflow-hidden" style={{ backgroundColor: '#ede8e1' }}>
+              <p className="text-[#2b3335] text-[64px] font-light leading-none tracking-[-0.04em] mb-2">6–7×</p>
+              <p className="text-[#2b3335] text-[17px] font-medium leading-snug mb-1">Greater Recall<a href="https://link.springer.com/article/10.3758/BF03332778" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">3</a></p>
+              <p className="text-[#2b3335]/65 text-[15px] leading-[1.5]" style={{ maxWidth: '260px' }}>Narratives are recalled six to seven times more than information studied through repetition alone.</p>
+            </div>
           </div>
 
         </div>

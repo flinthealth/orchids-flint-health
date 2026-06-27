@@ -49,6 +49,7 @@ const CARD_ICONS: Record<number, string> = {
   1: '/icon-patient-education-v10.png?v=6',
   2: '/icon-patient-journey-v12.png?v=5',
   3: '/icon-team-v12.png?v=6',
+  4: '/icon-patient-journey-v12.png?v=5',
 };
 
 const cards = [
@@ -59,6 +60,7 @@ const cards = [
     headline: 'Get providers up to speed and practice-ready',
     headlineLarge: true,
     body: "",
+    stat: "75% of clinicians feel overwhelmed by the pace of treatment advances.",
     applications: [
       'Protocol walkthroughs with expert clinical commentary',
       'Clinical case study series',
@@ -73,6 +75,7 @@ const cards = [
     headline: 'Reach patients before, during, and after care',
     headlineLarge: true,
     body: "",
+    stat: "9 in 10 patients struggle to understand health information.",
     applications: [
       'Condition and treatment education series',
       'Post-diagnosis support and shared decision-making guides',
@@ -101,6 +104,7 @@ const cards = [
     headline: 'Unite and scale your team',
     headlineLarge: true,
     body: "",
+    stat: "Poor internal communication costs organizations $12K+ per employee annually.",
     applications: [
       'Leadership vision and values series',
       'Recruitment and new hire onboarding',
@@ -108,7 +112,22 @@ const cards = [
       'Knowledge transfer and change rollouts',
     ],
   },
-] as const;
+  {
+    id: 4,
+    filters: ['authority'] as FilterKey[],
+    title: 'Partner & Advocacy Distribution',
+    headline: 'Reach audiences through organizations they already trust',
+    headlineLarge: true,
+    body: "",
+    stat: "64% of listeners get podcast recommendations from people they trust. 72% act on them.",
+    applications: [
+      'Patient advocacy network partnerships',
+      'Co-branded series with condition-specific communities',
+      'Sponsored content through mission-aligned organizations',
+      'Expert collaborations vetted for clinical credibility',
+    ],
+  },
+];
 
 const BG         = '#f9f5ef';
 const EDGE_COLOR = '#e0dbd5';
@@ -125,7 +144,7 @@ const GRAIN_STYLE: React.CSSProperties = {
 };
 
 export default function StackingCards() {
-  const [scales,              setScales]              = useState<number[]>([1, 1, 1, 1]);
+  const [scales,              setScales]              = useState<number[]>([1, 1, 1, 1, 1]);
   const [mobileAdjustedTops,  setMobileAdjustedTops]  = useState<number[]>([...TOP_OFFSETS_MOBILE]);
 
   const cardRefsMobile        = useRef<(HTMLDivElement | null)[]>([]);
@@ -221,6 +240,11 @@ export default function StackingCards() {
               : <p className="text-[15px] font-semibold uppercase tracking-[0.1em] leading-[1.4] mb-4" style={{ color: '#6b4b3e' }}>{card.headline}</p>
             }
             <p className="leading-[1.5] mb-8" style={{ color: '#2b3335' }}>{card.body}</p>
+            {card.stat && (
+              <p className="text-[13px] italic leading-[1.5] mb-6" style={{ color: '#677283' }}>
+                {card.stat}
+              </p>
+            )}
             <div className="flex flex-col gap-[10px]">
               {(card.applications as unknown as string[]).map((item) => (
                 <div key={item} className="flex items-center gap-3 px-4 py-3 rounded-xl" style={{ backgroundColor: ITEM_BG }}>
@@ -245,6 +269,11 @@ export default function StackingCards() {
                 : <p className="text-[15px] font-semibold uppercase tracking-[0.1em] leading-[1.4] mb-4" style={{ color: '#6b4b3e' }}>{card.headline}</p>
               }
               <p className="leading-[1.5] mb-8" style={{ color: '#2b3335' }}>{card.body}</p>
+              {card.stat && (
+                <p className="text-[13px] italic leading-[1.5] mb-6" style={{ color: '#677283' }}>
+                  {card.stat}
+                </p>
+              )}
               <div className="flex flex-col gap-[10px]">
                 {(card.applications as unknown as string[]).map((item) => (
                   <div key={item} className="flex items-center gap-3 px-4 py-3 rounded-xl" style={{ backgroundColor: ITEM_BG }}>

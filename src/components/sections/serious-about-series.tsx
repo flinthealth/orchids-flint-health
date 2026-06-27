@@ -21,7 +21,7 @@ export default function SeriousAboutSeries() {
           {/* Text column */}
           <div className="md:max-w-[540px] md:mx-auto lg:max-w-[560px] lg:pt-4 lg:mx-0">
               <h3 className="font-light leading-[1.15] tracking-[-0.02em] mb-4" style={{ color: '#2b3335' }}>
-                We make it easy for healthcare brands to develop, launch, and grow branded series across all channels.
+                We make it easy for healthcare brands to develop, launch, and grow branded series across owned and partner channels.
               </h3>
 
             {/* Mobile-only radar */}

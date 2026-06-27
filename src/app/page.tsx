@@ -40,7 +40,7 @@ export default function Home() {
         <SeriousAboutSeries />
         <PodcastShowcase />
         <ContentBridge />
-        <SeriesReach />
+        <PodcastExplainer />
         <StackingCards />
         {/* <CarePlatformSection /> */}
         <ProcessSection />
@@ -49,7 +49,7 @@ export default function Home() {
         {/* <ProblemSection /> */}
         {/* <StatInterstitial /> */}
         {/* <ROIAttentionSection /> */}
-        {/* <PodcastExplainer /> */}
+        {/* <SeriesReach /> */}
         {/* <PodcastPathways /> */}
         <DNAWaveSection />
         {/* <AudienceSolutions /> */}
