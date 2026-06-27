@@ -38,6 +38,7 @@ export default function Home() {
         <HeroSection />
         <IgniteSection />
         <SeriousAboutSeries />
+        <PodcastShowcase />
         <ContentBridge />
         <SeriesReach />
         <StackingCards />
@@ -50,7 +51,6 @@ export default function Home() {
         {/* <ROIAttentionSection /> */}
         {/* <PodcastExplainer /> */}
         {/* <PodcastPathways /> */}
-        <PodcastShowcase />
         <DNAWaveSection />
         {/* <AudienceSolutions /> */}
         {/* <PodcastPulse /> */}

@@ -249,20 +249,12 @@ export default function ProcessSection() {
         <div className="md:h-[300vh]">
 
           {/* ── Step: Strategy ── */}
-          {/* Each panel fills the full viewport (h-screen). Internal spacers
-              push the content below the nav (76px) + tab bar (56px).
-              bg-white prevents content from lower panels showing through. */}
-          <div
-            id="process-strategy"
-            className="md:sticky md:top-0 md:h-screen bg-white md:overflow-hidden"
-          >
-            <div className="flex flex-col h-full">
-              {/* Nav spacer */}
-              <div className="hidden md:block flex-shrink-0 h-[76px]" />
-              {/* Tab bar spacer */}
-              <div className="hidden md:block flex-shrink-0 h-[56px]" />
-              {/* Content area */}
-              <div className="flex-1 flex flex-col justify-start pt-16 max-w-[1000px] mx-auto px-6 md:px-8 w-full">
+          <div className="md:h-screen">
+            <div
+              id="process-strategy"
+              className="md:sticky md:top-[132px] md:h-[calc(100vh-132px)] bg-white md:overflow-hidden"
+            >
+              <div className="flex flex-col h-full justify-center py-12 max-w-[1000px] mx-auto px-6 md:px-8 w-full">
                 <div className="flex flex-col md:flex-row gap-12 md:gap-16 lg:gap-20 items-start">
                   <div className="flex-1">
                     <h3 className="font-light text-[#2b3335] tracking-[-0.01em] mb-4">
@@ -304,14 +296,12 @@ export default function ProcessSection() {
           </div>
 
           {/* ── Step: Production ── */}
-          <div
-            id="process-production"
-            className="md:sticky md:top-0 md:h-screen bg-white md:overflow-hidden"
-          >
-            <div className="flex flex-col h-full">
-              <div className="hidden md:block flex-shrink-0 h-[76px]" />
-              <div className="hidden md:block flex-shrink-0 h-[56px]" />
-              <div className="flex-1 flex flex-col justify-start pt-16 max-w-[1000px] mx-auto px-6 md:px-8 w-full">
+          <div className="md:h-screen">
+            <div
+              id="process-production"
+              className="md:sticky md:top-[132px] md:h-[calc(100vh-132px)] bg-white md:overflow-hidden"
+            >
+              <div className="flex flex-col h-full justify-center py-12 max-w-[1000px] mx-auto px-6 md:px-8 w-full">
                 <div className="flex flex-col md:flex-row gap-12 md:gap-16 lg:gap-20 items-start">
                   <div className="flex-1">
                     <h3 className="font-light text-[#2b3335] tracking-[-0.01em] mb-4">
@@ -353,14 +343,12 @@ export default function ProcessSection() {
           </div>
 
           {/* ── Step: Data-Driven Growth ── */}
-          <div
-            id="process-growth"
-            className="md:sticky md:top-0 md:h-screen bg-white md:overflow-hidden"
-          >
-            <div className="flex flex-col h-full">
-              <div className="hidden md:block flex-shrink-0 h-[76px]" />
-              <div className="hidden md:block flex-shrink-0 h-[56px]" />
-              <div className="flex-1 flex flex-col justify-start pt-16 max-w-[1000px] mx-auto px-6 md:px-8 w-full">
+          <div className="md:h-screen">
+            <div
+              id="process-growth"
+              className="md:sticky md:top-[132px] md:h-[calc(100vh-132px)] bg-white md:overflow-hidden"
+            >
+              <div className="flex flex-col h-full justify-center py-12 max-w-[1000px] mx-auto px-6 md:px-8 w-full">
                 <div className="flex flex-col md:flex-row gap-12 md:gap-16 lg:gap-20 items-start">
                   <div className="flex-1">
                     <h3 className="font-light text-[#2b3335] tracking-[-0.01em] mb-4">
