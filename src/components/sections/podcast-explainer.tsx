@@ -136,7 +136,7 @@ export default function PodcastExplainer() {
 
             {/* Bottom right right — 6–7× Greater Recall */}
             <div
-              className="rounded-3xl p-6 flex flex-col justify-center relative overflow-hidden"
+              className="rounded-3xl p-6 flex flex-col justify-end relative overflow-hidden"
               style={{ gridColumn: '5 / 13', gridRow: '7 / 13', backgroundColor: '#ede8e1' }}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -147,7 +147,7 @@ export default function PodcastExplainer() {
                 style={{ zIndex: 0 }}
               />
               <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(43,51,53,0.75) 40%, rgba(43,51,53,0.15) 100%)', borderRadius: 24, zIndex: 1 }} />
-              <div style={{ position: 'relative', zIndex: 2 }}>
+              <div className="flex flex-col justify-end" style={{ position: 'relative', zIndex: 2 }}>
                 <p className="text-[#ffffff] text-[56px] font-light leading-none tracking-[-0.04em] mb-2">6–7×</p>
                 <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-1">Greater Recall<a href="https://link.springer.com/article/10.3758/BF03332778" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">3</a></p>
                 <p className="text-[rgba(255,255,255,0.75)] text-[15px] leading-[1.5]" style={{ maxWidth: '260px' }}>Narratives are recalled six to seven times more than information studied through repetition alone.</p>
@@ -168,22 +168,7 @@ export default function PodcastExplainer() {
               <div className="relative p-7 flex flex-col h-full" style={{ zIndex: 2 }}>
                 <p className="text-[#ffffff] text-[64px] font-light leading-none tracking-[-0.03em] mb-1">92%</p>
                 <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-4">Of podcast listeners tune in during their daily routine<a href="https://www.westwoodone.com/wp-content/uploads/2025/11/Cumulus-Media-and-Signal-Hill-Insights-Podcast-Download-Fall-2025_WWO.pdf" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">4</a></p>
-                <div className="flex flex-col gap-2 mt-auto">
-                  {[
-                    { emoji: '🍳', label: 'Cooking' },
-                    { emoji: '🧹', label: 'Cleaning' },
-                    { emoji: '🛒', label: 'Running Errands' },
-                    { emoji: '🚗', label: 'Driving' },
-                    { emoji: '💪', label: 'Exercising' },
-                  ].map((item, i) => (
-                    <div key={item.label} className="flex items-center gap-3 px-4 py-2.5 rounded-[10px]"
-                      style={{ backgroundColor: `rgba(253,255,214,${0.07 + i * 0.03})` }}>
-                      <span style={{ fontSize: '18px' }}>{item.emoji}</span>
-                      <span className="text-[#ffffff] text-[13px] font-medium">{item.label}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
+                              </div>
             </div>
 
             {/* Mobile B — 75% Profit Uplift */}
@@ -193,21 +178,21 @@ export default function PodcastExplainer() {
               <p className="text-[15px] leading-[1.5]" style={{ color: 'rgba(255,255,255,0.92)' }}>Audio in the marketing mix delivers 75% profit uplift and 19% customer acquisition gain — across 1,262 campaigns over 17 years.</p>
             </div>
 
+            {/* Mobile D — 6–7× Greater Recall */}
+            <div className="rounded-3xl flex flex-col relative overflow-hidden" style={{ backgroundImage: 'url(/Who-We-Work-With-Healthcare-Professionals-and-Leaders.webp?v=3)', backgroundSize: 'cover', backgroundPosition: '85% 15%', position: 'relative', overflow: 'hidden', minHeight: '320px', backgroundColor: '#6b4b3e' }}>
+              <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(43,51,53,0.75) 40%, rgba(43,51,53,0.15) 100%)', borderRadius: 24, zIndex: 1 }} />
+              <div className="p-7 flex flex-col justify-end h-full" style={{ position: 'relative', zIndex: 2 }}>
+                <p className="text-[#ffffff] text-[64px] font-light leading-none tracking-[-0.04em] mb-2">6–7×</p>
+                <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-1">Greater Recall<a href="https://link.springer.com/article/10.3758/BF03332778" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">3</a></p>
+                <p className="text-[rgba(255,255,255,0.75)] text-[15px] leading-[1.5]" style={{ maxWidth: '260px' }}>Narratives are recalled six to seven times more than information studied through repetition alone.</p>
+              </div>
+            </div>
+
             {/* Mobile C — 81% Increase in Consumer Trust */}
             <div className="rounded-3xl p-7 flex flex-col min-h-[200px] relative overflow-hidden" style={{ background: 'linear-gradient(to bottom, #3d4d58 0%, #1a2530 100%)' }}>
               <p className="text-[#ffffff] text-[64px] font-light leading-none tracking-[-0.04em] mb-2">81%</p>
               <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-1">Increase in Consumer Trust<a href="https://www.radiocentre.org" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">2</a></p>
               <p className="text-[#ffffff]/65 text-[15px] leading-[1.5]">Listeners consistently rate brands that show up in audio as more credible and trustworthy.</p>
-            </div>
-
-            {/* Mobile D — 6–7× Greater Recall */}
-            <div className="rounded-3xl flex flex-col relative overflow-hidden" style={{ backgroundImage: 'url(/Who-We-Work-With-Healthcare-Professionals-and-Leaders.webp)', backgroundSize: 'cover', backgroundPosition: '85% center', position: 'relative', overflow: 'hidden', minHeight: '320px' }}>
-              <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(43,51,53,0.75) 40%, rgba(43,51,53,0.15) 100%)', borderRadius: 24, zIndex: 1 }} />
-              <div className="p-7 flex flex-col h-full" style={{ position: 'relative', zIndex: 2 }}>
-                <p className="text-[#ffffff] text-[64px] font-light leading-none tracking-[-0.04em] mb-2">6–7×</p>
-                <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-1">Greater Recall<a href="https://link.springer.com/article/10.3758/BF03332778" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">3</a></p>
-                <p className="text-[rgba(255,255,255,0.75)] text-[15px] leading-[1.5]" style={{ maxWidth: '260px' }}>Narratives are recalled six to seven times more than information studied through repetition alone.</p>
-              </div>
             </div>
           </div>
 
