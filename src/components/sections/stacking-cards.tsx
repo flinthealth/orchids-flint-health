@@ -60,7 +60,8 @@ const cards = [
     headline: 'Get providers up to speed and practice-ready',
     headlineLarge: true,
     body: "",
-    stat: "75% of clinicians feel overwhelmed by the pace of treatment advances.",
+    stat: "",
+    statNode: <>In a field where 75% of clinicians feel overwhelmed by treatment advances,<sup style={{ fontSize: '10px', opacity: 0.6, marginLeft: '1px' }}>6</sup> the brand that educates becomes the brand that's trusted.</>,
     applications: [
       'Protocol walkthroughs with expert clinical commentary',
       'Clinical case study series',
@@ -240,9 +241,9 @@ export default function StackingCards() {
               : <p className="text-[15px] font-semibold uppercase tracking-[0.1em] leading-[1.4] mb-4" style={{ color: '#6b4b3e' }}>{card.headline}</p>
             }
             <p className="leading-[1.5] mb-8" style={{ color: '#2b3335' }}>{card.body}</p>
-            {card.stat && (
-              <p className="text-[13px] italic leading-[1.5] mb-6" style={{ color: '#677283' }}>
-                {card.stat}
+            {(card.statNode || card.stat) && (
+              <p className="leading-[1.5] mb-6" style={{ fontSize: 15, color: '#43382f', fontStyle: 'normal' }}>
+                {card.statNode || card.stat}
               </p>
             )}
             <div className="flex flex-col gap-[10px]">
@@ -269,9 +270,9 @@ export default function StackingCards() {
                 : <p className="text-[15px] font-semibold uppercase tracking-[0.1em] leading-[1.4] mb-4" style={{ color: '#6b4b3e' }}>{card.headline}</p>
               }
               <p className="leading-[1.5] mb-8" style={{ color: '#2b3335' }}>{card.body}</p>
-              {card.stat && (
-                <p className="text-[13px] italic leading-[1.5] mb-6" style={{ color: '#677283' }}>
-                  {card.stat}
+              {(card.statNode || card.stat) && (
+                <p className="text-[17px] leading-[1.6] mb-3" style={{ color: '#43382f' }}>
+                  {card.statNode || card.stat}
                 </p>
               )}
               <div className="flex flex-col gap-[10px]">
