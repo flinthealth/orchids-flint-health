@@ -179,7 +179,7 @@ export default function PodcastExplainer() {
             </div>
 
             {/* Mobile D — 6–7× Greater Recall */}
-            <div className="rounded-3xl flex flex-col relative overflow-hidden" style={{ backgroundImage: 'url(/Who-We-Work-With-Healthcare-Professionals-and-Leaders.webp?v=3)', backgroundSize: 'cover', backgroundPosition: '85% 15%', position: 'relative', overflow: 'hidden', minHeight: '320px', backgroundColor: '#6b4b3e' }}>
+            <div className="rounded-3xl flex flex-col relative overflow-hidden" style={{ backgroundImage: 'url(/Who-We-Work-With-Healthcare-Professionals-and-Leaders.webp?v=3)', backgroundSize: 'cover', backgroundPosition: '85% 15%', position: 'relative', overflow: 'hidden', minHeight: '320px', height: '400px', backgroundColor: '#6b4b3e' }}>
               <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(43,51,53,0.75) 40%, rgba(43,51,53,0.15) 100%)', borderRadius: 24, zIndex: 1 }} />
               <div className="p-7 flex flex-col justify-end h-full" style={{ position: 'relative', zIndex: 2 }}>
                 <p className="text-[#ffffff] text-[64px] font-light leading-none tracking-[-0.04em] mb-2">6–7×</p>
