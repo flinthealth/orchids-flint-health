@@ -85,7 +85,7 @@ export default function PodcastExplainer() {
             Most content gets seconds. A strategic series gets <span className="font-serif italic" style={{ color: '#2b3335' }}>hours</span>.
           </h2>
           <p className="text-[#677283] text-[16px] md:text-[17px] leading-[1.5] max-w-[680px] mx-auto mb-6">
-            Long-form podcast series in audio and video<br className="md:hidden" /> are the format with the highest trust,<br className="md:hidden" /> deepest engagement, and the stats to prove it.
+            Long-form series in audio and video<br className="md:hidden" /> are the format with the highest trust,<br className="md:hidden" /> deepest engagement, and the stats to prove it.
           </p>
         </div>
 
@@ -117,17 +117,17 @@ export default function PodcastExplainer() {
             {/* Top right — 75% Profit Uplift */}
             <div
               className="rounded-3xl p-7 flex flex-col justify-center relative overflow-hidden"
-              style={{ gridColumn: '5 / 9', gridRow: '1 / 7', background: 'linear-gradient(to right, #3d4d58 0%, #6b4b3e 55%, #a0522d 100%)' }}
+              style={{ gridColumn: '5 / 9', gridRow: '1 / 7', background: 'linear-gradient(to bottom, #f5a020 0%, #ff7f29 100%)' }}
             >
               <p className="text-[#ffffff] text-[56px] font-light leading-none tracking-[-0.04em] mb-1">75%</p>
               <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-1">Profit Uplift<a href="https://www.radiocentre.org" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">1</a></p>
-              <p className="text-[#ffffff]/65 text-[15px] leading-[1.5]">Audio in the marketing mix delivers 75% profit uplift and 19% customer acquisition gain — across 1,262 campaigns over 17 years.</p>
+              <p className="text-[15px] leading-[1.5]" style={{ color: 'rgba(255,255,255,0.92)' }}>Audio in the marketing mix delivers 75% profit uplift and 19% customer acquisition gain — across 1,262 campaigns over 17 years.</p>
             </div>
 
             {/* Bottom right left — 81% Increase in Consumer Trust */}
             <div
               className="rounded-3xl p-6 flex flex-col justify-center relative overflow-hidden"
-              style={{ gridColumn: '9 / 13', gridRow: '1 / 7', backgroundColor: '#3d4d58' }}
+              style={{ gridColumn: '9 / 13', gridRow: '1 / 7', background: 'linear-gradient(to bottom, #3d4d58 0%, #1a2530 100%)' }}
             >
               <p className="text-[#ffffff] text-[56px] font-light leading-none tracking-[-0.04em] mb-2">81%</p>
               <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-1">Increase in Consumer Trust<a href="https://www.radiocentre.org" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">2</a></p>
@@ -187,24 +187,27 @@ export default function PodcastExplainer() {
             </div>
 
             {/* Mobile B — 75% Profit Uplift */}
-            <div className="rounded-3xl p-7 flex flex-col relative overflow-hidden" style={{ background: 'linear-gradient(to right, #3d4d58 0%, #6b4b3e 55%, #a0522d 100%)' }}>
+            <div className="rounded-3xl p-7 flex flex-col relative overflow-hidden" style={{ background: 'linear-gradient(to bottom, #f5a020 0%, #ff7f29 100%)' }}>
               <p className="text-[#ffffff] text-[64px] font-light leading-none tracking-[-0.04em] mb-2">75%</p>
               <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-1">Profit Uplift<a href="https://www.radiocentre.org" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">1</a></p>
-              <p className="text-[#ffffff]/65 text-[15px] leading-[1.5]">Audio in the marketing mix delivers 75% profit uplift and 19% customer acquisition gain — across 1,262 campaigns over 17 years.</p>
+              <p className="text-[15px] leading-[1.5]" style={{ color: 'rgba(255,255,255,0.92)' }}>Audio in the marketing mix delivers 75% profit uplift and 19% customer acquisition gain — across 1,262 campaigns over 17 years.</p>
             </div>
 
             {/* Mobile C — 81% Increase in Consumer Trust */}
-            <div className="rounded-3xl p-7 flex flex-col min-h-[200px] relative overflow-hidden" style={{ backgroundColor: '#3d4d58' }}>
+            <div className="rounded-3xl p-7 flex flex-col min-h-[200px] relative overflow-hidden" style={{ background: 'linear-gradient(to bottom, #3d4d58 0%, #1a2530 100%)' }}>
               <p className="text-[#ffffff] text-[64px] font-light leading-none tracking-[-0.04em] mb-2">81%</p>
               <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-1">Increase in Consumer Trust<a href="https://www.radiocentre.org" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">2</a></p>
               <p className="text-[#ffffff]/65 text-[15px] leading-[1.5]">Listeners consistently rate brands that show up in audio as more credible and trustworthy.</p>
             </div>
 
             {/* Mobile D — 6–7× Greater Recall */}
-            <div className="rounded-3xl p-7 flex flex-col min-h-[200px] relative overflow-hidden" style={{ backgroundColor: '#ede8e1' }}>
-              <p className="text-[#2b3335] text-[64px] font-light leading-none tracking-[-0.04em] mb-2">6–7×</p>
-              <p className="text-[#2b3335] text-[17px] font-medium leading-snug mb-1">Greater Recall<a href="https://link.springer.com/article/10.3758/BF03332778" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">3</a></p>
-              <p className="text-[#2b3335]/65 text-[15px] leading-[1.5]" style={{ maxWidth: '260px' }}>Narratives are recalled six to seven times more than information studied through repetition alone.</p>
+            <div className="rounded-3xl flex flex-col relative overflow-hidden" style={{ backgroundImage: 'url(/Who-We-Work-With-Healthcare-Professionals-and-Leaders.webp)', backgroundSize: 'cover', backgroundPosition: '85% center', position: 'relative', overflow: 'hidden', minHeight: '320px' }}>
+              <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(43,51,53,0.75) 40%, rgba(43,51,53,0.15) 100%)', borderRadius: 24, zIndex: 1 }} />
+              <div className="p-7 flex flex-col h-full" style={{ position: 'relative', zIndex: 2 }}>
+                <p className="text-[#ffffff] text-[64px] font-light leading-none tracking-[-0.04em] mb-2">6–7×</p>
+                <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-1">Greater Recall<a href="https://link.springer.com/article/10.3758/BF03332778" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">3</a></p>
+                <p className="text-[rgba(255,255,255,0.75)] text-[15px] leading-[1.5]" style={{ maxWidth: '260px' }}>Narratives are recalled six to seven times more than information studied through repetition alone.</p>
+              </div>
             </div>
           </div>
 
