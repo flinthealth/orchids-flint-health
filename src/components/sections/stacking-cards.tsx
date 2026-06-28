@@ -76,7 +76,8 @@ const cards = [
     headline: 'Reach patients before, during, and after care',
     headlineLarge: true,
     body: "",
-    stat: "9 in 10 patients struggle to understand health information.",
+    stat: "",
+    statNode: <>When 9 in 10 patients struggle to understand their health, the organization that makes it clear becomes the one they choose and recommend.<sup style={{ fontSize: '10px', opacity: 0.6, marginLeft: '1px' }}>5</sup></>,
     applications: [
       'Condition and treatment education series',
       'Post-diagnosis support and shared decision-making guides',
@@ -105,7 +106,7 @@ const cards = [
     headline: 'Unite and scale your team',
     headlineLarge: true,
     body: "",
-    stat: "Poor internal communication costs organizations $12K+ per employee annually.",
+    stat: "Poor internal communication costs organizations $12K+ per employee every year. A series that aligns your team pays for itself.",
     applications: [
       'Leadership vision and values series',
       'Recruitment and new hire onboarding',
@@ -120,7 +121,7 @@ const cards = [
     headline: 'Reach audiences through organizations they already trust',
     headlineLarge: true,
     body: "",
-    stat: "64% of listeners get podcast recommendations from people they trust. 72% act on them.",
+    stat: "When 72% of listeners act on recommendations from people they trust, a series placed with the right advocacy partner doesn't just reach your audience. It arrives with a built-in endorsement and generates advocacy at scale.",
     applications: [
       'Patient advocacy network partnerships',
       'Co-branded series with condition-specific communities',
@@ -240,7 +241,9 @@ export default function StackingCards() {
               ? <p className="text-[15px] font-semibold uppercase tracking-[0.1em] leading-[1.4] mb-4" style={{ color: '#6b4b3e' }}>{card.headline}</p>
               : <p className="text-[15px] font-semibold uppercase tracking-[0.1em] leading-[1.4] mb-4" style={{ color: '#6b4b3e' }}>{card.headline}</p>
             }
-            <p className="leading-[1.5] mb-8" style={{ color: '#2b3335' }}>{card.body}</p>
+            {card.body && (
+              <p className="leading-[1.5] mb-4" style={{ color: '#2b3335' }}>{card.body}</p>
+            )}
             {(card.statNode || card.stat) && (
               <p className="leading-[1.5] mb-6" style={{ fontSize: 15, color: '#43382f', fontStyle: 'normal' }}>
                 {card.statNode || card.stat}
@@ -269,7 +272,9 @@ export default function StackingCards() {
                 ? <p className="text-[15px] font-semibold uppercase tracking-[0.1em] leading-[1.4] mb-4" style={{ color: '#6b4b3e' }}>{card.headline}</p>
                 : <p className="text-[15px] font-semibold uppercase tracking-[0.1em] leading-[1.4] mb-4" style={{ color: '#6b4b3e' }}>{card.headline}</p>
               }
-              <p className="leading-[1.5] mb-8" style={{ color: '#2b3335' }}>{card.body}</p>
+              {card.body && (
+                <p className="leading-[1.5] mb-4" style={{ color: '#2b3335' }}>{card.body}</p>
+              )}
               {(card.statNode || card.stat) && (
                 <p className="text-[17px] leading-[1.6] mb-3" style={{ color: '#43382f' }}>
                   {card.statNode || card.stat}
