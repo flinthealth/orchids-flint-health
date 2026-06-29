@@ -86,9 +86,7 @@ export default function HeroSection() {
             </h1>
 
             <p className="animate-hero-sub1 text-white/80 font-normal mb-4">
-              Leading healthcare brands work with Flint to <br className="hidden md:block" />
-craft premium, multi-channel series that <br className="hidden md:block" />
-drive engagement, retention, and referrals.
+              Leading healthcare brands work with Flint to craft premium podcast and YouTube series that drive engagement, retention, and referrals.
             </p>
 
             <div className="animate-hero-cta mt-6">

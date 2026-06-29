@@ -13,15 +13,19 @@ export default function SeriousAboutSeries() {
           production partner
         </h1>
 
+        <p className="text-[#43382f] text-[16px] md:text-[17px] leading-[1.65] font-normal text-center mx-auto mb-10">
+          High-level creative design. Rigorous project execution.
+        </p>
+
         {/* Divider */}
-        <div className="w-full h-px mb-10" style={{ background: 'rgba(43,51,53,0.1)' }}></div>
+        <div className="w-20 h-[3px] mx-auto mb-10 rounded-full" style={{ background: '#677283' }}></div>
 
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-10">
 
           {/* Text column */}
           <div className="md:max-w-[540px] md:mx-auto lg:max-w-[560px] lg:pt-4 lg:mx-0">
               <h3 className="font-light leading-[1.15] tracking-[-0.02em] mb-4" style={{ color: '#2b3335' }}>
-                We make it easy for healthcare brands to develop, launch, and grow branded series across owned and partner channels.
+                We make it easy to develop, launch, and scale branded series across owned, social, and partner channels.
               </h3>
 
             {/* Mobile-only radar */}
@@ -30,7 +34,7 @@ export default function SeriousAboutSeries() {
             </div>
 
             <p className="text-[#43382f] leading-relaxed mt-6 md:max-w-[400px] md:mx-auto lg:max-w-none lg:mx-0 text-center lg:text-left">
-              <strong>Master 360° campaigns</strong> that travel across every stage of your patient, provider, or employee journey.
+              <strong>Deploy 360° campaigns</strong> that travel across every stage of your patient, provider, or employee journey.
             </p>
           </div>
 

@@ -63,13 +63,10 @@ const NAV_HEIGHT = 76; // fixed nav height when scrolled
 
 export default function ProcessSection() {
   const [activeTab, setActiveTab] = useState('strategy');
-  const [showTabBar, setShowTabBar] = useState(false);
   const tabBarRef = useRef<HTMLDivElement | null>(null);
   const cardsRef = useRef<HTMLDivElement | null>(null);
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
   const isScrolling = useRef(false);
-  const showTabBarRef = useRef(false);
-  const containerInViewRef = useRef(false);
   const activeTabRef = useRef('strategy');
 
   useEffect(() => {
@@ -82,7 +79,7 @@ export default function ProcessSection() {
       const scrolledIntoView = -rect.top;
       if (scrolledIntoView < 0) return;
       // Each panel occupies 100vh of the 300vh container (3 panels × 100vh)
-      const idx = Math.min(2, Math.max(0, Math.floor(scrolledIntoView / window.innerHeight)));
+      const idx = Math.min(2, Math.max(0, Math.floor(scrolledIntoView / (window.innerHeight - 132))));
       const id = TABS[idx].id;
       if (id !== activeTabRef.current) {
         activeTabRef.current = id;
@@ -91,62 +88,8 @@ export default function ProcessSection() {
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
 
-    // Cards observer — show tab bar when <20% of cards remain visible
-    const cardsEl = cardsRef.current;
-    const cardsObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const ratio = entry.intersectionRatio;
-          if (ratio < 0.21 && containerInViewRef.current && !showTabBarRef.current) {
-            showTabBarRef.current = true;
-            setShowTabBar(true);
-          }
-          else if (ratio >= 0.25 && showTabBarRef.current) {
-            showTabBarRef.current = false;
-            setShowTabBar(false);
-          }
-        });
-      },
-      { threshold: [0, 0.1, 0.2, 0.3] }
-    );
-
-    if (cardsEl) cardsObserver.observe(cardsEl);
-
-    // Container observer — hide tab bar when leaving, show when re-entering from below
-    const containerEl = scrollContainerRef.current;
-    const containerObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          containerInViewRef.current = entry.isIntersecting;
-          if (!entry.isIntersecting && showTabBarRef.current) {
-            showTabBarRef.current = false;
-            setShowTabBar(false);
-          }
-          // When re-entering the section from below (scrolling up),
-          // show the tab bar if the overview cards are off-screen above.
-          // The cards observer handles hiding when cards re-enter at 25%+.
-          if (entry.isIntersecting && !showTabBarRef.current) {
-            const cardsEl = cardsRef.current;
-            if (cardsEl) {
-              const cr = cardsEl.getBoundingClientRect();
-              // Cards are fully above the viewport (scrolling up from below)
-              if (cr.bottom < 0) {
-                showTabBarRef.current = true;
-                setShowTabBar(true);
-              }
-            }
-          }
-        });
-      },
-      { threshold: 0 }
-    );
-
-    if (containerEl) containerObserver.observe(containerEl);
-
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      cardsObserver.disconnect();
-      containerObserver.disconnect();
     };
   }, []);
 
@@ -155,11 +98,6 @@ export default function ProcessSection() {
     if (idx < 0) return;
     const container = scrollContainerRef.current;
     if (!container) return;
-
-    if (!showTabBarRef.current) {
-      showTabBarRef.current = true;
-      setShowTabBar(true);
-    }
 
     const top = container.offsetTop - NAV_HEIGHT + idx * window.innerHeight;
     window.scrollTo({ top, behavior: 'smooth' });
@@ -213,11 +151,7 @@ export default function ProcessSection() {
           revealed from underneath as the cards scroll off. */}
       <div
         ref={tabBarRef}
-        className="hidden md:sticky md:block md:top-[76px] md:z-30 bg-white border-b border-[rgba(43,51,53,0.1)] transition-opacity duration-300 ease-in-out"
-        style={{
-          opacity: showTabBar ? 1 : 0,
-          pointerEvents: showTabBar ? 'auto' : 'none',
-        }}
+        className="hidden md:block md:sticky md:top-[76px] md:z-30 bg-white border-b border-[rgba(43,51,53,0.1)]"
       >
         <div className="w-full">
           <div className="max-w-[1000px] mx-auto px-6 md:px-8 pt-4 pb-3 flex gap-3">
