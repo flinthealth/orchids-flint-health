@@ -121,7 +121,7 @@ export default function PodcastExplainer() {
             >
               <p className="text-[#ffffff] text-[56px] font-light leading-none tracking-[-0.04em] mb-1">75%</p>
               <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-1">Profit Uplift<a href="https://www.radiocentre.org" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">1</a></p>
-              <p className="text-[15px] leading-[1.5]" style={{ color: 'rgba(255,255,255,0.92)' }}>Audio in the marketing mix delivers 75% profit uplift and 19% customer acquisition gain — across 1,262 campaigns over 17 years.</p>
+              <p className="text-[15px] leading-[1.5]" style={{ color: 'rgba(255,255,255,0.92)' }}>Large-scale research shows adding audio to the marketing mix delivers 75% profit uplift and 19% customer acquisition gain.</p>
             </div>
 
             {/* Bottom right left — 81% Increase in Consumer Trust */}
@@ -156,7 +156,7 @@ export default function PodcastExplainer() {
           </div>
 
           {/* ── Mobile cards ── */}
-          <div className="flex md:hidden flex-col gap-3">
+          <div className="flex md:hidden flex-col gap-4">
             {/* Mobile A — Video */}
             <div className="rounded-3xl overflow-hidden relative flex flex-col min-h-[560px]" style={{ backgroundColor: 'transparent' }}>
               <AutoPlayVideo
@@ -175,7 +175,7 @@ export default function PodcastExplainer() {
             <div className="rounded-3xl p-7 flex flex-col relative overflow-hidden" style={{ background: 'linear-gradient(to bottom, #f5a020 0%, #ff7f29 100%)' }}>
               <p className="text-[#ffffff] text-[64px] font-light leading-none tracking-[-0.04em] mb-2">75%</p>
               <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-1">Profit Uplift<a href="https://www.radiocentre.org" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">1</a></p>
-              <p className="text-[15px] leading-[1.5]" style={{ color: 'rgba(255,255,255,0.92)' }}>Audio in the marketing mix delivers 75% profit uplift and 19% customer acquisition gain — across 1,262 campaigns over 17 years.</p>
+              <p className="text-[15px] leading-[1.5]" style={{ color: 'rgba(255,255,255,0.92)' }}>Large-scale research shows adding audio to the marketing mix delivers 75% profit uplift and 19% customer acquisition gain.</p>
             </div>
 
             {/* Mobile D — 6–7× Greater Recall */}

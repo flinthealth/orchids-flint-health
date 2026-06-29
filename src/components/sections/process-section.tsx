@@ -322,7 +322,7 @@ export default function ProcessSection() {
                       </div>
                       <div className="flex flex-wrap gap-2">
                         {PUBLIC_PILLS.map(pill => (
-                          <span key={pill} style={{ background: '#a0522d', color: '#f9f5ef', borderRadius: 20, padding: '6px 14px', fontSize: 12, fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase' }}>{pill}</span>
+                          <span key={pill} style={{ background: '#f5a020', color: '#f9f5ef', borderRadius: 20, padding: '6px 14px', fontSize: 12, fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase' }}>{pill}</span>
                         ))}
                       </div>
                     </div>
