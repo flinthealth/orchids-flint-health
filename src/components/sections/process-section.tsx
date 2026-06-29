@@ -63,6 +63,7 @@ const NAV_HEIGHT = 76; // fixed nav height when scrolled
 
 export default function ProcessSection() {
   const [activeTab, setActiveTab] = useState('strategy');
+  const [showBar, setShowBar] = useState(false);
   const tabBarRef = useRef<HTMLDivElement | null>(null);
   const cardsRef = useRef<HTMLDivElement | null>(null);
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
@@ -72,6 +73,10 @@ export default function ProcessSection() {
   useEffect(() => {
     // Scroll-based active panel detection
     const handleScroll = () => {
+      if (cardsRef.current) {
+        const cardsTop = cardsRef.current.getBoundingClientRect().top;
+        setShowBar(cardsTop <= 76);
+      }
       if (isScrolling.current) return;
       const container = scrollContainerRef.current;
       if (!container) return;
@@ -151,7 +156,8 @@ export default function ProcessSection() {
           revealed from underneath as the cards scroll off. */}
       <div
         ref={tabBarRef}
-        className="hidden md:block md:sticky md:top-[76px] md:z-30 bg-white border-b border-[rgba(43,51,53,0.1)]"
+        className="hidden md:block md:sticky md:top-[76px] md:z-30 bg-white border-b border-[rgba(43,51,53,0.1)] transition-transform duration-150 ease-out"
+        style={{ transform: showBar ? 'translateY(0)' : 'translateY(-100%)', pointerEvents: showBar ? 'auto' : 'none' }}
       >
         <div className="w-full">
           <div className="max-w-[1000px] mx-auto px-6 md:px-8 pt-4 pb-3 flex gap-3">
@@ -163,9 +169,9 @@ export default function ProcessSection() {
                   onClick={() => scrollTo(id)}
                   className="flex-1 py-3 px-5 text-[14px] font-semibold tracking-[0.02em] transition-all rounded-md"
                   style={{
-                    background: isActiveBar ? '#EDEBE7' : 'rgba(237,235,231,0.5)',
-                    color: isActiveBar ? '#2b3335' : '#3d4d58',
-                    border: isActiveBar ? '1px solid #2b3335' : '1px solid transparent',
+                    background: isActiveBar ? '#2a3742' : 'rgba(237,235,231,0.5)',
+                    color: isActiveBar ? '#ffffff' : '#3d4d58',
+                    border: isActiveBar ? '1px solid #3d4d58' : '1px solid transparent',
                     cursor: 'pointer',
                     boxShadow: isActiveBar ? '0 0 16px rgba(245,160,32,0.76), 0 0 0 2px #ff7f29' : 'none',
                   }}
