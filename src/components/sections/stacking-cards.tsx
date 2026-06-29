@@ -311,7 +311,7 @@ export default function StackingCards() {
                 <span className="hidden md:inline">We help you reach<br />who matters most</span>
               </h2>
               <p className="text-[rgba(255,255,255,0.7)] max-w-[560px] mx-auto">
-                Connect with the patients, providers, and team members that fuel your mission and help you grow.
+                Connect with the patients, providers, and team members that fuel your mission and the advocates that help you grow.
               </p>
             </div>
           </div>
@@ -414,7 +414,7 @@ export default function StackingCards() {
                 <span className="hidden md:inline">We help you reach<br />who matters most</span>
               </h2>
               <p className="text-[rgba(255,255,255,0.7)] max-w-[560px] mx-auto">
-                Connect with the patients, providers, and team members that fuel your mission and help you grow.
+                Connect with the patients, providers, and team members that fuel your mission and the advocates that help you grow.
               </p>
             </div>
           </div>

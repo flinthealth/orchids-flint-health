@@ -119,8 +119,7 @@ export default function ProcessSection() {
       {/* ── Intro ── */}
       <div className="max-w-[920px] mx-auto px-6 md:px-8 pt-20 pb-12 text-center">
         <h2 className="text-[#2b3335] font-light tracking-[-0.02em] mb-5">
-          Everything you need, from<br />
-          strategy to measurable impact
+          Everything you need,<br className="md:hidden" /> from strategy to<br className="md:hidden" /> measurable impact
         </h2>
         <p className="max-w-[560px] mx-auto text-[#43382f]">
           A creative, full-service production partner who champions your brand and the outcomes that matter most.
@@ -156,30 +155,34 @@ export default function ProcessSection() {
           revealed from underneath as the cards scroll off. */}
       <div
         ref={tabBarRef}
-        className="hidden md:block md:sticky md:top-[76px] md:z-30 bg-white border-b border-[rgba(43,51,53,0.1)] transition-transform duration-150 ease-out"
-        style={{ transform: showBar ? 'translateY(0)' : 'translateY(-100%)', pointerEvents: showBar ? 'auto' : 'none' }}
+        className="hidden md:block md:sticky md:top-[76px] md:z-30 overflow-hidden"
       >
-        <div className="w-full">
-          <div className="max-w-[1000px] mx-auto px-6 md:px-8 pt-4 pb-3 flex gap-3">
-            {TABS.map(({ id, label }) => {
-              const isActiveBar = activeTab === id;
-              return (
-                <button
-                  key={id}
-                  onClick={() => scrollTo(id)}
-                  className="flex-1 py-3 px-5 text-[14px] font-semibold tracking-[0.02em] transition-all rounded-md"
-                  style={{
-                    background: isActiveBar ? '#2a3742' : 'rgba(237,235,231,0.5)',
-                    color: isActiveBar ? '#ffffff' : '#3d4d58',
-                    border: isActiveBar ? '1px solid #3d4d58' : '1px solid transparent',
-                    cursor: 'pointer',
-                    boxShadow: isActiveBar ? '0 0 16px rgba(245,160,32,0.76), 0 0 0 2px #ff7f29' : 'none',
-                  }}
-                >
-                  {label}
-                </button>
-              );
-            })}
+        <div
+          className="bg-white border-b border-[rgba(43,51,53,0.1)] transition-transform duration-200 ease-out"
+          style={{ transform: showBar ? 'translateY(0)' : 'translateY(-100%)', pointerEvents: showBar ? 'auto' : 'none' }}
+        >
+          <div className="w-full">
+            <div className="max-w-[1000px] mx-auto px-6 md:px-8 pt-4 pb-3 flex gap-3">
+              {TABS.map(({ id, label }) => {
+                const isActiveBar = activeTab === id;
+                return (
+                  <button
+                    key={id}
+                    onClick={() => scrollTo(id)}
+                    className="flex-1 py-3 px-5 text-[14px] font-semibold tracking-[0.02em] transition-all rounded-md"
+                    style={{
+                      background: isActiveBar ? '#2a3742' : 'rgba(237,235,231,0.5)',
+                      color: isActiveBar ? '#ffffff' : '#3d4d58',
+                      border: isActiveBar ? '1px solid #3d4d58' : '1px solid transparent',
+                      cursor: 'pointer',
+                      boxShadow: isActiveBar ? '0 0 16px rgba(245,160,32,0.76), 0 0 0 2px #ff7f29' : 'none',
+                    }}
+                  >
+                    {label}
+                  </button>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>

@@ -14,7 +14,7 @@ export default function SeriousAboutSeries() {
         </h1>
 
         <p className="text-[#43382f] text-[16px] md:text-[17px] leading-[1.65] font-normal text-center mx-auto mb-10">
-          High-level creative design. Rigorous project execution.
+          High-level creative design.<br className="md:hidden" /> Rigorous project execution.
         </p>
 
         {/* Divider */}
