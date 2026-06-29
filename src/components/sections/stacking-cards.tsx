@@ -91,7 +91,7 @@ const cards = [
     title: 'Patient Immersions & Journey Maps',
     headline: 'Turn patient insights into better care',
     headlineLarge: true,
-    body: "",
+    body: "The most effective treatment and go-to-market strategies are built on authentic patient voice. A series captures it at depth.",
     applications: [
       'Authentic patient voice recordings',
       'Deep-dive qualitative interview series',
@@ -116,12 +116,12 @@ const cards = [
   },
   {
     id: 4,
-    filters: ['authority'] as FilterKey[],
+    filters: ['patient', 'authority'] as FilterKey[],
     title: 'Partner & Advocacy Distribution',
     headline: 'Reach audiences through organizations they already trust',
     headlineLarge: true,
     body: "",
-    stat: "When 72% of listeners act on recommendations from people they trust, a series placed with the right advocacy partner doesn't just reach your audience. It arrives with a built-in endorsement and generates advocacy at scale.",
+    stat: "When 72% of listeners act on recommendations from people they trust, placing your series with the right advocacy partner doesn't just expand your reach. It arrives with a built-in endorsement.",
     applications: [
       'Patient advocacy network partnerships',
       'Co-branded series with condition-specific communities',
@@ -242,10 +242,10 @@ export default function StackingCards() {
               : <p className="text-[15px] font-semibold uppercase tracking-[0.1em] leading-[1.4] mb-4" style={{ color: '#6b4b3e' }}>{card.headline}</p>
             }
             {card.body && (
-              <p className="leading-[1.5] mb-4" style={{ color: '#2b3335' }}>{card.body}</p>
+              <p className="text-[17px] leading-[1.6] mb-8" style={{ color: '#43382f' }}>{card.body}</p>
             )}
             {(card.statNode || card.stat) && (
-              <p className="leading-[1.5] mb-6" style={{ fontSize: 15, color: '#43382f', fontStyle: 'normal' }}>
+              <p className="leading-[1.5] mb-8" style={{ fontSize: 15, color: '#43382f', fontStyle: 'normal' }}>
                 {card.statNode || card.stat}
               </p>
             )}
@@ -273,10 +273,10 @@ export default function StackingCards() {
                 : <p className="text-[15px] font-semibold uppercase tracking-[0.1em] leading-[1.4] mb-4" style={{ color: '#6b4b3e' }}>{card.headline}</p>
               }
               {card.body && (
-                <p className="leading-[1.5] mb-4" style={{ color: '#2b3335' }}>{card.body}</p>
+                <p className="text-[17px] leading-[1.6] mb-8" style={{ color: '#43382f' }}>{card.body}</p>
               )}
               {(card.statNode || card.stat) && (
-                <p className="text-[17px] leading-[1.6] mb-3" style={{ color: '#43382f' }}>
+                <p className="text-[17px] leading-[1.6] mb-8" style={{ color: '#43382f' }}>
                   {card.statNode || card.stat}
                 </p>
               )}

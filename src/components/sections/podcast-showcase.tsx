@@ -122,7 +122,7 @@ function CaseStudyCard({
             >
               {title}
             </h3>
-            <p className="text-[13px] font-medium mb-3" style={{ color: "#54819a" }}>
+            <p className="text-[13px] font-medium mb-3" style={{ color: '#6b4b3e' }}>
               {client}
             </p>
             <p
@@ -173,7 +173,7 @@ function CaseStudyCard({
             >
               {title}
             </h3>
-            <p className="text-[13px] font-medium mb-3" style={{ color: "#54819a" }}>
+            <p className="text-[13px] font-medium mb-3" style={{ color: '#6b4b3e' }}>
               {client}
             </p>
             <p

@@ -403,10 +403,10 @@ export default function DNAWaveSection() {
                 href="https://calendly.com/flint-discovery-call/20min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-5 py-3 rounded-[8px] text-[15px] font-semibold transition-colors"
+                className="inline-flex items-center justify-center px-4 py-3 rounded-[8px] text-[16px] font-semibold transition-colors"
                 style={{ background: '#ff7f29', color: '#ffffff' }}
               >
-                Schedule a Call
+                Schedule a Strategy Call
               </a>
 
           </div>
