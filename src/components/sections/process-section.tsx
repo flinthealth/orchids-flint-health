@@ -119,7 +119,7 @@ export default function ProcessSection() {
       {/* ── Intro ── */}
       <div className="max-w-[920px] mx-auto px-6 md:px-8 pt-20 pb-12 text-center">
         <h2 className="text-[#2b3335] font-light tracking-[-0.02em] mb-5">
-          Everything you need,<br className="md:hidden" /> from strategy to<br className="md:hidden" /> measurable impact
+          Everything you need, from<br className="hidden md:block" /> strategy to measurable impact
         </h2>
         <p className="max-w-[560px] mx-auto text-[#43382f]">
           A creative, full-service production partner who champions your brand and the outcomes that matter most.

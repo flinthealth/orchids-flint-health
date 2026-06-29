@@ -117,7 +117,7 @@ export default function PodcastExplainer() {
             {/* Top right — 75% Profit Uplift */}
             <div
               className="rounded-3xl p-7 flex flex-col justify-center relative overflow-hidden"
-              style={{ gridColumn: '5 / 9', gridRow: '1 / 7', background: 'linear-gradient(to bottom, #f5a020 0%, #ff7f29 100%)' }}
+              style={{ gridColumn: '5 / 9', gridRow: '1 / 7', background: 'linear-gradient(to bottom right, #3d4d58 0%, #6b4b3e 55%, #a0522d 100%)' }}
             >
               <p className="text-[#ffffff] text-[56px] font-light leading-none tracking-[-0.04em] mb-1">75%</p>
               <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-1">Profit Uplift<a href="https://www.radiocentre.org" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">1</a></p>
@@ -172,7 +172,7 @@ export default function PodcastExplainer() {
             </div>
 
             {/* Mobile B — 75% Profit Uplift */}
-            <div className="rounded-3xl p-7 flex flex-col relative overflow-hidden" style={{ background: 'linear-gradient(to bottom, #f5a020 0%, #ff7f29 100%)' }}>
+            <div className="rounded-3xl p-7 flex flex-col relative overflow-hidden" style={{ background: 'linear-gradient(to bottom right, #3d4d58 0%, #6b4b3e 55%, #a0522d 100%)' }}>
               <p className="text-[#ffffff] text-[64px] font-light leading-none tracking-[-0.04em] mb-2">75%</p>
               <p className="text-[#ffffff] text-[17px] font-medium leading-snug mb-1">Profit Uplift<a href="https://www.radiocentre.org" target="_blank" rel="noopener noreferrer" className="text-[11px] align-super ml-0.5 opacity-40 hover:opacity-70 transition-opacity">1</a></p>
               <p className="text-[15px] leading-[1.5]" style={{ color: 'rgba(255,255,255,0.92)' }}>Audio in the marketing mix delivers 75% profit uplift and 19% customer acquisition gain — across 1,262 campaigns over 17 years.</p>

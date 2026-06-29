@@ -201,7 +201,7 @@ export default function StackingCards() {
 
   function CardContent({ card, mobile }: { card: typeof cards[number]; mobile: boolean }) {
     const px   = mobile ? 'px-5'  : 'px-12';
-    const imgW = mobile ? 161     : 207;
+    const imgW = mobile ? 185     : 207;
     const h3   = '';
     const h3mb = mobile ? 'mb-5'  : 'mb-3';
     const p1   = '';
