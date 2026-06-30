@@ -89,6 +89,10 @@ export default function PodcastExplainer() {
           </p>
         </div>
 
+        <p className="text-[15px] font-semibold tracking-[0.1em] uppercase mb-5 text-center" style={{ color: '#43382f' }}>
+          What makes series special
+        </p>
+
         {/* ── Bento stats grid — 4-card 2-column layout ──────────────────────── */}
         <div className="max-w-[1000px] mx-auto mb-12">
           <div

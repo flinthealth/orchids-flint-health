@@ -271,9 +271,9 @@ export default function PodcastShowcase() {
             className="max-w-[520px] mx-auto"
             style={{ color: "#43382f" }}
           >
-            Proof that when the right{" "}
+            When the right message{" "}
             <br className="md:hidden" />
-            message meets the right audience,{" "}
+            meets the right audience,{" "}
             <br className="md:hidden" />
             something measurable happens.
           </p>

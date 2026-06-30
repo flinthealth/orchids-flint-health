@@ -77,7 +77,7 @@ const cards = [
     headlineLarge: true,
     body: "",
     stat: "",
-    statNode: <>When 9 in 10 patients struggle to understand their health, the organization that makes it clear becomes the one they choose and recommend.<sup style={{ fontSize: '10px', opacity: 0.6, marginLeft: '1px' }}>5</sup></>,
+    statNode: <>When 9 in 10 patients struggle to understand their health, the brand that makes it clear becomes the one they choose, use and recommend.<sup style={{ fontSize: '10px', opacity: 0.6, marginLeft: '1px' }}>5</sup></>,
     applications: [
       'Condition and treatment education series',
       'Post-diagnosis support and shared decision-making guides',
@@ -91,7 +91,8 @@ const cards = [
     title: 'Patient Immersions & Journey Maps',
     headline: 'Turn patient insights into better care',
     headlineLarge: true,
-    body: "The most effective treatment and go-to-market strategies are built on authentic patient voice. A series captures it at depth.",
+    body: "",
+    stat: "The most effective treatment and go-to-market strategies are built on authentic patient voice. A series captures it at depth.",
     applications: [
       'Authentic patient voice recordings',
       'Deep-dive qualitative interview series',
