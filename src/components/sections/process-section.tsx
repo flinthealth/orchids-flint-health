@@ -200,6 +200,7 @@ export default function ProcessSection() {
               <div className="flex flex-col h-full justify-center py-12 max-w-[1000px] mx-auto px-6 md:px-8 w-full">
                 <div className="flex flex-col md:flex-row gap-12 md:gap-16 lg:gap-20 items-start">
                   <div className="flex-1">
+                    <p className="text-[15px] font-semibold tracking-[0.1em] uppercase mb-5" style={{ color: '#43382f' }}>Strategy</p>
                     <h3 className="font-light text-[#2b3335] tracking-[-0.01em] mb-4">
                       Start with the end in mind.
                     </h3>
@@ -247,6 +248,7 @@ export default function ProcessSection() {
               <div className="flex flex-col h-full justify-center py-12 max-w-[1000px] mx-auto px-6 md:px-8 w-full">
                 <div className="flex flex-col md:flex-row gap-12 md:gap-16 lg:gap-20 items-start">
                   <div className="flex-1">
+                    <p className="text-[15px] font-semibold tracking-[0.1em] uppercase mb-5" style={{ color: '#43382f' }}>Production</p>
                     <h3 className="font-light text-[#2b3335] tracking-[-0.01em] mb-4">
                       You show up. We handle everything else.
                     </h3>
@@ -294,6 +296,7 @@ export default function ProcessSection() {
               <div className="flex flex-col h-full justify-center py-12 max-w-[1000px] mx-auto px-6 md:px-8 w-full">
                 <div className="flex flex-col md:flex-row gap-12 md:gap-16 lg:gap-20 items-start">
                   <div className="flex-1">
+                    <p className="text-[15px] font-semibold tracking-[0.1em] uppercase mb-5" style={{ color: '#43382f' }}>Data-Driven Growth</p>
                     <h3 className="font-light text-[#2b3335] tracking-[-0.01em] mb-4">
                       Connect series performance to real business outcomes.
                     </h3>
