@@ -297,16 +297,12 @@ function SeriesFormats() {
   return (
     <div className="flex flex-col gap-5">
       {FORMATS.map((f) => (
-        <div key={f.title}>
-          <div className="flex items-center gap-3 mb-2">
+        <div key={f.title} className="flex flex-col items-center text-center">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={f.icon} className="w-14 h-14 object-contain flex-shrink-0" alt="" />
-            <div>
-              <p className="text-[15px] font-bold uppercase tracking-[0.04em] text-[#43382f]">{f.title}</p>
-              <p className="text-[11px] font-medium uppercase tracking-[0.06em] text-[#677283]">{f.subtitle}</p>
-            </div>
-          </div>
-          <p className="text-[14px] text-[#43382f] leading-relaxed mb-1">{f.desc}</p>
+            <img src={f.icon} className="w-20 h-20 object-contain mb-2" alt="" />
+            <p className="text-[15px] font-bold uppercase tracking-[0.04em] text-[#43382f]">{f.title}</p>
+            <p className="text-[11px] font-medium uppercase tracking-[0.06em] text-[#677283] mb-2">{f.subtitle}</p>
+          <p className="text-[15px] leading-[1.65] text-[#43382f] mb-1 max-w-[380px]">{f.desc}</p>
           <p className="font-serif italic text-[13px] text-[#677283]">{f.ref}</p>
         </div>
       ))}
