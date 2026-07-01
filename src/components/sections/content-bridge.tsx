@@ -310,7 +310,7 @@ export default function ContentBridge() {
         <div className="cb-vignette-bottom" />
 
         {/* Headline + (read that again) on the photo */}
-        <div className="cb-text-on-photo" style={{ right: 'auto', width: 'clamp(680px, 65vw, 1000px)' }}>
+        <div className="cb-text-on-photo" style={{ right: 'auto', width: 'clamp(680px, 65vw, 1000px)', paddingLeft: 'min(10vw, 120px)' }}>
           <h2
             className="text-[40px] lg:text-[56px] max-w-[440px] lg:max-w-[800px]"
             style={{ color: '#f9f5ef', fontWeight: 300, lineHeight: 1.2, letterSpacing: '-0.02em', marginBottom: '16px' }}
@@ -319,7 +319,7 @@ export default function ContentBridge() {
             complete control<br />
             over <span className="font-serif italic">your messaging</span>
           </h2>
-          <p className="cb-body-on-photo" style={{ color: 'rgba(249,245,239,0.72)', lineHeight: 1.6, marginTop: '12px', maxWidth: '460px' }}>
+          <p className="cb-body-on-photo max-w-[460px] lg:max-w-[640px]" style={{ color: 'rgba(249,245,239,0.72)', lineHeight: 1.6, marginTop: '12px' }}>
             From the experts to the evidence-based insights and anecdotes you bring into the story, every detail supports your message.
           </p>
         </div>

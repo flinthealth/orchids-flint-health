@@ -208,10 +208,10 @@ export default function ProcessSection() {
                     </p>
                     <div className="flex flex-col gap-3">
                       {[
-                        'Craft a compelling narrative arc',
-                        'Spotlight expert voices and lived experience',
-                        'Own your competitive angle and unique differentiation',
-                        'Choose your binge-worthy format',
+                        'Tell the story only you can tell',
+                        'Claim the angle competitors can\'t touch',
+                        'Prove the numbers that win your next budget',
+                        'Pick a format people can\'t stop watching',
                       ].map(item => (
                         <div key={item} className="flex items-start gap-3">
                           <CircleCheck />
