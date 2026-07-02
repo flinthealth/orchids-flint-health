@@ -16,6 +16,7 @@ import PodcastPathways from "@/components/sections/podcast-pathways";
 import PodcastPulse from "@/components/sections/podcast-pulse";
 import ContentPrism from "@/components/sections/content-prism";
 import PodcastShowcase from "@/components/sections/podcast-showcase";
+import WhatWeCreate from "@/components/sections/what-we-create";
 import PodcastExplainer from "@/components/sections/podcast-explainer";
 import WhySeriesWork from "@/components/sections/why-series-work";
 import SeriesReach from "@/components/sections/series-reach";
@@ -39,6 +40,7 @@ export default function Home() {
         <IgniteSection />
         <SeriousAboutSeries />
         <PodcastShowcase />
+        <WhatWeCreate />
         <ContentBridge />
         <PodcastExplainer />
         <StackingCards />
